@@ -1,0 +1,761 @@
+{
+ "version": 1,
+ "generated": "2026-11-07T16:05:14.279Z",
+ "kits": [
+  {
+   "id": "opium-night",
+   "name": "Opium Night",
+   "vibe": "dark opium carti kit, long distorted 808s, crisp tight hats, dark snare, laser fx, tape hiss texture",
+   "tags": [
+    "dark",
+    "opium",
+    "carti",
+    "long",
+    "distorted",
+    "crisp"
+   ],
+   "pads": {
+    "808": "sp-os-dps-808-sicko-c-56008",
+    "kick": "sp-mo-fm-kick-royal-4579d",
+    "snare": "sp-rt-experimental-percussion-snare-riff-10-ae6fc",
+    "clap": "sp-decap-dtk11-clap-swag-short-wide-523e0",
+    "hat_closed": "sp-os-rage2-hihat-sender-6ef58",
+    "hat_open": "sp-os-rage-open-hihat-mojo-b3751",
+    "perc": "sp-orbit-jerk-fx-scratch-composure-944d0",
+    "fx": "sp-orbit-rt2-perc-laser-veld-415cf",
+    "texture": "sp-ma-atd1-120-fx-tape-hiss-noise-low-3ef74"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Opium Night: distorted dark soft 808 (808 Sicko), kick (Kick Royal), distorted dark soft snare (Experimental Percussion Snare Riff 10), clean bright punchy hats (Hihat Sender)."
+  },
+  {
+   "id": "rage-fold",
+   "name": "Rage Fold",
+   "vibe": "rage, blown out fuzz 808, hard distorted kick, distorted clap, crunchy hats, impact fx",
+   "tags": [
+    "rage",
+    "blown",
+    "fuzz",
+    "hard",
+    "distorted",
+    "crunchy"
+   ],
+   "pads": {
+    "808": "sp-808-main-fungi-c-d83ca",
+    "kick": "sp-ts-vid-kick-round-and-warm-020b2",
+    "snare": "sp-os-rage2-snare-southside-f9e2c",
+    "clap": "sp-mo-fm-clap-primrose-1ad54",
+    "hat_closed": "sp-hihat-metalnoise-fabf1",
+    "hat_open": "sp-os-rage-open-hihat-holla-44393",
+    "perc": "sp-os-rage-perc-bleep-wakeup-a6562",
+    "fx": "sp-esm-braaam-strike-2-hit-one-shot-distort-90b44",
+    "texture": "sp-os-atl-140-synth-pad-chords-texture-jaco-e46cb"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Rage Fold: distorted bright long 808 (Main Fungi), distorted punchy long kick (Kick Round And Warm), distorted soft short clap (Clap Primrose), distorted punchy short hats (Hihat MetalNoise)."
+  },
+  {
+   "id": "carti-vamp",
+   "name": "Vamp Anthem",
+   "vibe": "carti vamp, evil distorted 808, punchy kick, bright crisp snare, glitch fx, dark texture",
+   "tags": [
+    "carti",
+    "evil",
+    "distorted",
+    "punchy",
+    "bright",
+    "crisp"
+   ],
+   "pads": {
+    "808": "sp-os-dps-808-sicko-c-56008",
+    "kick": "sp-ts-vd-kick-60s-luddy-warmth-28e21",
+    "snare": "sp-uz-snare-808-fat-79090",
+    "clap": "sp-mo-fm-clap-primrose-1ad54",
+    "hat_closed": "sp-os-rage2-hihat-billboard-4c7d1",
+    "hat_open": "sp-ds-ot-drum-hat-open-reverse-a4534",
+    "perc": "sp-os-rage2-perc-triangle-salute-20939",
+    "fx": "sp-mo-vio-fx-glitchxxx-14bcb",
+    "texture": "sp-ma-atd1-120-fx-tape-hiss-noise-low-3ef74"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Vamp Anthem: distorted dark soft 808 (808 Sicko), distorted dark punchy kick (Kick 60s Luddy Warmth), bright punchy short snare (Snare 808 Fat), clean bright fx (Fx Glitchxxx)."
+  },
+  {
+   "id": "blue-hour",
+   "name": "Blue Hour",
+   "vibe": "blue hour, muffled soft drums, round warm long 808, reverb snare, rain texture, wide",
+   "tags": [
+    "blue hour",
+    "muffled",
+    "soft",
+    "round",
+    "warm",
+    "long"
+   ],
+   "pads": {
+    "808": "sp-decap-dtk11-808-smooth-long-c-c32f4",
+    "kick": "sp-esm-one-shot-kick-bass-hybrid-808-13-hip-af40b",
+    "snare": "sp-12-build-up-snare-96151",
+    "clap": "sp-thunderclap-bw-59738-044b0",
+    "hat_closed": "sp-dhh2-hat-closed-high-live-lofi-703e4",
+    "hat_open": "sp-hitdeepdark-s08ho-128-d7f84",
+    "perc": "sp-esm-cinematic-blockbuster-deep-sub-percu-1ba9f",
+    "fx": "sp-mo-tc-vocal-swell-riser-reverse-verb-oo-e7671",
+    "texture": "sp-esm-horror-game-ambience-loop-creature-i-602fd"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ],
+    "clap": [
+     "reverb"
+    ],
+    "perc": [
+     "reverb"
+    ]
+   },
+   "say": "Blue Hour: clean dark soft 808 (808 Smooth Long), kick (Kick Bass Hybrid 808 13 Hip Hop Deep Warm), clean dark soft snare (Build Up Snare)."
+  },
+  {
+   "id": "snowfall",
+   "name": "Snowfall",
+   "vibe": "snowfall, very muffled underwater kit, soft kick, round sub 808, airy hats, vinyl texture, reverse fx",
+   "tags": [
+    "blue hour",
+    "muffled",
+    "underwater",
+    "soft",
+    "round",
+    "airy"
+   ],
+   "pads": {
+    "808": "sp-decap-dtk11-808-smooth-long-c-c32f4",
+    "kick": "sp-808-kick02-af585",
+    "snare": "sp-12-build-up-snare-96151",
+    "clap": "sp-brs-thunder-clap-med-no-rain-1-a8272",
+    "hat_closed": "sp-dhh2-hat-closed-high-live-lofi-703e4",
+    "hat_open": "sp-hitdeepdark-s08ho-128-d7f84",
+    "perc": "sp-oss-pp1-tom-afro-house-tumble-572ec",
+    "fx": "sp-mo-tc-vocal-swell-riser-reverse-verb-oo-e7671",
+    "texture": "sp-mnt-rlm-81-fx-pulses-6-8-8869e"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ],
+    "clap": [
+     "reverb"
+    ],
+    "perc": [
+     "reverb"
+    ]
+   },
+   "say": "Snowfall: clean dark soft 808 (808 Smooth Long), clean dark soft kick (Kick02), clean dark soft hats (Dhh2 Hat Closed High Live Lofi), distorted dark short fx (Vocal Swell Riser Reverse Verb Oo)."
+  },
+  {
+   "id": "tame-dust",
+   "name": "Tame Dust",
+   "vibe": "tame impala, dusty warm roomy drums, big reverb snare, shaker perc, tape texture",
+   "tags": [
+    "tame impala",
+    "dusty",
+    "warm",
+    "roomy",
+    "big",
+    "tape"
+   ],
+   "pads": {
+    "808": "sp-yng-808-sub-smooth-d-0f1e1",
+    "kick": "sp-ts-bpd-kick-basic-warm-67576",
+    "snare": "sp-ts-br-snare-copper-dead-power-attack-a2031",
+    "clap": "sp-ss-zmt3-clap-reverb-ignite-7117f",
+    "hat_closed": "sp-tamuz-td-hat-tape-vintage-lay-1689c",
+    "hat_open": "sp-esm-emwi-fx-impact-fire-distant-explosio-c5dff",
+    "perc": "sp-91v-mdup-fx-transition-daylight-shaker-a70ec",
+    "fx": "sp-splc-3018-fx-oneshot-dark-bass-rumble-dr-c7a30",
+    "texture": "sp-ma-atd1-120-fx-tape-hiss-noise-low-3ef74"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ],
+    "clap": [
+     "reverb"
+    ],
+    "perc": [
+     "reverb"
+    ]
+   },
+   "say": "Tame Dust: dark punchy long 808 (808 Sub Smooth), kick (Kick Basic Warm), dark long snare (Snare Copper Dead Power Attack)."
+  },
+  {
+   "id": "castle-crunch",
+   "name": "Castle Crunch",
+   "vibe": "crystal castles, bitcrushed crunchy everything, chiptune blip fx, static texture",
+   "tags": [
+    "crystal castles",
+    "bitcrushed",
+    "crunchy"
+   ],
+   "pads": {
+    "808": "sp-os-wcw-808-reso-c-3d63e",
+    "kick": "sp-mo-dowfi-kick-undertone-cee09",
+    "snare": "sp-tsp-aeonmode-snare-bounce-72c24",
+    "clap": "sp-91v-ac-clap-cold-verb-61669",
+    "hat_closed": "sp-mo-bio-hihat-icy-0063e",
+    "hat_open": "sp-tamuz-td-hat-tape-open-crunch-98a31",
+    "perc": "sp-ad4-abacus-shake-single-v03-r02-9d052",
+    "fx": "sp-jh-glitchy-lifeforms-da003",
+    "texture": "sp-frendo-bow-short-e-08-fedb0"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Castle Crunch: distorted bright soft 808 (808 Reso), kick (Kick Undertone), distorted bright short fx (Glitchy Lifeforms)."
+  },
+  {
+   "id": "skrill-smash",
+   "name": "Skrill Smash",
+   "vibe": "skrillex, hard punchy kick, big bright snare, distorted 808, impact and laser fx",
+   "tags": [
+    "skrillex",
+    "hard",
+    "punchy",
+    "big",
+    "bright",
+    "distorted"
+   ],
+   "pads": {
+    "808": "sp-uz-808-s-06-f-e35ff",
+    "kick": "sp-ts-mrd-kick-rock-7c003",
+    "snare": "sp-lf-snare-08-v2-4b740",
+    "clap": "sp-ww-nxsty-drum-oneshot-clap-tight-metal-41437",
+    "hat_closed": "sp-apocalypse-hihat11-1b5b2",
+    "hat_open": "sp-hats16-glassshatter-585ee",
+    "perc": "sp-ad3-metal-livestock-gate-hit-01-02-r12-47335",
+    "fx": "sp-ds-td2-fx-lazer-gametron-d7ffa",
+    "texture": "sp-vr-hbd3-fx-one-shot-zap-clean-a3b87"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Skrill Smash: distorted bright punchy 808 (808 S 06), clean punchy kick (Kick Rock), clean bright punchy snare (Snare 08 V2), punchy short fx (Fx Lazer Gametron)."
+  },
+  {
+   "id": "warehouse",
+   "name": "Warehouse",
+   "vibe": "hard techno, punchy short kick, tight hats, reverb clap, metallic perc, rumble texture",
+   "tags": [
+    "techno",
+    "punchy",
+    "short",
+    "tight",
+    "metallic"
+   ],
+   "pads": {
+    "808": "sp-sls-dtdjm-808-subsonic-921b1",
+    "kick": "sp-dsc-rst-kick-one-shot-tight-sat-b2da2",
+    "snare": "sp-06-ut-snare-7e83f",
+    "clap": "sp-004-at-fluid-clap-8177e",
+    "hat_closed": "sp-004-pmhh-zenhiser-b491c",
+    "hat_open": "sp-mars-909-open-hat-warm-lo-e6f88",
+    "perc": "sp-ad3-metal-stool-frame-ring-choke-mallet-a3072",
+    "fx": "sp-ds-mth-fx-riser-one-shot-short-sweep-noi-9e4bf",
+    "texture": "sp-mo-bro-fx-noise-plug-1d62c"
+   },
+   "params": {
+    "kick": {
+     "decay": 0.6
+    }
+   },
+   "fx": {
+    "clap": [
+     "reverb"
+    ]
+   },
+   "say": "Warehouse: clean bright punchy 808 (808 Subsonic), punchy short kick (Kick Tight Sat), clean punchy clap (Fluid Clap), clean bright punchy hats (004_PMHH_-_Zenhiser)."
+  },
+  {
+   "id": "plastic-beach",
+   "name": "Plastic Beach",
+   "vibe": "gorillaz, dusty boom bap kick and snare, conga perc, vinyl crackle texture",
+   "tags": [
+    "gorillaz",
+    "dusty",
+    "boom bap"
+   ],
+   "pads": {
+    "808": "sp-os-flint2-808-snappy-c-c4ecc",
+    "kick": "sp-madlib-kick-dusted-punch-ebebb",
+    "snare": "sp-madlib-snare-the-villain-b53cc",
+    "clap": "sp-ma-lofi-clap-one-shot-softkit-711f7",
+    "hat_closed": "sp-madlib-hihat-big-bar-closed-3557a",
+    "hat_open": "sp-tamuz-td-hat-tape-open-crunch-98a31",
+    "perc": "sp-mars-tr-conga-808-hi-tape-bbf50",
+    "fx": "sp-vinyl-crackle-471c3",
+    "texture": "sp-mars-vb-76-drums-full-northside-vinyl-br-1ae54"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Plastic Beach: dark 808 (808 Snappy), dark punchy kick (Kick Dusted Punch), punchy snare (Snare The Villain)."
+  },
+  {
+   "id": "neon-pop",
+   "name": "Neon Pop",
+   "vibe": "icona pop, bright punchy kick, big bright clap, open hat, riser fx",
+   "tags": [
+    "neon pop",
+    "bright",
+    "punchy",
+    "big"
+   ],
+   "pads": {
+    "808": "sp-tlykst-808-distorted-af-g-00ced",
+    "kick": "sp-madlib-kick-dookie-slip-15592",
+    "snare": "sp-kshmr-sok5-snare-dnb-noisy-punch-151bc",
+    "clap": "sp-so-nv-snap-perc-7ffd6",
+    "hat_closed": "sp-ab-th2-dabow-hat-closed-ukg-fever-fa71f",
+    "hat_open": "sp-ts-punch-hihat-quick-open-shut-ca04a",
+    "perc": "sp-mo-tb-snare-smackaroo-dc6e8",
+    "fx": "sp-lyre-fx-sweep-buildup-riser-white-noise-3000d",
+    "texture": "sp-esm-gw-foley-one-shot-gun-handling-reloa-73731"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Neon Pop: distorted bright soft 808 (808 Distorted Af), distorted bright punchy kick (Kick Dookie Slip), clean bright punchy clap (Snap Perc), clean bright short fx (Fx Sweep Buildup Riser White Noise)."
+  },
+  {
+   "id": "villain-drill",
+   "name": "Villain Drill",
+   "vibe": "dark drill, slide 808, crisp snare, rim perc, tight hats, sinister fx",
+   "tags": [
+    "dark",
+    "drill",
+    "crisp",
+    "tight",
+    "sinister"
+   ],
+   "pads": {
+    "808": "sp-trktrn-f1lthyxlukrative-808-bass-boosted-578f1",
+    "kick": "sp-kmrbi-rhs7-kick-cross-93048",
+    "snare": "sp-os-rck-snare-saxon-9ac15",
+    "clap": "sp-os-atl-clap-high-8a1ec",
+    "hat_closed": "sp-udct-hihat-zap-7dd2e",
+    "hat_open": "sp-dch-06-hh-808-d-m-130-50205",
+    "perc": "sp-ad4-desk-drums-small1-mallet-rim-v02-r12-d7ffa",
+    "fx": "sp-mrkrstphr-fx-impacts-evil-d-01951",
+    "texture": "sp-os-dsnd-126-emin-crypt-ambience-high-ad3de"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Villain Drill: dark soft long 808 (F1LTHYxLUKRATIVE 808 Bass Boosted), kick (Kick Cross), bright short snare (Snare Saxon), clean dark punchy hats (Hihat Zap)."
+  },
+  {
+   "id": "phonk-drift",
+   "name": "Phonk Drift",
+   "vibe": "phonk, distorted cowbell, dirty 808, punchy kick, crunchy hats",
+   "tags": [
+    "phonk",
+    "distorted",
+    "dirty",
+    "punchy",
+    "crunchy"
+   ],
+   "pads": {
+    "808": "sp-trktrn-fxlkvii-808-bass-one-shot-keltec-9c99f",
+    "kick": "sp-os-nbb-kick-streets-862ed",
+    "snare": "sp-os-mem2-snare-sunset-3a395",
+    "clap": "sp-os-mem2-clap-layered-89a3a",
+    "hat_closed": "sp-hihat-metalnoise-fabf1",
+    "hat_open": "sp-os-mem2-open-hihat-perfect-cdb3e",
+    "perc": "sp-bullyfinger-ss8-cowbell-808-sym-0b314",
+    "fx": "sp-stcr2-phonk-kit-one-shot-turbocharger-gu-e33a3",
+    "texture": "sp-ff-hffx-atmosphere-sub-rumble-80d2c"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Phonk Drift: distorted bright soft 808 (Fxlkvii 808 Bass Keltec), distorted bright punchy kick (Kick Streets), distorted punchy short hats (Hihat MetalNoise)."
+  },
+  {
+   "id": "bicep-nights",
+   "name": "Bicep Nights",
+   "vibe": "bicep, house kick, crisp clap, shaker perc, airy hats, wide texture",
+   "tags": [
+    "house",
+    "crisp",
+    "airy",
+    "wide"
+   ],
+   "pads": {
+    "808": "sp-x10-gme-808-trauma-em-48f6e",
+    "kick": "sp-sp-el-kick-tighter-e387f",
+    "snare": "sp-ds-darby-drum-snare-runaway-d1604",
+    "clap": "sp-hsp-liquid-clap-pop-c17ec",
+    "hat_closed": "sp-stcr2-ukgb-hat-question-49176",
+    "hat_open": "sp-zen-gsg-crash-one-shot-standard-c68a9",
+    "perc": "sp-spacebeat-shaker-3a2b9",
+    "fx": "sp-ds-sg-fx-backspin-pioneer-d6b1a",
+    "texture": "sp-91v-ac-102-synth-atmosphere-wounded-f-m-c5b35"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Bicep Nights: distorted bright short 808 (808 Trauma), clean dark punchy kick (Kick Tighter), clean bright punchy clap (Clap Pop), clean bright hats (Hat Question)."
+  },
+  {
+   "id": "overmono-garage",
+   "name": "Overmono Garage",
+   "vibe": "overmono uk garage, punchy kick, snappy snare, crisp hats, metallic perc",
+   "tags": [
+    "house",
+    "punchy",
+    "snappy",
+    "crisp",
+    "metallic"
+   ],
+   "pads": {
+    "808": "sp-808-main-house-c-c22f7",
+    "kick": "sp-sp-el-kick-tighter-1-e4903",
+    "snare": "sp-ds-darby-drum-snare-runaway-d1604",
+    "clap": "sp-91v-sgu-clap-survivor-3904a",
+    "hat_closed": "sp-004-pmhh-zenhiser-b491c",
+    "hat_open": "sp-dhg-cymbal-red-2b42b",
+    "perc": "sp-ad4-abacus-shake-single-v03-r02-9d052",
+    "fx": "sp-91v-sgr-138-fx-one-shot-spinning-scratch-7a816",
+    "texture": "sp-91v-ac-112-vocal-atmosphere-cold-angelic-161b2"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Overmono Garage: distorted long 808 (Main House), clean dark punchy kick (Kick Tighter), distorted punchy short snare (Drum Snare Runaway), clean bright punchy hats (004_PMHH_-_Zenhiser)."
+  },
+  {
+   "id": "fred-tape",
+   "name": "Fred Tape",
+   "vibe": "fred again, warm soft kick, roomy clap, tape texture, dreamy",
+   "tags": [
+    "house",
+    "warm",
+    "soft",
+    "roomy",
+    "tape",
+    "dreamy"
+   ],
+   "pads": {
+    "808": "sp-trktrn-maak-808-bass-clean-ambient-c628b",
+    "kick": "sp-esm-one-shot-kick-bass-hybrid-808-13-hip-af40b",
+    "snare": "sp-mars-909-snare-clean-hi-snappy-5e34b",
+    "clap": "sp-clap-c19ab",
+    "hat_closed": "sp-shadow-ukg-hat-cleaner-daa90",
+    "hat_open": "sp-at-cymbal-shelf-1d85a",
+    "perc": "sp-91v-mdup-fx-transition-daylight-shaker-a70ec",
+    "fx": "sp-ds-sg-fx-riser-everything-chop-ec8aa",
+    "texture": "sp-kmrbi-dfg-140-fx-atmosphere-drone-sink-d-9073f"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ],
+    "clap": [
+     "reverb"
+    ],
+    "perc": [
+     "reverb"
+    ]
+   },
+   "say": "Fred Tape: soft 808 (808 Bass Clean Ambient), dark soft long kick (Kick Bass Hybrid 808 13 Hip Hop Deep Warm), clean bright soft clap (Clap)."
+  },
+  {
+   "id": "genesis-888",
+   "name": "888 Genesis",
+   "vibe": "888genesis eman, hard kick, long distorted 808, crisp clap, riser fx",
+   "tags": [
+    "hard",
+    "long",
+    "distorted",
+    "crisp"
+   ],
+   "pads": {
+    "808": "sp-pmd-808-c-01-4a893",
+    "kick": "sp-ss-ir-kick-mahogany-e1fc9",
+    "snare": "sp-trtrap2-snare-808-031-5fdbe",
+    "clap": "sp-so-nv-snap-perc-7ffd6",
+    "hat_closed": "sp-mars-tr-closed-hat-808-clean-tight-380a7",
+    "hat_open": "sp-ds-ac2-fx-sweep-halo-crash-3e444",
+    "perc": "sp-brake-bongo-9cce5",
+    "fx": "sp-002-fx-riser-dreamwave-zenhiser-ee670",
+    "texture": "sp-bos-dav-120-vocal-atmosphere-one-shot-mo-d420e"
+   },
+   "params": {},
+   "fx": {},
+   "say": "888 Genesis: distorted bright long 808 (808 C), distorted dark punchy kick (Kick Mahogany), clean bright punchy clap (Snap Perc), clean bright short fx (Riser Dreamwave)."
+  },
+  {
+   "id": "cassette-ghost",
+   "name": "Cassette Ghost",
+   "vibe": "cassette vhs lofi, dusty muffled kit, gritty 808, tape hiss texture, dark",
+   "tags": [
+    "cassette",
+    "vhs",
+    "lo-fi",
+    "dusty",
+    "muffled",
+    "gritty"
+   ],
+   "pads": {
+    "808": "sp-fm-808-boomin-e-b53a9",
+    "kick": "sp-so-sa-bass-synth-808-kick-c-66d71",
+    "snare": "sp-snares-buildup-39afd",
+    "clap": "sp-ma-lofi-clap-one-shot-softkit-711f7",
+    "hat_closed": "sp-dhh2-hat-closed-high-live-lofi-703e4",
+    "hat_open": "sp-dch-06-hh-808-d-m-130-1-9654b",
+    "perc": "sp-mars-808-tom-low-tape-lo-44be3",
+    "fx": "sp-kbh-808-witchblades-c-167ca",
+    "texture": "sp-mars-lofi-120-guitar-acoustic-sp202-sunn-52522"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ]
+   },
+   "say": "Cassette Ghost: distorted dark soft 808 (808 Boomin), kick (Bass Synth 808 Kick)."
+  },
+  {
+   "id": "glass-hyper",
+   "name": "Glass Hyper",
+   "vibe": "hyperpop, bright glitchy crunchy kit, glass fx, metallic perc",
+   "tags": [
+    "hyperpop",
+    "bright",
+    "glitchy",
+    "crunchy",
+    "metallic"
+   ],
+   "pads": {
+    "808": "sp-mo-fern-808-red-c-da59f",
+    "kick": "sp-os-nbb-kick-streets-862ed",
+    "snare": "sp-tsp-aeonmode-snare-singularity-f4b4e",
+    "clap": "sp-91v-ac-clap-cold-verb-61669",
+    "hat_closed": "sp-mo-bio-hihat-icy-0063e",
+    "hat_open": "sp-os-rage-open-hihat-holla-44393",
+    "perc": "sp-ds-jt-percussion-triangle-tiny-676b1",
+    "fx": "sp-fnf-ne-fx-bowed-glass-swell-fragile-tail-f38ef",
+    "texture": "sp-shs-cyber-computer-process-analyze-data-5e4c4"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Glass Hyper: distorted bright punchy 808 (808 Red), kick (Kick Streets), distorted bright long fx (Fx Bowed Glass Swell Fragile Tail)."
+  },
+  {
+   "id": "dub-pressure",
+   "name": "Dub Pressure",
+   "vibe": "dubstep, heavy boomy kick, huge snare with reverb, growl 808, braam impact fx",
+   "tags": [
+    "dubstep",
+    "heavy",
+    "boomy",
+    "huge"
+   ],
+   "pads": {
+    "808": "sp-rku-synthmat-808-deep-growl-d-b9b36",
+    "kick": "sp-lex-jbd-kick-heavy-ad747",
+    "snare": "sp-ts-br-snare-copper-dead-power-attack-a2031",
+    "clap": "sp-clap-ab-16-346d0",
+    "hat_closed": "sp-ds-srd2-hat-one-shot-pico-b76af",
+    "hat_open": "sp-ds-td2-cymbal-crash-milk-ffa94",
+    "perc": "sp-os-hr-perc-tom-talltee-c0977",
+    "fx": "sp-rku-ukb-fx-impact-one-shot-sub-drop-c-aeded",
+    "texture": "sp-vr-hbd3-fx-one-shot-zap-clean-a3b87"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ],
+    "clap": [
+     "reverb"
+    ],
+    "perc": [
+     "reverb"
+    ]
+   },
+   "say": "Dub Pressure: dark soft long 808 (Synthmat 808 Deep Growl), dark kick (Kick Heavy), dark long snare (Snare Copper Dead Power Attack), dark long fx (Fx Impact Sub Drop)."
+  },
+  {
+   "id": "basement-boom",
+   "name": "Basement Boom Bap",
+   "vibe": "boom bap hip hop, dusty punchy kick, crisp dusty snare, rim perc, vinyl texture",
+   "tags": [
+    "boom bap",
+    "dusty",
+    "punchy",
+    "crisp"
+   ],
+   "pads": {
+    "808": "sp-southside-808-mr-clean-c-a45c7",
+    "kick": "sp-madlib-kick-dusted-punch-ebebb",
+    "snare": "sp-madlib-snare-rimshot-kali-3b08c",
+    "clap": "sp-os-vv5-clap-vintage-47ebc",
+    "hat_closed": "sp-madlib-hihat-big-bar-closed-3557a",
+    "hat_open": "sp-ts-bbd-hat-open-pearly-59d2d",
+    "perc": "sp-os-ice-perc-rim-speech-00b67",
+    "fx": "sp-vinyl-crackle-471c3",
+    "texture": "sp-mars-vb-76-drums-full-northside-vinyl-br-1ae54"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Basement Boom Bap: dark soft 808 (Southside 808 Mr Clean), dark punchy kick (Kick Dusted Punch), clean bright punchy snare (Snare Rimshot Kali)."
+  },
+  {
+   "id": "cinema-doom",
+   "name": "Cinema Doom",
+   "vibe": "cinematic epic, boomy kick, reverb snare, sword fx, wind texture, dark",
+   "tags": [
+    "cinematic",
+    "epic",
+    "boomy",
+    "dark"
+   ],
+   "pads": {
+    "808": "sp-southside-808-punch-f-e7301",
+    "kick": "sp-so-sa-bass-synth-808-kick-c-1-dfeb6",
+    "snare": "sp-cloud-snare-18-8e87b",
+    "clap": "sp-shs-mtl-clap-menace-ba0f2",
+    "hat_closed": "sp-bullyfinger-gd3-hihat-glitch-skip-fc9ce",
+    "hat_open": "sp-crashmetalcardrop-sfxb-2222-f831c",
+    "perc": "sp-esm-vcsfx-fx-hit-one-shot-cinematic-taik-5ac32",
+    "fx": "sp-swordscrapesinglehanded-b-6-1617b",
+    "texture": "sp-fnf-ne-foley-wind-storm-severe-whistling-445b3"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ]
+   },
+   "say": "Cinema Doom: dark soft long 808 (Southside 808 Punch), dark punchy long kick (Bass Synth 808 Kick C), clean dark long snare (Cloud Snare), clean bright fx (SwordScrapeSingleHanded B)."
+  },
+  {
+   "id": "analog-808",
+   "name": "Analog 808",
+   "vibe": "classic clean analog 808 kit, round long 808, clean kick, 808 snare, cowbell perc",
+   "tags": [
+    "clean",
+    "analog",
+    "round",
+    "long"
+   ],
+   "pads": {
+    "808": "sp-yng-808-sub-warm-f-bce45",
+    "kick": "sp-mars-vinyldrums-kick-vari-tape-soft-accc8",
+    "snare": "sp-krne-propane-bamboo-snare-6f18a",
+    "clap": "sp-808-clap-sat02-32f5c",
+    "hat_closed": "sp-tl-hats-oneshots-hihat-05-f5528",
+    "hat_open": "sp-drop-hh-sc-e2c39",
+    "perc": "sp-rt-experimental-percussion-cowbell-3-per-63ec2",
+    "fx": "sp-ff-we-fx-whoosh-bang-thump-775e2",
+    "texture": "sp-rku-rtj5-70-songstarter-loop-tape-watch-52c0b"
+   },
+   "params": {},
+   "fx": {},
+   "say": "Analog 808: clean long 808 (808 Sub Warm), clean dark kick (Vinyldrums Kick Vari Tape Soft), snare (Propane Bamboo Snare)."
+  },
+  {
+   "id": "glitch-lab",
+   "name": "Glitch Lab",
+   "vibe": "glitchy experimental kit, bitcrushed perc, glitch fx, static texture, short tight hats",
+   "tags": [
+    "glitchy",
+    "experimental",
+    "bitcrushed",
+    "glitch",
+    "short",
+    "tight"
+   ],
+   "pads": {
+    "808": "sp-trtrap2-808-dirt-hold-g1-33c30",
+    "kick": "sp-mo-ft-kick-aggressive-distorted-fresh-de-5cbbf",
+    "snare": "sp-trtrap2-snare-808-031-5fdbe",
+    "clap": "sp-mo-gt-clap-808-nightmare-92525",
+    "hat_closed": "sp-os-atl-hihat-hitmaker-0c313",
+    "hat_open": "sp-shs-tmd2-hat-open-one-shot-gheara-ac86c",
+    "perc": "sp-fgdk-oneshot-rimshot-mid-synth-surviv-f3a56",
+    "fx": "sp-jh-glitchy-lifeforms-da003",
+    "texture": "sp-mo-sv1-fx-zaps-25593"
+   },
+   "params": {
+    "hat_closed": {
+     "decay": 0.6
+    }
+   },
+   "fx": {},
+   "say": "Glitch Lab: 808 (TrTrap2 808 Dirt Hold), kick (Kick Aggressive Distorted Fresh Death), clean dark punchy hats (Hihat Hitmaker), distorted bright short fx (Glitchy Lifeforms)."
+  },
+  {
+   "id": "gated-80s",
+   "name": "Gated 80s",
+   "vibe": "80s synthwave, gated reverb snare, punchy kick, bright clap, crash open hat",
+   "tags": [
+    "80s",
+    "gated",
+    "punchy",
+    "bright"
+   ],
+   "pads": {
+    "808": "sp-os-ums-808-trusty-f-fd9a7",
+    "kick": "sp-madlib-kick-punch-above-792b9",
+    "snare": "sp-bullyfinger-gs-snare-gated-bam-pop-6bc36",
+    "clap": "sp-sp-clap-charge-ba0b8",
+    "hat_closed": "sp-aha-er-hi-hat-one-shot-easy-2e25d",
+    "hat_open": "sp-dsc-elc-crash-one-shot-dry-combo-fa67d",
+    "perc": "sp-sm-eid-tom-sober-56f8c",
+    "fx": "sp-ts-1985-fx-one-shot-long-reverse-chasse-48035",
+    "texture": "sp-nw-ll-100-kit-dimensional-atmosphere-fmi-d118a"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ],
+    "clap": [
+     "reverb"
+    ]
+   },
+   "say": "Gated 80s: clean soft long 808 (808 Trusty), clean dark punchy kick (Kick Punch Above), clean long snare (Bullyfinger Snare Gated Bam Pop), clean bright clap (Sp Clap Charge)."
+  },
+  {
+   "id": "samurai",
+   "name": "Samurai",
+   "vibe": "anime samurai, sword blade fx, punchy kick, crisp snare, wind texture, dark 808",
+   "tags": [
+    "anime",
+    "cinematic",
+    "punchy",
+    "crisp",
+    "dark"
+   ],
+   "pads": {
+    "808": "sp-os-red-808-kinetic-c-5bb33",
+    "kick": "sp-os-cra-kick-nomad-366ee",
+    "snare": "sp-lf-snare-08-86c86",
+    "clap": "sp-kshmr-sok5-clap-reverb-boy-danny-avila-353bf",
+    "hat_closed": "sp-at-pause-hihat-closed-one-shot-summer-d5ff6",
+    "hat_open": "sp-ts-ir-hats-15-warm-open-14b1a",
+    "perc": "sp-rust2-pole-slam-v04-r03-e54f6",
+    "fx": "sp-swordscrapesinglehanded-b-6-1617b",
+    "texture": "sp-fnf-ne-foley-wind-storm-severe-whistling-445b3"
+   },
+   "params": {},
+   "fx": {
+    "snare": [
+     "reverb"
+    ]
+   },
+   "say": "Samurai: dark soft long 808 (808 Kinetic), dark punchy kick (Kick Nomad), clean bright punchy snare (Snare), clean bright fx (SwordScrapeSingleHanded B)."
+  }
+ ]
+}

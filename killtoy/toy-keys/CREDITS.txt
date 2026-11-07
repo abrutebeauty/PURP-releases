@@ -1,0 +1,13 @@
+TOY KEYS sample packs (playground/toy-keys/*.tkp)
+
+grand.tkp  Salamander Grand Piano V3 by Alexander Holm, CC-BY 3.0
+           https://archive.org/details/SalamanderGrandPianoV3
+           (via github.com/sfzinstruments/SalamanderGrandPiano; 30 notes every minor third,
+           velocity layers 6 and 13, shortened, levelled and encoded as mp3)
+tine.tkp   jRhodes3d (1977 Rhodes Mark I Stage 73) by Jeff Learman, CC-BY-SA
+           https://github.com/sfzinstruments/jlearman.jRhodes3d
+           (mono set, 15 notes, layers 4 and 2, shortened, levelled and encoded as mp3;
+           these edited samples are shared under the same CC-BY-SA licence)
+
+Wurli, organ, clav and bells are synthesized in playground/toy-keys.js.
+Build: scripts/toykeys_packs.py

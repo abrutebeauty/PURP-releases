@@ -1,0 +1,38 @@
+{
+ "bsrof.json": "_blob/e68e456d91a58f346bf71cb6baa779ae",
+ "bsrof.0.png": "_blob/724b03e8992410ce4e3c91043edb97ef",
+ "bsrof.1.png": "_blob/1f39e3ec9cd84e4ec2d5d0f66f1b31f4",
+ "bsrof.2.png": "_blob/e0da9cc9551465d98c4455d63fa63be9",
+ "bsrof.3.png": "_blob/602ef736678bfad5e07640e5ec41b759",
+ "bsrof.4.png": "_blob/68d6368514a6beb0299572c4d0e598e2",
+ "bsrof.5.png": "_blob/a71d82b316c86c4d87831d2ce1d73141",
+ "bsrof.6.png": "_blob/9ed04f02f9e88149eea9b3c1d7a08a54",
+ "bsrof.7.png": "_blob/a361072bf256348501ad6d1b640f7edc",
+ "bsrof.8.png": "_blob/e041e310c3cebcecdb4744482a50f609",
+ "bsrof.9.png": "_blob/c9f6d9c4c4573fc14a42028a2e0ddd08",
+ "bsrof.10.png": "_blob/bf18270f989a3ebdad23bbf41b37a640",
+ "drumsep.json": "_blob/5c2b519c0b9b2dd8215ec3144a6c4fb4",
+ "drumsep.0.png": "_blob/503606ec00444df44e85a496a7fdef34",
+ "drumsep.1.png": "_blob/7aa4bcdf47d2f1eaaf1db0c8f520c258",
+ "drumsep.2.png": "_blob/0a7e014e983985b509944459d9c7404c",
+ "drumsep.3.png": "_blob/da73898cadf2de2b1e38361d14879380",
+ "drumsep.4.png": "_blob/f81d3106cb5c845f7f241e3ec6186e08",
+ "drumsep.5.png": "_blob/11541f85da7c1ba3458af550ff4f086b",
+ "drumsep.6.png": "_blob/56d3b4b03b7f0b3a9ed70ab4fe17c1e1",
+ "karaoke.json": "_blob/ea33f934554c80a58ec85298dcf55abd",
+ "karaoke.0.png": "_blob/4ae0c1455ce181e55c318290dde490cb",
+ "ort.wasm.bundle.min.mjs": "_blob/bf9e99869ed5f9b5ae81246635faf85b",
+ "ort.webgpu.bundle.min.mjs": "_blob/dcc384d2a317e20b9055c356d4024b5a",
+ "ort-wasm-simd-threaded.wasm": {
+  "png": "_blob/00fd4d65fd2b3dbf66c7f7c4da728a28",
+  "bytes": 11905541
+ },
+ "ort-wasm-simd-threaded.asyncify.0.bin": {
+  "png": "_blob/876b019d268beecc48767e79ff3eecbf",
+  "bytes": 12749695
+ },
+ "ort-wasm-simd-threaded.asyncify.1.bin": {
+  "png": "_blob/e76610eff8b62e3ea90a0e167be3e97b",
+  "bytes": 12749695
+ }
+}
