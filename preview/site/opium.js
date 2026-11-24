@@ -302,7 +302,21 @@
       while (n.scrollWidth > n.clientWidth + 1 && f > 9 && i++ < 30) { f -= 1; n.style.fontSize = f + "px"; }
     });
   }
-  function run() { try { wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
+  /* hero stats (Eman 24 Nov): 3rd stat = real SAMPLES count (all drum-kit sounds), all three count up from 0 the first visit only */
+  function stats() {
+    const st = document.querySelector("#stats"); if (!O2 || !st || st.children.length < 3 || typeof PRODUCTS === "undefined" || !PRODUCTS.length || st.children[0].dataset.cu) return;
+    let n = 0; PRODUCTS.forEach((p) => { if (p.type === "drums") { const m = String(p.count || "").match(/(\d+)/); n += m ? +m[1] : (p.sounds || []).length; } });
+    const d = st.children, tg = [PRODUCTS.length, 450, n], sf = ["", "+", ""]; d[2].innerHTML = "<b>0</b>Samples";
+    let seen = false; try { seen = localStorage.getItem("ck-counted") === "1"; } catch (e) {}
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches, t0 = performance.now(), T = 1800;
+    const fmt = (i, v) => Math.round(v).toLocaleString("en-US") + sf[i];
+    [0, 1, 2].forEach((i) => { d[i].dataset.cu = 1; const b = d[i].querySelector("b"); b.style.fontVariantNumeric = "tabular-nums"; b.textContent = fmt(i, seen || still ? tg[i] : 0); });
+    if (seen || still) return;
+    try { localStorage.setItem("ck-counted", "1"); } catch (e) {}
+    const tick = (now) => { const k = Math.min(1, (now - t0) / T), e = 1 - Math.pow(1 - k, 3); [0, 1, 2].forEach((i) => { const b = d[i].querySelector("b"); if (b) b.textContent = fmt(i, tg[i] * e); }); if (k < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+  function run() { try { stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
