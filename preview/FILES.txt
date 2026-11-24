@@ -7,3 +7,15 @@ index.html
 opium.css
 opium.js
 pack.html
+img/cd/travis-core-drums-i-600.webp
+img/cd/travis-core-drums-i.webp
+img/cd/travis-core-i-600.webp
+img/cd/travis-core-i.webp
+img/cd/travis-core-ii-600.webp
+img/cd/travis-core-ii.webp
+img/cd/travis-core-iii-600.webp
+img/cd/travis-core-iii.webp
+img/cd/travis-core-drums-i.json
+img/cd/travis-core-i.json
+img/cd/travis-core-ii.json
+img/cd/travis-core-iii.json
