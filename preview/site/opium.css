@@ -578,3 +578,51 @@ html.opium2 #worlds .grid,html.opium2 #worlds.allg{row-gap:26px!important}
 /* quick tweak 24 Nov (Eman 23:59): left menu removed fully, pack grid uses the full content width */
 html.opium2 .op-shop>#packs{display:none!important}
 html.opium2 .op-shop{grid-template-columns:minmax(0,1fr)!important}
+
+/* quick tweak 24 Nov (Eman 23:59): grid spans exactly the content width (the divider lines), 4 per row */
+@media(min-width:901px){
+html.opium2 .op-shop{max-width:none!important;width:min(1280px,calc(100% - 60px));padding:0!important;margin-left:auto!important;margin-right:auto!important}
+}
+@media(min-width:1041px){html.opium2 #worlds .grid,html.opium2 #worlds.allg{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(min-width:901px){
+html.opium2 .op-shop{width:auto!important;margin-left:max(30px,calc((100vw - 1280px)/2))!important;margin-right:max(30px,calc((100vw - 1280px)/2))!important}
+}
+
+/* quick tweak 24 Nov (Eman 00:00): cookie bar about double the size, lifted off the bottom so it is clear and upfront */
+@media(min-width:901px){
+html.opium2 #consent{bottom:40px!important;width:min(1180px,calc(100vw - 64px))!important;padding:30px 38px!important;gap:16px 40px!important;border-width:2px!important;box-shadow:0 24px 60px rgba(0,0,0,.65)!important}
+html.opium2 #consent>span{font-size:21px!important;line-height:1.5!important}
+html.opium2 #consent>span .ckl{font-size:21px!important}
+html.opium2 #consent .cbtns{gap:14px!important}
+html.opium2 #consent .btn{font-size:18px!important;padding:21px 38px!important}
+}
+@media(min-width:901px){
+html.opium2 .op-shop{width:min(1280px,calc(100vw - 60px))!important;box-sizing:border-box;margin-left:max(30px,calc((100vw - 1280px)/2))!important;margin-right:0!important}
+}
+@media(min-width:901px){
+html.opium2 .op-shop{padding:0!important}
+html.opium2 .op-shop>#worlds{max-width:none!important;margin:0!important;padding:0!important;box-sizing:border-box;grid-column:1/-1}
+}
+
+/* page is zoomed to .8 (SITE_SCALE) so CSS px are 1.25x visual px: content width = 1600px, same as the divider lines */
+@media(min-width:901px){
+html.opium2 .op-shop{width:min(1600px,calc(100vw - 48px))!important;margin-left:auto!important;margin-right:auto!important;padding:0!important}
+html.opium2 .op-shop>#worlds{grid-column:1/-1;width:100%!important}
+html.opium2 #worlds .card .cb{width:min(100%,292px);margin-left:auto!important;margin-right:auto!important}
+}
+@media(min-width:1041px){
+html.opium2 header.hero .bfD{right:max(24px,calc((100% - 1600px)/2))!important;left:auto!important;width:min(940px,calc(100% - 700px))!important}
+html.opium2 .bfD .bf-pi{height:min(84cqh,40cqw)!important}
+html.opium2 header.hero .bfD .op-gw.l{left:calc(50% - .9 * min(84cqh,40cqw) - 74px)!important}
+html.opium2 header.hero .bfD .op-gw.r{right:calc(50% - .9 * min(84cqh,40cqw) - 74px)!important}
+}
+
+/* quick tweak 24 Nov: cart tweaks, no FREE tag on hero */
+html.opium2 #worlds .card .buy .btn[data-add]::before{display:none!important;content:none!important}
+html.opium2 .bf-fr,html.opium2 header.hero .bf-fr{display:none!important}
+html.opium2 nav.top .cartb,html.opium2 .cartb{background:#E4FF3A!important;border-radius:0!important;padding:8px 10px!important;gap:6px;position:relative}
+html.opium2 .cartb svg{display:none!important}
+html.opium2 .cartb::before{content:"";width:24px;height:24px;flex:none;background:#0b0a0e;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='miter' stroke-miterlimit='10'%3E%3Cpath d='M0.5 3.5 L5 3.5 L8 15.5 L19.5 15.5 L22.5 7 L6 7'/%3E%3Cpath d='M9.5 7 L10.5 3 L11.5 7 M13.5 7 L14.5 3 L15.5 7 M17.5 7 L18.5 3 L19.5 7'/%3E%3Cpath d='M9 17.5 L10.6 20.2 L9 23 L7.4 20.2 Z M18 17.5 L19.6 20.2 L18 23 L16.4 20.2 Z'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='1.8' stroke-linejoin='miter' stroke-miterlimit='10'%3E%3Cpath d='M0.5 3.5 L5 3.5 L8 15.5 L19.5 15.5 L22.5 7 L6 7'/%3E%3Cpath d='M9.5 7 L10.5 3 L11.5 7 M13.5 7 L14.5 3 L15.5 7 M17.5 7 L18.5 3 L19.5 7'/%3E%3Cpath d='M9 17.5 L10.6 20.2 L9 23 L7.4 20.2 Z M18 17.5 L19.6 20.2 L18 23 L16.4 20.2 Z'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+html.opium2 .cartb span{background:#0b0a0e!important;color:#E4FF3A!important}
+html.opium2 .cartb:hover{background:#f0ff7a!important}
+html.opium2 .cartb:hover svg{filter:none}
