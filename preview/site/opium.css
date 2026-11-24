@@ -525,3 +525,20 @@ html.opium2 #worlds .card .pn{text-transform:none!important}
 html.opium2 #worlds .card,html.opium2 #worlds .card:nth-child(n){background:transparent!important;border-color:transparent!important;box-shadow:none!important}
 html.opium2 #worlds .card::before,html.opium2 #worlds .card::after{background:none!important;display:none!important}
 html.opium2 #worlds .card:nth-child(7n+2) .pn,html.opium2 #worlds .card:nth-child(7n+2) .price{color:#f2efe9!important}
+
+/* quick tweak 24 Nov (Eman 23:49): hero 3-pack box = from just right of the stats to the content edge (where the divider lines end), CDs sized from the box so they never pass the edge (also on hover), red claws centred vertically and peeking out behind both sides of the stack */
+@media(min-width:1041px){
+html.opium2 header.hero .bfD{right:max(0px,calc((100% - 1280px)/2))!important;left:auto!important;width:min(690px,calc(100% - 640px))!important;max-width:none!important;container-type:size}
+html.opium2 .bfD .bf-pi{height:min(78cqh,42cqw)!important;width:auto!important}
+html.opium2 header.hero .bfD .op-gw{top:50%!important;bottom:auto!important;height:72%!important;transform:translateY(-50%)!important;z-index:1!important}
+html.opium2 header.hero .bfD .op-gw.l{left:0!important;right:auto!important}
+html.opium2 header.hero .bfD .op-gw.r{right:0!important;left:auto!important}
+}
+
+/* quick tweak 24 Nov (Eman 23:50): no title / price line under the hero stack */
+html.opium2 header.hero .bf-nm{display:none!important}
+@media(min-width:1041px){html.opium2 .bfD .bf-pi{top:50%;height:min(80cqh,42cqw)!important}}
+html.opium2 header.hero .bfD{display:flex;flex-direction:column}
+html.opium2 header.hero .bfD .bf-go{margin-top:auto!important;align-self:flex-end}
+html.opium2 header.hero .bfD .bf-bot{margin-top:auto!important;position:relative;z-index:5}
+html.opium2 header.hero .bfD .bf-go{margin-top:0!important;margin-left:auto}
