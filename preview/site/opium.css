@@ -399,3 +399,26 @@ html.opium2 #worlds .card .cb{display:flex;flex-direction:column;flex:1 1 auto}
 html.opium2 #worlds .card .ph{min-height:84px;align-items:flex-start}
 html.opium2 #worlds .card .pi{flex:1 1 auto}
 html.opium2 #worlds .card .buy{margin-top:auto!important}
+
+/* quick tweak 24 Nov (Eman 23:19): cookie bar = wide, bigger bar across the bottom; text left in 2 lines with SEE MORE at its end, buttons right */
+@media(min-width:901px){
+html.opium2 #consent{left:24px!important;right:24px!important;bottom:20px!important;transform:none!important;width:auto!important;max-width:none!important;padding:34px 44px!important;gap:20px 40px!important;flex-wrap:wrap!important;justify-content:space-between!important;align-items:center!important}
+html.opium2 #consent>span{flex:1 1 0!important;min-width:0;font-size:24px!important;line-height:1.5!important;max-width:880px}
+html.opium2 #consent>span .ckl{display:inline;font-size:24px!important;margin-left:.5em;padding:0;vertical-align:baseline}
+html.opium2 #consent .cbtns{flex:0 0 auto;gap:16px!important}
+html.opium2 #consent .btn{font-size:19px!important;padding:24px 44px!important;min-width:230px!important}
+html.opium2 #consent .cmore{flex:1 1 100%;order:5}
+}
+
+/* quick tweak 24 Nov (Eman 23:18): hero CD stack even bigger, bottom can sit behind the PICK 10 PACKS text (text on top). Nothing else in the hero moves */
+@media(min-width:901px){
+html.opium2 header.hero .bfD .bf-st{transform:scale(1.6);transform-origin:50% 38%;z-index:1}
+html.opium2 header.hero .bfD .bf-nm{z-index:4}
+}
+
+/* quick tweak 24 Nov (Eman 23:20): smoother, bigger 3D hover on pack art; pops out past the card rectangle */
+html.opium2 #worlds .card .cv{overflow:visible!important}
+html.opium2 #worlds .card:hover{z-index:20}
+html.opium2 #worlds .card .pq{transition:transform .45s cubic-bezier(.22,.8,.3,1),filter .45s ease!important;will-change:transform}
+html.opium2 #worlds .card .cv:hover .pq{transform:translateY(-14px) scale(1.2)!important;filter:drop-shadow(0 28px 26px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(139,108,246,.4))}
+html.opium2 #worlds .card .cv:hover .pq img{-webkit-box-reflect:unset}

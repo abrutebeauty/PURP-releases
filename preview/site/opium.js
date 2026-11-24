@@ -316,7 +316,9 @@
     const tick = (now) => { const k = Math.min(1, (now - t0) / T), e = 1 - Math.pow(1 - k, 3); [0, 1, 2].forEach((i) => { const b = d[i].querySelector("b"); if (b) b.textContent = fmt(i, tg[i] * e); }); if (k < 1) requestAnimationFrame(tick); };
     requestAnimationFrame(tick);
   }
-  function run() { try { stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
+  /* cookie bar: put SEE MORE at the end of the text (Eman 24 Nov) */
+  function ckBar() { const c = document.querySelector("#consent"), sp = c && c.querySelector(":scope > span"), m = c && c.querySelector(":scope > #cMore"); if (O2 && sp && m) sp.appendChild(m); }
+  function run() { try { ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
