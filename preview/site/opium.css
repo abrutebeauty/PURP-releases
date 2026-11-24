@@ -574,3 +574,7 @@ html.opium2 .card .cv:hover .pq img,html.opium2 #pkTop .pkc:hover .pq img,html.o
 html.opium2 #worlds .card .cv{height:340px;flex-basis:340px;padding:0!important}
 html.opium2 #worlds .card .cv .pq{width:112%!important;height:100%!important;margin-left:-6%!important}
 html.opium2 #worlds .grid,html.opium2 #worlds.allg{row-gap:26px!important}
+
+/* quick tweak 24 Nov (Eman 23:59): left menu removed fully, pack grid uses the full content width */
+html.opium2 .op-shop>#packs{display:none!important}
+html.opium2 .op-shop{grid-template-columns:minmax(0,1fr)!important}
