@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>COREKULT · Checkout</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0a0e">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css?v=1">
+<link rel="stylesheet" href="/speed.css?v=4"><!-- FONTS_SELF (speed 20 Nov). old: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap"> -->
+<link rel="stylesheet" href="/shop.css?v=81">
+<link rel="stylesheet" href="/day-shop.css?v=6"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day.css?v=1"><!-- DAY_MODE: day palette + switch, keep last -->
+<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+<script src="/fx.js?v=1"></script><!-- FX (Eman 24 Nov): CD 3D page transition + UI sounds. Remove this line = off -->
+<script src="/opium.js?v=6"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
+</head>
+<body>
+<nav class="top co-top"><div class="wrap">
+  <a class="logo" href="/" aria-label="COREKULT home"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="110" height="34"></a>
+  <a class="nl" href="/">‹ Shop</a>
+</div></nav>
+
+<main class="wrap co" id="co">
+  <h1>Checkout</h1>
+  <div class="col">
+    <section class="blk"><h2 id="yourH">Your packs</h2><div id="yours"></div></section>
+    <section class="blk" id="dealBlk">
+      <div class="offer big" id="offer"></div>
+      <div id="picks" style="margin-top:10px"></div>
+    </section>
+  </div>
+  <aside class="side">
+    <div class="sum"><div id="sumList"></div><div class="row off" id="sumDeal" hidden><span>3 for 2</span><span id="sumOff"></span></div><div class="row off" id="sumCard" hidden><span id="sumCardN"></span><span id="sumCardOff"></span></div><div class="row off" id="sumPick" hidden><span>★ Free pick</span><span id="sumPickOff"></span></div><div class="row tot"><span>Total</span><span id="sumTot"></span></div><small class="vat">VAT added for EU buyers at payment</small></div><div class="fxb" id="sumFx" hidden></div><div id="sumMeter"></div>
+    <label class="fl">Email<input id="coEmail" data-clarity-mask="true" type="email" autocomplete="email" placeholder="you@email.com"></label>
+    <label class="optin"><input type="checkbox" id="coDrops"><span>Send me new drops and free packs (max 2 emails a month, unsubscribe any time)</span></label>
+    <button class="paybtn card" data-pay="card">Pay with card<span class="sep"></span><svg class="lg-stripe" viewBox="0 0 512 214" aria-label="Stripe" role="img"><path fill="currentColor" d="M512 110.08c0-36.409-17.636-65.138-51.342-65.138c-33.85 0-54.33 28.73-54.33 64.854c0 42.808 24.179 64.426 58.88 64.426c16.925 0 29.725-3.84 39.396-9.244v-28.445c-9.67 4.836-20.764 7.823-34.844 7.823c-13.796 0-26.027-4.836-27.591-21.618h69.547c0-1.85.284-9.245.284-12.658m-70.258-13.511c0-16.071 9.814-22.756 18.774-22.756c8.675 0 17.92 6.685 17.92 22.756zm-90.31-51.627c-13.939 0-22.899 6.542-27.876 11.094l-1.85-8.818h-31.288v165.83l35.555-7.537l.143-40.249c5.12 3.698 12.657 8.96 25.173 8.96c25.458 0 48.64-20.48 48.64-65.564c-.142-41.245-23.609-63.716-48.498-63.716m-8.534 97.991c-8.391 0-13.37-2.986-16.782-6.684l-.143-52.765c3.698-4.124 8.818-6.968 16.925-6.968c12.942 0 21.902 14.506 21.902 33.137c0 19.058-8.818 33.28-21.902 33.28M241.493 36.551l35.698-7.68V0l-35.698 7.538zm0 10.809h35.698v124.444h-35.698zm-38.257 10.524L200.96 47.36h-30.72v124.444h35.556V87.467c8.39-10.951 22.613-8.96 27.022-7.396V47.36c-4.551-1.707-21.191-4.836-29.582 10.524m-71.112-41.386l-34.702 7.395l-.142 113.92c0 21.05 15.787 36.551 36.836 36.551c11.662 0 20.195-2.133 24.888-4.693V140.8c-4.55 1.849-27.022 8.391-27.022-12.658V77.653h27.022V47.36h-27.022zM35.982 83.484c0-5.546 4.551-7.68 12.09-7.68c10.808 0 24.461 3.272 35.27 9.103V51.484c-11.804-4.693-23.466-6.542-35.27-6.542C19.2 44.942 0 60.018 0 85.192c0 39.252 54.044 32.995 54.044 49.92c0 6.541-5.688 8.675-13.653 8.675c-11.804 0-26.88-4.836-38.827-11.378v33.849c13.227 5.689 26.596 8.106 38.827 8.106c29.582 0 49.92-14.648 49.92-40.106c-.142-42.382-54.329-34.845-54.329-50.774"/></svg></button>
+    <button class="paybtn pp" data-pay="paypal"><svg class="lg-pp" viewBox="0 0 256 302" aria-hidden="true"><path fill="#27346A" d="M217.168 23.507C203.234 7.625 178.046.816 145.823.816h-93.52A13.39 13.39 0 0 0 39.076 12.11L.136 259.077c-.774 4.87 2.997 9.28 7.933 9.28h57.736l14.5-91.971l-.45 2.88c1.033-6.501 6.593-11.296 13.177-11.296h27.436c53.898 0 96.101-21.892 108.429-85.221c.366-1.873.683-3.696.957-5.477q-2.334-1.236 0 0c3.671-23.407-.025-39.34-12.686-53.765"/><path fill="#27346A" d="M102.397 68.84a11.7 11.7 0 0 1 5.053-1.14h73.318c8.682 0 16.78.565 24.18 1.756a102 102 0 0 1 6.177 1.182a90 90 0 0 1 8.59 2.347c3.638 1.215 7.026 2.63 10.14 4.287c3.67-23.416-.026-39.34-12.687-53.765C203.226 7.625 178.046.816 145.823.816H52.295C45.71.816 40.108 5.61 39.076 12.11L.136 259.068c-.774 4.878 2.997 9.282 7.925 9.282h57.744L95.888 77.58a11.72 11.72 0 0 1 6.509-8.74"/><path fill="#2790C3" d="M228.897 82.749c-12.328 63.32-54.53 85.221-108.429 85.221H93.024c-6.584 0-12.145 4.795-13.168 11.296L61.817 293.621c-.674 4.262 2.622 8.124 6.934 8.124h48.67a11.71 11.71 0 0 0 11.563-9.88l.474-2.48l9.173-58.136l.591-3.213a11.71 11.71 0 0 1 11.562-9.88h7.284c47.147 0 84.064-19.154 94.852-74.55c4.503-23.15 2.173-42.478-9.739-56.054c-3.613-4.112-8.1-7.508-13.327-10.28c-.283 1.79-.59 3.604-.957 5.477"/><path fill="#1F264F" d="M216.952 72.128a90 90 0 0 0-5.818-1.49a110 110 0 0 0-6.177-1.174c-7.408-1.199-15.5-1.765-24.19-1.765h-73.309a11.6 11.6 0 0 0-5.053 1.149a11.68 11.68 0 0 0-6.51 8.74l-15.582 98.798l-.45 2.88c1.025-6.501 6.585-11.296 13.17-11.296h27.444c53.898 0 96.1-21.892 108.428-85.221c.367-1.873.675-3.688.958-5.477q-4.682-2.47-10.14-4.279a83 83 0 0 0-2.77-.865"/></svg><i>Pay<span>Pal</span></i></button>
+    <div class="cards"><span>Visa</span><span>Mastercard</span><span>Apple Pay</span><span>Google Pay</span></div>
+  </aside>
+</main>
+
+<main class="wrap co" id="done" hidden>
+  <div class="done">
+    <div class="okmark">✓</div>
+    <p class="okt">Order paid · <span id="doneTotal"></span> · <span id="doneVia"></span></p>
+    <p class="oks">Download links sent to <b id="doneMail" data-clarity-mask="true"></b></p>
+    <div id="doneList" class="dl-list"></div>
+    <div class="pvnote">PREVIEW · no payment was taken</div>
+    <a class="btn" href="/" style="width:fit-content">‹ Back to shop</a>
+  </div>
+</main>
+
+<script src="/shop.js?v=113"></script>
+<script>
+function paint() {
+  const items = cart.map(byId), rest = PRODUCTS.filter((p) => !inCart(p.id));
+  if (!items.length) {
+    $("#co").innerHTML = `<h1>Checkout</h1><div class="empty">Your cart is empty.<br><br><a class="btn acid" href="/">Shop packs</a></div>`; return;
+  }
+  $("#yourH").textContent = `Your packs · ${items.length}`;
+  $("#yours").innerHTML = items.map((p) => packRow(p, "in")).join("");
+  $("#offer").innerHTML = offerHTML();
+  $("#picks").innerHTML = rest.map((p) => packRow(p, "add")).join("");
+  $("#dealBlk").hidden = !rest.length;
+  $("#sumList").innerHTML = items.map((p) => `<div class="row"><span>${esc(p.name)}</span><span>${freeIds().includes(p.id) ? "FREE" : p.id === pickId() ? "FREE PICK" : money(p.price)}</span></div>`).join("");
+  $("#sumCard").hidden = !useCard(); if (useCard()) { $("#sumCardN").textContent = "★ " + cardDef().name + " card"; $("#sumCardOff").textContent = "−" + money(cardOff()); }
+  $("#sumPick").hidden = !pickOff(); $("#sumPickOff").textContent = "−" + money(pickOff());
+  const off = dealOff(); $("#sumDeal").hidden = !off; $("#sumDeal span").textContent = bundleOn() ? bundleLabel() : "3 for 2"; $("#sumOff").textContent = "−" + money(off);
+  $("#sumTot").textContent = money(total());
+  $("#sumMeter").innerHTML = meterLine();
+  // picked another currency: show what the total is worth in it, then what is actually charged
+  const fxb = $("#sumFx"); fxb.hidden = disp() === CUR || !items.length;
+  if (!fxb.hidden) fxb.innerHTML = `<div class="fxr"><span>Your currency</span><b>${disp()}</b></div><div class="fxr"><span>Total in ${disp()}</span><b>${show(total())}</b></div>
+    <div class="fxr pay"><span>You pay</span><b>${money(total())}</b></div><small>1 ${CUR} ≈ ${fmtIn(conv(1), disp(), conv(1) >= 100 ? 0 : 2)} · your bank converts at its own rate</small>`;
+  watchWaves($("#co"));
+}
+function placeOrder(method) {
+  const email = $("#coEmail").value.trim();
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { $("#coEmail").focus(); $("#coEmail").classList.add("bad"); return; }
+  $("#coEmail").classList.remove("bad");
+  const items = cart.map(byId);
+  if (items.every((p) => p.payhip) && window.Payhip) { window.open("https://payhip.com/b/" + items[0].payhip, "_blank"); return; }
+  if ($("#coDrops").checked) fetch("/api/optin", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, drops: true, src: "checkout" }) });
+  track("buy", null, items.map((p) => p.id).join(","), total());
+  // PREVIEW: no money moves. Shows what the buyer gets (and fills the loyalty meter in this browser only).
+  const gained = paidCount(), usedPick = pickId() ? 1 : 0;
+  try { localStorage.setItem("ck-email", email); const d = demoLoy(); d.paid += gained; d.used += usedPick; localStorage.setItem("ck-loy-demo", JSON.stringify(d)); } catch (e) {}
+  LOY.picks -= usedPick;
+  if (useCard()) { CARD.used = true; try { localStorage.setItem("ck-card", JSON.stringify(CARD)); } catch (e) {} }
+  $("#doneMail").textContent = email;
+  $("#doneVia").textContent = method === "paypal" ? "PayPal" : "Card";
+  $("#doneTotal").textContent = money(total());
+  $("#doneList").innerHTML = items.map((p) => `<div class="li"><img src="${esc(p.cover)}" alt=""><div><b>${esc(p.name)}</b><small>${esc(p.count)}</small></div><a class="btn sm" aria-disabled="true">Download</a></div>`).join("");
+  cart = []; saveCart();
+  $("#co").hidden = true; $("#done").hidden = false; scrollTo(0, 0);
+  if (gained) loyGain(gained);
+}
+document.addEventListener("click", (e) => {
+  const t = e.target;
+  if (t.closest(".pv button")) return;
+  const add = t.closest("[data-add]"); if (add) { if (!inCart(add.dataset.add)) cart.push(add.dataset.add); saveCart(); paint(); return; }
+  const rm = t.closest("[data-rm]"); if (rm) { cart = cart.filter((x) => x !== rm.dataset.rm); saveCart(); paint(); return; }
+  const tg = t.closest("[data-tg]"); if (tg) { toggleRow(tg); return; }
+  const pay = t.closest("[data-pay]"); if (pay) { placeOrder(pay.dataset.pay); return; }
+});
+document.addEventListener("ck-cur", paint);
+loadShop().then(() => { if (!$("#coEmail").value) $("#coEmail").value = myEmail(); paint(); });
+</script>
+</body>
+</html>
