@@ -456,3 +456,17 @@ html.opium2 .bf-nm b,html.opium2 .bf-k,html.opium2 .bf-k small,html.opium2 .bf-n
 html.opium2 .bf-nm b{font-weight:900;letter-spacing:.06em}
 html.opium2 .bf-nm small{font-weight:600;letter-spacing:.04em}
 html.opium2 .bf-k{font-weight:800}
+
+/* quick tweak 24 Nov (Eman 23:31): clean pack cards like the reference: art, then name left + small price right on one line. No description, no SERUM 1+2 stamp, no subtitle, more space between cards, minimal buttons */
+html.opium2 #worlds .grid,html.opium2 #worlds.allg{column-gap:48px!important;row-gap:44px!important}
+html.opium2 #worlds .card .stamp,html.opium2 #worlds .card .pf,html.opium2 #worlds .card .pi,html.opium2 #worlds .card .ps{display:none!important}
+html.opium2 #worlds .card .cb{padding:6px 2px 0!important;gap:12px}
+html.opium2 #worlds .card .ph{min-height:0!important;align-items:baseline!important;justify-content:space-between;gap:16px;text-decoration:none}
+html.opium2 #worlds .card .ph>div:first-child{min-width:0}
+html.opium2 #worlds .card .pn{font:500 18px/1.25 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#f2efe9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html.opium2 #worlds .card .price{font:500 13px/1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;color:#9a96a3!important;flex:none}
+html.opium2 #worlds .card .cv{height:300px;flex-basis:300px}
+html.opium2 #worlds .card .buy{gap:8px;margin-top:2px!important}
+html.opium2 #worlds .card .buy .btn{font:600 12px/1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.04em!important;text-transform:none;padding:11px 14px!important;flex:0 0 auto}
+html.opium2 #worlds .card .buy a.btn[href*="/pack/"]{background:transparent!important;color:#cfcad8!important;border:1px solid rgba(207,202,216,.3)!important}
+html.opium2 #worlds .card .buy a.btn[href*="/pack/"]:hover{border-color:#fff!important;color:#fff!important;background:transparent!important}
