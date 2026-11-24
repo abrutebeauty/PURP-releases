@@ -379,7 +379,16 @@
     });
   }
   addEventListener("resize", () => { try { alignText(); } catch (e) {} });
-  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); } catch (e) { console.warn("opium", e); } }
+  /* no ghost (Eman 24 Nov): the sweep canvas used to be created on the first mouse move, so it jumped straight to the zoomed size while the picture was still easing = a lagging copy. Create it up front, sized to the picture, so both animate together */
+  function prepSheen() {
+    document.querySelectorAll(".card .pq, #pkTop .pkc .pq, .lnd .pkc .pq").forEach((q) => {
+      const im = q.querySelector("img"); if (!im) return;
+      const put = () => { if (!im.offsetWidth) return; let c = q.querySelector("canvas.sh"); if (!c) { c = document.createElement("canvas"); c.className = "sh"; q.appendChild(c); } Object.assign(c.style, { left: im.offsetLeft + "px", top: im.offsetTop + "px", width: im.offsetWidth + "px", height: im.offsetHeight + "px" }); };
+      put(); if (!im.complete) im.addEventListener("load", put, { once: true });
+    });
+  }
+  addEventListener("resize", () => { try { prepSheen(); } catch (e) {} });
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
