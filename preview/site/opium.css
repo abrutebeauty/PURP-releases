@@ -450,3 +450,9 @@ html.opium2 .op-shop .op-mood.on .op-gi{opacity:1}
 html.opium2 .card .pi,html.opium2 #pkTop .pi,html.opium2 .wh .vibe,html.opium2 header.hero .tag{font-family:"Inter","Helvetica Neue",Arial,sans-serif!important;font-weight:400}
 html.opium2 .card .pi{font-size:14px;line-height:1.55}
 html.opium2 .op-shop .op-mood,html.opium2 .op-shop .op-mood b,html.opium2 .op-shop .op-mood span,html.opium2 .op-shop #chips .srch,html.opium2 .op-shop #chips .srch input,html.opium2 .op-sbh{font-family:"Inter","Helvetica Neue",Arial,sans-serif!important;font-weight:600;letter-spacing:.12em}
+
+/* quick tweak 24 Nov (Eman 23:29): banner titles in the clean bold OG sans (Inter), no pixel/mono font */
+html.opium2 .bf-nm b,html.opium2 .bf-k,html.opium2 .bf-k small,html.opium2 .bf-nm small,html.opium2 .bf-go,html.opium2 .bf-off b,html.opium2 .bf-off span{font-family:"Inter","Helvetica Neue",Arial,sans-serif!important}
+html.opium2 .bf-nm b{font-weight:900;letter-spacing:.06em}
+html.opium2 .bf-nm small{font-weight:600;letter-spacing:.04em}
+html.opium2 .bf-k{font-weight:800}
