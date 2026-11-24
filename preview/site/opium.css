@@ -551,3 +551,15 @@ html.opium2 nav.top .cartb,html.opium2 .cartb{background:transparent!important;b
 html.opium2 .cartb svg{width:24px!important;height:24px!important;fill:#E4FF3A!important;stroke:#E4FF3A}
 html.opium2 .cartb span{background:#E4FF3A;color:#0b0a0e;padding:3px 5px;font:700 11px/1 "Inter","Helvetica Neue",Arial,sans-serif!important}
 html.opium2 .cartb:hover svg{filter:drop-shadow(0 0 8px rgba(228,255,58,.6))}
+
+/* quick tweak 24 Nov (Eman 23:56): no View pack / big Add to cart buttons. A small acid-yellow cart icon + "Add to cart" text sits under the price on the right, on the grey subline's line. Art and title open the pack page. */
+html.opium2 #worlds .card .cb{position:relative}
+html.opium2 #worlds .card .buy{position:absolute!important;right:2px;top:34px;margin:0!important;display:flex;justify-content:flex-end;gap:0}
+html.opium2 #worlds .card .buy .btn{display:none!important}
+html.opium2 #worlds .card .buy .btn[data-add],html.opium2 #worlds .card.fcard .buy .btn{display:inline-flex!important;align-items:center;gap:6px;background:none!important;border:0!important;box-shadow:none!important;padding:0!important;min-width:0!important;color:#E4FF3A!important;font:500 13px/18px "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;cursor:pointer}
+html.opium2 #worlds .card .buy .btn[data-add]::before{content:"";width:16px;height:16px;flex:none;background:#E4FF3A;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3' fill='none' stroke='black' stroke-width='1.6'/%3E%3Ccircle cx='6' cy='13.3' r='1.2'/%3E%3Ccircle cx='12' cy='13.3' r='1.2'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3' fill='none' stroke='black' stroke-width='1.6'/%3E%3Ccircle cx='6' cy='13.3' r='1.2'/%3E%3Ccircle cx='12' cy='13.3' r='1.2'/%3E%3C/svg%3E") center/contain no-repeat}
+html.opium2 #worlds .card .buy .btn[data-add]:hover,html.opium2 #worlds .card.fcard .buy .btn:hover{color:#f4ff9a!important;text-decoration:underline}
+html.opium2 #worlds .card .ph{min-height:44px!important}
+
+/* quick tweak 24 Nov (Eman 23:57): titles and sublines fully lowercase like the reference ("crystal core ii", "serum preset pack") */
+html.opium2 #worlds .card .pn,html.opium2 #worlds .card .pn *,html.opium2 #worlds .card .pf{text-transform:lowercase!important}
