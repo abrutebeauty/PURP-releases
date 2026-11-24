@@ -29,8 +29,8 @@
   var ctx = null, out = null, last = {};
   function ac() {
     if (!FX_SOUND || muted()) return null;
-    if (!ctx) { try { ctx = new (window.AudioContext || window.webkitAudioContext)(); out = ctx.createGain(); out.gain.value = 0.6;
-      var lim = ctx.createDynamicsCompressor(); lim.threshold.value = -10; lim.ratio.value = 10; lim.attack.value = 0.002; lim.release.value = 0.1; out.connect(lim); lim.connect(ctx.destination); } catch (e) { ctx = null; } }
+    if (!ctx) { try { ctx = new (window.AudioContext || window.webkitAudioContext)(); out = ctx.createGain(); out.gain.value = 1.8;
+      var lim = ctx.createDynamicsCompressor(); lim.threshold.value = -6; lim.ratio.value = 20; lim.attack.value = 0.002; lim.release.value = 0.1; out.connect(lim); lim.connect(ctx.destination); } catch (e) { ctx = null; } }
     if (ctx && ctx.state === "suspended") ctx.resume().catch(function () {});
     return ctx && ctx.state === "running" ? ctx : null;
   }
