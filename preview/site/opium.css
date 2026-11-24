@@ -470,3 +470,47 @@ html.opium2 #worlds .card .buy{gap:8px;margin-top:2px!important}
 html.opium2 #worlds .card .buy .btn{font:600 12px/1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.04em!important;text-transform:none;padding:11px 14px!important;flex:0 0 auto}
 html.opium2 #worlds .card .buy a.btn[href*="/pack/"]{background:transparent!important;color:#cfcad8!important;border:1px solid rgba(207,202,216,.3)!important}
 html.opium2 #worlds .card .buy a.btn[href*="/pack/"]:hover{border-color:#fff!important;color:#fff!important;background:transparent!important}
+
+/* quick tweak 24 Nov (Eman 23:43): ONE 3-pack slide; 3 CDs close together (back ones show about half), red shapes rise up behind the stack from below; hover = stack zooms a bit and the two back CDs spread, still behind the middle one */
+@media(min-width:1041px){
+html.opium2 header.hero .bfD .op-gw{z-index:1!important;top:auto!important;bottom:-3%;height:74%}
+html.opium2 header.hero .bfD .op-gw svg{height:100%;width:auto;display:block}
+html.opium2 header.hero .bfD .op-gw.l{left:24%!important;right:auto}
+html.opium2 header.hero .bfD .op-gw.r{right:24%!important;left:auto}
+html.opium2 .bfD .bf-pi{height:82%;top:48%;transform:translate(-50%,-50%) translate(calc(var(--x) * 1.65),var(--y)) rotate(var(--r));transition:transform .6s cubic-bezier(.22,.8,.3,1)!important}
+html.opium2 .bfD .bf-pl:hover .bf-pi{transform:translate(-50%,-50%) translate(calc(var(--x) * 2.15),calc(var(--y) - 2%)) rotate(var(--r)) scale(1.1)!important}
+html.opium2 .bfD .bf-pl:hover .bf-pi:last-of-type{transform:translate(-50%,-50%) translate(var(--x),calc(var(--y) - 3%)) rotate(var(--r)) scale(1.14)!important}
+}
+
+/* quick tweak 24 Nov (Eman 23:44): nothing in the hero goes right of the content edge (where the top/bottom divider lines end) */
+@media(min-width:1041px){
+html.opium2 header.hero .bfD{right:calc(max(0px,(100% - 1600px)/2) + 24px)!important;left:max(40%,calc(100% - 1600px + 24px + 520px))!important;width:auto!important;max-width:calc(1600px - 48px - 520px)}
+html.opium2 header.hero .bfD .op-gw.l{left:20%!important}html.opium2 header.hero .bfD .op-gw.r{right:20%!important}
+}
+@media(min-width:1041px){
+html.opium2 header.hero .bfD .op-gw{bottom:8%!important;height:56%!important}
+html.opium2 .bfD .bf-pi{transform:translate(-50%,-50%) translate(calc(var(--x) * 1.4),var(--y)) rotate(var(--r))}
+html.opium2 .bfD .bf-pl:hover .bf-pi{transform:translate(-50%,-50%) translate(calc(var(--x) * 1.8),calc(var(--y) - 2%)) rotate(var(--r)) scale(1.1)!important}
+}
+@media(min-width:1041px){
+html.opium2 header.hero .bfD .op-gw{overflow:hidden}
+html.opium2 header.hero .bfD .op-gw svg{height:100%!important;width:auto!important;display:block}
+}
+@media(min-width:1041px){
+html.opium2 header.hero .bfD .op-gw{overflow:visible!important}
+html.opium2 header.hero .bfD .op-gw .op-gl{height:100%!important;width:auto!important;aspect-ratio:336/912;display:block}
+}
+
+/* quick tweak 24 Nov (Eman 23:45): cookie bar back to a normal compact size, Inter font; text left (SEE MORE at its end), buttons right */
+@media(min-width:901px){
+html.opium2 #consent{left:50%!important;right:auto!important;bottom:16px!important;transform:translateX(-50%)!important;width:min(960px,calc(100vw - 32px))!important;max-width:none!important;padding:14px 20px!important;gap:12px 28px!important;border-width:1px!important}
+html.opium2 #consent,html.opium2 #consent *{font-family:"Inter","Helvetica Neue",Arial,sans-serif!important}
+html.opium2 #consent>span{font-size:14px!important;line-height:1.45!important;font-weight:500;max-width:none}
+html.opium2 #consent>span .ckl{font-size:14px!important;margin-left:.4em;text-decoration:underline;font-weight:600}
+html.opium2 #consent .cbtns{gap:8px!important}
+html.opium2 #consent .btn{font-size:13px!important;padding:11px 20px!important;min-width:0!important;letter-spacing:.02em!important;text-transform:none}
+}
+@media(min-width:1041px){
+html.opium2 header.hero .bfD .op-gw{bottom:4%!important;height:76%!important}
+html.opium2 header.hero .bfD .op-gw.l{left:3%!important}html.opium2 header.hero .bfD .op-gw.r{right:3%!important}
+}

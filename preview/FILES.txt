@@ -2,6 +2,7 @@ bundle.html
 checkout.html
 fx.js
 get.html
+home.js
 index.html
 opium.css
 opium.js
