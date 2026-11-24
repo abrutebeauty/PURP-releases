@@ -409,13 +409,16 @@ html.opium2 #consent .btn{font-size:19px!important;padding:24px 44px!important;m
 html.opium2 #consent .cmore{flex:1 1 100%;order:5}
 }
 
-/* quick tweak 24 Nov (Eman 23:20+): hover pop on the IMG inside the floating .pq (the .pq keeps its own float animation, so nothing fights), eased, pops out past the card */
-html.opium2 #worlds .card .cv,html.opium2 #pkTop .pkc,html.opium2 .lnd .pkc{overflow:visible!important}
+/* quick tweak 24 Nov (Eman 23:20+): hover = eased pop on the IMG (translate + scale properties), glow builds behind, light brighten, slow Y sway from opium.js. The .pq keeps its float animation and the original mouse tilt (.pq.tl) untouched */
+html.opium2 #worlds .card .cv,html.opium2 #pkTop .pkc,html.opium2 .lnd .pkc{overflow:visible!important;position:relative}
 html.opium2 #worlds .card:hover{z-index:20}
-html.opium2 .card .pq img,html.opium2 #pkTop .pkc .pq img,html.opium2 .lnd .pkc .pq img{transition:transform .5s cubic-bezier(.22,.8,.3,1);transform:translateZ(0);will-change:transform}
-html.opium2 .card .cv:hover .pq img,html.opium2 #pkTop .pkc:hover .pq img,html.opium2 .lnd .pkc:hover .pq img{transform:translateY(-12px) scale(1.18)}
-html.opium2 .card .pq,html.opium2 #pkTop .pkc .pq,html.opium2 .lnd .pkc .pq{transition:filter .5s ease}
-html.opium2 .card .cv:hover .pq{filter:drop-shadow(0 30px 26px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(139,108,246,.4))}
+html.opium2 .card .pq img,html.opium2 #pkTop .pkc .pq img,html.opium2 .lnd .pkc .pq img{transition:scale .7s cubic-bezier(.16,.84,.3,1),translate .7s cubic-bezier(.16,.84,.3,1),filter .7s ease;will-change:transform,scale,translate}
+html.opium2 .card .cv:hover .pq img,html.opium2 #pkTop .pkc:hover .pq img,html.opium2 .lnd .pkc:hover .pq img{scale:1.2;translate:0 -14px;filter:brightness(1.1) saturate(1.08)}
+html.opium2 .card .pq,html.opium2 #pkTop .pkc .pq,html.opium2 .lnd .pkc .pq{transition:filter .7s ease}
+html.opium2 .card .pq.tl,html.opium2 #pkTop .pkc .pq.tl,html.opium2 .lnd .pkc .pq.tl{transition:transform .12s ease-out,filter .7s ease}
+html.opium2 .card .cv:hover .pq{filter:drop-shadow(0 32px 28px rgba(0,0,0,.6)) drop-shadow(0 0 34px rgba(139,108,246,.55))}
+html.opium2 #worlds .card .cv::before{content:"";position:absolute;left:-6%;right:-6%;top:-6%;bottom:-6%;background:radial-gradient(closest-side,rgba(139,108,246,.55),rgba(139,108,246,.18) 55%,transparent 75%);opacity:0;transition:opacity .9s ease;pointer-events:none}
+html.opium2 #worlds .card .cv:hover::before{opacity:1}
 
 /* quick tweak 24 Nov (Eman 23:23): 3-pack hero banner fills the red outline box (from 40% of the page width to 4% from the right), CDs much bigger, bottom of the stack sits behind the title text, hover = smooth pop */
 @media(min-width:1041px){

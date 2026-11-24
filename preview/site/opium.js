@@ -318,6 +318,20 @@
   }
   /* cookie bar: put SEE MORE at the end of the text (Eman 24 Nov) */
   function ckBar() { const c = document.querySelector("#consent"), sp = c && c.querySelector(":scope > span"), m = c && c.querySelector(":scope > #cMore"); if (O2 && sp && m) sp.appendChild(m); }
+  /* hover sway (Eman 24 Nov): while a CD/card is hovered it slowly sways left and right on its Y axis; the strength eases in and out so there is never a jump */
+  const SW = new Map(); let swRaf = 0, swT0 = 0;
+  function swTick(now) {
+    SW.forEach((st, im) => { st.env += (st.tg - st.env) * 0.07;
+      if (!st.tg && st.env < 0.004) { im.style.transform = ""; SW.delete(im); return; }
+      const t = (now - swT0) / 1000; im.style.transform = `perspective(900px) rotateY(${(Math.sin(t * 1.4) * 9 * st.env).toFixed(2)}deg) rotateX(${(-2 * st.env).toFixed(2)}deg)`; });
+    swRaf = SW.size ? requestAnimationFrame(swTick) : 0;
+  }
+  if (O2 && matchMedia("(hover:hover)").matches) {
+    const SEL = ".card .cv, #pkTop .pkc, .lnd .pkc", imOf = (el) => el.querySelector(".pq img");
+    const go = (el, v) => { const im = imOf(el); if (!im) return; let st = SW.get(im); if (!st) { if (!v) return; st = { env: 0, tg: 0 }; SW.set(im, st); } st.tg = v; if (!swRaf) { swT0 = swT0 || performance.now(); swRaf = requestAnimationFrame(swTick); } };
+    document.addEventListener("mouseover", (e) => { const el = e.target.closest && e.target.closest(SEL); if (el && !el.contains(e.relatedTarget)) go(el, 1); });
+    document.addEventListener("mouseout", (e) => { const el = e.target.closest && e.target.closest(SEL); if (el && !el.contains(e.relatedTarget)) go(el, 0); });
+  }
   function run() { try { ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
