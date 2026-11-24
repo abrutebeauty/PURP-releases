@@ -1,0 +1,347 @@
+/* OPIUM look (Eman 24 Nov 2026). Only active under html.opium (see opium.js). */
+@font-face{font-family:"OpSpace";src:url(/fonts/op-spacemono-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"OpSpace";src:url(/fonts/op-spacemono-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"OpArchivo";src:url(/fonts/op-archivo-black.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"OpElite";src:url(/fonts/op-special-elite.woff2) format("woff2");font-weight:400;font-display:swap}
+html.opium{--op:#d42a24;--opd:#4a0806;--opc:#d9d3c4;--opg:#a9a7a4;--opbg:#0c0b0b;--opy:#dfe74a;
+  --bg:#0c0b0b;--panel:#0c0b0b;--tile:#191919;--tile2:#1f1f1f;--ink:#d9d3c4;--ink2:rgba(217,211,196,.6);--line:rgba(212,42,36,.35);--purple:#d42a24;--acid:#d42a24;
+  --body:"OpSpace","JetBrains Mono",monospace;--mono:"OpSpace","JetBrains Mono",monospace;--goth:"OpSpace",monospace}
+html.opium body{background:#0c0b0b url(/img/op/op-bg.webp) 0 0/900px repeat;color:var(--opc);font-family:var(--body)}
+html.opium body::after{opacity:.05}
+html.opium ::selection{background:var(--op);color:#111}
+
+/* nav + HUD strip */
+html.opium nav.top{background:rgba(20,20,20,.92);border-bottom:0}
+html.opium nav.top .nl{font:700 11px/1 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--opg)}
+html.opium nav.top .cartb{color:var(--op);border:2px solid var(--op);border-radius:0}
+.op-hud,.op-magh{display:flex;align-items:center;gap:16px;max-width:1600px;margin:0 auto;padding:10px 24px;font:700 10px/1 var(--body);letter-spacing:.5em;color:var(--op);text-transform:uppercase;white-space:nowrap;overflow:hidden}
+.op-hud>span,.op-magh>span:not(.op-f){font-size:20px;letter-spacing:0}
+.op-f{flex:1}
+.op-bars{display:block;width:240px;flex:0 1 240px;height:7px;background:repeating-linear-gradient(90deg,var(--op) 0 3px,transparent 3px 6px)}
+@media (max-width:760px){.op-hud b:last-of-type,.op-hud .op-bars:last-of-type{display:none}.op-bars{flex-basis:90px}}
+
+/* shared: buttons, prices, headings */
+html.opium .btn{border-radius:0;background:transparent;border:2px solid var(--op);color:var(--op);font:700 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;box-shadow:none}
+html.opium .btn.acid{background:var(--op);color:#0c0b0b;border-color:var(--op)}
+html.opium .btn:hover{filter:brightness(1.12)}
+html.opium .price{font:700 34px/1 var(--body);color:var(--opc)}
+html.opium .eyebrow,html.opium .stamp,html.opium .pf{font:700 10px/1.4 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--op)}
+html.opium h1,html.opium h2,html.opium .wh h2,html.opium .wh h2.sans,html.opium .wh h2.it{font-family:var(--body);font-weight:700;letter-spacing:.06em;color:var(--opc)}
+html.opium .badge{background:var(--op);color:#0c0b0b;border-radius:0}
+.op-gl{display:block;pointer-events:none;user-select:none}
+.op-dec{position:absolute;pointer-events:none;user-select:none;z-index:1}
+.op-mj{opacity:.85}
+.op-st{filter:drop-shadow(0 6px 10px #0008)}
+
+/* home */
+html.opium header.hero{position:relative;background:none;overflow:visible}
+html.opium header.hero::before,html.opium header.hero::after{opacity:0}
+html.opium header.hero .tag{font:400 17px/1.5 "OpElite",var(--body);color:var(--opc)}
+html.opium .hero .stats div{border:2px solid var(--op);border-radius:0;background:transparent}
+html.opium .hero .stats b{color:var(--opc);font-family:var(--body)}
+html.opium .op-gw{position:absolute;top:30px;z-index:0;opacity:.9}
+html.opium .op-gw.l{left:2%}html.opium .op-gw.r{right:2%;top:auto;bottom:10px}
+html.opium .op-hspk{right:6%;top:10px;width:min(420px,34vw);transform:rotate(-4deg);opacity:.95}
+@media (max-width:900px){html.opium .op-gw{display:none}html.opium .op-hspk{width:46vw;right:2%}}
+html.opium .bar .ch{border-radius:0;border:2px solid var(--op);background:transparent;color:var(--op);font:700 11px/1 var(--body);letter-spacing:.25em}
+html.opium .bar .ch.on{background:var(--op);color:#0c0b0b}
+html.opium .bar .ch .n{color:inherit;opacity:.7}
+html.opium .srch{border-radius:0;border:2px solid var(--op);background:transparent}
+html.opium .world{position:relative}
+html.opium .wh h2{font-size:clamp(22px,3vw,30px);letter-spacing:.5em;text-transform:uppercase;color:var(--op);border:2px solid var(--op);padding:10px 26px;display:inline-block}
+html.opium .wh .vibe{font:400 14px/1.4 "OpElite",var(--body);color:var(--opg)}
+html.opium .card{position:relative;background:transparent;border:2.5px solid var(--op);border-radius:0;box-shadow:none}
+html.opium .card .cb{background:transparent}
+html.opium .card .pn{font:700 15px/1.2 var(--body);color:var(--opc);letter-spacing:.02em}
+html.opium .card .pi{font:400 13px/1.5 "OpElite",var(--body);color:var(--opg)}
+html.opium .card .ps{color:var(--op)}
+html.opium .card:nth-child(7n+2){background:var(--op)}
+html.opium .card:nth-child(7n+2) .pn,html.opium .card:nth-child(7n+2) .price,html.opium .card:nth-child(7n+2) .pf,html.opium .card:nth-child(7n+2) .pi,html.opium .card:nth-child(7n+2) .ps,html.opium .card:nth-child(7n+2) .stamp{color:#0c0b0b}
+html.opium .card:nth-child(7n+2) .btn{border-color:#0c0b0b;color:#0c0b0b}
+html.opium .card:nth-child(7n+2) .btn.acid{background:#0c0b0b;color:var(--op)}
+html.opium section.how{position:relative}
+html.opium .how h3{font:700 14px/1 var(--body);letter-spacing:.5em;color:var(--op);text-transform:uppercase}
+html.opium .how .steps>div{border:2px solid var(--op);border-radius:0;background:transparent}
+html.opium .how .steps b{color:var(--op);font-family:var(--body)}
+html.opium footer{border-top:2px solid var(--op);color:var(--opg);font-family:var(--body)}
+
+/* side CDs (rails) */
+html.opium .rail .rin{font-family:var(--body)}
+html.opium .rail .pn,html.opium .rail b{font:700 12px/1.25 var(--body);color:var(--opg);letter-spacing:.04em;text-transform:uppercase}
+html.opium .rail small,html.opium .rail .pf,html.opium .rail .price{font:700 10px/1.4 var(--body);color:var(--op)}
+
+/* pack top */
+html.opium .pkban{display:none}
+html.opium #pkTop .pkc{position:relative}
+html.opium #pkTop .op-gw.l{left:-30px;top:40px}html.opium #pkTop .op-gw.r{right:auto;left:46%;top:auto;bottom:-40px}
+html.opium #pkTop .pki{position:relative;z-index:2}
+html.opium #pkTop h1{font:700 clamp(26px,3vw,40px)/1.05 var(--body);letter-spacing:.12em;text-transform:uppercase}
+html.opium #pkTop .pi{font:400 15px/1.55 "OpElite",var(--body);color:var(--opc)}
+html.opium #pkTop .tiles span{border:1.5px solid var(--op);border-radius:0;background:transparent;color:var(--op);font:700 10px/1 var(--body);letter-spacing:.2em;text-transform:uppercase}
+html.opium #pkTop .pbuy{border:3px solid var(--op);padding:18px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+html.opium #pkTop .pbuy .price{font:700 64px/1 var(--body)}
+html.opium #pkTop .deal,html.opium #pkTop .ps{font:700 10px/1.6 var(--body);letter-spacing:.15em;color:var(--op);text-transform:uppercase;background:none;border:0}
+html.opium #pkTop .buy .btn{padding:14px 22px}
+html.opium #pkTop .trust{font:700 10px/1.6 var(--body);letter-spacing:.12em;color:var(--opg);text-transform:uppercase}
+.op-hif{display:flex;gap:16px;align-items:flex-start;margin:0 0 18px}
+.op-hif img{width:96px;height:96px;object-fit:contain;border:2px solid var(--op);padding:6px;background:#0c0b0b}
+.op-hif div{display:flex;flex-direction:column;font:700 19px/1.1 var(--body);color:var(--opc)}
+.op-hif span{opacity:.5}
+.op-meta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin:18px 0 6px}
+.op-moons{display:flex;gap:16px}
+.op-moons i{width:22px;height:22px;border:2px solid var(--opc);border-radius:50%;background:linear-gradient(90deg,var(--opc) 50%,transparent 50%)}
+.op-moons i:nth-child(2){background:linear-gradient(270deg,var(--opc) 50%,transparent 50%)}
+.op-moons i:nth-child(4){background:linear-gradient(180deg,var(--opc) 50%,transparent 50%)}
+.op-prog{width:220px;height:15px;border:2px solid var(--opc);padding:2px}.op-prog i{display:block;width:62%;height:100%;background:var(--opc)}
+.op-bc{fill:var(--opc);display:block}
+
+/* pack sounds: magazine */
+html.opium #pkSounds{display:none}
+.op-mag{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:46px 28px;margin:40px 0 20px;position:relative}
+.op-magh{grid-column:1/-1;padding:0;max-width:none;margin:0;width:100%}
+.op-cat,.op-stk{position:relative}
+.op-l7{grid-column:1/8}.op-r5{grid-column:8/13}.op-c8{grid-column:3/11}.op-l5{grid-column:1/6}.op-r7{grid-column:6/13}.op-l6{grid-column:1/7}.op-r6{grid-column:7/13}.op-c9{grid-column:2/11}
+.op-r5,.op-r7{margin-top:60px}
+@media (max-width:980px){.op-cat,.op-stk{grid-column:1/-1!important;margin-top:0!important}}
+.op-h{display:flex;align-items:center;gap:14px;margin:0 0 14px}
+.op-h .op-gl{flex:none}
+.op-ln{flex:1;height:2px;background:var(--op)}
+.op-box{flex:none;border:2px solid var(--op);padding:8px 22px;font:700 13px/1 var(--body);letter-spacing:.5em;color:var(--op);text-transform:uppercase;white-space:nowrap}
+.op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px;grid-auto-flow:dense}
+.op-t{position:relative;margin:0;padding:0}
+.op-t.big{grid-column:span 2;grid-row:span 2}
+.op-mag .op-t.more{display:none}
+.op-mag .op-cat.all .op-t.more{display:block;animation:opIn .35s ease both}
+@keyframes opIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.op-mag .pv,.op-stk .pv{display:block;margin:0;padding:0;background:none;border:0}
+.op-mag .op-t button{position:relative;display:block;width:100%;height:118px;padding:0;margin:0;border:0;border-radius:0;background:#c9231d url(/img/op/op-tile.webp) 0 0/512px;cursor:pointer;overflow:hidden;box-shadow:none;text-align:center}
+.op-mag .op-t.big button{height:242px}
+.op-mag .op-t button canvas.wf{position:absolute;left:8px;right:8px;top:8px;bottom:8px;width:calc(100% - 16px);height:calc(100% - 16px);margin:0;opacity:1}
+.op-mag .op-t button .nm,.op-stk .nm{position:absolute;left:8px;right:8px;top:50%;transform:translateY(-50%);z-index:2;display:block;margin:0;padding:0;font:400 clamp(13px,1.15vw,19px)/1.05 "OpArchivo",var(--body);color:#120502;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:clip;
+  -webkit-mask-image:url(/img/op/op-wear.png);mask-image:url(/img/op/op-wear.png);-webkit-mask-size:300px;mask-size:300px;text-shadow:0 0 1px #120502,3px 0 0 #c9231d,-3px 0 0 #c9231d,0 3px 0 #c9231d,0 -3px 0 #c9231d,2px 2px 0 #c9231d,-2px -2px 0 #c9231d,2px -2px 0 #c9231d,-2px 2px 0 #c9231d,0 0 14px #c9231d;pointer-events:none}
+.op-mag .op-t.big button .nm{font-size:clamp(26px,2.8vw,44px)}
+.op-mag .op-t button .nm *{color:inherit}
+.op-mag .op-t button .mt,.op-stk .mt{display:none}
+.op-mag .op-t button .pl{position:absolute;left:8px;bottom:8px;z-index:3;width:26px;height:26px;display:grid;place-items:center;background:#120502;color:var(--op);border-radius:0;margin:0}
+.op-mag .op-t button .pl svg{width:9px;height:9px;fill:currentColor}
+html.opium .op-mag .op-t button.on{background:#c9231d url(/img/op/op-tile.webp) 0 0/512px;outline:3px solid var(--opc);outline-offset:-3px}
+html.opium .op-mag .op-t button.on .nm{color:#120502}
+html.opium .op-mag .op-t button.on .pl{background:var(--opc);color:#120502}
+.op-mag .op-t button .ad{z-index:4}
+.op-all{display:block;margin:10px 0 0 auto;background:none;border:0;border-bottom:2px solid var(--op);color:var(--op);font:700 11px/1 var(--body);letter-spacing:.3em;padding:6px 0;cursor:pointer;text-transform:uppercase}
+.op-all:hover{color:var(--opc)}
+.op-spk{opacity:.95}
+.op-mag .op-dec{z-index:0}
+.op-mag .op-cat>.op-dec.op-spk{top:-120px!important;z-index:3}
+
+/* stack previews: 3 sounds together, slanted yellow boxes */
+.op-stk{padding:6px 0 10px}
+.op-sth{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 40px;font:700 10px/1 var(--body);letter-spacing:.3em;color:var(--opg);text-transform:uppercase}
+.op-sth b{font:700 13px/1 var(--body);letter-spacing:.5em;color:var(--opy);border:2px solid var(--opy);padding:8px 18px}
+.op-sp{margin-left:auto;background:var(--opy);color:#0c0b0b;border:0;font:700 12px/1 var(--body);letter-spacing:.16em;padding:12px 18px;cursor:pointer}
+.op-stk.on .op-sp{background:var(--opc)}
+.op-sr{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:0 14px;margin:0 0 26px;position:relative}
+.op-sk{transform:skewY(-4deg) skewX(-12deg);transform-origin:center}
+.op-sk button{display:block;width:100%;height:92px;padding:0;border:2.5px solid #0c0b0b;border-radius:0;background:var(--opy);position:relative;overflow:hidden;cursor:pointer;box-shadow:6px 6px 0 #0006}
+.op-sr.dk .op-sk button{background:#0c0b0b;border-color:var(--opy)}
+.op-sk button canvas.wf{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px)}
+.op-sk button .nm,.op-sk button .pl{display:none!important}
+.op-pill{border:2.5px solid var(--opy);border-radius:0;padding:9px 16px;font:700 13px/1 var(--body);letter-spacing:.08em;color:var(--opy);white-space:nowrap;position:relative}
+.op-pill::before{content:"";position:absolute;right:100%;top:50%;width:14px;height:2px;background:var(--opy)}
+.op-sr.dk .op-pill{background:var(--opy);color:#0c0b0b}
+.op-sr small{grid-column:2;font:700 10px/1.8 var(--body);letter-spacing:.2em;color:var(--opg)}
+
+/* reviews / similar keep the look */
+html.opium .rvsec h2,html.opium .simsec h2{font:700 13px/1 var(--body);letter-spacing:.5em;color:var(--op);text-transform:uppercase;border:2px solid var(--op);display:inline-block;padding:9px 22px}
+html.opium .offer{border:2px solid var(--op);border-radius:0;background:transparent}
+
+/* admin switch button */
+.adm-top .op-sw .op-b{font-family:"OpSpace",var(--mono)}
+.op-pill i{font-style:normal;opacity:.6;font-size:10px;letter-spacing:.2em;margin-left:6px}
+.op-sr{margin:0 0 30px}
+/* no side scroll: decorations may hang off the edge, the page never scrolls sideways */
+html.opium,html.opium body{overflow-x:clip}
+.op-mag>*{min-width:0}
+@media (max-width:760px){html.opium .op-mag .op-dec{max-width:60vw}}
+@media (max-width:980px){.op-mag{grid-template-columns:minmax(0,1fr);gap:40px 0}.op-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+html.opium .home .hero,html.opium .home .world,html.opium .op-mag{overflow-x:clip;overflow-y:visible}
+html.opium .home{position:relative;overflow-x:clip}html.opium .home .world{position:relative}
+.op-gut{position:absolute;inset:0;pointer-events:none;z-index:0}.op-gut .op-dec{position:absolute}
+html.opium .op-hspk{right:auto;left:40%;top:36px;width:min(300px,22vw)}@media (max-width:900px){html.opium .op-hspk{display:none}}
+/* ===== round 2 (Eman 24 Nov 04:13): red, no banner, mood filters, MJ drawings in the bg, stickers slapped on ===== */
+html.opium{--op:#d42a24}
+html.opium body{background:#0b0a0a url(/img/op/op-bg.webp) 0 0/1200px repeat}
+html.opium body::after{opacity:0!important}
+html.opium .op-hud,html.opium header.hero,html.opium .op-hif{display:none!important}
+html.opium body.home nav.top .logo,html.opium body.home nav.top .nl[href="#packs"]{display:none}
+html.opium nav.top{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+html.opium body.home nav.top{position:absolute;left:0;right:0;top:0;z-index:20}
+html.opium body.home .bar{border:0!important;background:transparent!important;padding-top:18px}
+html.opium #chips .chs{display:none!important}
+.op-moods{display:flex;flex-wrap:wrap;gap:10px;align-items:center;flex:1;min-width:0}
+.op-mood{border-radius:0;border:2px solid var(--op);background:rgba(11,10,10,.6);color:var(--op);font:700 13px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:13px 18px;cursor:pointer;display:inline-flex;gap:10px;align-items:center}
+.op-mood span{opacity:.6;font-size:11px}
+.op-mood:hover{filter:brightness(1.15)}
+.op-mood.on{background:var(--op);color:#0b0a0a}
+html.opium body.home .bar .srch{border-radius:0;border:2px solid #2a2626;background:rgba(11,10,10,.6)}
+html.opium body.home #worlds{padding-top:10px}
+@media (max-width:760px){.op-mood{padding:11px 13px;font-size:11px}html.opium body.home .bar{padding-top:64px}}
+.op-art{position:absolute;left:0;top:0;width:100%;z-index:-1;pointer-events:none;overflow:hidden}
+.op-art img{position:absolute;filter:grayscale(1) brightness(1.1)}
+html.opium .card{position:relative}
+.op-slap{position:absolute;z-index:6;pointer-events:none;filter:drop-shadow(2px 3px 2px rgba(0,0,0,.55))}
+html.opium .op-box,html.opium .op-sk,html.opium #pkTop .buy{position:relative}
+html.opium .op-mag .op-t.big{position:relative}
+html.opium .op-mag .op-t.big>.op-slap{z-index:7}
+html.opium body.home nav.top .wrap{justify-content:flex-end}
+html.opium body.home .bar{padding-top:62px;padding-bottom:26px}
+.op-mood{font-size:14px;padding:14px 20px}
+.op-mag .op-cat>.op-dec.op-spk{max-width:230px;top:-110px!important;opacity:.9;z-index:1!important}
+
+html.opium .op-mag .op-t button .nm{text-shadow:0 0 1px #120502,4px 0 0 #c9231d,-4px 0 0 #c9231d,0 4px 0 #c9231d,0 -4px 0 #c9231d,3px 3px 0 #c9231d,-3px -3px 0 #c9231d,3px -3px 0 #c9231d,-3px 3px 0 #c9231d,0 0 10px #c9231d,0 0 14px #c9231d}
+html.opium body.home .bar .srch{flex:0 0 220px;max-width:220px}
+@media (max-width:760px){html.opium body.home .bar .srch{flex:1 1 100%;max-width:none}html.opium body.home .bar{padding-bottom:30px}.op-mag .op-dec.op-spk{display:none}}
+@media (max-width:760px){html.opium .op-grid{grid-template-columns:minmax(0,1fr)}html.opium .op-mag .op-t:not(.big) button{height:96px}}
+@media (max-width:760px){html.opium .op-mag .op-t button .nm{font-size:20px}html.opium .op-mag .op-t.big button .nm{font-size:26px}}
+/* ===== round 3 (Eman 24 Nov 04:47): tidy structure like the first OPIUM design, no random decor, names not over the wave, 10 versions ===== */
+html.opium{--opbg:url(/img/op/v/bg1.webp);--opt:url(/img/op/v/t1.webp);--optc:#c4261f;--opn:#120303;--opb:transparent;--opw:rgba(30,3,3,.95);--opw2:;--opdots:0;--opbgc:#0b0a0a}
+html.opium body{background:var(--opbgc) var(--opbg) 0 0/1200px repeat}
+.op-dec,.op-art,.op-slap,.op-gut,.op-spk{display:none!important}
+/* pack page: categories under each other, even rows */
+html.opium .op-mag{display:block;margin:30px 0 10px}
+html.opium .op-mag>.op-cat,html.opium .op-mag>.op-stk{margin:0 0 46px!important}
+html.opium .op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+html.opium .op-mag .op-t button,html.opium .op-mag .op-t.big button{height:92px;background:var(--optc) var(--opt) 0 0/420px;border:1.5px solid var(--opb);outline-offset:-3px}
+html.opium .op-mag .op-t:nth-child(5n+2) button{background-position:-140px -90px}
+html.opium .op-mag .op-t:nth-child(5n+4) button{background-position:-260px -200px}
+html.opium .op-mag .op-t button canvas.wf{left:44px;right:10px;top:30px;bottom:10px;width:calc(100% - 54px);height:calc(100% - 40px)}
+html.opium .op-mag .op-t button .nm,html.opium .op-mag .op-t.big button .nm{top:9px;left:10px;right:10px;transform:none;text-align:left;font:700 11px/1.2 var(--body)!important;letter-spacing:.12em;color:var(--opn);text-shadow:none!important;-webkit-mask-image:none;mask-image:none}
+html.opium .op-mag .op-t button .pl{left:10px;bottom:auto;top:44px;width:24px;height:24px;background:var(--opn);color:var(--optc)}
+html.opium .op-mag .op-t.star button::after{content:"★";position:absolute;right:8px;top:7px;font-size:11px;color:var(--opn)}
+html.opium .op-mag .op-t button.on{background:var(--optc) var(--opt) 0 0/420px;outline:2px solid #efe7da}
+html.opium .op-mag .op-t button.on .nm{color:var(--opn)}
+html.opium .op-mag .op-t button.on .pl{background:#efe7da;color:#120303}
+@media (max-width:760px){html.opium .op-grid{grid-template-columns:repeat(2,minmax(0,1fr))}html.opium .op-mag .op-t button,html.opium .op-mag .op-t.big button{height:84px}html.opium .op-mag .op-t button .nm,html.opium .op-mag .op-t.big button .nm{font-size:10px!important}}
+/* stacks: straight rows, no tilt */
+html.opium .op-sk{transform:none!important}
+html.opium .op-sr{margin:0 0 8px}
+/* home cards */
+html.opium .card{border-color:var(--op)}
+html.opium .card:nth-child(7n+2){background:var(--optc) var(--opt) 0 0/420px!important}
+/* ---- versions ---- */
+html.opium.opv-2{--opbg:url(/img/op/v/bg2.webp);--opt:url(/img/op/v/t2.webp);--optc:#120d0d;--opn:#e2382f;--opb:#d42a24;--opw:#d42a24}
+html.opium.opv-3{--opbg:url(/img/op/v/bg3.webp);--opt:url(/img/op/v/t3.webp);--optc:#c8281f;--opbgc:#1c1b1a;--opdots:1}
+html.opium.opv-4{--opbg:url(/img/op/v/bg4.webp);--opt:url(/img/op/v/t4.webp);--optc:#8e140f;--opn:#ece3d0;--opw:rgba(236,227,208,.9);--op:#b51d16;--opbgc:#1e1d1c}
+html.opium.opv-5{--opbg:url(/img/op/v/bg5.webp);--opt:url(/img/op/v/t5.webp);--optc:#a3271b;--opn:#170905;--opw:rgba(23,9,5,.92);--op:#b8321f;--opbgc:#161110}
+html.opium.opv-6{--opbg:url(/img/op/v/bg6.webp);--opt:url(/img/op/v/t6.webp);--optc:#0d0c0c;--opn:#e2382f;--opb:transparent;--opw:#d42a24;--opbgc:#060606}
+html.opium.opv-6 .op-mag .op-t button{border-bottom:2px solid #d42a24!important}
+html.opium.opv-7{--opbg:url(/img/op/v/bg7.webp);--opt:url(/img/op/v/t7.webp);--optc:#be241e;--opbgc:#1a1511}
+html.opium.opv-7 .op-mag .op-t:nth-child(4n+1) button::before{content:"";position:absolute;left:-6px;top:-4px;width:56px;height:16px;background:rgba(222,210,180,.78);transform:rotate(-8deg);z-index:4;box-shadow:0 1px 2px rgba(0,0,0,.3)}
+html.opium.opv-8{--opbg:url(/img/op/v/bg8.webp);--opt:url(/img/op/v/t8.webp);--optc:#cd221e;--opw:rgba(14,2,2,.95);--opw2:rgba(250,236,220,.35)}
+html.opium.opv-9{--opbg:url(/img/op/v/bg9.webp);--opt:url(/img/op/v/t9.webp);--optc:#c4201e;--opbgc:#090909}
+html.opium.opv-9 .op-mag .op-t button::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px)}
+html.opium.opv-10{--opbg:url(/img/op/v/bg10.webp);--opt:url(/img/op/v/t10.webp);--optc:#ba2420;--opn:#f1ece2;--opw:rgba(22,6,6,.92);--opbgc:#1d2020}
+html.opium .op-stk button .nm{display:none}
+html.opium .op-sr{grid-template-columns:minmax(0,1fr) 230px}html.opium .op-pill{justify-content:space-between;width:100%;box-sizing:border-box}
+/* ===== OPIUM 2 (Eman 24 Nov 19:48): version 9 + version 6 black film bg, ref waveforms, vector logo, every page ===== */
+html.opium.opium2.opv-9{--opbg:url(/img/op/v/bg6.webp);--opbgc:#060606}
+html.opium2 .op-gv{display:inline-block;flex:none;background:#cfc9bd;-webkit-mask:var(--g) center/contain no-repeat;mask:var(--g) center/contain no-repeat}
+html.opium2 .op-gv.red{background:var(--op)}
+/* tiles: full-bleed ref wave, label box bottom-left with play + name, short tiles */
+html.opium2 .op-grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+html.opium2 .op-mag .op-t button,html.opium2 .op-mag .op-t.big button{height:104px;background:#c42a20;border:0}
+html.opium2 .op-mag .op-t button::before{display:none}
+html.opium2 .op-mag .op-t button canvas.wf{left:0;right:0;top:0;bottom:0;width:100%;height:100%}
+html.opium2 .op-mag .op-t button .nm,html.opium2 .op-mag .op-t.big button .nm{top:auto;bottom:7px;left:7px;right:auto;max-width:calc(100% - 14px);box-sizing:border-box;padding:4px 8px 4px 24px;background:#c42a20;border:2px solid #1a0402;color:#1a0402;font:700 11px/1.1 var(--body)!important;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html.opium2 .op-mag .op-t button .pl{top:auto;bottom:13px;left:15px;width:12px;height:12px;background:transparent!important;color:#1a0402!important;z-index:4}
+html.opium2 .op-mag .op-t button .pl svg{width:9px;height:9px}
+html.opium2 .op-mag .op-t button.on{outline:2px solid #efe7da;outline-offset:-2px;background:#c42a20}
+html.opium2 .op-mag .op-t.star button::after{color:#1a0402;top:6px;right:8px}
+@media (max-width:760px){html.opium2 .op-grid{grid-template-columns:minmax(0,1fr)}html.opium2 .op-mag .op-t button{height:92px}}
+/* stacks in the same ref style, yellow */
+html.opium2 .op-sk button{background:#d9dc45}
+/* every other waveform on the site (free sample page, bundle list, madewith) gets the ref look too */
+html.opium2 .pv button canvas.wf{image-rendering:auto}
+/* headings + accents on the other pages */
+html.opium2 h1,html.opium2 h2,html.opium2 .lg h2,html.opium2 .simg+h2{font-family:var(--body)!important;text-transform:uppercase;letter-spacing:.18em;font-weight:700}
+html.opium2 .card,html.opium2 .bn-side,html.opium2 .cpanel{border-color:var(--op)}
+html.opium2 .card:nth-child(7n+2){background:#c42a20!important}
+html.opium2 .card:nth-child(7n+2)::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px);z-index:0}
+html.opium2 .pkc{position:relative}
+html.opium2 .lnd .pkc .op-gw{position:absolute;top:50%;transform:translateY(-50%);z-index:0;pointer-events:none;line-height:0}
+html.opium2 .lnd .pkc .op-gw.l{left:-4%}html.opium2 .lnd .pkc .op-gw.r{right:-4%}
+html.opium2 .pkc img{position:relative;z-index:1}
+html.opium2 .pki,html.opium2 .pkt>*{min-width:0}html.opium2 h1{overflow-wrap:anywhere}@media (max-width:760px){html.opium2 h1,html.opium2 h2{letter-spacing:.06em}}
+html.opium #opMag,html.opium #pk>*{min-width:0}
+@media (max-width:900px){html.opium2 .pkc .op-gw{display:block!important;transform:scale(.55)!important}html.opium2 #pkTop .op-gw.l,html.opium2 .lnd .pkc .op-gw.l{left:-30px!important;top:0!important;transform-origin:left top!important}html.opium2 #pkTop .op-gw.r,html.opium2 .lnd .pkc .op-gw.r{left:auto!important;right:-30px!important;top:auto!important;bottom:0!important;transform-origin:right bottom!important}}
+/* ===== OPIUM 2 home: banner + left sidebar (Eman 24 Nov 20:08) ===== */
+html.opium.opium2 header.hero{display:block!important;background:none!important;border:0;padding:0;overflow:visible;min-height:0}
+html.opium2 header.hero::before,html.opium2 header.hero::after{display:none!important}
+html.opium2 body.home nav.top{position:relative}
+html.opium2 body.home nav.top .wrap{justify-content:flex-end}
+html.opium2 .op-hb{display:flex;align-items:center;gap:16px;max-width:1600px;margin:0 auto;padding:14px 24px;font:700 10px/1 var(--body);letter-spacing:.45em;color:var(--op);text-transform:uppercase;white-space:nowrap;overflow:hidden}
+html.opium2 .op-hb>span{font-size:18px;letter-spacing:0}
+html.opium2 .op-hb .op-f{flex:1}
+html.opium2 .op-hb.t{border-top:1px solid rgba(212,42,36,.45)}
+html.opium2 .op-hb.b{border-bottom:1px solid rgba(212,42,36,.45)}
+html.opium2 header.hero>.wrap{position:relative;padding-top:44px;padding-bottom:64px;min-height:470px}
+html.opium2 header.hero .eyebrow{display:none}
+html.opium2 header.hero .hero-logo{filter:none;max-width:560px}
+html.opium2 header.hero .tag{font:700 15px/1.6 var(--body);letter-spacing:.2em;text-transform:uppercase;color:#d9d3c4;max-width:460px}
+html.opium2 header.hero .stats div{background:transparent;border:2px solid var(--op);border-radius:0}
+html.opium2 header.hero .stats b{color:#efe7da}
+html.opium2 header.hero .stats div{color:var(--op)}
+html.opium2 header.hero .bfD{top:96px;bottom:70px}
+html.opium2 .bfD .op-gw,html.opium2 .bfM .op-gw{display:block!important;position:absolute;z-index:0;pointer-events:none;line-height:0;opacity:1}
+html.opium2 .bfD .op-gw.l{left:-2%;top:6%}html.opium2 .bfD .op-gw.r{right:-2%;left:auto;top:auto;bottom:4%}
+html.opium2 .bfM .op-gw.l{left:-10px;top:30px}html.opium2 .bfM .op-gw.r{right:-10px;left:auto;top:auto;bottom:30px}
+html.opium2 .bfD>*:not(.op-gw),html.opium2 .bfM>*:not(.op-gw){position:relative;z-index:1}
+html.opium2 .bf-off{background:var(--op)!important;color:#0b0a0a!important;border-radius:0!important}
+html.opium2 .bf-k,html.opium2 .bf-nm b{font-family:var(--body)!important;text-transform:uppercase;letter-spacing:.14em}
+html.opium2 header.hero .btn.acid{background:var(--op);border-color:var(--op);color:#0b0a0a}
+/* the shop: sidebar left, follows the scroll */
+html.opium2 .op-shop{display:grid;grid-template-columns:236px minmax(0,1fr);gap:28px;max-width:1600px;margin:34px auto 0;padding:0 24px;align-items:start}
+html.opium2 .op-shop>#packs{position:sticky;top:16px;padding:0!important;margin:0;background:transparent!important;border:0!important;max-height:calc(100vh - 32px);overflow:auto;scrollbar-width:none}
+html.opium2 .op-shop>#packs>.wrap{padding:0;max-width:none;width:auto;margin:0}
+html.opium2 .op-shop #chips{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+html.opium2 .op-shop #chips .srch{flex:none!important;max-width:none!important;width:100%;height:46px;margin:0;border:2px solid var(--op)!important;background:rgba(6,6,6,.7)!important;border-radius:0}
+html.opium2 .op-sbh{display:flex;align-items:center;gap:10px;margin:8px 0 2px;font:700 10px/1 var(--body);letter-spacing:.4em;color:var(--op)}
+html.opium2 .op-sbh span{font-size:16px;letter-spacing:0}html.opium2 .op-sbh .op-bars{flex:1}
+html.opium2 .op-shop .op-moods{flex-direction:column;align-items:stretch;gap:8px}
+html.opium2 .op-shop .op-mood{justify-content:space-between;width:100%;padding:13px 16px}
+html.opium2 .op-shop>#worlds{padding:0!important;margin:0;max-width:none;width:auto}
+html.opium2 .op-shop>#worlds .grid{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+@media (max-width:900px){html.opium2 .op-shop{grid-template-columns:minmax(0,1fr);padding:0 16px}html.opium2 .op-shop>#packs{position:relative;top:0;max-height:none}html.opium2 .op-shop .op-moods{flex-direction:row;flex-wrap:wrap}html.opium2 .op-shop .op-mood{width:auto}html.opium2 .op-hb .op-bars,html.opium2 .op-hb b+b{display:none}}
+html.opium2 .bfM{position:relative}html.opium2 .bfM .op-gw{transform:scale(.62)}html.opium2 .bfM .op-gw.l{left:-4px;top:40px;transform-origin:left top}html.opium2 .bfM .op-gw.r{right:-4px;bottom:120px;transform-origin:right bottom}html.opium2 header.hero{overflow-x:clip!important}
+/* ===== OPIUM 2: normal sound cards + more purple, red only in a few places (Eman 24 Nov 20:11) ===== */
+html.opium2{--opp:#8b6cf6;--purple:#8b6cf6;--line:rgba(139,108,246,.32)}
+html.opium2 .op-mag .op-u.more{display:none}html.opium2 .op-mag .op-cat.all .op-u.more{display:block}
+html.opium2 .op-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+html.opium2 .op-mag .op-u button{width:100%}
+@media (max-width:760px){html.opium2 .op-grid{grid-template-columns:minmax(0,1fr)}}
+html.opium2 .op-sk button{background:#0e0d12!important}
+html.opium2 .op-sr.dk .op-sk button{background:#16131f!important}
+/* purple: headers, lines, bars, sidebar, card frames */
+html.opium2 .op-box{border-color:var(--opp);color:#cdbcff}
+html.opium2 .op-ln{background:var(--opp)}
+html.opium2 .op-bars{background:repeating-linear-gradient(90deg,var(--opp) 0 3px,transparent 3px 6px)}
+html.opium2 .op-magh,html.opium2 .op-hb,html.opium2 .op-sbh{color:var(--opp)}
+html.opium2 .op-hb.t,html.opium2 .op-hb.b{border-color:rgba(139,108,246,.4)}
+html.opium2 .op-all{color:#cdbcff;border-color:var(--opp)}
+html.opium2 .op-mood{border-color:rgba(139,108,246,.75);color:#cdbcff}
+html.opium2 .op-mood.on{background:var(--opp);border-color:var(--opp);color:#0b0a0e}
+html.opium2 .op-shop #chips .srch{border-color:rgba(139,108,246,.75)!important}
+html.opium2 .card{border-color:rgba(139,108,246,.55)}
+html.opium2 .card:nth-child(7n+2){background:#4a3896!important}
+html.opium2 .card .tagl,html.opium2 .card .stamp{color:#cdbcff}
+html.opium2 #pkTop .tiles span,html.opium2 #pkTop .tiles a{border-color:rgba(139,108,246,.7);color:#cdbcff}
+html.opium2 header.hero .stats div{border-color:var(--opp)}
+html.opium2 header.hero .stats div{color:#cdbcff}
+html.opium2 .op-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}html.opium2 .op-mag .pv.big.op-u{display:block}
+/* OPIUM 2 pack page (Eman 20:16): only the sound count, bigger; no free samples button; bigger add to cart */
+html.opium2 #pkTop .tiles span:not(:first-child){display:none!important}
+html.opium2 #pkTop .tiles span:first-child{font-size:22px!important;padding:12px 20px!important;letter-spacing:.14em;border-width:2px!important}
+html.opium2 #pkTop .buy [data-free]{display:none!important}
+html.opium2 #pkTop .buy [data-add]{font-size:20px!important;padding:22px 56px!important;min-width:320px;letter-spacing:.16em}
+html.opium2 #pkTop .buy [data-add]{white-space:nowrap}
+@media(max-width:700px){html.opium2 #pkTop .buy{display:block!important}html.opium2 #pkTop .buy [data-add]{width:100%!important;min-width:0;padding:20px 12px!important;font-size:18px!important}}
