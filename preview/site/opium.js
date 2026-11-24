@@ -364,12 +364,16 @@
       if (rr > l) r = [l / W, (rr + 1) / W]; } catch (e) {}
     BB.set(key, r); return r;
   }
+  let REF = null;
   function alignText() {
-    document.querySelectorAll("#worlds .card").forEach((card) => {
+    const cards = [...document.querySelectorAll("#worlds .card")].sort((a, b) => (a.dataset.look === "card") - (b.dataset.look === "card"));
+    cards.forEach((card) => {
       const im = card.querySelector(".pq img"), cb = card.querySelector(".cb"); if (!im || !cb) return;
       const go = () => { if (!im.naturalWidth || !im.offsetWidth) return; const bb = alphaBox(im); if (!bb) return;
         let x = 0, e = im; while (e && e !== card) { x += e.offsetLeft; e = e.offsetParent; } if (e !== card) return;
         const S = parseFloat(getComputedStyle(im).scale) || 1, cx = x + im.offsetWidth / 2, L = cx + (bb[0] - 0.5) * im.offsetWidth * S, w = (bb[1] - bb[0]) * im.offsetWidth * S;
+        if (card.dataset.look === "card") { const rf = REF; if (rf) { cb.style.setProperty("margin-left", rf.L + "px", "important"); cb.style.setProperty("margin-right", "0", "important"); cb.style.setProperty("width", rf.w + "px", "important"); cb.style.setProperty("max-width", "none", "important"); } return; }
+        REF = { L: Math.round(L * 10) / 10, w: Math.round(w * 10) / 10 };
         cb.style.setProperty("margin-left", Math.round(L * 10) / 10 + "px", "important"); cb.style.setProperty("margin-right", "0", "important"); cb.style.setProperty("width", Math.round(w * 10) / 10 + "px", "important"); cb.style.setProperty("max-width", "none", "important"); };
       if (im.complete && im.naturalWidth) go(); else im.addEventListener("load", go, { once: true });
     });
