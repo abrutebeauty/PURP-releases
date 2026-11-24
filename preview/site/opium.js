@@ -282,7 +282,7 @@
     if (hero && !hero.querySelector(".op-hb")) {
       hero.insertAdjacentHTML("afterbegin", `<div class="op-hb t"><span>✱</span><i class="op-bars"></i><b>SERUM PRESETS · DRUM KITS</b><span class="op-f"></span><b>CORE-KULT ® 2026</b><i class="op-bars"></i><span>✱</span></div>`);
       hero.insertAdjacentHTML("beforeend", `<div class="op-hb b"><span>✱</span><b>PREVIEW EVERY SOUND</b><i class="op-bars"></i><span class="op-f"></span><i class="op-bars"></i><b>100% ROYALTY-FREE</b><span>✱</span></div>`);
-      const bf = hero.querySelector(".bfD"); if (bf) bf.insertAdjacentHTML("afterbegin", `<div class="op-gw l">${glyph("l", 360, 1)}</div><div class="op-gw r">${glyph("r", 390, 1)}</div>`);
+      const bf = hero.querySelector(".bfD"); if (bf) bf.insertAdjacentHTML("afterbegin", `<div class="op-gw l">${glyph("r", 390, 1)}</div><div class="op-gw r">${glyph("r", 390, 1)}</div>`);
       const bm = hero.querySelector(".bfM"); if (bm) bm.insertAdjacentHTML("afterbegin", `<div class="op-gw l">${glyph("l", 260, 1)}</div><div class="op-gw r">${glyph("r", 280, 1)}</div>`);
     }
   }

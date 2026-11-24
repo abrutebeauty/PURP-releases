@@ -642,3 +642,6 @@ html.opium2 .card .pq::before,html.opium2 .card .pq::after{content:none!importan
 /* quick tweak 24 Nov: the sweep reflection (canvas.sh, already cut to the picture's own shape) now zooms/lifts/sways exactly like the picture, so it always sits on the CD */
 html.opium2 .card .pq canvas.sh,html.opium2 #pkTop .pkc .pq canvas.sh,html.opium2 .lnd .pkc .pq canvas.sh{scale:1.06;transition:scale .7s cubic-bezier(.16,.84,.3,1),translate .7s cubic-bezier(.16,.84,.3,1),opacity .25s;will-change:transform,scale,translate}
 html.opium2 .card .cv:hover .pq canvas.sh,html.opium2 #pkTop .pkc:hover .pq canvas.sh,html.opium2 .lnd .pkc:hover .pq canvas.sh{scale:1.2;translate:0 -12px}
+/* quick tweak 24 Nov: left hero claw = exact mirror of the right one */
+html.opium2 header.hero .bfD .op-gw.l>*{transform:scaleX(-1)}
+@media(min-width:1041px){html.opium2 header.hero .bfD .op-gw.l{left:calc(50% - .9 * min(84cqh,40cqw) - 74px - 9px)!important}}
