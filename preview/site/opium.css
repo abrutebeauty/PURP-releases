@@ -398,3 +398,16 @@ html.opium2 .bfD .op-gw svg{height:100%;width:auto;display:block}
 html.opium2 .bfD .op-gw.l{left:3%;top:4%}html.opium2 .bfD .op-gw.r{right:3%;bottom:2%}
 html.opium2 .bfD .bf-nm b{font-size:26px}html.opium2 .bfD .bf-nm small{font-size:14px}
 }
+
+/* quick tweak 24 Nov (Eman 23:17): 3 packs per row, every card the same vertical rectangle, art in an identical box, buttons pinned to the bottom */
+html.opium2 #worlds .grid,html.opium2 #worlds.allg{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:1fr;align-items:stretch}
+@media(max-width:1040px){html.opium2 #worlds .grid,html.opium2 #worlds.allg{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:640px){html.opium2 #worlds .grid,html.opium2 #worlds.allg{grid-template-columns:minmax(0,1fr)!important}}
+html.opium2 #worlds .card{display:flex!important;flex-direction:column;height:100%}
+html.opium2 #worlds .card .cv{aspect-ratio:auto!important;height:340px;flex:0 0 340px;padding:18px!important;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
+html.opium2 #worlds .card .cv .pq{display:flex!important;align-items:center;justify-content:center;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;margin:0!important}
+html.opium2 #worlds .card .cv .pq img{width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain}
+html.opium2 #worlds .card .cb{display:flex;flex-direction:column;flex:1 1 auto}
+html.opium2 #worlds .card .ph{min-height:84px;align-items:flex-start}
+html.opium2 #worlds .card .pi{flex:1 1 auto}
+html.opium2 #worlds .card .buy{margin-top:auto!important}
