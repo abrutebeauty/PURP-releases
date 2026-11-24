@@ -334,8 +334,8 @@
   const SW = new Map(); let swRaf = 0, swT0 = 0;
   function swTick(now) {
     SW.forEach((st, im) => { st.env += (st.tg - st.env) * 0.07;
-      if (!st.tg && st.env < 0.004) { im.style.transform = ""; SW.delete(im); return; }
-      const t = (now - swT0) / 1000; im.style.transform = `perspective(900px) rotateY(${(Math.sin(t * 1.4) * 9 * st.env).toFixed(2)}deg) rotateX(${(-2 * st.env).toFixed(2)}deg)`; });
+      const sh = im.parentElement && im.parentElement.querySelector("canvas.sh"); if (!st.tg && st.env < 0.004) { im.style.transform = ""; if (sh) sh.style.transform = ""; SW.delete(im); return; }
+      const t = (now - swT0) / 1000; const tf = `perspective(900px) rotateY(${(Math.sin(t * 1.4) * 9 * st.env).toFixed(2)}deg) rotateX(${(-2 * st.env).toFixed(2)}deg)`; im.style.transform = tf; if (sh) sh.style.transform = tf; });
     swRaf = SW.size ? requestAnimationFrame(swTick) : 0;
   }
   if (O2 && matchMedia("(hover:hover)").matches) {

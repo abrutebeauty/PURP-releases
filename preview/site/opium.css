@@ -639,3 +639,6 @@ html.opium2 #worlds .card .buy .btn[data-add],html.opium2 #worlds .card .buy .bt
 /* quick tweak 24 Nov: no separate glare rectangle on cards; nothing can show outside the case */
 html.opium2 .card .pq .gl,html.opium2 #pkTop .pkc .pq .gl,html.opium2 .lnd .pkc .pq .gl{display:none!important}
 html.opium2 .card .pq::before,html.opium2 .card .pq::after{content:none!important;display:none!important}
+/* quick tweak 24 Nov: the sweep reflection (canvas.sh, already cut to the picture's own shape) now zooms/lifts/sways exactly like the picture, so it always sits on the CD */
+html.opium2 .card .pq canvas.sh,html.opium2 #pkTop .pkc .pq canvas.sh,html.opium2 .lnd .pkc .pq canvas.sh{scale:1.06;transition:scale .7s cubic-bezier(.16,.84,.3,1),translate .7s cubic-bezier(.16,.84,.3,1),opacity .25s;will-change:transform,scale,translate}
+html.opium2 .card .cv:hover .pq canvas.sh,html.opium2 #pkTop .pkc:hover .pq canvas.sh,html.opium2 .lnd .pkc:hover .pq canvas.sh{scale:1.2;translate:0 -12px}
