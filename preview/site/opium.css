@@ -514,3 +514,14 @@ html.opium2 #consent .btn{font-size:13px!important;padding:11px 20px!important;m
 html.opium2 header.hero .bfD .op-gw{bottom:4%!important;height:76%!important}
 html.opium2 header.hero .bfD .op-gw.l{left:3%!important}html.opium2 header.hero .bfD .op-gw.r{right:3%!important}
 }
+
+/* quick tweak 24 Nov (Eman 23:47): title case title, grey subline saying what it is, price same size as the title on the right */
+html.opium2 #worlds .card .pf{display:block!important;font:400 13px/1.4 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#8d8995!important;margin-top:3px}
+html.opium2 #worlds .card .ph{align-items:flex-start!important}
+html.opium2 #worlds .card .price{font:500 18px/1.25 "Inter","Helvetica Neue",Arial,sans-serif!important;color:#f2efe9!important}
+html.opium2 #worlds .card .pn{text-transform:none!important}
+
+/* quick tweak 24 Nov (Eman 23:48): no purple box and no background image on any card, every card = art on the plain page background */
+html.opium2 #worlds .card,html.opium2 #worlds .card:nth-child(n){background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+html.opium2 #worlds .card::before,html.opium2 #worlds .card::after{background:none!important;display:none!important}
+html.opium2 #worlds .card:nth-child(7n+2) .pn,html.opium2 #worlds .card:nth-child(7n+2) .price{color:#f2efe9!important}

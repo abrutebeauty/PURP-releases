@@ -344,7 +344,17 @@
     document.addEventListener("mouseover", (e) => { const el = e.target.closest && e.target.closest(SEL); if (el && !el.contains(e.relatedTarget)) go(el, 1); });
     document.addEventListener("mouseout", (e) => { const el = e.target.closest && e.target.closest(SEL); if (el && !el.contains(e.relatedTarget)) go(el, 0); });
   }
-  function run() { try { ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
+  /* card titles in normal title case + a grey subline that says what it is (Eman 24 Nov) */
+  const TC = (s) => s.toLowerCase().replace(/(^|[\s(\-])([a-z])/g, (m, a, b) => a + b.toUpperCase()).replace(/\bIi\b/g, "II").replace(/\bIii\b/g, "III").replace(/\bIv\b/g, "IV").replace(/\bVi\b/g, "VI");
+  function cardText() {
+    if (!O2) return;
+    document.querySelectorAll("#worlds .card").forEach((c) => {
+      const pn = c.querySelector(".pn"), pf = c.querySelector(".pf");
+      if (pn) { const w = document.createTreeWalker(pn, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) { const t = TC(n.nodeValue); if (t !== n.nodeValue) n.nodeValue = t; } }
+      if (pf && !pf.dataset.what) { const raw = pf.textContent.split(" \u00b7 ")[0].trim(); const s = c.dataset.look === "card" ? "Trading card" : raw ? raw.charAt(0).toUpperCase() + raw.slice(1).toLowerCase().replace(/ (i|ii|iii|iv)$/, (m) => m.toUpperCase()) : ""; pf.dataset.what = "1"; if (s && pf.textContent !== s) pf.textContent = s; }
+    });
+  }
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
