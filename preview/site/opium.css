@@ -626,3 +626,9 @@ html.opium2 .cartb::before{content:"";width:24px;height:24px;flex:none;backgroun
 html.opium2 .cartb span{background:#0b0a0e!important;color:#E4FF3A!important}
 html.opium2 .cartb:hover{background:#f0ff7a!important}
 html.opium2 .cartb:hover svg{filter:none}
+/* quick tweak 24 Nov: grid width under zoom .8 (100vw is unzoomed) */
+@media(min-width:901px){html.opium2 .op-shop{width:min(1600px,calc(125vw - 75px))!important}}
+/* quick tweak 24 Nov: text block = CD image width, left edges aligned */
+@media(min-width:901px){html.opium2 #worlds .card .cb{width:362px!important;max-width:100%;margin-left:2.5px!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}}
+/* quick tweak 24 Nov: no NEW / FREE badges on cards */
+html.opium2 #worlds .card .badge,html.opium2 .card .badge,html.opium2 .card .fbadge{display:none!important}
