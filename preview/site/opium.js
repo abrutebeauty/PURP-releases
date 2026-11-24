@@ -354,7 +354,28 @@
       if (pf && !pf.dataset.what) { const raw = pf.textContent.split(" \u00b7 ")[0].trim(); const s = c.dataset.look === "card" ? "Trading card" : raw ? raw.charAt(0).toUpperCase() + raw.slice(1).toLowerCase().replace(/ (i|ii|iii|iv)$/, (m) => m.toUpperCase()) : ""; pf.dataset.what = "1"; if (s && pf.textContent !== s) pf.textContent = s; }
     });
   }
-  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); } catch (e) { console.warn("opium", e); } }
+  /* text block = the visible case (Eman 24 Nov): the picture files have transparent padding, so measure the real alpha edges once per image and set the text block to exactly those left/right edges */
+  const BB = new Map();
+  function alphaBox(im) {
+    const key = im.currentSrc || im.src; if (BB.has(key)) return BB.get(key);
+    let r = null;
+    try { const W = 240, H = Math.max(1, Math.round(W * im.naturalHeight / im.naturalWidth)), c = document.createElement("canvas"); c.width = W; c.height = H; const g = c.getContext("2d"); g.drawImage(im, 0, 0, W, H); const d = g.getImageData(0, 0, W, H).data; let l = W, rr = -1;
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (d[(y * W + x) * 4 + 3] > 60) { if (x < l) l = x; if (x > rr) rr = x; }
+      if (rr > l) r = [l / W, (rr + 1) / W]; } catch (e) {}
+    BB.set(key, r); return r;
+  }
+  function alignText() {
+    document.querySelectorAll("#worlds .card").forEach((card) => {
+      const im = card.querySelector(".pq img"), cb = card.querySelector(".cb"); if (!im || !cb) return;
+      const go = () => { if (!im.naturalWidth || !im.offsetWidth) return; const bb = alphaBox(im); if (!bb) return;
+        let x = 0, e = im; while (e && e !== card) { x += e.offsetLeft; e = e.offsetParent; } if (e !== card) return;
+        const S = parseFloat(getComputedStyle(im).scale) || 1, cx = x + im.offsetWidth / 2, L = cx + (bb[0] - 0.5) * im.offsetWidth * S, w = (bb[1] - bb[0]) * im.offsetWidth * S;
+        cb.style.setProperty("margin-left", Math.round(L * 10) / 10 + "px", "important"); cb.style.setProperty("margin-right", "0", "important"); cb.style.setProperty("width", Math.round(w * 10) / 10 + "px", "important"); cb.style.setProperty("max-width", "none", "important"); };
+      if (im.complete && im.naturalWidth) go(); else im.addEventListener("load", go, { once: true });
+    });
+  }
+  addEventListener("resize", () => { try { alignText(); } catch (e) {} });
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
