@@ -545,3 +545,9 @@ html.opium2 header.hero .bfD .bf-go{margin-top:0!important;margin-left:auto}
 
 /* quick tweak 24 Nov (Eman 23:55): no GET THE 3-PACK button and no 1 FREE tag in the hero; the CD stack itself is the link */
 html.opium2 header.hero .bf-go,html.opium2 header.hero .bf-off{display:none!important}
+
+/* quick tweak 24 Nov (Eman 23:55): header cart = acid yellow cart icon, no red box, count badge kept */
+html.opium2 nav.top .cartb,html.opium2 .cartb{background:transparent!important;border:0!important;color:#E4FF3A!important;padding:6px 8px!important;gap:5px}
+html.opium2 .cartb svg{width:24px!important;height:24px!important;fill:#E4FF3A!important;stroke:#E4FF3A}
+html.opium2 .cartb span{background:#E4FF3A;color:#0b0a0e;padding:3px 5px;font:700 11px/1 "Inter","Helvetica Neue",Arial,sans-serif!important}
+html.opium2 .cartb:hover svg{filter:drop-shadow(0 0 8px rgba(228,255,58,.6))}
