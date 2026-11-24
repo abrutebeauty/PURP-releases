@@ -1,2 +1,8 @@
+bundle.html
+checkout.html
+fx.js
+get.html
+index.html
 opium.css
 opium.js
+pack.html

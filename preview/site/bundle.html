@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>/* EARLY_P (speed 20 Nov): start the product list download now, not after shop.js runs. shop.js uses window.__ckP */try{window.__ckP=fetch("/api/products?lite=1",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()});window.__ckP.catch(function(){})}catch(e){}</script>
+<title>Pick 10 packs · Save 100 · COREKULT</title>
+<meta name="description" content="Dark Serum preset packs and drum kits. Crystal Core, Dreamcore, LOOK MOM I CAN FLY, 2HOLLCORE.">
+<meta property="og:title" content="COREKULT">
+<meta property="og:description" content="Dark Serum preset packs and drum kits.">
+<meta property="og:image" content="https://corekult.com/img/og.jpg">
+<meta name="theme-color" content="#0b0a0e">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css?v=1">
+<link rel="stylesheet" href="/speed.css?v=4">
+<link rel="stylesheet" href="/cdfx.css?v=3"><!-- 3D stack CSS only; frost script cdfx.js removed (Eman 20 Nov 00:46) --><!-- FONTS_SELF (speed 20 Nov). old: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@1,300&family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap"> -->
+<link rel="stylesheet" href="/shop.css?v=81">
+<link rel="stylesheet" href="/bundle.css?v=5">
+<link rel="stylesheet" href="/day-cdfx.css?v=1"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day-shop.css?v=6"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day-bundle.css?v=1"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day.css?v=1"><!-- DAY_MODE: day palette + switch, keep last -->
+<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+<script src="/fx.js?v=1"></script><!-- FX (Eman 24 Nov): CD 3D page transition + UI sounds. Remove this line = off -->
+<script src="/opium.js?v=6"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/" aria-label="COREKULT home"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="110" height="34"></a><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#crystal">Crystal</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#dream">Dream</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#travis">Travis</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#holl">2Holl</a> -->
+  <a class="nl" href="/#packs">Shop</a>
+  <div class="curw" id="curW"></div><div class="cartw"><button class="nl cartb" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 16 16"><path d="M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="13.3" r="1.2"/><circle cx="12" cy="13.3" r="1.2"/></svg><span id="cartN" hidden>0</span></button><div class="cdd" id="cartDd" hidden></div></div>
+</div></nav>
+
+<main class="wrap bnp" id="bn"></main>
+<div class="bnbar" id="bnBar"></div>
+<footer><div class="wrap">
+  <span class="logo"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="84" height="26"></span>
+  <span>Packs marked “inspired by” are not affiliated with or endorsed by any artist.</span>
+  <span>© <span id="yr"></span> COREKULT</span>
+</div></footer>
+<script src="/shop.js?v=113"></script>
+<script>
+/* THE BUNDLE (Eman 18 Nov): every pack in the shop at 50% off. Price only shows here, not on the home tile. */
+$("#yr").textContent = new Date().getFullYear();
+const BN_GRID = true;   // Eman 19 Nov 23:49: full-width row of every pack cover as press buttons (no tilt/sheen) replaces the 5-cover collage. false = old collage
+const PICKS = 4;   // sounds shown per pack before "See full list"
+function picks(p) { const L = p.sounds.filter((s) => /^LOOP/i.test(s.name)); const seen = new Set(), out = L.slice(0, 2);
+  p.sounds.forEach((s) => { const k = String(s.name).split(/\s+/)[0].toUpperCase(); if (out.length < PICKS && !seen.has(k) && !out.includes(s)) { seen.add(k); out.push(s); } }); return out.slice(0, PICKS); }
+const BN_PICK = true;   // Eman 20 Nov 00:08: price + button first, then one row of big covers (scroll sideways), then ONLY the picked pack's samples. false = long per-pack list
+let pick = 0, picked = false, swapOpen = false;
+const BL = () => (typeof BUNDLE10 !== "undefined" && BUNDLE10 ? bundleMix().map(byId).filter(Boolean) : PRODUCTS);   // BUNDLE10: the 10 packs in the mix
+function pickFromHash() { if (picked) return; picked = true; const id = decodeURIComponent(location.hash.slice(1)); const i = BL().findIndex((q) => q.id === id); if (i >= 0) pick = i; }
+function renderPick() {
+  pickFromHash(); const L = BL(), n = L.length, full = bundleFull(), price = bundlePrice(); if (pick >= n) pick = 0; const p = L[pick], c = creatorOf(p);
+  $("#bn").innerHTML = `<header class="bnh nost"><div><div class="eyebrow">The bundle</div><h1>${BUNDLE10 ? `${n} packs · half price` : `Every pack · ${n} packs`}</h1>
+    <div class="bnpr"><b>${show(price)}</b><s>${show(full)}</s><span class="bnoff">50% off</span></div>
+    <p class="pi">${BUNDLE10 ? `A ready mix of ${n} packs from different cores, half price. ${L.reduce((t, q) => t + ((String(q.count).match(/\d+/) || [0])[0] | 0), 0)}+ sounds. Swap any pack for one you want more.` : `All ${n} COREKULT packs in one go, half price. ${PRODUCTS.reduce((t, q) => t + ((String(q.count).match(/\d+/) || [0])[0] | 0), 0)}+ sounds. New packs you already own stay yours.`}</p>
+    <button class="btn acid" data-bundle>Get the bundle · ${show(price)}</button></div></header>
+    <div class="bnrc"><b>${n} packs</b><span id="bnCt"><i>${pick + 1}</i> / ${n}</span></div><div class="bnrow"><button class="bnar l" data-scr="-1" aria-label="Scroll left">‹</button><nav class="bngrid big" id="bnRow" aria-label="Pick a pack to hear it">${L.map((q, i) => `<button class="bnb${i === pick ? " on" : ""}" data-pick="${i}" aria-pressed="${i === pick}"><img src="${esc(abs(q.cover))}" alt="${esc(q.name)}"${i > 4 ? ' loading="lazy"' : ""}><span>${esc(q.name)}</span></button>`).join("")}</nav><button class="bnar r nudge" data-scr="1" aria-label="Scroll right">›</button></div>
+    <section class="bns bnsel" id="bnSel"></section>`;
+  paintPick(); bnRowWire();
+  $("#bnBar").innerHTML = `<div class="wrap"><span><b>The bundle</b> · ${n} packs · <s>${show(full)}</s> <em>${show(price)}</em></span><button class="btn acid" data-bundle>${bundleOn() ? "In your cart ✓" : "Get the bundle"}</button></div>`;
+}
+function paintPick() {
+  const L = BL(), p = L[pick], c = creatorOf(p), box = $("#bnSel"); if (!box) return;
+  const others = PRODUCTS.filter((q) => !L.includes(q)), mixed = BUNDLE10 && bundleMix().join() !== defaultMix().join();
+  const swapHTML = BUNDLE10 ? `<div class="bnsw"><button class="btn" data-swap>${swapOpen ? "Cancel" : "Swap this pack"}</button>${mixed ? `<button class="btn ghost" data-mixreset>Reset mix</button>` : ""}${ADMIN ? `<button class="btn ghost adm-only" data-mixsave>★ Save as default mix</button>` : ""}</div>
+    ${swapOpen ? `<div class="bnswl"><b>Swap ${esc(p.name)} for</b><div>${others.map((q) => `<button class="bnsb" data-swapto="${esc(q.id)}"><img src="${esc(abs(q.cover))}" alt="" loading="lazy"><span>${esc(q.name)}</span></button>`).join("")}</div></div>` : ""}` : "";
+  box.innerHTML = swapHTML + `<div class="bnsh"><div class="bnsi"><h2>${esc(p.name)}</h2><div class="pf">${esc(p.sub)} · ${esc(p.count)} · <s>${show(p.price)}</s></div>${c ? `<a class="bnby" href="${creatorUrl(c)}">${avatarHTML(c)}<span>by <b>${typeof CREATOR_AT !== "undefined" && CREATOR_AT ? "@" : ""}${esc(c.name)}</b></span></a>` : ""}</div><a class="btn" href="${packUrl(p.id)}">Open pack</a></div>
+    <div class="bnfull">${groupedHTML(p.sounds, p.id)}</div>`;
+  watchWaves(box);
+  document.querySelectorAll("[data-pick]").forEach((b) => { const on = +b.dataset.pick === pick; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+  const ct = $("#bnCt"); if (ct) ct.innerHTML = `<i>${pick + 1}</i> / ${BL().length}`;
+}
+function bnPop(b) { b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop");
+  setTimeout(() => b.classList.remove("pop"), 560); const box = $("#bnSel"); if (box) { box.classList.remove("in"); void box.offsetWidth; box.classList.add("in"); } }
+function bnRowWire() {
+  const row = $("#bnRow"); if (!row) return; let lastI = -1;
+  const step = () => (row.querySelector(".bnb") || {}).offsetWidth + 14 || 260;
+  const wrap = row.parentNode, edge = () => { const max = row.scrollWidth - row.clientWidth - 4, x = row.scrollLeft;
+    wrap.classList.toggle("mid", x > 4); wrap.classList.toggle("end", x >= max);
+    const l = $(".bnar.l", wrap), r = $(".bnar.r", wrap); if (l) l.classList.toggle("gone", x <= 4); if (r) r.classList.toggle("gone", x >= max); };
+  edge(); addEventListener("resize", edge); row.addEventListener("scroll", edge, { passive: true });
+  row.addEventListener("pointerdown", () => { const r = $(".bnar.r", wrap); if (r) r.classList.remove("nudge"); }, { once: true });
+  row.addEventListener("scroll", () => { const i = Math.round(row.scrollLeft / step()); if (i !== lastI) { if (lastI >= 0 && window.ckSfx) ckSfx("step", i > lastI ? 1 : -1); lastI = i; } }, { passive: true });
+  // drag with the mouse (touch scrolls natively)
+  let d = null; row.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse" || e.button) return; d = { x: e.clientX, s: row.scrollLeft, m: false }; });
+  addEventListener("pointermove", (e) => { if (!d) return; const dx = e.clientX - d.x; if (Math.abs(dx) > 5) { d.m = true; row.classList.add("drag"); } if (d.m) row.scrollLeft = d.s - dx; });
+  addEventListener("pointerup", () => { if (!d) return; const m = d.m; d = null; row.classList.remove("drag"); if (m) { row._noclick = true; setTimeout(() => (row._noclick = false), 50); } });
+}
+/* BN_P10 (Eman 20 Nov 20:00): PICK 10 PACKS page. A map of every pack CD; press one to hear a few sounds, SEE FULL PACK opens the whole pack
+   in a lightbox, + / PICK adds it to your 10. 10 picked = save 100. /bundle?trio=<world> = that core's 3-pack (buy 2, get 1 free). false = old bundle page */
+const BN_P10 = true;
+const TRIO_LABELS = ["Buy 2, get 1 free", "3 packs, pay for 2"];
+const trioLabel = () => TRIO_LABELS[(typeof LOOK !== "undefined" && LOOK && +LOOK.trioLabel) || 0] || TRIO_LABELS[0];
+let p10foc = null, p10sheet = false;
+const p10trio = () => { try { const w = new URLSearchParams(location.search).get("trio"); return w ? trioFor(w) : null; } catch (e) { return null; } };
+function p10list() { const t = p10trio(); if (!t) return PRODUCTS; const a = t.ids.map(byId), f = a.findIndex((p) => p.price === t.free); if (f >= 0) a.push(a.splice(f, 1)[0]); return a; }
+function p10rot(i) { const r = [[-3, 4], [2, -6], [-1, 8], [4, -2], [-4, -8], [1, 6], [3, 2], [-2, -4], [5, 7], [-5, 0]][i % 10]; return `--r:${r[0]}deg;--y:${r[1]}px`; }
+function renderP10() {
+  const t = p10trio(), L = p10list(), P = t ? t.ids : pick10();
+  if (!p10foc || !L.some((p) => p.id === p10foc)) p10foc = (L.find((p) => P.includes(p.id)) || L[0] || {}).id;
+  const head = t
+    ? `<div class="eyebrow">The 3-pack</div><h1>${esc(t.name)} · 3 packs</h1>
+       <div class="p10deal"><span class="p10save">${esc(trioLabel())}</span><span class="p10pp"><b>${show(t.price)}</b><s>${show(t.full)}</s></span><button class="btn acid" data-p10add>${t.ids.every((id) => cart.includes(id)) ? "In your cart ✓" : "Add the 3-pack"}</button></div>`
+    : `<div class="eyebrow">The bundle</div><h1>Pick 10 packs</h1>
+       <div class="p10pr"><span class="p10save">Save ${show(BUNDLE_OFF)}</span><span id="p10tot"></span></div>
+       <p class="pi">Press any CD to hear it. Pick the 10 you want, any mix of Serum packs and drum kits.</p>`;
+  $("#bn").innerHTML = `<header class="p10h"><div>${head}</div>${ADMIN && t ? `<button class="adm-trl" data-trlab title="Admin only">Label · ${esc(trioLabel())} ⇄</button>` : ""}
+    ${t ? "" : `<div class="p10ct"><div class="p10m" id="p10m"></div><b id="p10n"></b></div>`}</header>
+    <div class="p10w${t ? " tri" : ""}"><div class="p10map" id="p10map">${L.map((p, i) => `<div class="p10c${t && i === L.length - 1 ? " free" : ""}" data-p10c="${esc(p.id)}" style="${p10rot(i)}">${t && i === L.length - 1 ? `<em class="p10fr">Free</em>` : ""}<button class="p10cv" data-p10f="${esc(p.id)}" aria-label="Hear ${esc(p.name)}"><img src="${esc(abs(p.cover))}" alt=""${i > 8 ? ' loading="lazy"' : ""}></button>
+      <span class="p10nm">${esc(p.name)}<small>${show(p.price)}</small></span>${t ? "" : `<button class="p10pk" data-p10p="${esc(p.id)}" aria-label="Pick ${esc(p.name)}"></button>`}</div>`).join("")}</div>
+    <aside class="p10side" id="p10side"></aside></div>`;
+  p10paint(); p10side();
+}
+function p10paint() {
+  const t = p10trio(), P = t ? t.ids : pick10(), n = P.length, full = P.reduce((s, id) => s + byId(id).price, 0);
+  document.querySelectorAll("[data-p10c]").forEach((c) => { const i = P.indexOf(c.dataset.p10c); c.classList.toggle("on", i >= 0 && !t); c.classList.toggle("foc", c.dataset.p10c === p10foc); const b = c.querySelector(".p10pk"); if (b) b.textContent = i >= 0 ? i + 1 : "+"; });
+  const m = $("#p10m"); if (m) m.innerHTML = Array.from({ length: BUNDLE_N }, (_, i) => `<i class="${i < n ? "on" : ""}"></i>`).join("");
+  const nn = $("#p10n"); if (nn) nn.innerHTML = `<i>${n}</i> / ${BUNDLE_N} picked`;
+  const tot = $("#p10tot"); if (tot) tot.innerHTML = n >= BUNDLE_N ? `<b>${show(full - BUNDLE_OFF)}</b><s>${show(full)}</s>` : `<em>${n ? `${BUNDLE_N - n} more to save ${show(BUNDLE_OFF)}` : ""}</em>`;
+  const inCart = P.length && P.every((id) => cart.includes(id));
+  $("#bnBar").innerHTML = t
+    ? `<div class="wrap"><span><b>${esc(t.name)} 3-pack</b> · ${esc(trioLabel())} · <s>${show(t.full)}</s> <em>${show(t.price)}</em></span><button class="btn acid" data-p10add>${inCart ? "In your cart ✓" : "Add the 3-pack"}</button></div>`
+    : `<div class="wrap"><span><b>${n} / ${BUNDLE_N}</b> picked${n >= BUNDLE_N ? ` · <s>${show(full)}</s> <em>${show(full - BUNDLE_OFF)}</em>` : ` · save ${show(BUNDLE_OFF)} at 10`}</span><button class="btn acid" data-p10add ${n >= BUNDLE_N ? "" : "disabled"}>${inCart ? "In your cart ✓" : n >= BUNDLE_N ? `Add ${n} packs` : `Pick ${BUNDLE_N - n} more`}</button></div>`;
+}
+function p10side() {
+  const box = $("#p10side"), p = byId(p10foc); if (!box || !p) return; const t = p10trio(), on = pick10().includes(p.id), c = creatorOf(p);
+  box.innerHTML = `<button class="p10x" data-p10x aria-label="Close">×</button><div class="p10sh"><img src="${esc(abs(p.cover))}" alt=""><div><h2>${esc(p.name)}</h2><div class="pf">${esc(p.sub)} · ${esc(p.count)} · ${show(p.price)}</div>${c ? `<a class="bnby" href="${creatorUrl(c)}">${avatarHTML(c)}<span>by <b>${esc(c.name)}</b></span></a>` : ""}</div></div>
+    <div class="pv big p10pv">${sounds({ sounds: picks(p).map(({ _pid, ...s }) => s) })}</div>
+    <div class="p10sb">${t ? "" : `<button class="btn ${on ? "" : "acid"}" data-p10p="${esc(p.id)}">${on ? "✓ Picked · remove" : "Pick this pack"}</button>`}<button class="btn" data-p10full="${esc(p.id)}">See full pack</button></div>`;
+  box.classList.toggle("open", p10sheet); watchWaves(box);
+}
+function p10lb(id) {
+  const p = byId(id); if (!p) return; document.querySelector(".p10lb")?.remove(); const t = p10trio(), on = pick10().includes(p.id);
+  const el = document.createElement("div"); el.className = "p10lb"; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", p.name);
+  el.innerHTML = `<div class="p10lw"><div class="p10lh"><img src="${esc(abs(p.cover))}" alt=""><div><b>${esc(p.name)}</b><small>${esc(p.count)} · ${show(p.price)}</small></div>${t ? "" : `<button class="btn ${on ? "" : "acid"}" data-p10p="${esc(p.id)}">${on ? "✓ Picked" : "Pick this pack"}</button>`}<button class="p10x" data-p10lx aria-label="Close">×</button></div>
+    <div class="p10lb2">${groupedHTML(p.sounds, p.id)}</div></div>`;
+  document.body.appendChild(el); document.documentElement.classList.add("p10lock"); watchWaves(el);
+}
+function p10toggle(id) {
+  const P = pick10(), i = P.indexOf(id);
+  if (i >= 0) P.splice(i, 1); else { if (P.length >= BUNDLE_N) { const n = $("#p10n"); if (n) { n.classList.remove("shk"); void n.offsetWidth; n.classList.add("shk"); } return false; } P.push(id); }
+  setPick10(P); if (window.ckSfx) ckSfx(i >= 0 ? "button" : "press", 1); return true;
+}
+function p10click(e) {
+  const t = e.target;
+  if (t.closest("[data-p10lx]") || t.classList.contains("p10lb")) { document.querySelector(".p10lb")?.remove(); document.documentElement.classList.remove("p10lock"); return true; }
+  const f = t.closest("[data-p10f]"); if (f) { p10foc = f.dataset.p10f; p10sheet = true; p10paint(); p10side(); return true; }
+  const pk = t.closest("[data-p10p]"); if (pk) { p10toggle(pk.dataset.p10p); if (!t.closest("#p10side") && !t.closest(".p10lb")) p10foc = pk.dataset.p10p; p10paint(); p10side();
+    const lb = document.querySelector(".p10lb"); if (lb && t.closest(".p10lb")) { const on = pick10().includes(pk.dataset.p10p); pk.className = "btn " + (on ? "" : "acid"); pk.textContent = on ? "✓ Picked" : "Pick this pack"; } return true; }
+  const fl = t.closest("[data-p10full]"); if (fl) { p10lb(fl.dataset.p10full); return true; }
+  if (t.closest("[data-p10x]")) { p10sheet = false; $("#p10side").classList.remove("open"); return true; }
+  if (t.closest("[data-trlab]") && window.ADM) { const L = (window.ADM.look = window.ADM.look || {}); L.trioLabel = (+L.trioLabel || 0) ? 0 : 1; if (typeof LOOK !== "undefined") LOOK.trioLabel = L.trioLabel;
+    fetch("/api/admin/packs", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(window.ADM) }); renderP10(); return true; }
+  const add = t.closest("[data-p10add]"); if (add && !add.disabled) { const tr = p10trio(), P = tr ? tr.ids : pick10(); P.forEach((id) => { if (!cart.includes(id)) cart.push(id); }); saveCart(); paintCart(); track("cart", null, tr ? "trio-" + tr.world : "pick10"); p10paint(); openCart(); return true; }
+  return false;
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && document.querySelector(".p10lb")) { document.querySelector(".p10lb").remove(); document.documentElement.classList.remove("p10lock"); } });
+
+function render() {
+  if (BN_P10 && BUNDLE10) return renderP10();
+  if (BN_PICK) return renderPick();
+  const n = PRODUCTS.length, full = bundleFull(), price = bundlePrice();
+  const top = BN_GRID ? `<nav class="bngrid" aria-label="All packs in the bundle">${PRODUCTS.map((p) => `<button class="bnb" data-go="${esc(p.id)}" title="${esc(p.name)}"><img src="${esc(abs(p.cover))}" alt="${esc(p.name)}"><span>${esc(p.name)}</span></button>`).join("")}</nav>` : "";
+  $("#bn").innerHTML = top + `<header class="bnh${BN_GRID ? " nost" : ""}">${BN_GRID ? "" : `<div class="bnst">${PRODUCTS.slice(0, 5).map((p) => `<span class="pq"><img src="${esc(abs(p.cover))}" alt=""><i class="gl"></i></span>`).join("")}</div>`}
+    <div><div class="eyebrow">The bundle</div><h1>Every pack · ${n} packs</h1>
+    <div class="bnpr"><b>${show(price)}</b><s>${show(full)}</s><span class="bnoff">50% off</span></div>
+    <p class="pi">All ${n} COREKULT packs in one go, half price. ${PRODUCTS.reduce((t, p) => t + ((String(p.count).match(/\d+/) || [0])[0] | 0), 0)}+ sounds. New packs you already own stay yours.</p>
+    <button class="btn acid" data-bundle>Get the bundle · ${show(price)}</button></div></header>
+    ${PRODUCTS.map((p) => { const c = creatorOf(p), pk = picks(p);
+      return `<section class="bns" id="b-${p.id}"><div class="bnsh"><a class="bnc" href="${packUrl(p.id)}"><span class="pq"><img src="${esc(abs(p.cover))}" alt="" loading="lazy"><i class="gl"></i></span></a>
+        <div class="bnsi"><h2>${esc(p.name)}</h2><div class="pf">${esc(p.sub)} · ${esc(p.count)} · <s>${show(p.price)}</s></div>${c ? `<a class="bnby" href="${creatorUrl(c)}">${avatarHTML(c)}<span>by <b>${typeof CREATOR_AT !== "undefined" && CREATOR_AT ? "@" : ""}${esc(c.name)}</b></span></a>` : ""}</div>
+        <button class="btn bnall" data-all="${p.id}" aria-expanded="false">See full list ↓</button></div>
+        <div class="pv big">${sounds({ sounds: pk.map((x) => ({ ...x, _tc: typeof tcOf === "function" ? tcOf(x.name, String(x.name).split(/\s+/)[0].toUpperCase()) : undefined, name: String(x.name).split(/\s+/).length > 1 ? String(x.name).replace(/^\S+\s+/, "") : x.name })) })}</div>
+        <div class="bnfull" id="f-${p.id}" hidden></div></section>`; }).join("")}`;
+  $("#bnBar").innerHTML = `<div class="wrap"><span><b>The bundle</b> · ${n} packs · <s>${show(full)}</s> <em>${show(price)}</em></span><button class="btn acid" data-bundle>${bundleOn() ? "In your cart ✓" : "Get the bundle"}</button></div>`;
+  watchWaves($("#bn"));
+}
+document.addEventListener("click", (e) => {
+  if (shopClick(e)) return;
+  if (BN_P10 && BUNDLE10 && p10click(e)) return;
+  const pk = e.target.closest("[data-pick]");
+  if (pk) { const row = $("#bnRow"); if (row && row._noclick) return; pick = +pk.dataset.pick; paintPick(); bnPop(pk); swapOpen = false; try { history.replaceState(null, "", "#" + BL()[pick].id); } catch (er) {} if (window.ckSfx) { ckSfx("press"); setTimeout(() => ckSfx("land"), 200); } pk.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" }); return; }
+  const sc = e.target.closest("[data-scr]");
+  if (sc) { const row = $("#bnRow"); if (row) row.scrollBy({ left: +sc.dataset.scr * row.clientWidth * 0.8, behavior: "smooth" }); if (window.ckSfx) ckSfx("button", +sc.dataset.scr); return; }
+  const go = e.target.closest("[data-go]");
+  if (go) { const id = go.dataset.go, sec = $("#b-" + id), all = $(`[data-all="${id}"]`);
+    if (all && all.getAttribute("aria-expanded") !== "true") all.click(); else if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (window.ckSfx) ckSfx("press"); return; }
+  const a = e.target.closest("[data-all]");
+  if (a) { const p = byId(a.dataset.all), f = $("#f-" + p.id), open = f.hidden;
+    if (open && !f.innerHTML) { f.innerHTML = groupedHTML(p.sounds, p.id); watchWaves(f); }
+    f.hidden = !open; a.setAttribute("aria-expanded", open); a.textContent = open ? "Hide list ↑" : "See full list ↓";
+    if (open) setTimeout(() => f.scrollIntoView({ behavior: "smooth", block: "start" }), 30); }
+  if (BUNDLE10) {
+    if (e.target.closest("[data-swap]")) { swapOpen = !swapOpen; paintPick(); return; }
+    const sw = e.target.closest("[data-swapto]"); if (sw) { const m = bundleMix(); m[pick] = sw.dataset.swapto; setMix(m); swapOpen = false; picked = true; render(); paintCart(); return; }
+    if (e.target.closest("[data-mixreset]")) { setMix(null); swapOpen = false; render(); paintCart(); return; }
+    if (e.target.closest("[data-mixsave]") && window.ADM) { window.ADM.bundleMix = bundleMix(); BMIX_DEF = window.ADM.bundleMix; fetch("/api/admin/packs", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(window.ADM) }).then((r) => { const b2 = $("[data-mixsave]"); if (b2) b2.textContent = r.ok ? "Saved · live" : "Not saved"; }); return; }
+  }
+  if (e.target.closest("[data-bundle]")) {
+    BL().forEach((p) => { if (!cart.includes(p.id)) cart.push(p.id); }); saveCart(); paintCart(); track("cart", null, "bundle"); render(); openCart();
+  }
+});
+document.addEventListener("ck-cur", () => { render(); paintCart(); });
+loadShop().then(() => { render(); paintCart(); });
+</script>
+</body>
+</html>

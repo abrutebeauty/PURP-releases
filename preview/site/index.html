@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>/* EARLY_P (speed 20 Nov): start the product list download now, not after shop.js runs. shop.js uses window.__ckP */try{window.__ckP=fetch("/api/products?lite=1",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()});window.__ckP.catch(function(){})}catch(e){}</script>
+<title>COREKULT · Serum presets and drum kits</title>
+<meta name="description" content="Dark Serum preset packs and drum kits. Crystal Core, Dreamcore, LOOK MOM I CAN FLY, 2HOLLCORE.">
+<meta property="og:title" content="COREKULT">
+<meta property="og:description" content="Dark Serum preset packs and drum kits.">
+<meta property="og:image" content="https://corekult.com/img/og.jpg">
+<meta name="theme-color" content="#0b0a0e">
+<link rel="icon" href="favicon.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css?v=1">
+<link rel="stylesheet" href="/speed.css?v=4">
+<link rel="stylesheet" href="/cdfx.css?v=3"><!-- 3D stack CSS only; frost script cdfx.js removed (Eman 20 Nov 00:46) -->
+<link rel="preload" as="image" href="/img/cd/crystal-core-i-600.webp?v=16" fetchpriority="high"><!-- first hero CD; update ?v when CD_VER changes --><!-- FONTS_SELF (speed 20 Nov). old: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@1,300&family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap"> -->
+<link rel="stylesheet" href="shop.css?v=81">
+<link rel="stylesheet" href="free.css?v=1">
+<link rel="stylesheet" href="hero-bg.css?v=1">
+<link rel="stylesheet" href="/day-cdfx.css?v=1"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day-shop.css?v=6"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day-free.css?v=1"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day-hero-bg.css?v=1"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day.css?v=1"><!-- DAY_MODE: day palette + switch, keep last -->
+<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+<script src="/fx.js?v=1"></script><!-- FX (Eman 24 Nov): CD 3D page transition + UI sounds. Remove this line = off -->
+<script src="/opium.js?v=6"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
+</head>
+<body class="home">
+<nav class="top"><div class="wrap">
+  <a class="logo" href="#top" aria-label="COREKULT home"><img src="img/logo-white-s.webp?v=1" alt="COREKULT" width="110" height="34"></a><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="#crystal">Crystal</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="#dream">Dream</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="#travis">Travis</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="#holl">2Holl</a> -->
+  <a class="nl" href="#packs">Shop</a>
+  <div class="curw" id="curW"></div><div class="cartw"><button class="nl cartb" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 16 16"><path d="M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="13.3" r="1.2"/><circle cx="12" cy="13.3" r="1.2"/></svg><span id="cartN" hidden>0</span></button><div class="cdd" id="cartDd" hidden></div></div>
+</div></nav>
+
+<header class="hero" id="top"><div class="bflow bfD" id="bfD"><div class="bf-top"><a class="bf-k" href="/bundle">The bundle<small class="bf-c">every pack</small></a><a class="bf-off" href="/bundle"><b>50%</b><span>OFF</span></a></div><div class="bf-st" tabindex="0" aria-label="Packs in the bundle, scroll or drag"></div><div class="bf-nm"></div><div class="bf-bot"><button class="bf-ar" data-bf="-1" aria-label="Previous"><svg viewBox="0 0 10 10"><path d="M6.5 1.5 3 5l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><span class="bf-n"></span><button class="bf-ar" data-bf="1" aria-label="Next"><svg viewBox="0 0 10 10"><path d="M3.5 1.5 7 5 3.5 8.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><a class="btn acid bf-go" href="/bundle">Get the bundle</a></div></div><a class="stack bstack bcol" href="/bundle" aria-label="The bundle, 50% off every pack"><span class="bcg" id="bcG"></span><span class="bcl"><b id="bnLab">The bundle · every pack</b><em>50% off</em></span></a>
+<div class="wrap">
+  <div class="eyebrow">Serum presets · Drum kits</div>
+  <h1><img class="hero-logo" src="img/logo-white.webp?v=1" alt="COREKULT" width="1400" height="433"></h1>
+  <div class="tag">Presets and samples from alternative core artists.</div>
+  <div class="stats" id="stats"></div>
+  <div class="bflow bfM" id="bfM"><div class="bf-top"><a class="bf-k" href="/bundle">The bundle<small class="bf-c">every pack</small></a><a class="bf-off" href="/bundle"><b>50%</b><span>OFF</span></a></div><div class="bf-st" tabindex="0" aria-label="Packs in the bundle, scroll or drag"></div><div class="bf-nm"></div><div class="bf-bot"><button class="bf-ar" data-bf="-1" aria-label="Previous"><svg viewBox="0 0 10 10"><path d="M6.5 1.5 3 5l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><span class="bf-n"></span><button class="bf-ar" data-bf="1" aria-label="Next"><svg viewBox="0 0 10 10"><path d="M3.5 1.5 7 5 3.5 8.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><a class="btn acid bf-go" href="/bundle">Get the bundle</a></div></div>
+  <a class="mbund" href="/bundle"><span class="mbc" id="mbCov"></span><span><b>The bundle</b><small id="mbN">Every pack · 50% off</small></span><em>50% off</em></a>
+  <div class="cta"><a class="btn acid" href="#packs">Shop packs</a><a class="btn" href="#packs" data-fchip>Free samples</a></div>
+</div></header>
+
+<div class="bar" id="packs"><div class="wrap" id="chips"></div></div>
+<main class="wrap" id="worlds"></main>
+
+<section class="wrap how">
+  <h3>How it works</h3>
+  <div class="steps">
+    <div><b>01</b><span>Open a pack and tap a sound to hear it</span></div>
+    <div><b>02</b><span>Pick any 3 packs, pay for 2</span></div>
+    <div><b>03</b><span>Pay with card or PayPal. Download link lands in your inbox</span></div>
+    <div><b>04</b><span>Drop the presets in Serum 1 or Serum 2</span></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span class="logo"><img src="img/logo-white-s.webp?v=1" alt="COREKULT" width="84" height="26"></span>
+  <span>Packs marked “inspired by” are not affiliated with or endorsed by any artist.</span>
+  <span>© <span id="yr"></span> COREKULT</span>
+</div></footer>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Free samples">
+  <div class="dv" data-v="free" hidden>
+    <div class="dh"><b>Free samples</b><button class="x" data-close aria-label="Close">×</button></div>
+    <div class="dbody">
+      <div class="frh"><img id="frCover" alt=""><b id="frName"></b></div>
+      <div id="frForm"><label class="fl">Email<input id="frEmail" data-clarity-mask="true" type="email" autocomplete="email" placeholder="you@email.com"></label><button class="btn acid wide" id="frGo">Get free samples</button></div>
+      <div id="frList" class="dl-list" hidden></div>
+    </div>
+  </div>
+</aside>
+
+<script src="shop.js?v=113"></script>
+<script src="free-picks.js?v=3"></script>
+<script src="home.js?v=26"></script>
+</body>
+</html>

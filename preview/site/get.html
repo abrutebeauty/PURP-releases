@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>/* EARLY_P (speed 20 Nov): start the product list download now, not after shop.js runs. shop.js uses window.__ckP */try{window.__ckP=fetch("/api/products?lite=1",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()});window.__ckP.catch(function(){})}catch(e){}</script>
+<title>COREKULT</title>
+<meta name="description" content="Dark Serum preset packs and drum kits. Crystal Core, Dreamcore, LOOK MOM I CAN FLY, 2HOLLCORE.">
+<meta property="og:title" content="COREKULT">
+<meta property="og:description" content="Dark Serum preset packs and drum kits.">
+<meta property="og:image" content="https://corekult.com/img/og.jpg">
+<meta name="theme-color" content="#0b0a0e">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css?v=1">
+<link rel="stylesheet" href="/speed.css?v=4">
+<link rel="stylesheet" href="/cdfx.css?v=3"><!-- 3D stack CSS only; frost script cdfx.js removed (Eman 20 Nov 00:46) --><!-- FONTS_SELF (speed 20 Nov). old: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@1,300&family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap"> -->
+<link rel="stylesheet" href="/shop.css?v=81">
+<link rel="stylesheet" href="/day-cdfx.css?v=1"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day-shop.css?v=6"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day.css?v=1"><!-- DAY_MODE: day palette + switch, keep last -->
+<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+<script src="/fx.js?v=1"></script><!-- FX (Eman 24 Nov): CD 3D page transition + UI sounds. Remove this line = off -->
+<script src="/opium.js?v=6"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
+</head>
+<body class="land">
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/" aria-label="COREKULT home"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="110" height="34"></a><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#crystal">Crystal</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#dream">Dream</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#travis">Travis</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#holl">2Holl</a> -->
+  <a class="nl" href="/#packs">Shop</a>
+  <div class="cartw lcart"><button class="nl cartb" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 16 16"><path d="M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="13.3" r="1.2"/><circle cx="12" cy="13.3" r="1.2"/></svg><span id="cartN" hidden>0</span></button><div class="cdd" id="cartDd" hidden></div></div>
+</div></nav>
+
+<div class="lnd">
+<div class="pkban" id="pkBan" aria-hidden="true"><i></i></div>
+<main class="wrap lg" id="lg">
+  <div class="lgt" id="lgTop"></div>
+  <section class="lgs"><h2 class="sg">Hear the sample<span id="lgN"></span></h2><div class="pv big" id="lgSounds"></div><div id="lgLock"></div></section>
+</main>
+<section class="wrap lgx" id="lgMore" hidden></section>
+</div>
+<footer><div class="wrap">
+  <span class="logo"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="84" height="26"></span>
+  <span>Packs marked “inspired by” are not affiliated with or endorsed by any artist.</span>
+  <span>© <span id="yr"></span> COREKULT</span>
+</div></footer>
+
+<script src="/jszip.min.js"></script>
+<script src="/shop.js?v=113"></script>
+<script src="/free-picks.js?v=3"></script>
+<script>
+/* FREE SAMPLE landing: /get/<pack id>. One pack, one email field, download first. No cart until they're done. */
+$("#yr").textContent = new Date().getFullYear();
+/* LAND_V2 (research 18 Nov): no nav links before the email, locked "more in the full pack" tiles, a 2nd form under them,
+   small cookie banner, success state = full pack + 3 FOR 2 + 4 more packs. Old version: add ?v1 to the link. */
+const PREP_MS = 5000;   // how long the "preparing your download" bar runs (Eman: 5 s)
+const LAND_V2 = !/[?&]v1\b/.test(location.search);
+if (LAND_V2) document.body.classList.add("v2");
+const ID = decodeURIComponent(location.pathname.split("/")[2] || new URLSearchParams(location.search).get("id") || "");
+// the sample: loops first (hearing the style), then one of each kind, up to freeCount (default 8)
+function sampleOf(p) {
+  if (typeof freePicks === "function") return freePicks(p);   // best + mixed picks (free-picks.js, Eman 20 Nov)
+  if (p.sample && p.sample.length) return p.sample.map((f) => p.sounds.find((s) => s.file === f)).filter(Boolean);
+  const max = p.freeCount || 8, out = [], seen = new Set(), kind = (s) => String(s.name).split(/\s+/)[0].toUpperCase();
+  p.sounds.filter((s) => kind(s) === "LOOP").slice(0, 3).forEach((s) => out.push(s));
+  p.sounds.forEach((s) => { if (out.length < max && !seen.has(kind(s)) && kind(s) !== "LOOP") { seen.add(kind(s)); out.push(s); } });
+  p.sounds.forEach((s) => { if (out.length < max && !out.includes(s)) out.push(s); });
+  return out.slice(0, max);
+}
+let P, S, FNAME = "", FLAB = "";
+function render() {
+  P = byId(ID);
+  if (!P) { location.replace("/"); return; }
+  const ONE = typeof FREE_ONE !== "undefined" && FREE_ONE;   // FREE_ONE (free-picks.js): one free pack per series
+  if (ONE && !isFreeHost(P)) { const h = freeHost(P.world); if (h) { location.replace("/get/" + encodeURIComponent(h.id) + location.search); return; } }
+  S = ONE ? worldMix(P.world) : sampleOf(P);
+  FNAME = ONE ? freeName(P) : P.name; FLAB = ONE ? freeLab(P) : freeLabel(P);
+  document.title = FNAME + " (" + FLAB + ") · COREKULT";
+  $("#pkBan i").style.backgroundImage = `url("${abs(P.banner || P.cover)}")`;
+  const FREE_BARE_GET = true;   // FREE_BARE (Eman 21 Nov): bare disc, no case. false = img/cdfree
+  $("#lgTop").innerHTML = `<div class="pkc"><span class="pq"><img src="${esc(P.freeCover ? abs(P.freeCover) : "/img/" + (FREE_BARE_GET ? "cdbare" : "cdfree") + "/" + encodeURIComponent(P.id) + ".webp?v=1")}" onerror="this.onerror=null;this.src='${esc(abs(P.cover))}'" alt="${esc(FNAME)} free sample cover"><i class="gl"></i></span><span class="stamp">${FLAB.toUpperCase()}</span></div>
+    <div class="pki">
+      <div class="eyebrow">Free download</div>
+      <h1>${esc(FNAME)} <span class="fsl">(${FLAB})</span></h1>
+      <div class="pf">${S.length} sounds picked from ${ONE ? "every " + esc(FNAME) + " pack" : "the full pack"} · free, no card</div>
+      <p class="pi">${esc(P.blurb)}</p>
+      <div class="lgf" id="lgForm"><input id="lgEmail" data-clarity-mask="true" type="email" autocomplete="email" placeholder="you@email.com" aria-label="Email"><button class="btn acid" id="lgGo">Download free</button></div>
+      <small class="lgn" id="lgNote"><span class="nocard"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>No card information needed</span></small>
+      ${worksWith(P, P.sampleZip ? "Works with" : "Full pack works with")}
+      <div id="lgAfter"></div>
+    </div>`;
+  try { $("#lgEmail").value = localStorage.getItem("ck-email") || ""; } catch (e) {}
+  $("#lgN").textContent = S.length;
+  $("#lgSounds").innerHTML = sounds({ sounds: S.map((x) => ({ ...x, _tc: typeof tcOf === "function" ? tcOf(x.name, String(x.name).split(/\s+/)[0].toUpperCase()) : undefined, name: String(x.name).split(/\s+/).length > 1 ? String(x.name).replace(/^\S+\s+/, "") : x.name })) });
+  watchWaves($("#lgSounds"));
+  if (LAND_V2) {
+    const more = Math.max(0, packTotal() - S.length);
+    const LK = `<svg viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" fill="currentColor"/><path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>`;
+    $("#lgLock").innerHTML = more ? `<div class="lock">${[0, 1, 2, 3].map((i) => i === 0 ? `<a class="lkt lkbtn" id="lgSee" href="${fullUrl()}">${LK}<b>+${more} more</b><small>in the full pack</small><em>See full pack →</em></a>` : `<div class="lkt">${LK}</div>`).join("")}</div>` : "";
+    // (2nd email form under the tiles removed, Eman 18 Nov: one Download free is enough)
+  }
+}
+/* "+N more" tile -> the real pack page (price + waveforms), with a way back here (Eman 18 Nov) */
+function fullUrl() { const u = packUrl(P.id); return u + (u.includes("?") ? "&" : "?") + "from=get"; }
+// total sounds in the full pack: the first number in "count" ("98 sounds · 30 loops" = 98), never less than the listed previews
+function packTotal() { const n = +((String(P.count).match(/\d+/) || [0])[0]); return Math.max(n, P.sounds.filter((x) => !x.hidden).length); }
+/* one zip: the pack's own sample zip if Eman uploaded one (p.sampleZip), else the sample sounds zipped in the browser */
+/* the zip: Eman's own sample zip if uploaded (p.sampleZip), else the sample sounds zipped in the browser */
+let ZIP = null;
+function PREP_ZIP() {
+  if (ZIP) return ZIP;
+  const name = `${FNAME} (${FLAB})`;
+  if (P.sampleZip) return (ZIP = Promise.resolve({ url: abs(P.sampleZip), name }));
+  const z = new JSZip(), f = z.folder(name);
+  ZIP = Promise.all(S.map((s) => fetch(abs(s.file)).then((r) => r.blob()).then((b) => f.file(s.name.replace(/[\\/:*?"<>|]/g, "") + (s.file.match(/\.\w+$/) || [".mp3"])[0], b))))
+    .then(() => { f.file("READ ME.txt", `${name}\n\n${S.length} sounds from ${FNAME} by COREKULT.\n100% royalty-free: use them in your songs and beats.\nFull pack: https://corekult.com/pack/${P.id}\n`); return z.generateAsync({ type: "blob" }); })
+    .then((blob) => ({ url: URL.createObjectURL(blob), name }));
+  return ZIP;
+}
+function save(z) { const a = document.createElement("a"); a.href = z.url; a.download = z.name + ".zip"; document.body.appendChild(a); a.click(); a.remove(); }
+async function download() { save(await PREP_ZIP()); }
+document.addEventListener("click", async (e) => {
+  if (shopClick(e)) return;
+  if (e.target.closest("#lgGo2")) { $("#lgEmail").value = $("#lgEmail2").value; $("#lgGo").click(); if ($("#lgForm2")) $("#lgForm2").remove(); scrollTo({ top: 0, behavior: "smooth" }); return; }
+  if (e.target.closest("#lgGo")) {
+    const em = $("#lgEmail").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { $("#lgEmail").classList.add("bad"); $("#lgEmail").focus(); return; }
+    $("#lgEmail").classList.remove("bad"); $("#lgGo").disabled = true; $("#lgGo").textContent = "Downloading…";
+    try { localStorage.setItem("ck-email", em); } catch (er) {}
+    fetch("/api/free", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email: em, pack: P.id }) }).catch(() => {});
+    track("free", P.id, "landing");
+    if ($("#lgForm2")) $("#lgForm2").remove();
+    // a short "preparing" step (about 3.5 s) so the points card gets read; the download then starts on its own
+    $("#lgForm").innerHTML = `<div class="prep"><div class="prh"><span id="prTx">Gathering your sounds…</span><b id="prPc">0%</b></div><div class="prb"><i id="prBar"></i></div></div>`;
+    $("#lgNote").textContent = "";
+    meterOffer(em, $("#lgAfter"), "in", reveal);
+    const ready = PREP_ZIP();   // build the zip while the bar runs
+    const stages = [[0, "Gathering your sounds…"], [25, "Checking every file…"], [50, P.type === "drums" ? "Packing loops + one-shots…" : "Packing presets + MIDI…"], [75, "Zipping…"], [88, "Almost there…"]];
+    await new Promise((res) => { const t0 = performance.now(), MS = PREP_MS;
+      const st = (t) => { const k = Math.min(1, (t - t0) / MS), pc = Math.round(k < 0.4 ? 80 * k / 0.4 : 80 + 20 * (k - 0.4) / 0.6)   /* fast to 80% in 2 s, then slow for the last 20% */;
+        $("#prBar").style.width = pc + "%"; $("#prPc").textContent = pc + "%"; $("#prTx").textContent = stages.filter((s) => pc >= s[0]).pop()[1];
+        if (k < 1) requestAnimationFrame(st); else res(); };
+      requestAnimationFrame(st); });
+    try { save(await ready); } catch (er) {}
+    $("#lgForm").innerHTML = `<div class="lgok">✓ Downloaded · ${esc(FNAME)} (${FLAB}).zip</div>`;
+    $("#lgNote").textContent = "Didn't start? "; $("#lgNote").insertAdjacentHTML("beforeend", `<button class="ckl" id="lgAgain">Download again</button>`);
+  }
+  if (e.target.closest("#lgAgain")) download();
+});
+/* after the claim (or "no thanks"): now show the full pack, the other packs and the bundle box */
+function reveal() {
+  document.body.classList.add("open");
+  const others = PRODUCTS.filter((q) => q.id !== P.id).sort((a, b) => (b.world === P.world) - (a.world === P.world)).slice(0, LAND_V2 ? 4 : 99);
+  $("#lgMore").innerHTML = `<div class="lgfull"><span class="pq"><img src="${esc(abs(P.cover))}" alt=""><i class="gl"></i></span>
+      <div><small>Liked the sample?</small><b>${esc(P.name)} · full pack</b><span>${esc(P.count)} · ${show(P.price)} · +200 PTS${LAND_V2 ? " · 3 for 2, mix any packs" : ""}</span></div>
+      <div class="buy"><a class="btn" href="${packUrl(P.id)}">Hear all</a><button class="btn acid" data-add="${P.id}">Add to cart</button></div></div>
+    <h2 class="sg">${LAND_V2 ? "More from COREKULT" : "Keep exploring"}</h2><div class="simg">${others.map((q) => `<div class="mc"><a class="mcv" href="${packUrl(q.id)}"><span class="pq"><img src="${esc(abs(q.cover))}" alt=""><i class="gl"></i></span></a><a href="${packUrl(q.id)}"><b>${esc(q.name)}</b></a><div class="pf">${esc(q.sub)} · ${show(q.price)}</div></div>`).join("")}</div>`;
+  $("#lgMore").hidden = false; paintCart();
+  setTimeout(() => $("#lgMore").scrollIntoView({ behavior: "smooth", block: "start" }), 1800);
+}
+document.addEventListener("ck-cur", () => { render(); paintCart(); });
+loadShop().then(() => { render(); paintCart(); });
+// v2: the cookie banner sits as a strip under the logo bar, in the page flow, so it never covers the form or the sounds
+if (LAND_V2) { const mv = () => { const c = $("#consent"), n = $("nav.top"); if (c && n && n.nextElementSibling !== c) n.after(c); }; new MutationObserver(mv).observe(document.body, { childList: true }); mv(); }
+</script>
+</body>
+</html>
