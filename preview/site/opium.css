@@ -357,9 +357,8 @@ html.opium2 .card:nth-child(7n+2)>*{position:relative;z-index:1}
 html.opium2 .card:nth-child(42n+9){--cb:url(/img/op/cb/cb2.webp)}html.opium2 .card:nth-child(42n+16){--cb:url(/img/op/cb/cb3.webp)}
 html.opium2 .card:nth-child(42n+23){--cb:url(/img/op/cb/cb4.webp)}html.opium2 .card:nth-child(42n+30){--cb:url(/img/op/cb/cb5.webp)}html.opium2 .card:nth-child(42n+37){--cb:url(/img/op/cb/cb6.webp)}
 /* OPIUM 2 (Eman 22:05): CDs + trading cards scale up a little on hover, springy */
-html.opium2 #worlds .card .pq,html.opium2 #pkTop .pkc .pq,html.opium2 .lnd .pkc .pq,html.opium2 .bf-pi{transition:transform .38s cubic-bezier(.34,1.56,.64,1)!important}
-html.opium2 #worlds .card .cv:hover .pq,html.opium2 #pkTop .pkc:hover .pq,html.opium2 .lnd .pkc:hover .pq{transform:scale(1.06)!important}
-html.opium2 .bf-pl:hover .bf-pi{transform:translate(-50%,-50%) translate(var(--x),var(--y)) rotate(var(--r)) scale(1.05)!important}
+html.opium2 .bf-pi{transition:transform .45s cubic-bezier(.22,.8,.3,1)!important}
+
 /* OPIUM 2 (Eman 22:04): top 3-pack bigger, over the red shapes, whole group moved left */
 @media(min-width:901px){html.opium2 header.hero .bfD{transform:translateX(-140px)}
 html.opium2 header.hero .bfD .bf-st{transform:scale(1.32);transform-origin:50% 55%;z-index:3;position:relative}
@@ -410,15 +409,22 @@ html.opium2 #consent .btn{font-size:19px!important;padding:24px 44px!important;m
 html.opium2 #consent .cmore{flex:1 1 100%;order:5}
 }
 
-/* quick tweak 24 Nov (Eman 23:18): hero CD stack even bigger, bottom can sit behind the PICK 10 PACKS text (text on top). Nothing else in the hero moves */
-@media(min-width:901px){
-html.opium2 header.hero .bfD .bf-st{transform:scale(1.6);transform-origin:50% 38%;z-index:1}
-html.opium2 header.hero .bfD .bf-nm{z-index:4}
-}
-
-/* quick tweak 24 Nov (Eman 23:20): smoother, bigger 3D hover on pack art; pops out past the card rectangle */
-html.opium2 #worlds .card .cv{overflow:visible!important}
+/* quick tweak 24 Nov (Eman 23:20+): hover pop on the IMG inside the floating .pq (the .pq keeps its own float animation, so nothing fights), eased, pops out past the card */
+html.opium2 #worlds .card .cv,html.opium2 #pkTop .pkc,html.opium2 .lnd .pkc{overflow:visible!important}
 html.opium2 #worlds .card:hover{z-index:20}
-html.opium2 #worlds .card .pq{transition:transform .45s cubic-bezier(.22,.8,.3,1),filter .45s ease!important;will-change:transform}
-html.opium2 #worlds .card .cv:hover .pq{transform:translateY(-14px) scale(1.2)!important;filter:drop-shadow(0 28px 26px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(139,108,246,.4))}
-html.opium2 #worlds .card .cv:hover .pq img{-webkit-box-reflect:unset}
+html.opium2 .card .pq img,html.opium2 #pkTop .pkc .pq img,html.opium2 .lnd .pkc .pq img{transition:transform .5s cubic-bezier(.22,.8,.3,1);transform:translateZ(0);will-change:transform}
+html.opium2 .card .cv:hover .pq img,html.opium2 #pkTop .pkc:hover .pq img,html.opium2 .lnd .pkc:hover .pq img{transform:translateY(-12px) scale(1.18)}
+html.opium2 .card .pq,html.opium2 #pkTop .pkc .pq,html.opium2 .lnd .pkc .pq{transition:filter .5s ease}
+html.opium2 .card .cv:hover .pq{filter:drop-shadow(0 30px 26px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(139,108,246,.4))}
+
+/* quick tweak 24 Nov (Eman 23:23): 3-pack hero banner fills the red outline box (from 40% of the page width to 4% from the right), CDs much bigger, bottom of the stack sits behind the title text, hover = smooth pop */
+@media(min-width:1041px){
+html.opium2 header.hero .bfD{transform:none!important;left:40%;right:4%;width:auto;top:54px;bottom:46px}
+html.opium2 header.hero .bfD .bf-st{position:absolute!important;inset:0;margin:0!important;transform:none!important;z-index:3;overflow:visible}
+html.opium2 header.hero .bfD .bf-top,html.opium2 header.hero .bfD .bf-nm,html.opium2 header.hero .bfD .bf-go{position:relative;z-index:5}
+html.opium2 header.hero .bfD .bf-nm{margin-top:auto!important}
+html.opium2 .bfD .bf-pi{height:76%;width:auto!important;max-height:none!important;aspect-ratio:1;top:46%;transform:translate(-50%,-50%) translate(calc(var(--x) * 2.5),var(--y)) rotate(var(--r))}
+html.opium2 .bfD .bf-pl:hover .bf-pi{transform:translate(-50%,-50%) translate(calc(var(--x) * 2.5),calc(var(--y) - 3%)) rotate(var(--r)) scale(1.1)!important}
+html.opium2 .bfD .bf-nm b{font-size:26px}html.opium2 .bfD .bf-nm small{font-size:14px}
+}
+@media(min-width:1041px){html.opium2 header.hero .bfD .op-gw{z-index:4}}
