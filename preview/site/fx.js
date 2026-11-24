@@ -4,7 +4,7 @@
    Respects: the site sound switch (localStorage ck-mute), and prefers-reduced-motion (no spin, no typing, no sweeps). Flags below. */
 (function () {
   "use strict";
-  var FX_SPIN = true, FX_TYPE = true, FX_SOUND = true;
+  var FX_SPIN = false, FX_TYPE = false, FX_SOUND = true;   // 24 Nov (Eman): transition + typing OFF, sounds stay
   var doc = document.documentElement, KEY = "ck-fx-tr";
   var reduced = function () { try { return matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { return false; } };
   var muted = function () { try { return localStorage.getItem("ck-mute") === "1"; } catch (e) { return false; } };
