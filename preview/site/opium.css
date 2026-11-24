@@ -345,3 +345,40 @@ html.opium2 #pkTop .buy [data-free]{display:none!important}
 html.opium2 #pkTop .buy [data-add]{font-size:20px!important;padding:22px 56px!important;min-width:320px;letter-spacing:.16em}
 html.opium2 #pkTop .buy [data-add]{white-space:nowrap}
 @media(max-width:700px){html.opium2 #pkTop .buy{display:block!important}html.opium2 #pkTop .buy [data-add]{width:100%!important;min-width:0;padding:20px 12px!important;font-size:18px!important}}
+/* OPIUM 2 (Eman 22:03): Add to cart + View pack in acid yellow */
+html.opium2 .btn.acid[data-add]{background:#E4FF3A!important;color:#0b0b0b!important;border-color:#E4FF3A!important}
+html.opium2 .btn.acid[data-add]:hover{background:#f0ff7a!important;border-color:#f0ff7a!important}
+html.opium2 #worlds .card a.btn[href*="/pack/"]{background:#ece8df!important;color:#0b0b0b!important;border-color:#ece8df!important}
+html.opium2 #worlds .card a.btn[href*="/pack/"]:hover{background:#fff!important;border-color:#fff!important}
+/* OPIUM 2 (Eman 22:04): purple cards get trading-card art behind them, darkened so text reads */
+html.opium2 .card:nth-child(7n+2){background:#0b0912 var(--cb,url(/img/op/cb/cb1.webp)) center/cover no-repeat!important;position:relative}
+html.opium2 .card:nth-child(7n+2)::before{background:linear-gradient(180deg,rgba(8,6,16,.35) 0%,rgba(8,6,16,.55) 45%,rgba(8,6,16,.88) 70%,rgba(8,6,16,.95) 100%)!important}
+html.opium2 .card:nth-child(7n+2)>*{position:relative;z-index:1}
+html.opium2 .card:nth-child(42n+9){--cb:url(/img/op/cb/cb2.webp)}html.opium2 .card:nth-child(42n+16){--cb:url(/img/op/cb/cb3.webp)}
+html.opium2 .card:nth-child(42n+23){--cb:url(/img/op/cb/cb4.webp)}html.opium2 .card:nth-child(42n+30){--cb:url(/img/op/cb/cb5.webp)}html.opium2 .card:nth-child(42n+37){--cb:url(/img/op/cb/cb6.webp)}
+/* OPIUM 2 (Eman 22:05): CDs + trading cards scale up a little on hover, springy */
+html.opium2 #worlds .card .pq,html.opium2 #pkTop .pkc .pq,html.opium2 .lnd .pkc .pq,html.opium2 .bf-pi{transition:transform .38s cubic-bezier(.34,1.56,.64,1)!important}
+html.opium2 #worlds .card .cv:hover .pq,html.opium2 #pkTop .pkc:hover .pq,html.opium2 .lnd .pkc:hover .pq{transform:scale(1.06)!important}
+html.opium2 .bf-pl:hover .bf-pi{transform:translate(-50%,-50%) translate(var(--x),var(--y)) rotate(var(--r)) scale(1.05)!important}
+/* OPIUM 2 (Eman 22:04): top 3-pack bigger, over the red shapes, whole group moved left */
+@media(min-width:901px){html.opium2 header.hero .bfD{transform:translateX(-140px)}
+html.opium2 header.hero .bfD .bf-st{transform:scale(1.32);transform-origin:50% 55%;z-index:3;position:relative}
+html.opium2 header.hero .bfD .op-gw{z-index:1}}
+html.opium2 .card:nth-child(7n+2) .pn,html.opium2 .card:nth-child(7n+2) .price,html.opium2 .card:nth-child(7n+2) .pi,html.opium2 .card:nth-child(7n+2) .stamp{color:#ece8df!important}
+html.opium2 .card:nth-child(7n+2) .pf,html.opium2 .card:nth-child(7n+2) .ps{color:#a993ff!important}
+/* OPIUM 2 (Eman 22:06): hero text aligned with the left menu, stats bigger without boxes, no SHOP PACKS / FREE SAMPLES buttons */
+@media(min-width:901px){html.opium2 header.hero>.wrap{max-width:1280px!important;padding-left:19px!important;padding-right:19px!important;margin-left:auto;margin-right:auto}}
+html.opium2 header.hero .stats{gap:40px!important;border:0!important;background:none!important}
+html.opium2 header.hero .stats>div{border:0!important;background:none!important;padding:0!important;font-size:13px!important;letter-spacing:.16em}
+html.opium2 header.hero .stats>div b{font-size:52px!important;line-height:1!important;display:block;margin-bottom:6px;color:#ece8df}
+html.opium2 header.hero .cta{display:none!important}
+@media(max-width:900px){html.opium2 header.hero .stats>div b{font-size:34px!important}html.opium2 header.hero .stats{gap:22px!important}}
+@media(min-width:901px){html.opium2 header.hero>.wrap{width:100%!important;box-sizing:border-box}}
+/* OPIUM 2 (Eman 22:07): bigger cookie bar */
+html.opium2 #consent{padding:22px 26px!important;gap:18px!important;font-size:16px!important;max-width:620px!important;border-width:2px!important}
+html.opium2 #consent span{font-size:16px!important;line-height:1.5}
+html.opium2 #consent .btn{font-size:14px!important;padding:14px 22px!important;letter-spacing:.14em}
+html.opium2 #consent .btn[data-consent=yes]{background:#E4FF3A!important;color:#0b0b0b!important;border-color:#E4FF3A!important}
+html.opium2 #consent .ckl{font-size:13px!important}
+@media(min-width:901px){html.opium2 header.hero>.wrap{margin-left:max(0px,calc((100% - 1280px)/2))!important;margin-right:0!important}}
+@media(min-width:901px){html.opium2 header.hero>.wrap{max-width:1600px!important;padding-left:24px!important;padding-right:24px!important;margin-left:auto!important;margin-right:auto!important}}
