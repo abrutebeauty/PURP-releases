@@ -207,6 +207,18 @@
     ["glitch", "Glitch", ["crystal", "nett", "holl"]],
     ["haze", "Haze", ["travis", "witch"]],
   ];
+  /* goth line icons for the left menu (Eman 24 Nov) */
+  const GI = {
+    all: '<path d="M12 2v20M6 8h12M12 2l-2 2M12 2l2 2"/>',
+    free: '<path d="M12 20s-8-5-8-11a4.500 4.500 0 0 1 8-2.500A4.500 4.500 0 0 1 20 9c0 6-8 11-8 11z"/>',
+    opium: '<path d="M12 12c-4-1-6-4-5-7 3 0 5 2 5 5 0-3 2-5 5-5 1 3-1 6-5 7zM12 12c-4 1-6 4-5 7 3 0 5-2 5-5 0 3 2 5 5 5 1-3-1-6-5-7zM12 12h.01M12 19v3"/>',
+    ambient: '<path d="M18 14.5A8 8 0 1 1 9.5 6a6.5 6.5 0 0 0 8.5 8.5z"/>',
+    glitch: '<path d="M4 4h6v3h3V4h7v6h-3v3h3v7h-6v-3h-3v3H4v-7h3v-3H4zM10 7v3h3V7zM10 13v3h3v-3z"/>',
+    haze: '<path d="M8 21c-3-2-3-5 0-7s3-4 0-6 0-5 3-5M14 21c-3-2-3-5 0-7s3-4 0-6M19 20c-2-1-2-3 0-4s2-3 0-4"/>',
+    drums: '<path d="M12 3a7 7 0 0 0-7 7c0 2.500 1.200 4 2.500 5V19h9v-4c1.300-1 2.500-2.500 2.500-5a7 7 0 0 0-7-7zM9.500 11h.01M14.500 11h.01M10 19v2M12 19v2M14 19v2M12 13l-1 2h2z"/>',
+  };
+
+  const gi = (id) => `<svg class="op-gi" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${GI[id] || GI.all}</svg>`;
   function moods() {
     const box = document.querySelector("#chips"); if (!box || !box.querySelector(".ch") || box.querySelector(".op-moods")) return;
     const og = box.querySelector(".chs") || box, cards = [...document.querySelectorAll("#worlds .card")];
@@ -216,7 +228,7 @@
     const list = [["all", "All", ogN("all")], ...(og.querySelector('.ch[data-f="free"]') ? [["free", "Free", ogN("free")]] : []),
       ...MOODS.map(([id, nm, ws]) => [id, nm, n((c) => ws.includes(wOf(c)) && c.dataset.type !== "drums")]).filter((m) => m[2]),
       ["drums", "Drums", ogN("drums")]];
-    og.insertAdjacentHTML("beforebegin", `<div class="op-moods">${list.map(([id, nm, c], i) => `<button class="op-mood${i ? "" : " on"}" data-mood="${id}">${esc(nm)}<span>${c}</span></button>`).join("")}</div>`);
+    og.insertAdjacentHTML("beforebegin", `<div class="op-moods">${list.map(([id, nm, c], i) => `<button class="op-mood${i ? "" : " on"}" data-mood="${id}">${gi(id)}<b>${esc(nm)}</b><span>${c}</span></button>`).join("")}</div>`);
   }
   document.addEventListener("click", (e) => {
     const m = e.target.closest && e.target.closest("[data-mood]"); if (!m) return;
