@@ -1,8 +1,1 @@
 opium.css
-opium.js
-img/op/cb/cb1.webp
-img/op/cb/cb2.webp
-img/op/cb/cb3.webp
-img/op/cb/cb4.webp
-img/op/cb/cb5.webp
-img/op/cb/cb6.webp

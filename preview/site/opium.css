@@ -382,3 +382,7 @@ html.opium2 #consent .btn[data-consent=yes]{background:#E4FF3A!important;color:#
 html.opium2 #consent .ckl{font-size:13px!important}
 @media(min-width:901px){html.opium2 header.hero>.wrap{margin-left:max(0px,calc((100% - 1280px)/2))!important;margin-right:0!important}}
 @media(min-width:901px){html.opium2 header.hero>.wrap{max-width:1600px!important;padding-left:24px!important;padding-right:24px!important;margin-left:auto!important;margin-right:auto!important}}
+
+/* quick tweak 24 Nov: no outline except cards with a bg image */
+html.opium2 .card{border-color:transparent}
+html.opium2 .card:nth-child(7n+2){border-color:rgba(139,108,246,.55)}
