@@ -386,3 +386,15 @@ html.opium2 #consent .ckl{font-size:13px!important}
 /* quick tweak 24 Nov: no outline except cards with a bg image */
 html.opium2 .card{border-color:transparent}
 html.opium2 .card:nth-child(7n+2){border-color:rgba(139,108,246,.55)}
+
+/* quick tweak 24 Nov (Eman 23:15): 3-pack banner fills the whole red box, CDs much bigger, shapes at the box edges */
+@media(min-width:1041px){
+html.opium2 header.hero .bfD{transform:none!important;left:auto;right:24px;top:40px;bottom:50px;width:max(540px,calc(100% - 540px - 48px))}
+html.opium2 header.hero .bfD .bf-st{transform:none!important;z-index:3}
+html.opium2 .bfD.bf-pile .bf-pi,html.opium2 header.hero .bfD .bf-pi{height:76%;width:auto;max-height:none;aspect-ratio:1;top:48%;transform:translate(-50%,-50%) translate(calc(var(--x) * 2.3),var(--y)) rotate(var(--r))}
+html.opium2 header.hero .bfD .bf-pl:hover .bf-pi{transform:translate(-50%,-50%) translate(calc(var(--x) * 2.3),var(--y)) rotate(var(--r)) scale(1.05)!important}
+html.opium2 .bfD .op-gw{height:92%}
+html.opium2 .bfD .op-gw svg{height:100%;width:auto;display:block}
+html.opium2 .bfD .op-gw.l{left:3%;top:4%}html.opium2 .bfD .op-gw.r{right:3%;bottom:2%}
+html.opium2 .bfD .bf-nm b{font-size:26px}html.opium2 .bfD .bf-nm small{font-size:14px}
+}
