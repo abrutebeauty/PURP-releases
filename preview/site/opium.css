@@ -799,3 +799,7 @@ html.opium2 .op-rl::-webkit-scrollbar{width:4px}html.opium2 .op-rl::-webkit-scro
 /* quick tweak 25 Nov: bottom of the review list fades out; works-with sits under the pack subline */
 html.opium2 .op-rl{-webkit-mask-image:linear-gradient(#000 0,#000 72%,transparent 100%);mask-image:linear-gradient(#000 0,#000 72%,transparent 100%)}
 html.opium2 #pkTop .pki>.ww{margin:12px 0 4px}
+/* quick tweak 25 Nov: 3-for-2 slots zoom on hover from their centre, no shift (stays centred in the box) */
+html.opium2 .op-s.fr:hover .fc{scale:1.1;translate:0 0}
+html.opium2 .op-s.in:hover img{scale:1.12;translate:0 0}
+html.opium2 .op-s.fr .fc,html.opium2 .op-s.in img{transform-origin:50% 50%}
