@@ -397,6 +397,7 @@
 
   /* product page: placeholder reviews under ADD TO CART (Eman 25 Nov) */
   function opRev() {
+    const ww = document.querySelector("#pkTop .pki .ww"), pf0 = document.querySelector("#pkTop .pki > .pf"); if (O2 && ww && pf0 && pf0.nextElementSibling !== ww) pf0.after(ww);
     const buy = document.querySelector("#pkTop .buy"); if (!O2 || !buy || document.querySelector("#pkTop .op-rv")) return;
     const R = [[5,"@sleepyhalo","these pads sit under my vocals perfectly, no eq needed"],[4,"@nyx.wav","the basses hit hard. a few leads are too bright for me"],[3,"@lowkeyloop","good for the price, wish there were more arps"],[4,"@vxlt","used the plucks on three songs already"],[2,"@mothtape","not really my style, but the sound quality is clean"],[5,"@dreamer404","instant favourite, the chords are so emotional"],[3,"@ghostbpm","solid pack, some presets sound alike"],[4,"@halo.exe","macros are easy to use, tweaked everything fast"],[3,"@cryptid","nice textures, bass was a bit quiet"],[4,"@softcore","great starting point for hyperpop beats"],[2,"@lunar.rx","expected more variety"],[3,"@staticbloom","fun to play with, a few i skipped"]];
     const avg = R.reduce((a, r) => a + r[0], 0) / R.length, st = (n) => `<span class="st" style="--p:${n / 5 * 100}%">★★★★★</span>`;
