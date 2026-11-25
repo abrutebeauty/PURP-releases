@@ -392,7 +392,7 @@
   function trio3() {
     const pb = document.querySelector("#pkTop .pbuy"); if (!O2 || !pb || pb.nextElementSibling && pb.nextElementSibling.classList.contains("op-t3")) return;
     const im = document.querySelector("#pkTop .pkc img, #pkTop .pq img"), src = im && (im.currentSrc || im.src); if (!src) return;
-    pb.insertAdjacentHTML("afterend", `<div class="op-t3" aria-label="Buy 2, get 1 free"><div class="op-s in"><img src="${src}" alt=""></div><a class="op-s add" href="/#packs"><b>+</b><i>add any pack</i></a><a class="op-s fr" href="/#packs"><img src="/img/cd/blank-black-600.webp?v=1" alt=""><b>pick free pack</b></a><p class="op-n">buy 2, get the 3rd free · mix any packs</p></div>`);
+    pb.insertAdjacentHTML("afterend", `<div class="op-t3" aria-label="Buy 2, get 1 free"><div class="op-s in"><img src="${src}" alt=""></div><a class="op-s add" href="/#packs"><b>+</b><i>add any pack</i></a><a class="op-s fr" href="/#packs" aria-label="Pick free pack"><span class="fc"><img src="/img/cd/free-flame.webp?v=1" alt=""><span class="fd"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="gr"></i><b class="t1">free</b><b class="t2">pack</b></span></span></a><p class="op-n">buy 2, get the 3rd free · mix any packs</p></div>`);
   }
   function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });

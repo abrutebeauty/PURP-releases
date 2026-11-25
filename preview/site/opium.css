@@ -683,3 +683,40 @@ html.opium2 .op-s.fr img{display:block!important;width:100%;height:100%;object-f
 html.opium2 .op-s.fr b{position:absolute;left:0;right:0;bottom:0;padding:16px 6px 8px;background:linear-gradient(transparent,rgba(0,0,0,.82) 55%);z-index:1}
 html.opium2 .op-s.fr{cursor:pointer;transition:box-shadow .25s,border-color .25s}
 html.opium2 .op-s.fr:hover{border-color:#E4FF3A;box-shadow:0 0 34px rgba(228,255,58,.5),inset 0 0 22px rgba(228,255,58,.16)}
+/* quick tweak 25 Nov: 3-for-2 block - red outlines, flame case with a morphing glowing disc, red note */
+html.opium2 .op-s,html.opium2 .op-s.add,html.opium2 .op-s.fr,html.opium2 .op-s.in{border:1px solid #d42a24!important;background:transparent}
+html.opium2 .op-s.add:hover{background:rgba(212,42,36,.1)}
+html.opium2 .op-s.fr{overflow:hidden;box-shadow:0 0 18px rgba(212,42,36,.25);perspective:700px}
+html.opium2 .op-s.fr:hover{box-shadow:0 0 30px rgba(212,42,36,.55)}
+html.opium2 .op-s.fr .fc{position:relative;display:block;width:100%;aspect-ratio:1385/1206;transform-style:preserve-3d;animation:opSway 5s ease-in-out infinite alternate;will-change:transform}
+@keyframes opSway{from{transform:rotateY(-20deg)}to{transform:rotateY(20deg)}}
+html.opium2 .op-s.fr .fc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block!important}
+html.opium2 .op-s.fr .fd{position:absolute;left:11.26%;top:1.99%;width:83.75%;height:96.18%;border-radius:50%;overflow:hidden;background:#0a0612;-webkit-mask:radial-gradient(circle at 47.2% 49%,transparent 10.4%,#000 11%);mask:radial-gradient(circle at 47.2% 49%,transparent 10.4%,#000 11%);isolation:isolate}
+html.opium2 .op-s.fr .fd i{position:absolute;width:70%;height:70%;filter:blur(14px);opacity:.95;will-change:transform,border-radius}
+html.opium2 .op-s.fr .fd .b1{left:-12%;top:-8%;background:radial-gradient(circle at 40% 40%,#7a2cff,transparent 68%);animation:opB1 7s ease-in-out infinite alternate}
+html.opium2 .op-s.fr .fd .b2{right:-14%;top:2%;background:radial-gradient(circle at 50% 50%,#ff2f8a,transparent 66%);animation:opB2 8.5s ease-in-out infinite alternate}
+html.opium2 .op-s.fr .fd .b3{left:6%;bottom:-16%;background:radial-gradient(circle at 50% 50%,#ff8a1f,transparent 66%);animation:opB3 9.5s ease-in-out infinite alternate}
+html.opium2 .op-s.fr .fd .b4{right:-6%;bottom:-10%;background:radial-gradient(circle at 50% 50%,#19d3c5,transparent 64%);animation:opB4 6.5s ease-in-out infinite alternate}
+@keyframes opB1{0%{transform:translate(0,0) scale(1);border-radius:50%}50%{transform:translate(28%,22%) scale(1.25) rotate(40deg);border-radius:42% 58% 55% 45%}100%{transform:translate(12%,48%) scale(.9) rotate(80deg);border-radius:58% 42% 46% 54%}}
+@keyframes opB2{0%{transform:translate(0,0) scale(1.1);border-radius:50%}50%{transform:translate(-30%,30%) scale(.9) rotate(-50deg);border-radius:55% 45% 40% 60%}100%{transform:translate(-8%,52%) scale(1.3) rotate(-90deg);border-radius:45% 55% 60% 40%}}
+@keyframes opB3{0%{transform:translate(0,0) scale(1);border-radius:50%}50%{transform:translate(34%,-30%) scale(1.3) rotate(60deg);border-radius:60% 40% 50% 50%}100%{transform:translate(52%,-12%) scale(.85) rotate(120deg);border-radius:44% 56% 42% 58%}}
+@keyframes opB4{0%{transform:translate(0,0) scale(.9);border-radius:50%}50%{transform:translate(-38%,-24%) scale(1.2) rotate(-60deg);border-radius:48% 52% 60% 40%}100%{transform:translate(-14%,-46%) scale(1.05) rotate(-110deg);border-radius:56% 44% 44% 56%}}
+html.opium2 .op-s.fr .fd .gr{inset:0;width:100%;height:100%;filter:none;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.3 -.15'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:90px 90px;animation:opGr .7s steps(5) infinite}
+@keyframes opGr{0%{background-position:0 0}20%{background-position:-23px 17px}40%{background-position:31px -11px}60%{background-position:-17px -29px}80%{background-position:13px 26px}100%{background-position:0 0}}
+html.opium2 .op-s.fr .fd b{position:absolute;left:0;right:0;text-align:center;font:800 17px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#E4FF3A;text-shadow:0 0 12px rgba(228,255,58,.85),0 0 3px rgba(0,0,0,.6);z-index:3;background:none;padding:0}
+html.opium2 .op-s.fr .fd .t1{top:26%}
+html.opium2 .op-s.fr .fd .t2{top:66%}
+html.opium2 .op-t3 .op-n{font-size:15px;color:#d42a24;font-weight:500}
+@media(prefers-reduced-motion:reduce){html.opium2 .op-s.fr .fc,html.opium2 .op-s.fr .fd i,html.opium2 .op-s.fr .fd .gr{animation:none}}
+/* NEW / FREE badges gone everywhere */
+html.opium2 .badge,html.opium2 .pkc .badge,html.opium2 #pkTop .badge,html.opium .badge{display:none!important}
+/* play buttons: red outline, red triangle, dark inside */
+html.opium2 .rkp,html.opium .rkp{background:rgba(10,8,8,.55)!important;border:2px solid #d42a24!important;color:#d42a24!important;box-shadow:none!important}
+html.opium2 .rkp svg,html.opium .rkp svg{fill:#d42a24!important}
+html.opium2 .rkp.on,html.opium .rkp.on{background:rgba(212,42,36,.18)!important;border-color:#d42a24!important}
+html.opium2 .pv .pl,html.opium .pv .pl{background:transparent!important;border:1.5px solid #d42a24;color:#d42a24!important}
+html.opium2 .pv .pl svg,html.opium .pv .pl svg{fill:#d42a24!important}
+html.opium2 .pv button.on .pl,html.opium .pv button.on .pl{background:rgba(212,42,36,.2)!important;color:#d42a24!important}
+html.opium2 .op-s.fr .fd i{display:block!important;left:auto;bottom:auto;right:auto;top:auto}
+html.opium2 .op-s.fr .fd .b1{left:-12%;top:-8%}html.opium2 .op-s.fr .fd .b2{right:-14%;top:2%}html.opium2 .op-s.fr .fd .b3{left:6%;bottom:-16%}html.opium2 .op-s.fr .fd .b4{right:-6%;bottom:-10%}
+html.opium2 .op-s.fr .fd .gr{inset:0;left:0;top:0;right:0;bottom:0}
