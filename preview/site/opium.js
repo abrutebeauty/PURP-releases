@@ -332,7 +332,7 @@
     const d = st.children, tg = [PRODUCTS.length, 450, n], sf = ["", "+", ""]; d[2].innerHTML = "<b>0</b>Samples";
     let seen = false; try { seen = localStorage.getItem("ck-counted") === "1"; } catch (e) {}
     const still = matchMedia("(prefers-reduced-motion: reduce)").matches, t0 = performance.now(), T = 3800;
-    const fmt = (i, v) => Math.round(v).toLocaleString("en-US") + sf[i];
+    const fmt = (i, v) => String(Math.round(v)) + sf[i];
     [0, 1, 2].forEach((i) => { d[i].dataset.cu = 1; const b = d[i].querySelector("b"); b.style.fontVariantNumeric = "tabular-nums"; b.textContent = fmt(i, seen || still ? tg[i] : 0); });
     if (seen || still) return;
     try { localStorage.setItem("ck-counted", "1"); } catch (e) {}
@@ -434,20 +434,103 @@
     const l = ww.querySelector(".wwl"); if (!l) return;
     l.insertAdjacentHTML("beforebegin", '<p class="op-wwt">All packs include presets for Serum, Serum 2, Vital and Ableton Wavetable.</p>');
   }
-  /* 3-for-2: clicking "add pack" selects the second pack: price shows 3x struck through next to 2x (Eman 25 Nov) */
-  function pickTwo() {
-    const slot = document.querySelector("#pkTop .op-s.add"), pr = document.querySelector("#pkTop .pbuy .price"); if (!O2 || !slot || !pr || slot.dataset.op) return; slot.dataset.op = 1;
-    const i = slot.querySelector("i"), b = slot.querySelector("b");
-    slot.addEventListener("click", (e) => {
-      e.preventDefault();
-      const on = !slot.classList.contains("sel"); slot.classList.toggle("sel", on);
-      if (i) i.textContent = on ? "pack added" : "add pack"; if (b) b.textContent = on ? "\u2713" : "+";
-      if (on) {
-        const t = pr.dataset.op0 || (pr.dataset.op0 = pr.textContent.trim()), m = t.match(/^(\D*?)(\d+(?:[.,]\d+)?)(\D*)$/); if (!m) return;
-        const n = parseFloat(m[2].replace(",", ".")), f = (v) => m[1] + (Number.isInteger(v) ? v : v.toFixed(2)) + m[3];
-        pr.innerHTML = `<s class="op-was">${f(n * 3)}</s><span class="op-now">${f(n * 2)}</span>`;
-      } else if (pr.dataset.op0) pr.textContent = pr.dataset.op0;
+  /* ===== pack lightbox: "add pack" and "free extra pack" slots (Eman 25 Nov) ===== */
+  const LBS = { add: null, fr: null };   // chosen product per slot
+  let LB = null, LBA = null;
+  const curPid = () => new URLSearchParams(location.search).get("id") || decodeURIComponent(location.pathname.split("/").filter(Boolean).pop() || "");
+  const lbMuted = () => { try { return localStorage.getItem("ck-mute") === "1"; } catch (e) { return false; } };
+  const lbAc = () => { if (lbMuted()) return null; try { LBA = LBA || new (window.AudioContext || window.webkitAudioContext)(); if (LBA.state === "suspended") LBA.resume().catch(() => {}); return LBA; } catch (e) { return null; } };
+  function lbTone(f, t0, d, g, type) { const c = lbAc(); if (!c) return; const o = c.createOscillator(), v = c.createGain(), t = c.currentTime + t0; o.type = type || "sine"; o.frequency.value = f; v.gain.setValueAtTime(0.0001, t); v.gain.exponentialRampToValueAtTime(g, t + 0.012); v.gain.exponentialRampToValueAtTime(0.0001, t + d); o.connect(v); v.connect(c.destination); o.start(t); o.stop(t + d + 0.05); }
+  const sndTick = () => { lbTone(1480, 0, 0.07, 0.07, "triangle"); lbTone(740, 0, 0.09, 0.05); };
+  const sndDone = () => { lbTone(110, 0, 0.35, 0.22); [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => { lbTone(f, 0.05 + i * 0.07, 0.55, 0.09, "triangle"); lbTone(f * 2, 0.05 + i * 0.07, 0.35, 0.035); }); };
+  const lbCats = (p) => { const m = {}; (p.sounds || []).forEach((s) => { const k = String(s.name || "").split(" ")[0].toUpperCase(); m[k] = (m[k] || 0) + 1; }); return m; };
+  const lbCos = (a, b) => { let d = 0, na = 0, nb = 0; for (const k in a) { na += a[k] * a[k]; if (b[k]) d += a[k] * b[k]; } for (const k in b) nb += b[k] * b[k]; return na && nb ? d / Math.sqrt(na * nb) : 0; };
+  function lbSorted(refs, skip) {
+    const rc = refs.map(lbCats);
+    return PRODUCTS.filter((p) => !skip.includes(p.id) && p.price > 0 && p.cover && !/\/card-/.test(p.cover)).map((p, n) => {
+      const c = lbCats(p); let s = 0;
+      refs.forEach((r, i) => { s += (p.world === r.world ? 10 : 0) + (p.type === r.type ? 4 : -3) + lbCos(c, rc[i]) * 6; });
+      return [s / refs.length - n * 0.001, p];
+    }).sort((a, b) => b[0] - a[0]).map((x) => x[1]);
+  }
+  function lbMix(p) {   // 8 sounds mixed from different categories
+    const g = {}; (p.sounds || []).filter((s) => s.file && !s.hidden).forEach((s) => { const k = String(s.name).split(" ")[0].toUpperCase(); (g[k] = g[k] || []).push(s); });
+    const keys = Object.keys(g).sort((a, b) => g[b].length - g[a].length), out = []; let r = 0;
+    while (out.length < 8 && keys.some((k) => g[k].length > r)) { keys.forEach((k) => { if (out.length < 8 && g[k][r * 2 % Math.max(1, g[k].length)]) out.push(g[k][r * 2 % g[k].length]); }); r++; if (r > 6) break; }
+    return out.filter((s, i, a) => a.indexOf(s) === i).slice(0, 8);
+  }
+  const lbSparks = (n, seed) => { let x = seed; const rnd = () => (x = (x * 16807) % 2147483647) / 2147483647; return Array.from({ length: n }, () => { const z = 7 + rnd() * 7; return `<i style="left:${(22 + rnd() * 56).toFixed(0)}%;top:${(22 + rnd() * 56).toFixed(0)}%;width:${z.toFixed(0)}px;height:${z.toFixed(0)}px;animation-delay:${(rnd() * 3).toFixed(2)}s;animation-duration:${(1.8 + rnd() * 1.6).toFixed(2)}s"></i>`; }).join(""); };
+  function lbWrite(svg, from) {   // handwriting writes itself, stroke by stroke
+    const ps = [...svg.querySelectorAll("path")]; ps.forEach((p, i) => { p.setAttribute("pathLength", "1"); p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 260, delay: (from || 0) + i * 38, fill: "forwards", easing: "ease-out" }); });
+    return (from || 0) + ps.length * 38 + 260;
+  }
+  function lbSet(slotKey, slot, pr, p) {
+    LBS[slotKey] = p;
+    if (slotKey === "add") {
+      const i = slot.querySelector("i"), b = slot.querySelector("b"); let im = slot.querySelector("img");
+      slot.classList.toggle("sel", !!p);
+      if (p) { if (!im) { im = document.createElement("img"); im.alt = ""; slot.prepend(im); } im.src = abs(p.cover); if (i) i.textContent = String(p.name).toLowerCase(); }
+      else { if (im) im.remove(); if (i) i.textContent = "add pack"; if (b) b.textContent = "+"; }
+      const t = pr.dataset.op0 || (pr.dataset.op0 = pr.textContent.trim()), m = t.match(/^(\D*?)(\d+(?:[.,]\d+)?)(\D*)$/);
+      if (p && m) { const n = parseFloat(m[2].replace(",", ".")), f = (v) => m[1] + (Number.isInteger(v) ? v : v.toFixed(2)) + m[3]; pr.innerHTML = `<s class="op-was">${f(n * 3)}</s><span class="op-now">${f(n * 2)}</span>`; }
+      else if (pr.dataset.op0) pr.textContent = pr.dataset.op0;
+    } else {
+      const im = slot.querySelector(".fc img"), sp = slot.querySelector(".sp"), i = slot.querySelector(".fc") && slot;
+      if (im && !im.dataset.o) im.dataset.o = im.getAttribute("src");
+      if (im) im.src = p ? abs(p.cover) : im.dataset.o;
+      slot.classList.toggle("got", !!p); if (sp) sp.style.display = p ? "none" : "";
+      slot.dataset.cap = p ? String(p.name).toLowerCase() : "";
+      const pk = document.querySelector("#pkTop .op-pick"); if (pk) pk.style.opacity = p ? 0 : 1;
+    }
+  }
+  function lbCelebrate(key) {
+    sndDone();
+    if (key !== "add" || LBS.fr) return;
+    const svg = document.querySelector("#pkTop .op-pick svg"); if (!svg) return;
+    svg.parentNode.style.opacity = 1;
+    const ps = [...svg.querySelectorAll("path")], arrow = ps.slice(-4);
+    ps.forEach((p) => { p.setAttribute("pathLength", "1"); p.style.strokeDasharray = "1"; p.style.strokeDashoffset = "1"; });
+    let tt = 150; ps.slice(0, -4).forEach((p, i) => { p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 240, delay: tt + i * 34, fill: "forwards", easing: "ease-out" }); });
+    tt += (ps.length - 4) * 34 + 240;
+    arrow.forEach((p, i) => p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 220, delay: tt + i * 90, fill: "forwards", easing: "ease-out" }));
+    const g = arrow[0].parentNode; arrow.forEach((p) => { if (p.parentNode === g) {} });
+    setTimeout(() => arrow.forEach((p) => p.animate([{ transform: "translate(0,0)" }, { transform: "translate(-7px,6px)" }, { transform: "translate(0,0)" }, { transform: "translate(-7px,6px)" }, { transform: "translate(0,0)" }], { duration: 1500, easing: "ease-in-out" })), tt + 500);
+  }
+  function lbClose() { if (!LB) return; const el = LB; LB = null; el.classList.add("out"); document.documentElement.classList.remove("op-lbo"); document.removeEventListener("keydown", lbKey); document.querySelectorAll(".op-lb audio").forEach((a) => a.pause()); setTimeout(() => el.remove(), 220); }
+  function lbKey(e) { if (e.key === "Escape") lbClose(); }
+  function openLB(key, slot, pr) {
+    if (LB) return; const mode = key === "fr", cur = byId(curPid()) || PRODUCTS.find((p) => p.id === curPid()); if (!cur) return;
+    const other = LBS[mode ? "add" : "fr"], refs = [cur].concat(other ? [other] : []), list = lbSorted(refs, [cur.id].concat(other ? [other.id] : []));
+    let pick = LBS[key]; const was = pick, au = new Audio(); let playing = null;
+    const el = document.createElement("div"); el.className = "op-lb" + (mode ? " fr" : ""); LB = el;
+    const titleSvg = mode ? (() => { const s = document.querySelector("#pkTop .op-pick svg"); if (!s) return ""; const c = s.cloneNode(true); [...c.querySelectorAll("path")].slice(-4).forEach((p) => p.remove()); c.setAttribute("viewBox", "0 0 190 60"); return c.outerHTML; })() : "";
+    el.innerHTML = `<div class="lb-p" role="dialog" aria-label="${mode ? "Pick free pack" : "Add pack"}"><div class="lb-h"><b>${mode ? "" : "ADD PACK"}</b><div class="lb-ti">${titleSvg}</div><button class="lb-x" aria-label="Close"></button></div>
+      <div class="lb-r"><div class="lb-s"><img src="${abs(cur.cover)}" alt=""></div><div class="lb-s e${mode ? " y" : ""}"><b>+</b></div><button class="lb-d" disabled>DONE</button></div>
+      <div class="lb-dd" hidden><button class="lb-dh"><span></span><svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg></button><div class="lb-dl"></div></div>
+      <div class="lb-g">${list.map((p, n) => `<button class="lb-t" data-id="${esc(p.id)}"><span class="lb-c"><img src="${abs(p.cover)}" alt="" loading="lazy" decoding="async">${mode ? `<span class="lb-sp">${lbSparks(4, 11 + n * 7)}</span>` : ""}</span><span class="lb-n"><em>${esc(String(p.name).toLowerCase())}</em><u>${show(p.price)}</u></span><small>${esc(String(p.sub || "").toLowerCase())}</small></button>`).join("")}</div></div>`;
+    document.body.appendChild(el); document.documentElement.classList.add("op-lbo"); document.addEventListener("keydown", lbKey);
+    if (mode) { const s = el.querySelector(".lb-ti svg"); if (s) lbWrite(s, 120); }
+    const E = el.querySelector(".lb-s.e"), D = el.querySelector(".lb-d"), dd = el.querySelector(".lb-dd"), dl = el.querySelector(".lb-dl");
+    function paint() {
+      el.querySelectorAll(".lb-t").forEach((t) => t.classList.toggle("on", !!pick && t.dataset.id === pick.id));
+      E.classList.toggle("f", !!pick); E.innerHTML = pick ? `<img src="${abs(pick.cover)}" alt="">` : "<b>+</b>";
+      D.disabled = !pick && !was; D.classList.toggle("rdy", !D.disabled);
+      dd.hidden = !pick; if (pick) { dd.querySelector(".lb-dh span").textContent = "PREVIEW · " + String(pick.name).toLowerCase(); dl.innerHTML = lbMix(pick).map((s) => `<button class="lb-sn" data-f="${esc(s.file)}"><svg viewBox="0 0 10 10"><path d="M1 0l9 5-9 5z"/></svg><span>${esc(String(s.name).split(" ").slice(1).join(" ") || s.name)}</span>${tcChip(String(s.name).split(" ")[0].toUpperCase())}<i>${esc(s.meta || "")}</i></button>`).join(""); }
+    }
+    el.addEventListener("click", (e) => {
+      const t = e.target.closest(".lb-t"), sn = e.target.closest(".lb-sn");
+      if (e.target === el || e.target.closest(".lb-x")) return lbClose();
+      if (e.target.closest(".lb-dh")) { dd.classList.toggle("shut"); return; }
+      if (t) { const p = list.find((x) => x.id === t.dataset.id); pick = pick && pick.id === p.id ? null : p; sndTick(); au.pause(); playing = null; dd.classList.remove("shut"); paint(); if (pick) { E.animate([{ transform: "scale(.86)" }, { transform: "scale(1)" }], { duration: 260, easing: "cubic-bezier(.2,.9,.3,1.3)" }); } return; }
+      if (sn) { try { if (typeof audio !== "undefined") audio.pause(); } catch (x) {} const f = abs(sn.dataset.f); el.querySelectorAll(".lb-sn.p").forEach((b) => b.classList.remove("p")); if (playing === f && !au.paused) { au.pause(); playing = null; return; } playing = f; au.src = f; au.play().catch(() => {}); sn.classList.add("p"); au.onended = () => sn.classList.remove("p"); return; }
+      if (e.target.closest(".lb-d") && !D.disabled) { lbSet(key, slot, pr, pick); lbClose(); setTimeout(() => lbCelebrate(key), 260); }
     });
+    paint(); if (pick) { const t = el.querySelector(".lb-t.on"); if (t) t.scrollIntoView({ block: "nearest" }); }
+  }
+  function pickTwo() {
+    const add = document.querySelector("#pkTop .op-s.add"), fr = document.querySelector("#pkTop .op-s.fr"), pr = document.querySelector("#pkTop .pbuy .price"); if (!O2 || !add || !pr || add.dataset.op) return; add.dataset.op = 1;
+    add.addEventListener("click", (e) => { e.preventDefault(); openLB("add", add, pr); });
+    if (fr) fr.addEventListener("click", (e) => { e.preventDefault(); openLB("fr", fr, pr); });
   }
   /* product page: back button sits above MORE PACKS, left edge on the rail's left edge (Eman 25 Nov) */
   function placeBack() {
