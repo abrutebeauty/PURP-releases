@@ -803,3 +803,6 @@ html.opium2 #pkTop .pki>.ww{margin:12px 0 4px}
 html.opium2 .op-s.fr:hover .fc{scale:1.1;translate:0 0}
 html.opium2 .op-s.in:hover img{scale:1.12;translate:0 0}
 html.opium2 .op-s.fr .fc,html.opium2 .op-s.in img{transform-origin:50% 50%}
+/* quick tweak 25 Nov: add-any-pack slot turns solid brick red on hover (colour sampled from Eman's swatch) */
+html.opium2 .op-s.add{transition:background .25s ease}
+html.opium2 .op-s.add:hover{background:#A13828!important}
