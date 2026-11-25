@@ -841,3 +841,8 @@ html.opium2 .op-s.in::after{content:"selected pack"}
 html.opium2 .op-s.fr::after{content:"pick free pack"}
 /* quick tweak 25 Nov: slot 3 = clean 3D empty silver CD in the clear case (CD creator parts) + MJ doodles/stickers, same size as the other CD slots */
 html.opium2 .op-s.fr .fc{width:100%;aspect-ratio:1/1}
+/* quick tweak 25 Nov: selected second pack = price shows 3x struck through + 2x, slot stays red */
+html.opium2 .pbuy .price .op-was{font-size:.5em;font-weight:500;color:#8d8995;text-decoration:line-through;text-decoration-thickness:2px;margin-right:.45em;vertical-align:.18em}
+html.opium2 .pbuy .price .op-now{color:#E4FF3A}
+html.opium2 .op-s.add.sel{background:#B92520!important}
+html.opium2 .op-s.add.sel b{font-size:36px}
