@@ -856,3 +856,9 @@ html.opium2 .op-s.fr::after{content:"free extra pack";color:#E4FF3A}
 html.opium2 .op-s.fr .sp{position:absolute;inset:0;pointer-events:none}
 html.opium2 .op-s.fr .sp i{position:absolute;display:block!important;margin:-4px 0 0 -4px;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);opacity:0;transform:scale(.2);animation:opSpark 2.4s ease-in-out infinite;filter:drop-shadow(0 0 3px rgba(255,255,255,.9))}
 @keyframes opSpark{0%,100%{opacity:0;transform:scale(.15) rotate(0)}40%{opacity:1;transform:scale(1) rotate(35deg)}55%{opacity:.85;transform:scale(.8) rotate(50deg)}75%{opacity:0;transform:scale(.2) rotate(90deg)}}
+/* add-pack: no red, pressed-down feel instead */
+html.opium2 .op-s.add,html.opium2 .op-s.add:hover,html.opium2 .op-s.add.sel{background:transparent!important}
+html.opium2 .op-s.add{transition:transform .18s ease,box-shadow .18s ease}
+html.opium2 .op-s.add:hover,html.opium2 .op-s.add.sel{transform:scale(.96);box-shadow:inset 0 0 18px rgba(0,0,0,.9)}
+html.opium2 .op-s.add:hover i,html.opium2 .op-s.add.sel i{transform:translateY(2px) scale(1.0417);transform-origin:50% 0}
+html.opium2 .op-s.add.sel b{font-size:44px}
