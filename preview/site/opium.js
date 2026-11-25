@@ -7,7 +7,7 @@
   const PREVIEW_PRICE = 24;
   try {
     if (!PREVIEW_PRICE || !/\.pages\.dev$/.test(location.hostname) || !window.__ckP) return;
-    const fix = (d) => { try { ((d && d.products) || []).forEach((p) => { if (+p.price > 0) p.price = PREVIEW_PRICE; }); } catch (e) {} return d; };
+    const fix = (d) => { try { ((d && d.products) || []).forEach((p) => { if (+p.price > 0) { p.price = PREVIEW_PRICE; if (+p.priceUsd > 0) p.priceUsd = PREVIEW_PRICE; if (+p.priceEur > 0) p.priceEur = PREVIEW_PRICE; } }); } catch (e) {} return d; };
     try { if (!sessionStorage.getItem('ck-pp')) { localStorage.removeItem('ck-cur'); sessionStorage.setItem('ck-pp', '1'); } } catch (e) {}   /* a leftover display currency (USD/SEK) made 24 show as ~25.92 or ~270 */
     window.__ckP = window.__ckP.then(fix);
     const f0 = window.fetch; window.fetch = function (u) { const r = f0.apply(this, arguments); return /products\.json/.test(String(u)) ? r.then((res) => res.clone().json().then((d) => new Response(JSON.stringify(fix(d)), { status: 200, headers: { "content-type": "application/json" } }))) : r; };
@@ -549,8 +549,14 @@
   }
   window.addEventListener("resize", placeBack); [400, 1200, 2500, 4000].forEach((t) => setTimeout(placeBack, t));
   /* product page: tag trading card packs so their art can be smaller (Eman 25 Nov) */
+  /* product page: the white COREKULT logo sits over the series label + title column (Eman 25 Nov) */
+  function pkLogo() {
+    const pki = document.querySelector("#pkTop .pki"), lg = document.querySelector("nav.top .logo img"); if (!O2 || !pki || !lg) return;
+    document.documentElement.classList.add("op-pp"); if (pki.querySelector(".op-pl")) return;
+    pki.insertAdjacentHTML("afterbegin", `<a class="op-pl" href="/" aria-label="COREKULT home"><img src="${lg.getAttribute("src")}" alt="COREKULT" width="110" height="34"></a>`);
+  }
   function tcPage() { const t = document.querySelector("#pkTop"), im = t && t.querySelector(".pkc img"); if (t && im) t.classList.toggle("op-tc", /\/card-/.test(im.currentSrc || im.src)); }
-  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); glitter(); wwText(); pickTwo(); opRev(); backBtn(); placeBack(); tcPage(); } catch (e) { console.warn("opium", e); } }
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); glitter(); wwText(); pickTwo(); opRev(); backBtn(); placeBack(); tcPage(); pkLogo(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);

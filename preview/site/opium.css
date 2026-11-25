@@ -921,3 +921,9 @@ html.opium2 .op-gw .op-gv.red{background:var(--go) center/contain no-repeat!impo
 html.opium2 header.hero .bfD .op-gw.l{left:calc(50% - .9 * min(84cqh,40cqw) - 83px + clamp(0px,calc((100vw - 1440px) * .13),70px))!important}
 html.opium2 header.hero .bfD .op-gw.r{right:calc(50% - .9 * min(84cqh,40cqw) - 74px + clamp(0px,calc((100vw - 1440px) * .13),70px))!important}
 }
+/* quick tweak 25 Nov: logo over the title column, product titles in Inter bold */
+html.opium2.op-pp nav.top .logo{display:none}
+html.opium2.op-pp nav.top .wrap{justify-content:flex-end}
+html.opium2 .op-pl{display:block;width:110px;margin:0 0 18px}html.opium2 .op-pl img{display:block;width:110px;height:auto}
+html.opium2 .pki h1,html.opium2 .lgt h1{font:800 clamp(28px,3.4vw,46px)/1.04 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.015em!important}
+html.opium2 .rkt b{font:700 14px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.04em!important}
