@@ -724,3 +724,6 @@ html.opium2 .op-s.fr .fd .gr{inset:0;left:0;top:0;right:0;bottom:0}
 html.opium2 a.bigback,html.opium2 .nl.back.bigback{display:inline-flex!important;align-items:center;gap:14px;background:transparent!important;border:1px solid #d42a24!important;border-radius:0!important;color:#d42a24!important;padding:16px 28px!important;font:700 17px/1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;box-shadow:none!important;transition:background .2s}
 html.opium2 a.bigback:hover{background:rgba(212,42,36,.12)!important}
 html.opium2 a.bigback svg{flex:none;display:block}
+/* quick tweak 25 Nov: product page - no SERUM 1 + 2 label under the art; trading card art 30% smaller */
+html.opium2 #pkTop .stamp,html.opium2 #pkTop .pkc .stamp{display:none!important}
+html.opium2 #pkTop.op-tc .pkc .pq{width:70%!important;margin-left:0}
