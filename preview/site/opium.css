@@ -664,3 +664,6 @@ html.opium2 .op-s.fr u{position:absolute;inset:0;display:flex;align-items:center
 html.opium2 .op-s.fr i{color:#E4FF3A;z-index:1;text-shadow:0 0 10px rgba(228,255,58,.8);font-weight:700;left:0;right:0;text-align:center}
 html.opium2 .op-s.in{border-color:rgba(255,255,255,.28)}
 @media(max-width:700px){html.opium2 .op-t3{grid-template-columns:repeat(3,1fr)}}
+/* quick tweak 25 Nov: product page main art does not zoom on hover (tilt/sway stays) */
+html.opium2 #pkTop .pkc:hover .pq img,html.opium2 #pkTop .pkc .pq img{scale:1!important;translate:0 0!important}
+html.opium2 #pkTop .pkc:hover .pq canvas.sh,html.opium2 #pkTop .pkc .pq canvas.sh{scale:1!important;translate:0 0!important}
