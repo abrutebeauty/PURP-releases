@@ -190,17 +190,19 @@
   }, true);
   window.addEventListener("keyup", (e) => { if ((e.code === "Space" || e.key === " ") && !inPv() && !typing(e.target) && spaceTarget()) { e.preventDefault(); e.stopPropagation(); } }, true);
   let sc = null, scT = 0;   // drag the line while paused
-  const scMove = (e) => { if (!sc) return; const r = sc.cv.getBoundingClientRect(); setPaused(sc.b, (e.clientX - r.left) / r.width); e.preventDefault(); };
+  const scMove = (e) => { if (!sc) return; const r = sc.cv.getBoundingClientRect(), f = Math.min(0.995, Math.max(0, (e.clientX - r.left) / r.width)); sc.f = f;
+    if (playing(sc.b)) { const L = segLen(); if (L) audio.currentTime = seg.a + f * L; } else setPaused(sc.b, f);   // playing: keep playing from the new spot; paused: stay paused
+    e.preventDefault(); };
   window.addEventListener("pointerdown", (e) => {
     if (inPv() || e.button !== 0 || e.shiftKey || window.__rvSynth) return;
     const cv = e.target.closest && e.target.closest(".pv button[data-pid] canvas.wf"); if (!cv) return;
-    const b = cv.closest("button[data-pid]"); if (playing(b) || !(pos(b) != null || b.classList.contains("sel"))) return;
+    const b = cv.closest("button[data-pid]"); if (!playing(b) && !(pos(b) != null || b.classList.contains("sel"))) return;
     sc = { b, cv }; scT = Date.now(); e.stopPropagation(); scMove(e);
   }, true);
   window.addEventListener("pointermove", (e) => { if (sc) { scT = Date.now(); scMove(e); } }, true);
-  const scEnd = () => { if (sc) { sc = null; scT = Date.now(); } };
+  const scEnd = () => { if (sc) { const d = sc; sc = null; scT = Date.now(); if (playing(d.b) && d.f != null) sureSeek(d.f); } };
   window.addEventListener("pointerup", scEnd, true); window.addEventListener("pointercancel", scEnd, true);
-  window.addEventListener("click", (e) => { if (!window.__rvSynth && Date.now() - scT < 350 && e.target.closest && e.target.closest(".pv button[data-pid] canvas.wf")) { e.preventDefault(); e.stopPropagation(); } }, true);
+  window.addEventListener("click", (e) => { if (!window.__rvSynth && !sc && Date.now() - scT < 350) { e.preventDefault(); e.stopPropagation(); } }, true);   // the click that ends a drag (it may land outside the wave) must never play / pause
 
   /* ---- inject rows ---- */
   const topHTML = () => `<span class="ad rvr rvt"><em class="rvb rvgd" data-rv="good">GOOD</em><em class="rvb rvfx" data-rv="fix">FIX</em><em class="rvb rvsk rvsq" data-rv="skull">${SKULL_I}</em><em class="rvb rvrefb rvsq" data-rv="ref" hidden>◉</em><span class="rvpg">${[1, 2, 3, 4, 5].map((n) => `<em class="rvb" data-rv="p" data-n="${n}">${n}</em>`).join("")}</span></span>`;
