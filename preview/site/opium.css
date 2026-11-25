@@ -848,3 +848,7 @@ html.opium2 .op-s.add.sel{background:#B92520!important}
 html.opium2 .op-s.add.sel b{font-size:36px}
 /* quick tweak 25 Nov: works-with sentence */
 html.opium2 .op-wwt{margin:0 0 10px;font:500 14px/1.4 "Inter","Helvetica Neue",Arial,sans-serif;color:#c9c5d3;text-transform:none;letter-spacing:.01em;max-width:560px}
+/* quick tweak 25 Nov: free-pack slot outline + caption acid yellow, caption "free extra pack" */
+html.opium2 .op-s.fr{border:1px solid #E4FF3A!important;box-shadow:0 0 18px rgba(228,255,58,.18)}
+html.opium2 .op-s.fr:hover{box-shadow:0 0 30px rgba(228,255,58,.4)}
+html.opium2 .op-s.fr::after{content:"free extra pack";color:#E4FF3A}
