@@ -633,7 +633,7 @@ html.opium2 .cartb:hover svg{filter:none}
 /* quick tweak 24 Nov: no NEW / FREE badges on cards */
 html.opium2 #worlds .card .badge,html.opium2 .card .badge,html.opium2 .card .fbadge{display:none!important}
 /* quick tweak 24 Nov: trading cards about CD height, more room above the title */
-html.opium2 #worlds .card[data-look=card] .pq img{height:262px!important}
+html.opium2 #worlds .card[data-look=card] .pq img{max-height:none!important}
 /* quick tweak 24 Nov: add to cart / get it free lowercase, subline size */
 html.opium2 #worlds .card .buy .btn[data-add],html.opium2 #worlds .card .buy .btn,html.opium2 #worlds .card.fcard .buy .btn{text-transform:lowercase!important;font-size:13px!important}
 /* quick tweak 24 Nov: no separate glare rectangle on cards; nothing can show outside the case */

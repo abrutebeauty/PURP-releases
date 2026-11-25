@@ -359,9 +359,9 @@
   function alphaBox(im) {
     const key = im.currentSrc || im.src; if (BB.has(key)) return BB.get(key);
     let r = null;
-    try { const W = 240, H = Math.max(1, Math.round(W * im.naturalHeight / im.naturalWidth)), c = document.createElement("canvas"); c.width = W; c.height = H; const g = c.getContext("2d"); g.drawImage(im, 0, 0, W, H); const d = g.getImageData(0, 0, W, H).data; let l = W, rr = -1;
-      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (d[(y * W + x) * 4 + 3] > 60) { if (x < l) l = x; if (x > rr) rr = x; }
-      if (rr > l) r = [l / W, (rr + 1) / W]; } catch (e) {}
+    try { const W = 240, H = Math.max(1, Math.round(W * im.naturalHeight / im.naturalWidth)), c = document.createElement("canvas"); c.width = W; c.height = H; const g = c.getContext("2d"); g.drawImage(im, 0, 0, W, H); const d = g.getImageData(0, 0, W, H).data; let l = W, rr = -1, tt = H, bb2 = -1;
+      for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (d[(y * W + x) * 4 + 3] > 60) { if (x < l) l = x; if (x > rr) rr = x; if (y < tt) tt = y; if (y > bb2) bb2 = y; }
+      if (rr > l) r = [l / W, (rr + 1) / W, tt / H, (bb2 + 1) / H]; } catch (e) {}
     BB.set(key, r); return r;
   }
   let REF = null;
@@ -372,8 +372,8 @@
       const go = () => { if (!im.naturalWidth || !im.offsetWidth) return; const bb = alphaBox(im); if (!bb) return;
         let x = 0, e = im; while (e && e !== card) { x += e.offsetLeft; e = e.offsetParent; } if (e !== card) return;
         const S = parseFloat(getComputedStyle(im).scale) || 1, cx = x + im.offsetWidth / 2, L = cx + (bb[0] - 0.5) * im.offsetWidth * S, w = (bb[1] - bb[0]) * im.offsetWidth * S;
-        if (card.dataset.look === "card") { const rf = REF; if (rf) { cb.style.setProperty("margin-left", rf.L + "px", "important"); cb.style.setProperty("margin-right", "0", "important"); cb.style.setProperty("width", rf.w + "px", "important"); cb.style.setProperty("max-width", "none", "important"); } return; }
-        REF = { L: Math.round(L * 10) / 10, w: Math.round(w * 10) / 10 };
+        if (card.dataset.look === "card") { const rf = REF; if (rf) { const bt = alphaBox(im); if (bt && rf.vis) { const S2 = parseFloat(getComputedStyle(im).scale) || 1, nh = rf.vis / ((bt[3] - bt[2]) * S2); im.style.setProperty("height", nh + "px", "important"); im.style.setProperty("position", "relative"); im.style.setProperty("top", "0px"); let y1 = 0, e3 = im; while (e3 && e3 !== card) { y1 += e3.offsetTop; e3 = e3.offsetParent; } const topNow = y1 + im.offsetHeight / 2 + (bt[2] - 0.5) * im.offsetHeight * S2; im.style.setProperty("top", Math.round((rf.top - topNow) * 10) / 10 + "px"); } cb.style.setProperty("margin-left", rf.L + "px", "important"); cb.style.setProperty("margin-right", "0", "important"); cb.style.setProperty("width", rf.w + "px", "important"); cb.style.setProperty("max-width", "none", "important"); } return; }
+        { let y0 = 0, e2 = im; while (e2 && e2 !== card) { y0 += e2.offsetTop; e2 = e2.offsetParent; } const h0 = im.offsetHeight; REF = { L: Math.round(L * 10) / 10, w: Math.round(w * 10) / 10, vis: (bb[3] - bb[2]) * h0 * S, top: y0 + h0 / 2 + (bb[2] - 0.5) * h0 * S }; }
         cb.style.setProperty("margin-left", Math.round(L * 10) / 10 + "px", "important"); cb.style.setProperty("margin-right", "0", "important"); cb.style.setProperty("width", Math.round(w * 10) / 10 + "px", "important"); cb.style.setProperty("max-width", "none", "important"); };
       if (im.complete && im.naturalWidth) go(); else im.addEventListener("load", go, { once: true });
     });
