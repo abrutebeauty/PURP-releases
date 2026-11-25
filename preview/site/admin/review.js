@@ -65,7 +65,8 @@
   .rvsp{flex:1 1 0;min-width:0}
   .rvb.rvver{padding:0 10px;font-family:var(--mono,monospace);letter-spacing:.04em}
   .rvb.rvver.sel{background:#8b6cf6;color:#fff}
-  .rvb.rvver.use::after{content:"";width:6px;height:6px;border-radius:50%;background:#3ddc84;flex:none}
+  .rvb.rvver.use{background:#3ddc84;color:#0b0a0e}
+  .rvb.rvver.use.sel::after{content:"";width:6px;height:6px;border-radius:50%;background:#0b0a0e;flex:none}
   .rvb.rvuseb.on{background:#3ddc84;color:#0b0a0e}
   .rvb.rvvnew{color:#cdbcff}
   .rvc{display:flex;flex-direction:column;gap:3px;min-width:0}
@@ -226,7 +227,7 @@
     // versions row
     const vs = verList(b), sel = selV(b), inuse = useV(b), vr = b.querySelector(".rvvr"), sig = JSON.stringify([vs.map((x) => x.id + x.name), sel, inuse]);
     if (vr && vr.dataset.sig !== sig) { vr.dataset.sig = sig;
-      vr.innerHTML = vs.map((x) => `<em class="rvb rvver${x.id === sel ? " sel" : ""}${x.id === inuse ? " use" : ""}" data-rv="ver" data-v="${esc(x.id)}">${esc(x.name)}</em>`).join("") + `<em class="rvb rvvnew rvsq" data-rv="vnew">+</em><span class="rvsp"></span><em class="rvb rvuseb${sel === inuse ? " on" : ""}" data-rv="use">IN USE</em><em class="rvb rvsq" data-rv="dl">${DL_I}</em>`; }
+      vr.innerHTML = vs.map((x) => `<em class="rvb rvver${x.id === sel ? " sel" : ""}${x.id === inuse ? " use" : ""}" data-rv="ver" data-v="${esc(x.id)}">${esc(x.name)}</em>`).join("") + `<em class="rvb rvvnew rvsq" data-rv="vnew">+</em><span class="rvsp"></span><em class="rvb rvsq" data-rv="dl">${DL_I}</em>`; }
     // comment list
     const list = b.querySelector(".rvc"), shown = cm.filter((x) => x.txt || x.id === editId), csig = JSON.stringify([shown.map((x) => [x.id, x.txt, x.t, x.x, x.v]), sel]);
     if (list && list.dataset.sig !== csig) { list.dataset.sig = csig;
@@ -356,6 +357,15 @@
   }, true);
   const mdEnd = () => { if (!md) return; const d = md; md = null; if (d.moved) { mdT = Date.now(); save(); d.b.querySelector(".rvc").dataset.sig = ""; sync(d.b); } };
   window.addEventListener("pointerup", mdEnd, true); window.addEventListener("pointercancel", mdEnd, true);
+
+
+  /* right-click (long-press on phone) a version = green = the one in use. One per sound, not always the newest. */
+  function markUse(b, id) { const o = rec(b, true); if (id === "v1") delete o.inuse; else o.inuse = id; save(); const vr = b.querySelector(".rvvr"); if (vr) vr.dataset.sig = ""; sync(b); toast("In use: " + ((verList(b).find((x) => x.id === id) || {}).name || "")); }
+  window.addEventListener("contextmenu", (e) => { if (inPv()) return; const a = e.target.closest && e.target.closest('[data-rv="ver"]'); if (!a) return; e.preventDefault(); e.stopPropagation(); markUse(a.closest("button[data-pid]"), a.dataset.v); }, true);
+  let lpT = 0, lpHit = false;
+  window.addEventListener("pointerdown", (e) => { if (inPv() || e.pointerType === "mouse") return; const a = e.target.closest && e.target.closest('[data-rv="ver"]'); if (!a) return; lpHit = false; clearTimeout(lpT); lpT = setTimeout(() => { lpHit = true; markUse(a.closest("button[data-pid]"), a.dataset.v); }, 450); }, true);
+  ["pointerup", "pointercancel"].forEach((t) => window.addEventListener(t, () => clearTimeout(lpT), true));
+  window.addEventListener("click", (e) => { if (lpHit && e.target.closest && e.target.closest('[data-rv="ver"]')) { lpHit = false; e.preventDefault(); e.stopPropagation(); } }, true);
 
   /* ---- clicks ---- */
   const old = (b, sel) => b.querySelector(".ad:not(.rvr) " + sel);
