@@ -394,6 +394,14 @@
     const im = document.querySelector("#pkTop .pkc img, #pkTop .pq img"), src = im && (im.currentSrc || im.src); if (!src) return;
     pb.insertAdjacentHTML("afterend", `<div class="op-t3" aria-label="Buy 2, get 1 free"><div class="op-s in"><img src="${src}" alt=""></div><a class="op-s add" href="/#packs"><b>+</b><i>add any pack</i></a><a class="op-s fr" href="/#packs" aria-label="Pick free pack"><span class="mb"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="gr"></i></span><span class="fc"><img src="/img/cd/free-flame-blank.webp?v=1" alt=""><span class="fd"><b class="t1">pick your</b><b class="t2">free pack</b></span></span></a><p class="op-n">buy 2, get the 3rd free · mix any packs</p></div>`);
   }
+
+  /* product page: placeholder reviews under ADD TO CART (Eman 25 Nov) */
+  function opRev() {
+    const buy = document.querySelector("#pkTop .buy"); if (!O2 || !buy || document.querySelector("#pkTop .op-rv")) return;
+    const R = [[5,"@sleepyhalo","these pads sit under my vocals perfectly, no eq needed"],[4,"@nyx.wav","the basses hit hard. a few leads are too bright for me"],[3,"@lowkeyloop","good for the price, wish there were more arps"],[4,"@vxlt","used the plucks on three songs already"],[2,"@mothtape","not really my style, but the sound quality is clean"],[5,"@dreamer404","instant favourite, the chords are so emotional"],[3,"@ghostbpm","solid pack, some presets sound alike"],[4,"@halo.exe","macros are easy to use, tweaked everything fast"],[3,"@cryptid","nice textures, bass was a bit quiet"],[4,"@softcore","great starting point for hyperpop beats"],[2,"@lunar.rx","expected more variety"],[3,"@staticbloom","fun to play with, a few i skipped"]];
+    const avg = R.reduce((a, r) => a + r[0], 0) / R.length, st = (n) => `<span class="st" style="--p:${n / 5 * 100}%">★★★★★</span>`;
+    buy.insertAdjacentHTML("afterend", `<div class="op-rv"><div class="op-rh">${st(avg)}<b>${avg.toFixed(1)}</b><small>${R.length} reviews</small></div><div class="op-rl">${R.map((r) => `<div class="op-ri"><div class="op-rt">${st(r[0])}<em>${r[1]}</em></div><p>${r[2]}</p></div>`).join("")}</div></div>`);
+  }
   /* product page: the back button in the site style (Eman 25 Nov) */
   function backBtn() {
     const a = document.querySelector("a.bigback"); if (!O2 || !a || a.dataset.op) return; a.dataset.op = 1;
@@ -401,7 +409,7 @@
   }
   /* product page: tag trading card packs so their art can be smaller (Eman 25 Nov) */
   function tcPage() { const t = document.querySelector("#pkTop"), im = t && t.querySelector(".pkc img"); if (t && im) t.classList.toggle("op-tc", /\/card-/.test(im.currentSrc || im.src)); }
-  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); backBtn(); tcPage(); } catch (e) { console.warn("opium", e); } }
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); opRev(); backBtn(); tcPage(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
