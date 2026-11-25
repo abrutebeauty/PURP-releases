@@ -727,3 +727,9 @@ html.opium2 a.bigback svg{flex:none;display:block}
 /* quick tweak 25 Nov: product page - no SERUM 1 + 2 label under the art; trading card art 30% smaller */
 html.opium2 #pkTop .stamp,html.opium2 #pkTop .pkc .stamp{display:none!important}
 html.opium2 #pkTop.op-tc .pkc .pq{width:70%!important;margin-left:0}
+/* quick tweak 25 Nov: slot 3 = real silver blank disc in the flame case (CD creator parts), text on two rows */
+html.opium2 .op-s.fr .fd{background:transparent!important;-webkit-mask:none!important;mask:none!important;border-radius:0;overflow:visible;left:0;top:0;width:100%;height:100%}
+html.opium2 .op-s.fr .fd i{display:none!important}
+html.opium2 .op-s.fr .fd b{font:800 15px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:.06em;color:#E4FF3A;-webkit-text-stroke:2.5px rgba(5,4,8,.85);paint-order:stroke fill;text-shadow:0 0 14px rgba(0,0,0,.7),0 0 10px rgba(228,255,58,.6);left:0;width:100%}
+html.opium2 .op-s.fr .fd .t1{top:24%}
+html.opium2 .op-s.fr .fd .t2{top:62%}
