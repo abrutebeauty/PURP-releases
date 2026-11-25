@@ -672,3 +672,4 @@ html.opium2 .op-s.fr{flex-direction:column;justify-content:flex-start;padding:10
 html.opium2 .op-s.fr svg{width:100%;height:auto;flex:none;display:block}
 html.opium2 .op-s.fr b{font:800 15px/1.1 "Inter","Helvetica Neue",Arial,sans-serif;color:#E4FF3A;text-transform:uppercase;letter-spacing:.04em;text-align:center;text-shadow:0 0 12px rgba(228,255,58,.6)}
 html.opium2 .op-s.fr img,html.opium2 .op-s.fr u,html.opium2 .op-s.fr i{display:none!important}
+html.opium2 .op-t3 .op-n{grid-column:1/-1;margin:2px 0 0;font:400 12px/1.3 "Inter","Helvetica Neue",Arial,sans-serif;text-transform:lowercase;letter-spacing:.02em;color:#8d8995}
