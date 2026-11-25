@@ -677,3 +677,7 @@ html.opium2 .op-t3 .op-n{grid-column:1/-1;margin:2px 0 0;font:400 12px/1.3 "Inte
 html.opium2 #pkTop .tiles span:empty{display:none!important}
 html.opium2 #pkTop .tiles:not(:has(span:not(:empty))){display:none!important}
 html.opium2 #pkTop p.pi,html.opium2 #pkTop .pi{display:none!important}
+/* quick tweak 25 Nov: slot 3 = the real case mockup with an empty black disc; label over its lower edge */
+html.opium2 .op-s.fr{padding:0!important;gap:0;justify-content:center}
+html.opium2 .op-s.fr img{display:block!important;width:100%;height:100%;object-fit:contain;filter:none!important;transform:none!important}
+html.opium2 .op-s.fr b{position:absolute;left:0;right:0;bottom:0;padding:16px 6px 8px;background:linear-gradient(transparent,rgba(0,0,0,.82) 55%);z-index:1}

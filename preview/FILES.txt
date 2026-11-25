@@ -65,3 +65,5 @@ img/cd/card-witchcore-i-600.webp
 img/cd/card-witchcore-i.webp
 img/cd/card-witchcore-ii-600.webp
 img/cd/card-witchcore-ii.webp
+img/cd/blank-black.webp
+img/cd/blank-black-600.webp
