@@ -8,6 +8,7 @@
   try {
     if (!PREVIEW_PRICE || !/\.pages\.dev$/.test(location.hostname) || !window.__ckP) return;
     const fix = (d) => { try { ((d && d.products) || []).forEach((p) => { if (+p.price > 0) p.price = PREVIEW_PRICE; }); } catch (e) {} return d; };
+    try { if (!sessionStorage.getItem('ck-pp')) { localStorage.removeItem('ck-cur'); sessionStorage.setItem('ck-pp', '1'); } } catch (e) {}   /* a leftover display currency (USD/SEK) made 24 show as ~25.92 or ~270 */
     window.__ckP = window.__ckP.then(fix);
     const f0 = window.fetch; window.fetch = function (u) { const r = f0.apply(this, arguments); return /products\.json/.test(String(u)) ? r.then((res) => res.clone().json().then((d) => new Response(JSON.stringify(fix(d)), { status: 200, headers: { "content-type": "application/json" } }))) : r; };
   } catch (e) {}
