@@ -42,8 +42,21 @@
   .rvb:active{filter:brightness(1.5)}
   .rvb svg{width:12px;height:12px;fill:currentColor;flex:none}
   .rvb.rvsq{padding:0;width:26px}
-  .rvsrc{background:#2a2340;color:#cdbcff}
-  .rvsrc.none{background:#1f1d27;color:#6f6a7c}
+  .rvos{background:#2a2340;color:#cdbcff;min-width:34px}
+  .rvom{background:#2a2340;color:#cdbcff;flex:0 1 auto;max-width:130px;min-width:34px;overflow:hidden;text-overflow:ellipsis;justify-content:flex-start;display:inline-block;line-height:28px;padding:0 8px}
+  .rvos.none,.rvom.none{background:#1f1d27;color:#6f6a7c}
+  .rvos.on,.rvom.on{background:#8b6cf6;color:#fff}
+  .rvorg{position:fixed;z-index:100002;width:300px;max-width:calc(100vw - 16px);box-sizing:border-box;background:#141219;border:1px solid #8b6cf6;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.6);font:500 12px/1.4 var(--body,Inter,sans-serif);color:#e9e6f2;display:flex;flex-direction:column;gap:8px}
+  .rvorg .oh{display:flex;align-items:center;gap:6px;font:800 10px/1 var(--body,Inter,sans-serif);letter-spacing:.14em;color:#8b6cf6;text-transform:uppercase}
+  .rvorg .oh .on_{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#a29db0;letter-spacing:.04em;text-transform:none;font-weight:600}
+  .rvorg .ob{display:flex;flex-wrap:wrap;gap:3px}
+  .rvorg .rvb{height:26px;padding:0 8px}
+  .rvorg .rvb.sel{background:#8b6cf6;color:#fff}
+  .rvorg textarea,.rvorg input{width:100%;box-sizing:border-box;background:#0b0a0e;border:1px solid #3a3446;color:#e9e6f2;padding:6px 8px;font:500 12px/1.4 var(--body,Inter,sans-serif);outline:0;border-radius:0;resize:vertical}
+  .rvorg input{height:28px;padding:0 8px}
+  .rvorg textarea{min-height:64px}
+  .rvorg textarea:focus,.rvorg input:focus{border-color:#8b6cf6}
+  .rvorg .os{background:#1b1922;padding:8px;color:#e9e6f2;overflow-wrap:anywhere}
   .rvpg{display:inline-flex;gap:1px;flex:none;margin-left:6px}
   .rvpg .rvb{padding:0;width:23px;min-width:23px;height:28px;font-family:var(--mono,"JetBrains Mono",monospace);font-size:11px;letter-spacing:0}
   .pv button[data-tier="1"] .rvpg .rvb[data-n="1"]{background:#E4FF3A;color:#0b0a0e}
@@ -63,6 +76,8 @@
   .rvb.rvdelb.sure{background:#ff6b7a;color:#0b0a0e}
   .rvb.rvdragb{cursor:grab}
   .rvsp{flex:1 1 0;min-width:0}
+  html.rvw .pv button[data-pid] .rvr.rvvr{flex-wrap:nowrap}
+  .rvvr .rvspx{flex:0 0 4px}
   .rvb.rvver{padding:0 10px;font-family:var(--mono,monospace);letter-spacing:.04em}
   .rvb.rvver.sel{background:#8b6cf6;color:#fff}
   .rvb.rvver.use{background:#3ddc84;color:#0b0a0e}
@@ -204,9 +219,83 @@
   window.addEventListener("pointerup", scEnd, true); window.addEventListener("pointercancel", scEnd, true);
   window.addEventListener("click", (e) => { if (!window.__rvSynth && !sc && Date.now() - scT < 350) { e.preventDefault(); e.stopPropagation(); } }, true);   // the click that ends a drag (it may land outside the wave) must never play / pause
 
+  /* ---- ORIGINS (Eman 25 Nov): where the sound came from + where the MIDI came from. Base labels live in /admin/origins.json (written from the old pack threads,
+     "?" = not recorded); anything Eman edits is saved in D.review[pack][sound].src / .midi and wins over the base. ---- */
+  let ORG = {}; fetch("/admin/origins.json?v=1", { cache: "no-cache" }).then((r) => r.ok ? r.json() : {}).then((j) => { ORG = j || {}; syncAll(); }).catch(() => {});
+  const SRC_CODES = [["YT", "YouTube tutorial / video"], ["FREE", "Free preset found online"], ["OWN", "Made from scratch"], ["PS", "PresetShare"], ["SPL", "Splice"], ["TECH", "Technique recipe / interview"], ["AI", "Generated sound (ElevenLabs)"], ["?", "Not recorded yet"]];
+  const SRC_OLD = { "FREE WWW": "FREE", "FREE P": "FREE", "S": "SPL" };
+  const SCI = ["PLAYBOI", "CRYSTAL", "DREAMCORE", "TRAVIS", "OPIUM", "FULL"];
+  const oBase = (b) => ORG[(ctx(b) || { k: "" }).k] || {};
+  function oSrc(b) {
+    const o = rec(b), c = ctx(b); if (o && o.src) return { c: o.src.c || "?", s: o.src.s || "" };
+    const st = c && c.s.srcTag; if (st && st !== "?") return { c: SRC_OLD[st] || st, s: "" };
+    const m = oBase(b).src; return m ? { c: m.c || "?", s: m.s || "" } : { c: "?", s: "" };
+  }
+  function oMidi(b) { const o = rec(b); if (o && o.midi) return o.midi; return oBase(b).midi || {}; }
+  function midiLabel(m) {
+    if (!m) return "?"; if (m.none) return "—";
+    const p = []; if (m.song) p.push((m.pct === -1 ? "≈ " : (m.pct && m.pct < 100) ? "~" + m.pct + "% " : "1:1 ") + m.song);
+    if (m.sci && m.sci.length) p.push(m.sci.join("+") + " SCI");
+    if (!p.length && m.own) return "OWN"; return p.length ? p.join(" + ") : "?";
+  }
+  function midiText(m) {
+    if (!m) return ""; if (m.none) return "No MIDI (drum one-shot / no melody)";
+    const p = []; if (m.song) p.push(m.pct === -1 ? "Based on " + m.song + " (how much was changed is not recorded)" : (m.pct && m.pct < 100) ? "Based on " + m.song + ", remade about " + m.pct + "%" : "Same as " + m.song + " (1:1)");
+    if (m.sci && m.sci.length) p.push("our " + m.sci.join(" + ") + " MIDI science");
+    if (!p.length && m.own) return "Our own MIDI, written from scratch"; return p.join(" + ");
+  }
+  let org = null;
+  const closeOrg = () => { if (org) { org.el.remove(); org = null; } };
+  function orgRefresh(b) { const vr = b.querySelector(".rvvr"); if (vr) vr.dataset.sig = ""; sync(b); }
+  function openOrg(b, kind, anchor) {
+    const same = org && org.b === b && org.kind === kind; closeOrg(); if (same) return;
+    const el = document.createElement("div"); el.className = "rvorg"; document.body.appendChild(el); org = { el, b, kind };
+    ["keydown", "keyup", "keypress"].forEach((n) => el.addEventListener(n, (e) => { e.stopPropagation(); if (n === "keydown" && e.key === "Escape") closeOrg(); }));
+    el.addEventListener("input", (e) => orgInput(e));
+    drawOrg();
+    const r = anchor.getBoundingClientRect(), h = el.offsetHeight; let left = Math.min(r.left, innerWidth - el.offsetWidth - 8), top = r.bottom + 4; if (top + h > innerHeight - 8) top = Math.max(8, r.top - h - 4);
+    el.style.left = Math.max(8, left) + "px"; el.style.top = top + "px";
+  }
+  function drawOrg() {
+    if (!org) return; const { el, b, kind } = org, c = ctx(b); if (!c) return closeOrg(); const nm = c.s.name || "";
+    if (kind === "s") {
+      const v = oSrc(b), info = SRC_CODES.find((x) => x[0] === v.c);
+      el.innerHTML = `<div class="oh">SOUND ORIGIN<span class="on_">${esc(nm)}</span></div>
+        <div class="os"><b>${esc(v.c)}</b> · ${esc(info ? info[1] : v.c)}${v.s ? "<br>" + esc(v.s) : ""}</div>
+        <div class="ob">${SRC_CODES.map(([k]) => `<em class="rvb${k === v.c ? " sel" : ""}" data-o="sc" data-c="${esc(k)}">${esc(k)}</em>`).join("")}</div>
+        <textarea data-o="st" placeholder="where exactly (e.g. playboi carti type bass, youtube)">${esc(v.s)}</textarea>`;
+    } else {
+      const m = oMidi(b);
+      el.innerHTML = `<div class="oh">MIDI ORIGIN<span class="on_">${esc(nm)}</span></div>
+        <div class="os">${esc(midiText(m) || "Not recorded yet (?)")}${m.s ? "<br>" + esc(m.s) : ""}</div>
+        <input data-o="ms_" placeholder="song (leave empty if none)" value="${esc(m.song || "")}">
+        <div class="ob">${[[100, "1:1"], [75, "~75%"], [50, "~50%"], [25, "~25%"]].map(([n, l]) => `<em class="rvb${m.song && (m.pct || 100) === n ? " sel" : ""}" data-o="mp" data-p="${n}">${l}</em>`).join("")}</div>
+        <div class="ob">${SCI.map((k) => `<em class="rvb${m.sci && m.sci.includes(k) ? " sel" : ""}" data-o="msci" data-c="${k}">${k}</em>`).join("")}</div>
+        <div class="ob"><em class="rvb${m.own && !m.song && !(m.sci || []).length ? " sel" : ""}" data-o="mf" data-f="own">OWN</em><em class="rvb${m.none ? " sel" : ""}" data-o="mf" data-f="none">NO MIDI</em><em class="rvb" data-o="mf" data-f="unk">?</em></div>
+        <textarea data-o="mt" placeholder="summary (e.g. based on My Eyes musescore midi, remade ~50%)">${esc(m.s || "")}</textarea>`;
+    }
+  }
+  function orgGet(b, kind) { const o = rec(b, true); if (kind === "s") { if (!o.src) o.src = Object.assign({}, oSrc(b)); return o.src; } if (!o.midi) o.midi = JSON.parse(JSON.stringify(oMidi(b))); if (!o.midi.sci) o.midi.sci = []; return o.midi; }
+  function orgClick(e, t) {
+    if (!org) return; const a = t.closest("[data-o]"), { b, kind } = org; if (!a) return; if (a.tagName === "TEXTAREA" || a.tagName === "INPUT") return;
+    const m = orgGet(b, kind), k = a.dataset.o;
+    if (k === "sc") m.c = a.dataset.c;
+    else if (k === "mp") { if (!m.song) { drawOrg(); const i = org.el.querySelector("[data-o=ms_]"); if (i) i.focus(); return; } m.pct = +a.dataset.p; m.own = false; m.none = false; }
+    else if (k === "msci") { m.sci = m.sci.includes(a.dataset.c) ? m.sci.filter((x) => x !== a.dataset.c) : m.sci.concat(a.dataset.c); m.none = false; m.own = false; }
+    else if (k === "mf") { const f = a.dataset.f; m.song = ""; m.pct = 0; m.sci = []; m.own = f === "own"; m.none = f === "none"; }
+    save(); orgRefresh(b); drawOrg();
+  }
+  function orgInput(e) {
+    if (!org) return; const t = e.target, k = t.dataset && t.dataset.o; if (!k) return; const { b, kind } = org, m = orgGet(b, kind);
+    if (k === "st" || k === "mt") m.s = t.value; else if (k === "ms_") { m.song = t.value; if (m.song) { m.own = false; m.none = false; if (!m.pct) m.pct = 100; } }
+    save(); orgRefresh(b);
+    const os = org.el.querySelector(".os"); if (os) { if (kind === "s") { const v = oSrc(b), info = SRC_CODES.find((x) => x[0] === v.c); os.innerHTML = `<b>${esc(v.c)}</b> · ${esc(info ? info[1] : v.c)}${v.s ? "<br>" + esc(v.s) : ""}`; } else os.innerHTML = esc(midiText(m) || "Not recorded yet (?)") + (m.s ? "<br>" + esc(m.s) : ""); }
+  }
+  window.addEventListener("pointerdown", (e) => { if (org && !e.target.closest(".rvorg,.rvos,.rvom")) closeOrg(); }, true);
+
   /* ---- inject rows ---- */
   const topHTML = () => `<span class="ad rvr rvt"><em class="rvb rvgd" data-rv="good">GOOD</em><em class="rvb rvfx" data-rv="fix">FIX</em><em class="rvb rvsk rvsq" data-rv="skull">${SKULL_I}</em><em class="rvb rvrefb rvsq" data-rv="ref" hidden>◉</em><span class="rvpg">${[1, 2, 3, 4, 5].map((n) => `<em class="rvb" data-rv="p" data-n="${n}">${n}</em>`).join("")}</span></span>`;
-  const botHTML = () => `<span class="ad rvr rvbt"><em class="rvb rvcmb" data-rv="cm">COMMENT</em><em class="rvb rvsrc" data-rv="src">OWN</em><span class="rvsp"></span><em class="rvb rvoffb rvsq" data-rv="off">${OFF_I}</em><em class="rvb rvdelb rvsq" data-rv="del">${TRASH_I}</em><em class="rvb rvdragb rvsq" data-a="drag">${DRAG_I}</em></span>`;
+  const botHTML = () => `<span class="ad rvr rvbt"><em class="rvb rvcmb" data-rv="cm">COMMENT</em><span class="rvsp"></span><em class="rvb rvoffb rvsq" data-rv="off">${OFF_I}</em><em class="rvb rvdelb rvsq" data-rv="del">${TRASH_I}</em><em class="rvb rvdragb rvsq" data-a="drag">${DRAG_I}</em></span>`;
   const verHTML = () => `<span class="ad rvr rvvr"></span>`;
   function inject(b) {
     if (b.querySelector(".rvr")) return;
@@ -220,16 +309,15 @@
   function sync(b) {
     const c = ctx(b); if (!c) return; const o = rec(b);
     const old = b.querySelector(".ad:not(.rvr)"), srcOld = old && old.querySelector("i.src"), top = b.querySelector(".rvt"); if (!top) return;
-    const sv = b.querySelector(".rvsrc"), tx = (srcOld && srcOld.textContent.trim()) || "?"; if (sv.textContent !== tx) sv.textContent = tx; sv.classList.toggle("none", tx === "?");
     const rf = old && old.querySelector("i[data-a=ref]"), rb = b.querySelector(".rvrefb"); if (rb) { rb.hidden = !rf; if (rf) { rb.textContent = rf.textContent; } }
     setBool(b.querySelector(".rvgd"), !!(o && o.good));
     const cm = (o && o.cm) || [], n = cm.length, un = !(o && o.good) && !c.s.fix && !c.s.mark && !n && !c.s.note && !c.s.hidden;
     b.toggleAttribute("data-rvg", !!(o && o.good)); b.toggleAttribute("data-rvc", n > 0); b.toggleAttribute("data-rvu", un);
     const cmb = b.querySelector(".rvcmb"); if (cmb) cmb.classList.toggle("has", n > 0);
     // versions row
-    const vs = verList(b), sel = selV(b), inuse = useV(b), vr = b.querySelector(".rvvr"), sig = JSON.stringify([vs.map((x) => x.id + x.name), sel, inuse]);
+    const vs = verList(b), sel = selV(b), inuse = useV(b), vr = b.querySelector(".rvvr"), sg = oSrc(b), mg = oMidi(b), sl = sg.c, ml = midiLabel(mg), sig = JSON.stringify([vs.map((x) => x.id + x.name), sel, inuse, sl, ml]);
     if (vr && vr.dataset.sig !== sig) { vr.dataset.sig = sig;
-      vr.innerHTML = vs.map((x) => `<em class="rvb rvver${x.id === sel ? " sel" : ""}${x.id === inuse ? " use" : ""}" data-rv="ver" data-v="${esc(x.id)}">${esc(x.name)}</em>`).join("") + `<em class="rvb rvvnew rvsq" data-rv="vnew">+</em><span class="rvsp"></span><em class="rvb rvsq" data-rv="dl">${DL_I}</em>`; }
+      vr.innerHTML = vs.map((x) => `<em class="rvb rvver${x.id === sel ? " sel" : ""}${x.id === inuse ? " use" : ""}" data-rv="ver" data-v="${esc(x.id)}">${esc(x.name)}</em>`).join("") + `<em class="rvb rvvnew rvsq" data-rv="vnew">+</em><span class="rvsp"></span><em class="rvb rvos${sl === "?" ? " none" : ""}" data-rv="orgs" title="Where the sound came from">${esc(sl)}</em><em class="rvb rvom${ml === "?" ? " none" : ""}" data-rv="orgm" title="Where the MIDI came from">${esc(ml)}</em><em class="rvb rvsq" data-rv="dl">${DL_I}</em>`; }
     // comment list
     const list = b.querySelector(".rvc"), shown = cm.filter((x) => x.txt || x.id === editId), csig = JSON.stringify([shown.map((x) => [x.id, x.txt, x.t, x.x, x.v]), sel]);
     if (list && list.dataset.sig !== csig) { list.dataset.sig = csig;
@@ -246,7 +334,7 @@
   }
   const syncAll = () => document.querySelectorAll(".pv button[data-pid]").forEach((b) => { inject(b); sync(b); });
   let raf = 0; const later = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; syncAll(); }); };
-  new MutationObserver((ml) => { if (ml.every((m) => m.target.closest && m.target.closest(".rvr,.rvc,.rvov,.rvpop"))) return; later(); }).observe(document.body, { childList: true, subtree: true });
+  new MutationObserver((ml) => { if (ml.every((m) => (m.target.closest && m.target.closest(".rvr,.rvc,.rvov,.rvpop,.rvorg")) || [...m.addedNodes, ...m.removedNodes].every((n) => n.classList && n.classList.contains("rvorg")))) return; later(); }).observe(document.body, { childList: true, subtree: true });
   new ResizeObserver(later).observe(document.body);
   addEventListener("resize", () => { document.querySelectorAll(".rvov").forEach((o) => delete o.dataset.sig); later(); });
 
@@ -379,6 +467,8 @@
   window.addEventListener("click", async (e) => {
     if (window.__rvSynth || inPv()) return;
     const t = e.target; if (!t.closest) return;
+    if (t.closest(".rvorg")) { e.stopPropagation(); return orgClick(e, t); }
+    if (org && !t.closest(".rvos,.rvom")) closeOrg();
     if (Date.now() - mdT < 350 && t.closest(".rvm")) { e.preventDefault(); e.stopPropagation(); return; }
     const nmt = t.closest(".pv button[data-pid] .nmt"); if (nmt) { e.preventDefault(); e.stopPropagation(); inlineRename(nmt.closest("button[data-pid]"), nmt); return; }
     if (t.closest(".rvr,.rvc,.rvov") && !t.closest("[data-rv],[data-a]")) { e.preventDefault(); e.stopPropagation(); return; }
@@ -390,7 +480,7 @@
     e.preventDefault(); e.stopPropagation();
     const k = a.dataset.rv, c = ctx(b); if (!c) return;
     const after = () => setTimeout(() => { sync(b); }, 0);
-    if (k === "src") { const o = old(b, "i.src"); if (o) o.click(); return after(); }
+    if (k === "orgs" || k === "orgm") return openOrg(b, k === "orgs" ? "s" : "m", a);
     if (k === "p") { setTier(b, +a.dataset.n); return after(); }
     if (k === "good") { const o = rec(b, true); o.good = !o.good; if (!o.good) delete o.good; if (o.good && c.s.fix) { const f = old(b, "[data-a=fix]"); if (f) f.click(); } save(); return after(); }
     if (k === "fix") { const f = old(b, "[data-a=fix]"); if (f) f.click(); const o = rec(b); if (c.s.fix && o && o.good) { delete o.good; save(); } document.querySelectorAll(".adm-note").forEach((x) => x.remove()); if (c.s.fix && !(o && o.cm && o.cm.length) && !c.s.note) newBubble(b, null); return after(); }

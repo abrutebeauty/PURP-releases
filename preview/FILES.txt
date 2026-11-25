@@ -152,3 +152,4 @@ img/cd/free-knight.webp
 img/op/glyph-l-out.svg
 img/op/glyph-r-out.svg
 admin/review.js
+admin/origins.json
