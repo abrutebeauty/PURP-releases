@@ -766,3 +766,6 @@ html.opium2 .op-s.fr .mb .b3{animation-duration:27s!important}
 html.opium2 .op-s.fr .mb .b4{animation-duration:17s!important}
 html.opium2 .op-s.fr .mb .gr{filter:none;opacity:.5;background-size:64px 64px;animation:opGr2 .9s steps(10) infinite!important;width:100%;height:100%}
 @keyframes opGr2{0%{background-position:0 0}10%{background-position:-9px 14px}20%{background-position:21px -7px}30%{background-position:-15px -19px}40%{background-position:12px 22px}50%{background-position:-24px 5px}60%{background-position:17px -16px}70%{background-position:-6px 25px}80%{background-position:23px 9px}90%{background-position:-12px -22px}100%{background-position:0 0}}
+/* quick tweak 25 Nov: note line = white, bold, bigger, uppercase */
+html.opium2 .op-t3 .op-n{text-transform:uppercase!important;color:#fff!important;font:800 22px/1.15 "Inter","Helvetica Neue",Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.05em;text-shadow:0 0 14px rgba(255,255,255,.25)}
+html.opium2 .op-t3 .op-n{font-size:18px!important;white-space:nowrap;letter-spacing:.04em}
