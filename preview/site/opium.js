@@ -575,3 +575,11 @@
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
 })();
+
+/* SOUND REVIEW (Eman 25 Nov): admin only. Once the admin tools are up, load the review rows (admin/review.js). Customers never get it: it needs the admin login. Remove = old strip only */
+(function () {
+  let n = 0; const t = setInterval(() => {
+    if (++n > 80) return clearInterval(t);
+    if (window.ADM && document.querySelector(".adm-top") && !window.__rvLoaded) { clearInterval(t); const s = document.createElement("script"); s.src = "/admin/review.js?v=1"; document.head.appendChild(s); }
+  }, 250);
+})();
