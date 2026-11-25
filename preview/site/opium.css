@@ -833,3 +833,11 @@ html.opium2 .op-pick span{display:none}
 /* quick tweak 25 Nov: back button spans the first two CDs of the rail, shorter, smaller font */
 html.opium2 a.bigback,html.opium2 .nl.back.bigback{padding:10px 16px!important;font:700 13px/1 "Inter","Helvetica Neue",Arial,sans-serif!important;justify-content:center;gap:10px;box-sizing:border-box}
 html.opium2 a.bigback svg{width:9px;height:15px}
+html.opium2 .op-s.add:hover{background:#B92520!important}
+/* quick tweak 25 Nov: grey captions under all three slots */
+html.opium2 .op-s.in,html.opium2 .op-s.fr{overflow:visible}
+html.opium2 .op-s.in::after,html.opium2 .op-s.fr::after{position:absolute;left:0;right:0;top:calc(100% + 8px);text-align:center;font:500 12px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:.02em;text-transform:lowercase;color:#c9c5d3;pointer-events:none}
+html.opium2 .op-s.in::after{content:"selected pack"}
+html.opium2 .op-s.fr::after{content:"pick free pack"}
+/* quick tweak 25 Nov: slot 3 = clean 3D empty silver CD in the clear case (CD creator parts) + MJ doodles/stickers, same size as the other CD slots */
+html.opium2 .op-s.fr .fc{width:100%;aspect-ratio:1/1}
