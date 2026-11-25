@@ -648,3 +648,19 @@ html.opium2 header.hero .bfD .op-gw.l>*{transform:scaleX(-1)}
 /* quick tweak 25 Nov: no TRY FIRST / FREE SAMPLES block anywhere; price box without the red outline */
 html.opium2 #railR h4,html.opium2 [data-free],html.opium #railR h4,html.opium [data-free]{display:none!important}
 html.opium2 #pkTop .pbuy,html.opium #pkTop .pbuy,html.opium2 .pbuy{border:0!important;padding:0!important;outline:0!important;box-shadow:none!important}
+/* quick tweak 25 Nov: pack page 3 for 2 as three slots, no per-sound line */
+html.opium2 #pkTop .pbuy .ps,html.opium2 #pkTop .pbuy .deal{display:none!important}
+html.opium2 .op-t3{display:grid;grid-template-columns:repeat(3,minmax(0,150px));gap:14px;margin:6px 0 18px;max-width:100%}
+html.opium2 .op-s{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.02);overflow:hidden;text-decoration:none;color:#c9c5d3}
+html.opium2 .op-s img{width:100%;height:100%;object-fit:contain;display:block}
+html.opium2 .op-s i{position:absolute;left:8px;bottom:6px;font:500 11px/1 "Inter","Helvetica Neue",Arial,sans-serif;font-style:normal;text-transform:lowercase;letter-spacing:.02em;color:#8d8995}
+html.opium2 .op-s.add{border:1px dashed rgba(228,255,58,.55);background:transparent;transition:background .2s,border-color .2s}
+html.opium2 .op-s.add:hover{background:rgba(228,255,58,.08);border-color:#E4FF3A}
+html.opium2 .op-s.add b{font:300 44px/1 "Inter","Helvetica Neue",Arial,sans-serif;color:#E4FF3A}
+html.opium2 .op-s.add i{color:#E4FF3A;left:0;right:0;text-align:center}
+html.opium2 .op-s.fr{border-color:rgba(228,255,58,.6);box-shadow:0 0 22px rgba(228,255,58,.28),inset 0 0 18px rgba(228,255,58,.1)}
+html.opium2 .op-s.fr img{filter:blur(9px) brightness(.75) saturate(.8);transform:scale(1.08)}
+html.opium2 .op-s.fr u{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-decoration:none;font:300 64px/1 "Inter","Helvetica Neue",Arial,sans-serif;color:#E4FF3A;text-shadow:0 0 18px rgba(228,255,58,.7);backdrop-filter:blur(2px);background:rgba(255,255,255,.04)}
+html.opium2 .op-s.fr i{color:#E4FF3A;z-index:1;text-shadow:0 0 10px rgba(228,255,58,.8);font-weight:700;left:0;right:0;text-align:center}
+html.opium2 .op-s.in{border-color:rgba(255,255,255,.28)}
+@media(max-width:700px){html.opium2 .op-t3{grid-template-columns:repeat(3,1fr)}}

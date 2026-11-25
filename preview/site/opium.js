@@ -388,7 +388,13 @@
     });
   }
   addEventListener("resize", () => { try { prepSheen(); } catch (e) {} });
-  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); } catch (e) { console.warn("opium", e); } }
+  /* pack page: 3 for 2 as three slots under the price (Eman 25 Nov): this pack in, an empty slot to fill, a frosted "?" CD that comes free */
+  function trio3() {
+    const pb = document.querySelector("#pkTop .pbuy"); if (!O2 || !pb || pb.nextElementSibling && pb.nextElementSibling.classList.contains("op-t3")) return;
+    const im = document.querySelector("#pkTop .pkc img, #pkTop .pq img"), src = im && (im.currentSrc || im.src); if (!src) return;
+    pb.insertAdjacentHTML("afterend", `<div class="op-t3" aria-label="Buy 2, get 1 free"><div class="op-s in"><img src="${src}" alt=""><i>in</i></div><a class="op-s add" href="/#packs"><b>+</b><i>add any pack</i></a><div class="op-s fr"><img src="${src}" alt=""><u>?</u><i>free</i></div></div>`);
+  }
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
