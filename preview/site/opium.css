@@ -915,3 +915,9 @@ html.op-lbo{overflow:hidden}
 .lb-sp{position:absolute;inset:0;pointer-events:none}
 .lb-sp i{position:absolute;display:block;margin:-4px 0 0 -4px;background:#fff;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);opacity:0;transform:scale(.2);animation:opSpark 2.4s ease-in-out infinite;filter:drop-shadow(0 0 3px rgba(255,255,255,.9))}
 @media(max-width:700px){.lb-p{padding:16px 14px 0;width:100vw;height:100vh}.lb-s{width:84px;height:84px}.lb-d{padding:0 24px}.lb-dl{grid-template-columns:1fr}.lb-g{grid-template-columns:repeat(2,1fr)}}
+/* quick tweak 25 Nov (Eman): red claws = outline only, and the hero ones sit ~3cm further in, more behind the CDs */
+html.opium2 .op-gw .op-gv.red{background:var(--go) center/contain no-repeat!important;-webkit-mask:none!important;mask:none!important}
+@media(min-width:1041px){
+html.opium2 header.hero .bfD .op-gw.l{left:calc(50% - .9 * min(84cqh,40cqw) - 83px + clamp(0px,calc((100vw - 1440px) * .13),70px))!important}
+html.opium2 header.hero .bfD .op-gw.r{right:calc(50% - .9 * min(84cqh,40cqw) - 74px + clamp(0px,calc((100vw - 1440px) * .13),70px))!important}
+}

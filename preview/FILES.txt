@@ -148,3 +148,6 @@ img/cdbare/witchcore-i-600.webp
 img/cdbare/witchcore-i.webp
 img/cdbare/witchcore-ii-600.webp
 img/cdbare/witchcore-ii.webp
+img/cd/free-knight.webp
+img/op/glyph-l-out.svg
+img/op/glyph-r-out.svg
