@@ -418,6 +418,12 @@
     const a = document.querySelector("a.bigback"); if (!O2 || !a || a.dataset.op) return; a.dataset.op = 1;
     a.innerHTML = '<svg viewBox="0 0 12 20" width="12" height="20" aria-hidden="true"><path d="M10 2 L2 10 L10 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"/></svg><span>Back to all packs</span>';
   }
+  /* product page: works-with sentence above the synth buttons (Eman 25 Nov) */
+  function wwText() {
+    const ww = document.querySelector("#pkTop .pki .ww"); if (!O2 || !ww || ww.querySelector(".op-wwt")) return;
+    const l = ww.querySelector(".wwl"); if (!l) return;
+    l.insertAdjacentHTML("beforebegin", '<p class="op-wwt">All packs include presets for Serum, Serum 2, Vital and Ableton Wavetable.</p>');
+  }
   /* 3-for-2: clicking "add pack" selects the second pack: price shows 3x struck through next to 2x (Eman 25 Nov) */
   function pickTwo() {
     const slot = document.querySelector("#pkTop .op-s.add"), pr = document.querySelector("#pkTop .pbuy .price"); if (!O2 || !slot || !pr || slot.dataset.op) return; slot.dataset.op = 1;
@@ -451,7 +457,7 @@
   window.addEventListener("resize", placeBack); [400, 1200, 2500, 4000].forEach((t) => setTimeout(placeBack, t));
   /* product page: tag trading card packs so their art can be smaller (Eman 25 Nov) */
   function tcPage() { const t = document.querySelector("#pkTop"), im = t && t.querySelector(".pkc img"); if (t && im) t.classList.toggle("op-tc", /\/card-/.test(im.currentSrc || im.src)); }
-  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); pickTwo(); opRev(); backBtn(); placeBack(); tcPage(); } catch (e) { console.warn("opium", e); } }
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); wwText(); pickTwo(); opRev(); backBtn(); placeBack(); tcPage(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);
