@@ -69,3 +69,4 @@ img/cd/blank-black.webp
 img/cd/blank-black-600.webp
 img/cd/free-flame.webp
 img/cd/free-flame-blank.webp
+fonts/op-marker.woff2

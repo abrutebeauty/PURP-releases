@@ -806,3 +806,15 @@ html.opium2 .op-s.fr .fc,html.opium2 .op-s.in img{transform-origin:50% 50%}
 /* quick tweak 25 Nov: add-any-pack slot turns solid brick red on hover (colour sampled from Eman's swatch) */
 html.opium2 .op-s.add{transition:background .25s ease}
 html.opium2 .op-s.add:hover{background:#A13828!important}
+/* quick tweak 25 Nov: slot 3 = acid yellow box; "pick your free pack" in marker font under it with a drawn arrow */
+@font-face{font-family:"OpMarker";src:url(/fonts/op-marker.woff2) format("woff2");font-weight:400;font-display:swap}
+html.opium2 .op-s.fr .mb{background:#E4FF3A!important;animation:none!important;filter:none!important}
+html.opium2 .op-s.fr .mb i{opacity:.55}
+html.opium2 .op-s.fr .mb .b1{background:radial-gradient(circle at 40% 40%,#fffb8a,transparent 68%)}
+html.opium2 .op-s.fr .mb .b2{background:radial-gradient(circle at 50% 50%,#c4f000,transparent 66%)}
+html.opium2 .op-s.fr .mb .b3{background:radial-gradient(circle at 50% 50%,#ffe600,transparent 66%)}
+html.opium2 .op-s.fr .mb .b4{background:radial-gradient(circle at 50% 50%,#f4ff9a,transparent 64%)}
+html.opium2 .op-s.fr .mb .gr{opacity:.35;mix-blend-mode:multiply}
+html.opium2 .op-pick{grid-column:3;display:flex;flex-direction:column;align-items:center;margin:-2px 0 0;pointer-events:none}
+html.opium2 .op-pick svg{width:34px;height:32px;display:block;transform:rotate(-8deg)}
+html.opium2 .op-pick span{font:400 19px/1.05 "OpMarker","Inter",Arial,sans-serif;color:#E4FF3A;text-transform:uppercase;text-align:center;letter-spacing:.02em;transform:rotate(-3deg);text-shadow:0 0 12px rgba(228,255,58,.35)}
