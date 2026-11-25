@@ -74,3 +74,4 @@ img/cd/free-clean.webp
 img/cd/free-clean2.webp
 img/cd/free-clean3.webp
 img/cd/free-red.webp
+img/cd/free-red2.webp
