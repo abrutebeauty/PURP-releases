@@ -421,13 +421,10 @@
   /* free-pack disc: twinkling glitter sparks that sway with the case (Eman 25 Nov) */
   function glitter() {
     const fc = document.querySelector("#pkTop .op-s.fr .fc"); if (!O2 || !fc || fc.querySelector(".sp")) return;
+    const P = [[48.2, 82.9], [53.2, 16.2], [77.2, 38.8], [56.2, 21.9], [62.0, 73.9], [72.0, 63.0], [12.5, 45.2], [55.9, 83.2], [27.8, 22.3], [73.3, 79.2], [86.1, 39.7], [32.5, 18.8], [41.1, 82.5], [18.4, 24.8], [82.6, 71.1], [81.6, 81.1], [27.0, 78.1], [78.5, 75.7], [15.4, 72.3], [25.2, 69.6], [68.4, 82.4], [87.3, 74.5], [20.8, 63.8], [14.9, 65.7], [16.2, 30.2], [61.4, 28.6], [35.7, 61.4], [80, 47.1], [54.3, 74.3]];   // bright highlight spots on the stickers and the disc, measured from the image
     let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-    let h = "";
-    for (let n = 0; n < 26; n++) {
-      const a = rnd() * Math.PI * 2, r = Math.sqrt(rnd()) * 0.8 * 35.2, x = 51.9 + r * Math.cos(a), y = 49.5 + r * Math.sin(a);
-      const sz = 5 + rnd() * 9, d = (rnd() * 3).toFixed(2), t = (1.6 + rnd() * 2).toFixed(2), c = ["#fff", "#fff", "#dff3ff", "#fffbd0"][n % 4];
-      h += `<i style="left:${x.toFixed(1)}%;top:${y.toFixed(1)}%;width:${sz.toFixed(1)}px;height:${sz.toFixed(1)}px;background:${c};animation-delay:${d}s;animation-duration:${t}s"></i>`;
-    }
+    const h = P.map((p, n) => { const sz = 6 + rnd() * 8, d = (rnd() * 3).toFixed(2), t = (1.8 + rnd() * 2).toFixed(2), c = ["#fff", "#fff", "#dff3ff", "#fffbd0"][n % 4];
+      return `<i style="left:${p[0]}%;top:${p[1]}%;width:${sz.toFixed(1)}px;height:${sz.toFixed(1)}px;background:${c};animation-delay:${d}s;animation-duration:${t}s"></i>`; }).join("");
     fc.insertAdjacentHTML("beforeend", '<span class="sp" aria-hidden="true">' + h + "</span>");
   }
   /* product page: works-with sentence above the synth buttons (Eman 25 Nov) */
