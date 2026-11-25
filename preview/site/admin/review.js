@@ -44,8 +44,8 @@
   .rvb.rvsq{padding:0;width:26px}
   .rvsrc{background:#2a2340;color:#cdbcff}
   .rvsrc.none{background:#1f1d27;color:#6f6a7c}
-  .rvpg{display:inline-flex;gap:1px;flex:none}
-  .rvpg .rvb{padding:0;width:26px;min-width:26px;height:26px;font-family:var(--mono,"JetBrains Mono",monospace);font-size:11px;letter-spacing:0}
+  .rvpg{display:inline-flex;gap:1px;flex:none;margin-left:6px}
+  .rvpg .rvb{padding:0;width:23px;min-width:23px;height:28px;font-family:var(--mono,"JetBrains Mono",monospace);font-size:11px;letter-spacing:0}
   .pv button[data-tier="1"] .rvpg .rvb[data-n="1"]{background:#E4FF3A;color:#0b0a0e}
   .pv button[data-tier="2"] .rvpg .rvb[data-n="2"]{background:#ff9f43;color:#0b0a0e}
   .pv button[data-tier="3"] .rvpg .rvb[data-n="3"]{background:#4dd4ff;color:#0b0a0e}
@@ -70,14 +70,16 @@
   .rvb.rvvnew{color:#cdbcff}
   .rvc{display:flex;flex-direction:column;gap:3px;min-width:0}
   .rvc:empty{display:none}
-  .rvci{display:flex;align-items:flex-start;gap:6px;background:#17161d;padding:5px 6px;font:500 12px/1.35 var(--body,Inter,sans-serif);color:#e9e6f2;min-width:0}
-  .rvci .rvtm{flex:none;background:#1b2a4a;color:#7fb2ff;font:800 10px/1 var(--mono,monospace);padding:4px 5px;cursor:pointer;letter-spacing:.02em}
-  .rvci .rvtm.no{background:#1f1d27;color:#6f6a7c}
-  .rvci .rvtx{flex:1;min-width:0;overflow-wrap:anywhere;cursor:text}
-  .rvci .rvvt{flex:none;color:#8b6cf6;font:800 9px/1 var(--mono,monospace);padding-top:4px}
-  .rvci .rvxx{flex:none;width:18px;height:18px;display:grid;place-items:center;color:#6f6a7c;cursor:pointer;font-size:13px}
+  .rvci{display:flex;align-items:flex-start;gap:6px;background:#2f6fe0;padding:6px;font:500 12px/1.35 var(--body,Inter,sans-serif);color:#fff;min-width:0}
+  .rvci .rvtm{flex:none;background:#1a3f8f;color:#fff;font:800 10px/1 var(--mono,monospace);padding:4px 5px;cursor:pointer;letter-spacing:.02em}
+  .rvci .rvtx{flex:1;min-width:0;overflow-wrap:anywhere;cursor:text;user-select:text;-webkit-user-select:text;min-height:15px}
+  .rvci .rvtx[contenteditable]{outline:1px solid #fff;background:#1a3f8f;padding:0 3px}
+  .rvci .rvvt{flex:none;color:#bcd2ff;font:800 9px/1 var(--mono,monospace);padding-top:4px}
+  .rvci .rvxx{flex:none;width:18px;height:18px;display:grid;place-items:center;color:#bcd2ff;cursor:pointer;font-size:13px}
+  .nmt[contenteditable]{outline:1px solid #8b6cf6!important;background:#0b0a0e;cursor:text;user-select:text;-webkit-user-select:text;min-width:40px}
   .rvov{position:absolute;pointer-events:none;z-index:3}
-  .rvm{position:absolute;top:0;bottom:0;width:11px;margin-left:-5px;pointer-events:auto;cursor:pointer}
+  .rvph{position:absolute;top:-3px;bottom:-3px;width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.7);display:none}
+  .rvm{position:absolute;top:0;bottom:0;width:11px;margin-left:-5px;pointer-events:auto;cursor:ew-resize}
   .rvm::before{content:"";position:absolute;left:5px;top:0;bottom:0;width:2px;background:#3b82f6;box-shadow:0 0 8px rgba(59,130,246,.65)}
   .rvm b{position:absolute;left:5px;top:-1px;transform:translateY(-100%);background:#3b82f6;color:#fff;font:800 8px/1 var(--mono,monospace);padding:2px 3px;white-space:nowrap}
   .rvm.fl b{transform:translate(-100%,-100%)}
@@ -110,7 +112,7 @@
     toast(r && r.ok ? "Saved · live" : "Not saved"); try { localStorage.removeItem("ck-prod"); localStorage.removeItem("ck-draft"); } catch (e) {} }, 350); }
   const ctx = (b) => { const p = P(b.dataset.pid), s = p && p.sounds[+b.dataset.i]; return s ? { p, s, k: kOf(s.file) } : null; };
   const rec = (b, make) => { const c = ctx(b); if (!c) return null; let o = (D.review[c.p.id] || {})[c.k]; if (!o && make) { (D.review[c.p.id] = D.review[c.p.id] || {})[c.k] = o = {}; } if (o && make) { o.cm = o.cm || []; o.vers = o.vers || []; } return o || null; };
-  const verList = (b) => { const c = ctx(b), o = rec(b); return [{ id: "v1", name: "V1", file: c.s.file }].concat(o && o.vers ? o.vers : []); };
+  const verList = (b) => { const c = ctx(b), o = rec(b); return [{ id: "v1", name: "V1", file: b.dataset.rvo || c.s.file }].concat(o && o.vers ? o.vers : []); };
   const curV = new Map();   // card key -> selected version id (this visit only)
   const vKey = (b) => b.dataset.pid + "|" + kOf((ctx(b) || { s: {} }).s.file);
   const selV = (b) => curV.get(vKey(b)) || "v1";
@@ -137,14 +139,77 @@
     window.__rvSynth = false;
   }
 
+
+  /* ---- transport (Eman 25 Nov): Space pauses where it is and resumes there; a paused sound can be scrubbed by dragging the waveform;
+     after the full sound played it stops and the line is back at 0:00. Only while the admin tools are on (not in Preview). ---- */
+  let paused = null;   // { b, pf }
+  const isTap = () => H.classList.contains("tapplay");
+  const playing = (b) => { try { return typeof curBtn !== "undefined" && curBtn === b; } catch (e) { return false; } };
+  const tapGet = (b) => { try { return isTap() && typeof tapResume !== "undefined" ? tapResume.get(b.dataset.src) : undefined; } catch (e) { return undefined; } };
+  function pos(b) {   // where the line sits while this sound is NOT playing (null = at the start)
+    if (playing(b)) return null;
+    if (paused && paused.b === b) return paused.pf;
+    const t = tapGet(b); return t == null ? null : t;
+  }
+  function setPaused(b, f) {
+    f = Math.min(1, Math.max(0, f)); paused = { b, pf: f };
+    try { if (isTap()) { if (f > 0.003) tapResume.set(b.dataset.src, f); else tapResume.delete(b.dataset.src); } } catch (e) {}
+    paintPh(b);
+  }
+  function paintPh(b) {
+    const ph = b.querySelector(".rvph"); if (!ph) return; const f = pos(b);
+    if (f == null || f <= 0.003) { if (ph.style.display) ph.style.display = ""; return; }
+    ph.style.display = "block"; ph.style.left = (f * 100).toFixed(2) + "%";
+  }
+  function pauseNow(b) { const f = segPos(); audio.pause(); stopCur(); setPaused(b, f); }
+  function playFrom(b, f) {
+    paused = null; try { if (isTap()) tapResume.set(b.dataset.src, f); } catch (e) {}
+    window.__rvSynth = true;
+    try {
+      if (isTap()) b.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
+      else seekTo(b, f);
+    } finally { window.__rvSynth = false; }
+    setTimeout(syncAll, 30);
+  }
+  const jumpTo = (b, x) => { if (playing(b)) sureSeek(x); else setPaused(b, x); };
+  ["play", "pause", "ended"].forEach((ev) => audio.addEventListener(ev, () => { if (ev === "play" && !window.__rvSynth) paused = null; setTimeout(syncAll, 30); }));
+  const typing = (t) => t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
+  function spaceTarget() {
+    if (typeof curBtn !== "undefined" && curBtn && curBtn.dataset.pid) return curBtn;
+    if (typeof curBtn !== "undefined" && curBtn) return null;   // a non-admin sound (top preview): leave Space alone
+    if (paused && paused.b.isConnected) return paused.b;
+    return document.querySelector(".pv button[data-pid].sel");
+  }
+  window.addEventListener("keydown", (e) => {
+    if ((e.code !== "Space" && e.key !== " ") || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || inPv() || typing(e.target) || typing(document.activeElement)) return;
+    const b = spaceTarget(); if (!b) return;
+    e.preventDefault(); e.stopPropagation(); if (e.repeat) return;
+    if (playing(b)) return pauseNow(b);
+    const f = pos(b); playFrom(b, f != null && f < 0.995 ? f : 0);
+  }, true);
+  window.addEventListener("keyup", (e) => { if ((e.code === "Space" || e.key === " ") && !inPv() && !typing(e.target) && spaceTarget()) { e.preventDefault(); e.stopPropagation(); } }, true);
+  let sc = null, scT = 0;   // drag the line while paused
+  const scMove = (e) => { if (!sc) return; const r = sc.cv.getBoundingClientRect(); setPaused(sc.b, (e.clientX - r.left) / r.width); e.preventDefault(); };
+  window.addEventListener("pointerdown", (e) => {
+    if (inPv() || e.button !== 0 || e.shiftKey || window.__rvSynth) return;
+    const cv = e.target.closest && e.target.closest(".pv button[data-pid] canvas.wf"); if (!cv) return;
+    const b = cv.closest("button[data-pid]"); if (playing(b) || !(pos(b) != null || b.classList.contains("sel"))) return;
+    sc = { b, cv }; scT = Date.now(); e.stopPropagation(); scMove(e);
+  }, true);
+  window.addEventListener("pointermove", (e) => { if (sc) { scT = Date.now(); scMove(e); } }, true);
+  const scEnd = () => { if (sc) { sc = null; scT = Date.now(); } };
+  window.addEventListener("pointerup", scEnd, true); window.addEventListener("pointercancel", scEnd, true);
+  window.addEventListener("click", (e) => { if (!window.__rvSynth && Date.now() - scT < 350 && e.target.closest && e.target.closest(".pv button[data-pid] canvas.wf")) { e.preventDefault(); e.stopPropagation(); } }, true);
+
   /* ---- inject rows ---- */
-  const topHTML = () => `<span class="ad rvr rvt"><em class="rvb rvgd" data-rv="good">GOOD</em><em class="rvb rvfx" data-rv="fix">FIX</em><em class="rvb rvsk rvsq" data-rv="skull">${SKULL_I}</em><em class="rvb rvrefb rvsq" data-rv="ref" hidden>◉</em></span><span class="ad rvr rvpr"><span class="rvpg">${[1, 2, 3, 4, 5].map((n) => `<em class="rvb" data-rv="p" data-n="${n}">${n}</em>`).join("")}</span><span class="rvsp"></span><em class="rvb rvsrc" data-rv="src">OWN</em></span>`;
-  const botHTML = () => `<span class="ad rvr rvbt"><em class="rvb rvcmb" data-rv="cm">COMMENT</em><em class="rvb rvmkb" data-rv="mk">◆ MARK</em><span class="rvsp"></span><em class="rvb rvoffb rvsq" data-rv="off">${OFF_I}</em><em class="rvb rvdelb rvsq" data-rv="del">${TRASH_I}</em><em class="rvb rvdragb rvsq" data-a="drag">${DRAG_I}</em></span>`;
+  const topHTML = () => `<span class="ad rvr rvt"><em class="rvb rvgd" data-rv="good">GOOD</em><em class="rvb rvfx" data-rv="fix">FIX</em><em class="rvb rvsk rvsq" data-rv="skull">${SKULL_I}</em><em class="rvb rvrefb rvsq" data-rv="ref" hidden>◉</em><span class="rvpg">${[1, 2, 3, 4, 5].map((n) => `<em class="rvb" data-rv="p" data-n="${n}">${n}</em>`).join("")}</span></span>`;
+  const botHTML = () => `<span class="ad rvr rvbt"><em class="rvb rvcmb" data-rv="cm">COMMENT</em><em class="rvb rvsrc" data-rv="src">OWN</em><span class="rvsp"></span><em class="rvb rvoffb rvsq" data-rv="off">${OFF_I}</em><em class="rvb rvdelb rvsq" data-rv="del">${TRASH_I}</em><em class="rvb rvdragb rvsq" data-a="drag">${DRAG_I}</em></span>`;
   const verHTML = () => `<span class="ad rvr rvvr"></span>`;
   function inject(b) {
     if (b.querySelector(".rvr")) return;
+    if (!b.dataset.rvo) b.dataset.rvo = b.dataset.src;
     const wf = b.querySelector("canvas.wf"); if (!wf) return;
-    b.insertAdjacentHTML("beforeend", topHTML() + botHTML() + verHTML() + `<span class="rvc"></span><span class="rvov"></span>`);
+    b.insertAdjacentHTML("beforeend", topHTML() + botHTML() + verHTML() + `<span class="rvc"></span><span class="rvov"></span><span class="rvov rvphw"><i class="rvph"></i></span>`);
     const key = vKey(b), v = curV.get(key); if (v && v !== "v1") applyVer(b, v, true);
     sync(b);
   }
@@ -163,18 +228,18 @@
     if (vr && vr.dataset.sig !== sig) { vr.dataset.sig = sig;
       vr.innerHTML = vs.map((x) => `<em class="rvb rvver${x.id === sel ? " sel" : ""}${x.id === inuse ? " use" : ""}" data-rv="ver" data-v="${esc(x.id)}">${esc(x.name)}</em>`).join("") + `<em class="rvb rvvnew rvsq" data-rv="vnew">+</em><span class="rvsp"></span><em class="rvb rvuseb${sel === inuse ? " on" : ""}" data-rv="use">IN USE</em><em class="rvb rvsq" data-rv="dl">${DL_I}</em>`; }
     // comment list
-    const list = b.querySelector(".rvc"), csig = JSON.stringify([cm.map((x) => [x.id, x.txt, x.t, x.v]), sel]);
+    const list = b.querySelector(".rvc"), shown = cm.filter((x) => x.txt || x.id === editId), csig = JSON.stringify([shown.map((x) => [x.id, x.txt, x.t, x.x, x.v]), sel]);
     if (list && list.dataset.sig !== csig) { list.dataset.sig = csig;
-      list.innerHTML = cm.slice().sort((a, z) => (a.x == null ? -1 : a.x) - (z.x == null ? -1 : z.x)).map((x) => `<span class="rvci" data-id="${esc(x.id)}"><em class="rvtm${x.x == null ? " no" : ""}" data-rv="go">${x.x == null ? "—" : fmt(x.t)}</em><span class="rvtx" data-rv="edit">${esc(x.txt)}</span>${x.v && x.v !== "v1" ? `<span class="rvvt">${esc(x.v.toUpperCase())}</span>` : ""}<span class="rvxx" data-rv="rm">×</span></span>`).join(""); }
-    paintMarks(b, cm, sel);
+      list.innerHTML = shown.slice().sort((a, z) => (a.x == null ? -1 : a.x) - (z.x == null ? -1 : z.x)).map((x) => `<span class="rvci" data-id="${esc(x.id)}"><em class="rvtm" data-rv="go">${x.x == null ? "ALL" : fmt(x.t)}</em><span class="rvtx" data-rv="edit">${esc(x.txt)}</span>${x.v && x.v !== "v1" ? `<span class="rvvt">${esc(x.v.toUpperCase())}</span>` : ""}<span class="rvxx" data-rv="rm">×</span></span>`).join(""); }
+    paintMarks(b, cm, sel); paintPh(b);
   }
   function paintMarks(b, cm, sel) {
-    const ov = b.querySelector(".rvov"), cv = b.querySelector("canvas.wf"); if (!ov || !cv) return;
+    const ov = b.querySelector(".rvov:not(.rvphw)"), cv = b.querySelector("canvas.wf"); if (!ov || !cv) return;
     const L = cv.offsetLeft, T = cv.offsetTop, W = cv.offsetWidth, Hh = cv.offsetHeight;
     const geo = [L, T, W, Hh].join(), sig = JSON.stringify([geo, cm.map((x) => [x.id, x.x, x.t, x.txt, x.v]), sel]);
     if (ov.dataset.sig === sig) return; ov.dataset.sig = sig;
-    ov.style.cssText = `left:${L}px;top:${T}px;width:${W}px;height:${Hh}px`;
-    ov.innerHTML = cm.filter((x) => x.x != null && (x.v || "v1") === sel).map((x) => `<span class="rvm${x.x > 0.8 ? " fl" : ""}" data-rv="mark" data-id="${esc(x.id)}" style="left:${(x.x * 100).toFixed(2)}%"><b>${fmt(x.t)}</b><i>${esc(x.txt)}</i></span>`).join("");
+    b.querySelectorAll(".rvov").forEach((o) => { o.style.cssText = `left:${L}px;top:${T}px;width:${W}px;height:${Hh}px`; });
+    ov.innerHTML = cm.filter((x) => x.x != null && x.txt && (x.v || "v1") === sel).map((x) => `<span class="rvm${x.x > 0.8 ? " fl" : ""}" data-rv="mark" data-id="${esc(x.id)}" style="left:${(x.x * 100).toFixed(2)}%"><b>${fmt(x.t)}</b><i>${esc(x.txt)}</i></span>`).join("");
   }
   const syncAll = () => document.querySelectorAll(".pv button[data-pid]").forEach((b) => { inject(b); sync(b); });
   let raf = 0; const later = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; syncAll(); }); };
@@ -223,7 +288,7 @@
       const t = e.target.closest("[data-pp]"); if (!t) return; e.stopPropagation(); const k = t.dataset.pp;
       if (k === "x") return closePop();
       if (k === "t") {   // press = re-mark from the playhead; press again when it is already marked and not playing = clear
-        const f = playFrac(b); if (f != null) { st.x = f; st.t = f * dur; } else st.x = st.x == null ? 0 : null; if (st.x == null) st.t = null; else if (st.t == null) st.t = st.x * dur; paint(); inp.focus(); return; }
+        const f = playFrac(b) != null ? playFrac(b) : pos(b); if (f != null) { st.x = f; st.t = f * dur; } else st.x = st.x == null ? 0 : null; if (st.x == null) st.t = null; else if (st.t == null) st.t = st.x * dur; paint(); inp.focus(); return; }
       if (k === "ok") done();
     });
     const done = () => {
@@ -238,6 +303,60 @@
   }
   document.addEventListener("pointerdown", (e) => { if (pop && !pop.el.contains(e.target)) closePop(); }, true);
 
+
+  /* ---- comment bubbles (blue, under the clip): new one opens ready to type, double-click a bubble to edit, drag its marker to move it ---- */
+  let editId = null, eatT = 0;
+  const release = () => { eatT = Date.now(); const a = document.activeElement; if (a && a !== document.body && a.blur) a.blur(); };
+  ["keypress", "keyup"].forEach((t) => window.addEventListener(t, (e) => { if (Date.now() - eatT < 600 && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); e.stopPropagation(); } }, true));
+  const cmOf = (b, id) => { const r = rec(b); return r && r.cm.find((x) => x.id === id); };
+  function newBubble(b, x) {
+    const rr = rec(b, true), it = { id: uid(), x: x == null ? null : x, t: null, txt: "", v: selV(b), at: Date.now() };
+    rr.cm.push(it); editId = it.id;
+    durOf(b).then((d) => { if (it.x != null) it.t = it.x * d; sync(b); startEdit(b, it.id); });
+  }
+  function startEdit(b, id) {
+    const el = b.querySelector('.rvci[data-id="' + id + '"] .rvtx'), it = cmOf(b, id); if (!el || !it) return;
+    if (el.isContentEditable) return; const orig = it.txt; editId = id; el.setAttribute("contenteditable", "plaintext-only"); if (!el.isContentEditable) el.setAttribute("contenteditable", "true");
+    el.focus(); const r = document.createRange(); r.selectNodeContents(el); r.collapse(false); const sl = getSelection(); sl.removeAllRanges(); sl.addRange(r);
+    let fin = false;
+    const done = (ok) => { if (fin) return; fin = true; el.removeAttribute("contenteditable"); editId = null; release(); const v = el.textContent.replace(/\s+/g, " ").trim(), c = cmOf(b, id), rr = rec(b);
+      if (c && ok && v) { c.txt = v; save(); } else if (c && (!orig || (ok && !v))) { rr.cm = rr.cm.filter((x) => x.id !== id); save(); }
+      b.querySelector(".rvc").dataset.sig = ""; sync(b); };
+    el.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); done(true); } else if (e.key === "Escape") { e.preventDefault(); done(false); } });
+    el.addEventListener("keyup", (e) => { e.stopPropagation(); if (e.key === " ") e.preventDefault(); });   // a space inside a button would otherwise click the card (play / pause) el.addEventListener("blur", () => done(true));
+  }
+  window.addEventListener("dblclick", (e) => {
+    if (inPv()) return; const tx = e.target.closest && e.target.closest(".rvci .rvtx"); if (!tx) return;
+    e.preventDefault(); e.stopPropagation(); const b = tx.closest("button[data-pid]"); startEdit(b, tx.closest(".rvci").dataset.id);
+  }, true);
+  // rename inline: click the name, type, Enter (no box)
+  const shortN = (n) => (String(n).split(/\s+/).length > 1 ? String(n).replace(/^\S+\s+/, "") : String(n));
+  function inlineRename(b, el) {
+    const c = ctx(b); if (!c || el.isContentEditable) return; const cat = String(c.s.name).split(/\s+/).length > 1 ? String(c.s.name).split(/\s+/)[0] : "", orig = shortN(c.s.name);
+    el.setAttribute("contenteditable", "plaintext-only"); if (!el.isContentEditable) el.setAttribute("contenteditable", "true"); el.focus();
+    const r = document.createRange(); r.selectNodeContents(el); const sl = getSelection(); sl.removeAllRanges(); sl.addRange(r);
+    let fin = false;
+    const done = (ok) => { if (fin) return; fin = true; el.removeAttribute("contenteditable"); const v = el.textContent.replace(/\s+/g, " ").trim(); if (ok && v && v !== orig) { c.s.name = (cat ? cat + " " : "") + v; save(); } el.textContent = shortN(c.s.name); release(); };
+    el.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") { e.preventDefault(); done(true); } else if (e.key === "Escape") { e.preventDefault(); done(false); } });
+    el.addEventListener("keyup", (e) => { e.stopPropagation(); if (e.key === " ") e.preventDefault(); });   // a space inside a button would otherwise click the card (play / pause) el.addEventListener("blur", () => done(true));
+  }
+  // drag a marker to move its comment in time
+  let md = null, mdT = 0;
+  window.addEventListener("pointerdown", (e) => {
+    if (inPv() || e.button !== 0) return; const t = e.target; if (!t.closest) return;
+    if (t.closest(".rvc")) { e.stopPropagation(); return; }
+    const m = t.closest(".rvm"); if (!m) return; const b = m.closest("button[data-pid]"), cv = b.querySelector("canvas.wf"), c = cmOf(b, m.dataset.id); if (!c) return;
+    e.stopPropagation(); md = { b, cv, c, el: m, sx: e.clientX, moved: false, dur: c.x ? c.t / c.x : 0 }; durOf(b).then((d) => { if (md && md.b === b && d) md.dur = d; });
+  }, true);
+  window.addEventListener("pointermove", (e) => {
+    if (!md) return; if (!md.moved && Math.abs(e.clientX - md.sx) < 4) return; md.moved = true; e.preventDefault();
+    const r = md.cv.getBoundingClientRect(), x = Math.min(0.995, Math.max(0, (e.clientX - r.left) / r.width)); md.c.x = x; md.c.t = x * (md.dur || 0);
+    md.el.style.left = (x * 100).toFixed(2) + "%"; md.el.classList.toggle("fl", x > 0.8); const lb = md.el.querySelector("b"); if (lb) lb.textContent = fmt(md.c.t);
+    const ch = md.b.querySelector('.rvci[data-id="' + md.c.id + '"] .rvtm'); if (ch) ch.textContent = fmt(md.c.t);
+  }, true);
+  const mdEnd = () => { if (!md) return; const d = md; md = null; if (d.moved) { mdT = Date.now(); save(); d.b.querySelector(".rvc").dataset.sig = ""; sync(d.b); } };
+  window.addEventListener("pointerup", mdEnd, true); window.addEventListener("pointercancel", mdEnd, true);
+
   /* ---- clicks ---- */
   const old = (b, sel) => b.querySelector(".ad:not(.rvr) " + sel);
   function setTier(b, n) {
@@ -248,9 +367,12 @@
   window.addEventListener("click", async (e) => {
     if (window.__rvSynth || inPv()) return;
     const t = e.target; if (!t.closest) return;
+    if (Date.now() - mdT < 350 && t.closest(".rvm")) { e.preventDefault(); e.stopPropagation(); return; }
+    const nmt = t.closest(".pv button[data-pid] .nmt"); if (nmt) { e.preventDefault(); e.stopPropagation(); inlineRename(nmt.closest("button[data-pid]"), nmt); return; }
+    if (t.closest(".rvr,.rvc,.rvov") && !t.closest("[data-rv],[data-a]")) { e.preventDefault(); e.stopPropagation(); return; }
     // shift-click the waveform = comment at that spot
     const cv = t.closest && t.closest(".pv button[data-pid] canvas.wf");
-    if (cv && e.shiftKey) { e.preventDefault(); e.stopPropagation(); const b = cv.closest("button[data-pid]"), r = cv.getBoundingClientRect(); openPop(b, { x: Math.min(0.995, Math.max(0, (e.clientX - r.left) / r.width)) }); return; }
+    if (cv && e.shiftKey) { e.preventDefault(); e.stopPropagation(); const b = cv.closest("button[data-pid]"), r = cv.getBoundingClientRect(); newBubble(b, Math.min(0.995, Math.max(0, (e.clientX - r.left) / r.width))); return; }
     const a = t.closest("[data-rv]"); if (!a) return;
     const b = a.closest("button[data-pid]"); if (!b) return;
     e.preventDefault(); e.stopPropagation();
@@ -259,17 +381,17 @@
     if (k === "src") { const o = old(b, "i.src"); if (o) o.click(); return after(); }
     if (k === "p") { setTier(b, +a.dataset.n); return after(); }
     if (k === "good") { const o = rec(b, true); o.good = !o.good; if (!o.good) delete o.good; if (o.good && c.s.fix) { const f = old(b, "[data-a=fix]"); if (f) f.click(); } save(); return after(); }
-    if (k === "fix") { const f = old(b, "[data-a=fix]"); if (f) f.click(); const o = rec(b); if (c.s.fix && o && o.good) { delete o.good; save(); } document.querySelectorAll(".adm-note").forEach((x) => x.remove()); if (c.s.fix && !(o && o.cm && o.cm.length) && !c.s.note) openPop(b); return after(); }
+    if (k === "fix") { const f = old(b, "[data-a=fix]"); if (f) f.click(); const o = rec(b); if (c.s.fix && o && o.good) { delete o.good; save(); } document.querySelectorAll(".adm-note").forEach((x) => x.remove()); if (c.s.fix && !(o && o.cm && o.cm.length) && !c.s.note) newBubble(b, null); return after(); }
     if (k === "skull") { const o = old(b, "[data-a=skull]"); if (o) o.click(); return after(); }
     if (k === "off") { const o = old(b, "[data-a=off]"); if (o) o.click(); return after(); }
     if (k === "ref") { const o = old(b, "[data-a=ref]"); if (o) o.click(); return; }
     if (k === "del") { if (!a.classList.contains("sure")) { a.classList.add("sure"); a.textContent = "REMOVE?"; setTimeout(() => { a.classList.remove("sure"); a.innerHTML = TRASH_I; }, 2500); return; }
       const o = old(b, "[data-a=del]"); if (o) { o.click(); o.click(); } return; }
-    if (k === "cm") return openPop(b);
-    if (k === "mk") { const f = playFrac(b); return openPop(b, { x: f == null ? 0 : f }); }
+    if (k === "cm") { const f = pos(b) != null ? pos(b) : (playing(b) ? segPos() : null); return newBubble(b, f != null && f > 0.015 ? f : null); }
+    
     if (k === "mark" || k === "go") { const id = k === "mark" ? a.dataset.id : a.closest(".rvci").dataset.id, rr = rec(b), cm = rr && rr.cm.find((x) => x.id === id); if (!cm || cm.x == null) return;
-      if (cm.v && cm.v !== "v1" && cm.v !== selV(b)) applyVer(b, cm.v); seekTo(b, cm.x); return; }
-    if (k === "edit") { const id = a.closest(".rvci").dataset.id, rr = rec(b), cm = rr && rr.cm.find((x) => x.id === id); if (cm) openPop(b, { id: cm.id, x: cm.x, t: cm.t, txt: cm.txt }); return; }
+      if (cm.v && cm.v !== "v1" && cm.v !== selV(b)) applyVer(b, cm.v); jumpTo(b, cm.x); return; }
+    if (k === "edit") return;
     if (k === "rm") { const id = a.closest(".rvci").dataset.id, rr = rec(b); if (rr) { rr.cm = rr.cm.filter((x) => x.id !== id); save(); toast("Comment removed"); } return after(); }
     if (k === "ver") { applyVer(b, a.dataset.v); return; }
     if (k === "vnew") return addVersion(b);
