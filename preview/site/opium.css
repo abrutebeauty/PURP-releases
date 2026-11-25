@@ -667,3 +667,8 @@ html.opium2 .op-s.in{border-color:rgba(255,255,255,.28)}
 /* quick tweak 25 Nov: product page main art does not zoom on hover (tilt/sway stays) */
 html.opium2 #pkTop .pkc:hover .pq img,html.opium2 #pkTop .pkc .pq img{scale:1!important;translate:0 0!important}
 html.opium2 #pkTop .pkc:hover .pq canvas.sh,html.opium2 #pkTop .pkc .pq canvas.sh{scale:1!important;translate:0 0!important}
+/* quick tweak 25 Nov: slot 3 = empty black CD, big yellow caps label */
+html.opium2 .op-s.fr{flex-direction:column;justify-content:flex-start;padding:10px 8px 6px;gap:6px}
+html.opium2 .op-s.fr svg{width:100%;height:auto;flex:none;display:block}
+html.opium2 .op-s.fr b{font:800 15px/1.1 "Inter","Helvetica Neue",Arial,sans-serif;color:#E4FF3A;text-transform:uppercase;letter-spacing:.04em;text-align:center;text-shadow:0 0 12px rgba(228,255,58,.6)}
+html.opium2 .op-s.fr img,html.opium2 .op-s.fr u,html.opium2 .op-s.fr i{display:none!important}
