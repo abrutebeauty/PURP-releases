@@ -720,3 +720,7 @@ html.opium2 .pv button.on .pl,html.opium .pv button.on .pl{background:rgba(212,4
 html.opium2 .op-s.fr .fd i{display:block!important;left:auto;bottom:auto;right:auto;top:auto}
 html.opium2 .op-s.fr .fd .b1{left:-12%;top:-8%}html.opium2 .op-s.fr .fd .b2{right:-14%;top:2%}html.opium2 .op-s.fr .fd .b3{left:6%;bottom:-16%}html.opium2 .op-s.fr .fd .b4{right:-6%;bottom:-10%}
 html.opium2 .op-s.fr .fd .gr{inset:0;left:0;top:0;right:0;bottom:0}
+/* quick tweak 25 Nov: back button */
+html.opium2 a.bigback,html.opium2 .nl.back.bigback{display:inline-flex!important;align-items:center;gap:14px;background:transparent!important;border:1px solid #d42a24!important;border-radius:0!important;color:#d42a24!important;padding:16px 28px!important;font:700 17px/1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;box-shadow:none!important;transition:background .2s}
+html.opium2 a.bigback:hover{background:rgba(212,42,36,.12)!important}
+html.opium2 a.bigback svg{flex:none;display:block}
