@@ -645,3 +645,6 @@ html.opium2 .card .cv:hover .pq canvas.sh,html.opium2 #pkTop .pkc:hover .pq canv
 /* quick tweak 24 Nov: left hero claw = exact mirror of the right one */
 html.opium2 header.hero .bfD .op-gw.l>*{transform:scaleX(-1)}
 @media(min-width:1041px){html.opium2 header.hero .bfD .op-gw.l{left:calc(50% - .9 * min(84cqh,40cqw) - 74px - 9px)!important}}
+/* quick tweak 25 Nov: no TRY FIRST / FREE SAMPLES block anywhere; price box without the red outline */
+html.opium2 #railR h4,html.opium2 [data-free],html.opium #railR h4,html.opium [data-free]{display:none!important}
+html.opium2 #pkTop .pbuy,html.opium #pkTop .pbuy,html.opium2 .pbuy{border:0!important;padding:0!important;outline:0!important;box-shadow:none!important}
