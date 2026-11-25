@@ -7,7 +7,7 @@
   const PREVIEW_PRICE = 24;
   try {
     if (!PREVIEW_PRICE || !/\.pages\.dev$/.test(location.hostname) || !window.__ckP) return;
-    const fix = (d) => { try { ((d && d.products) || []).forEach((p) => { if (+p.price > 0) { p.price = PREVIEW_PRICE; if (+p.priceUsd > 0) p.priceUsd = PREVIEW_PRICE; if (+p.priceEur > 0) p.priceEur = PREVIEW_PRICE; } }); } catch (e) {} return d; };
+    const fix = (d) => { try { ((d && d.products) || []).forEach((p) => { if (+p.price > 0) { p.price = PREVIEW_PRICE; p.priceUsd = PREVIEW_PRICE; p.priceEur = PREVIEW_PRICE; } }); } catch (e) {} return d; };
     try { if (!sessionStorage.getItem('ck-pp')) { localStorage.removeItem('ck-cur'); sessionStorage.setItem('ck-pp', '1'); } } catch (e) {}   /* a leftover display currency (USD/SEK) made 24 show as ~25.92 or ~270 */
     window.__ckP = window.__ckP.then(fix);
     const f0 = window.fetch; window.fetch = function (u) { const r = f0.apply(this, arguments); return /products\.json/.test(String(u)) ? r.then((res) => res.clone().json().then((d) => new Response(JSON.stringify(fix(d)), { status: 200, headers: { "content-type": "application/json" } }))) : r; };
@@ -326,16 +326,16 @@
     });
   }
   /* hero stats (Eman 24 Nov): 3rd stat = real SAMPLES count (all drum-kit sounds), all three count up from 0 the first visit only */
+  if (O2) setTimeout(() => document.documentElement.classList.add("op-stv"), 3500);   /* safety: never leave the stats hidden */
   function stats() {
     const st = document.querySelector("#stats"); if (!O2 || !st || st.children.length < 3 || typeof PRODUCTS === "undefined" || !PRODUCTS.length || st.children[0].dataset.cu) return;
     let n = 0; PRODUCTS.forEach((p) => { if (p.type === "drums") { const m = String(p.count || "").match(/(\d+)/); n += m ? +m[1] : (p.sounds || []).length; } });
     const d = st.children, tg = [PRODUCTS.length, 450, n], sf = ["", "+", ""]; d[2].innerHTML = "<b>0</b>Samples";
-    let seen = false; try { seen = localStorage.getItem("ck-counted") === "1"; } catch (e) {}
+    const seen = false;
     const still = matchMedia("(prefers-reduced-motion: reduce)").matches, t0 = performance.now(), T = 3800;
     const fmt = (i, v) => String(Math.round(v)) + sf[i];
     [0, 1, 2].forEach((i) => { d[i].dataset.cu = 1; const b = d[i].querySelector("b"); b.style.fontVariantNumeric = "tabular-nums"; b.textContent = fmt(i, seen || still ? tg[i] : 0); });
     if (seen || still) return;
-    try { localStorage.setItem("ck-counted", "1"); } catch (e) {}
     const tick = (now) => { const k = Math.min(1, (now - t0) / T), e = 1 - Math.pow(1 - k, 4); [0, 1, 2].forEach((i) => { const b = d[i].querySelector("b"); if (b) b.textContent = fmt(i, tg[i] * e); }); if (k < 1) requestAnimationFrame(tick); };
     requestAnimationFrame(tick);
   }
@@ -555,8 +555,22 @@
     document.documentElement.classList.add("op-pp"); if (pki.querySelector(".op-pl")) return;
     pki.insertAdjacentHTML("afterbegin", `<a class="op-pl" href="/" aria-label="COREKULT home"><img src="${lg.getAttribute("src")}" alt="COREKULT" width="110" height="34"></a>`);
   }
+  /* works-with buttons: one button per DAW on drum packs, every button in its own colour; Serum 1 + 2 share one (Eman 25 Nov) */
+  function wwDaws() {
+    if (!O2) return;
+    document.querySelectorAll(".ww .wwl").forEach((l) => {
+      const wav = [...l.querySelectorAll(".wwb")].find((b) => /^\s*wav/i.test(b.textContent));
+      if (wav && !l.dataset.daw) {
+        l.dataset.daw = 1;
+        const ic = wav.querySelector("svg").outerHTML, D = [["FL Studio", "#FF8A1F"], ["Ableton Live", "#2DD4BF"], ["Logic Pro", "#C9CAD6"], ["Studio One", "#3B9BFF"], ["Pro Tools", "#8B7CFF"], ["Reaper", "#7BE06A"], ["Cubase", "#FF5A6B"]];
+        wav.outerHTML = D.map((d) => `<span class="wwb" data-wc="${d[1]}">${ic}${d[0]}</span>`).join("");
+      }
+    });
+    const C = [[/^serum/i, "#8B6CF6"], [/^vital/i, "#3DDC84"], [/^ableton/i, "#2DD4BF"], [/^midi/i, "#FFB020"]];
+    document.querySelectorAll(".ww .wwb").forEach((b) => { if (b.dataset.wc) { b.style.setProperty("--wc", b.dataset.wc); return; } const t = b.textContent.trim(), c = C.find((x) => x[0].test(t)); if (c) { b.dataset.wc = c[1]; b.style.setProperty("--wc", c[1]); } });
+  }
   function tcPage() { const t = document.querySelector("#pkTop"), im = t && t.querySelector(".pkc img"); if (t && im) t.classList.toggle("op-tc", /\/card-/.test(im.currentSrc || im.src)); }
-  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); glitter(); wwText(); pickTwo(); opRev(); backBtn(); placeBack(); tcPage(); pkLogo(); } catch (e) { console.warn("opium", e); } }
+  function run() { try { cardText(); ckBar(); stats(); wrapDW(); decoAll(); decoTop(); buildMag(); fitNames(); alignText(); prepSheen(); trio3(); glitter(); wwText(); pickTwo(); opRev(); backBtn(); placeBack(); tcPage(); pkLogo(); wwDaws(); } catch (e) { console.warn("opium", e); } }
   addEventListener("resize", () => { clearTimeout(t); t = setTimeout(run, 120); });
   let t = 0; new MutationObserver(() => { clearTimeout(t); t = setTimeout(run, 60); }).observe(H, { childList: true, subtree: true });
   document.addEventListener("DOMContentLoaded", run);

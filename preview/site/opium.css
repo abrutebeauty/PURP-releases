@@ -918,8 +918,8 @@ html.op-lbo{overflow:hidden}
 /* quick tweak 25 Nov (Eman): red claws = outline only, and the hero ones sit ~3cm further in, more behind the CDs */
 html.opium2 .op-gw .op-gv.red{background:var(--go) center/contain no-repeat!important;-webkit-mask:none!important;mask:none!important}
 @media(min-width:1041px){
-html.opium2 header.hero .bfD .op-gw.l{left:calc(50% - .9 * min(84cqh,40cqw) - 83px + clamp(0px,calc((100vw - 1440px) * .13),70px))!important}
-html.opium2 header.hero .bfD .op-gw.r{right:calc(50% - .9 * min(84cqh,40cqw) - 74px + clamp(0px,calc((100vw - 1440px) * .13),70px))!important}
+html.opium2 header.hero .bfD .op-gw.l{left:calc(50% - .9 * min(84cqh,40cqw) - 83px + clamp(0px,calc((100vw - 1440px) * .075),40px))!important}
+html.opium2 header.hero .bfD .op-gw.r{right:calc(50% - .9 * min(84cqh,40cqw) - 74px + clamp(0px,calc((100vw - 1440px) * .075),40px))!important}
 }
 /* quick tweak 25 Nov: logo over the title column, product titles in Inter bold */
 html.opium2.op-pp nav.top .logo{display:none}
@@ -927,3 +927,11 @@ html.opium2.op-pp nav.top .wrap{justify-content:flex-end}
 html.opium2 .op-pl{display:block;width:110px;margin:0 0 18px}html.opium2 .op-pl img{display:block;width:110px;height:auto}
 html.opium2 .pki h1,html.opium2 .lgt h1{font:800 clamp(28px,3.4vw,46px)/1.04 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.015em!important}
 html.opium2 .rkt b{font:700 14px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:.04em!important}
+/* works-with buttons in colour (Eman 25 Nov) */
+html.opium2 .ww .wwb[data-wc]{color:var(--wc)!important;border:1px solid color-mix(in srgb,var(--wc) 55%,transparent)!important;background:color-mix(in srgb,var(--wc) 10%,#0b0a0e)!important;transition:background .2s,border-color .2s}
+html.opium2 .ww .wwb[data-wc] svg{color:var(--wc)!important}
+html.opium2 .ww .wwb[data-wc]:hover{border-color:var(--wc)!important;background:color-mix(in srgb,var(--wc) 20%,#0b0a0e)!important}
+html.opium2 .ww .wwb[data-wc] .wwn{color:inherit;opacity:.85}
+
+/* stats: hide the raw numbers until the count-up takes over (no one-frame jump) */
+html.opium2:not(.op-stv) #stats>*:not([data-cu]) b{visibility:hidden}
