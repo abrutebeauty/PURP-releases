@@ -109,7 +109,7 @@ const SHP=[
  {n:"coupon corners",f:D(coupon)},
  {n:"price tag",f:D((w,h)=>dens([[0,0],[w-40,0],[w,h/2],[w-40,h],[0,h]],40))},
  {n:"zigzag all round",f:(w,h)=>{const zz=(x,L)=>{const q=per(x,L,18);return (tri(x,q,1)*2-1)*7};return D((a,b)=>perim(a,b,zz,zz))(w,h,9)}},
- {n:"zigzag double",f:(w,h)=>{const zz=(x,L)=>{const q=per(x,L,24);return (tri(x,q,1)*2-1)*6};return D((a,b)=>perim(a,b,zz,zz))(w,h,8)+D((a,b)=>perim(a,b,zz,zz))(w,h,20)}}
+ {n:"zigzag double",f:(w,h)=>{const zz=(x,L)=>{const q=per(x,L,14);return (tri(x,q,1)*2-1)*3.5};return D((a,b)=>perim(a,b,zz,zz))(w,h,5)+D((a,b)=>perim(a,b,zz,zz))(w,h,12)}}
 ];
 
 /* ---- GLOBAL category -> shape map (Eman 26 Nov): same category = same shape on every pack and page.
