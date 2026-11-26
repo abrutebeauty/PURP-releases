@@ -31,34 +31,40 @@
       P3.fill=function(p){
         try{var cv=this.canvas,r=p&&p.__r;
           if(COLLAGE&&r&&r.length>40&&cv&&cv.classList&&cv.classList.contains("wf")&&!cv.classList.contains("ld")&&cv.closest&&cv.closest(".op-cat")&&/^#[0-9a-f]{6}$/i.test(this.fillStyle)){
-            var base=this.fillStyle,pts=[],mid=0,STEP=3,last=-9;
+            var base=this.fillStyle,pts=[],mid=0,STEP=3,last=-9,W=cv.clientWidth||100;
             for(var i=0;i<r.length;i+=4){var x=r[i];if(x-last<STEP)continue;last=x;mid=r[i+1]+r[i+3]/2;pts.push([x,r[i+3]/2])}
             if(pts.length>3){
-              /* rough distorted look (Eman 26 Nov reference): jagged edge, stepped glitch smears, red/blue colour fringes, vertical streaks */
+              /* holographic glitch wave (Eman 26 Nov refs): one shared look, edge to edge, jagged top edge, vertical streaks, orange + blue fringes */
               var nz=function(i){var s=Math.sin(i*127.1+pts.length*3.7)*43758.5453;return s-Math.floor(s)};
-              var sm=[],hold=0,hv=0;
+              var xa=pts[0][0],xb=pts[pts.length-1][0],span=Math.max(1,xb-xa),floor=mid*.2,sm=[],hold=0,hv=0;
               pts.forEach(function(q,k){var s=0,c=0;for(var j=k-1;j<=k+1;j++)if(pts[j]){s+=pts[j][1];c++}var v=s/c;
                 if(hold>0){hold--;v=hv}else if(nz(k*5.1)>.93){hold=2+Math.floor(nz(k)*5);hv=v}
-                v*=1+(nz(k)-.5)*.3;sm.push([q[0],v])});
-              var self=this,x0=sm[0][0],x1=sm[sm.length-1][0],amax=0;sm.forEach(function(q){if(q[1]>amax)amax=q[1]});
-              var shape=function(dx){self.beginPath();self.moveTo(x0+dx,mid);
-                sm.forEach(function(q){self.lineTo(q[0]+dx,mid-Math.max(.8,q[1]))});
+                v=Math.min(mid-1,Math.max(floor,v*1.12*(1+(nz(k)-.5)*.3)));
+                sm.push([(q[0]-xa)/span*W,v])});
+              var self=this,played=/^#(ffffff|fbffe6)$/i.test(base);
+              var shape=function(dx){self.beginPath();self.moveTo(0+dx,mid);
+                sm.forEach(function(q){self.lineTo(q[0]+dx,mid-q[1])});
                 for(var i2=sm.length-1;i2>=0;i2--)self.lineTo(sm[i2][0]+dx,mid+Math.max(.8,sm[i2][1]*(.9+nz(i2*2.3)*.2)));
                 self.closePath()};
               this.save();
-              this.globalCompositeOperation="lighter";this.globalAlpha=.7;
-              shape(-1.7);this.fillStyle="#ff3a12";of3.call(this);
-              shape(1.7);this.fillStyle="#1f6bff";of3.call(this);
+              if(played){shape(0);this.fillStyle="#ffffff";of3.call(this);this.restore();return}
+              this.globalCompositeOperation="lighter";this.globalAlpha=.85;
+              shape(-2.4);this.fillStyle="#ff6a10";of3.call(this);
+              shape(2.4);this.fillStyle="#1448ff";of3.call(this);
               this.globalCompositeOperation="source-over";this.globalAlpha=1;
               shape(0);
-              var gr=this.createLinearGradient(0,mid-amax,0,mid+amax);gr.addColorStop(0,base);gr.addColorStop(.5,mix(base,.62));gr.addColorStop(1,base);
-              this.fillStyle=gr;of3.call(this);
+              var PALS=["#ffffff","#e6e0ff","#2c5cff","#1236d6","#c0aaff","#7fd0ff","#f6dcff","#ffffff","#0a1d8c","#9fb6ff"],
+                  hg=this.createLinearGradient(0,0,W,0),NS=18;
+              for(var gi=0;gi<=NS;gi++)hg.addColorStop(gi/NS,PALS[Math.floor(nz(gi*3.3+1)*PALS.length)]);
+              this.fillStyle=hg;of3.call(this);
               this.save();this.clip();
-              for(var x=x0;x<x1;x+=1.6){var rr=nz(x*.37);
-                this.fillStyle=rr>.5?"rgba(255,255,255,"+(.06+rr*.2)+")":"rgba(0,0,0,"+(.1+rr*.3)+")";
-                this.fillRect(x,mid-amax-2,1,amax*2+4)}
+              var vg=this.createLinearGradient(0,mid-mid,0,mid+mid);vg.addColorStop(0,"rgba(4,8,50,.65)");vg.addColorStop(.45,"rgba(4,8,50,0)");vg.addColorStop(.55,"rgba(4,8,50,0)");vg.addColorStop(1,"rgba(4,8,50,.65)");
+              this.fillStyle=vg;this.fillRect(0,0,W,mid*2);
+              for(var x=0;x<W;x+=1.5){var rr=nz(x*.37+9);
+                this.fillStyle=rr>.5?"rgba(255,255,255,"+(.05+rr*.25)+")":"rgba(5,12,90,"+(.1+rr*.35)+")";
+                this.fillRect(x,0,1,mid*2)}
               this.restore();
-              shape(0);this.strokeStyle=mix(base,.75);this.lineWidth=.8;this.stroke();
+              shape(0);this.strokeStyle="rgba(255,150,60,.9)";this.lineWidth=1;this.stroke();
               this.restore();return}
           }
         }catch(e){}
