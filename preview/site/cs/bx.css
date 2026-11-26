@@ -8,4 +8,13 @@ html.cs-box.cs-collage.opium2 #opMag .op-cat .pv>button.on canvas.cs-bxc{border-
 html.cs-box.cs-collage.opium2 #opMag .op-cat .pv>button .nm{order:2;margin-top:10px;font:400 13px/1.3 "Inter","Helvetica Neue",Arial,sans-serif!important;color:#cfcfd8!important}
 html.cs-box.cs-collage.opium2 #opMag .op-cat .pv>button .pl{display:none}
 /* top PREVIEW: three dot-scatter waveforms */
-html.cs-box.opium2 .cs-pvr{height:120px}
+html.cs-box.opium2 .cs-pvr{height:100px;margin:0 0 8px}
+/* category titles: mono label style, no colour */
+html.cs-box.cs-collage.opium2 #opMag .op-cat .op-h .op-box{font:700 clamp(20px,2.6vw,30px)/1 "OpSpace","JetBrains Mono",monospace!important;letter-spacing:.14em!important;color:#0c0b0b!important;background:#e8e8ee;padding:8px 16px 7px;display:inline-block;align-self:flex-end}
+html.cs-box.cs-collage.opium2 #opMag .op-cat .op-h .op-box::before{content:"( "}
+html.cs-box.cs-collage.opium2 #opMag .op-cat .op-h .op-box::after{content:" )"}
+html.cs-box.opium2 .cs-bar i{background:#c9c9d2}
+html.cs-box.opium2 .cs-lt{font-size:12px;line-height:1.75}
+html.cs-box.opium2 .cs-lt .cs-x{color:#e8e8ee}
+/* the PREVIEW EVERY SOUND strip: white instead of purple */
+html.cs-box.opium2 #opMag>.op-magh{filter:grayscale(1) brightness(2.4)}
