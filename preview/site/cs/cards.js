@@ -284,10 +284,14 @@ setInterval(ckScan,1500);document.addEventListener("DOMContentLoaded",ckSoon);re
   var run=0;
   function hold(a){var t0=performance.now(),stable=0,id=++run;
     var stop=function(){run++};window.addEventListener("wheel",stop,{once:true,passive:true});window.addEventListener("touchstart",stop,{once:true,passive:true});
-    (function f(){if(id!==run)return;var el=document.querySelector(a.sel);if(el){var d=el.getBoundingClientRect().top-Y()-a.off;if(Math.abs(d)>1){window.scrollBy(0,d);stable=0}else stable++}
-      if(performance.now()-t0<1800&&stable<45)requestAnimationFrame(f)})()}
+    (function f(){if(id!==run)return;var el=document.querySelector(a.sel);if(el){var d=el.getBoundingClientRect().top-Y()-a.off;if(Math.abs(d)>1){window.scrollBy({top:d,left:0,behavior:"instant"});stable=0}else stable++}
+      if(performance.now()-t0<3200&&stable<90)requestAnimationFrame(f)})()}
+  /* keep a fresh "where am I" note every 150 ms, so even if the admin code changes the layout before our key handler runs we still know the spot from just before */
+  var last=null,lastT=0;
+  setInterval(function(){if(performance.now()-lastT<3200&&lastT)return;try{var p=pick();if(p)last=p}catch(x){}},150);
   addEventListener("keydown",function(e){if(e.key!=="d"&&e.key!=="D")return;if(e.metaKey||e.ctrlKey||e.altKey||e.repeat)return;
     var t=e.target;if(t&&(/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)||t.isContentEditable))return;
-    var a;try{a=pick()}catch(x){a=null}if(a)hold(a)},true);
+    var a=last;if(!a)try{a=pick()}catch(x){a=null}
+    if(a){lastT=performance.now();hold(a);setTimeout(function(){try{var p=pick();if(p)last=p}catch(x){}lastT=0},3300)}},true);
 })();
 })();
