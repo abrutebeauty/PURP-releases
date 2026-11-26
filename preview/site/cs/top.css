@@ -13,3 +13,7 @@ html.opium2 .cs-pick:hover{background:#1f1d27}
 html.opium2 #pkTop .ww .wwb{background:#23212b!important;border:0!important;box-shadow:none!important;padding:0 14px!important;height:34px!important;display:inline-flex;align-items:center;gap:8px}
 html.opium2 #pkTop .ww .wwl{gap:8px!important}
 @media (max-width:700px){html.opium2 #pkTop .pki>.buy.cs-buy{flex-wrap:wrap!important}html.opium2 .cs-pick{padding:0 18px;letter-spacing:.1em}html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid{padding:0 26px!important}}
+
+/* sound names: Inter, lowercase; only the type markers (BASS, LEAD, SYNTH...) stay capitals (Eman 26 Nov) */
+html.opium2 .pv button .nm,html.opium2 .pv button .nm .nmt{font-family:"Inter","Helvetica Neue",Arial,sans-serif!important;text-transform:lowercase!important;letter-spacing:.01em!important;font-weight:500!important}
+html.opium2 .pv button .nm .tc,html.opium2 .pv button .nm .ci{font-family:"OpSpace","JetBrains Mono",monospace!important;text-transform:uppercase!important;letter-spacing:.14em!important;font-weight:700!important}
