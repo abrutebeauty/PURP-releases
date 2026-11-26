@@ -92,14 +92,15 @@ var ckRO=window.ResizeObserver?new ResizeObserver(function(es){es.forEach(functi
 function ckCard(btn,key,typeTxt){
   if(btn.dataset.ckdone)return;btn.dataset.ckdone=1;var i=CK_N++;btn.dataset.ck=i;btn.dataset.ckcat=key;
   var mt=(btn.querySelector(".mt")||{}).textContent||"",p=mt.split("·"),bpm=parseInt(p[0],10),ky=(p[1]||"").trim().toUpperCase();
-  var nm=btn.querySelector(".nm");if(nm)nm.setAttribute("data-ck",typeTxt.toLowerCase()+" - ");
+  var nm=btn.querySelector(".nm"),pre=typeTxt.toLowerCase()+" - ";
+  if(nm){try{var tw=document.createTreeWalker(nm,NodeFilter.SHOW_TEXT),tn;while((tn=tw.nextNode())){if(!tn.nodeValue.trim())continue;var re=new RegExp("^\\s*"+typeTxt.replace(/[^a-z0-9]/gi,"")+"s?\\b\\s*","i");if(re.test(tn.nodeValue)&&!nm.querySelector(".tc"))tn.nodeValue=tn.nodeValue.replace(re,"");break}}catch(e){}nm.setAttribute("data-ck",pre)}
   var fr=document.createElementNS("http://www.w3.org/2000/svg","svg");fr.setAttribute("class","ck-fr");fr.appendChild(document.createElementNS("http://www.w3.org/2000/svg","path"));btn.insertBefore(fr,btn.firstChild);
   var top=document.createElement("span");top.className="ck-top";
   top.innerHTML='<i class="ck-chip">'+ckPrefix()+"-"+String(i+1).padStart(3,"0")+'</i><svg class="ck-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round">'+ICONS[i%ICONS.length]+'</svg>';
   btn.insertBefore(top,nm||null);
   var meta=document.createElement("span");meta.className="ck-meta";meta.innerHTML="<b>&gt; "+typeTxt+"</b><b>"+(bpm?bpm+" BPM":"")+(bpm&&ky?" / ":"")+ky+"</b>";
   var wf=btn.querySelector("canvas.wf");btn.insertBefore(meta,wf||null);
-  var ts=document.createElement("span");ts.className="ck-ts";ts.innerHTML='<i class="ck-tm">0:00 / 0:00</i><i class="ck-st">STATUS: &gt; IDLE</i>';btn.appendChild(ts);
+  var ts=document.createElement("span");ts.className="ck-ts";ts.innerHTML='<i class="ck-tm">0:00 / 0:00</i><i class="ck-st">STATUS: &gt; IDLE</i>';meta.appendChild(ts);
   ckDur(btn.dataset.src,function(d){if(!btn.classList.contains("on"))ts.firstChild.textContent="0:00 / "+ckFmt(d)});
   if(ckRO)ckRO.observe(btn);ckFrame(btn)}
 function ckSection(sec){

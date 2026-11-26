@@ -17,7 +17,7 @@
         if(lv==="#e4ff3a")v=card?"#ffffff":"#fbffe6";
         else if(card&&(lv==="#8b6cf6"||lv==="#b8a4ff")){
           var pv=COLLAGE&&this.canvas.closest(".pv");
-          v=document.documentElement.classList.contains("ck-cards")?"#8d8c95":((pv&&pv.__cst)||"#bdbdc6");
+          v=document.documentElement.classList.contains("ck-cards")?"#c4c3cb":((pv&&pv.__cst)||"#bdbdc6");
           if(pv)this.globalAlpha=1;
         }
       }
