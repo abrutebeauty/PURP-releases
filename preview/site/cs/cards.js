@@ -217,10 +217,22 @@ window.ckWave=function(g,cv,r,mode,col){
 function ckAdm(){return !!window.ADM&&!document.documentElement.classList.contains("adm-pv")}
 var ckSaveT=0;
 function ckSyncMarks(){if(!ckAdm())return;var m=[];try{m=JSON.parse(localStorage.getItem("ck-shape-marks")||"[]")}catch(e){}m=m.filter(function(n){return n>=1&&n<=SHP.length}).sort(function(a,b){return a-b});if(!m.length)return;var L=window.ADM.look=window.ADM.look||{};if(JSON.stringify(L.ckShapes||[])!==JSON.stringify(m)){L.ckShapes=m;ckSig=ckSigNow();ckRefresh();ckSave()}}
-function ckSave(){clearTimeout(ckSaveT);ckSaveT=setTimeout(function(){fetch("/api/admin/packs",{method:"PUT",headers:{"content-type":"application/json"},body:JSON.stringify(window.ADM)}).then(function(r){return r&&r.ok}).catch(function(){return false}).then(function(ok){var t=document.createElement("div");t.className="adm-toast";t.textContent=ok?"Saved · live":"Not saved";document.body.appendChild(t);setTimeout(function(){t.remove()},1400);try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})},350)}
+var ckDirty={};
+function ckFind(s){try{if(!s)return null;if(s.look)return s.look;if(s.D&&s.D.look)return s.D.look;if(s.packs&&s.packs.look)return s.packs.look;if(s.data&&s.data.look)return s.data.look}catch(e){}return null}
+function ckToast(t,bad){var d=document.createElement("div");d.className="adm-toast";d.textContent=t;if(bad)d.style.cssText="background:#ff3b30!important;color:#fff!important";document.body.appendChild(d);setTimeout(function(){d.remove()},bad?6000:1600)}
+function ckSave(){clearTimeout(ckSaveT);ckSaveT=setTimeout(function(){
+  /* stale-tab safe: read what the server has now, keep other categories from it, lay only the edits made in this tab on top */
+  fetch("/api/admin/state",{credentials:"same-origin"}).then(function(r){return r&&r.ok?r.json():null}).catch(function(){return null}).then(function(s){
+    var sl=ckFind(s),L=window.ADM.look=window.ADM.look||{};
+    if(sl){var m={};var sc=sl.ck||{};Object.keys(sc).forEach(function(g){m[g]=JSON.parse(JSON.stringify(sc[g]))});
+      Object.keys(ckDirty).forEach(function(g){var d=ckDirty[g];if(d===null){delete m[g];return}m[g]=m[g]||{};Object.keys(d).forEach(function(k){if(d[k]==null)delete m[g][k];else m[g][k]=d[k]});if(!Object.keys(m[g]).length)delete m[g]});
+      L.ck=m;if(sl.ckShapes&&!(L.ckShapes&&L.ckShapes.length))L.ckShapes=sl.ckShapes}
+    return fetch("/api/admin/packs",{method:"PUT",headers:{"content-type":"application/json"},credentials:"same-origin",body:JSON.stringify(window.ADM)}).then(function(r){return {ok:!!(r&&r.ok),st:r?r.status:0}}).catch(function(){return {ok:false,st:0}})
+  }).then(function(o){ckToast(o.ok?"Saved · live":"NOT SAVED ("+(o.st||"no connection")+")",!o.ok);if(o.ok)ckDirty={};try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})
+},350)}
 function ckBak(){try{var L=window.ADM.look||{};localStorage.setItem("ck-bak",JSON.stringify({ck:L.ck||{},ts:Date.now()}))}catch(e){}}
 function ckRestore(){try{if(!ckAdm())return;var L=window.ADM.look=window.ADM.look||{};if(L.ck&&Object.keys(L.ck).length)return;var b=JSON.parse(localStorage.getItem("ck-bak")||"null");if(b&&b.ck&&Object.keys(b.ck).length){L.ck=b.ck;ckSig=ckSigNow();ckRefresh();ckSave()}}catch(e){}}
-function ckSet(k,key,val){var L=window.ADM.look=window.ADM.look||{};L.ck=L.ck||{};var g=ckGKey(k);L.ck[g]=L.ck[g]||{};if(val==null||val==="")delete L.ck[g][key];else L.ck[g][key]=val;if(!Object.keys(L.ck[g]).length)delete L.ck[g];ckBak();ckSig=ckSigNow();ckRefresh();ckSave()}
+function ckSet(k,key,val){var L=window.ADM.look=window.ADM.look||{};L.ck=L.ck||{};var g=ckGKey(k);L.ck[g]=L.ck[g]||{};if(val==null||val==="")delete L.ck[g][key];else L.ck[g][key]=val;ckDirty[g]=ckDirty[g]||{};ckDirty[g][key]=(val==null||val==="")?null:val;if(!Object.keys(L.ck[g]).length)delete L.ck[g];ckBak();ckSig=ckSigNow();ckRefresh();ckSave()}
 function ckEditor(sec){
   var k=sec.getAttribute("data-k")||"",nm=((sec.querySelector(".ck-ch b")||{}).textContent||k),g=ckGKey(k),old=document.querySelector(".ck-ed");if(old)old.remove();
   var pkl=ckPicks().all,c=ckCfg(k),defIdx=ckDefIdx(k),cur=(c.shape!=null&&pkl.indexOf(c.shape)>=0)?c.shape:(defIdx!=null?defIdx:-1);
