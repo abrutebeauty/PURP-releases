@@ -21,6 +21,45 @@
       }
       fd.set.call(this,v)}})}
   }catch(e){}
+  /* morphing light-painted ribbon (Eman 26 Nov refs): the real envelope as a distorted flowing blob, every pixel column a vertical gradient (slit-scan) with the bright core drifting up and down, dark voids, colours white / pale blue / lavender / deep blue (+ rare green), orange + yellow fringe on stepped, spiky edges. Used by the sound cards and the top PREVIEW stack. mode "played" = plain white shape */
+  window.csRibbon=function(g,W,H,amps,mode){
+    var n=amps.length;if(n<2||!W||!H)return;
+    var seed=n*7+Math.round(amps[2]*997),nz=function(i){var s=Math.sin(i*127.1+seed*3.7)*43758.5453;return s-Math.floor(s)};
+    var env=[];for(var k=0;k<n;k++){var s=0,c=0;for(var j=k-2;j<=k+2;j++)if(amps[j]!==undefined){var wgt=3-Math.abs(j-k);s+=amps[j]*wgt;c+=wgt}env.push(s/c)}
+    var amp=function(x){var f=Math.min(n-1.001,Math.max(0,x/W*(n-1))),i0=Math.floor(f),t=f-i0;return env[i0]*(1-t)+env[i0+1]*t},
+        hmax=H/2-3,p1=nz(1)*6.28,p2=nz(2)*6.28,p3=nz(3)*6.28,
+        shift=function(x){return Math.sin(x/W*6.28*1.1+p1)*H*.08+Math.sin(x/W*6.28*2.7+p2)*H*.03},
+        topY=[],botY=[],hold=0,ht=0,hb=0;
+    for(var x=0;x<=W;x++){
+      if(hold>0){hold--;topY.push(ht);botY.push(hb);continue}
+      var A=Math.max(H*.12,Math.min(hmax,amp(x)*hmax*1.05+hmax*.12)),sh=shift(x)*(1-A/hmax*.5),cy=H/2+sh,
+          jt=(nz(x*.31)-.5)*H*.07,jb=(nz(x*.17+4)-.5)*H*.04;
+      if(nz(x*.77+2)>.94)jt-=H*(.05+nz(x)*.1);   /* spikes */
+      ht=Math.max(1,cy-A+jt);hb=Math.min(H-1,cy+A*(.82+nz(x*.011)*.12)+jb);
+      if(nz(x*.45+8)>.9)hold=2+Math.floor(nz(x*3.1)*8);   /* stepped glitch blocks */
+      topY.push(ht);botY.push(hb)}
+    g.save();
+    if(mode==="played"){g.beginPath();g.moveTo(0,topY[0]);for(var x2=1;x2<=W;x2++)g.lineTo(x2,topY[x2]);for(var x3=W;x3>=0;x3--)g.lineTo(x3,botY[x3]);g.closePath();g.fillStyle="#ffffff";g.fill();g.restore();return}
+    var PAL=[[[70,100,255],[24,56,255],[8,16,110]],[[226,244,255],[140,200,255],[40,74,208]],[[255,255,255],[244,248,255],[184,196,255]],[[246,222,255],[205,180,255],[100,86,200]],[[170,255,170],[70,230,120],[20,120,150]]];
+    var mixc=function(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t]};
+    var rgb=function(c,j){j=j||1;return "rgb("+Math.max(0,Math.min(255,Math.round(c[0]*j)))+","+Math.max(0,Math.min(255,Math.round(c[1]*j)))+","+Math.max(0,Math.min(255,Math.round(c[2]*j)))+")"};
+    try{g.filter="blur(.55px)"}catch(e){}
+    for(var x4=0;x4<W;x4++){
+      var ph=((x4/W*1.9+.5*Math.sin(x4/W*9+p3)+.3*Math.sin(x4/W*27+p1))%1+1)%1,green=nz(Math.floor(x4/9)*3.1)>.965,
+          vd=nz(Math.floor(x4/14)*1.7+3)>.82,
+          q=ph*4,qi=Math.floor(q)%4,qf=q-Math.floor(q),t=qf*qf*(3-2*qf),c0=PAL[qi],c1=PAL[(qi+1)%4],jit=.9+nz(x4*.7)*.2,
+          y0=topY[x4],y1=botY[x4],m=Math.min(.85,Math.max(.15,.5+Math.sin(x4/W*6.28*1.9+p2)*.32+(nz(x4*.13)-.5)*.1));
+      var gr=g.createLinearGradient(0,y0,0,y1);
+      for(var s2=0;s2<3;s2++){var cc=mixc(c0[s2],c1[s2],t);if(green)cc=mixc(cc,PAL[4][s2],.85);if(vd&&s2===1)cc=[10,18,80];
+        gr.addColorStop(s2===1?m:s2/2,rgb(cc,jit))}
+      g.fillStyle=gr;g.fillRect(x4,y0,1.2,y1-y0)}
+    try{g.filter="none"}catch(e){}
+    var edge=function(Y,col,lw,blur,off){g.beginPath();for(var x5=0;x5<=W;x5++){var yy=Y[x5]+off;x5?g.lineTo(x5,yy):g.moveTo(x5,yy)}g.strokeStyle=col;g.lineWidth=lw;g.shadowColor=col;g.shadowBlur=blur;g.stroke()};
+    edge(topY,"rgba(255,70,20,.9)",2.2,7,-.8);edge(topY,"rgba(255,214,70,.95)",1.1,0,.4);
+    edge(botY,"rgba(255,90,30,.7)",1.8,6,.8);edge(botY,"rgba(120,160,255,.9)",1,0,-.4);
+    g.shadowBlur=0;g.globalAlpha=.5;
+    for(var x6=0;x6<W;x6+=2){var rr=nz(x6*.53+5);if(rr>.7){g.fillStyle="rgba(255,255,255,"+(.1+rr*.2)+")";g.fillRect(x6,topY[x6]+2,1,botY[x6]-topY[x6]-4)}}
+    g.restore()};
   /* collage waves (Eman 26 Nov): smooth layered shape like the reference graphic instead of thin lines. The site draws one rect per pixel column, so we record those rects and redraw them as a soft mirrored envelope: darker outer, lighter inner, thin centre line */
   try{
     var PR=Path2D.prototype,orect=PR.rect;
@@ -31,41 +70,12 @@
       P3.fill=function(p){
         try{var cv=this.canvas,r=p&&p.__r;
           if(COLLAGE&&r&&r.length>40&&cv&&cv.classList&&cv.classList.contains("wf")&&!cv.classList.contains("ld")&&cv.closest&&cv.closest(".op-cat")&&/^#[0-9a-f]{6}$/i.test(this.fillStyle)){
-            var base=this.fillStyle,pts=[],mid=0,STEP=3,last=-9,W=cv.clientWidth||100;
+            var base=this.fillStyle,pts=[],mid=0,STEP=3,last=-9,W=Math.round(cv.clientWidth)||100,H=Math.round(cv.clientHeight)||200;
             for(var i=0;i<r.length;i+=4){var x=r[i];if(x-last<STEP)continue;last=x;mid=r[i+1]+r[i+3]/2;pts.push([x,r[i+3]/2])}
             if(pts.length>3){
-              /* holographic glitch wave (Eman 26 Nov refs): one shared look, edge to edge, jagged top edge, vertical streaks, orange + blue fringes */
-              var nz=function(i){var s=Math.sin(i*127.1+pts.length*3.7)*43758.5453;return s-Math.floor(s)};
-              var xa=pts[0][0],xb=pts[pts.length-1][0],span=Math.max(1,xb-xa),floor=mid*.2,sm=[],hold=0,hv=0;
-              pts.forEach(function(q,k){var s=0,c=0;for(var j=k-1;j<=k+1;j++)if(pts[j]){s+=pts[j][1];c++}var v=s/c;
-                if(hold>0){hold--;v=hv}else if(nz(k*5.1)>.93){hold=2+Math.floor(nz(k)*5);hv=v}
-                v=Math.min(mid-1,Math.max(floor,v*1.12*(1+(nz(k)-.5)*.3)));
-                sm.push([(q[0]-xa)/span*W,v])});
-              var self=this,played=/^#(ffffff|fbffe6)$/i.test(base);
-              var shape=function(dx){self.beginPath();self.moveTo(0+dx,mid);
-                sm.forEach(function(q){self.lineTo(q[0]+dx,mid-q[1])});
-                for(var i2=sm.length-1;i2>=0;i2--)self.lineTo(sm[i2][0]+dx,mid+Math.max(.8,sm[i2][1]*(.9+nz(i2*2.3)*.2)));
-                self.closePath()};
-              this.save();
-              if(played){shape(0);this.fillStyle="#ffffff";of3.call(this);this.restore();return}
-              this.globalCompositeOperation="lighter";this.globalAlpha=.85;
-              shape(-2.4);this.fillStyle="#ff6a10";of3.call(this);
-              shape(2.4);this.fillStyle="#1448ff";of3.call(this);
-              this.globalCompositeOperation="source-over";this.globalAlpha=1;
-              shape(0);
-              var PALS=["#ffffff","#e6e0ff","#2c5cff","#1236d6","#c0aaff","#7fd0ff","#f6dcff","#ffffff","#0a1d8c","#9fb6ff"],
-                  hg=this.createLinearGradient(0,0,W,0),NS=18;
-              for(var gi=0;gi<=NS;gi++)hg.addColorStop(gi/NS,PALS[Math.floor(nz(gi*3.3+1)*PALS.length)]);
-              this.fillStyle=hg;of3.call(this);
-              this.save();this.clip();
-              var vg=this.createLinearGradient(0,mid-mid,0,mid+mid);vg.addColorStop(0,"rgba(4,8,50,.65)");vg.addColorStop(.45,"rgba(4,8,50,0)");vg.addColorStop(.55,"rgba(4,8,50,0)");vg.addColorStop(1,"rgba(4,8,50,.65)");
-              this.fillStyle=vg;this.fillRect(0,0,W,mid*2);
-              for(var x=0;x<W;x+=1.5){var rr=nz(x*.37+9);
-                this.fillStyle=rr>.5?"rgba(255,255,255,"+(.05+rr*.25)+")":"rgba(5,12,90,"+(.1+rr*.35)+")";
-                this.fillRect(x,0,1,mid*2)}
-              this.restore();
-              shape(0);this.strokeStyle="rgba(255,150,60,.9)";this.lineWidth=1;this.stroke();
-              this.restore();return}
+              var mx=0;pts.forEach(function(q){if(q[1]>mx)mx=q[1]});
+              window.csRibbon(this,W,H,pts.map(function(q){return q[1]/Math.max(1,mx)}),/^#(ffffff|fbffe6)$/i.test(base)?"played":"");
+              return}
           }
         }catch(e){}
         return of3.apply(this,arguments)}}

@@ -41,10 +41,16 @@
     var t=tracks[i],cv=t.cv,w=cv.clientWidth,h=cv.clientHeight;if(!w||!h||!t.pk)return;
     var dpr=window.devicePixelRatio||1;if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
     var g=cv.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,w,h);
+    if(window.csRibbon){
+      var N=Math.max(40,Math.floor(w/3)),am=[];
+      for(var k=0;k<N;k++){var pi=Math.min(t.pk.length-1,Math.floor(k/N*t.pk.length));am.push(Math.max(.1,Math.pow(t.pk[pi],.8)))}
+      window.csRibbon(g,w,h,am,"");
+      if(pos>0){g.save();g.beginPath();g.rect(0,0,w*pos,h);g.clip();window.csRibbon(g,w,h,am,"played");g.restore()}
+      return}
     var pitch=3,n=Math.floor((w-24)/pitch),x0=12,mid=h/2;
-    for(var k=0;k<n;k++){
-      var f=k/n,pi=Math.min(t.pk.length-1,Math.floor(f*t.pk.length)),a=Math.max(.06,Math.pow(t.pk[pi],.8))*(h*.42);
-      g.fillStyle=(pos>0&&f<pos)?PURL:PUR;g.fillRect(x0+k*pitch,mid-a,2,a*2);
+    for(var k2=0;k2<n;k2++){
+      var f=k2/n,pi2=Math.min(t.pk.length-1,Math.floor(f*t.pk.length)),a=Math.max(.06,Math.pow(t.pk[pi2],.8))*(h*.42);
+      g.fillStyle=(pos>0&&f<pos)?PURL:PUR;g.fillRect(x0+k2*pitch,mid-a,2,a*2);
     }
   }
   function stopSrc(){srcs.forEach(function(s){try{s.stop()}catch(e){}});srcs=[]}
