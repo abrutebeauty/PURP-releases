@@ -34,15 +34,31 @@
             var base=this.fillStyle,pts=[],mid=0,STEP=3,last=-9;
             for(var i=0;i<r.length;i+=4){var x=r[i];if(x-last<STEP)continue;last=x;mid=r[i+1]+r[i+3]/2;pts.push([x,r[i+3]/2])}
             if(pts.length>3){
-              var sm=pts.map(function(q,k){var s=0,c=0;for(var j=k-2;j<=k+2;j++)if(pts[j]){s+=pts[j][1];c++}return [q[0],s/c]});
-              var self=this,shape=function(k){self.beginPath();self.moveTo(sm[0][0],mid);
-                sm.forEach(function(q){self.lineTo(q[0],mid-Math.max(.6,q[1]*k))});
-                for(var i2=sm.length-1;i2>=0;i2--)self.lineTo(sm[i2][0],mid+Math.max(.6,sm[i2][1]*k));
+              /* rough distorted look (Eman 26 Nov reference): jagged edge, stepped glitch smears, red/blue colour fringes, vertical streaks */
+              var nz=function(i){var s=Math.sin(i*127.1+pts.length*3.7)*43758.5453;return s-Math.floor(s)};
+              var sm=[],hold=0,hv=0;
+              pts.forEach(function(q,k){var s=0,c=0;for(var j=k-1;j<=k+1;j++)if(pts[j]){s+=pts[j][1];c++}var v=s/c;
+                if(hold>0){hold--;v=hv}else if(nz(k*5.1)>.93){hold=2+Math.floor(nz(k)*5);hv=v}
+                v*=1+(nz(k)-.5)*.3;sm.push([q[0],v])});
+              var self=this,x0=sm[0][0],x1=sm[sm.length-1][0],amax=0;sm.forEach(function(q){if(q[1]>amax)amax=q[1]});
+              var shape=function(dx){self.beginPath();self.moveTo(x0+dx,mid);
+                sm.forEach(function(q){self.lineTo(q[0]+dx,mid-Math.max(.8,q[1]))});
+                for(var i2=sm.length-1;i2>=0;i2--)self.lineTo(sm[i2][0]+dx,mid+Math.max(.8,sm[i2][1]*(.9+nz(i2*2.3)*.2)));
                 self.closePath()};
-              this.save();this.globalAlpha=1;
-              shape(1);this.fillStyle=base;this.globalAlpha=.55;of3.call(this);
-              shape(.55);this.fillStyle=mix(base,.28);this.globalAlpha=.8;of3.call(this);
-              this.globalAlpha=1;this.fillStyle=mix(base,.5);this.fillRect(sm[0][0],mid-.5,sm[sm.length-1][0]-sm[0][0],1);
+              this.save();
+              this.globalCompositeOperation="lighter";this.globalAlpha=.7;
+              shape(-1.7);this.fillStyle="#ff3a12";of3.call(this);
+              shape(1.7);this.fillStyle="#1f6bff";of3.call(this);
+              this.globalCompositeOperation="source-over";this.globalAlpha=1;
+              shape(0);
+              var gr=this.createLinearGradient(0,mid-amax,0,mid+amax);gr.addColorStop(0,base);gr.addColorStop(.5,mix(base,.62));gr.addColorStop(1,base);
+              this.fillStyle=gr;of3.call(this);
+              this.save();this.clip();
+              for(var x=x0;x<x1;x+=1.6){var rr=nz(x*.37);
+                this.fillStyle=rr>.5?"rgba(255,255,255,"+(.06+rr*.2)+")":"rgba(0,0,0,"+(.1+rr*.3)+")";
+                this.fillRect(x,mid-amax-2,1,amax*2+4)}
+              this.restore();
+              shape(0);this.strokeStyle=mix(base,.75);this.lineWidth=.8;this.stroke();
               this.restore();return}
           }
         }catch(e){}
@@ -98,7 +114,30 @@
       ORD=["red","blue","green","cyan","pink","purple"];
   function tcol(k){k=(k||"").toLowerCase().trim();return PAL[TYPE[k]||ORD[hash(k)%6]]}
   function hash(s){var h=7;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
+  /* product-label details (Eman 26 Nov, reference: Human Machine 06 label): big category title + barcode, caution mark, tiny spec text per category, and a label strip at the end of the sounds */
+  var CAUT='<svg viewBox="0 0 24 22" width="22" height="20"><path d="M12 2 L22 20 H2 Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v6M12 16.5v1.5" stroke="currentColor" stroke-width="2"/></svg>',
+      RING='<svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
+      REC='<svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3a9 9 0 1 0 9 9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21 3v6h-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+  function bars(seed){var s="",x=0,h=seed;while(x<92){h=(h*1103515245+12345)>>>0;var w=1+((h>>>16)%3),g=1+((h>>>20)%2);s+='<i style="left:'+x+'px;width:'+w+'px"></i>';x+=w+g}return s}
+  function deco(m){
+    var cats=m.querySelectorAll(":scope>.op-cat"),tot=cats.length;
+    [].forEach.call(cats,function(cat,k){
+      var h=cat.querySelector(".op-h");if(!h||h.querySelector(".cs-lab"))return;
+      var t=(h.textContent||"").trim(),seed=hash(t+k),n=("0000"+(seed%99999)).slice(-5);
+      var d=document.createElement("div");d.className="cs-lab";
+      var nm=(t.split(/[\s\u00b7]+/)[0]||"").toUpperCase(),cnt=("00"+(cat.querySelectorAll(".pv").length)).slice(-3);
+      d.innerHTML='<div class="cs-lt"><span>/ ENGINEERED FOR SOUND &gt; '+("0"+(k+1)).slice(-2)+' / '+("0"+tot).slice(-2)+'</span>'+
+        '<span class="cs-inv">( KOR / '+nm+' / '+cnt+' )</span><span class="cs-dash"></span>'+
+        '<span>INPUT VERIFIED &nbsp; OUTPUT '+n+'</span><span>STATUS: &gt; &nbsp; ACTIVE</span></div>'+
+        '<div class="cs-lic"><b class="cs-dot"></b><b class="cs-badge">'+("0"+(k+1)).slice(-2)+'</b>'+CAUT+'</div><div class="cs-bar">'+bars(seed)+'</div>';
+      h.appendChild(d)});
+    if(!m.querySelector(":scope>.cs-foot")){
+      var f=document.createElement("div"),seed2=hash(location.pathname);f.className="cs-foot";
+      f.innerHTML='<div class="cs-fb"><b>'+CAUT+' CAUTION</b><span>RISK OF LOUD SOUND</span></div><div class="cs-ft">INPUT VERIFIED &nbsp;&nbsp; LOC: FLOOR-7<br>OUTPUT CONFIRMED &nbsp; /<br>QUALITY PASS &nbsp; LOGGED LOCALLY<br>&gt; &nbsp; PRESS ANY CARD TO PLAY</div><div class="cs-ft cs-ft2">SN: <b class="cs-dot"></b> KOR-'+(seed2%9000+1000)+'-ISL <b class="cs-dot"></b> FWD<br>ICES - 00 NMB 003 &nbsp; 2026<br>DOMESTIC / OPERATIONS / COMMAND</div><div class="cs-bar cs-barw">'+bars(seed2)+bars(seed2+7)+'</div>';
+      m.appendChild(f)}
+  }
   function collage(m){
+    deco(m);
     var redraw=0,mob=window.innerWidth<=900;
     [].forEach.call(m.querySelectorAll(":scope>.op-cat"),function(cat){
       var grid=cat.querySelector(".op-grid"),W=grid&&grid.clientWidth;if(!W)return;
