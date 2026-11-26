@@ -178,3 +178,5 @@ cs/story2.css
 cs/story2.js
 cs/top.js
 cs/top.css
+cs/pv.js
+cs/pv.css
