@@ -40,3 +40,6 @@ html.cs-box.opium2 .cs-lab .cs-lt{order:1}
 html.cs-box.opium2 .cs-lab .cs-bar{order:2;width:2px!important;min-width:2px;height:auto!important;background:#e8e8ee;align-self:stretch}
 html.cs-box.opium2 .cs-lab .cs-bar i{display:none}
 html.cs-box.opium2 .cs-lt>span:nth-child(1),html.cs-box.opium2 .cs-lt>span:nth-child(6){display:none}
+/* smaller title label, same size family as the info block */
+html.cs-box.cs-collage.opium2 #opMag .op-cat .op-h .op-box{font-size:clamp(15px,1.5vw,19px)!important;padding:5px 12px 4px!important;letter-spacing:.14em!important}
+html.cs-box.cs-collage.opium2 #opMag .op-cat .op-h .op-box::after{font-size:.8em;font-weight:700;letter-spacing:.14em}
