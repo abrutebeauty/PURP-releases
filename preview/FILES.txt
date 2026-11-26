@@ -173,3 +173,6 @@ img/cs/mj3.webp
 img/cs/mj4.webp
 img/cs/mj5.webp
 img/cs/title.webp
+crystal-test.html
+cs/story2.css
+cs/story2.js
