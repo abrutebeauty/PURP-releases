@@ -75,7 +75,7 @@
   addEventListener("pointerdown", function () { if (!muted()) ac(); }, { capture: true, passive: true });
 
   /* click sounds (capture phase, so we read the state BEFORE shop.js changes it) */
-  var SKIP = ".bflow,#pkSounds,.wv,.snd,.sfxm,audio,[data-noclick]";
+  var SKIP = "#opMag .pv,.cs-pv,.bflow,#pkSounds,.wv,.snd,.sfxm,audio,[data-noclick]";
   addEventListener("click", function (e) {
     var t = e.target; if (!t || !t.closest) return;
     var add = t.closest("[data-add]"); if (add) { play(/in cart/i.test(add.textContent || "") ? "open" : "add"); return; }
