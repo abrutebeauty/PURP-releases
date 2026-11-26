@@ -234,20 +234,17 @@
     if(cv.style.filter)cv.style.filter="";
     var play=!!a.play,key=W+"x"+H+(cv.__img||0);
     if(!play){if(st.rk===key)return;st.rk=key;st.wins=[];st.l0=0;g.drawImage(im,0,0,W,H);return}
-    st.rk=null;var wins=st.wins||(st.wins=[]),dt=st.tp?Math.min(.1,t-st.tp):.016;st.tp=t;
-    function spawn(){var fw=.2+Math.random()*.42,fh=fw*(.5+Math.random()*.9);fh=Math.min(.7,fh);var sx=Math.random()*(1-fw),sy=Math.random()*(1-fh),zoom=1+Math.random()*.5,dw=fw*zoom,dh=fh*zoom,dx=Math.max(-.05,Math.min(1.05-dw,sx+(Math.random()-.5)*.5)),dy=Math.max(-.05,Math.min(1.05-dh,sy+(Math.random()-.5)*.5));
-      wins.push({b:t,life:.5+Math.random()*1.1,sx:sx,sy:sy,sw:fw,sh:fh,dx:dx,dy:dy,dw:dw,dh:dh,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.1})}
-    if(a.beat>.3&&t-(st.lb||0)>.16){spawn();if(a.beat>.7)spawn();st.lb=t}
-    if(t-(st.ls||0)>.6-a.lvl*.35){spawn();st.ls=t}
-    while(wins.length>6)wins.shift();
+    st.rk=null;var wins=st.wins||(st.wins=[]);
+    function spawn(){var fw=.18+Math.random()*.42,fh=Math.min(.7,fw*(.5+Math.random()*.9)),sx=Math.random()*(1-fw),sy=Math.random()*(1-fh),
+        dx=Math.max(0,Math.min(1-fw,sx+(Math.random()-.5)*.6)),dy=Math.max(0,Math.min(1-fh,sy+(Math.random()-.5)*.6));
+      wins.push({n:1+(Math.random()<.4?1:0),sx:sx,sy:sy,sw:fw,sh:fh,dx:dx,dy:dy})}
+    if(a.beat>.3&&t-(st.lb||0)>.12){spawn();spawn();if(a.beat>.7)spawn();st.lb=t}
+    if(t-(st.ls||0)>.5-a.lvl*.3){spawn();st.ls=t}
     g.drawImage(im,0,0,W,H);
     var iw=im.naturalWidth,ih=im.naturalHeight;
-    for(var i=wins.length-1;i>=0;i--){var w=wins[i],age=t-w.b,k=age/w.life;if(k>=1){wins.splice(i,1);continue}
-      var o=easeO(Math.min(1,age/.16)),c=k>.78?1-(k-.78)/.22:1,sc=o*c;if(sc<=.01)continue;
-      w.dx+=w.vx*dt;w.dy+=w.vy*dt;
-      var dh=w.dh*sc,dy=w.dy+(w.dh-dh)/2;
-      g.drawImage(im,w.sx*iw,(w.sy+(w.sh-w.sh*sc)/2)*ih,w.sw*iw,w.sh*sc*ih,w.dx*W,dy*H,w.dw*W,dh*H);
-      g.strokeStyle="rgba(0,0,0,.55)";g.lineWidth=1;g.strokeRect(w.dx*W+.5,dy*H+.5,w.dw*W-1,dh*H-1)}
+    for(var i=wins.length-1;i>=0;i--){var w=wins[i];
+      g.drawImage(im,w.sx*iw,w.sy*ih,w.sw*iw,w.sh*ih,w.dx*W,w.dy*H,w.sw*W,w.sh*H);
+      if(--w.n<=0)wins.splice(i,1)}
   }
   STY.img=imgR;
   var MAP={bass:["zebra","crowd","iso_spike","melt","iso_star","ledgrid"],lead:["slit","iso_star","vhs","iso_spike","dotsrb","dots"],chip:["ledgrid","iso_cells","cells","tiles","dots"],pluck:["dashes","iso_spike","slit","iso_cells","ledgrid"],pad:["terrain","melt","iso_wave","iso_rings","contour","cells"],keys:["contour","tiles","iso_rings","iso_wave","dots","terrain"],arp:["cells","iso_star","tiles","iso_cells","dotsrb","dashes"],stab:["vhs","iso_spike","dashes","iso_star","zebra"],vox:["melt","iso_wave","dotsrb","contour","vhs"],texture:["terrain","iso_cells","contour","iso_rings","cells"],fx:["vhs","iso_spike","zebra","iso_star","slit"],kick:["zebra","crowd","dots","iso_spike"],snare:["vhs","zebra","dashes","iso_spike"],hat:["dashes","ledgrid","iso_cells"],clap:["vhs","tiles","slit","iso_star"],perc:["tiles","dots","dotsrb","iso_cells"],loop:["crowd","tiles","terrain","cells","iso_rings"],"808":["zebra","crowd","melt","iso_star","iso_spike"]};
