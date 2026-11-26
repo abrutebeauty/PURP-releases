@@ -17,16 +17,16 @@ html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr{position:absolute;l
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path.dash{stroke-dasharray:10 7}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path{fill:none;stroke:var(--ck-line,#ecebf0);stroke-width:1.7;stroke-miterlimit:10}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-top{grid-area:top;position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-chip{font:400 10.5px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:var(--ck-line,#ecebf0);color:#0e0d12;padding:2px 9px;white-space:nowrap}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-chip{font:400 7.4px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:var(--ck-line,#ecebf0);color:#0e0d12;padding:2px 9px;white-space:nowrap}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ic{width:54px;height:54px;color:var(--ck-line,#ecebf0);flex:none;display:block}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm{grid-area:nm;position:relative;z-index:1;display:block!important;margin-top:8px;font:600 20px/1.1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:-.02em!important;text-transform:lowercase!important;color:#ecebf0!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm{grid-area:nm;position:relative;z-index:1;display:block!important;margin-top:8px;font:600 14px/1.1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:-.02em!important;text-transform:lowercase!important;color:#ecebf0!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm::before{content:attr(data-ck)}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-meta{grid-area:meta;position:relative;z-index:1;display:flex;flex-direction:column;gap:2px;margin-top:14px;font:400 10.5px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#a5a4ad}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-meta{grid-area:meta;position:relative;z-index:1;display:flex;flex-direction:column;gap:2px;margin-top:10px;font:400 7.4px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#a5a4ad}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-meta b{font-weight:400}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl{grid-area:pl;position:relative;z-index:1;align-self:end;width:44px!important;height:44px!important;margin:0!important;transform:none!important;background:var(--ck-line,#ecebf0)!important;border:0!important;border-radius:0!important;display:flex!important;align-items:center;justify-content:center;flex:none}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl svg{width:14px!important;height:14px!important;fill:#0e0d12!important;stroke:none!important;display:block}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button canvas.wf{display:block!important;grid-area:wf;position:relative;z-index:1;align-self:end;width:100%!important;max-width:none!important;height:44px!important;min-height:0!important;margin:0 0 0 14px!important;flex:none;width:calc(100% - 14px)!important}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ts{position:relative;z-index:1;display:flex;flex-direction:row;gap:12px;margin:4px 0 0;font:400 8.5px/1.15 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#74737c;white-space:nowrap}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button canvas.wf{display:block!important;grid-area:wf;position:relative;z-index:1;align-self:end;width:100%!important;max-width:none!important;height:44px!important;min-height:0!important;margin:0 0 0 6px!important;flex:none;width:calc(100% - 6px)!important}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ts{position:relative;z-index:1;display:flex;flex-direction:row;gap:12px;margin:4px 0 0;font:400 6.2px/1.15 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#74737c;white-space:nowrap}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ts i{font-style:normal;display:block}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button.on .ck-ts{color:#ecebf0}
 @media(max-width:700px){html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .op-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))!important;gap:40px 22px!important}html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button{padding:24px 22px 28px!important}}
@@ -58,19 +58,19 @@ html.opium2 .cs-pv.cs-card .pc{position:relative;padding:36px 40px 40px;color:#e
 html.opium2 .cs-pv.cs-card .pc-fr{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
 html.opium2 .cs-pv.cs-card .pc-fr path{fill:none;stroke:#ecebf0;stroke-width:1.7;stroke-miterlimit:10}
 html.opium2 .cs-pv.cs-card .pc-top{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-html.opium2 .cs-pv.cs-card .ck-chip{font:400 10.5px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:#ecebf0;color:#0e0d12;padding:2px 9px;white-space:nowrap}
+html.opium2 .cs-pv.cs-card .ck-chip{font:400 7.4px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:#ecebf0;color:#0e0d12;padding:2px 9px;white-space:nowrap}
 html.opium2 .cs-pv.cs-card .pc-ic{width:54px;height:54px;color:#ecebf0;display:block;flex:none}
-html.opium2 .cs-pv.cs-card .pc-title{position:relative;margin-top:12px;font:800 38px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.045em;text-transform:lowercase}
-html.opium2 .cs-pv.cs-card .pc-sub{position:relative;margin-top:12px;font:400 10.5px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#a5a4ad}
+html.opium2 .cs-pv.cs-card .pc-title{position:relative;margin-top:12px;font:800 27px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.045em;text-transform:lowercase}
+html.opium2 .cs-pv.cs-card .pc-sub{position:relative;margin-top:12px;font:400 7.4px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#a5a4ad}
 html.opium2 .cs-pv.cs-card .pc-rows{position:relative;margin-top:24px;display:flex;flex-direction:column;border-bottom:1px dashed rgba(236,235,240,.35)}
 html.opium2 .cs-pv.cs-card .cs-pvr{position:relative!important;display:grid!important;grid-template-columns:30px minmax(150px,230px) minmax(0,1fr) 92px;align-items:center;gap:20px;height:auto!important;margin:0!important;padding:14px 0;border-top:1px dashed rgba(236,235,240,.35)}
-html.opium2 .cs-pv.cs-card .pc-n{font:400 11px/1 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;color:#8d8c95}
+html.opium2 .cs-pv.cs-card .pc-n{font:400 7.7px/1 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;color:#8d8c95}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag{position:static!important;transform:none!important;display:flex!important;flex-direction:column;align-items:flex-start;gap:7px;width:auto!important;max-width:none!important;text-align:left;background:none!important;border:0;padding:0;margin:0;color:#ecebf0!important;text-shadow:none!important;font:inherit!important;cursor:pointer;opacity:1!important}
-html.opium2 .cs-pv.cs-card .pc-k{font:400 9.5px/1.6 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;background:#ecebf0;color:#0e0d12;padding:1px 8px}
-html.opium2 .cs-pv.cs-card .pc-nm{font:600 20px/1.1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.02em;text-transform:lowercase;color:#ecebf0}
+html.opium2 .cs-pv.cs-card .pc-k{font:400 6.7px/1.6 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;background:#ecebf0;color:#0e0d12;padding:1px 8px}
+html.opium2 .cs-pv.cs-card .pc-nm{font:600 14px/1.1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.02em;text-transform:lowercase;color:#ecebf0}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvw{position:relative!important;left:auto!important;width:100%!important;min-width:0;height:64px!important;border:0!important;background:none!important;box-shadow:none!important;opacity:1!important}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvl{top:4px;bottom:4px;background:#ecebf0}
-html.opium2 .cs-pv.cs-card .pc-tm{font:400 9.5px/1.2 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.12em;color:#8d8c95;text-align:right;white-space:nowrap}
+html.opium2 .cs-pv.cs-card .pc-tm{font:400 6.7px/1.2 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.12em;color:#8d8c95;text-align:right;white-space:nowrap}
 html.opium2 .cs-pv.cs-card .cs-pvr.cs-dim .cs-pvw,html.opium2 .cs-pv.cs-card .cs-pvr.cs-dim .cs-pvtag{opacity:.35!important}
 html.opium2 .cs-pv.cs-card.cs-on .pc-tm{color:#ecebf0}
 html.opium2 .cs-pv.cs-card .pc-bot{position:relative;display:flex;align-items:center;gap:18px;margin-top:26px}
@@ -79,7 +79,7 @@ html.opium2 .cs-pv.cs-card .pc-play svg{width:16px;height:16px;fill:#0e0d12;disp
 html.opium2 .cs-pv.cs-card .pc-play .pa{display:none}
 html.opium2 .cs-pv.cs-card.cs-pcon .pc-play .pl{display:none}
 html.opium2 .cs-pv.cs-card.cs-pcon .pc-play .pa{display:block}
-html.opium2 .cs-pv.cs-card .pc-st{font:400 10.5px/1.2 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#a5a4ad}
+html.opium2 .cs-pv.cs-card .pc-st{font:400 7.4px/1.2 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#a5a4ad}
 html.opium2 .cs-pv.cs-card button:hover,html.opium2 .cs-pv.cs-card button:focus,html.opium2 .cs-pv.cs-card button:active,html.opium2 .cs-pv.cs-card .cs-pvw:hover{background-color:transparent;outline:0}
 html.opium2 .cs-pv.cs-card .pc-play:hover,html.opium2 .cs-pv.cs-card .pc-play:focus,html.opium2 .cs-pv.cs-card .pc-play:active{background:#ecebf0}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag:hover,html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag:focus,html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag:active{background:none!important}
