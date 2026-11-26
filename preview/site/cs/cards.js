@@ -142,7 +142,7 @@ var CK_EXTRA=[(w,h)=>SHAPES[2].bass(0,0,w,h),(w,h)=>SHAPES[3].bass(0,0,w,h),(w,h
 function ckGroup(k){k=String(k||"").toUpperCase().trim();return CK_GROUP[k]||CK_GROUP[k.replace(/S$/,"")]||null}
 var CK_SRV=null,CK_DONE=false;
 function ckHas(l){return !!(l&&((l.ck&&Object.keys(l.ck).length)||(l.ckShapes&&l.ckShapes.length)))}
-function ckLookObj(){try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}if(ckHas(CK_SRV))return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
+function ckLookObj(){try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}if(CK_DONE&&CK_SRV)return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}if(ckHas(CK_SRV))return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
 /* customers: fetch the saved category settings ourselves, do not depend on the shop script handing them over */
 (function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{fetch("/api/products",{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}).then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
 function ckGKey(k){return String(k||"").toUpperCase().trim().replace(/([^S])S$/,"$1")}
@@ -230,6 +230,8 @@ function ckSave(){clearTimeout(ckSaveT);ckSaveT=setTimeout(function(){
     var sl=ckFind(s),L=window.ADM.look=window.ADM.look||{};
     if(sl){var m={};var sc=sl.ck||{};Object.keys(sc).forEach(function(g){m[g]=JSON.parse(JSON.stringify(sc[g]))});
       Object.keys(ckDirty).forEach(function(g){var d=ckDirty[g];if(d===null){delete m[g];return}m[g]=m[g]||{};Object.keys(d).forEach(function(k){if(d[k]==null)delete m[g][k];else m[g][k]=d[k]});if(!Object.keys(m[g]).length)delete m[g]});
+      var bs=(s&&(s.D||s.data))||s;try{Object.keys(bs).forEach(function(k){if(k!=="look"&&(k==="cats"||k in window.ADM))window.ADM[k]=bs[k]})}catch(e){}
+      Object.keys(sl).forEach(function(k){if(k!=="ck"&&k!=="ckShapes")L[k]=sl[k]});
       L.ck=m;if(sl.ckShapes&&!(L.ckShapes&&L.ckShapes.length))L.ckShapes=sl.ckShapes}
     return fetch("/api/admin/packs",{method:"PUT",headers:{"content-type":"application/json","X-Look-Edit":"1"},credentials:"same-origin",body:JSON.stringify(window.ADM)}).then(function(r){var o={ok:!!(r&&r.ok),st:r?r.status:0};return r&&r.ok?r.json().then(function(j){if(j&&j.lookKept){o.ok=false;o.kept=1}return o}).catch(function(){return o}):o}).catch(function(){return {ok:false,st:0}})
   }).then(function(o){ckToast(o.ok?"Saved · live":(o.kept?"NOT SAVED - reload the page":"NOT SAVED ("+(o.st||"no connection")+")"),!o.ok);if(o.ok)ckDirty={};try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})
