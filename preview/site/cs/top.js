@@ -4,6 +4,8 @@
   /* sound grid look: collage (default, Eman 26 Nov) or the category columns: add ?look=columns (or ?cols=1) to roll back */
   var COLLAGE=!/[?&](look=columns|cols=1)\b/.test(location.search);
   if(COLLAGE)document.documentElement.classList.add("cs-collage");
+  /* sound cards (Eman 26 Nov): clean-test cards on every OPIUM 2 pack. Remove these 2 lines = old grid */
+  if(!window.CS_NOCARDS&&!/[?&]cards=0\b/.test(location.search)){var cj=document.createElement("script");cj.src="/cs/cards.js?v=1";document.head.appendChild(cj)}
   /* PREVIEW stack (Eman 26 Nov) loads from here, so pack.html only needs the one top line */
   if(!window.CS_NOPV){var l=document.createElement("link");l.rel="stylesheet";l.href="/cs/pv.css?v=1";document.head.appendChild(l);var s=document.createElement("script");s.src="/cs/pv.js?v=1";document.head.appendChild(s)}
   /* already-played part of a sound card wave: almost white instead of acid yellow (Eman 26 Nov), only on the sound-card canvases in OPIUM 2 */
@@ -15,7 +17,7 @@
         if(lv==="#e4ff3a")v=card?"#ffffff":"#fbffe6";
         else if(card&&(lv==="#8b6cf6"||lv==="#b8a4ff")){
           var pv=COLLAGE&&this.canvas.closest(".pv");
-          v=(pv&&pv.__cst)||"#bdbdc6";
+          v=document.documentElement.classList.contains("ck-cards")?"#8d8c95":((pv&&pv.__cst)||"#bdbdc6");
           if(pv)this.globalAlpha=1;
         }
       }
@@ -69,7 +71,7 @@
         return "rgb("+Math.round(r+(255-r)*t)+","+Math.round(g+(255-g)*t)+","+Math.round(b+(255-b)*t)+")"};
       P3.fill=function(p){
         try{var cv=this.canvas,r=p&&p.__r;
-          if(COLLAGE&&r&&r.length>40&&cv&&cv.classList&&cv.classList.contains("wf")&&!cv.classList.contains("ld")&&cv.closest&&cv.closest(".op-cat")&&/^#[0-9a-f]{6}$/i.test(this.fillStyle)){
+          if(COLLAGE&&!document.documentElement.classList.contains("ck-cards")&&r&&r.length>40&&cv&&cv.classList&&cv.classList.contains("wf")&&!cv.classList.contains("ld")&&cv.closest&&cv.closest(".op-cat")&&/^#[0-9a-f]{6}$/i.test(this.fillStyle)){
             var base=this.fillStyle,pts=[],mid=0,STEP=3,last=-9,W=Math.round(cv.clientWidth)||100,H=Math.round(cv.clientHeight)||200;
             for(var i=0;i<r.length;i+=4){var x=r[i];if(x-last<STEP)continue;last=x;mid=r[i+1]+r[i+3]/2;pts.push([x,r[i+3]/2])}
             if(pts.length>3){
