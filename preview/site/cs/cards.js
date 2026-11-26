@@ -281,7 +281,7 @@ function ckLoop(){var b=document.querySelector("#opMag .pv>button.on"),a=CK_AUDI
   requestAnimationFrame(ckLoop)}
 var ckT=0;function ckSoon(){clearTimeout(ckT);ckT=setTimeout(ckScan,120)}
 if(window.MutationObserver)new MutationObserver(ckSoon).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:["class"]});
-setInterval(ckScan,1500);document.addEventListener("DOMContentLoaded",ckSoon);requestAnimationFrame(ckLoop);
+document.addEventListener("ck-cur",function(){ckSig="";ckSoon()});setInterval(ckScan,1500);document.addEventListener("DOMContentLoaded",ckSoon);requestAnimationFrame(ckLoop);
 
 
 /* ---- D (admin on/off) keeps the page where it is: remember what sits at the top of the screen, put it back after the layout changes ---- */
