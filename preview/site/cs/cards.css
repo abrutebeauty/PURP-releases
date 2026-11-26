@@ -114,3 +114,10 @@ html.opium2 .cs-pv.cs-card .pc-nm{color:#fff}
 html.opium2 .cs-pv.cs-card .pc-sub,html.opium2 .cs-pv.cs-card .pc-tm,html.opium2 .cs-pv.cs-card.cs-on .pc-tm{color:#a5a4ad}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvl{background:var(--pcp)}
 html.opium2 .cs-pv.cs-card .pc-k{background:var(--pck,#ecebf0)}
+
+.ck-ed .odl{display:flex;flex-direction:column;gap:3px}
+.ck-ed .od{display:flex;align-items:center;gap:8px;background:#0b0a0e;border:1px solid #2c2736;padding:7px 8px;cursor:grab;color:#e6e1f0;font:800 10px/1 Inter,sans-serif;letter-spacing:.12em;user-select:none}
+.ck-ed .od i{font-style:normal;color:#7d7590;letter-spacing:-.2em;font-size:12px}
+.ck-ed .od span{flex:1}
+.ck-ed .od b{color:#9a93a8;font-weight:700}
+.ck-ed .od.dg{opacity:.4;border-color:#E4FF3A}

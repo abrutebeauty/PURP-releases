@@ -202,7 +202,26 @@ function ckSigNow(){try{return JSON.stringify(ckLookObj().ck||{})+"|"+ckPicks().
 /* ---- top preview card chips: colour of their own category, live ---- */
 var CK_K2G={LEAD:"SYNTH",SYNTH:"SYNTH",SAW:"SYNTH",HOOVER:"SYNTH",CHIP:"SYNTH",FLUTE:"SYNTH",PLUCK:"PLUCK",ARP:"PLUCK",STAB:"PLUCK",BASS:"BASS","808":"BASS",SUB:"BASS",PAD:"PAD",DRONE:"PAD",CHOIR:"PAD",KEY:"KEYS",KEYS:"KEYS",CHORD:"KEYS",BELL:"KEYS",CHIME:"KEYS",PIANO:"KEYS",TEXTURE:"FX",FX:"FX",SFX:"FX",RISER:"FX",IMPACT:"FX",VOX:"VOX",VOCAL:"VOX",KICK:"KICK",SNARE:"SNARE",CLAP:"SNARE",HAT:"HAT",OPEN:"HAT",CRASH:"HAT",CYMBAL:"HAT",ROLL:"HAT",SHAKER:"HAT",PERC:"PERC",RIM:"PERC",FOLEY:"PERC"};
 function ckChips(){var ks=document.querySelectorAll(".cs-pv.cs-card .pc-k");for(var i=0;i<ks.length;i++){var w=ckGKey(ks[i].textContent),g=CK_K2G[w]||w,c=ckCfg(g).col;if(c)ks[i].style.setProperty("--pck",c);else ks[i].style.removeProperty("--pck")}}
-function ckRefresh(){ckChips();document.querySelectorAll("#opMag .op-cat").forEach(ckApplySec);document.querySelectorAll("#opMag .pv>button[data-ckdone]").forEach(ckFrame);if(typeof window.ckApplyLook==="function")try{window.ckApplyLook(ckLookObj())}catch(e){}}
+
+/* ---- per-pack category order (drag list in the admin editor). Saved at look.ck._ORDER[packId] so it rides the same protected save. ---- */
+function ckPackId(){var m=document.getElementById("opMag");return (m&&m.dataset.id)||(location.pathname.match(/^\/pack\/([^/?#]+)/)||[])[1]||window.CS_PACK||"pack"}
+function ckOrderNow(){try{var L=ckLookObj(),o=L.ck&&L.ck._ORDER;return (o&&o[ckPackId()])||null}catch(e){return null}}
+function ckApplyOrder(){var mag=document.getElementById("opMag"),od=ckOrderNow();if(!mag)return;
+  var secs=[].slice.call(mag.querySelectorAll(".op-cat")).filter(function(s){return s.parentNode===mag});if(secs.length<2)return;
+  secs.forEach(function(s,i){if(s.dataset.ck0==null)s.dataset.ck0=i});
+  var rank=function(s){if(!od||!od.length)return +s.dataset.ck0;var i=od.indexOf(s.getAttribute("data-k"));return i<0?1000+(+s.dataset.ck0):i};
+  var sorted=secs.slice().sort(function(a,b){return rank(a)-rank(b)});var same=true;for(var i=0;i<secs.length;i++)if(secs[i]!==sorted[i]){same=false;break}if(same)return;
+  var marks=secs.map(function(s){var m=document.createComment("");s.parentNode.insertBefore(m,s);return m});
+  sorted.forEach(function(s,i){marks[i].parentNode.insertBefore(s,marks[i])});marks.forEach(function(m){m.remove()})}
+function ckOrderList(){var mag=document.getElementById("opMag");if(!mag)return "";
+  var secs=[].slice.call(mag.querySelectorAll(".op-cat")).filter(function(s){return s.parentNode===mag});if(secs.length<2)return "";
+  return '<div class="lb">Order on this pack (drag)</div><div class="odl">'+secs.map(function(s){var nm=((s.querySelector(".ck-ch b")||{}).textContent||s.getAttribute("data-k")||"").toUpperCase(),n=s.querySelectorAll(".pv>button").length;return '<div class="od" draggable="true" data-k="'+(s.getAttribute("data-k")||"").replace(/"/g,"")+'"><i>&#8942;&#8942;</i><span>'+nm+'</span><b>'+n+'</b></div>'}).join("")+'</div><div class="row"><button data-oreset>Reset order</button></div>'}
+function ckOrderBind(el){var box=el.querySelector(".odl");if(!box)return;var drag=null;
+  box.addEventListener("dragstart",function(e){drag=e.target.closest(".od");if(!drag)return;drag.classList.add("dg");try{e.dataTransfer.effectAllowed="move";e.dataTransfer.setData("text/plain",drag.dataset.k)}catch(x){}});
+  box.addEventListener("dragover",function(e){if(!drag)return;e.preventDefault();var t=e.target.closest(".od");if(!t||t===drag)return;var r=t.getBoundingClientRect(),after=e.clientY>r.top+r.height/2;box.insertBefore(drag,after?t.nextSibling:t)});
+  var done=function(){if(!drag)return;drag.classList.remove("dg");drag=null;var arr=[].map.call(box.querySelectorAll(".od"),function(x){return x.dataset.k});ckSet("_ORDER",ckPackId(),arr)};
+  box.addEventListener("drop",function(e){e.preventDefault();done()});box.addEventListener("dragend",done)}
+function ckRefresh(){ckChips();ckApplyOrder();document.querySelectorAll("#opMag .op-cat").forEach(ckApplySec);document.querySelectorAll("#opMag .pv>button[data-ckdone]").forEach(ckFrame);if(typeof window.ckApplyLook==="function")try{window.ckApplyLook(ckLookObj())}catch(e){}}
 function ckSection(sec){
   var key=sec.getAttribute("data-k")||"",box=sec.querySelector(".op-box"),nm=(box?box.textContent.split("·")[0]:key).trim(),n=sec.querySelectorAll(".pv>button").length;
   if(!sec.querySelector(".ck-ch")){var h=document.createElement("div");h.className="ck-ch";h.innerHTML="<b>"+nm.toLowerCase()+"</b><span>"+n+(sec.getAttribute("data-drum")?" SAMPLE":" PRESET")+(n===1?"":"S")+"</span>";sec.insertBefore(h,sec.firstChild)}
@@ -210,7 +229,7 @@ function ckSection(sec){
   sec.querySelectorAll(".pv>button").forEach(function(b){var tc=b.querySelector(".nm .tc"),w="";if(!tc){var n0=b.querySelector(".nm");w=n0?(n0.textContent||"").trim().split(/\s+/)[0].replace(/[^A-Za-z0-9]/g,""):"";w=w.replace(/([^sS])s$/,"$1");if(!/^[A-Za-z0-9]{2,}$/.test(w))w=""}ckCard(b,key||nm,(tc?tc.textContent:(w||typeTxt)).trim()||typeTxt)});
 }
 var ckBusy=0;
-function ckScan(){if(ckBusy)return;ckBusy=1;try{try{ckChips()}catch(e){}
+function ckScan(){if(ckBusy)return;ckBusy=1;try{try{ckChips();ckApplyOrder()}catch(e){}
   var de=document.documentElement;if(!de.classList.contains("opium2")){return}
   var secs=document.querySelectorAll("#opMag .op-cat");if(!secs.length)return;
   de.classList.add("ck-cards");de.classList.toggle("ck-adm",ckAdm());ckSyncMarks();ckRestore();secs.forEach(ckSection);var sg=ckSigNow();if(sg!==ckSig){ckSig=sg;ckRefresh()}if(CK_DONE||ckAdm())requestAnimationFrame(function(){de.classList.add("ck-ready")})}finally{ckBusy=0}}
@@ -259,8 +278,8 @@ function ckEditor(sec){
    '<div class="lb">Shape (only '+nm.toLowerCase()+', every pack)</div><div class="shg">'+thumbs+'</div><div class="row"><button data-sh="-1">Default shape</button></div>'+
    '<div class="lb">Colours</div><label class="lk"><input type="checkbox" data-l'+(c.link?' checked':'')+'> Link colours (move one, both match)</label><div class="cl"><span>Cards + preview</span><input type="color" data-c="col" value="'+(c.col||"#ecebf0")+'"><button data-r="col">Reset</button></div>'+
    '<div class="cl"><span>Category title</span><input type="color" data-c="tcol" value="'+(c.tcol||"#ecebf0")+'"><button data-r="tcol">Reset</button></div>'+
-   '<div class="lb">Waveform</div><div class="row">'+CK_WNAMES.map(function(n,i){return '<button data-w="'+i+'" class="'+((+c.wave||0)===i?"on":"")+'">'+n+'</button>'}).join("")+'</div>';
-  document.body.appendChild(el);
+   '<div class="lb">Waveform</div><div class="row">'+CK_WNAMES.map(function(n,i){return '<button data-w="'+i+'" class="'+((+c.wave||0)===i?"on":"")+'">'+n+'</button>'}).join("")+'</div>'+ckOrderList();
+  document.body.appendChild(el);ckOrderBind(el);
   el.addEventListener("input",function(e){var i=e.target.closest("[data-c]");if(!i)return;ckSet(k,i.dataset.c,i.value);
     var lk=el.querySelector("[data-l]");if(lk&&lk.checked){var o=i.dataset.c==="col"?"tcol":"col",oi=el.querySelector('[data-c="'+o+'"]');if(oi)oi.value=i.value;ckSet(k,o,i.value)}});
   el.addEventListener("change",function(e){var l=e.target.closest("[data-l]");if(!l)return;ckSet(k,"link",l.checked?true:null);
@@ -269,6 +288,7 @@ function ckEditor(sec){
     if(t.closest("[data-x]")){el.remove();return}
     var s=t.closest("[data-sh]");if(s){var v=+s.dataset.sh;ckSet(k,"shape",v<0?null:v);el.querySelectorAll(".shg button").forEach(function(b){b.classList.toggle("on",+b.dataset.sh===v)});return}
     var r=t.closest("[data-r]");if(r){ckSet(k,r.dataset.r,null);ckEditor(sec);return}
+    if(t.closest("[data-oreset]")){ckSet("_ORDER",ckPackId(),null);ckEditor(sec);return}
     var w=t.closest("[data-w]");if(w){var n=+w.dataset.w;ckSet(k,"wave",n||null);el.querySelectorAll("[data-w]").forEach(function(b){b.classList.toggle("on",+b.dataset.w===n)})}})}
 document.addEventListener("click",function(e){var h=e.target.closest&&e.target.closest(".ck-ch");if(!h||!ckAdm())return;var sec=h.closest(".op-cat");if(!sec)return;e.preventDefault();e.stopPropagation();ckEditor(sec)},true);
 document.addEventListener("keydown",function(e){if(e.key==="Escape"){var o=document.querySelector(".ck-ed");if(o)o.remove()}});
