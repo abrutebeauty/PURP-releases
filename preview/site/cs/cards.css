@@ -121,3 +121,22 @@ html.opium2 .cs-pv.cs-card .pc-k{background:var(--pck,#ecebf0)}
 .ck-ed .od span{flex:1}
 .ck-ed .od b{color:#9a93a8;font-weight:700}
 .ck-ed .od.dg{opacity:.4;border-color:#E4FF3A}
+
+/* admin review buttons on the sound cards (Eman 26 Nov): clean aligned rows, same sizes, same spacing, no hover shifts.
+   rows: verdict (good / fix / skull) -> actions (comment / ban / trash / drag) -> rating 1-5 -> play + wave -> versions -> comments */
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid]{grid-template-columns:44px minmax(0,1fr)!important;grid-template-rows:auto auto auto auto auto auto 26px auto auto!important;grid-template-areas:"top top" "nm nm" "meta meta" "r1 r1" "r2 r2" "r3 r3" "pl wf" "r4 r4" "rc rc"!important}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvr{position:relative;z-index:2;display:flex!important;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:4px;margin:8px 0 0!important;width:100%;min-width:0;max-width:100%;order:0!important}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvt{grid-area:r1}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvbt{grid-area:r2;flex-wrap:nowrap}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvpr{grid-area:r3}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvvr{grid-area:r4;margin-top:12px!important;flex-wrap:wrap!important}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvc{grid-area:rc;position:relative;z-index:2;margin-top:8px;order:0!important}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] canvas.wf{margin-top:14px!important}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .pl{margin-top:14px!important}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvb{height:28px;min-width:28px;margin:0;transform:none!important;transition:none!important}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvb.rvsq{width:28px;padding:0}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvgd,html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvfx{width:62px;padding:0}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvcmb{width:98px;padding:0}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvpg{display:flex;gap:4px;margin:0}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvpg .rvb{width:28px;min-width:28px;padding:0}
+html.ck-cards.ck-cards.ck-cards.opium2.rvw #opMag .pv>button[data-pid] .rvsp{flex:1 1 0}

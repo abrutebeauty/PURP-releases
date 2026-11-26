@@ -294,14 +294,15 @@
   window.addEventListener("pointerdown", (e) => { if (org && !e.target.closest(".rvorg,.rvos,.rvom")) closeOrg(); }, true);
 
   /* ---- inject rows ---- */
-  const topHTML = () => `<span class="ad rvr rvt"><em class="rvb rvgd" data-rv="good">GOOD</em><em class="rvb rvfx" data-rv="fix">FIX</em><em class="rvb rvsk rvsq" data-rv="skull">${SKULL_I}</em><em class="rvb rvrefb rvsq" data-rv="ref" hidden>◉</em><span class="rvpg">${[1, 2, 3, 4, 5].map((n) => `<em class="rvb" data-rv="p" data-n="${n}">${n}</em>`).join("")}</span></span>`;
+  const topHTML = () => `<span class="ad rvr rvt"><em class="rvb rvgd" data-rv="good">GOOD</em><em class="rvb rvfx" data-rv="fix">FIX</em><em class="rvb rvsk rvsq" data-rv="skull">${SKULL_I}</em><em class="rvb rvrefb rvsq" data-rv="ref" hidden>◉</em></span>`;
+  const pagerHTML = () => `<span class="ad rvr rvpr"><span class="rvpg">${[1, 2, 3, 4, 5].map((n) => `<em class="rvb" data-rv="p" data-n="${n}">${n}</em>`).join("")}</span></span>`;
   const botHTML = () => `<span class="ad rvr rvbt"><em class="rvb rvcmb" data-rv="cm">COMMENT</em><span class="rvsp"></span><em class="rvb rvoffb rvsq" data-rv="off">${OFF_I}</em><em class="rvb rvdelb rvsq" data-rv="del">${TRASH_I}</em><em class="rvb rvdragb rvsq" data-a="drag">${DRAG_I}</em></span>`;
   const verHTML = () => `<span class="ad rvr rvvr"></span>`;
   function inject(b) {
     if (b.querySelector(".rvr")) return;
     if (!b.dataset.rvo) b.dataset.rvo = b.dataset.src;
     const wf = b.querySelector("canvas.wf"); if (!wf) return;
-    b.insertAdjacentHTML("beforeend", topHTML() + botHTML() + verHTML() + `<span class="rvc"></span><span class="rvov"></span><span class="rvov rvphw"><i class="rvph"></i></span>`);
+    b.insertAdjacentHTML("beforeend", topHTML() + botHTML() + pagerHTML() + verHTML() + `<span class="rvc"></span><span class="rvov"></span><span class="rvov rvphw"><i class="rvph"></i></span>`);
     const key = vKey(b), v = curV.get(key); if (v && v !== "v1") applyVer(b, v, true);
     sync(b);
   }
