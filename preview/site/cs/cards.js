@@ -142,9 +142,15 @@ var CK_EXTRA=[(w,h)=>SHAPES[2].bass(0,0,w,h),(w,h)=>SHAPES[3].bass(0,0,w,h),(w,h
 function ckGroup(k){k=String(k||"").toUpperCase().trim();return CK_GROUP[k]||CK_GROUP[k.replace(/S$/,"")]||null}
 var CK_SRV=null,CK_DONE=false;
 function ckHas(l){return !!(l&&((l.ck&&Object.keys(l.ck).length)||(l.ckShapes&&l.ckShapes.length)))}
-function ckLookObj(){try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}if(CK_DONE&&CK_SRV)return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}if(ckHas(CK_SRV))return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
+function ckLookObj(){var adm=false;try{adm=ckAdm()}catch(e){}
+  try{if(adm&&window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}
+  if(CK_DONE&&CK_SRV)return CK_SRV;
+  try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}
+  try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}
+  try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}
+  try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
 /* customers: fetch the saved category settings ourselves, do not depend on the shop script handing them over */
-(function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{fetch("/api/products",{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}).then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
+(function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{fetch("/api/products?ck="+Date.now(),{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}).then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;try{if(window.ADM&&l&&ckHas(l)){var AL=window.ADM.look=window.ADM.look||{};if(!ckHas(AL)){if(l.ck)AL.ck=JSON.parse(JSON.stringify(l.ck));if(l.ckShapes)AL.ckShapes=l.ckShapes.slice()}}}catch(e){}fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
 function ckGKey(k){return String(k||"").toUpperCase().trim().replace(/([^S])S$/,"$1")}
 var CK_ALIAS={SYNTH:"LEAD"};
 function ckCfg(k){var L=ckLookObj(),g=ckGKey(k);return (L.ck&&(L.ck[g]||(CK_ALIAS[g]&&L.ck[CK_ALIAS[g]])))||{}}
@@ -239,7 +245,7 @@ function ckSave(){clearTimeout(ckSaveT);ckSaveT=setTimeout(function(){
       Object.keys(sl).forEach(function(k){if(k!=="ck"&&k!=="ckShapes")L[k]=sl[k]});
       L.ck=m;if(sl.ckShapes&&!(L.ckShapes&&L.ckShapes.length))L.ckShapes=sl.ckShapes}
     return fetch("/api/admin/packs",{method:"PUT",headers:{"content-type":"application/json","X-Look-Edit":"1"},credentials:"same-origin",body:JSON.stringify(window.ADM)}).then(function(r){var o={ok:!!(r&&r.ok),st:r?r.status:0};return r&&r.ok?r.json().then(function(j){if(j&&j.lookKept){o.ok=false;o.kept=1}return o}).catch(function(){return o}):o}).catch(function(){return {ok:false,st:0}})
-  }).then(function(o){ckToast(o.ok?"Saved · live":(o.kept?"NOT SAVED - reload the page":"NOT SAVED ("+(o.st||"no connection")+")"),!o.ok);if(o.ok)ckDirty={};try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})
+  }).then(function(o){ckToast(o.ok?"Saved · live":(o.kept?"NOT SAVED - reload the page":"NOT SAVED ("+(o.st||"no connection")+")"),!o.ok);if(o.ok){ckDirty={};try{CK_SRV=JSON.parse(JSON.stringify(window.ADM.look||{}));CK_DONE=true}catch(e){}}try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})
 },350)}
 function ckBak(){try{var L=window.ADM.look||{};localStorage.setItem("ck-bak",JSON.stringify({ck:L.ck||{},ts:Date.now()}))}catch(e){}}
 function ckRestore(){try{if(!ckAdm())return;var L=window.ADM.look=window.ADM.look||{};if(L.ck&&Object.keys(L.ck).length)return;var b=JSON.parse(localStorage.getItem("ck-bak")||"null");if(b&&b.ck&&Object.keys(b.ck).length){L.ck=b.ck;ckSig=ckSigNow();ckRefresh();ckSave()}}catch(e){}}
