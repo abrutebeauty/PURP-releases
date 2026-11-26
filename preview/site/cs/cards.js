@@ -140,7 +140,11 @@ var CK_SHAPE={
 };
 var CK_EXTRA=[(w,h)=>SHAPES[2].bass(0,0,w,h),(w,h)=>SHAPES[3].bass(0,0,w,h),(w,h)=>SHAPES[1].keys(0,0,w,h),(w,h)=>SHAPES[3].synth(0,0,w,h)];
 function ckGroup(k){k=String(k||"").toUpperCase().trim();return CK_GROUP[k]||CK_GROUP[k.replace(/S$/,"")]||null}
-function ckLookObj(){try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
+var CK_SRV=null,CK_DONE=false;
+function ckHas(l){return !!(l&&((l.ck&&Object.keys(l.ck).length)||(l.ckShapes&&l.ckShapes.length)))}
+function ckLookObj(){try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}if(ckHas(CK_SRV))return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
+/* customers: fetch the saved category settings ourselves, do not depend on the shop script handing them over */
+(function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{fetch("/api/products",{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}).then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
 function ckGKey(k){return String(k||"").toUpperCase().trim().replace(/([^S])S$/,"$1")}
 function ckCfg(k){var L=ckLookObj();return (L.ck&&L.ck[ckGKey(k)])||{}}
 var CK_DEFIDX={bass:4,synth:3,pad:0,keys:2,vox:1,fx:5},CK_ORDER=["bass","synth","pad","keys","vox","fx"];
@@ -198,7 +202,7 @@ var ckBusy=0;
 function ckScan(){if(ckBusy)return;ckBusy=1;try{
   var de=document.documentElement;if(!de.classList.contains("opium2")){return}
   var secs=document.querySelectorAll("#opMag .op-cat");if(!secs.length)return;
-  de.classList.add("ck-cards");de.classList.toggle("ck-adm",ckAdm());ckSyncMarks();ckRestore();secs.forEach(ckSection);var sg=ckSigNow();if(sg!==ckSig){ckSig=sg;ckRefresh()}requestAnimationFrame(function(){de.classList.add("ck-ready")})}finally{ckBusy=0}}
+  de.classList.add("ck-cards");de.classList.toggle("ck-adm",ckAdm());ckSyncMarks();ckRestore();secs.forEach(ckSection);var sg=ckSigNow();if(sg!==ckSig){ckSig=sg;ckRefresh()}if(CK_DONE||ckAdm())requestAnimationFrame(function(){de.classList.add("ck-ready")})}finally{ckBusy=0}}
 
 /* ---- 5 waveform designs per category (called from the canvas fill hook in top.js) ---- */
 var CK_WNAMES=["Lines","Bars","Smooth","Outline","Floor peaks"];
