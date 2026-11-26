@@ -40,3 +40,27 @@ html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-ch
 html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(3){color:#0d7a3c!important}
 html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(4){color:#0a7d71!important}
 html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwb *{color:inherit!important}
+
+/* ---- CONTRAST SAFE CATEGORY COLOURS (Eman 26 Nov: nothing white on white) ----
+   Admin-picked category colours (--ck-line, --ck-title, --cc) are cut to a readable lightness in light mode, same hue and chroma (relative colour, lightness capped).
+   Older browsers fall back to a mix with ink. Dark colours are left alone. */
+html[data-theme="day"] #opMag .op-cat,html[data-theme="day"] .op-cat,html[data-theme="day"] .op-mag section,html[data-theme="day"] .cs-pv,html[data-theme="day"] .tpv,html[data-theme="day"] .psec{
+  --ck-line-d:color-mix(in srgb,var(--ck-line,#16151a) 42%,#16151a);--ck-title-d:color-mix(in srgb,var(--ck-title,#16151a) 22%,#16151a);--cc-d:color-mix(in srgb,var(--cc,#8b6cf6) 55%,#16151a)}
+@supports (color:oklch(from red l c h)){
+html[data-theme="day"] #opMag .op-cat,html[data-theme="day"] .op-cat,html[data-theme="day"] .op-mag section,html[data-theme="day"] .cs-pv,html[data-theme="day"] .tpv,html[data-theme="day"] .psec{
+  --ck-line-d:oklch(from var(--ck-line,#16151a) min(l,.48) c h);--ck-title-d:oklch(from var(--ck-title,#16151a) min(l,.3) c h);--cc-d:oklch(from var(--cc,#8b6cf6) min(l,.52) c h)}}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ch{color:var(--ck-title-d)!important}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path{stroke:var(--ck-line-d)!important}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ic{color:var(--ck-line-d)!important}
+html[data-theme="day"].opium2 #opMag .op-cat .op-box{color:var(--cc-d)!important}
+html[data-theme="day"].opium2 #opMag .op-cat .pv>button{border-color:var(--cc-d)!important}
+
+/* top preview card (purple, story thread): readable purple text, dark chips. Colour comes from --pcp, so a new colour stays readable automatically. */
+html[data-theme="day"] .cs-pv.cs-card{--pcp-d:color-mix(in srgb,var(--pcp,#8b6cf6) 60%,#16151a)}
+@supports (color:oklch(from red l c h)){html[data-theme="day"] .cs-pv.cs-card{--pcp-d:oklch(from var(--pcp,#8b6cf6) min(l,.5) c h)}}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-title,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-n{color:var(--pcp-d)!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-k{background:#16151a!important;color:#eeeeec!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play svg,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play svg *{fill:#fff!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:hover,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:focus,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:active{background:var(--pcp-d)!important}
+/* small id/label chips that are light blocks at night */
+html[data-theme="day"] .cs-inv,html[data-theme="day"] .cs-badge,html[data-theme="day"].cs-box.opium2 .cs-lbc{background:#16151a!important;color:#eeeeec!important}

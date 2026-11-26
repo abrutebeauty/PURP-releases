@@ -410,6 +410,17 @@ html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:hover,html[data-theme="day
 html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag:hover,html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag:focus,html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag:active{background:none!important}
 html[data-theme="day"] .ck-ed .lk{color:#16141c}
 html[data-theme="day"] .ck-ed .lk input{accent-color:#586600}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-fr path{stroke:var(--pcp)}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-title,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-ic{color:var(--pcp)}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:hover,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:focus,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:active{background:var(--pcp)}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play svg{fill:#0e0d12}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-rows{border-bottom-color:rgba(91,63,214,0.5)}
+html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr{border-top-color:rgba(91,63,214,0.5)}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-n{color:var(--pcp)}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-nm{color:#16141c}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-sub,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-tm,html[data-theme="day"].opium2 .cs-pv.cs-card.cs-on .pc-tm{color:#16141c}
+html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr .cs-pvl{background:var(--pcp)}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-k{background:var(--pck,#ecebf0)}
 /* cs/story2.css */
 html[data-theme="day"] .cs2 button{color:inherit;background:none;border:0}
 html[data-theme="day"] .cs2 .t{color:var(--cs-dim)}
