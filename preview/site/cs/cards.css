@@ -1,9 +1,9 @@
 /* COREKULT sound cards, OPIUM 2 (Eman 26 Nov): the clean-test card on black, white lines + white text, one hand-drawn shape per category (global map in cards.js).
    Every rule is prefixed html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat so it wins over the older collage / box rules without touching them. Remove the cards.js line in top.js = old look. */
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .op-h{display:none!important}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ch{display:flex;align-items:baseline;gap:16px;margin:64px 0 34px;color:#ecebf0;text-transform:lowercase}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ch{display:flex;align-items:baseline;gap:16px;margin:64px 0 34px;color:var(--ck-title,#ecebf0);text-transform:lowercase}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat:first-of-type .ck-ch{margin-top:30px}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ch b{font:800 38px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.045em}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ch b{cursor:default;font:800 38px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:-.045em}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ch span{font:400 11px/1 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.16em;color:#8d8c95;text-transform:uppercase}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .op-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))!important;grid-auto-rows:auto!important;grid-auto-flow:row!important;gap:46px 34px!important;padding:0 10px 0 10px}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv{order:0!important;grid-area:auto!important;grid-column:auto!important;grid-row:auto!important;height:auto!important;min-height:0!important;width:auto!important;background:none!important;border:0!important;box-shadow:none!important;overflow:visible!important;display:flex!important}
@@ -14,15 +14,16 @@ html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button:hover,html.ck-c
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button::before,html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button::after,html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv::before,html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv::after{display:none!important}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button canvas.cs-bxc,html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .mt,html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm .tc,html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm .ci{display:none!important}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path{fill:none;stroke:#ecebf0;stroke-width:1.7;stroke-miterlimit:10}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path.dash{stroke-dasharray:10 7}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path{fill:none;stroke:var(--ck-line,#ecebf0);stroke-width:1.7;stroke-miterlimit:10}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-top{grid-area:top;position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-chip{font:400 10.5px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:#ecebf0;color:#0e0d12;padding:2px 9px;white-space:nowrap}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ic{width:54px;height:54px;color:#ecebf0;flex:none;display:block}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-chip{font:400 10.5px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:var(--ck-line,#ecebf0);color:#0e0d12;padding:2px 9px;white-space:nowrap}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ic{width:54px;height:54px;color:var(--ck-line,#ecebf0);flex:none;display:block}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm{grid-area:nm;position:relative;z-index:1;display:block!important;margin-top:8px;font:600 20px/1.1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:-.02em!important;text-transform:lowercase!important;color:#ecebf0!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm::before{content:attr(data-ck)}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-meta{grid-area:meta;position:relative;z-index:1;display:flex;flex-direction:column;gap:2px;margin-top:14px;font:400 10.5px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#a5a4ad}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-meta b{font-weight:400}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl{grid-area:pl;position:relative;z-index:1;align-self:end;width:44px!important;height:44px!important;margin:0!important;transform:none!important;background:#ecebf0!important;border:0!important;border-radius:0!important;display:flex!important;align-items:center;justify-content:center;flex:none}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl{grid-area:pl;position:relative;z-index:1;align-self:end;width:44px!important;height:44px!important;margin:0!important;transform:none!important;background:var(--ck-line,#ecebf0)!important;border:0!important;border-radius:0!important;display:flex!important;align-items:center;justify-content:center;flex:none}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl svg{width:14px!important;height:14px!important;fill:#0e0d12!important;stroke:none!important;display:block}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button canvas.wf{display:block!important;grid-area:wf;position:relative;z-index:1;align-self:end;width:100%!important;max-width:none!important;height:44px!important;min-height:0!important;margin:0 0 0 14px!important;flex:none;width:calc(100% - 14px)!important}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ts{position:relative;z-index:1;display:flex;flex-direction:row;gap:12px;margin:4px 0 0;font:400 8.5px/1.15 "OpSpace","Martian Mono","JetBrains Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#74737c;white-space:nowrap}
@@ -31,3 +32,20 @@ html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button.on .ck-ts{color
 @media(max-width:700px){html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .op-grid{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))!important;gap:40px 22px!important}html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button{padding:24px 22px 28px!important}}
 
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm *{font-weight:inherit!important;font-family:inherit!important;text-transform:inherit!important;letter-spacing:inherit!important;color:inherit!important}
+
+html.ck-adm .ck-ch b{cursor:pointer}
+.ck-ed{position:fixed;right:12px;top:52px;z-index:99990;width:330px;max-height:calc(100vh - 64px);overflow:auto;background:#141219;border:1px solid #9b6bff;color:#eee;padding:12px;font:12px/1.3 Inter,sans-serif}
+.ck-ed h5{margin:0 0 10px;display:flex;align-items:center;gap:8px;font:800 10.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.ck-ed h5 span{flex:1}.ck-ed .x{background:none;border:1px solid #3a3446;color:#eee;width:26px;height:26px;cursor:pointer}
+.ck-ed .lb{font:800 9.5px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#9a93a8;margin:14px 0 6px}
+.ck-ed .shg{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.ck-ed .shg button{position:relative;background:#0b0a0e;border:1px solid #2c2736;padding:4px 2px 12px;cursor:pointer;color:#cfc8dc}
+.ck-ed .shg button.on{border-color:#E4FF3A;background:#1b1a10}
+.ck-ed .shg svg{width:100%;height:46px;display:block;overflow:visible}.ck-ed .shg path{fill:none;stroke:#eee;stroke-width:1.6}.ck-ed .shg path.dash{stroke-dasharray:6 4}
+.ck-ed .shg i{position:absolute;left:0;right:0;bottom:2px;text-align:center;font:700 9px/1 Inter,sans-serif;font-style:normal;color:#9a93a8}
+.ck-ed .row{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
+.ck-ed .row button{background:#0b0a0e;border:1px solid #2c2736;color:#cfc8dc;font:800 9.5px/1 Inter,sans-serif;letter-spacing:.1em;padding:7px 8px;cursor:pointer;text-transform:uppercase}
+.ck-ed .row button.on{background:#E4FF3A;border-color:#E4FF3A;color:#0b0a0e}
+.ck-ed .cl{display:grid;grid-template-columns:1fr auto auto;gap:6px;align-items:center;margin-top:6px}
+.ck-ed .cl input{width:38px;height:24px;border:1px solid #2c2736;background:none;padding:0;cursor:pointer}
+.ck-ed .cl button{background:none;border:1px solid #2c2736;color:#9a93a8;font:800 9px/1 Inter,sans-serif;padding:6px;cursor:pointer;letter-spacing:.1em}
