@@ -7,7 +7,11 @@
   try{
     var proto=CanvasRenderingContext2D.prototype,fd=Object.getOwnPropertyDescriptor(proto,"fillStyle");
     if(fd&&fd.set&&!proto.__csRed){proto.__csRed=1;Object.defineProperty(proto,"fillStyle",{configurable:true,enumerable:fd.enumerable,get:fd.get,set:function(v){
-      if(typeof v==="string"&&v.toLowerCase()==="#e4ff3a"&&this.canvas&&this.canvas.classList&&this.canvas.classList.contains("wf")&&document.documentElement.classList.contains("opium2"))v="#fbffe6";
+      if(typeof v==="string"&&this.canvas&&this.canvas.classList&&this.canvas.classList.contains("wf")&&document.documentElement.classList.contains("opium2")){
+        var lv=v.toLowerCase(),card=this.canvas.closest&&this.canvas.closest(".op-cat");
+        if(lv==="#e4ff3a")v=card?"#ffffff":"#fbffe6";
+        else if(card&&(lv==="#8b6cf6"||lv==="#b8a4ff"))v="#bdbdc6";
+      }
       fd.set.call(this,v)}})}
   }catch(e){}
   var busy=false;
@@ -35,6 +39,15 @@
         ww.querySelectorAll(".wwb").forEach(function(b){[].slice.call(b.childNodes).forEach(function(c){if(c.nodeType===3&&/^\s*Serum 1\s*$/.test(c.textContent))c.textContent="Serum"})});
       }
     }finally{busy=false}
+    cols();
+  }
+  /* one column per category: set the count, give each category its own colour (taken from its type chip) */
+  function cols(){
+    var m=document.getElementById("opMag");if(!m)return;
+    var cs=m.querySelectorAll(":scope>.op-cat");if(!cs.length)return;
+    if(m.style.getPropertyValue("--csn")!==String(cs.length))m.style.setProperty("--csn",cs.length);
+    cs.forEach(function(c){var t=c.querySelector(".tc[style]"),v=t&&/--cc:\s*(#[0-9a-f]{3,8})/i.exec(t.getAttribute("style"));
+      if(v&&c.style.getPropertyValue("--cc")!==v[1])c.style.setProperty("--cc",v[1])});
   }
   function start(){
     var pk=document.getElementById("pk");if(!pk)return;

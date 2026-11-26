@@ -31,21 +31,27 @@ html.opium2 .pv button.on{background:#0c0b0b!important}
 /* section heading: the red claw doodle is replaced by a small purple equalizer icon (Eman 26 Nov) */
 html.opium2 .op-h .op-gl{display:none!important}
 html.opium2 .op-h::before{content:"";flex:none;width:22px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%238B6CF6' d='M1 6h2v4H1zM5 3h2v10H5zM9 5h2v6H9zM13 7h2v2h-2z'/%3E%3C/svg%3E") center/contain no-repeat}
-/* sound previews: half the size, two categories side by side, 3 previews each = 6 across (Eman 26 Nov) */
-html.opium2 #opMag{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px;align-items:start}
-html.opium2 #opMag>.op-magh,html.opium2 #opMag>.op-stk,html.opium2 #opMag>:not(.op-cat){grid-column:1/-1}
-html.opium2 #opMag .op-cat{min-width:0}
-html.opium2 #opMag .op-cat .op-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}
-html.opium2 #opMag .op-cat .op-h{margin:0 0 10px;gap:10px}
-@media (max-width:900px){html.opium2 #opMag{grid-template-columns:minmax(0,1fr)}}
-html.opium2 #opMag .op-cat .op-grid{grid-auto-rows:1fr}
-html.opium2 #opMag .op-cat .op-grid>*,html.opium2 #opMag .op-cat .op-grid .pv,html.opium2 #opMag .op-cat .op-grid .pv>button{height:100%!important;min-height:0}
-@media (max-width:900px){html.opium2 #opMag .op-cat .op-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
-@media (max-width:620px){html.opium2 #opMag .op-cat .op-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-/* sound card background: the same dark on hover, selected and playing (Eman 26 Nov) */
-html.opium2 .pv button,html.opium2 .pv button:hover,html.opium2 .pv button:focus,html.opium2 .pv button.on,html.opium2 .pv button.on:hover{background:#0c0b0b!important}
 /* MORE PACKS sidebar: same text style as the shop cards, price on the right of the title (Eman 26 Nov) */
 html.opium2 .rkt{display:grid!important;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:3px;align-items:baseline;text-decoration:none}
 html.opium2 .rkt b{grid-column:1;grid-row:1;font:500 16px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;text-transform:lowercase!important;color:#ece8dc!important}
 html.opium2 .rkt small{grid-column:1;grid-row:2;font:400 13px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;text-transform:lowercase!important;color:#8d8995!important}
 html.opium2 .rkt em{grid-column:2;grid-row:1;justify-self:end;font:500 17px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;font-style:normal!important;letter-spacing:0!important;color:#ece8dc!important}
+/* no stack sections further down the page; the PREVIEW stack at the top is the only one (Eman 26 Nov) */
+html.opium2 .op-stk{display:none!important}
+
+/* sound previews: one vertical column per category, all categories side by side (Eman 26 Nov) */
+html.opium2 #opMag{display:grid!important;grid-template-columns:repeat(var(--csn,8),minmax(0,1fr));gap:0 8px;align-items:start}
+html.opium2 #opMag>.op-magh,html.opium2 #opMag>:not(.op-cat){grid-column:1/-1}
+html.opium2 #opMag .op-cat{min-width:0;--cc:#8b6cf6}
+html.opium2 #opMag .op-cat .op-h{display:block;margin:0 0 10px}
+html.opium2 #opMag .op-cat .op-h::before,html.opium2 #opMag .op-cat .op-h .op-gl,html.opium2 #opMag .op-cat .op-h .op-ln{display:none!important}
+html.opium2 #opMag .op-cat .op-box{display:block;background:none!important;border:0!important;padding:0!important;box-shadow:none!important;color:var(--cc)!important;font:700 11px/1.2 "OpSpace","JetBrains Mono",monospace!important;letter-spacing:.12em!important;text-transform:uppercase;white-space:normal;text-align:left}
+html.opium2 #opMag .op-cat .op-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:5px!important}
+html.opium2 #opMag .op-cat .pv,html.opium2 #opMag .op-cat .pv>button{height:76px!important;min-height:0}
+html.opium2 #opMag .op-cat .pv>button{border:1px solid var(--cc)!important;padding:6px 6px 4px!important;background:#0c0b0b!important}
+html.opium2 #opMag .op-cat .pv>button .tc,html.opium2 #opMag .op-cat .pv>button .mt{display:none!important}
+html.opium2 #opMag .op-cat .pv>button .nm{font:400 8px/1.15 "Inter","Helvetica Neue",Arial,sans-serif!important;color:#c7c7cf!important;text-transform:lowercase!important;letter-spacing:.01em!important}
+html.opium2 #opMag .op-cat .pv>button .pl{transform:scale(.7);transform-origin:0 0}
+html.opium2 #opMag .op-cat .pv>button canvas.wf{height:34px!important}
+@media (max-width:900px){html.opium2 #opMag{display:grid!important;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:96px;overflow-x:auto;padding-bottom:10px}html.opium2 #opMag>.op-magh,html.opium2 #opMag>:not(.op-cat){grid-column:auto}}
+html.opium2 #opMag .op-cat{margin-top:26px}
