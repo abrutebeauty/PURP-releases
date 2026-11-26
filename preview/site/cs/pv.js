@@ -98,6 +98,11 @@
     else if(state.playing){state.solo=i;gains();paint()}
     else start(i);
   }
+  /* hand-drawn white arrows, one per sample (top: down-right to the wave start, middle: left to the wave end, bottom: up-left to the wave) */
+  var AR='<svg class="cs-pva" viewBox="0 0 72 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">';
+  var ARROW=[AR+'<path d="M6 5 C 22 3, 46 12, 62 38 M62 38 L48 35 M62 38 L60 24"/></g></svg>',
+             AR+'<path d="M66 26 C 46 12, 26 12, 6 22 M6 22 L19 13 M6 22 L20 29"/></g></svg>',
+             AR+'<path d="M64 42 C 40 44, 22 30, 8 8 M8 8 L7 22 M8 8 L20 15"/></g></svg>'];
   function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
   function mount(){
     if(document.getElementById("csPv")){return}
@@ -106,7 +111,7 @@
     sec=document.createElement("section");sec.className="pks cs-pv";sec.id="csPv";
     var kinds=tracks.map(function(t){return t.kind}).join(" + ");
     sec.innerHTML='<div class="cs-pvh"><span class="cs-pvs">'+esc(kinds)+' · played together</span><button class="cs-pvb" type="button">▶ Preview</button></div>'+
-      tracks.map(function(t,i){return '<div class="cs-pvr" data-i="'+i+'"><div class="cs-pvw" role="button" aria-label="Play all three together"><canvas></canvas><i class="cs-pvl"></i></div><button class="cs-pvtag" type="button" aria-label="Play only '+esc(t.name)+'"><span class="cs-pvk">'+esc(t.kind)+'</span><span class="cs-pvn">'+esc(t.name)+'</span></button></div>'}).join("");
+      '<div class="cs-pvstack">'+tracks.map(function(t,i){return '<div class="cs-pvr cs-p'+i+'" data-i="'+i+'"><div class="cs-pvw" role="button" aria-label="Play all three together"><canvas></canvas><i class="cs-pvl"></i></div><button class="cs-pvtag" type="button" aria-label="Play only '+esc(t.name)+'"><span class="cs-pvk">'+esc(t.kind)+'</span> <span class="cs-pvn">'+esc(t.name)+'</span>'+ARROW[i]+'</button></div>'}).join("")+'</div>';
     top.after(sec);
     btnEl=sec.querySelector(".cs-pvb");btnEl.addEventListener("click",panelClick);
     sec.querySelectorAll(".cs-pvr").forEach(function(r,i){

@@ -4,22 +4,32 @@ html.opium2 .cs-pvh{display:flex;align-items:center;gap:18px;margin:0 0 18px;fle
 html.opium2 .cs-pvt{border:2px solid #E4FF3A;color:#E4FF3A;padding:13px 24px;font:700 17px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.34em;text-transform:uppercase}
 html.opium2 .cs-pvs{font:700 12px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.3em;color:#8c8a96;text-transform:uppercase}
 html.opium2 .cs-pvb{margin-left:auto;height:46px;padding:0 28px;border:0;background:#E4FF3A;color:#0b0a0e;font:700 14px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
-html.opium2 .cs-pvr{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,24%);gap:26px;align-items:center;margin:0 0 14px}
-html.opium2 .cs-pvw{position:relative;height:96px;background:transparent;cursor:pointer;box-sizing:border-box;border:2px solid transparent;transition:opacity .25s ease}
+html.opium2 .cs-pvstack{position:relative;padding:62px 0 76px}
+html.opium2 .cs-pvr{position:relative;height:84px;margin:0 0 8px}
+html.opium2 .cs-pvw{position:absolute;left:11%;width:68%;top:0;height:100%;background:transparent;cursor:pointer;box-sizing:border-box;border:2px solid transparent;transition:opacity .25s ease}
 html.opium2 .cs-pvw canvas{display:block;width:100%;height:100%}
 html.opium2 .cs-pvl{position:absolute;left:0;top:8px;bottom:8px;width:2px;background:#fff;opacity:0;pointer-events:none;will-change:transform}
 html.opium2 .cs-pvr.cs-solo .cs-pvw{border-color:#E4FF3A}
 html.opium2 .cs-pvr.cs-dim .cs-pvw{opacity:.4}
-html.opium2 .cs-pvtag{position:relative;display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;height:56px;padding:0 14px;background:transparent;border:2px solid #E4FF3A;color:#E4FF3A;font:700 15px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;text-align:left;cursor:pointer}
-html.opium2 .cs-pvtag::before{content:"";position:absolute;left:-26px;top:50%;width:22px;height:2px;margin-top:-1px;background:#E4FF3A}
-html.opium2 .cs-pvk{flex:0 0 auto;background:#000;color:#E4FF3A;box-shadow:inset 0 0 0 1px rgba(228,255,58,.3);padding:7px 9px;font-size:11px;letter-spacing:.14em}
-html.opium2 .cs-pvn{font:500 17px/1 "Inter","Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;text-transform:lowercase;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-html.opium2 .cs-pvr.cs-solo .cs-pvtag{background:#E4FF3A;color:#0b0a0e}
-html.opium2 .cs-pvr.cs-dim .cs-pvtag{opacity:.55}
+/* hand-written names with a drawn arrow (Eman 26 Nov) */
+html.opium2 .cs-pvtag{position:absolute;z-index:2;background:none;border:0;padding:0;margin:0;color:#fff;font:400 26px/1.05 "OpMarker","Inter",cursive;text-align:left;cursor:pointer;width:max-content;max-width:300px;text-shadow:0 0 10px rgba(255,255,255,.2)}
+html.opium2 .cs-pvk,html.opium2 .cs-pvn{font:inherit;text-transform:uppercase;letter-spacing:.02em}
+html.opium2 .cs-pva{position:absolute;width:64px;height:43px;color:inherit;pointer-events:none;overflow:visible;filter:drop-shadow(0 0 6px rgba(255,255,255,.25))}
+html.opium2 .cs-p0 .cs-pvtag{left:0;top:-58px;transform:rotate(-2deg)}
+html.opium2 .cs-p0 .cs-pva{left:44px;top:calc(100% + 2px)}
+html.opium2 .cs-p1 .cs-pvtag{left:83%;top:50%;transform:translateY(-50%) rotate(2deg);max-width:17%;width:17%;font-size:21px;overflow-wrap:anywhere}
+html.opium2 .cs-p1 .cs-pva{left:-50px;top:50%;margin-top:-22px;width:46px;height:31px}
+html.opium2 .cs-p2 .cs-pvtag{left:50%;top:calc(100% + 22px);transform:rotate(-2.5deg)}
+html.opium2 .cs-p2 .cs-pva{left:-62px;top:-40px;width:56px;height:38px}
+html.opium2 .cs-pvr.cs-solo .cs-pvtag{color:#E4FF3A}
+html.opium2 .cs-pvr.cs-dim .cs-pvtag{opacity:.5}
 @media (max-width:760px){
-  html.opium2 .cs-pvr{grid-template-columns:1fr;gap:8px;margin:0 0 18px}
-  html.opium2 .cs-pvtag::before{display:none}
-  html.opium2 .cs-pvw{height:80px}
+  html.opium2 .cs-pvstack{padding:0}
+  html.opium2 .cs-pvr{height:auto;margin:0 0 14px}
+  html.opium2 .cs-pvw{position:relative;left:auto;width:100%;height:76px}
+  html.opium2 .cs-pvtag,html.opium2 .cs-p0 .cs-pvtag,html.opium2 .cs-p1 .cs-pvtag,html.opium2 .cs-p2 .cs-pvtag{position:static;display:block;transform:none;max-width:none;font-size:22px;margin:0 0 4px}
+  html.opium2 .cs-pva{display:none}
+  html.opium2 .cs-pvr{display:flex;flex-direction:column-reverse}
   html.opium2 .cs-pvb{margin-left:0}
   html.opium2 .cs-pvs{letter-spacing:.2em}
 }

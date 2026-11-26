@@ -42,3 +42,10 @@ html.opium2 #opMag .op-cat .op-grid{grid-auto-rows:1fr}
 html.opium2 #opMag .op-cat .op-grid>*,html.opium2 #opMag .op-cat .op-grid .pv,html.opium2 #opMag .op-cat .op-grid .pv>button{height:100%!important;min-height:0}
 @media (max-width:900px){html.opium2 #opMag .op-cat .op-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 @media (max-width:620px){html.opium2 #opMag .op-cat .op-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* sound card background: the same dark on hover, selected and playing (Eman 26 Nov) */
+html.opium2 .pv button,html.opium2 .pv button:hover,html.opium2 .pv button:focus,html.opium2 .pv button.on,html.opium2 .pv button.on:hover{background:#0c0b0b!important}
+/* MORE PACKS sidebar: same text style as the shop cards, price on the right of the title (Eman 26 Nov) */
+html.opium2 .rkt{display:grid!important;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:3px;align-items:baseline;text-decoration:none}
+html.opium2 .rkt b{grid-column:1;grid-row:1;font:500 16px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;text-transform:lowercase!important;color:#ece8dc!important}
+html.opium2 .rkt small{grid-column:1;grid-row:2;font:400 13px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:0!important;text-transform:lowercase!important;color:#8d8995!important}
+html.opium2 .rkt em{grid-column:2;grid-row:1;justify-self:end;font:500 17px/1.2 "Inter","Helvetica Neue",Arial,sans-serif!important;font-style:normal!important;letter-spacing:0!important;color:#ece8dc!important}
