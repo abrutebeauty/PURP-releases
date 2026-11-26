@@ -82,3 +82,7 @@ html.cs-collage.opium2 #opMag .op-cat .pv.cs-zb>button .nm,html.cs-collage.opium
 html.cs-collage.opium2 #opMag .op-cat .pv>button .pl{transform:scale(.8);transform-origin:0 0}
 @media (max-width:900px){html.cs-collage.opium2 #opMag{grid-template-columns:repeat(auto-fill,minmax(112px,1fr));grid-auto-flow:row dense;grid-auto-columns:auto;overflow:visible;padding-bottom:0}html.cs-collage.opium2 #opMag>.op-magh{grid-column:1/-1}}
 html.cs-collage.opium2 #opMag .op-all{display:none!important}
+
+/* per-type colour: outline + label box take the type colour (--tc set by top.js) */
+html.cs-collage.opium2 #opMag .op-cat .pv>button{border-color:var(--tc,#8a4dff)!important}
+html.cs-collage.opium2 #opMag .op-cat .pv>button .nm .tc{background:var(--tc,#8a4dff)!important}
