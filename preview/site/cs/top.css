@@ -21,7 +21,7 @@ html.opium2 .pv button .nm .tc,html.opium2 .pv button .nm .ci{font-family:"OpSpa
 html.opium2 .op-t3 .op-s.in{border:2px solid #8B6CF6!important;box-shadow:none}
 html.opium2 .op-t3 .op-s.in::before{content:"";position:absolute;right:-2px;bottom:-2px;width:26px;height:26px;background:#8B6CF6 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.4l3 3 6-6.4' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E") center/16px no-repeat;z-index:3;pointer-events:none}
 /* button colours (Eman 26 Nov): GET THE PACK red, PICK 3 FOR 2 acid yellow */
-html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid,html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid:hover{background:#d42a24!important;color:#fff!important;border-color:#d42a24!important}
+html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid,html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid:hover{background:transparent!important;color:#d42a24!important;border:2px solid #d42a24!important;box-sizing:border-box!important}
 html.opium2 .cs-pick,html.opium2 .cs-pick:hover{background:#E4FF3A;color:#0b0a0e}
 html.opium2 .cs-pick b{color:#0b0a0e}
 html.opium2 .cs-pick s{color:rgba(11,10,14,.55)}
