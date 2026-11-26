@@ -129,14 +129,15 @@ var CK_SHAPE={
 var CK_EXTRA=[(w,h)=>SHAPES[2].bass(0,0,w,h),(w,h)=>SHAPES[3].bass(0,0,w,h),(w,h)=>SHAPES[1].keys(0,0,w,h),(w,h)=>SHAPES[3].synth(0,0,w,h)];
 function ckGroup(k){k=String(k||"").toUpperCase().trim();return CK_GROUP[k]||CK_GROUP[k.replace(/S$/,"")]||null}
 function ckLookObj(){try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
-function ckGKey(k){return ckGroup(k)||String(k||"").toUpperCase()}
+function ckGKey(k){return String(k||"").toUpperCase().trim().replace(/([^S])S$/,"$1")}
 function ckCfg(k){var L=ckLookObj();return (L.ck&&L.ck[ckGKey(k)])||{}}
 var CK_DEFIDX={bass:4,synth:3,pad:0,keys:2,vox:1,fx:5},CK_ORDER=["bass","synth","pad","keys","vox","fx"];
 /* ONLY Eman's shapes: the 6 marked "selected" (01-06) + every number he marked green in the clean-test picker (localStorage ck-shape-marks, copied to the server by the admin) */
 function ckMarks(){var a=[];try{a=JSON.parse(localStorage.getItem("ck-shape-marks")||"[]")}catch(e){}var s=(ckLookObj().ckShapes)||[];return a.concat(s).filter(function(n,i,x){return n>=1&&n<=SHP.length&&x.indexOf(n)===i}).sort(function(p,q){return p-q})}
 function ckPicks(){var m=ckMarks(),o=m.slice();[1,2,3,4,5,6].forEach(function(n){if(o.indexOf(n)<0)o.push(n)});return {marks:m,list:o.map(function(n){return n-1})}}
-function ckDefIdx(g){var p=ckPicks();if(!p.marks.length)return CK_DEFIDX[g];var i=CK_ORDER.indexOf(g);return i<0?null:p.list[i%p.list.length]}
-function ckShapeFor(k){var c=ckCfg(k),pk=ckPicks().list;if(c.shape!=null&&SHP[c.shape]&&pk.indexOf(c.shape)>=0)return SHP[c.shape].f;var g=ckGroup(k),di=g?ckDefIdx(g):null;if(di!=null&&SHP[di])return SHP[di].f;if(g)return CK_SHAPE[g];var h=0,s=String(k||"").toUpperCase();for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return CK_EXTRA[h%CK_EXTRA.length]}
+var CK_CATORDER=["LEAD","BASS","CHIP","PLUCK","PAD","KEY","ARP","STAB","VOX","TEXTURE","FX","808","BELL","SYNTH","CHORD","CHOIR","SAW","FLUTE","HOOVER","DRONE","SONG","KICK","SNARE","CLAP","HAT","OPEN","PERC","LOOP","RIM","CRASH","SHAKER","CYMBAL","FOLEY","CHIME","ROLL","TOM","RIDE","FILL","DRUM","GUITAR","BRASS","ORGAN","PIANO","STRINGS"];
+function ckDefIdx(k){var p=ckPicks().list,g=ckGKey(k),i=CK_CATORDER.indexOf(g);if(i<0){i=0;for(var q=0;q<g.length;i=(i*31+g.charCodeAt(q++))>>>0);i=CK_CATORDER.length+i}return p[i%p.length]}
+function ckShapeFor(k){var c=ckCfg(k),pk=ckPicks().list;if(c.shape!=null&&SHP[c.shape]&&pk.indexOf(c.shape)>=0)return SHP[c.shape].f;var di=ckDefIdx(k);if(di!=null&&SHP[di])return SHP[di].f;var g=ckGroup(k);if(g)return CK_SHAPE[g];var h=0,s=String(k||"").toUpperCase();for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return CK_EXTRA[h%CK_EXTRA.length]}
 window.CK_SHP=SHP;window.CK_CATSHAPE={group:CK_GROUP,shapes:CK_SHAPE,extra:CK_EXTRA,shapeFor:ckShapeFor};
 
 /* ---- audio: remember the page's player so the cards can show time + status ---- */
@@ -151,7 +152,7 @@ var CK_N=0;
 function ckPrefix(){var m=location.pathname.match(/^\/pack\/([^/?#]+)/),s=m?decodeURIComponent(m[1]):(window.CS_PACK||new URLSearchParams(location.search).get("id")||"pack");
   var w=String(s).split("-").filter(function(x){return x&&!/^(i{1,3}|iv|v|vi{0,3}|\d+)$/.test(x)});return "CK-"+(w.map(function(x){return x[0]}).join("").toUpperCase().slice(0,3)||"PK")}
 function ckFrame(btn){var f=btn.querySelector(".ck-fr");if(!f)return;var w=btn.clientWidth,h=btn.clientHeight;if(!w||!h)return;
-  fs=7+(+btn.dataset.ck||0)*13;var c=ckCfg(btn.dataset.ckcat),fn=ckShapeFor(btn.dataset.ckcat),dash=false;try{var pk2=ckPicks().list,ix=(c.shape!=null&&pk2.indexOf(c.shape)>=0)?c.shape:ckDefIdx(ckGroup(btn.dataset.ckcat));dash=ix!=null&&SHP[ix]&&SHP[ix].dash}catch(e){}f.innerHTML='<path'+(dash?' class="dash"':"")+' d="'+fn(w,h)+'"/>'}
+  fs=7+(+btn.dataset.ck||0)*13;var c=ckCfg(btn.dataset.ckcat),fn=ckShapeFor(btn.dataset.ckcat),dash=false;try{var pk2=ckPicks().list,ix=(c.shape!=null&&pk2.indexOf(c.shape)>=0)?c.shape:ckDefIdx(btn.dataset.ckcat);dash=ix!=null&&SHP[ix]&&SHP[ix].dash}catch(e){}f.innerHTML='<path'+(dash?' class="dash"':"")+' d="'+fn(w,h)+'"/>'}
 var ckRO=window.ResizeObserver?new ResizeObserver(function(es){es.forEach(function(e){ckFrame(e.target)})}):null;
 function ckCard(btn,key,typeTxt){
   if(btn.dataset.ckdone)return;btn.dataset.ckdone=1;var i=CK_N++;btn.dataset.ck=i;btn.dataset.ckcat=key;
@@ -208,11 +209,11 @@ function ckSave(){clearTimeout(ckSaveT);ckSaveT=setTimeout(function(){fetch("/ap
 function ckSet(k,key,val){var L=window.ADM.look=window.ADM.look||{};L.ck=L.ck||{};var g=ckGKey(k);L.ck[g]=L.ck[g]||{};if(val==null||val==="")delete L.ck[g][key];else L.ck[g][key]=val;if(!Object.keys(L.ck[g]).length)delete L.ck[g];ckSig=ckSigNow();ckRefresh();ckSave()}
 function ckEditor(sec){
   var k=sec.getAttribute("data-k")||"",nm=((sec.querySelector(".ck-ch b")||{}).textContent||k),g=ckGKey(k),old=document.querySelector(".ck-ed");if(old)old.remove();
-  var pkl=ckPicks().list,c=ckCfg(k),defIdx=ckDefIdx(ckGroup(k)),cur=(c.shape!=null&&pkl.indexOf(c.shape)>=0)?c.shape:(defIdx!=null?defIdx:-1);
+  var pkl=ckPicks().list,c=ckCfg(k),defIdx=ckDefIdx(k),cur=(c.shape!=null&&pkl.indexOf(c.shape)>=0)?c.shape:(defIdx!=null?defIdx:-1);
   var el=document.createElement("div");el.className="ck-ed";
   var thumbs=pkl.map(function(i){var sh=SHP[i];fs=99;var d=sh.f(52,34);return '<button data-sh="'+i+'" class="'+(i===cur?"on":"")+'" title="'+(i+1)+" "+sh.n+'"><svg viewBox="-12 -12 76 58"><path'+(sh.dash?' class="dash"':"")+' d="'+d+'"/></svg><i>'+String(i+1).padStart(2,"0")+'</i></button>'}).join("");
   el.innerHTML='<h5><span>'+nm.toUpperCase()+' · whole site</span><button class="x" data-x>×</button></h5>'+
-   '<div class="lb">Shape (all '+(ckGroup(k)||nm.toLowerCase())+' sections, every pack)</div><div class="shg">'+thumbs+'</div><div class="row"><button data-sh="-1">Default shape</button></div>'+
+   '<div class="lb">Shape (only '+nm.toLowerCase()+', every pack)</div><div class="shg">'+thumbs+'</div><div class="row"><button data-sh="-1">Default shape</button></div>'+
    '<div class="lb">Colours</div><div class="cl"><span>Cards + preview</span><input type="color" data-c="col" value="'+(c.col||"#ecebf0")+'"><button data-r="col">Reset</button></div>'+
    '<div class="cl"><span>Category title</span><input type="color" data-c="tcol" value="'+(c.tcol||"#ecebf0")+'"><button data-r="tcol">Reset</button></div>'+
    '<div class="lb">Waveform</div><div class="row">'+CK_WNAMES.map(function(n,i){return '<button data-w="'+i+'" class="'+((+c.wave||0)===i?"on":"")+'">'+n+'</button>'}).join("")+'</div>';
