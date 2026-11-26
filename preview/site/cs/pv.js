@@ -38,6 +38,7 @@
     return t.p;
   }
   function draw(i,pos){
+    if(window.CS_BOX&&window.csBox)return;
     var t=tracks[i],cv=t.cv,w=cv.clientWidth,h=cv.clientHeight;if(!w||!h||!t.pk)return;
     var dpr=window.devicePixelRatio||1;if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
     var g=cv.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,w,h);
@@ -68,7 +69,7 @@
       stopSrc();var c=ac();if(c.resume)c.resume();state.t0=c.currentTime+.05;
       tracks.forEach(function(t,i){
         var s=c.createBufferSource();s.buffer=t.buf;s.loop=true;t.gain=c.createGain();t.gain.gain.value=state.solo<0||state.solo===i?1:0;
-        s.connect(t.gain);t.gain.connect(c.destination);s.start(state.t0);srcs.push(s);
+        s.connect(t.gain);t.gain.connect(c.destination);if(window.CS_BOX&&window.csBox){t.an=t.an||c.createAnalyser();t.an.fftSize=1024;t.an.smoothingTimeConstant=.6;t.gain.connect(t.an);t.rd=t.rd||window.csBox.reader(t.an)}s.start(state.t0);srcs.push(s);
       });
       state.playing=true;paint();cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);
     }).catch(function(){state.playing=false;paint()});
@@ -167,6 +168,11 @@ function drawText(str,cap,o){
       draw(i,0);
     });
     new ResizeObserver(function(){tracks.forEach(function(t,i){draw(i,0)})}).observe(sec);
+    if(window.CS_BOX&&window.csBox&&!window.__csPvLoop){window.__csPvLoop=1;
+      (function lp(ms){requestAnimationFrame(lp);var t=ms/1000,id=csBox.idle(t);
+        tracks.forEach(function(tr){if(!tr.cv||tr.vis===false)return;var w=Math.round(tr.cv.clientWidth/2),h=Math.round(tr.cv.clientHeight/2);if(!w||!h)return;
+          if(tr.cv.width!==w||tr.cv.height!==h){tr.cv.width=w;tr.cv.height=h}
+          var a=state.playing&&tr.rd?tr.rd():id;csBox.draw(tr.cv,tr.bs||(tr.bs=csBox.pick(tr.kind,tr.name)),t,a)})})(0)}
     if("IntersectionObserver" in window){
       new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)tracks.forEach(function(t,i){load(i).catch(function(){})});tracks.forEach(function(t){t.vis=e.isIntersecting})})},{rootMargin:"500px"}).observe(sec);
     }
