@@ -22,6 +22,7 @@
     var mn = Math.min(r, g, b), mxx = Math.max(r, g, b);
     if (mn > 200 && mxx - mn < 40) return "rgba(22,21,26," + Math.min(1, a * 1.15) + ")";      // white bars -> ink
     if (mn > 110 && mxx - mn < 40) return "rgba(22,21,26," + Math.min(1, a * 0.7 + 0.12) + ")";      // light greys -> dark greys
+    if (mxx - mn >= 40 && mxx >= 24) return "rgba(22,21,26," + Math.min(1, a * 1.1) + ")";      // any coloured bar (category colour, purple, acid) -> pure black
     if (mxx < 24) return a >= 0.99 ? "#e9e9e6" : "rgba(233,233,230," + a + ")";                    // near-black plate -> light plate
     return v;
   };

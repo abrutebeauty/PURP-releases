@@ -9,7 +9,7 @@ html .bnb:hover img,html .bf-pile .bf-pl:hover .bf-pi img,html .bf-pile .bf-pl:f
 
 /* ---- light surface: solid light grey, almost white. No film, no grain. ---- */
 html[data-theme="day"].opium2{--bg:#eeeeec;--panel:#eeeeec;--tile:#e5e5e2;--tile2:#dbdbd7;--ink:#16151a;--ink2:rgba(22,21,26,.62);--line:rgba(22,21,26,.16);
-  --opc:#16151a;--opg:#5f5e66;--opbg:#eeeeec;--op:#c4201b;--opp:#6a49e0;--opy:#586600;--purple:#8b6cf6;--purple-ink:#5b3fd6;--acid-ink:#586600;color-scheme:light}
+  --opc:#16151a;--opg:#5f5e66;--opbg:#eeeeec;--op:#f01c1c;--opp:#e4141c;--opy:#e4141c;--purple:#8b6cf6;--purple-ink:#e4141c;--acid-ink:#e4141c;color-scheme:light}
 html[data-theme="day"].opium2 body,html[data-theme="day"].opium2{background:#eeeeec!important;background-image:none!important;color:#16151a}
 html[data-theme="day"].opium2 body::before,html[data-theme="day"].opium2 body::after,html[data-theme="day"].opium2 .op-film,html[data-theme="day"].opium2 .op-grain{display:none!important;background-image:none!important}
 html[data-theme="day"].opium2 meta{color:inherit}
@@ -21,7 +21,7 @@ html[data-theme="day"].opium2 .pq,html[data-theme="day"].opium2 .pkc,html[data-t
 html[data-theme="day"] img[src*="logo-white-s.webp"]{content:url(/img/logo-black-s.webp?v=1)}
 html[data-theme="day"] img[src*="logo-white.webp"]{content:url(/img/logo-black.webp?v=1)}
 /* hand-drawn "pick your free pack": acid yellow would vanish on light, so deep olive */
-html[data-theme="day"].opium2 .op-pick svg>g{stroke:#586600}
+html[data-theme="day"].opium2 .op-pick svg>g{stroke:#e4141c}
 html[data-theme="day"].opium2 .op-pick svg{filter:none}
 /* sound cards: the light play square and the id chip flip to dark blocks (light blocks with dark text at night = dark blocks with light text by day) */
 html[data-theme="day"]{--ck-line:#16151a;--ck-title:#16151a}
@@ -40,3 +40,64 @@ html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-ch
 html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(3){color:#0d7a3c!important}
 html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(4){color:#0a7d71!important}
 html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwb *{color:inherit!important}
+
+/* ---- ALL PRESET SHAPES, ICONS, TITLES AND WAVES ARE PURE BLACK BY DAY, no category colours (Eman 26 Nov). Night keeps the colours. ---- */
+html[data-theme="day"] #opMag .op-cat,html[data-theme="day"] .op-cat,html[data-theme="day"] .op-mag section,html[data-theme="day"] .cs-pv,html[data-theme="day"] .tpv,html[data-theme="day"] .psec{--ck-line-d:#16151a;--ck-title-d:#16151a;--cc-d:#16151a}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ch{color:var(--ck-title-d)!important}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path{stroke:var(--ck-line-d)!important}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ic{color:var(--ck-line-d)!important}
+html[data-theme="day"].opium2 #opMag .op-cat .op-box{color:var(--cc-d)!important}
+html[data-theme="day"].opium2 #opMag .op-cat .pv>button{border-color:var(--cc-d)!important}
+
+/* top preview card (purple, story thread): readable purple text, dark chips. Colour comes from --pcp, so a new colour stays readable automatically. */
+html[data-theme="day"] .cs-pv.cs-card{--pcp-d:color-mix(in srgb,var(--pcp,#8b6cf6) 60%,#16151a)}
+@supports (color:oklch(from red l c h)){html[data-theme="day"] .cs-pv.cs-card{--pcp-d:oklch(from var(--pcp,#8b6cf6) min(l,.5) c h)}}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-title,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-n{color:var(--pcp-d)!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-k{background:#16151a!important;color:#eeeeec!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play svg,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play svg *{fill:#fff!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:hover,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:focus,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-play:active{background:var(--pcp-d)!important}
+/* small id/label chips that are light blocks at night */
+html[data-theme="day"] .cs-inv,html[data-theme="day"] .cs-badge,html[data-theme="day"].cs-box.opium2 .cs-lbc{background:#16151a!important;color:#eeeeec!important}
+
+/* ================= DESIGN PASS (Eman 26 Nov): a white page, not an inverted night page ================= */
+html[data-theme="day"]{--acid-ink:#e4141c;--purple-ink:#e4141c;--op:#f01c1c;--opp:#e4141c}
+/* hero: no purple wash behind the stack, no glow, soft grey shadows at half strength */
+html[data-theme="day"] header.hero::before,html[data-theme="day"] .hero::before{background:none!important}
+html[data-theme="day"] .bf-st::after{background:none!important;display:none!important}
+html[data-theme="day"] .bcg,html[data-theme="day"].opium2 .bcg{box-shadow:0 30px 60px rgba(22,21,26,.1)!important}
+html[data-theme="day"] .bf-pile .bf-pi img,html[data-theme="day"] header.hero .bf-st img,html[data-theme="day"] .bf-pile .bf-pl:hover .bf-pi img{filter:drop-shadow(0 18px 24px rgba(0,0,0,.2))!important}
+/* CDs and trading cards everywhere: shadow at half the old strength, no colour */
+html[data-theme="day"] .card .pq,html[data-theme="day"] #worlds .card .pq,html[data-theme="day"] .pkc .pq,html[data-theme="day"] .lnd .pkc .pq{filter:drop-shadow(0 26px 30px rgba(0,0,0,.14))!important}
+html[data-theme="day"].opium2 .card .cv:hover .pq,html[data-theme="day"].opium2 .cdf .card:hover .pq,html[data-theme="day"] body.home .card .cv:hover .pq{filter:drop-shadow(0 18px 14px rgba(22,21,26,.13))!important}
+/* red claws: brighter and more saturated than night, recoloured through the claw outline as a mask (art stays art) */
+html[data-theme="day"].opium2 .op-gw .op-gv.red{background:#ff1a1a!important;-webkit-mask:var(--go) center/contain no-repeat!important;mask:var(--go) center/contain no-repeat!important}
+html[data-theme="day"].opium2 .op-gv.red{background:#ff1a1a}
+/* secondary text stays grey (serum preset pack, trading card, per-sound price) */
+html[data-theme="day"].opium2 #worlds .card .pf,html[data-theme="day"].opium2 .card .pf,html[data-theme="day"].opium2 .card .ps,html[data-theme="day"].opium2 .card .pi{color:#7a7980!important}
+/* add to cart = red text (not olive) */
+html[data-theme="day"].opium2 #worlds .card .buy .btn.acid,html[data-theme="day"].opium2 #worlds .card .buy .btn[data-add],html[data-theme="day"].opium2 .card .btn.acid{color:#e4141c!important}
+/* hero and section strips: tick bars, asterisks, labels are red */
+html[data-theme="day"].opium2 .op-hud,html[data-theme="day"].opium2 .op-magh,html[data-theme="day"].opium2 .op-hud *,html[data-theme="day"].opium2 .op-magh *{color:#e4141c}
+html[data-theme="day"].opium2 .op-bars{background:repeating-linear-gradient(90deg,#e4141c 0 3px,transparent 3px 6px)!important}
+html[data-theme="day"].opium2 .stats div,html[data-theme="day"].opium2 .stats div *:not(b){color:#e4141c}
+/* product page: free slot, handwriting, arrow, caption and GET THE PACK are red */
+html[data-theme="day"].opium2 .op-pick svg>g{stroke:#e4141c!important}
+html[data-theme="day"].opium2 .op-s.fr,html[data-theme="day"].opium2 .op-t3 .op-s.fr{border-color:#e4141c!important}
+html[data-theme="day"].opium2 .op-s.fr::after{color:#e4141c!important}
+html[data-theme="day"].opium2 #pkTop .btn:not(.purple),html[data-theme="day"].opium2 #pkTop .btn.acid{color:#e4141c!important;border-color:#e4141c!important}
+/* clean black / grey instead of purple details on the product page */
+html[data-theme="day"].opium2 .op-s.in{border-color:#16151a!important}
+html[data-theme="day"].opium2 .op-s.in .ck,html[data-theme="day"].opium2 .op-s.in i,html[data-theme="day"].opium2 .op-s.in svg{background:#16151a!important}
+html[data-theme="day"].opium2 #pkTop .btn.purple,html[data-theme="day"].opium2 #pkTop .btn.p3{background:#16151a!important;color:#fff!important;border-color:#16151a!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card{--pcp:#16151a}
+html[data-theme="day"] .cs-pv.cs-card{--pcp-d:#16151a!important}
+html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwb{background:#e4e4e1!important;color:#3a3940!important}
+html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(n){color:#3a3940!important}
+html[data-theme="day"].opium2 .cs-pick,html[data-theme="day"].opium2 .cs-pick:hover{background:#16151a!important;color:#fff!important;border-color:#16151a!important}
+html[data-theme="day"].opium2 .cs-pick *{color:#fff!important}
+html[data-theme="day"].opium2 .op-s.in::before{background-color:#16151a!important}
+html[data-theme="day"] .wwb svg *{stroke:#3a3940!important;fill:none}
+/* trading cards only (Eman asked): a light brightness lift by day, no inversion. CDs untouched. */
+html[data-theme="day"] img[src*="/img/cd/card-"],html[data-theme="day"].opium2 .card .cv:hover .pq img[src*="/img/cd/card-"]{filter:brightness(1.28) contrast(.97) saturate(1.04)!important}
+html[data-theme="day"].opium2 .op-t3 .op-s.in{border-color:#16151a!important}
+html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-rows,html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr::before,html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr::after{border-color:rgba(22,21,26,.35)!important}

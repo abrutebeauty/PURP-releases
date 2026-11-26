@@ -1,0 +1,26 @@
+/* COREKULT day mode (Eman 21 Nov). Night is the default and is never changed by this file.
+   Everything here only applies with html[data-theme="day"], set by theme.js from the visitor's choice.
+   Rules: images, covers, cards, CDs and artwork are NEVER inverted or filtered. Only surfaces, text and lines change.
+   The day-*.css files next to this are made by corekult-site/daymode/daygen.py from each page CSS. */
+html[data-theme="day"]{--bg:#efece6;--panel:#e7e4dd;--tile:#e2dfd8;--tile2:#d8d4cc;--ink:#16141c;--ink2:rgba(22,20,28,.62);--line:rgba(22,20,28,.12);
+  --purple:#8b6cf6;--acid:#e4ff3a;--purple-ink:#e4141c;--acid-ink:#e4141c;color-scheme:light}
+html[data-theme="day"] body::after{opacity:.05}
+/* logo: Eman's own black logo file instead of the white one (a swap, not a filter) */
+html[data-theme="day"] .logo img{content:url(/img/logo-black-s.webp?v=1)}
+html[data-theme="day"] .hero-logo{content:url(/img/logo-black.webp?v=1)}
+html[data-theme="day"] body[data-page] .top .in>a:first-child img{content:url(/img/logo-black.webp?v=1)}
+/* acid fills get a thin ink edge so they still sit on the light greys */
+html[data-theme="day"] .btn.acid,html[data-theme="day"] .cartb,html[data-theme="day"] .ch.on,html[data-theme="day"] .badge{box-shadow:inset 0 0 0 1px rgba(22,20,28,.18)}
+/* category tags: text and icon a darker shade of the category colour (yellow LEAD would vanish on light) */
+html[data-theme="day"] .pv .nm .tc.ci{background:color-mix(in srgb,var(--cc) 22%,transparent);border-color:color-mix(in srgb,var(--cc) 70%,#16141c);color:color-mix(in srgb,var(--cc) 38%,#16141c)}
+html[data-theme="day"] .pv .nm .tc.ci svg{fill:color-mix(in srgb,var(--cc) 55%,#16141c)}
+/* admin LOOK styles (applyLook in shop.js write dark #121016 boxes) */
+html[data-theme="day"] .pv.big button,html[data-theme="day"] .cols .pv button{background-color:var(--tile)}
+/* the switch: same size and style as the nav buttons */
+.thm{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0!important;flex:none}
+.thm svg{width:13px;height:13px;fill:currentColor;display:block}
+.thm.fix{position:fixed;right:12px;top:12px;z-index:60;font:800 10px/1 var(--body,Inter,sans-serif);background:var(--tile2,#1f1d27);color:var(--ink,#ecebf0);border:0;cursor:pointer}
+.thm.fix:hover{background:var(--acid,#e4ff3a);color:#0b0a0e}
+html.thm-anim body,html.thm-anim nav.top,html.thm-anim .nl,html.thm-anim button,html.thm-anim .card,html.thm-anim .psec{transition:background-color .25s,color .25s,border-color .25s}
+/* admin-only overlays keep their night look (purple admin boxes on the light page) */
+html[data-theme="day"] :is(.adm-box,.adm-cat,.adm-cd,.adm-flag,.adm-look,.adm-note,.adm-pen,.adm-pick,.adm-tier,.adm-toast,.adm-top,.adm-trash,.lkp){--bg:#0b0a0e;--panel:#131218;--tile:#17161d;--tile2:#1f1d27;--ink:#ecebf0;--ink2:rgba(236,235,240,.55);--line:rgba(255,255,255,.08);color-scheme:dark;color:var(--ink)}
