@@ -68,7 +68,7 @@ html.opium2 .cs-q:hover em,html.opium2 .cs-q:focus em,html.opium2 .cs-q:focus-wi
 html.cs-collage.opium2 #opMag{display:block!important;overflow:visible;padding:0;grid-template-columns:none}
 html.cs-collage.opium2 #opMag>.op-magh{grid-column:1/-1;grid-row:auto}
 html.cs-collage.opium2 #opMag .op-cat{display:block!important;margin:0 0 40px!important;min-width:0}
-html.cs-collage.opium2 #opMag .op-cat .op-grid{display:grid!important;grid-template-columns:repeat(var(--csc,8),minmax(0,1fr))!important;grid-auto-rows:116px;grid-auto-flow:row dense;gap:8px!important;grid-auto-columns:auto}
+html.cs-collage.opium2 #opMag .op-cat .op-grid{display:grid!important;grid-template-columns:repeat(var(--csc,8),minmax(0,1fr))!important;grid-auto-rows:232px;grid-auto-flow:row dense;gap:8px!important;grid-auto-columns:auto}
 html.cs-collage.opium2 #opMag .op-cat .op-h{display:block!important;margin:0 0 12px}
 html.cs-collage.opium2 #opMag .op-cat .op-h .op-box{color:var(--tc,#8a4dff)!important;font:700 14px/1.2 "OpSpace","JetBrains Mono",monospace!important;letter-spacing:.2em!important}
 html.cs-collage.opium2 #opMag .op-cat .pv{height:auto!important;min-height:0;min-width:0;grid-column:span 1;grid-row:span 1}
@@ -124,3 +124,6 @@ html.cs-collage.opium2 #opMag .op-cat .op-h .op-box{font:800 clamp(34px,5vw,58px
 .cs-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#e8e8ee;color:#0c0b0b;font:700 13px/1 "OpSpace","JetBrains Mono",monospace}
 .cs-ft{font:500 11px/1.7 "OpSpace","JetBrains Mono",monospace;letter-spacing:.1em;color:#a9a9b4;text-transform:uppercase}
 .cs-ft2{text-align:right}
+
+/* waves twice as tall and edge to edge (Eman 26 Nov) */
+html.cs-collage.opium2 #opMag .op-cat .pv>button canvas.wf{width:calc(100% + 16px)!important;margin:6px -8px -6px!important;max-width:none}
