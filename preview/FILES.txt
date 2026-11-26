@@ -274,3 +274,5 @@ packs/p14.webp
 packs/p15-600.webp
 packs/p15.webp
 packs-test.html
+cs/cards.js
+cs/cards.css
