@@ -109,7 +109,17 @@ const SHP=[
  {n:"coupon corners",f:D(coupon)},
  {n:"price tag",f:D((w,h)=>dens([[0,0],[w-40,0],[w,h/2],[w-40,h],[0,h]],40))},
  {n:"zigzag all round",f:(w,h)=>{const zz=(x,L)=>{const q=per(x,L,18);return (tri(x,q,1)*2-1)*7};return D((a,b)=>perim(a,b,zz,zz))(w,h,9)}},
- {n:"zigzag double",f:(w,h)=>{const zz=(x,L)=>{const q=per(x,L,14);return (tri(x,q,1)*2-1)*3.5};return D((a,b)=>perim(a,b,zz,zz))(w,h,5)+D((a,b)=>perim(a,b,zz,zz))(w,h,12)}}
+ {n:"zigzag double",f:(w,h)=>{const zz=(x,L)=>{const q=per(x,L,14);return (tri(x,q,1)*2-1)*3.5};return D((a,b)=>perim(a,b,zz,zz))(w,h,5)+D((a,b)=>perim(a,b,zz,zz))(w,h,12)}},
+ {n:"sawtooth ramp",f:(w,h)=>{const sw=(x,L)=>{const q=per(x,L,20);return -((x%q)/q)*9};return D((a,b)=>perim(a,b,sw,sw))(w,h,10)}},
+ {n:"scribble double",f:(w,h)=>PLJ(rrP(w-14,h-14,26).map(q=>[q[0]+7,q[1]+7]),3.2)+PLJ(rrP(w-14,h-14,20).map(q=>[q[0]+9,q[1]+5]),3.2)},
+ {n:"double blob",f:(w,h)=>D(blobP)(w,h,6)+D(blobP)(w,h,14)},
+ {n:"mid spikes",f:(w,h)=>{const x0=12,y0=12,x1=w-12,y1=h-12,mx=w/2,my=h/2;return PL([[x0,y0],[mx-12,y0],[mx,y0-11],[mx+12,y0],[x1,y0],[x1,my-12],[x1+11,my],[x1,my+12],[x1,y1],[mx+12,y1],[mx,y1+11],[mx-12,y1],[x0,y1],[x0,my+12],[x0-11,my],[x0,my-12]])}},
+ {n:"scallop stamp",f:(w,h)=>D((a,b)=>perim(a,b,cloudF(26,6),cloudF(26,6)))(w,h,9)},
+ {n:"diamond bites",f:(w,h)=>{const mx=w/2,my=h/2;return PL([[0,0],[mx-15,0],[mx,13],[mx+15,0],[w,0],[w,my-15],[w-13,my],[w,my+15],[w,h],[mx+15,h],[mx,h-13],[mx-15,h],[0,h],[0,my+15],[13,my],[0,my-15]])}},
+ {n:"drips",f:(w,h)=>{const g=x=>[.2,.55,.82].reduce((s,c)=>s+17*Math.exp(-Math.pow((x-c*w)/11,2)),0),o=[[0,0],[w,0]];for(let x=w;x>=0;x-=6)o.push([x,h-20+g(x)]);return PL(o,false)}},
+ {n:"banner waves",f:(w,h)=>{const t=[],b=[];for(let x=0;x<=w;x+=5){t.push([x,6+5*Math.sin(x/15)]);b.push([w-x,h-6-5*Math.sin((w-x)/15+1.4)])}const o=[...t,...b];const t2=[],b2=[];for(let x=14;x<=w-14;x+=5){t2.push([x,13+3.5*Math.sin(x/15+1)]);b2.push([w-x,h-13-3.5*Math.sin((w-x)/15+2.4)])}return PL(o,false)+PL([...t2,...b2],false)}},
+ {n:"side teeth",f:(w,h)=>{const e=(x,L)=>0,s=(x,L)=>{const q=per(x,L,24);return -tri(x,q,11)};return D((a,b)=>perim(a,b,e,s))(w,h,12)}},
+ {n:"tilted triple",f:(w,h)=>[-1.6,.8,2.1].map((deg,k)=>{const r=deg*Math.PI/180,cx=w/2,cy=h/2,ins=8+k*3;return PL(rrP(w-2*ins,h-2*ins,16).map(q=>{const x=q[0]+ins-cx,y=q[1]+ins-cy;return [cx+x*Math.cos(r)-y*Math.sin(r),cy+x*Math.sin(r)+y*Math.cos(r)]}),false)}).join("")}
 ];
 
 /* ---- GLOBAL category -> shape map (Eman 26 Nov): same category = same shape on every pack and page.
@@ -136,7 +146,7 @@ function ckCfg(k){var L=ckLookObj();return (L.ck&&L.ck[ckGKey(k)])||{}}
 var CK_DEFIDX={bass:4,synth:3,pad:0,keys:2,vox:1,fx:5},CK_ORDER=["bass","synth","pad","keys","vox","fx"];
 /* ONLY Eman's shapes: the 6 marked "selected" (01-06) + every number he marked green in the clean-test picker (localStorage ck-shape-marks, copied to the server by the admin) */
 function ckMarks(){var a=[];try{a=JSON.parse(localStorage.getItem("ck-shape-marks")||"[]")}catch(e){}var s=(ckLookObj().ckShapes)||[];return a.concat(s).filter(function(n,i,x){return n>=1&&n<=SHP.length&&x.indexOf(n)===i}).sort(function(p,q){return p-q})}
-function ckPicks(){var m=ckMarks(),o=m.slice();[1,2,3,4,5,6].forEach(function(n){if(o.indexOf(n)<0)o.push(n)});var l=o.map(function(n){return n-1}),ex=[SHP.length-2,SHP.length-1].filter(function(x){return l.indexOf(x)<0});return {marks:m,list:l,all:l.concat(ex)}}
+function ckPicks(){var m=ckMarks(),o=m.slice();[1,2,3,4,5,6].forEach(function(n){if(o.indexOf(n)<0)o.push(n)});var l=o.map(function(n){return n-1}),ex=[];for(var xi=31;xi<SHP.length;xi++)if(l.indexOf(xi)<0)ex.push(xi);return {marks:m,list:l,all:l.concat(ex)}}
 var CK_CATORDER=["LEAD","BASS","CHIP","PLUCK","PAD","KEY","ARP","STAB","VOX","TEXTURE","FX","808","BELL","SYNTH","CHORD","CHOIR","SAW","FLUTE","HOOVER","DRONE","SONG","KICK","SNARE","CLAP","HAT","OPEN","PERC","LOOP","RIM","CRASH","SHAKER","CYMBAL","FOLEY","CHIME","ROLL","TOM","RIDE","FILL","DRUM","GUITAR","BRASS","ORGAN","PIANO","STRINGS"];
 function ckDefIdx(k){var p=ckPicks().list,g=ckGKey(k),i=CK_CATORDER.indexOf(g);if(i<0){i=0;for(var q=0;q<g.length;i=(i*31+g.charCodeAt(q++))>>>0);i=CK_CATORDER.length+i}return p[i%p.length]}
 function ckShapeFor(k){var c=ckCfg(k),pk=ckPicks().all;if(c.shape!=null&&SHP[c.shape]&&pk.indexOf(c.shape)>=0)return SHP[c.shape].f;var di=ckDefIdx(k);if(di!=null&&SHP[di])return SHP[di].f;var g=ckGroup(k);if(g)return CK_SHAPE[g];var h=0,s=String(k||"").toUpperCase();for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return CK_EXTRA[h%CK_EXTRA.length]}
