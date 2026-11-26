@@ -21,6 +21,33 @@
       }
       fd.set.call(this,v)}})}
   }catch(e){}
+  /* collage waves (Eman 26 Nov): smooth layered shape like the reference graphic instead of thin lines. The site draws one rect per pixel column, so we record those rects and redraw them as a soft mirrored envelope: darker outer, lighter inner, thin centre line */
+  try{
+    var PR=Path2D.prototype,orect=PR.rect;
+    if(!PR.__csRec){PR.__csRec=1;PR.rect=function(x,y,w,h){(this.__r||(this.__r=[])).push(x,y,w,h);return orect.apply(this,arguments)};
+      var P3=CanvasRenderingContext2D.prototype,of3=P3.fill;
+      var mix=function(hex,t){var m=/^#([0-9a-f]{6})$/i.exec(hex);if(!m)return hex;var n=parseInt(m[1],16),r=n>>16,g=(n>>8)&255,b=n&255;
+        return "rgb("+Math.round(r+(255-r)*t)+","+Math.round(g+(255-g)*t)+","+Math.round(b+(255-b)*t)+")"};
+      P3.fill=function(p){
+        try{var cv=this.canvas,r=p&&p.__r;
+          if(COLLAGE&&r&&r.length>40&&cv&&cv.classList&&cv.classList.contains("wf")&&!cv.classList.contains("ld")&&cv.closest&&cv.closest(".op-cat")&&/^#[0-9a-f]{6}$/i.test(this.fillStyle)){
+            var base=this.fillStyle,pts=[],mid=0,STEP=3,last=-9;
+            for(var i=0;i<r.length;i+=4){var x=r[i];if(x-last<STEP)continue;last=x;mid=r[i+1]+r[i+3]/2;pts.push([x,r[i+3]/2])}
+            if(pts.length>3){
+              var sm=pts.map(function(q,k){var s=0,c=0;for(var j=k-2;j<=k+2;j++)if(pts[j]){s+=pts[j][1];c++}return [q[0],s/c]});
+              var self=this,shape=function(k){self.beginPath();self.moveTo(sm[0][0],mid);
+                sm.forEach(function(q){self.lineTo(q[0],mid-Math.max(.6,q[1]*k))});
+                for(var i2=sm.length-1;i2>=0;i2--)self.lineTo(sm[i2][0],mid+Math.max(.6,sm[i2][1]*k));
+                self.closePath()};
+              this.save();this.globalAlpha=1;
+              shape(1);this.fillStyle=base;this.globalAlpha=.55;of3.call(this);
+              shape(.55);this.fillStyle=mix(base,.28);this.globalAlpha=.8;of3.call(this);
+              this.globalAlpha=1;this.fillStyle=mix(base,.5);this.fillRect(sm[0][0],mid-.5,sm[sm.length-1][0]-sm[0][0],1);
+              this.restore();return}
+          }
+        }catch(e){}
+        return of3.apply(this,arguments)}}
+  }catch(e){}
   var busy=false;
   function fix(){
     if(busy||!document.documentElement.classList.contains("opium2"))return;

@@ -95,3 +95,6 @@ html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid,html.opium2 #pkTop .pki>.buy.cs-bu
 html.opium2 .cs-pick,html.opium2 .cs-pick:hover{background:#8a4dff;color:#fff}
 html.opium2 .cs-pick b{color:#fff}
 html.opium2 .cs-pick s{color:rgba(255,255,255,.65)}
+
+/* thin grey outline on the collage cards (Eman 26 Nov): colour lives in the waves */
+html.cs-collage.opium2 #opMag .op-cat .pv>button{border:1px solid #4b4b55!important}
