@@ -109,6 +109,36 @@ h1{font-family:var(--sans);font-weight:900;font-size:clamp(52px,10.5vw,148px);li
 #list[data-v=d] .card{border-color:rgba(255,255,255,.4)}
 #list[data-v=d] .chip{background:var(--ink);color:#0e0d12}
 #list[data-v=d] .trk::before{background:rgba(255,255,255,.4)}
+
+/* categories + shape variants */
+#list .ch{display:none}
+#list:is([data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=s],[data-v=t],[data-v=u]) .ch{display:flex;align-items:baseline;gap:14px;grid-column:1/-1;order:var(--o);margin-top:34px;font:600 26px var(--sans);letter-spacing:-.02em;text-transform:lowercase}
+#list:is([data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=s],[data-v=t],[data-v=u]) .ch:first-child{margin-top:0}
+#list:is([data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=s],[data-v=t],[data-v=u]) .ch span{font:400 10.5px var(--mono);letter-spacing:.14em;color:var(--ink3);text-transform:uppercase}
+#list:is([data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=s],[data-v=t],[data-v=u]) .card{order:var(--o)}
+#list:is([data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=s],[data-v=t],[data-v=u]){gap:30px 28px}
+#list .chip i{font-style:normal}
+#list .chip .c2{display:none}
+#list:is([data-v=s],[data-v=t],[data-v=u]) .chip .c1{display:none}
+#list:is([data-v=s],[data-v=t],[data-v=u]) .chip .c2{display:inline}
+#list:is([data-v=s],[data-v=t],[data-v=u]) .top .chip{background:var(--cc);color:#fff;padding:3px 10px}
+#list .card[data-cat=bass]{--cc:#e0192b}
+#list .card[data-cat=synth]{--cc:#2457ff}
+#list .card[data-cat=pad]{--cc:#7a3fd0}
+#list .card[data-cat=keys]{--cc:#e4ff3a}
+#list:is([data-v=s],[data-v=t],[data-v=u]) .card[data-cat=keys] .top .chip{color:#16151a}
+#list[data-v=u] .card{border-color:var(--cc);border-width:2px}
+#list[data-v=u] .card[data-cat=keys]{border-color:#c9de1a}
+#list[data-v=u] .prog{background:var(--cc)}
+#list[data-v=u] .trk::before{background:var(--cc)}
+#list:is([data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=s],[data-v=t],[data-v=u]){margin-bottom:70px}
+#list:is([data-v=c],[data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=t]) .card{border:0}
+#list:is([data-v=c],[data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=t]) .fr{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#list:is([data-v=c],[data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=t]) .trk{left:0;right:0;bottom:0}
+#list:is([data-v=c],[data-v=o],[data-v=p],[data-v=q],[data-v=r],[data-v=t]) .trk::before{display:none}
+#list:is([data-v=o],[data-v=p],[data-v=q],[data-v=r]) .card{padding:24px 24px 28px}
+#list:is([data-v=o],[data-v=p]) .card[data-cat=keys]{padding-top:34px}
+#list[data-v=r] .card{padding:26px 28px 30px}
 @media(max-width:1100px){#list{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:860px){#list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 #list .st,#list .tm{font-size:9px;letter-spacing:.08em}
@@ -263,7 +293,7 @@ h1{font-family:var(--sans);font-weight:900;font-size:clamp(52px,10.5vw,148px);li
   <div class="wrap">
     <div class="head">
       <div><a class="back" href="packs-test.html">back to all sounds</a><div class="lab" style="margin-top:6px;color:var(--ink3)">14 of 20 shown</div></div>
-      <div class="vsw" id="vsw"><button data-v="a">a / boxes</button><button data-v="b">b / label sheet</button><button data-v="c">c / thorn</button><button data-v="d">d / dark</button><button data-v="e">e / cream labels</button><button data-v="f">f / white purple</button><button data-v="g">g / kraft</button><button data-v="h">h / charcoal</button><button data-v="i">i / acid</button><button data-v="j">j / side strip</button><button data-v="k">k / ticket</button><button data-v="l">l / split</button><button data-v="m">m / blueprint</button><button data-v="n">n / receipt</button></div>
+      <div class="vsw" id="vsw"><button data-v="a">a / boxes</button><button data-v="b">b / label sheet</button><button data-v="c">c / thorn</button><button data-v="d">d / dark</button><button data-v="e">e / cream labels</button><button data-v="f">f / white purple</button><button data-v="g">g / kraft</button><button data-v="h">h / charcoal</button><button data-v="i">i / acid</button><button data-v="j">j / side strip</button><button data-v="k">k / ticket</button><button data-v="l">l / split</button><button data-v="m">m / blueprint</button><button data-v="n">n / receipt</button><button data-v="o">o / shapes block</button><button data-v="p">p / shapes double</button><button data-v="q">q / shapes sharp</button><button data-v="r">r / shapes brackets</button><button data-v="s">s / chip box</button><button data-v="t">t / chip thorn</button><button data-v="u">u / chip colour box</button></div>
     </div>
     <div id="list" data-v="a"></div>
     <div id="list2" data-v="e" style="display:none"></div>
@@ -306,12 +336,14 @@ const ICONS=[
 const fmt=s=>{s=Math.max(0,s|0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
 const pad3=n=>String(n).padStart(3,"0");
 const list=document.getElementById("list"),CARDS1=[];
+const CATS=["bass","synth","pad","keys"],CATMAP={"808":"bass","bass":"bass","lead":"synth","arp":"synth","pad":"pad","keys":"keys","bell":"keys","chord":"keys"};
 SOUNDS.forEach((s,i)=>{
   const [id,name,type,bpm,bars,dur]=s;
   const c=document.createElement("div");c.className="card";c.dataset.i=i;c.dataset.idle="0:00 / "+fmt(dur);
+  const cat=CATMAP[type];c.dataset.cat=cat;c.style.setProperty("--o",CATS.indexOf(cat)*100+10+i);
   c.innerHTML=
    '<svg class="fr"><path/></svg>'+
-   '<div class="top"><span class="chip lab">ck-pb-'+pad3(i+1)+'</span><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round">'+ICONS[i]+'</svg></div>'+
+   '<div class="top"><span class="chip lab"><i class="c1">ck-pb-'+pad3(i+1)+'</i><i class="c2">'+cat+' preset</i></span><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round">'+ICONS[i]+'</svg></div>'+
    '<div class="nm">'+name+'</div>'+
    '<div class="meta lab"><span class="t">'+type+'</span><span>'+bpm+' bpm / '+bars+' bars</span></div>'+
    '<div class="x lab">/ ck / pb &nbsp;(2026)<br>works with serum 1 + 2</div>'+
@@ -319,13 +351,41 @@ SOUNDS.forEach((s,i)=>{
    '<div class="trk"><i class="prog"></i></div>';
   list.appendChild(c);CARDS1.push(c);
 });
-/* thorn frames (variant C) */
+CATS.forEach((c,ci)=>{const n=SOUNDS.filter(x=>CATMAP[x[2]]===c).length;const h=document.createElement("div");h.className="ch";h.style.setProperty("--o",ci*100);h.innerHTML="<b>"+c+"</b><span>"+n+" presets</span>";list.appendChild(h)});
+/* hand-drawn frames: thorn (C, T) and one shape per category (O-R) */
 let fs=7;const rnd=()=>{fs=(fs*16807)%2147483647;return fs/2147483647};
+const Jt=(a=1.5)=>(rnd()-.5)*a;
+const dens=(p,st=60)=>{const o=[];for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length],n=Math.max(1,Math.round(Math.hypot(b[0]-a[0],b[1]-a[1])/st));for(let k=0;k<n;k++)o.push([a[0]+(b[0]-a[0])*k/n,a[1]+(b[1]-a[1])*k/n])}return o};
+const PL=(p,d=true)=>{const q=(d?dens(p):p).map(a=>[a[0]+Jt(),a[1]+Jt()]);return "M"+q.map(a=>a[0].toFixed(1)+" "+a[1].toFixed(1)).join("L")+"Z"};
+const OPEN=p=>"M"+p.map(a=>(a[0]+Jt()).toFixed(1)+" "+(a[1]+Jt()).toFixed(1)).join("L");
+const wavy=(x,y,w,h,amp,per,bump)=>{const o=[],f=d=>{const t=Math.sin(d/per*Math.PI*2);return amp*(bump?Math.abs(t):t)};
+  for(let d=0;d<=w;d+=4)o.push([x+d,y-f(d)]);for(let d=0;d<=h;d+=4)o.push([x+w+f(d),y+d]);for(let d=0;d<=w;d+=4)o.push([x+w-d,y+h+f(d)]);for(let d=0;d<=h;d+=4)o.push([x-f(d),y+h-d]);return PL(o,false)};
+const SHAPES={
+ 1:{ /* block / cut / wave / arch */
+  bass:(x,y,w,h)=>{const s=18;return PL([[x+s,y],[x+w,y],[x+w,y+h-s],[x+w-s,y+h-s],[x+w-s,y+h],[x,y+h],[x,y+s],[x+s,y+s]])},
+  synth:(x,y,w,h)=>PL([[x,y],[x+w-34,y],[x+w,y+34],[x+w,y+h],[x+34,y+h],[x,y+h-34]]),
+  pad:(x,y,w,h)=>wavy(x,y,w,h,4,38,false),
+  keys:(x,y,w,h)=>{const o=[];for(let t=0;t<=1.001;t+=.02){const u=2*t-1;o.push([x+t*w,y+26*(1-Math.sqrt(Math.max(0,1-u*u)))])}
+    o.push([x+w,y+h]);[.66,.34].forEach(q=>{const cx=x+w*q;o.push([cx+14,y+h],[cx+14,y+h-12],[cx-14,y+h-12],[cx-14,y+h])});o.push([x,y+h]);return PL(o,false)}},
+ 2:{ /* chamfer / sawtooth / scallop / ticket */
+  bass:(x,y,w,h)=>{const c=24;return PL([[x+c,y],[x+w-c,y],[x+w,y+c],[x+w,y+h-c],[x+w-c,y+h],[x+c,y+h],[x,y+h-c],[x,y+c]])},
+  synth:(x,y,w,h)=>{const n=Math.round(w/22),o=[];for(let k=0;k<=n;k++)o.push([x+k*w/n,y+(k%2?-8:0)]);for(let k=n;k>=0;k--)o.push([x+k*w/n,y+h+(k%2?8:0)]);return PL(o,false)},
+  pad:(x,y,w,h)=>wavy(x,y,w,h,8,56,true),
+  keys:(x,y,w,h)=>{const o=[[x,y],[x+w,y]];for(let a=-90;a<=90;a+=10){const r=a*Math.PI/180;o.push([x+w-Math.cos(r)*0-(-0),y])}o.length=2;
+    o.push([x+w,y+h/2-18]);for(let a=-90;a<=90;a+=12){const r=a*Math.PI/180;o.push([x+w-Math.cos(r)*18,y+h/2+Math.sin(r)*18])}o.push([x+w,y+h],[x,y+h],[x,y+h/2+18]);for(let a=90;a>=-90;a-=12){const r=a*Math.PI/180;o.push([x+Math.cos(r)*18,y+h/2+Math.sin(r)*18])}return PL(o,false)}},
+ 3:{ /* open brackets */
+  bass:(x,y,w,h)=>[0,6].map(i=>{const L=36,a=x+i,b=y+i,c=x+w-i,d=y+h-i;return OPEN([[a,b+L],[a,b],[a+L,b]])+OPEN([[c-L,b],[c,b],[c,b+L]])+OPEN([[a,d-L],[a,d],[a+L,d]])+OPEN([[c-L,d],[c,d],[c,d-L]])}).join(""),
+  synth:(x,y,w,h)=>OPEN([[x,y],[x+w,y]])+OPEN([[x,y+h],[x+w,y+h]])+[[x,y],[x+w,y],[x,y+h],[x+w,y+h]].map(([a,b])=>PL([[a-8,b],[a,b-8],[a+8,b],[a,b+8]],false)).join(""),
+  pad:(x,y,w,h)=>"M"+(x+22)+" "+y+"Q"+(x-14)+" "+(y+h/2)+" "+(x+22)+" "+(y+h)+"M"+(x+w-22)+" "+y+"Q"+(x+w+14)+" "+(y+h/2)+" "+(x+w-22)+" "+(y+h),
+  keys:(x,y,w,h)=>{let d=OPEN([[x,y],[x+w,y]])+OPEN([[x,y+h],[x+w,y+h]]);for(let k=0;k<=w;k+=26){d+="M"+(x+k)+" "+(y+h)+"v-16"}for(let k=0;k<=w;k+=26){d+="M"+(x+k)+" "+y+"v10"}return d}}
+};
 function drawFrame(f){
   const el=f.parentNode,w=el.clientWidth,h=el.clientHeight;if(!w||!h)return;
+  const v=list.dataset.v,m={o:1,p:1,q:2,r:3}[v],cat=el.dataset.cat;
+  if(m){const g=SHAPES[m][cat];let d=g(0,0,w,h);if(v==="p")d+=g(7,7,w-14,h-14);f.innerHTML='<path d="'+d+'"/>';return}
   const sp=8,c=16,j=()=>(rnd()-.5)*2.6;
   const P=[[c,0],[w*.35,j()],[w*.7,j()],[w-c,0],[w+sp,-sp],[w,c],[w+j(),h*.35],[w+j(),h*.7],[w,h-c],[w+sp,h+sp],[w-c,h],[w*.65,h+j()],[w*.3,h+j()],[c,h],[-sp,h+sp],[0,h-c],[j(),h*.65],[j(),h*.3],[0,c],[-sp,-sp]];
-  f.querySelector("path").setAttribute("d","M"+P.map(p=>p[0].toFixed(1)+" "+p[1].toFixed(1)).join("L")+"Z");
+  f.innerHTML='<path d="M'+P.map(p=>p[0].toFixed(1)+" "+p[1].toFixed(1)).join("L")+'Z"/>';
 }
 const drawAll=()=>document.querySelectorAll(".fr").forEach(drawFrame);
 new ResizeObserver(drawAll).observe(list);addEventListener("load",drawAll);
@@ -365,8 +425,8 @@ SOUNDS.forEach((s,i)=>{
 const sec=document.getElementById("sounds"),vsw=document.getElementById("vsw");
 let CARDS=CARDS1;
 function setV(v){
-  if(!/^[a-n]$/.test(v))v="a";
-  const old="abcd".includes(v);
+  if(!/^[a-u]$/.test(v))v="a";
+  const old=/^[abcdo-u]$/.test(v);
   if(cur>=0){audio.pause();reset(cur);cur=-1}
   CARDS=old?CARDS1:CARDS2;
   list.style.display=old?"":"none";list2.style.display=old?"none":"";
