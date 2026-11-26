@@ -198,7 +198,7 @@ var ckBusy=0;
 function ckScan(){if(ckBusy)return;ckBusy=1;try{
   var de=document.documentElement;if(!de.classList.contains("opium2")){return}
   var secs=document.querySelectorAll("#opMag .op-cat");if(!secs.length)return;
-  de.classList.add("ck-cards");de.classList.toggle("ck-adm",ckAdm());ckSyncMarks();secs.forEach(ckSection);var sg=ckSigNow();if(sg!==ckSig){ckSig=sg;ckRefresh()}}finally{ckBusy=0}}
+  de.classList.add("ck-cards");de.classList.toggle("ck-adm",ckAdm());ckSyncMarks();ckRestore();secs.forEach(ckSection);var sg=ckSigNow();if(sg!==ckSig){ckSig=sg;ckRefresh()}requestAnimationFrame(function(){de.classList.add("ck-ready")})}finally{ckBusy=0}}
 
 /* ---- 5 waveform designs per category (called from the canvas fill hook in top.js) ---- */
 var CK_WNAMES=["Lines","Bars","Smooth","Outline","Floor peaks"];
@@ -218,7 +218,9 @@ function ckAdm(){return !!window.ADM&&!document.documentElement.classList.contai
 var ckSaveT=0;
 function ckSyncMarks(){if(!ckAdm())return;var m=[];try{m=JSON.parse(localStorage.getItem("ck-shape-marks")||"[]")}catch(e){}m=m.filter(function(n){return n>=1&&n<=SHP.length}).sort(function(a,b){return a-b});if(!m.length)return;var L=window.ADM.look=window.ADM.look||{};if(JSON.stringify(L.ckShapes||[])!==JSON.stringify(m)){L.ckShapes=m;ckSig=ckSigNow();ckRefresh();ckSave()}}
 function ckSave(){clearTimeout(ckSaveT);ckSaveT=setTimeout(function(){fetch("/api/admin/packs",{method:"PUT",headers:{"content-type":"application/json"},body:JSON.stringify(window.ADM)}).then(function(r){return r&&r.ok}).catch(function(){return false}).then(function(ok){var t=document.createElement("div");t.className="adm-toast";t.textContent=ok?"Saved · live":"Not saved";document.body.appendChild(t);setTimeout(function(){t.remove()},1400);try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})},350)}
-function ckSet(k,key,val){var L=window.ADM.look=window.ADM.look||{};L.ck=L.ck||{};var g=ckGKey(k);L.ck[g]=L.ck[g]||{};if(val==null||val==="")delete L.ck[g][key];else L.ck[g][key]=val;if(!Object.keys(L.ck[g]).length)delete L.ck[g];ckSig=ckSigNow();ckRefresh();ckSave()}
+function ckBak(){try{var L=window.ADM.look||{};localStorage.setItem("ck-bak",JSON.stringify({ck:L.ck||{},ts:Date.now()}))}catch(e){}}
+function ckRestore(){try{if(!ckAdm())return;var L=window.ADM.look=window.ADM.look||{};if(L.ck&&Object.keys(L.ck).length)return;var b=JSON.parse(localStorage.getItem("ck-bak")||"null");if(b&&b.ck&&Object.keys(b.ck).length){L.ck=b.ck;ckSig=ckSigNow();ckRefresh();ckSave()}}catch(e){}}
+function ckSet(k,key,val){var L=window.ADM.look=window.ADM.look||{};L.ck=L.ck||{};var g=ckGKey(k);L.ck[g]=L.ck[g]||{};if(val==null||val==="")delete L.ck[g][key];else L.ck[g][key]=val;if(!Object.keys(L.ck[g]).length)delete L.ck[g];ckBak();ckSig=ckSigNow();ckRefresh();ckSave()}
 function ckEditor(sec){
   var k=sec.getAttribute("data-k")||"",nm=((sec.querySelector(".ck-ch b")||{}).textContent||k),g=ckGKey(k),old=document.querySelector(".ck-ed");if(old)old.remove();
   var pkl=ckPicks().all,c=ckCfg(k),defIdx=ckDefIdx(k),cur=(c.shape!=null&&pkl.indexOf(c.shape)>=0)?c.shape:(defIdx!=null?defIdx:-1);
