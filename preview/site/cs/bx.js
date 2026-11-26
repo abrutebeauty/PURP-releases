@@ -234,17 +234,16 @@
     if(cv.style.filter)cv.style.filter="";
     var play=!!a.play,key=W+"x"+H+(cv.__img||0);
     if(!play){if(st.rk===key)return;st.rk=key;st.wins=[];st.l0=0;g.drawImage(im,0,0,W,H);return}
-    st.rk=null;var wins=st.wins||(st.wins=[]);
-    function spawn(){var fw=.18+Math.random()*.42,fh=Math.min(.7,fw*(.5+Math.random()*.9)),sx=Math.random()*(1-fw),sy=Math.random()*(1-fh),
-        dx=Math.max(0,Math.min(1-fw,sx+(Math.random()-.5)*.6)),dy=Math.max(0,Math.min(1-fh,sy+(Math.random()-.5)*.6));
-      wins.push({n:1+(Math.random()<.4?1:0),sx:sx,sy:sy,sw:fw,sh:fh,dx:dx,dy:dy})}
-    if(a.beat>.3&&t-(st.lb||0)>.12){spawn();spawn();if(a.beat>.7)spawn();st.lb=t}
-    if(t-(st.ls||0)>.5-a.lvl*.3){spawn();st.ls=t}
-    g.drawImage(im,0,0,W,H);
-    var iw=im.naturalWidth,ih=im.naturalHeight;
-    for(var i=wins.length-1;i>=0;i--){var w=wins[i];
-      g.drawImage(im,w.sx*iw,w.sy*ih,w.sw*iw,w.sh*ih,w.dx*W,w.dy*H,w.sw*W,w.sh*H);
-      if(--w.n<=0)wins.splice(i,1)}
+    st.rk=null;
+    function flash(){var R=[[0,0,1,1]],n=4+Math.floor(Math.random()*4);
+      while(R.length<n){var bi=0,ba=0;R.forEach(function(r,i){if(r[2]*r[3]>ba){ba=r[2]*r[3];bi=i}});var r=R.splice(bi,1)[0],f=.3+Math.random()*.4;
+        if(r[2]>r[3]){R.push([r[0],r[1],r[2]*f,r[3]],[r[0]+r[2]*f,r[1],r[2]*(1-f),r[3]])}else{R.push([r[0],r[1],r[2],r[3]*f],[r[0],r[1]+r[3]*f,r[2],r[3]*(1-f)])}}
+      return {n:1+(Math.random()<.4?1:0),R:R.map(function(r){return {x:r[0],y:r[1],w:r[2],h:r[3],sx:Math.random()*(1-r[2]),sy:Math.random()*(1-r[3])}})}}
+    if(a.beat>.3&&t-(st.lb||0)>.14){st.fl=flash();st.lb=t}
+    else if(t-(st.ls||0)>.4-a.lvl*.25){st.fl=flash();st.ls=t}
+    var iw=im.naturalWidth,ih=im.naturalHeight,f=st.fl;
+    if(f&&f.n>0){f.R.forEach(function(r){g.drawImage(im,r.sx*iw,r.sy*ih,r.w*iw,r.h*ih,Math.floor(r.x*W),Math.floor(r.y*H),Math.ceil(r.w*W)+1,Math.ceil(r.h*H)+1)});f.n--}
+    else{st.fl=null;g.drawImage(im,0,0,W,H)}
   }
   STY.img=imgR;
   var MAP={bass:["zebra","crowd","iso_spike","melt","iso_star","ledgrid"],lead:["slit","iso_star","vhs","iso_spike","dotsrb","dots"],chip:["ledgrid","iso_cells","cells","tiles","dots"],pluck:["dashes","iso_spike","slit","iso_cells","ledgrid"],pad:["terrain","melt","iso_wave","iso_rings","contour","cells"],keys:["contour","tiles","iso_rings","iso_wave","dots","terrain"],arp:["cells","iso_star","tiles","iso_cells","dotsrb","dashes"],stab:["vhs","iso_spike","dashes","iso_star","zebra"],vox:["melt","iso_wave","dotsrb","contour","vhs"],texture:["terrain","iso_cells","contour","iso_rings","cells"],fx:["vhs","iso_spike","zebra","iso_star","slit"],kick:["zebra","crowd","dots","iso_spike"],snare:["vhs","zebra","dashes","iso_spike"],hat:["dashes","ledgrid","iso_cells"],clap:["vhs","tiles","slit","iso_star"],perc:["tiles","dots","dotsrb","iso_cells"],loop:["crowd","tiles","terrain","cells","iso_rings"],"808":["zebra","crowd","melt","iso_star","iso_spike"]};
