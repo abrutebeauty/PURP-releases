@@ -263,5 +263,14 @@
       if(!on&&ms-o.last<80)return;if(on&&ms-o.last<16)return;o.last=ms;
       if(on&&rd){A=A||rd()}
       draw(o.cv,o.style,on?t:t+o.off,on&&A?A:idle(t+o.off))})}
+
+  function info(){document.querySelectorAll("#opMag .op-cat").forEach(function(cat){var lt=cat.querySelector(".cs-lt");if(!lt||lt.__csx)return;lt.__csx=1;
+    var bp={},ks={},n=0;cat.querySelectorAll(".pv .mt").forEach(function(m){var p=m.textContent.split("\u00b7");var b=parseInt(p[0],10),k=(p[1]||"").trim();n++;if(b)bp[b]=1;if(k)ks[k]=1});
+    var bl=Object.keys(bp).map(Number).sort(function(a,b){return a-b}),kl=Object.keys(ks).sort();if(!n)return;
+    var dash=lt.querySelector(".cs-dash"),inv=lt.querySelector(".cs-inv");
+    function row(t){var s=document.createElement("span");s.className="cs-x";s.textContent=t;return s}
+    var a=row("SOUNDS > "+("00"+n).slice(-3)+" \u00a0 PACK TOTAL > "+("00"+document.querySelectorAll("#opMag .op-cat .pv").length).slice(-3)),b=row("BPM > "+(bl.length?bl[0]+(bl.length>1?" - "+bl[bl.length-1]:""):"--")+" \u00a0 KEY > "+(kl.slice(0,3).join(" ")||"--")+(kl.length>3?" +"+(kl.length-3):""));
+    inv.after(a);a.after(b)})}
+  setInterval(info,700);
   requestAnimationFrame(frame);
 })();
