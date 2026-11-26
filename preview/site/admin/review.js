@@ -540,7 +540,8 @@
   /* ---- big lightbox for one sound (Eman 26 Nov): press the code chip of a card in admin mode.
      Big waveform you can click to jump, play / pause, and comments with marked spots (the same comments as on the card). ---- */
   let lb = null;
-  function lbClose() { if (!lb) return; if (lb.mw) removeEventListener("message", lb.mw); try { lb.au.pause(); } catch (e) {} cancelAnimationFrame(lb.raf); lb.el.remove(); lb = null; }
+  function lbFlush(L) { try { const f = L.el.querySelector(".lbmidi iframe"), n = f && f.contentWindow.__ktNotes && f.contentWindow.__ktNotes(); if (n && JSON.stringify(n) !== JSON.stringify((rec(L.b) || {}).midi || [])) { rec(L.b, true).midi = n; save(); } } catch (e) {} }
+  function lbClose() { if (!lb) return; lbFlush(lb); if (lb.mw) removeEventListener("message", lb.mw); try { lb.au.pause(); } catch (e) {} cancelAnimationFrame(lb.raf); lb.el.remove(); lb = null; }
   async function lbOpen(b) {
     lbClose(); try { if (typeof audio !== "undefined") audio.pause(); } catch (e) {}
     const c = ctx(b); if (!c) return;

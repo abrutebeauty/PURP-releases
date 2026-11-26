@@ -40,7 +40,8 @@
       const clip = () => { const t = lane(); return t && t.clips[0]; };
       if (init.notes && init.notes.length && clip()) { await run("setMidiNotes", { clipId: clip().id, notes: init.notes }); if (typeof refreshLaneWindow === "function") try { refreshLaneWindow(); } catch (e) { /* fine */ } }
       let last = JSON.stringify(init.notes || []);
-      setInterval(async () => { try { const f = await booth("getState", {}); if (f && f.tracks) ui.state = f; const c = clip(); const n = JSON.stringify((c && c.notes) || []); if (n !== last) { last = n; say({ kt: "notes", notes: (c && c.notes) || [] }); } } catch (e) { /* next time */ } }, 1500);
+      setInterval(async () => { try { const f = await booth("getState", {}); if (f && f.tracks) ui.state = f; const c = clip(); const n = JSON.stringify((c && c.notes) || []); if (n !== last) { last = n; say({ kt: "notes", notes: (c && c.notes) || [] }); } } catch (e) { /* next time */ } }, 500);
+      window.__ktNotes = () => { const c = clip(); return c && c.notes ? JSON.parse(JSON.stringify(c.notes)) : null; };
       say({ kt: "ready" });
     } catch (e) { say({ kt: "error", msg: String(e && e.message || e) }); console.warn("[lab]", e); }
   }
