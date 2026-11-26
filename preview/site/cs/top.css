@@ -25,3 +25,9 @@ html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid,html.opium2 #pkTop .pki>.buy.cs-bu
 html.opium2 .cs-pick,html.opium2 .cs-pick:hover{background:#E4FF3A;color:#0b0a0e}
 html.opium2 .cs-pick b{color:#0b0a0e}
 html.opium2 .cs-pick s{color:rgba(11,10,14,.55)}
+
+/* sound card: no lighter background when selected or playing (Eman 26 Nov) */
+html.opium2 .pv button.on{background:#0c0b0b!important}
+/* section heading: the red claw doodle is replaced by a small purple equalizer icon (Eman 26 Nov) */
+html.opium2 .op-h .op-gl{display:none!important}
+html.opium2 .op-h::before{content:"";flex:none;width:22px;height:22px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%238B6CF6' d='M1 6h2v4H1zM5 3h2v10H5zM9 5h2v6H9zM13 7h2v2h-2z'/%3E%3C/svg%3E") center/contain no-repeat}
