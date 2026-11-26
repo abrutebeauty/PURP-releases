@@ -1,11 +1,16 @@
 /* COREKULT light mode, hand fixes for the OPIUM 2 look (Eman 26 Nov). Only html[data-theme="day"] unless noted.
    The big colour swap is day-opium.css (auto-made by tools/daygen-opium.py). Images, covers, cards and art are NEVER filtered or inverted. */
 
-/* ---- hover glow behind CDs / trading cards removed, NIGHT AND DAY (Eman 26 Nov). Tilt, zoom and sway stay. Black contact shadow stays. ---- */
-html.opium2 #worlds .card .cv::before{display:none!important;content:none!important}
-html.opium2 #worlds .card:hover,html.opium2 .card:hover{box-shadow:none!important}
-html body.home .card .cv:hover .pq,html.opium2 .card .cv:hover .pq,html.opium2 .cdf .card:hover .pq{filter:drop-shadow(0 26px 24px rgba(0,0,0,.5))!important}
-html .bnb:hover img,html .bf-pile .bf-pl:hover .bf-pi img,html .bf-pile .bf-pl:focus-visible .bf-pi img{filter:drop-shadow(0 16px 18px rgba(0,0,0,.5))!important}
+/* ---- hover glow behind CDs / trading cards ----
+   DAY: no glow (Eman 26 Nov). NIGHT: the purple glow is back at 80% of its old strength (Eman 26 Nov 21:32). Tilt, zoom and sway are untouched. */
+html[data-theme="day"].opium2 #worlds .card .cv::before{display:none!important;content:none!important}
+html[data-theme="day"].opium2 #worlds .card:hover,html[data-theme="day"].opium2 .card:hover{box-shadow:none!important}
+html[data-theme="day"] body.home .card .cv:hover .pq,html[data-theme="day"].opium2 .card .cv:hover .pq,html[data-theme="day"].opium2 .cdf .card:hover .pq{filter:drop-shadow(0 26px 24px rgba(0,0,0,.5))!important}
+html[data-theme="day"] .bnb:hover img,html[data-theme="day"] .bf-pile .bf-pl:hover .bf-pi img,html[data-theme="day"] .bf-pile .bf-pl:focus-visible .bf-pi img{filter:drop-shadow(0 16px 18px rgba(0,0,0,.5))!important}
+html:not([data-theme="day"]).opium2 #worlds .card .cv::before{background:radial-gradient(closest-side,rgba(139,108,246,.44),rgba(139,108,246,.144) 55%,transparent 75%)}
+html:not([data-theme="day"]).opium2 .card .cv:hover .pq,html:not([data-theme="day"]).opium2 .cdf .card:hover .pq{filter:drop-shadow(0 32px 28px rgba(0,0,0,.6)) drop-shadow(0 0 34px rgba(139,108,246,.44))!important}
+html:not([data-theme="day"]) .bnb:hover img{filter:drop-shadow(0 16px 18px rgba(0,0,0,.5)) drop-shadow(0 0 18px rgba(139,108,246,.44))!important}
+html:not([data-theme="day"]) .bf-pile .bf-pl:hover .bf-pi img,html:not([data-theme="day"]) .bf-pile .bf-pl:focus-visible .bf-pi img{filter:drop-shadow(0 18px 24px rgba(0,0,0,.55)) drop-shadow(0 0 26px rgba(139,108,246,.3))!important}
 
 /* ---- light surface: solid light grey, almost white. No film, no grain. ---- */
 html[data-theme="day"].opium2{--bg:#eeeeec;--panel:#eeeeec;--tile:#e5e5e2;--tile2:#dbdbd7;--ink:#16151a;--ink2:rgba(22,21,26,.62);--line:rgba(22,21,26,.16);
