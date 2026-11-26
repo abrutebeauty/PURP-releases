@@ -133,7 +133,7 @@ function ckGKey(k){return ckGroup(k)||String(k||"").toUpperCase()}
 function ckCfg(k){var L=ckLookObj();return (L.ck&&L.ck[ckGKey(k)])||{}}
 var CK_DEFIDX={bass:4,synth:3,pad:0,keys:2,vox:1,fx:5};
 function ckShapeFor(k){var c=ckCfg(k);if(c.shape!=null&&SHP[c.shape])return SHP[c.shape].f;var g=ckGroup(k);if(g)return CK_SHAPE[g];var h=0,s=String(k||"").toUpperCase();for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return CK_EXTRA[h%CK_EXTRA.length]}
-window.CK_CATSHAPE={group:CK_GROUP,shapes:CK_SHAPE,extra:CK_EXTRA,shapeFor:ckShapeFor};
+window.CK_SHP=SHP;window.CK_CATSHAPE={group:CK_GROUP,shapes:CK_SHAPE,extra:CK_EXTRA,shapeFor:ckShapeFor};
 
 /* ---- audio: remember the page's player so the cards can show time + status ---- */
 var CK_AUDIO=null;try{var op0=HTMLMediaElement.prototype.play;HTMLMediaElement.prototype.play=function(){CK_AUDIO=this;return op0.apply(this,arguments)}}catch(e){}
