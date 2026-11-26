@@ -90,6 +90,7 @@
       if(v&&c.style.getPropertyValue("--cc")!==v[1])c.style.setProperty("--cc",v[1])});
   }
   /* collage: every sound mixed together, a repeating but shuffled mix of card sizes */
+  var UNIFORM=true;  /* Eman 26 Nov: skip the mixed-size collage, every card the same size (set false to bring the collage back) */
   var SZ=["a","a","w","a","b","a","t","a","w","a","a","b","a","t","a","w","a","a"];
   /* type colours (Eman 26 Nov): only these six, similar types share one */
   var PAL={red:"#ee2a22",purple:"#9650ff",pink:"#ff2fa6",green:"#66ff3a",cyan:"#22d6ff",blue:"#3366ff"},
@@ -117,13 +118,13 @@
     var occ=[],free=function(x,y){return x<N&&!(occ[y]&&occ[y][x])},cards=[];
     var set=function(x,y,w,h,v){for(var j=y;j<y+h;j++){occ[j]=occ[j]||[];for(var i=x;i<x+w;i++)occ[j][i]=v}};
     pvs.forEach(function(p,i){
-      var s=SZ[i%SZ.length],w=(s==="w"||s==="b")?2:1,h=(s==="t"||s==="b")?2:1,x=0,y=0;
+      var s=UNIFORM?"a":SZ[i%SZ.length],w=(s==="w"||s==="b")?2:1,h=(s==="t"||s==="b")?2:1,x=0,y=0;
       outer:for(y=0;;y++)for(x=0;x<N;x++)if(free(x,y))break outer;
       while(w>1&&!free(x+w-1,y))w--;
       while(h>1&&!(function(){for(var i2=0;i2<w;i2++)if(occ[y+h-1]&&occ[y+h-1][x+i2])return true;return false})())break;
       for(var hh=h;hh>1;hh--){var ok=true;for(var j=1;j<hh;j++)for(var i3=0;i3<w;i3++)if(occ[y+j]&&occ[y+j][x+i3])ok=false;if(ok)break;h=hh-1}
       var c={p:p,x:x,y:y,w:w,h:h};set(x,y,w,h,c);cards.push(c)});
-    var rows=occ.length,ch=true,guard=0;
+    var rows=occ.length,ch=!UNIFORM,guard=0;
     while(ch&&guard++<200){ch=false;
       for(var yy=0;yy<rows&&!ch;yy++)for(var xx=0;xx<N&&!ch;xx++){
         if(occ[yy]&&occ[yy][xx])continue;
