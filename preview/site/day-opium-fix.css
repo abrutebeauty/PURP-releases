@@ -101,3 +101,10 @@ html[data-theme="day"] .wwb svg *{stroke:#3a3940!important;fill:none}
 html[data-theme="day"] img[src*="/img/cd/card-"],html[data-theme="day"].opium2 .card .cv:hover .pq img[src*="/img/cd/card-"]{filter:brightness(1.28) contrast(.97) saturate(1.04)!important}
 html[data-theme="day"].opium2 .op-t3 .op-s.in{border-color:#16151a!important}
 html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr,html[data-theme="day"].opium2 .cs-pv.cs-card .pc-rows,html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr::before,html[data-theme="day"].opium2 .cs-pv.cs-card .cs-pvr::after{border-color:rgba(22,21,26,.35)!important}
+
+/* SHADOWS (Eman 26 Nov): resting and hover are the SAME strength, both half of the old resting shadow. Same offset and blur, no colour. */
+html[data-theme="day"] .pq,html[data-theme="day"] #worlds .card .pq,html[data-theme="day"] .pkc .pq,html[data-theme="day"] .lnd .pkc .pq,
+html[data-theme="day"].opium2 .card .cv:hover .pq,html[data-theme="day"].opium2 .cdf .card:hover .pq,html[data-theme="day"] body.home .card .cv:hover .pq,html[data-theme="day"] .card:hover .pq,html[data-theme="day"] .pkc:hover .pq{filter:drop-shadow(0 26px 30px rgba(0,0,0,.19))!important}
+html[data-theme="day"] .bf-pile .bf-pi img,html[data-theme="day"] header.hero .bf-st img,html[data-theme="day"] .bf-pile .bf-pl:hover .bf-pi img,html[data-theme="day"] .bf-pile .bf-pl:focus-visible .bf-pi img{filter:drop-shadow(0 18px 24px rgba(0,0,0,.275))!important}
+html[data-theme="day"] .bnb img,html[data-theme="day"] .bnb:hover img,html[data-theme="day"] .bnb.on img,html[data-theme="day"] .bnb.sel img,html[data-theme="day"] .bnb .cdi img{filter:drop-shadow(0 14px 18px rgba(0,0,0,.25))!important}
+html[data-theme="day"] .p10cv img:not([src*="/img/cd/card-"]){filter:drop-shadow(0 14px 18px rgba(0,0,0,.25))!important}
