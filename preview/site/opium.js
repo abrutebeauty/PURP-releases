@@ -32,7 +32,7 @@
   const H = document.documentElement;
   if (ON) {
     H.classList.add("opium", "opv-" + OPV); if (O2) H.classList.add("opium2");
-    const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/opium.css?v=6"; document.head.appendChild(l);
+    const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/opium.css?v=7"; document.head.appendChild(l);
   }
 
   /* ---------- admin switch (in the outlined top line of admin mode) ---------- */
@@ -589,6 +589,19 @@
 (function () {
   let n = 0; const t = setInterval(() => {
     if (++n > 80) return clearInterval(t);
-    if (window.ADM && document.querySelector(".adm-top") && !window.__rvLoaded) { clearInterval(t); const s = document.createElement("script"); s.src = "/admin/review.js?v=5"; document.head.appendChild(s); }
+    if (window.ADM && document.querySelector(".adm-top") && !window.__rvLoaded) { clearInterval(t); const s = document.createElement("script"); s.src = "/admin/review.js?v=6"; document.head.appendChild(s); }
+  }, 250);
+})();
+
+/* PLAY AGAIN = FROM THE START (Eman 26 Nov): pause a sound, press play again -> it starts at the beginning, in every look and in admin too.
+   (Admin tools keep their own Space-bar pause/resume.) Remove this block = old "resume where it stopped". shop.js loads after this file, so wait for it. */
+(function () {
+  let n = 0; const t = setInterval(() => {
+    if (++n > 80) return clearInterval(t);
+    try {
+      if (typeof tapPause !== "function" || typeof tapResume === "undefined" || window.__ckRestart) return; window.__ckRestart = 1; clearInterval(t);
+      tapPause = function () { const b = curBtn; if (!b) return; audio.pause(); tapResume.delete(b.dataset.src); stopCur(); };
+      document.addEventListener("click", (e) => { const b = e.target.closest && e.target.closest(".pv button"); if (!b || !curBtn || curBtn === b) return; const prev = curBtn.dataset.src; setTimeout(() => { try { tapResume.delete(prev); } catch (x) {} }, 0); }, true);
+    } catch (e) {}
   }, 250);
 })();
