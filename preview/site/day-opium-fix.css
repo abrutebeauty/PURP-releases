@@ -1,0 +1,42 @@
+/* COREKULT light mode, hand fixes for the OPIUM 2 look (Eman 26 Nov). Only html[data-theme="day"] unless noted.
+   The big colour swap is day-opium.css (auto-made by tools/daygen-opium.py). Images, covers, cards and art are NEVER filtered or inverted. */
+
+/* ---- hover glow behind CDs / trading cards removed, NIGHT AND DAY (Eman 26 Nov). Tilt, zoom and sway stay. Black contact shadow stays. ---- */
+html.opium2 #worlds .card .cv::before{display:none!important;content:none!important}
+html.opium2 #worlds .card:hover,html.opium2 .card:hover{box-shadow:none!important}
+html body.home .card .cv:hover .pq,html.opium2 .card .cv:hover .pq,html.opium2 .cdf .card:hover .pq{filter:drop-shadow(0 26px 24px rgba(0,0,0,.5))!important}
+html .bnb:hover img,html .bf-pile .bf-pl:hover .bf-pi img,html .bf-pile .bf-pl:focus-visible .bf-pi img{filter:drop-shadow(0 16px 18px rgba(0,0,0,.5))!important}
+
+/* ---- light surface: solid light grey, almost white. No film, no grain. ---- */
+html[data-theme="day"].opium2{--bg:#eeeeec;--panel:#eeeeec;--tile:#e5e5e2;--tile2:#dbdbd7;--ink:#16151a;--ink2:rgba(22,21,26,.62);--line:rgba(22,21,26,.16);
+  --opc:#16151a;--opg:#5f5e66;--opbg:#eeeeec;--op:#c4201b;--opp:#6a49e0;--opy:#586600;--purple:#8b6cf6;--purple-ink:#5b3fd6;--acid-ink:#586600;color-scheme:light}
+html[data-theme="day"].opium2 body,html[data-theme="day"].opium2{background:#eeeeec!important;background-image:none!important;color:#16151a}
+html[data-theme="day"].opium2 body::before,html[data-theme="day"].opium2 body::after,html[data-theme="day"].opium2 .op-film,html[data-theme="day"].opium2 .op-grain{display:none!important;background-image:none!important}
+html[data-theme="day"].opium2 meta{color:inherit}
+html[data-theme="day"].opium2 .card .cv,html[data-theme="day"].opium2 #worlds .card .cv{background:none!important;box-shadow:none!important}
+/* CD / card pictures sit straight on the page: no plate, no box shadow, no glow */
+html[data-theme="day"].opium2 img{background-color:transparent!important}
+html[data-theme="day"].opium2 .pq,html[data-theme="day"].opium2 .pkc,html[data-theme="day"].opium2 .pkc .pq{background:none!important;box-shadow:none!important}
+/* logos: Eman's own black logo files (a swap, not a filter) */
+html[data-theme="day"] img[src*="logo-white-s.webp"]{content:url(/img/logo-black-s.webp?v=1)}
+html[data-theme="day"] img[src*="logo-white.webp"]{content:url(/img/logo-black.webp?v=1)}
+/* hand-drawn "pick your free pack": acid yellow would vanish on light, so deep olive */
+html[data-theme="day"].opium2 .op-pick svg>g{stroke:#586600}
+html[data-theme="day"].opium2 .op-pick svg{filter:none}
+/* sound cards: the light play square and the id chip flip to dark blocks (light blocks with dark text at night = dark blocks with light text by day) */
+html[data-theme="day"]{--ck-line:#16151a;--ck-title:#16151a}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl,html[data-theme="day"].opium2 .cs-pv .pl{background:#16151a!important;color:#eeeeec!important}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl svg,html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .pl path{fill:#eeeeec!important;color:#eeeeec!important;stroke:none}
+html[data-theme="day"].ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-chip,html[data-theme="day"].opium2 .cs-pv.cs-card .ck-chip{background:#16151a!important;color:#eeeeec!important}
+/* by day the contact shadow under a lifted CD is lighter and tighter so it reads as a shadow, not a smudge */
+html[data-theme="day"].opium2 .card .cv:hover .pq,html[data-theme="day"].opium2 .cdf .card:hover .pq,html[data-theme="day"] body.home .card .cv:hover .pq{filter:drop-shadow(0 18px 14px rgba(22,21,26,.26))!important}
+/* cart: black icon and black count badge on the acid square, like night */
+html[data-theme="day"].opium2 .cartb::before{background:#0b0a0e!important}
+html[data-theme="day"].opium2 .cartb span{background:#0b0a0e!important;color:#E4FF3A!important}
+html[data-theme="day"] #consent{background:rgba(247,247,245,.97)}
+/* works-with chips: darker text so the purple / green / teal read on light */
+html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwb{background:#e0e0dc!important}
+html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(-n+2){color:#4a33b8!important}
+html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(3){color:#0d7a3c!important}
+html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwl>.wwb:nth-child(4){color:#0a7d71!important}
+html[data-theme="day"][data-theme="day"][data-theme="day"] body .wwb *{color:inherit!important}

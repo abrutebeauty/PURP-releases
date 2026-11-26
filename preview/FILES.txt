@@ -276,3 +276,13 @@ packs/p15.webp
 packs-test.html
 cs/cards.js
 cs/cards.css
+theme.js
+day-opium.css
+day-opium-fix.css
+index.html
+pack.html
+bundle.html
+get.html
+checkout.html
+tools/daygen.py
+tools/daygen-opium.py
