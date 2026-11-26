@@ -115,7 +115,7 @@
     if(CARD){
       var cn=Math.floor(w/3),cm=h/2,cy2=pos>0;
       for(var q=0;q<cn;q++){var ff=q/cn,pj=Math.min(t.pk.length-1,Math.floor(ff*t.pk.length)),aa=Math.max(.05,Math.pow(t.pk[pj],.8))*(h*.46);
-        g.fillStyle=(cy2&&ff>=pos)?"#6f6e77":"#ffffff";g.fillRect(q*3,cm-aa,2,aa*2)}
+        g.fillStyle=(cy2&&ff>=pos)?"#4b3f86":"#8b6cf6";g.fillRect(q*3,cm-aa,2,aa*2)}
       return}
     if(window.CS_BOX){
       var pw=cv.width,ph=cv.height,gk=pw+"x"+ph+"x"+t.pk.length;

@@ -100,3 +100,17 @@ html.opium2 .cs-pv.cs-card .cs-pvr{padding:10px 0}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvw{height:54px!important}
 
 .ck-ed .lk{display:flex;align-items:center;gap:8px;font:700 10px/1.2 Inter,sans-serif;letter-spacing:.06em;color:#cfc8dc;cursor:pointer;margin:2px 0 4px}.ck-ed .lk input{width:16px;height:16px;accent-color:#E4FF3A;cursor:pointer}
+
+/* top preview card, Eman 26 Nov late: site purple for outline, play, title, stars, lines, numbers, waves; white sound names; grey subline + times; category chips take the category colour (set live by cards.js) */
+html.opium2 .cs-pv.cs-card{--pcp:#8b6cf6}
+html.opium2 .cs-pv.cs-card .pc-fr path{stroke:var(--pcp)}
+html.opium2 .cs-pv.cs-card .pc-title,html.opium2 .cs-pv.cs-card .pc-ic{color:var(--pcp)}
+html.opium2 .cs-pv.cs-card .pc-play,html.opium2 .cs-pv.cs-card .pc-play:hover,html.opium2 .cs-pv.cs-card .pc-play:focus,html.opium2 .cs-pv.cs-card .pc-play:active{background:var(--pcp)}
+html.opium2 .cs-pv.cs-card .pc-play svg{fill:#0e0d12}
+html.opium2 .cs-pv.cs-card .pc-rows{border-bottom-color:rgba(139,108,246,.5)}
+html.opium2 .cs-pv.cs-card .cs-pvr{border-top-color:rgba(139,108,246,.5)}
+html.opium2 .cs-pv.cs-card .pc-n{color:var(--pcp)}
+html.opium2 .cs-pv.cs-card .pc-nm{color:#fff}
+html.opium2 .cs-pv.cs-card .pc-sub,html.opium2 .cs-pv.cs-card .pc-tm,html.opium2 .cs-pv.cs-card.cs-on .pc-tm{color:#a5a4ad}
+html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvl{background:var(--pcp)}
+html.opium2 .cs-pv.cs-card .pc-k{background:var(--pck,#ecebf0)}

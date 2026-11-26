@@ -142,16 +142,23 @@ var CK_EXTRA=[(w,h)=>SHAPES[2].bass(0,0,w,h),(w,h)=>SHAPES[3].bass(0,0,w,h),(w,h
 function ckGroup(k){k=String(k||"").toUpperCase().trim();return CK_GROUP[k]||CK_GROUP[k.replace(/S$/,"")]||null}
 var CK_SRV=null,CK_DONE=false;
 function ckHas(l){return !!(l&&((l.ck&&Object.keys(l.ck).length)||(l.ckShapes&&l.ckShapes.length)))}
-function ckLookObj(){try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}if(CK_DONE&&CK_SRV)return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}if(ckHas(CK_SRV))return CK_SRV;try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
+function ckLookObj(){var adm=false;try{adm=ckAdm()}catch(e){}
+  try{if(adm&&window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}
+  if(CK_DONE&&CK_SRV)return CK_SRV;
+  try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}
+  try{if(window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}
+  try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}
+  try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
 /* customers: fetch the saved category settings ourselves, do not depend on the shop script handing them over */
-(function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{fetch("/api/products",{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}).then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
+(function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{fetch("/api/products?ck="+Date.now(),{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}).then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;try{if(window.ADM&&l&&ckHas(l)){var AL=window.ADM.look=window.ADM.look||{};if(!ckHas(AL)){if(l.ck)AL.ck=JSON.parse(JSON.stringify(l.ck));if(l.ckShapes)AL.ckShapes=l.ckShapes.slice()}}}catch(e){}fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
 function ckGKey(k){return String(k||"").toUpperCase().trim().replace(/([^S])S$/,"$1")}
-function ckCfg(k){var L=ckLookObj();return (L.ck&&L.ck[ckGKey(k)])||{}}
+var CK_ALIAS={SYNTH:"LEAD"};
+function ckCfg(k){var L=ckLookObj(),g=ckGKey(k);return (L.ck&&(L.ck[g]||(CK_ALIAS[g]&&L.ck[CK_ALIAS[g]])))||{}}
 var CK_DEFIDX={bass:4,synth:3,pad:0,keys:2,vox:1,fx:5},CK_ORDER=["bass","synth","pad","keys","vox","fx"];
 /* ONLY Eman's shapes: the 6 marked "selected" (01-06) + every number he marked green in the clean-test picker (localStorage ck-shape-marks, copied to the server by the admin) */
 function ckMarks(){var a=[];try{a=JSON.parse(localStorage.getItem("ck-shape-marks")||"[]")}catch(e){}var s=(ckLookObj().ckShapes)||[];return a.concat(s).filter(function(n,i,x){return n>=1&&n<=SHP.length&&x.indexOf(n)===i}).sort(function(p,q){return p-q})}
 function ckPicks(){var m=ckMarks(),o=m.slice();[1,2,3,4,5,6].forEach(function(n){if(o.indexOf(n)<0)o.push(n)});var l=o.map(function(n){return n-1}),ex=[];for(var xi=31;xi<SHP.length;xi++)if(l.indexOf(xi)<0)ex.push(xi);return {marks:m,list:l,all:l.concat(ex)}}
-var CK_CATORDER=["LEAD","BASS","CHIP","PLUCK","PAD","KEY","ARP","STAB","VOX","TEXTURE","FX","808","BELL","SYNTH","CHORD","CHOIR","SAW","FLUTE","HOOVER","DRONE","SONG","KICK","SNARE","CLAP","HAT","OPEN","PERC","LOOP","RIM","CRASH","SHAKER","CYMBAL","FOLEY","CHIME","ROLL","TOM","RIDE","FILL","DRUM","GUITAR","BRASS","ORGAN","PIANO","STRINGS"];
+var CK_CATORDER=["SYNTH","PLUCK","BASS","PAD","KEY","FX","VOX","KICK","SNARE","HAT","PERC","808","LEAD","CHIP","ARP","STAB","TEXTURE","BELL","SYNTH","CHORD","CHOIR","SAW","FLUTE","HOOVER","DRONE","SONG","KICK","SNARE","CLAP","HAT","OPEN","PERC","LOOP","RIM","CRASH","SHAKER","CYMBAL","FOLEY","CHIME","ROLL","TOM","RIDE","FILL","DRUM","GUITAR","BRASS","ORGAN","PIANO","STRINGS"];
 function ckDefIdx(k){var p=ckPicks().list,g=ckGKey(k),i=CK_CATORDER.indexOf(g);if(i<0){i=0;for(var q=0;q<g.length;i=(i*31+g.charCodeAt(q++))>>>0);i=CK_CATORDER.length+i}return p[i%p.length]}
 function ckShapeFor(k){var c=ckCfg(k),pk=ckPicks().all;if(c.shape!=null&&SHP[c.shape]&&pk.indexOf(c.shape)>=0)return SHP[c.shape].f;var di=ckDefIdx(k);if(di!=null&&SHP[di])return SHP[di].f;var g=ckGroup(k);if(g)return CK_SHAPE[g];var h=0,s=String(k||"").toUpperCase();for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return CK_EXTRA[h%CK_EXTRA.length]}
 window.CK_SHP=SHP;window.CK_CATSHAPE={group:CK_GROUP,shapes:CK_SHAPE,extra:CK_EXTRA,shapeFor:ckShapeFor};
@@ -191,15 +198,19 @@ function ckApplySec(sec){var c=ckCfg(sec.getAttribute("data-k")||""),ln=c.col||"
   sec.__ckc=ln||"";sec.__ckcd=ln?ckMix(ln,.3):"";sec.__ckw=+c.wave||0}
 var ckSig="";
 function ckSigNow(){try{return JSON.stringify(ckLookObj().ck||{})+"|"+ckPicks().list.join(",")}catch(e){return ""}}
-function ckRefresh(){document.querySelectorAll("#opMag .op-cat").forEach(ckApplySec);document.querySelectorAll("#opMag .pv>button[data-ckdone]").forEach(ckFrame);if(typeof window.ckApplyLook==="function")try{window.ckApplyLook(ckLookObj())}catch(e){}}
+
+/* ---- top preview card chips: colour of their own category, live ---- */
+var CK_K2G={LEAD:"SYNTH",SYNTH:"SYNTH",SAW:"SYNTH",HOOVER:"SYNTH",CHIP:"SYNTH",FLUTE:"SYNTH",PLUCK:"PLUCK",ARP:"PLUCK",STAB:"PLUCK",BASS:"BASS","808":"BASS",SUB:"BASS",PAD:"PAD",DRONE:"PAD",CHOIR:"PAD",KEY:"KEYS",KEYS:"KEYS",CHORD:"KEYS",BELL:"KEYS",CHIME:"KEYS",PIANO:"KEYS",TEXTURE:"FX",FX:"FX",SFX:"FX",RISER:"FX",IMPACT:"FX",VOX:"VOX",VOCAL:"VOX",KICK:"KICK",SNARE:"SNARE",CLAP:"SNARE",HAT:"HAT",OPEN:"HAT",CRASH:"HAT",CYMBAL:"HAT",ROLL:"HAT",SHAKER:"HAT",PERC:"PERC",RIM:"PERC",FOLEY:"PERC"};
+function ckChips(){var ks=document.querySelectorAll(".cs-pv.cs-card .pc-k");for(var i=0;i<ks.length;i++){var w=ckGKey(ks[i].textContent),g=CK_K2G[w]||w,c=ckCfg(g).col;if(c)ks[i].style.setProperty("--pck",c);else ks[i].style.removeProperty("--pck")}}
+function ckRefresh(){ckChips();document.querySelectorAll("#opMag .op-cat").forEach(ckApplySec);document.querySelectorAll("#opMag .pv>button[data-ckdone]").forEach(ckFrame);if(typeof window.ckApplyLook==="function")try{window.ckApplyLook(ckLookObj())}catch(e){}}
 function ckSection(sec){
   var key=sec.getAttribute("data-k")||"",box=sec.querySelector(".op-box"),nm=(box?box.textContent.split("·")[0]:key).trim(),n=sec.querySelectorAll(".pv>button").length;
-  if(!sec.querySelector(".ck-ch")){var h=document.createElement("div");h.className="ck-ch";h.innerHTML="<b>"+nm.toLowerCase()+"</b><span>"+n+" PRESET"+(n===1?"":"S")+"</span>";sec.insertBefore(h,sec.firstChild)}
-  var typeTxt=(key||nm).replace(/S$/,"");
-  sec.querySelectorAll(".pv>button").forEach(function(b){var tc=b.querySelector(".nm .tc");ckCard(b,key||nm,(tc?tc.textContent:typeTxt).trim()||typeTxt)});
+  if(!sec.querySelector(".ck-ch")){var h=document.createElement("div");h.className="ck-ch";h.innerHTML="<b>"+nm.toLowerCase()+"</b><span>"+n+(sec.getAttribute("data-drum")?" SAMPLE":" PRESET")+(n===1?"":"S")+"</span>";sec.insertBefore(h,sec.firstChild)}
+  var typeTxt=(key||nm).replace(/([^S])S$/,"$1");
+  sec.querySelectorAll(".pv>button").forEach(function(b){var tc=b.querySelector(".nm .tc"),w="";if(!tc){var n0=b.querySelector(".nm");w=n0?(n0.textContent||"").trim().split(/\s+/)[0].replace(/[^A-Za-z0-9]/g,""):"";w=w.replace(/([^sS])s$/,"$1");if(!/^[A-Za-z0-9]{2,}$/.test(w))w=""}ckCard(b,key||nm,(tc?tc.textContent:(w||typeTxt)).trim()||typeTxt)});
 }
 var ckBusy=0;
-function ckScan(){if(ckBusy)return;ckBusy=1;try{
+function ckScan(){if(ckBusy)return;ckBusy=1;try{try{ckChips()}catch(e){}
   var de=document.documentElement;if(!de.classList.contains("opium2")){return}
   var secs=document.querySelectorAll("#opMag .op-cat");if(!secs.length)return;
   de.classList.add("ck-cards");de.classList.toggle("ck-adm",ckAdm());ckSyncMarks();ckRestore();secs.forEach(ckSection);var sg=ckSigNow();if(sg!==ckSig){ckSig=sg;ckRefresh()}if(CK_DONE||ckAdm())requestAnimationFrame(function(){de.classList.add("ck-ready")})}finally{ckBusy=0}}
@@ -234,7 +245,7 @@ function ckSave(){clearTimeout(ckSaveT);ckSaveT=setTimeout(function(){
       Object.keys(sl).forEach(function(k){if(k!=="ck"&&k!=="ckShapes")L[k]=sl[k]});
       L.ck=m;if(sl.ckShapes&&!(L.ckShapes&&L.ckShapes.length))L.ckShapes=sl.ckShapes}
     return fetch("/api/admin/packs",{method:"PUT",headers:{"content-type":"application/json","X-Look-Edit":"1"},credentials:"same-origin",body:JSON.stringify(window.ADM)}).then(function(r){var o={ok:!!(r&&r.ok),st:r?r.status:0};return r&&r.ok?r.json().then(function(j){if(j&&j.lookKept){o.ok=false;o.kept=1}return o}).catch(function(){return o}):o}).catch(function(){return {ok:false,st:0}})
-  }).then(function(o){ckToast(o.ok?"Saved · live":(o.kept?"NOT SAVED - reload the page":"NOT SAVED ("+(o.st||"no connection")+")"),!o.ok);if(o.ok)ckDirty={};try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})
+  }).then(function(o){ckToast(o.ok?"Saved · live":(o.kept?"NOT SAVED - reload the page":"NOT SAVED ("+(o.st||"no connection")+")"),!o.ok);if(o.ok){ckDirty={};try{CK_SRV=JSON.parse(JSON.stringify(window.ADM.look||{}));CK_DONE=true}catch(e){}}try{localStorage.removeItem("ck-prod");localStorage.removeItem("ck-draft")}catch(e){}})
 },350)}
 function ckBak(){try{var L=window.ADM.look||{};localStorage.setItem("ck-bak",JSON.stringify({ck:L.ck||{},ts:Date.now()}))}catch(e){}}
 function ckRestore(){try{if(!ckAdm())return;var L=window.ADM.look=window.ADM.look||{};if(L.ck&&Object.keys(L.ck).length)return;var b=JSON.parse(localStorage.getItem("ck-bak")||"null");if(b&&b.ck&&Object.keys(b.ck).length){L.ck=b.ck;ckSig=ckSigNow();ckRefresh();ckSave()}}catch(e){}}

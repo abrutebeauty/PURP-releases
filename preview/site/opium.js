@@ -32,7 +32,7 @@
   const H = document.documentElement;
   if (ON) {
     H.classList.add("opium", "opv-" + OPV); if (O2) H.classList.add("opium2");
-    const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/opium.css?v=7"; document.head.appendChild(l);
+    const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/opium.css?v=6"; document.head.appendChild(l);
   }
 
   /* ---------- admin switch (in the outlined top line of admin mode) ---------- */
@@ -131,20 +131,29 @@
   /* ---------- pack page: magazine layout ---------- */
   const NICE = { BASS: "BASS", ARP: "ARPS", LEAD: "LEADS", PAD: "PADS", PLUCK: "PLUCKS", KEYS: "KEYS", CHORD: "CHORDS", BELL: "BELLS", "808": "808S", FX: "FX", SONG: "SONG SOUNDS", LOOP: "LOOPS" };
   const SHOW = O2 ? 8 : 10;   // two rows, then SEE ALL
+  /* Eman 26 Nov (late): ONE category system on every pack. Serum packs: SYNTH / PLUCK-ARP / BASS / PAD / KEYS / TEXTURE-FX / VOX. Drum packs: 808 / KICK / SNARE-CLAP / HATS-CYMBALS / PERCUSSION / TEXTURE-FX.
+     The sound's first word decides. Words not in his list (LOOP, SONG, POSTER...) keep their own group. */
+  const sing = (w) => String(w || "").toUpperCase().replace(/([^S])S$/, "$1");
+  const G_PRE = { LEAD: "SYNTH", SYNTH: "SYNTH", SAW: "SYNTH", HOOVER: "SYNTH", CHIP: "SYNTH", FLUTE: "SYNTH", PLUCK: "PLUCK", ARP: "PLUCK", STAB: "PLUCK", BASS: "BASS", "808": "BASS", SUB: "BASS", PAD: "PAD", DRONE: "PAD", CHOIR: "PAD", KEY: "KEYS", KEYS: "KEYS", CHORD: "KEYS", BELL: "KEYS", CHIME: "KEYS", PIANO: "KEYS", TEXTURE: "FX", FX: "FX", SFX: "FX", RISER: "FX", IMPACT: "FX", VOX: "VOX", VOCAL: "VOX" };
+  const G_DRM = { "808": "808", KICK: "KICK", SNARE: "SNARE", CLAP: "SNARE", HAT: "HATS", OPEN: "HATS", CRASH: "HATS", CYMBAL: "HATS", ROLL: "HATS", SHAKER: "HATS", RIDE: "HATS", PERC: "PERC", PERCUSSION: "PERC", RIM: "PERC", FOLEY: "PERC", TOM: "PERC", FILL: "PERC", CONGA: "PERC", BONGO: "PERC", CLAVE: "PERC", COWBELL: "PERC", TAMB: "PERC", SNAP: "PERC", CLICK: "PERC", STICK: "PERC", TEXTURE: "FX", FX: "FX", SFX: "FX", RISER: "FX", IMPACT: "FX" };
+  const GNAME = { SYNTH: "SYNTH", PLUCK: "PLUCK / ARP", BASS: "BASS", PAD: "PAD", KEYS: "KEYS", FX: "TEXTURE / FX", VOX: "VOX", "808": "808", KICK: "KICK", SNARE: "SNARE / CLAP", HATS: "HATS / CYMBALS", PERC: "PERCUSSION" };
+  const G_ORD_PRE = ["SYNTH", "PLUCK", "BASS", "PAD", "KEYS", "FX", "VOX"], G_ORD_DRM = ["808", "KICK", "SNARE", "HATS", "PERC", "FX"];
+  const isDrumPack = (p) => !!p && (p.type === "drums" || /(^|-)(drums?|kit)(-|$)/.test(String(p.id || "")));
+  let CUR_DRUM = false;
   function groupsOf(p) {
-    const m = new Map();
-    p.sounds.forEach((s) => { if (s.hidden && !(typeof ADMIN !== "undefined" && ADMIN)) return; const k = String(s.name).split(/\s+/)[0].toUpperCase(); if (!m.has(k)) m.set(k, []); m.get(k).push(s); });
-    const order = (typeof SEC_ORDER !== "undefined" && SEC_ORDER[p.id]) || null;
-    return [...m.entries()].sort((a, b) => (order ? (order.indexOf(a[0]) + 99) % 99 - (order.indexOf(b[0]) + 99) % 99 : 0) || b[1].length - a[1].length);
+    const drum = isDrumPack(p), map = drum ? G_DRM : G_PRE, m = new Map();
+    p.sounds.forEach((s) => { if (s.hidden && !(typeof ADMIN !== "undefined" && ADMIN)) return; const w = String(s.name).split(/\s+/)[0].toUpperCase(), g = map[w] || map[sing(w)] || w; if (!m.has(g)) m.set(g, []); m.get(g).push(s); });
+    const ord = drum ? G_ORD_DRM : G_ORD_PRE, rank = (k) => { const i = ord.indexOf(k); return i < 0 ? 99 : i; };
+    return [...m.entries()].sort((a, b) => rank(a[0]) - rank(b[0]) || b[1].length - a[1].length);
   }
   const shortName = (s) => { const w = String(s.name).trim().split(/\s+/); return w.length > 1 ? w.slice(1).join(" ") : s.name; };
   const one = (s, k) => O2 ? sounds({ sounds: [s] }) : sounds({ sounds: [{ ...s, _k: k, _tc: "", name: shortName(s) }] });   // OPIUM 2 (Eman 20:11): the normal sound cards
-  function header(k, n) { return `<div class="op-h">${glyph("l", 46, true)}<i class="op-ln"></i><b class="op-box">${esc(NICE[k] || k)} · ${n}</b><i class="op-ln"></i></div>`; }
+  function header(k, n) { return `<div class="op-h">${glyph("l", 46, true)}<i class="op-ln"></i><b class="op-box">${esc(GNAME[k] || NICE[k] || k)} · ${n}</b><i class="op-ln"></i></div>`; }
   const LAY = ["l7", "r5", "c8", "l5", "r7", "l6", "r6", "c9"];   // magazine spans on a 12-column grid, left / right / centre
   function block(k, list, i) {
     const tiles = list.map((s, j) => `<div class="pv ${O2 ? "big op-u" : "op-t"}${s.top || s.mark ? " star" : ""}${j >= SHOW ? " more" : ""}">${one(s, k)}</div>`).join("");
     const more = list.length > SHOW ? `<button class="op-all" data-opall>SEE ALL ${list.length} ▾</button>` : "";
-    return `<section class="op-cat" data-k="${esc(k)}">${header(k, list.length)}<div class="op-grid">${tiles}</div>${more}</section>`;
+    return `<section class="op-cat" data-k="${esc(k)}"${CUR_DRUM ? ' data-drum="1"' : ""}>${header(k, list.length)}<div class="op-grid">${tiles}</div>${more}</section>`;
   }
   function stack(trio, i) {
     if (trio.length < 3) return "";
@@ -165,7 +174,7 @@
     if (mag && mag.dataset.id === p.id && mag.dataset.n == p.sounds.length) return;
     if (!mag) { mag = document.createElement("div"); mag.id = "opMag"; mag.className = "op-mag"; host.closest("section").before(mag); }
     mag.dataset.id = p.id; mag.dataset.n = p.sounds.length;
-    const gs = groupsOf(p); seed = p.id.length * 11 + 5;
+    CUR_DRUM = isDrumPack(p); const gs = groupsOf(p); seed = p.id.length * 11 + 5;
     // stacks: 3 different kinds, one sound each (Eman will pick the real trios later)
     const kinds = gs.filter(([, l]) => l.length).map(([k, l]) => ({ k, l }));
     const trios = [];
@@ -580,19 +589,6 @@
 (function () {
   let n = 0; const t = setInterval(() => {
     if (++n > 80) return clearInterval(t);
-    if (window.ADM && document.querySelector(".adm-top") && !window.__rvLoaded) { clearInterval(t); const s = document.createElement("script"); s.src = "/admin/review.js?v=6"; document.head.appendChild(s); }
-  }, 250);
-})();
-
-/* PLAY AGAIN = FROM THE START (Eman 26 Nov): pause a sound, press play again -> it starts at the beginning, in every look and in admin too.
-   (Admin tools keep their own Space-bar pause/resume.) Remove this block = old "resume where it stopped". shop.js loads after this file, so wait for it. */
-(function () {
-  let n = 0; const t = setInterval(() => {
-    if (++n > 80) return clearInterval(t);
-    try {
-      if (typeof tapPause !== "function" || typeof tapResume === "undefined" || window.__ckRestart) return; window.__ckRestart = 1; clearInterval(t);
-      tapPause = function () { const b = curBtn; if (!b) return; audio.pause(); tapResume.delete(b.dataset.src); stopCur(); };
-      document.addEventListener("click", (e) => { const b = e.target.closest && e.target.closest(".pv button"); if (!b || !curBtn || curBtn === b) return; const prev = curBtn.dataset.src; setTimeout(() => { try { tapResume.delete(prev); } catch (x) {} }, 0); }, true);
-    } catch (e) {}
+    if (window.ADM && document.querySelector(".adm-top") && !window.__rvLoaded) { clearInterval(t); const s = document.createElement("script"); s.src = "/admin/review.js?v=5"; document.head.appendChild(s); }
   }, 250);
 })();
