@@ -17,7 +17,7 @@ html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr{position:absolute;l
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path.dash{stroke-dasharray:10 7}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-fr path{fill:none;stroke:var(--ck-line,#ecebf0);stroke-width:1.7;stroke-miterlimit:10}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-top{grid-area:top;position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-chip{font:400 7.4px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:var(--ck-line,#ecebf0);color:#0e0d12;padding:2px 9px;white-space:nowrap}
+html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-chip{font:400 7.4px/1.75 "OpSpace","Martian Mono","JetBrains Mono",monospace;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:#ecebf0!important;color:#0e0d12;padding:2px 9px;white-space:nowrap}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .ck-ic{width:54px;height:54px;color:var(--ck-line,#ecebf0);flex:none;display:block}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm{grid-area:nm;position:relative;z-index:1;display:block!important;margin-top:8px;font:600 14px/1.1 "Inter","Helvetica Neue",Arial,sans-serif!important;letter-spacing:-.02em!important;text-transform:lowercase!important;color:#ecebf0!important;white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
 html.ck-cards.ck-cards.ck-cards.opium2 #opMag .op-cat .pv>button .nm::before{content:attr(data-ck)}
@@ -98,3 +98,5 @@ html.opium2 .cs-pv.cs-card .pc-rows{margin-top:18px}
 html.opium2 .cs-pv.cs-card .cs-pvstack{padding:16px 14px 18px!important}
 html.opium2 .cs-pv.cs-card .cs-pvr{padding:10px 0}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvw{height:54px!important}
+
+.ck-ed .lk{display:flex;align-items:center;gap:8px;font:700 10px/1.2 Inter,sans-serif;letter-spacing:.06em;color:#cfc8dc;cursor:pointer;margin:2px 0 4px}.ck-ed .lk input{width:16px;height:16px;accent-color:#E4FF3A;cursor:pointer}
