@@ -1,0 +1,221 @@
+/* TOYTUNE window (ui/toytune.js). Twin = TOY KEYS (.tk-*): same tiles, faders, keyboard, top bar.
+   Dark grey, purple, acid #E4FF3A only for what's on. Square edges. Everything under .tt-root. ASCII only. */
+.tt-root {
+  --tt-hue: 270;
+  --tt-ink: #ececee;
+  --tt-ink2: rgba(236, 236, 238, 0.6);
+  --tt-ink3: rgba(236, 236, 238, 0.32);
+  --tt-line: rgba(255, 255, 255, 0.08);
+  --tt-line2: rgba(255, 255, 255, 0.16);
+  --tt-acid: #e4ff3a;
+  --tt-purple: #8b5cf6;
+  --tt-red: #ff3b4e;
+  position: relative;
+  width: 100%; height: 100%;
+  min-height: 420px;
+  display: grid;
+  grid-template-rows: 48px minmax(0, 1fr) 112px;
+  overflow: hidden;
+  color: var(--tt-ink);
+  font: 600 12px/1.2 Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background:
+    radial-gradient(ellipse 60% 70% at 30% 40%, hsla(var(--tt-hue), 50%, 24%, 0.35), transparent 70%),
+    linear-gradient(180deg, #1c1c20 0%, #141417 100%);
+  user-select: none; -webkit-user-select: none;
+  outline: none;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+}
+.tt-root *, .tt-root *::before, .tt-root *::after { box-sizing: border-box; }
+.tt-root svg { width: auto; height: auto; max-width: none; fill: none; vertical-align: top; }
+.tt-root button, .tt-root input { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: pointer; border-radius: 0; }
+
+/* top bar: brand | tabs | key, PG MATCH, MIDI, gear, power */
+.tt-top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 12px 0 18px; border-bottom: 1px solid var(--tt-line); }
+.tt-brand { display: flex; align-items: center; gap: 10px; }
+.tt-word { font: 800 17px/1 Unbounded, "Archivo Black", "Arial Black", sans-serif; letter-spacing: 0.02em; color: #fff; white-space: nowrap; }
+.tt-word b { color: var(--tt-purple); font-weight: 800; margin-left: 4px; }
+.tt-lamp { width: 8px; height: 8px; background: var(--tt-purple); box-shadow: 0 0 12px 2px var(--tt-purple); opacity: 0.15; transition: opacity 0.08s; }
+.tt-tabs { display: flex; margin: 0 14px; border: 1px solid var(--tt-line2); }
+.tt-tabs button { height: 26px; padding: 0 12px; font-weight: 700; font-size: 10px; letter-spacing: 0.14em; color: var(--tt-ink2); }
+.tt-tabs button:hover { color: #fff; background: rgba(255, 255, 255, 0.05); }
+.tt-tabs button.on { background: var(--tt-acid); color: #0d0d10; }
+.tt-right { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
+.tt-root .tt-chip { height: 26px; padding: 0 9px; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 10px; letter-spacing: 0.12em; color: var(--tt-ink2); box-shadow: inset 0 0 0 1px var(--tt-line2); white-space: nowrap; }
+.tt-chip:hover { color: #fff; }
+.tt-chip i { width: 6px; height: 6px; background: var(--tt-ink3); display: inline-block; }
+.tt-chip.on { color: var(--tt-ink); }
+.tt-chip.on i { background: var(--tt-acid); box-shadow: 0 0 6px var(--tt-acid); }
+.tt-chip .car { width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 4px solid currentColor; opacity: 0.7; }
+.tt-key { color: var(--tt-ink); min-width: 74px; justify-content: space-between; }
+.tt-root .tt-icon { width: 26px; height: 26px; display: grid; place-items: center; color: var(--tt-ink2); }
+.tt-icon:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
+.tt-icon.on { color: var(--tt-acid); }
+.tt-root .tt-icon svg { width: 14px; height: 14px; }
+
+/* main area: content | faders (same as TOY KEYS) */
+.tt-main { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; padding: 14px 18px; }
+.tt-pane { min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.tt-faders { display: flex; gap: 10px; align-items: stretch; padding-left: 16px; border-left: 1px solid var(--tt-line); }
+.tt-fader { width: 52px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.tt-fnum { font: 600 10px/1 "Martian Mono", ui-monospace, monospace; color: var(--tt-ink2); height: 12px; white-space: nowrap; }
+.tt-fbox { position: relative; flex: 1; width: 100%; min-height: 80px; background: rgba(255, 255, 255, 0.035); border: 1px solid var(--tt-line); cursor: ns-resize; touch-action: none; overflow: hidden; }
+.tt-ffill { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, var(--tt-purple), hsl(var(--tt-hue), 80%, 72%)); }
+.tt-ffill::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: #fff; opacity: 0.85; }
+.tt-fbox.mid .tt-ffill { bottom: auto; }
+.tt-fbox.mid::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--tt-line2); }
+.tt-fader.drag .tt-fbox, .tt-fbox:hover { border-color: var(--tt-line2); }
+.tt-fader.drag .tt-ffill::after { background: var(--tt-acid); }
+.tt-flabel { font-size: 10px; letter-spacing: 0.16em; color: var(--tt-ink2); white-space: nowrap; }
+.tt-ftop { font-size: 8.5px; letter-spacing: 0.16em; color: var(--tt-ink3); height: 10px; }
+
+/* TUNE: the pitch picture */
+.tt-graph { position: relative; flex: 1; min-height: 120px; background: rgba(0, 0, 0, 0.22); border: 1px solid var(--tt-line); }
+.tt-graph canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tt-note { position: absolute; left: 12px; top: 10px; display: flex; align-items: baseline; gap: 8px; pointer-events: none; }
+.tt-note b { font: 800 28px/1 Unbounded, "Archivo Black", sans-serif; color: #fff; letter-spacing: 0.02em; min-width: 64px; }
+.tt-note span { font: 600 10px/1 "Martian Mono", ui-monospace, monospace; color: var(--tt-ink2); }
+.tt-cents { position: absolute; right: 12px; top: 14px; width: 120px; height: 6px; background: rgba(255, 255, 255, 0.06); pointer-events: none; }
+.tt-cents::before { content: ""; position: absolute; left: 50%; top: -3px; width: 1px; height: 12px; background: var(--tt-ink3); }
+.tt-cents i { position: absolute; top: 0; height: 100%; width: 3px; margin-left: -1px; background: var(--tt-acid); left: 50%; }
+.tt-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.tt-row .sp { flex: 1; }
+
+/* tiles (TOY KEYS twin) */
+.tt-tiles { min-height: 0; overflow: auto; display: flex; flex-direction: column; gap: 14px; scrollbar-width: thin; }
+.tt-grplabel { font-size: 10px; letter-spacing: 0.22em; color: var(--tt-ink3); margin-bottom: 6px; }
+.tt-grp.dirty .tt-grplabel { color: rgba(255, 59, 78, 0.75); }
+.tt-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.tt-grid.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.tt-root .tt-tile {
+  position: relative; height: 72px; padding: 11px 12px 10px; text-align: left;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: linear-gradient(160deg, hsla(var(--th, 270), 45%, 30%, 0.32), rgba(255, 255, 255, 0.025) 70%);
+  border: 1px solid var(--tt-line) !important;
+  color: var(--tt-ink2);
+  transition: border-color 0.12s, color 0.12s, background 0.2s, transform 0.08s;
+}
+.tt-tile svg { color: hsl(var(--th, 270), 70%, 72%); opacity: 0.85; }
+.tt-root .tt-tile svg { width: 22px; height: 22px; }
+.tt-tile span { font-size: 11px; letter-spacing: 0.1em; line-height: 1.15; }
+.tt-tile:hover { color: #fff; border-color: var(--tt-line2) !important; }
+.tt-tile:active { transform: scale(0.97); }
+.tt-tile.on { color: var(--tt-acid); border-color: var(--tt-acid) !important; box-shadow: inset 0 0 0 1px var(--tt-acid), 0 0 18px -6px var(--tt-acid); }
+.tt-tile.on svg { color: var(--tt-acid); opacity: 1; }
+.tt-grp.dirty .tt-tile { background: linear-gradient(160deg, rgba(255, 59, 78, 0.16), rgba(255, 255, 255, 0.02) 70%); }
+
+/* FX: prompt line */
+.tt-prompt { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; height: 34px; border: 1px solid var(--tt-line2); background: rgba(0, 0, 0, 0.25); }
+.tt-prompt .gt { padding: 0 10px; font: 700 12px/1 "Martian Mono", ui-monospace, monospace; color: var(--tt-purple); }
+.tt-root .tt-prompt input { height: 100%; cursor: text; font: 600 12px/1 Inter, sans-serif; color: #fff; outline: none; letter-spacing: 0.02em; }
+.tt-prompt input::placeholder { color: var(--tt-ink3); letter-spacing: 0.14em; font-size: 10px; }
+.tt-prompt button { height: 100%; padding: 0 14px; font-weight: 800; font-size: 10px; letter-spacing: 0.16em; color: #0d0d10; background: var(--tt-purple); }
+.tt-prompt button:hover { background: hsl(var(--tt-hue), 85%, 72%); }
+.tt-prompt.busy button { background: var(--tt-acid); }
+
+/* bottom strip: keyboard (TUNE / CHOIR / VOCODER), chain (FX), takes (STACKS) */
+.tt-bottom { border-top: 1px solid var(--tt-line); background: #111113; min-height: 0; }
+.tt-kb { height: 100%; display: grid; grid-template-columns: 56px minmax(0, 1fr); }
+.tt-oct { display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid var(--tt-line); font: 600 10px/1 "Martian Mono", ui-monospace, monospace; color: var(--tt-ink3); gap: 6px; }
+.tt-keys { position: relative; display: flex; padding: 8px 10px 10px; touch-action: none; }
+.tt-k { position: relative; flex: 1 1 0; margin: 0 1px; background: #e9e8ee; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; }
+.tt-k small { font: 600 8.5px/1 "Martian Mono", ui-monospace, monospace; color: rgba(0, 0, 0, 0.35); pointer-events: none; }
+.tt-k.b { flex: 0 0 0; width: 0; margin: 0; z-index: 2; background: none; }
+.tt-k.b::before { content: ""; position: absolute; top: 0; left: -9px; width: 18px; height: 58%; background: #1c1c20; border: 1px solid #000; }
+.tt-k.out { background: #6d6b74; }
+.tt-k.b.out::before { background: #0b0b0d; border-color: #000; opacity: 0.6; }
+.tt-k.out small { color: rgba(0, 0, 0, 0.5); }
+.tt-k.on { background: var(--tt-purple); }
+.tt-k.b.on::before { background: var(--tt-purple); }
+.tt-k.hit { background: var(--tt-acid) !important; }
+.tt-k.b.hit::before { background: var(--tt-acid); }
+
+.tt-chain { height: 100%; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.tt-mod { position: relative; padding: 10px 10px 8px; border-right: 1px solid var(--tt-line); display: flex; flex-direction: column; gap: 6px; text-align: left; cursor: pointer; }
+.tt-mod:last-child { border-right: 0; }
+.tt-mod:hover { background: rgba(255, 255, 255, 0.025); }
+.tt-mod.sel { background: rgba(139, 92, 246, 0.12); box-shadow: inset 0 2px 0 var(--tt-purple); }
+.tt-mod h4 { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 10px; letter-spacing: 0.18em; color: var(--tt-ink2); font-weight: 700; }
+.tt-mod h4 i { width: 6px; height: 6px; background: var(--tt-ink3); }
+.tt-mod.on h4 { color: var(--tt-ink); }
+.tt-mod.on h4 i { background: var(--tt-acid); box-shadow: 0 0 6px var(--tt-acid); }
+.tt-mod .val { font: 600 10px/1 "Martian Mono", ui-monospace, monospace; color: var(--tt-ink2); }
+.tt-bar { height: 4px; background: rgba(255, 255, 255, 0.06); position: relative; }
+.tt-bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--tt-purple); }
+.tt-root .tt-mode { align-self: flex-start; margin-top: auto; height: 18px; padding: 0 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; color: var(--tt-ink); box-shadow: inset 0 0 0 1px var(--tt-line2); display: inline-flex; align-items: center; gap: 4px; }
+.tt-mode:hover { color: var(--tt-acid); }
+
+/* module detail row (FX: the picked module's knobs) */
+.tt-detail { display: flex; gap: 14px; align-items: center; min-height: 34px; padding: 0 2px; }
+.tt-detail .ttl { font-size: 10px; letter-spacing: 0.22em; color: var(--tt-ink3); min-width: 56px; }
+.tt-mini { display: flex; flex-direction: column; gap: 4px; width: 92px; cursor: ew-resize; touch-action: none; }
+.tt-mini span { display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 0.14em; color: var(--tt-ink2); }
+.tt-mini span em { font: 600 9px/1 "Martian Mono", ui-monospace, monospace; font-style: normal; color: var(--tt-ink); }
+.tt-seg { display: flex; box-shadow: inset 0 0 0 1px var(--tt-line2); }
+.tt-seg button { height: 22px; padding: 0 8px; font-size: 9px; font-weight: 700; letter-spacing: 0.14em; color: var(--tt-ink2); }
+.tt-seg button:hover { color: #fff; }
+.tt-seg button.on { background: var(--tt-acid); color: #0d0d10; }
+
+/* STACKS */
+.tt-stack { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
+.tt-stack .tt-src { flex: 1; min-height: 64px; }
+.tt-src { height: 64px; position: relative; background: rgba(0, 0, 0, 0.22); border: 1px solid var(--tt-line); }
+.tt-src canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tt-src b { position: absolute; left: 10px; top: 8px; font-size: 9.5px; letter-spacing: 0.2em; color: var(--tt-ink2); font-weight: 700; }
+.tt-big { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.tt-root .tt-big .tt-tile { height: 110px; }
+.tt-root .tt-big .tt-tile span { font-size: 13px; }
+.tt-takes { height: 100%; display: flex; gap: 8px; padding: 10px; overflow-x: auto; }
+.tt-take { flex: 0 0 160px; position: relative; border: 1px solid var(--tt-line); background: rgba(255, 255, 255, 0.025); padding: 8px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
+.tt-take:hover { border-color: var(--tt-line2); }
+.tt-take.on { border-color: var(--tt-acid); }
+.tt-take b { font-size: 10px; letter-spacing: 0.16em; color: var(--tt-ink); }
+.tt-take small { font: 600 9px/1 "Martian Mono", ui-monospace, monospace; color: var(--tt-ink3); }
+.tt-take canvas { width: 100%; height: 34px; }
+.tt-take.wait { color: var(--tt-ink3); }
+.tt-take.wait::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 40%; background: var(--tt-purple); animation: tt-run 1.2s linear infinite; }
+@keyframes tt-run { from { left: 0; } to { left: 60%; } }
+
+/* menus (key picker, delay mode) */
+.tt-menu { position: absolute; z-index: 30; background: #1b1b1f; border: 1px solid var(--tt-line2); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); padding: 6px; }
+.tt-menu .tt-mgrid { display: grid; grid-template-columns: repeat(6, 34px); gap: 2px; }
+.tt-menu button { height: 24px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: var(--tt-ink2); }
+.tt-menu button:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
+.tt-menu button.on { background: var(--tt-acid); color: #0d0d10; }
+.tt-menu .tt-mlist { display: flex; flex-direction: column; min-width: 130px; }
+.tt-menu .tt-mlist button { text-align: left; padding: 0 8px; letter-spacing: 0.14em; }
+.tt-menu hr { border: 0; border-top: 1px solid var(--tt-line); margin: 6px 0; }
+
+/* preferences (gear): a sheet over the main area */
+.tt-prefs { position: absolute; left: 0; right: 0; top: 48px; bottom: 0; z-index: 20; background: rgba(20, 20, 23, 0.97); padding: 22px 26px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 40px; align-content: start; }
+.tt-prefs[hidden] { display: none; }
+.tt-pref { display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; border-bottom: 1px solid var(--tt-line); }
+.tt-pref > span { font-size: 10px; letter-spacing: 0.2em; color: var(--tt-ink2); }
+
+/* bypass */
+.tt-root.off .tt-main, .tt-root.off .tt-bottom { opacity: 0.4; filter: grayscale(1); }
+
+/* OPTION 2 layout: tabs as a rail on the left */
+.tt-root.rail { grid-template-columns: 96px minmax(0, 1fr); grid-template-rows: 48px minmax(0, 1fr) 112px; }
+.tt-root.rail .tt-top { grid-column: 1 / 3; grid-template-columns: 1fr auto; }
+.tt-root.rail .tt-top .tt-tabs { display: none; }
+.tt-root.rail .tt-railbox { display: flex; grid-row: 2 / 4; }
+.tt-railbox { display: none; flex-direction: column; border-right: 1px solid var(--tt-line); padding: 10px 0; }
+.tt-railbox button { height: 54px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 9px; font-weight: 700; letter-spacing: 0.16em; color: var(--tt-ink2); }
+.tt-railbox button svg { width: 18px; height: 18px; }
+.tt-railbox button:hover { color: #fff; }
+.tt-railbox button.on { color: var(--tt-acid); box-shadow: inset 2px 0 0 var(--tt-acid); }
+
+/* in the lane window (its header has Done etc.) */
+.iw-tm > .tt-root { border-radius: 0; }
+.iw-tm .tt-x { display: none; }
+
+/* CHOIR stage + VOCODER bands: live data pictures under the tiles */
+.tt-stage { position: relative; flex: 1; min-height: 90px; background: rgba(0, 0, 0, 0.22); border: 1px solid var(--tt-line); }
+.tt-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tt-stage b { position: absolute; left: 10px; top: 8px; font-size: 9.5px; letter-spacing: 0.2em; color: var(--tt-ink3); font-weight: 700; }
+.tt-tiles.fit { flex: 0 0 auto; overflow: visible; }
+/* CHOIR / VOCODER on: a small acid dot on the tab, live keys pressed */
+.tt-tabs button.lit:not(.on)::after, .tt-railbox button.lit:not(.on)::after { content: ""; display: inline-block; width: 5px; height: 5px; margin-left: 6px; vertical-align: 1px; background: var(--tt-acid); }
+.tt-k.down { background: var(--tt-acid) !important; }
+.tt-k.b.down::before { background: var(--tt-acid); }

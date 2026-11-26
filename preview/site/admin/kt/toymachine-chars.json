@@ -1,0 +1,673 @@
+{
+ "tile": 320,
+ "cols": 6,
+ "tiles": [
+  {
+   "src": "KT_UP_01.jpg",
+   "kind": "char",
+   "light": 0.284,
+   "warm": -0.144,
+   "hue": 230,
+   "sat": 0.22,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_02.jpg",
+   "kind": "char",
+   "light": 0.191,
+   "warm": -0.036,
+   "hue": 226,
+   "sat": 0.091,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_03.jpg",
+   "kind": "char",
+   "light": 0.357,
+   "warm": -0.038,
+   "hue": 277,
+   "sat": 0.127,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_04.jpg",
+   "kind": "char",
+   "light": 0.055,
+   "warm": 0.012,
+   "hue": 73,
+   "sat": 0.163,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_05.jpg",
+   "kind": "char",
+   "light": 0.253,
+   "warm": -0.084,
+   "hue": 243,
+   "sat": 0.153,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_06.jpg",
+   "kind": "char",
+   "light": 0.39,
+   "warm": -0.051,
+   "hue": 225,
+   "sat": 0.064,
+   "dropped": false,
+   "at": 0
+  },
+  {
+   "src": "KT_UP_07.jpg",
+   "kind": "char",
+   "light": 0.326,
+   "warm": 0.156,
+   "hue": 358,
+   "sat": 0.216,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_08.jpg",
+   "kind": "char",
+   "light": 0.412,
+   "warm": -0.031,
+   "hue": 276,
+   "sat": 0.089,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_09.jpg",
+   "kind": "char",
+   "light": 0.216,
+   "warm": -0.098,
+   "hue": 242,
+   "sat": 0.197,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_10.jpg",
+   "kind": "char",
+   "light": 0.344,
+   "warm": -0.158,
+   "hue": 235,
+   "sat": 0.196,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_11.jpg",
+   "kind": "char",
+   "light": 0.36,
+   "warm": -0.004,
+   "hue": 295,
+   "sat": 0.062,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_12.jpg",
+   "kind": "char",
+   "light": 0.223,
+   "warm": 0.164,
+   "hue": 6,
+   "sat": 0.319,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_13.jpg",
+   "kind": "char",
+   "light": 0.267,
+   "warm": -0.038,
+   "hue": 237,
+   "sat": 0.068,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_14.jpg",
+   "kind": "char",
+   "light": 0.189,
+   "warm": -0.067,
+   "hue": 236,
+   "sat": 0.156,
+   "dropped": false,
+   "at": 1
+  },
+  {
+   "src": "KT_UP_15.jpg",
+   "kind": "char",
+   "light": 0.514,
+   "warm": -0.149,
+   "hue": 239,
+   "sat": 0.176,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_16.jpg",
+   "kind": "char",
+   "light": 0.475,
+   "warm": -0.188,
+   "hue": 225,
+   "sat": 0.197,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_17.jpg",
+   "kind": "char",
+   "light": 0.496,
+   "warm": -0.025,
+   "hue": 278,
+   "sat": 0.072,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_18.jpg",
+   "kind": "char",
+   "light": 0.509,
+   "warm": -0.316,
+   "hue": 229,
+   "sat": 0.399,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_19.jpg",
+   "kind": "char",
+   "light": 0.263,
+   "warm": -0.026,
+   "hue": 278,
+   "sat": 0.126,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_20.jpg",
+   "kind": "char",
+   "light": 0.504,
+   "warm": -0.079,
+   "hue": 244,
+   "sat": 0.092,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_21.jpg",
+   "kind": "char",
+   "light": 0.469,
+   "warm": -0.179,
+   "hue": 219,
+   "sat": 0.18,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_22.jpg",
+   "kind": "char",
+   "light": 0.548,
+   "warm": -0.295,
+   "hue": 212,
+   "sat": 0.349,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_23.jpg",
+   "kind": "char",
+   "light": 0.57,
+   "warm": 0.007,
+   "hue": 306,
+   "sat": 0.081,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_24.jpg",
+   "kind": "char",
+   "light": 0.53,
+   "warm": -0.085,
+   "hue": 261,
+   "sat": 0.156,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_25.jpg",
+   "kind": "char",
+   "light": 0.089,
+   "warm": -0.007,
+   "hue": 193,
+   "sat": 0.039,
+   "dropped": false,
+   "at": 2
+  },
+  {
+   "src": "KT_UP_26.jpg",
+   "kind": "char",
+   "light": 0.5,
+   "warm": 0.043,
+   "hue": 317,
+   "sat": 0.166,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_27.jpg",
+   "kind": "char",
+   "light": 0.382,
+   "warm": 0.206,
+   "hue": 348,
+   "sat": 0.283,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_28.jpg",
+   "kind": "char",
+   "light": 0.234,
+   "warm": -0.021,
+   "hue": 182,
+   "sat": 0.046,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_29.jpg",
+   "kind": "char",
+   "light": 0.098,
+   "warm": -0.008,
+   "hue": 143,
+   "sat": 0.106,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_30.jpg",
+   "kind": "char",
+   "light": 0.321,
+   "warm": 0.245,
+   "hue": 11,
+   "sat": 0.343,
+   "dropped": true
+  },
+  {
+   "src": "KT_UP_31.jpg",
+   "kind": "char",
+   "light": 0.307,
+   "warm": -0.107,
+   "hue": 222,
+   "sat": 0.163,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_01_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.172,
+   "warm": -0.037,
+   "hue": 239,
+   "sat": 0.099,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_02_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.126,
+   "warm": 0.002,
+   "hue": 310,
+   "sat": 0.04,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_03_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.132,
+   "warm": 0.004,
+   "hue": 317,
+   "sat": 0.058,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_04_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.111,
+   "warm": -0.013,
+   "hue": 249,
+   "sat": 0.064,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_05_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.126,
+   "warm": -0.012,
+   "hue": 269,
+   "sat": 0.091,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_06_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.209,
+   "warm": -0.028,
+   "hue": 229,
+   "sat": 0.065,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_07_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.17,
+   "warm": 0.065,
+   "hue": 357,
+   "sat": 0.18,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_08_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.238,
+   "warm": 0.079,
+   "hue": 12,
+   "sat": 0.158,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_09_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.215,
+   "warm": -0.008,
+   "hue": 285,
+   "sat": 0.072,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_10_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.258,
+   "warm": 0.025,
+   "hue": 7,
+   "sat": 0.047,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_11_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.13,
+   "warm": -0.015,
+   "hue": 244,
+   "sat": 0.059,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_12_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.115,
+   "warm": 0.037,
+   "hue": 347,
+   "sat": 0.183,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_13_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.175,
+   "warm": -0.007,
+   "hue": 261,
+   "sat": 0.032,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_14_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.134,
+   "warm": -0.008,
+   "hue": 263,
+   "sat": 0.049,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_15_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.289,
+   "warm": -0.016,
+   "hue": 257,
+   "sat": 0.038,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_16_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.288,
+   "warm": -0.075,
+   "hue": 214,
+   "sat": 0.127,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_17_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.264,
+   "warm": -0.013,
+   "hue": 256,
+   "sat": 0.032,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_18_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.248,
+   "warm": -0.02,
+   "hue": 243,
+   "sat": 0.042,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_19_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.124,
+   "warm": 0.006,
+   "hue": 314,
+   "sat": 0.107,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_20_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.303,
+   "warm": 0.002,
+   "hue": 310,
+   "sat": 0.021,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_21_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.246,
+   "warm": -0.008,
+   "hue": 263,
+   "sat": 0.027,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_22_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.347,
+   "warm": -0.02,
+   "hue": 237,
+   "sat": 0.028,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_23_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.213,
+   "warm": 0.006,
+   "hue": 323,
+   "sat": 0.035,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_24_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.215,
+   "warm": 0.029,
+   "hue": 333,
+   "sat": 0.113,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_25_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.102,
+   "warm": -0.012,
+   "hue": 248,
+   "sat": 0.066,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_26_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.364,
+   "warm": 0.059,
+   "hue": 345,
+   "sat": 0.102,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_27_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.101,
+   "warm": 0.022,
+   "hue": 341,
+   "sat": 0.146,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_28_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.121,
+   "warm": -0.007,
+   "hue": 263,
+   "sat": 0.044,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_29_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.099,
+   "warm": -0.012,
+   "hue": 246,
+   "sat": 0.063,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_30_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.122,
+   "warm": 0.04,
+   "hue": 359,
+   "sat": 0.152,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_31_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.222,
+   "warm": -0.004,
+   "hue": 275,
+   "sat": 0.022,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_32_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.143,
+   "warm": -0.025,
+   "hue": 230,
+   "sat": 0.082,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_33_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.176,
+   "warm": -0.002,
+   "hue": 285,
+   "sat": 0.023,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_34_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.198,
+   "warm": -0.022,
+   "hue": 229,
+   "sat": 0.054,
+   "dropped": true
+  },
+  {
+   "src": "KILLTOY_UP_35_fullbody.jpg",
+   "kind": "doll",
+   "light": 0.13,
+   "warm": -0.012,
+   "hue": 248,
+   "sat": 0.053,
+   "dropped": true
+  },
+  {
+   "src": "sigil-01.png",
+   "kind": "sigil",
+   "light": 0.312,
+   "warm": -0.071,
+   "hue": 221,
+   "sat": 0.109,
+   "dropped": false,
+   "at": 3
+  },
+  {
+   "src": "sigil-02.png",
+   "kind": "sigil",
+   "light": 0.243,
+   "warm": -0.053,
+   "hue": 173,
+   "sat": 0.133,
+   "dropped": false,
+   "at": 4
+  },
+  {
+   "src": "sigil-03.png",
+   "kind": "sigil",
+   "light": 0.174,
+   "warm": -0.03,
+   "hue": 207,
+   "sat": 0.086,
+   "dropped": false,
+   "at": 5
+  },
+  {
+   "src": "sigil-04.png",
+   "kind": "sigil",
+   "light": 0.386,
+   "warm": -0.107,
+   "hue": 227,
+   "sat": 0.129,
+   "dropped": false,
+   "at": 6
+  },
+  {
+   "src": "sigil-05.png",
+   "kind": "sigil",
+   "light": 0.295,
+   "warm": 0.033,
+   "hue": 28,
+   "sat": 0.056,
+   "dropped": false,
+   "at": 7
+  },
+  {
+   "src": "sigil-06.png",
+   "kind": "sigil",
+   "light": 0.342,
+   "warm": 0.301,
+   "hue": 5,
+   "sat": 0.365,
+   "dropped": false,
+   "at": 8
+  },
+  {
+   "src": "sigil-07.png",
+   "kind": "sigil",
+   "light": 0.277,
+   "warm": -0.069,
+   "hue": 234,
+   "sat": 0.115,
+   "dropped": false,
+   "at": 9
+  }
+ ]
+}

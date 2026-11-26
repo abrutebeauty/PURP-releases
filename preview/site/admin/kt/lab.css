@@ -1,0 +1,8 @@
+/* lab mode: only the TOY MACHINE window shows */
+html.kt-lab body > *:not(#iw):not(script):not(link):not(.toast):not(#toast) { visibility: hidden !important; pointer-events: none !important; }
+html.kt-lab #iw { position: fixed !important; inset: 0 !important; visibility: visible !important; pointer-events: auto !important; background: #0b0a0e !important; }
+html.kt-lab #iw * { visibility: visible; }
+html.kt-lab .tour, html.kt-lab .kq-tip, html.kt-lab [class*="coach"], html.kt-lab [class*="kq-"] { display: none !important; }
+html.kt-lab #iw-card, html.kt-lab .iw-card { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; margin: 0 !important; transform: none !important; border-radius: 0 !important; }
+html.kt-lab .iw-head .iw-x, html.kt-lab .tm-topright .tm-done, html.kt-lab [data-done], html.kt-lab .iw-close { display: none !important; }
+html.kt-lab #iw-card, html.kt-lab .iw-card { zoom: 1 !important; }

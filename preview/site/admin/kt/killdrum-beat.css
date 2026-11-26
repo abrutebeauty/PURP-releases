@@ -1,0 +1,402 @@
+/* KILLDRUM BEAT tab: only what the look block (killdrum.css "KILLDRUM LOOK v1") doesn't cover. */
+.kd-beat { --kb-c: var(--tm-purple); }
+.kb-genre { display: flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tm-acid); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-root .kb-genre:hover { background: var(--tm-panel2); }
+.kb-pop { position: absolute; z-index: 6; min-width: 150px; padding: 5px; border-radius: 10px; background: #1d1e22; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 0 0 1px var(--tm-line2); display: flex; flex-direction: column; gap: 1px; }
+.kb-popi { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 5px 9px; border-radius: 6px; font-size: 12px; color: var(--tm-ink2); text-align: left; }
+.kb-popi em { font-size: 10px; font-style: normal; color: var(--tm-ink3); font-variant-numeric: tabular-nums; }
+.kd-root .kb-popi:hover { background: var(--tm-panel2); color: #fff; }
+.kb-popi.kb-on { color: var(--tm-acid); }
+/* rolls: thin dark ticks inside a step */
+.kb-ticks { stroke: rgba(0, 0, 0, 0.7); stroke-width: 3; pointer-events: none; }
+.kd-circle svg { touch-action: none; user-select: none; }
+.kd-face { cursor: pointer; transition: box-shadow 0.15s; }
+.kd-face.kb-hit { box-shadow: 0 0 0 2px var(--tm-acid), 0 0 40px rgba(228, 255, 58, 0.35); }
+/* the loop play/stop sits at the start of the roll bar */
+.kb-play { opacity: 1; width: 30px; height: 30px; border-radius: 50%; color: var(--tm-ink); box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kb-play svg { width: 14px; height: 14px; }
+.kd-root .kb-play.kb-on, .kd-root .kb-play.kb-on:hover { color: #111; background: var(--tm-acid); box-shadow: none; }
+/* narrow windows: the roll bar keeps its icons and drops the words it can live without */
+.kd-rollbar { flex-wrap: nowrap; max-width: 100%; }
+.kd-rollbar > * { flex: 0 0 auto; }
+@container (max-width: 560px) {
+  .kb-sounds span, .kb-patterns span, .kb-mini[data-k="humanize"] { display: none; }
+  .kd-rollbar { gap: 5px; }
+}
+.kd-mini .kd-label { color: var(--tm-ink3); }
+/* right panel extras */
+.kd-dbtns .kd-lock.kb-lit { color: var(--tm-acid); }
+.kd-dsound .kd-ibtn { opacity: 1; font-size: 15px; }
+.kd-layer canvas { width: 14px; height: 14px; border-radius: 3px; display: block; }
+.kd-layer > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-layer > button { color: var(--tm-ink3); font-size: 13px; }
+.kd-root .kd-layer > button:hover { color: #fff; }
+.kb-hint { min-height: 14px; font-size: 10.5px; color: var(--tm-ink3); font-variant-numeric: tabular-nums; }
+/* the six bars of the selected pad */
+.kd-bars { flex: 0 0 auto; gap: 4px; }
+.kd-bar { touch-action: none; user-select: none; }
+/* right-click menu on a pad row */
+.kb-menu { position: absolute; z-index: 7; min-width: 150px; padding: 4px; border-radius: 8px; background: #1d1e22; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 0 0 1px var(--tm-line2); display: flex; flex-direction: column; gap: 1px; }
+.kb-mi { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 5px 9px; border-radius: 5px; font-size: 12px; color: var(--tm-ink2); text-align: left; cursor: default; white-space: nowrap; }
+.kd-root .kb-mi:hover { background: var(--tm-panel2); color: #fff; }
+.kb-mi em { font-style: normal; color: var(--tm-ink3); }
+.kb-msub { display: none; left: calc(100% - 2px); top: -4px; }
+.kb-mi:hover > .kb-msub { display: flex; }
+/* mute / solo letters on each pad row; a quiet pad's ring track fades */
+.kb-mute, .kb-solo { font-size: 10px; font-weight: 800; width: 18px; letter-spacing: 0; }
+.kd-root .kb-mute.kb-lit { color: #111; background: var(--tm-ink2); opacity: 1; border-radius: 4px; }
+.kd-root .kb-solo.kb-lit { color: #111; background: var(--tm-acid); opacity: 1; border-radius: 4px; }
+.kd-trk.kb-quiet { opacity: 0.28; }
+.kb-browse { margin-left: auto; }
+/* M / S show on the hovered or selected row, or when they are on, so the column stays clean */
+.kd-beat .kd-prow .kb-mute, .kd-beat .kd-prow .kb-solo { display: none; }
+.kd-beat .kd-prow:is(:hover, .kd-sel) :is(.kb-mute, .kb-solo), .kd-beat .kd-prow :is(.kb-mute, .kb-solo).kb-lit { display: inline-flex; align-items: center; justify-content: center; }
+.kd-beat .kd-prow:is(:hover, .kd-sel) .kd-pcount { display: none; }
+.kd-beat .kd-pname, .kd-beat .kd-psnd { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* the selected pad's step strip: chance (brightness), pitch (number), glide (top bar) */
+.kb-steps { display: flex; flex-direction: column; gap: 5px; margin-top: 6px; }
+.kb-steps .kd-label em { font-style: normal; letter-spacing: 0; text-transform: none; color: var(--tm-ink3); font-weight: 400; margin-left: 6px; }
+.kb-cells { display: grid; grid-template-columns: repeat(min(var(--n), 16), minmax(0, 1fr)); gap: 2px; }
+.kb-cell { position: relative; height: 22px; border-radius: 3px; background: var(--tm-panel); box-shadow: inset 0 0 0 1px var(--tm-line); font-size: 9.5px; font-weight: 700; color: #111; display: grid; place-items: center; user-select: none; touch-action: none; font-variant-numeric: tabular-nums; }
+.kb-cell.kb-beat1 { box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kb-cell.kd-on { background: var(--tm-acid); opacity: calc(0.3 + 0.7 * var(--ch, 1)); cursor: ns-resize; }
+.kb-cell.kb-g::before { content: ""; position: absolute; left: -2px; right: 2px; top: -4px; height: 2px; border-radius: 2px; background: var(--kd-lilac, #b79cff); }
+.kd-step.kb-glide { stroke: var(--kd-lilac, #b79cff); stroke-width: 3; }
+
+/* effect cards on the selected pad (only when asked for): × takes one off */
+.kb-padfx { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
+.kb-padfx[hidden] { display: none; }
+.kb-padfx-l { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(236, 236, 238, 0.5); margin-right: 2px; }
+.kb-padfx-c { border: 0; border-radius: 999px; padding: 4px 10px; background: var(--kd-acid-dim, rgba(228, 255, 58, 0.16)); color: var(--tm-acid, #E4FF3A); font-size: 12px; text-transform: capitalize; cursor: pointer; }
+.kb-padfx-c i { font-style: normal; margin-left: 6px; opacity: 0.7; }
+
+/* rows view (the corner icon): each pad on the left runs out into its row of steps */
+.kb-grid { position: relative; display: none; width: 100%; height: 100%; min-height: 0; align-self: stretch; justify-self: stretch; touch-action: none; cursor: pointer; }
+.kb-rowsview .kb-grid { display: block; grid-row: 1; }
+.kb-rowsview .kd-circle { display: none; }
+.kb-grow { position: absolute; left: 0; right: 0; pointer-events: none; }
+.kb-grow[hidden] { display: none; }
+.kb-grow canvas { display: block; }
+.kb-gph { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: rgba(255, 255, 255, 0.55); pointer-events: none; }
+.kb-gph[hidden] { display: none; }
+.kb-hs { position: absolute; left: 14px; right: 6px; bottom: 0; height: 10px; background: rgba(255, 255, 255, 0.05); cursor: pointer; touch-action: none; z-index: 2; }   /* SCROLL WINDOW (16 Nov) */
+.kb-hs[hidden] { display: none; }
+.kb-hst { position: absolute; top: 0; bottom: 0; background: rgba(255, 255, 255, 0.22); cursor: grab; }
+.kb-hst:hover { background: rgba(255, 255, 255, 0.32); }
+.kb-hs:active .kb-hst { cursor: grabbing; background: rgba(255, 255, 255, 0.38); }
+.kb-hsp { position: absolute; top: -2px; bottom: -2px; width: 2px; margin-left: -1px; background: #E4FF3A; pointer-events: none; }
+.kb-hsp[hidden] { display: none; }
+.kb-midiopen .kb-hs { visibility: hidden; }
+.kd-root .kb-view { opacity: 1; position: absolute; top: 10px; right: 10px; z-index: 2; width: 30px; height: 30px; border-radius: 8px; color: rgba(236, 236, 238, 0.6); background: rgba(255, 255, 255, 0.05); }
+.kb-view:hover { color: var(--tm-acid, #E4FF3A); }
+.kb-view svg { width: 15px; height: 15px; }
+
+/* Right panel head (the big picture made room for effects, 27 Oct): pad name, what the panel edits, pad buttons */
+.kd-beat .kb-dhead { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; padding: 2px 0 0; }
+.kd-beat .kb-dtitle { flex: 1; min-width: 0; }
+.kd-beat .kb-dhead .kd-dname { position: static; font-size: 20px; text-shadow: none; }
+.kd-beat .kb-dwhat { font-size: 10.5px; letter-spacing: 0.06em; color: var(--tm-ink2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-beat .kb-dhead .kd-dbtns { position: static; }
+.kd-beat .kb-dhead .kd-dbtns .kd-ibtn { background: transparent; color: var(--tm-ink2); }
+.kd-beat .kb-dhead .kd-dbtns .kd-ibtn:hover { color: #fff; }
+.kd-beat .kb-scope { display: flex; flex: 0 0 auto; }
+.kd-beat .kb-scope[hidden] { display: none; }
+.kd-beat .kb-scope button { flex: 1; text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px; font-weight: 700; }
+.kd-beat .kb-scope button[data-u="1"].kd-on { background: #5cf2ff; color: #0d0d10; }
+.kd-detail.kb-unique .kd-dname { color: #5cf2ff; }
+.kd-detail.kb-unique .kd-bar::before { background: linear-gradient(90deg, rgba(92, 242, 255, 0.22), rgba(92, 242, 255, 0.5)); }
+.kd-beat .kd-howmany[hidden] { display: none; }
+
+/* Effects: a small version of the FX page, two columns of bars (tap = on, drag = amount) */
+.kd-beat .kb-fx { flex: 0 0 auto; display: flex; flex-direction: column; gap: 6px; }
+.kd-beat .kb-fx .kd-label em { font-style: normal; letter-spacing: 0.02em; text-transform: none; color: var(--tm-ink2); opacity: 0.7; margin-left: 6px; font-weight: 400; }
+.kd-beat .kb-fxlist { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.kd-beat .kb-fxb { height: 26px; cursor: pointer; }
+.kd-beat .kb-fxb:not(.kb-fxon) b { color: var(--tm-ink2); opacity: 0.6; }
+.kd-beat .kb-fxb.kb-fxon { box-shadow: inset 0 0 0 1px rgba(183, 156, 255, 0.55); }
+.kd-detail.kb-unique .kb-fxb.kb-fxon { box-shadow: inset 0 0 0 1px rgba(92, 242, 255, 0.6); }
+
+/* Ring: a unique hit in its own colour, the picked hit outlined, a nudged hit (Cmd-drag) dashed */
+.kd-step.kd-on.kb-uniq, .kd-trk.kd-sel .kd-step.kd-on.kb-uniq { fill: #5cf2ff; }
+.kd-step.kd-on.kb-pick { stroke: #fff; stroke-width: 4; }
+.kd-step.kd-on.kb-nudge { stroke: rgba(255, 255, 255, 0.7); stroke-width: 2; stroke-dasharray: 6 4; }
+.kd-step.kd-on.kb-pick.kb-nudge { stroke-width: 4; }
+.kb-cell.kb-u { box-shadow: inset 0 0 0 1.5px #5cf2ff; }
+.kb-cell.kb-p { outline: 1.5px solid #fff; outline-offset: 1px; }
+
+/* BAR pills over the grid (BAR 1, BAR 2 ... each its own colour), + makes a copy */
+.kd-beat .kb-vers { position: absolute; top: 12px; left: 14px; right: 56px; z-index: 3; display: flex; gap: 6px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+.kd-beat .kb-vpill { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 11px 0 9px; border-radius: 8px; border: 1px solid var(--tm-line); background: rgba(255, 255, 255, 0.04);
+  color: var(--tm-ink2); font: 700 10.5px/1 var(--tm-font, system-ui), sans-serif; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
+.kd-beat .kb-vpill i { width: 8px; height: 8px; border-radius: 3px; background: var(--vc); }
+.kd-beat .kb-vpill:hover { color: #fff; }
+.kd-beat .kb-vpill.kd-on { color: #0d0d10; background: var(--vc); border-color: var(--vc); }
+.kd-beat .kb-vpill.kd-on i { background: rgba(0, 0, 0, 0.35); }
+.kd-beat .kb-vrename { width: 110px; background: transparent; border: none; outline: none; color: inherit; font: inherit; letter-spacing: 0.06em; text-transform: none; }
+.kd-beat .kb-vadd { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 8px; border: 1px dashed var(--tm-line); background: transparent; color: var(--tm-ink2); font-size: 16px; line-height: 1; cursor: pointer; }
+.kd-beat .kb-vadd:hover { color: var(--tm-acid, #E4FF3A); border-color: currentColor; }
+.kd-beat.kb-rowsview .kb-grid { margin-top: 0; }
+.kd-beat:not(.kb-rowsview) .kb-vers { right: 56px; }
+
+/* SOLO | FULL next to play */
+.kd-beat .kb-pmode button { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; padding: 0 9px; }
+
+/* The order: boxed timeline of BAR blocks */
+.kd-beat .kb-chain { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; flex: 0 0 auto; }
+.kd-beat .kb-chain[hidden] { display: none; }
+.kd-beat .kb-chain .kd-label em { font-style: normal; letter-spacing: 0.02em; text-transform: none; color: var(--tm-ink2); opacity: 0.7; margin-left: 6px; font-weight: 400; }
+.kd-beat .kb-chainbox { position: relative; display: flex; gap: 3px; align-items: stretch; height: 34px; padding: 3px; border-radius: 8px; background: rgba(0, 0, 0, 0.25); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-beat .kb-cblk { position: relative; flex: 1 1 0; min-width: 22px; border-radius: 5px; background: color-mix(in srgb, var(--vc) 30%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--vc) 70%, transparent);
+  display: flex; align-items: center; justify-content: center; cursor: grab; touch-action: none; user-select: none; }
+.kd-beat .kb-cblk span { font: 800 10.5px/1 var(--tm-font, system-ui), sans-serif; letter-spacing: 0.06em; color: var(--vc); }
+.kd-beat .kb-cblk.kd-on { background: color-mix(in srgb, var(--vc) 55%, transparent); }
+.kd-beat .kb-cblk.kd-on span { color: #0d0d10; }
+.kd-beat .kb-cblk i { position: absolute; top: 0; right: 2px; font-style: normal; font-size: 10px; color: var(--tm-ink2); opacity: 0; cursor: pointer; }
+.kd-beat .kb-cblk:hover i { opacity: 0.8; }
+.kd-beat .kb-cblk.kb-cdrag { cursor: grabbing; outline: 1.5px solid #fff; }
+.kd-beat .kb-cadd { flex: 0 0 26px; border-radius: 5px; border: 1px dashed var(--tm-line); background: transparent; color: var(--tm-ink2); font-size: 15px; cursor: pointer; }
+.kd-beat .kb-cadd:hover { color: var(--tm-acid, #E4FF3A); }
+.kd-beat .kb-cph { position: absolute; top: 1px; bottom: 1px; width: 2px; margin-left: 3px; background: #fff; border-radius: 1px; pointer-events: none; }
+.kd-beat .kb-cph[hidden] { display: none; }
+
+/* the picked hit's step settings */
+.kd-beat .kb-hitopts { display: flex; flex-direction: column; gap: 6px; flex: 0 0 auto; }
+.kd-beat .kb-hitopts[hidden] { display: none; }
+.kd-beat .kb-hitrow { display: flex; gap: 6px; align-items: center; }
+.kd-beat .kb-hitrow .kb-chance { flex: 1; display: flex; }
+.kd-beat .kb-hitrow .kb-chance button { flex: 1; font-size: 10px; }
+.kd-beat .kb-glidebtn.kd-on { color: #0d0d10; background: var(--tm-acid, #E4FF3A); border-color: var(--tm-acid, #E4FF3A); }
+
+/* Undo / Redo next to Play (Eman, 27 Oct): same outline as the row, hard corners, clear arrows */
+.kd-beat .kb-hist { width: 30px; height: 30px; display: grid; place-items: center; padding: 0; border: none; border-radius: 0; background: transparent; color: var(--tm-ink); box-shadow: inset 0 0 0 1px var(--tm-line2); cursor: pointer; }
+.kd-beat .kb-hist + .kb-hist { margin-left: -6px; }
+.kd-beat .kb-hist svg { width: 15px; height: 15px; }
+.kd-beat .kb-hist:hover { color: #111; background: var(--tm-acid, #E4FF3A); box-shadow: none; }
+.kd-beat .kb-hist:active { transform: translateY(1px); }
+.kd-beat .kb-hist[hidden] { display: none; }
+
+/* the bottom row has more in it now (SOLO | FULL, Undo, Redo): it never pushes the stage wider */
+.kd-beat .kd-stage { grid-template-columns: minmax(0, 1fr); }
+.kd-beat .kd-rollbar { max-width: 100%; min-width: 0; overflow: hidden; }
+/* the labels always show (Eman, 27 Oct: "Sounds only" / "Pattern only" must say what they do): when the
+   row doesn't fit it wraps onto two lines instead of hiding them */
+.kd-beat .kd-rollbar { flex-wrap: wrap; justify-content: center; height: auto; min-height: 40px; row-gap: 6px; overflow: visible; }
+.kd-beat .kd-roll2 span { display: inline; white-space: nowrap; }
+@container (max-width: 820px) { .kd-beat .kd-rollbar { gap: 6px; } }
+
+/* Pad column head: BEAT, the style and SAVED side by side, a bit bigger (Eman, 27 Oct) */
+.kd-beat .kd-plist-h { justify-content: flex-start; gap: 8px; }
+.kd-beat .kd-plist-h .kd-label { margin-right: 2px; }
+.kd-beat .kb-genre, .kd-beat .kb-savedbtn { height: 28px; padding: 0 11px; border-radius: 8px; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kd-beat .kb-savedbtn { display: flex; align-items: center; color: var(--tm-ink); }
+.kd-root .kb-savedbtn:hover { background: var(--tm-panel2); color: #fff; }
+
+/* SAVED dropdown */
+.kd-beat .kb-spop { width: 320px; max-height: min(520px, 80vh); padding: 8px; gap: 8px; }
+.kd-beat .kb-shead { display: flex; gap: 6px; }
+.kd-beat .kb-sname { flex: 1; min-width: 0; height: 30px; padding: 0 9px; border-radius: 7px; border: none; outline: none; background: rgba(0, 0, 0, 0.3); box-shadow: inset 0 0 0 1px var(--tm-line); color: var(--tm-ink); font: inherit; font-size: 12px; }
+.kd-beat .kb-sname:focus { box-shadow: inset 0 0 0 1px var(--tm-acid, #E4FF3A); }
+.kd-beat .kb-ssave { height: 30px; padding: 0 14px; border-radius: 7px; background: var(--tm-acid, #E4FF3A); color: #111; font-weight: 800; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.kd-beat .kb-swhat { display: flex; }
+.kd-beat .kb-swhat button { flex: 1; font-size: 10.5px; }
+.kd-beat .kb-slist { display: flex; flex-direction: column; gap: 6px; overflow-y: auto; min-height: 0; scrollbar-width: thin; }
+.kd-beat .kb-snone { padding: 14px 6px; font-size: 12px; color: var(--tm-ink3); text-align: center; }
+.kd-beat .kb-scard { position: relative; padding: 8px 10px 7px; border-radius: 10px; background: rgba(255, 255, 255, 0.035); box-shadow: inset 0 0 0 1px var(--tm-line); cursor: pointer; user-select: none; touch-action: none; }
+.kd-beat .kb-scard:hover { box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.55); }
+.kd-beat .kb-scard.kb-shear { box-shadow: inset 0 0 0 1.5px var(--tm-acid, #E4FF3A); background: rgba(228, 255, 58, 0.06); }
+.kd-beat .kb-stop { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.kd-beat .kb-stop b { font-size: 13.5px; font-weight: 600; color: var(--tm-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-beat .kb-sx { width: 20px; height: 20px; border-radius: 5px; color: var(--tm-ink3); font-size: 14px; opacity: 0; }
+.kd-beat .kb-scard:hover .kb-sx { opacity: 1; }
+.kd-beat .kb-sx:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+.kd-beat .kb-scard canvas { display: block; width: 100%; height: 40px; margin: 5px 0 4px; }
+.kd-beat .kb-sinfo { font-size: 10.5px; color: var(--tm-ink3); font-variant-numeric: tabular-nums; }
+.kd-beat .kb-vall { flex: 0 0 auto; height: 26px; padding: 0 10px; margin-left: 4px; border-radius: 8px; border: 1px solid var(--tm-line); background: transparent; color: var(--tm-ink2); font-size: 10.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
+.kd-beat .kb-vall:hover { color: #fff; }
+.kd-beat .kb-vall.kd-on { color: #111; background: var(--tm-acid, #E4FF3A); border-color: var(--tm-acid, #E4FF3A); }
+
+/* a pad's extra lines (drag a hit down out of its row): a slim row under the pad in the list, rows view only */
+.kb-subl { flex: 0 0 var(--kd-row); display: flex; align-items: center; padding-left: 56px; border-radius: var(--kd-r); cursor: pointer; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--c) 70%, var(--tm-ink3)); box-shadow: inset 2px 0 0 color-mix(in srgb, var(--c) 45%, transparent); }
+.kd-root .kb-subl:hover { background: var(--tm-panel2); }
+.kd-beat:not(.kb-rowsview) .kb-subl { display: none; }
+
+/* Style + PRESETS (Eman, 27 Oct night): no BEAT label, two hard-edged rectangles sharing the width, a bit bigger */
+.kd-beat .kd-plist-h { gap: 6px; padding-right: 4px; }
+.kd-beat .kb-genre, .kd-beat .kb-savedbtn { flex: 1 1 0; min-width: 0; height: 34px; padding: 0 10px; border-radius: 0; justify-content: center; white-space: nowrap; font-size: 12px; }
+.kd-beat .kb-genre span { overflow: hidden; text-overflow: ellipsis; }
+.kd-seg.kb-pages[hidden] { display: none; }   /* 64/128 steps: which two bars the rows show (Zed call, 7 Nov) */
+
+/* ---------------------------------------------------------------- RHYTHMS (Eman, 8 Nov): the rhythm chip + the tab */
+.kb-rhythm { display: flex; align-items: center; gap: 6px; width: 100%; margin: 0 0 6px; padding: 5px 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tm-ink); background: var(--tm-panel2); box-shadow: inset 0 0 0 1px var(--tm-line); text-align: left; }
+.kb-rhythm i { display: none; width: 12px; height: 12px; color: var(--tm-acid); }
+.kb-rhythm i svg { width: 12px; height: 12px; }
+.kb-rhythm.kb-locked i { display: block; }
+.kb-rhythm.kb-locked { box-shadow: inset 0 0 0 1px var(--tm-acid); }
+.kb-rhythm span { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kb-rhythm.kb-none span { color: var(--tm-ink3); }
+.kb-rhythm em { font-style: normal; font-size: 10px; letter-spacing: 0.08em; color: var(--kd-lilac); white-space: nowrap; }
+.kd-root .kb-rhythm:hover { background: var(--tm-panel3, #2a2a2e); }
+.kd-rhythms { position: absolute; inset: 0; display: flex; flex-direction: column; overflow: hidden; }
+.kr-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 10px 14px 8px; border-bottom: 1px solid var(--tm-line); }
+.kr-now { min-width: 0; flex: 1 1 auto; }
+.kr-name { font-size: 18px; font-weight: 800; letter-spacing: 0.04em; color: #fff; margin: 2px 0 2px; }
+.kr-about { font-size: 12px; color: var(--tm-ink2); line-height: 1.35; max-width: 640px; }
+.kr-ctrls { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; padding-top: 4px; }
+.kr-lock { display: flex; align-items: center; gap: 6px; padding: 6px 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tm-ink3); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kr-lock svg { width: 12px; height: 12px; }
+.kr-lock.kd-on { color: #111; background: var(--tm-acid); box-shadow: none; }
+.kr-lock:disabled { opacity: 0.4; }
+.kr-xp { display: flex; align-items: center; gap: 8px; }
+.kr-xp input { width: 150px; height: 4px; appearance: none; -webkit-appearance: none; background: linear-gradient(90deg, var(--tm-line2), var(--kd-lilac) 60%, var(--tm-acid)); outline: none; }
+.kr-xp input::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 16px; background: var(--tm-acid); border-radius: 0; cursor: ew-resize; }
+.kr-xp b { font-size: 12px; min-width: 34px; color: var(--tm-ink); font-variant-numeric: tabular-nums; }
+.kr-xp em { font-style: normal; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--kd-lilac); min-width: 70px; }
+.kr-body { flex: 1 1 auto; overflow: auto; padding: 8px 14px 12px; }
+.kr-group { font-size: var(--kd-cap); font-weight: 700; letter-spacing: var(--kd-track); text-transform: uppercase; color: var(--tm-ink3); margin: 10px 0 6px; }
+.kr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.kr-tile { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 5px; padding: 9px 10px 8px; text-align: left; background: var(--tm-panel2); box-shadow: inset 0 0 0 1px var(--tm-line); border-radius: 0; }
+.kd-root .kr-tile:hover { box-shadow: inset 0 0 0 1px var(--tm-ink3); }
+.kr-tile.kd-on { box-shadow: inset 0 0 0 2px var(--tm-acid); }
+.kr-tile.kr-mix { box-shadow: inset 0 0 0 1px var(--kd-lilac); }
+.kr-tname { font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kr-dots { display: flex; flex-direction: column; gap: 3px; }
+.kr-row { display: flex; align-items: center; gap: 2px; height: 8px; }
+.kr-row i { display: block; flex: 1 1 0; height: 3px; background: var(--kd-off); }
+.kr-row i.kr-bar { flex: 0 0 1px; height: 8px; background: var(--tm-line2); }
+.kr-row i.kr-dot { height: 5px; }
+.kr-row i.kr-big { height: 8px; }
+.kr-k i.kr-dot, .kr-k i.kr-big { background: var(--tm-acid); }
+.kr-s i.kr-dot, .kr-s i.kr-big { background: var(--kd-lilac); }
+.kr-h i.kr-dot, .kr-h i.kr-big { background: var(--tm-ink3); }
+.kr-sub { font-size: 10.5px; color: var(--tm-ink3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kr-tag { position: absolute; top: 7px; right: 8px; font-size: 9px; font-weight: 800; letter-spacing: 0.16em; color: var(--tm-acid); }
+.kr-tile.kr-mix .kr-tag { color: var(--kd-lilac); }
+.kr-foot { padding: 6px 14px 8px; font-size: 10.5px; color: var(--tm-ink3); border-top: 1px solid var(--tm-line); }
+.kb-xp .kd-label { color: var(--kd-lilac); }
+/* the A on each bar and effect (automation line for the picked pad; 9 Nov). KD_AUTO_OFF hides it */
+.kd-bar .kd-abtn { margin-left: auto; margin-right: 8px; width: 14px; height: 14px; border-radius: 0; display: grid; place-items: center; font-style: normal; font-size: 9px; font-weight: 700;
+  color: var(--tm-ink2, rgba(236, 236, 238, 0.6)); box-shadow: inset 0 0 0 1px var(--tm-line2, rgba(255, 255, 255, 0.16)); opacity: 0; cursor: pointer; transition: opacity 0.15s; }
+.kd-bar:hover .kd-abtn, .kd-bar .kd-abtn.kd-ahas { opacity: 1; }
+.kd-bar .kd-abtn:hover { color: #17171a; background: #e4ff3a; box-shadow: none; }
+.kd-bar .kd-abtn.kd-ahas { color: #fff; background: #8b5cf6; box-shadow: none; }
+.kd-bar .kd-abtn[hidden] { display: none; }
+/* OFF-GRID button per pad row (Eman, recorder V5q): shows on the hovered / selected row, or while it is on (acid) */
+.kd-beat .kd-prow .kb-og { display: none; width: 16px; }
+.kd-beat .kd-prow .kb-og svg { width: 13px; height: 13px; }
+.kd-beat .kd-prow:is(:hover, .kd-sel) .kb-og, .kd-beat .kd-prow .kb-og.kb-lit { display: grid; }
+.kd-root .kb-og.kb-lit { opacity: 1; color: var(--tm-acid); }
+/* a row with off-grid on swaps its sound-count bars for the lit icon, so the pad name keeps its room */
+.kd-beat .kd-prow:has(.kb-og.kb-lit) .kd-pcount { display: none; }
+
+/* 14 Nov: RHYTHMS card preview: the playing card + its moving playhead column (KT2_KD_RHYTHM_PREVIEW_OFF = none) */
+.kr-tile.kr-play { box-shadow: inset 0 0 0 2px var(--tm-acid); }
+.kr-tile.kr-play::after { content: ""; position: absolute; right: 9px; bottom: 9px; width: 0; height: 0; border-left: 7px solid var(--tm-acid); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+.kr-dots i.kr-ph { outline: 1px solid var(--tm-acid); outline-offset: 0; }
+.kr-dots i.kr-ph.kr-off { background: rgba(228, 255, 58, 0.35); }
+
+/* 14 Nov: OFF-GRID is one switch next to ROLL (KD_ROWMIDI_OFF = the old button per row) */
+.kd-root .kb-ogall.kb-lit { color: #17171a; background: var(--tm-acid); box-shadow: none; }
+.kd-root .kd-roll2.kb-ogall { width: 30px; padding: 0; justify-content: center; }
+/* the MIDI icon on a pad row: where the off-grid button was (hover / selected row, or while its editor is open) */
+.kd-beat .kd-prow .kb-midi { display: none; width: 16px; }
+.kd-beat .kd-prow .kb-midi svg { width: 13px; height: 13px; }
+.kd-beat .kd-prow:is(:hover, .kd-sel) .kb-midi, .kd-beat .kd-prow .kb-midi.kb-lit { display: grid; }
+.kd-root .kb-midi.kb-lit { opacity: 1; color: var(--tm-acid); }
+.kd-beat .kd-prow:has(.kb-midi.kb-lit) .kd-pcount { display: none; }
+/* the row's MIDI editor: sits exactly in the step grid's box */
+.kb-mroll { position: absolute; z-index: 6; display: flex; flex-direction: column; background: #1b1a20; box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.55); border-radius: 0; }
+.kb-mroll[hidden] { display: none; }
+.kb-midiopen .kb-grid canvas, .kb-midiopen .kb-gph { visibility: hidden; }
+.kb-mhead { display: flex; align-items: center; gap: 10px; overflow: hidden; height: 30px; padding: 0 8px; flex: none; border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.kb-mhead .kd-seg button { border-radius: 0; }
+.kb-mtabs button { padding: 0 10px; height: 22px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tm-ink2); }
+.kb-mtabs button.kd-on { background: var(--tm-acid); color: #17171a; }
+.kb-mname { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c, #fff); }
+.kb-mtools { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.kb-mtools[hidden] { display: none; }
+.kb-mtools button { display: flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px; border-radius: 0; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tm-ink2); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.kb-mtools button svg { width: 13px; height: 13px; }
+.kb-mtools button.kd-on { color: #17171a; background: var(--tm-acid); box-shadow: none; }
+.kb-mtools button:hover:not(.kd-on) { color: var(--tm-acid); }
+.kb-mtools .kb-mk b { font-weight: 700; }
+.kb-mtools .kb-mk i { font-style: normal; color: #fff; min-width: 26px; text-align: left; }
+.kb-mtools .kb-mk.kb-dim { opacity: 0.4; }
+.kb-mtools .kb-mk[data-k="d"] { cursor: ns-resize; }
+.kb-msep { width: 1px; height: 16px; background: rgba(255, 255, 255, 0.12); margin: 0 3px; }
+.kb-mbody { position: relative; flex: 1; min-height: 0; cursor: crosshair; touch-action: none; }
+.kb-mbody canvas { position: absolute; inset: 0; }
+.kb-mph { position: absolute; top: 0; width: 1.5px; background: #fff; pointer-events: none; opacity: 0.85; }
+.kb-mmenu { position: absolute; z-index: 2; display: flex; flex-direction: column; min-width: 110px; background: #232229; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.kb-mmenu[hidden] { display: none; }
+.kb-mmenu button { text-align: left; padding: 7px 12px; font-size: 11.5px; color: var(--tm-ink); border-radius: 0; }
+.kb-mmenu button:hover { background: rgba(139, 92, 246, 0.35); }
+.kb-mmenu button.kd-on { color: var(--tm-acid); }
+/* note names <-> +/- semitones (Eman, 14 Nov): the small button in the bottom-left corner, under the keys */
+.kb-msemi { position: absolute; left: 3px; bottom: 4px; width: 42px; height: 26px; z-index: 1; display: flex; align-items: center; justify-content: center; border-radius: 4px; font-size: 12px; font-weight: 800; color: var(--tm-ink2); background: #1f1f23; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14); cursor: pointer; }
+.kb-msemi:hover { color: var(--tm-acid); }
+.kb-msemi.kd-on { color: #17171a; background: var(--tm-acid); box-shadow: none; }
+.kb-madv .kb-mname { display: none; }
+.kb-madv .kb-mhead { gap: 6px; padding: 0 4px; }
+.kb-madv .kb-mtools { gap: 3px; }
+.kb-madv .kb-mtools button { padding: 0 6px; gap: 4px; letter-spacing: 0.06em; }
+.kb-madv .kb-mtools .kb-mk i { min-width: 0; }
+/* RHYTHM preview / COMMIT / HISTORY (Eman, 14 Nov): a previewed pattern is light blue until COMMIT. KD_RW_COMMIT_OFF = old list */
+.kd-beat.kd-pv .kd-trk .kd-step.kd-on, .kd-beat.kd-pv .kd-trk.kd-sel .kd-step.kd-on, .kd-beat.kd-pv .kd-trk.kd-alt .kd-step.kd-on, .kd-beat.kd-pv .kd-step.kd-on.kb-uniq { fill: #7fd4ff; }
+.kd-rw.kd-pv .kd-rwcard { box-shadow: inset 0 0 0 1px rgba(127, 212, 255, 0.55); }
+.kd-rw.kd-pv .kd-rwname { color: #7fd4ff; }
+.kd-rw.kd-pv .kr-row i.kr-big, .kd-rw.kd-pv .kr-row i.kr-dot { background: #7fd4ff; }
+.kd-rwpop.kd-rwc { --kd-pv: #7fd4ff; }
+.kd-rwhead { position: sticky; top: -4px; z-index: 1; display: flex; align-items: center; gap: 4px; margin: -4px -4px 0; padding: 4px; background: #1b1b1f; box-shadow: inset 0 -1px 0 var(--tm-line); }
+.kd-rwhead .kd-rwauto { flex: 1; min-width: 0; display: block; }
+.kd-rwico { flex: 0 0 30px; width: 30px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 2px; color: var(--tm-ink3); box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kd-rwico svg { width: 15px; height: 15px; }
+.kd-rwico:hover { color: #fff; }
+.kd-rwico.kb-lit { color: var(--kd-pv); box-shadow: inset 0 0 0 1px rgba(127, 212, 255, 0.5); }
+.kd-rwhist.kb-lit { color: var(--tm-acid); box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.5); }
+.kd-rwear rect { transform-box: fill-box; transform-origin: center; }
+.kd-rwear.kd-live rect { animation: kd-eq 0.7s ease-in-out infinite alternate; }
+.kd-rwear.kd-live .kd-eq2 { animation-delay: -0.25s; } .kd-rwear.kd-live .kd-eq3 { animation-delay: -0.5s; } .kd-rwear.kd-live .kd-eq4 { animation-delay: -0.1s; }
+@keyframes kd-eq { from { transform: scaleY(0.45); } to { transform: scaleY(1.6); } }
+.kd-rwcommit { flex: 0 0 auto; height: 28px; padding: 0 14px; border-radius: 2px; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #111; background: var(--tm-acid); }
+.kd-rwcommit:disabled { color: var(--tm-ink3); background: transparent; box-shadow: inset 0 0 0 1px var(--tm-line2); cursor: default; }
+.kd-rwrow.kd-pvon { color: var(--kd-pv); background: rgba(127, 212, 255, 0.08); box-shadow: inset 2px 0 0 var(--kd-pv); }
+.kd-rwrow.kd-pvon .kr-row i.kr-big, .kd-rwrow.kd-pvon .kr-row i.kr-dot { background: var(--kd-pv); }
+.kd-rwrow > span em { margin-left: 6px; font-style: normal; font-size: 9.5px; color: var(--tm-ink3); }
+.kd-rwnone { padding: 10px 6px; font-size: 10.5px; color: var(--tm-ink3); }
+
+/* 15 Nov: COMPLEXITY knob next to ROLL (yellow SIMPLE -> red CRAZY) + the 808 switch (KD_CX_OFF = neither) */
+.kd-root .kb-cx { position: relative; width: 46px; height: 46px; border-radius: 50%; cursor: ns-resize; user-select: none; touch-action: none; flex: 0 0 auto;
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--cx, #E4FF3A) calc(var(--cxa, 0.3) * 60%), #1b1b20) 0 52%, #141418 53%);
+  box-shadow: 0 0 calc(var(--cxa, 0.3) * 26px) color-mix(in srgb, var(--cx, #E4FF3A) 55%, transparent); transition: box-shadow .2s, background .2s; }
+.kd-root .kb-cx svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.kd-root .kb-cx .kb-cx0 { stroke: rgba(255, 255, 255, 0.1); }
+.kd-root .kb-cx b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 7.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.7); pointer-events: none; }
+.kd-root .kb-cx.kb-cxmax { animation: kbCxShake .18s infinite alternate; }
+@keyframes kbCxShake { from { transform: rotate(-3deg) scale(1); } to { transform: rotate(3deg) scale(1.04); } }
+.kd-root .kb-sub { display: flex; align-items: baseline; gap: 6px; padding: 3px 8px; border-radius: 4px; background: transparent; border: 1px solid rgba(255,255,255,.1); color: var(--tm-ink3); cursor: pointer; }
+.kd-root .kb-sub b { font-size: 12px; color: var(--tm-ink); text-transform: uppercase; }
+.kd-root .kb-sub[data-m="on"] { border-color: #C6E03A; }
+.kd-root .kb-sub[data-m="on"] b { color: #C6E03A; }
+.kd-root .kb-sub[data-m="off"] b { color: var(--tm-ink3); text-decoration: line-through; }
+/* 15 Nov: a long clip's bars: ‹ 17-18 / 96 VERSE › (the 16/32/64/128 buttons are gone, the clip sets the length) */
+.kd-root .kb-pages.kb-pcompact { display: flex; align-items: center; gap: 2px; }
+.kd-root .kb-pages.kb-pcompact .kb-plab { min-width: 118px; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--tm-ink); font-variant-numeric: tabular-nums; }
+.kd-root .kb-pages.kb-pcompact .kb-plab em { font-style: normal; color: var(--tm-ink3); font-weight: 500; }
+.kd-root .kb-pages.kb-pcompact .kb-plab i { font-style: normal; margin-left: 6px; color: var(--tm-acid); text-transform: uppercase; }
+.kd-root .kb-pages.kb-pcompact button { width: 26px; font-size: 15px; }
+.kd-root .kb-view[hidden] { display: none !important; }   /* 15 Nov: rows only (KD_RING_ON = the circle + this button) */
+/* GENRE LINK (15 Nov): the picked genre's rhythms open the list; AUTO names the genre it follows */
+.kd-rwgrp.kd-rwgen { color: #E4FF3A; }
+.kd-rwhead .kd-rwauto em { font-style: normal; margin-left: 6px; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #E4FF3A; opacity: 0.85; }
+/* MOOD GENRES (15 Nov): the genre list as mood pages, moods left, the open mood's genres right */
+.kb-pop.kb-moods { flex-direction: row; gap: 4px; width: 400px; max-width: calc(100vw - 32px); border-radius: 0; padding: 4px; }
+.kb-moods .kb-mleft { flex: 0 0 170px; display: flex; flex-direction: column; gap: 1px; padding-right: 4px; box-shadow: inset -1px 0 0 var(--tm-line2); }
+.kb-moods .kb-mright { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.kb-mood { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 6px 8px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--tm-ink3); text-align: left; }
+.kb-mood em { font-style: normal; font-size: 9px; opacity: 0.6; }
+.kd-root .kb-mood:hover { color: #fff; background: var(--tm-panel2); }
+.kb-mood.kb-mcur { color: var(--tm-ink2); }
+.kb-mood.kb-mopen { color: #E4FF3A; background: rgba(228, 255, 58, 0.08); }
+.kb-moods .kb-popi { border-radius: 0; }
+/* 16/32/64/128 + 1-2/3-4 hidden (Eman, 16 Nov); KT2_KD_RES_SHOW = back */
+.kd-beat .kb-nores .kb-bars, .kd-beat .kb-nores .kb-pages { display: none !important; }

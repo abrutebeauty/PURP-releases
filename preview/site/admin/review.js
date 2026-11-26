@@ -78,6 +78,34 @@
   .rvsp{flex:1 1 0;min-width:0}
   html.rvw .pv button[data-pid] .rvr.rvvr{flex-wrap:nowrap}
   .rvvr .rvspx{flex:0 0 4px}
+  .rvlb{position:fixed;inset:0;z-index:100010;background:rgba(5,4,8,.88);display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+  .lbx{width:min(1240px,100%);max-height:100%;overflow:auto;background:#0f0e13;border:1px solid #8b6cf6;padding:22px 24px 24px;box-sizing:border-box;color:#ecebf0;font:500 12px/1.4 var(--body,Inter,sans-serif)}
+  .lbh{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .lbc{background:#ecebf0;color:#0e0d12;font:400 10px/1 var(--mono,monospace);letter-spacing:.14em;padding:4px 9px}
+  .lbn{font:700 22px/1 Inter,sans-serif;letter-spacing:-.02em;text-transform:lowercase}
+  .lbv{color:#8b6cf6;font:800 10px/1 Inter,sans-serif;letter-spacing:.14em}
+  .lbw{position:relative;height:300px;background:#0a090d;border:1px solid #2a2733;cursor:pointer}
+  .lbw canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .lbov{position:absolute;inset:0;pointer-events:none}
+  .lbm{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed #E4FF3A;pointer-events:auto;cursor:pointer}
+  .lbm b{position:absolute;top:0;left:0;transform:translateX(-50%);background:#E4FF3A;color:#0b0a0e;font:800 9px/1 var(--mono,monospace);padding:3px 5px;white-space:nowrap}
+  .lbph{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.6);pointer-events:none}
+  .lbt{display:flex;align-items:center;gap:12px;margin:14px 0}
+  .lbpl{width:84px;height:34px;background:#8b6cf6;color:#fff}
+  .lbad{height:34px}
+  .lbtm{font:400 11px/1 var(--mono,monospace);letter-spacing:.1em;color:#a5a4ad}
+  .lbl{display:flex;flex-direction:column;gap:6px}
+  .lbtabs{display:flex;gap:8px;margin:0 0 14px}
+  .lbtab{height:30px;padding:0 14px;background:#1b1830;color:#cdbcff}
+  .lbtab.on{background:#8b6cf6;color:#fff}
+  .lbpane[hidden]{display:none}
+  .lbmidi iframe{width:100%;height:min(640px,calc(100vh - 230px));border:1px solid #2a2733;background:#0b0a0e;display:block}
+  .lbmidi .lbmn{color:#a5a4ad;font:400 11px/1.4 var(--mono,monospace);margin:8px 0 0;letter-spacing:.04em}
+  .lbci{display:flex;align-items:center;gap:8px}
+  .lbci input{flex:1;min-width:0;height:32px;box-sizing:border-box;background:#0b0a0e;border:1px solid #3a3446;color:#ecebf0;padding:0 10px;font:500 13px/1 Inter,sans-serif;outline:0;border-radius:0}
+  .lbci input:focus{border-color:#8b6cf6}
+  .lbci .lbtmb{min-width:64px;height:32px;background:#1b1830;color:#cdbcff}
+
   .rvb.rvver{padding:0 10px;font-family:var(--mono,monospace);letter-spacing:.04em}
   .rvb.rvver.sel{background:#8b6cf6;color:#fff}
   .rvb.rvver.use{background:#3ddc84;color:#0b0a0e}
@@ -197,7 +225,7 @@
     return document.querySelector(".pv button[data-pid].sel");
   }
   window.addEventListener("keydown", (e) => {
-    if ((e.code !== "Space" && e.key !== " ") || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || inPv() || typing(e.target) || typing(document.activeElement)) return;
+    if (document.querySelector(".rvlb") || (e.code !== "Space" && e.key !== " ") || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || inPv() || typing(e.target) || typing(document.activeElement)) return;
     const b = spaceTarget(); if (!b) return;
     e.preventDefault(); e.stopPropagation(); if (e.repeat) return;
     if (playing(b)) return pauseNow(b);
@@ -507,6 +535,98 @@
     if (k === "vnew") return addVersion(b);
     if (k === "use") { const o = rec(b, true), v = selV(b); if (o.inuse === v || (!o.inuse && v === "v1")) { delete o.inuse; if (v !== "v1") o.inuse = "v1"; } else o.inuse = v; if (o.inuse === "v1") delete o.inuse; save(); return after(); }
     if (k === "dl") return download(b);
+  }, true);
+
+  /* ---- big lightbox for one sound (Eman 26 Nov): press the code chip of a card in admin mode.
+     Big waveform you can click to jump, play / pause, and comments with marked spots (the same comments as on the card). ---- */
+  let lb = null;
+  function lbClose() { if (!lb) return; if (lb.mw) removeEventListener("message", lb.mw); try { lb.au.pause(); } catch (e) {} cancelAnimationFrame(lb.raf); lb.el.remove(); lb = null; }
+  async function lbOpen(b) {
+    lbClose(); try { if (typeof audio !== "undefined") audio.pause(); } catch (e) {}
+    const c = ctx(b); if (!c) return;
+    const v = verList(b).find((x) => x.id === selV(b)) || verList(b)[0], sp = spr(v.file), url = new URL(sp.u, location.href).href;
+    const chip = (b.querySelector(".ck-chip") || {}).textContent || "";
+    const el = document.createElement("div"); el.className = "rvlb";
+    el.innerHTML = `<div class="lbx"><div class="lbh"><b class="lbc">${esc(chip)}</b><span class="lbn">${esc(c.s.name || "")}</span><span class="lbv">${esc(v.name)}</span><span class="rvsp"></span><em class="rvb rvsq" data-lb="x">&times;</em></div>
+      <div class="lbtabs"><em class="rvb lbtab on" data-lb="tab" data-tab="wave">WAVEFORM + COMMENTS</em><em class="rvb lbtab" data-lb="tab" data-tab="midi">MIDI · TOY MACHINE V1</em></div>
+      <div class="lbpane" data-pane="wave"><div class="lbw"><canvas></canvas><div class="lbov"></div><i class="lbph"></i></div>
+      <div class="lbt"><em class="rvb lbpl" data-lb="play">PLAY</em><span class="lbtm">0:00.0 / 0:00.0</span><span class="rvsp"></span><em class="rvb lbad" data-lb="add">+ COMMENT AT PLAYHEAD</em></div>
+      <div class="lbl"></div></div>
+      <div class="lbpane lbmidi" data-pane="midi" hidden></div></div>`;
+    document.body.appendChild(el);
+    const cv = el.querySelector("canvas"), au = new Audio(url); au.preload = "auto";
+    lb = { el, b, au, dur: 0, a: sp.a || 0, peaks: null, raf: 0 };
+    const L = lb;
+    const frac = () => (L.dur ? Math.min(1, Math.max(0, (au.currentTime - L.a) / L.dur)) : 0);
+    const draw = () => {
+      const w = cv.clientWidth, h = cv.clientHeight, dpr = devicePixelRatio || 1; if (!w || !h) return;
+      if (cv.width !== Math.round(w * dpr) || cv.height !== Math.round(h * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+      const g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+      const f = frac(), mid = h / 2;
+      g.fillStyle = "rgba(236,235,240,.12)"; g.fillRect(0, mid, w, 1);
+      if (!L.peaks) return;
+      const n = Math.min(w, L.peaks.length / 2) | 0;
+      for (let x = 0; x < n; x++) { const mn = L.peaks[x * 2], mx = L.peaks[x * 2 + 1]; g.fillStyle = x / n <= f ? "#8b6cf6" : "#ecebf0"; g.fillRect(x, mid - mx * mid * 0.95, 1, Math.max(1, (mx - mn) * mid * 0.95)); }
+    };
+    const peaksFor = (buf, n) => {
+      const ch = buf.getChannelData(0), ch2 = buf.numberOfChannels > 1 ? buf.getChannelData(1) : null, sr = buf.sampleRate, s0 = Math.floor(L.a * sr), s1 = Math.min(ch.length, Math.floor((L.a + L.dur) * sr)), per = Math.max(1, (s1 - s0) / n), out = new Float32Array(n * 2);
+      for (let i = 0; i < n; i++) { let mn = 1, mx = -1; const a0 = s0 + Math.floor(i * per), a1 = Math.min(s1, s0 + Math.floor((i + 1) * per)); for (let k = a0; k < a1; k++) { const s = ch2 ? (ch[k] + ch2[k]) / 2 : ch[k]; if (s < mn) mn = s; if (s > mx) mx = s; } if (mn > mx) { mn = 0; mx = 0; } out[i * 2] = mn; out[i * 2 + 1] = mx; }
+      return out;
+    };
+    const cmList = () => { const o = rec(b); return o ? o.cm.filter((x) => (x.v || "v1") === selV(b)) : []; };
+    const marks = () => {
+      const ov = el.querySelector(".lbov"), ls = el.querySelector(".lbl"), cms = cmList();
+      ov.innerHTML = cms.filter((x) => x.x != null && x.txt).map((x) => `<span class="lbm" data-lb="mark" data-id="${esc(x.id)}" style="left:${(x.x * 100).toFixed(2)}%" title="${esc(x.txt)}"><b>${fmt(x.t)}</b></span>`).join("");
+      ls.innerHTML = cms.slice().sort((p, q) => (p.x == null ? -1 : p.x) - (q.x == null ? -1 : q.x)).map((x) => `<span class="lbci" data-id="${esc(x.id)}"><em class="rvb lbtmb" data-lb="go">${x.x == null ? "ALL" : fmt(x.t)}</em><input value="${esc(x.txt)}" maxlength="400" placeholder="Comment"><em class="rvb rvsq" data-lb="rm">&times;</em></span>`).join("");
+    };
+    const tick = () => {
+      const f = frac(); el.querySelector(".lbph").style.left = (f * 100).toFixed(3) + "%";
+      el.querySelector(".lbtm").textContent = fmt(f * L.dur) + " / " + fmt(L.dur);
+      el.querySelector(".lbpl").textContent = au.paused ? "PLAY" : "PAUSE";
+      if (L.dur && sp.b != null && au.currentTime >= sp.b) { au.pause(); au.currentTime = L.a; }
+      draw(); L.raf = requestAnimationFrame(tick);
+    };
+    const seek = (f) => { au.currentTime = L.a + Math.min(0.999, Math.max(0, f)) * L.dur; };
+    const addAt = (f) => { const rr = rec(b, true), it = { id: uid(), x: f, t: f == null ? null : f * L.dur, txt: "", v: selV(b), at: Date.now() }; rr.cm.push(it); marks(); const inp = el.querySelector('.lbci[data-id="' + it.id + '"] input'); if (inp) inp.focus(); };
+    const commit = (id, txt) => { const rr = rec(b), it = rr && rr.cm.find((x) => x.id === id); if (!it) return; txt = txt.trim(); if (!txt) rr.cm = rr.cm.filter((x) => x.id !== id); else it.txt = txt; save(); b.querySelector(".rvc") && (b.querySelector(".rvc").dataset.sig = ""); sync(b); marks(); };
+    L.close = lbClose;
+    const tab = (n) => {
+      el.querySelectorAll(".lbtab").forEach((x) => x.classList.toggle("on", x.dataset.tab === n));
+      el.querySelectorAll(".lbpane").forEach((x) => (x.hidden = x.dataset.pane !== n));
+      if (n === "wave") return; try { au.pause(); } catch (e) {}
+      const host = el.querySelector(".lbmidi"); if (host.firstChild) return;
+      const m = /(\d{2,3})\s*[·.,]\s*([A-G][#b]?m?)/.exec(c.s.meta || "") || [], o = rec(b);
+      const f = document.createElement("iframe"); f.src = "/admin/kt/lab.html?go=1"; f.allow = "autoplay; midi"; host.appendChild(f);
+      host.insertAdjacentHTML("beforeend", '<p class="lbmn">Plays through TOY MACHINE V1 on a neutral Init patch (pick any sound in the VST tab). Your notes are saved with this sound.</p>');
+      L.mw = (e) => { const d = e.data; if (!d || e.source !== f.contentWindow) return;
+        if (d.kt === "hello") f.contentWindow.postMessage({ kt: "init", bpm: m[1] || 120, key: m[2] || "", notes: (o && o.midi) || [] }, "*");
+        if (d.kt === "notes") { const rr = rec(b, true); rr.midi = d.notes; save(); } };
+      addEventListener("message", L.mw);
+    };
+    el.addEventListener("click", (e) => {
+      const t = e.target.closest("[data-lb]"); if (e.target === el) return lbClose();
+      const w = e.target.closest(".lbw");
+      if (!t && w && !e.target.closest(".lbm")) { const r = cv.getBoundingClientRect(); seek((e.clientX - r.left) / r.width); if (au.paused) au.play().catch(() => {}); return; }
+      if (!t) return; const k = t.dataset.lb;
+      if (k === "x") return lbClose();
+      if (k === "tab") return tab(t.dataset.tab);
+      if (k === "play") { if (au.paused) { if (frac() >= 0.995) seek(0); au.play().catch(() => {}); } else au.pause(); return; }
+      if (k === "add") return addAt(L.dur ? frac() : null);
+      if (k === "mark" || k === "go") { const id = k === "mark" ? t.dataset.id : t.closest(".lbci").dataset.id, it = cmList().find((x) => x.id === id); if (it && it.x != null) { seek(it.x); if (au.paused) au.play().catch(() => {}); } return; }
+      if (k === "rm") { const id = t.closest(".lbci").dataset.id, rr = rec(b); if (rr) { rr.cm = rr.cm.filter((x) => x.id !== id); save(); sync(b); marks(); } }
+    });
+    el.addEventListener("keydown", (e) => { e.stopPropagation(); const i = e.target.closest && e.target.closest(".lbci input"); if (i) { if (e.key === "Enter") { e.preventDefault(); i.blur(); } else if (e.key === "Escape") { e.preventDefault(); i.value = i.defaultValue; i.blur(); } return; }
+      if (e.key === "Escape") lbClose(); else if (e.code === "Space") { e.preventDefault(); el.querySelector(".lbpl").click(); } });
+    el.addEventListener("keyup", (e) => { e.stopPropagation(); if (e.code === "Space") e.preventDefault(); });
+    el.addEventListener("focusout", (e) => { const i = e.target.closest && e.target.closest(".lbci input"); if (i && lb === L) commit(i.closest(".lbci").dataset.id, i.value); });
+    marks(); L.raf = requestAnimationFrame(tick); el.tabIndex = -1; el.focus();
+    try { const buf = await (await fetch(url)).arrayBuffer(), ac = new (window.AudioContext || window.webkitAudioContext)(), dec = await ac.decodeAudioData(buf); ac.close && ac.close();
+      if (lb !== L) return; L.dur = sp.b != null ? sp.b - L.a : dec.duration; L.peaks = peaksFor(dec, Math.max(300, Math.round(cv.clientWidth * (devicePixelRatio || 1) / (devicePixelRatio || 1)))); marks();
+    } catch (e) { if (lb === L) { L.dur = L.dur || 0; } }
+  }
+  window.addEventListener("click", (e) => {
+    if (inPv() || !e.target.closest) return; const ch = e.target.closest(".pv button[data-pid] .ck-chip"); if (!ch) return;
+    e.preventDefault(); e.stopPropagation(); lbOpen(ch.closest("button[data-pid]"));
   }, true);
   addEventListener("keydown", (e) => { if (e.key === "Escape") closePop(); });
 
