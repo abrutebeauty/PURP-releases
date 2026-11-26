@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PLAYBOI pack · COREKULT (clean page test)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&family=Martian+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16151a; --ink2:#5d5c63; --ink3:#8d8c92;
+  --hero:#bcbfc7; --paper:#eeede9; --line:#d3d2cd; --unlit:#d9d8d3;
+  --mono:"Martian Mono","DejaVu Sans Mono",ui-monospace,monospace;
+  --sans:Inter,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.22;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .3  0 0 0 0 .32  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* ---------- labels (images 2-5) ---------- */
+.lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;line-height:1.75;font-weight:400}
+.lab b{font-weight:600}
+.inv{display:inline-block;background:var(--ink);color:#eeede9;padding:1px 9px;white-space:nowrap}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ink);vertical-align:-1px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#eeede9;font:600 10px var(--mono);letter-spacing:.04em}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--hero);min-height:100vh;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:0 16px 96px}
+.top{position:relative;z-index:3;width:100%;max-width:1320px;display:flex;justify-content:space-between;align-items:flex-start;padding:26px 0 0}
+.top img{height:22px;display:block}
+.top .r{text-align:right}
+.stage{position:relative;width:min(46vw,540px);min-width:270px;margin-top:clamp(12px,3vw,40px);aspect-ratio:1/1;perspective:1100px}
+.melt{position:absolute;left:50%;top:50%;width:min(112vw,1560px);max-width:none;transform:translate(-50%,-50%);z-index:0;pointer-events:none;opacity:.92}
+.tilt{position:absolute;inset:0;z-index:2;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.tilt.live{transition:transform .08s linear}
+.disc{position:absolute;inset:0;width:100%;height:100%;display:block;filter:drop-shadow(0 18px 26px rgba(20,18,26,.28))}
+.sheen{position:absolute;inset:1.2%;border-radius:50%;pointer-events:none;mix-blend-mode:soft-light;opacity:.55;
+  background:conic-gradient(from var(--a,20deg),rgba(255,255,255,0) 0deg,rgba(255,255,255,.95) 18deg,rgba(255,255,255,0) 42deg,rgba(255,255,255,0) 180deg,rgba(255,255,255,.8) 200deg,rgba(255,255,255,0) 224deg,rgba(255,255,255,0) 360deg);
+  -webkit-mask:radial-gradient(circle,transparent 0 17.5%,#000 18.5%);mask:radial-gradient(circle,transparent 0 17.5%,#000 18.5%);transition:opacity .5s}
+.titlewrap{position:relative;z-index:3;text-align:center;margin-top:clamp(28px,4vw,54px)}
+h1{font-family:var(--sans);font-weight:900;font-size:clamp(52px,10.5vw,148px);line-height:.84;letter-spacing:-.05em;text-transform:uppercase;color:var(--ink)}
+.sub{margin-top:22px;color:var(--ink2)}
+.buy{position:relative;z-index:3;margin-top:28px;display:inline-flex;align-items:center;gap:18px;background:var(--ink);color:#eeede9;padding:17px 30px;font:600 12px var(--mono);letter-spacing:.2em;text-transform:uppercase;transition:transform .15s}
+.buy:active{transform:translateY(2px)}
+.buy i{font-style:normal;color:#9c9ba3;letter-spacing:.1em}
+.facts{position:relative;z-index:3;width:100%;max-width:1320px;margin-top:auto;padding-top:56px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.facts .c{max-width:300px}
+.facts .c.r{text-align:right}
+
+/* ---------- sounds ---------- */
+.sounds{position:relative;background:var(--paper);padding:56px 16px 120px}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+.head h2{font:600 22px var(--sans);letter-spacing:-.02em;text-transform:lowercase}
+.cols,.row{display:grid;grid-template-columns:52px 96px minmax(150px,1.5fr) 62px 66px 54px 92px minmax(190px,1.3fr);align-items:center;column-gap:16px}
+.cols{padding:12px 0;color:var(--ink3);border-bottom:1px solid var(--line)}
+.row{padding:14px 0;border-bottom:1px solid var(--line);position:relative}
+.row .go{width:44px;height:44px;background:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .12s}
+.row .go:active{transform:scale(.94)}
+.row .go svg{width:14px;height:14px;fill:#eeede9;display:block}
+.row .go .pa{display:none}
+.row.on .go .pl{display:none}.row.on .go .pa{display:block}
+.row .nm{font:600 17px var(--sans);letter-spacing:-.015em;text-transform:lowercase;display:flex;align-items:center;gap:10px;min-width:0}
+.row .nm span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .nm svg{flex:none;width:15px;height:15px;fill:var(--ink)}
+.row .f{color:var(--ink2)}
+.row .cat{color:var(--ink3)}
+.row .tm{color:var(--ink3);text-align:right;white-space:nowrap}
+.row.on .tm{color:var(--ink)}
+.row .prog{position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--ink)}
+
+/* digital level meter */
+.meter{display:grid;grid-template-columns:10px 1fr 54px;grid-template-rows:auto auto;column-gap:8px;row-gap:3px;align-items:center}
+.meter .ch{font:400 8.5px var(--mono);letter-spacing:.08em;color:var(--ink3)}
+.bar{display:grid;grid-template-columns:repeat(32,1fr);gap:2px;height:7px}
+.bar s{display:block;background:var(--unlit)}
+.bar s.on{background:var(--ink)}
+.bar s.pk{background:var(--ink)}
+.meter .db{grid-row:1/3;grid-column:3;font:600 10px var(--mono);letter-spacing:.04em;text-align:right;color:var(--ink3);white-space:nowrap}
+.row.on .meter .db{color:var(--ink)}
+
+.foot{margin-top:70px;display:flex;justify-content:space-between;gap:20px;color:var(--ink3);align-items:flex-start;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .melt{width:190vw}
+  .stage{width:70vw}
+  .cols{display:none}
+  .row{grid-template-columns:44px 1fr auto;grid-template-areas:"go nm tm" "go inf inf" ". mt mt";row-gap:6px;column-gap:14px;padding:16px 0}
+  .row .go{grid-area:go;align-self:start}
+  .row .no{display:none}
+  .row .nm{grid-area:nm}
+  .row .tm{grid-area:tm}
+  .row .inf{grid-area:inf;display:flex;gap:14px;flex-wrap:wrap}
+  .row .meter{grid-area:mt}
+  .row .inf .f{display:inline}
+  .facts{flex-direction:column;align-items:flex-start;padding-top:40px}
+  .facts .c.r{text-align:left}
+}
+@media(min-width:901px){.row .inf{display:contents}}
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero">
+  <div class="grain"></div>
+  <div class="top">
+    <div class="lab"><img src="cleanpage/logo-black.webp" alt="COREKULT"><div style="margin-top:12px">preset pack<br><b>serum 1 + 2 / vital / ableton</b></div></div>
+    <div class="lab r"><span class="inv">[ CK / PB / 001 ]</span><br>issue n°01<br>20 presets &nbsp;<span class="dot"></span></div>
+  </div>
+
+  <div class="stage" id="stage">
+    <img class="melt" src="cleanpage/melt.webp" alt="" aria-hidden="true">
+    <div class="tilt" id="tilt">
+      <img class="disc" src="cleanpage/disc.webp" srcset="cleanpage/disc-600.webp 600w, cleanpage/disc.webp 1200w" sizes="540px" alt="PLAYBOI pack disc" draggable="false">
+      <div class="sheen" id="sheen"></div>
+    </div>
+  </div>
+
+  <div class="titlewrap">
+    <h1>playboi<br>pack</h1>
+    <div class="sub lab">20 presets &nbsp;/&nbsp; made for dark melodic trap</div>
+    <a class="buy" href="#" onclick="return false"><span>get the pack</span><i>24</i></a>
+  </div>
+
+  <div class="facts lab">
+    <div class="c">input verified<br>output confirmed<br><b>&gt; quality pass</b></div>
+    <div class="c r">sn: <span class="dot"></span> ck-pb-001 <span class="dot"></span> fwd<br>works with serum 1 / serum 2<br>vital / ableton wavetable</div>
+  </div>
+</section>
+
+<section class="sounds" id="sounds">
+  <div class="grain" style="opacity:.14"></div>
+  <div class="wrap">
+    <div class="head">
+      <h2>the sounds</h2>
+      <div class="lab" style="text-align:right">14 of 20 shown &nbsp;<span class="num">14</span></div>
+    </div>
+    <div class="cols lab"><span></span><span>no.</span><span>preset</span><span>type</span><span>tempo</span><span>bars</span><span style="text-align:right">time</span><span>level</span></div>
+    <div id="list"></div>
+    <div class="foot lab">
+      <div>preview sounds from the playboi pack<br>space = play / pause &nbsp;&nbsp; up / down = next sound</div>
+      <div style="text-align:right">corekult / 2026<br>logged locally</div>
+    </div>
+  </div>
+</section>
+
+<script>
+const SOUNDS=[
+ ["pb01","808 - vamp slide","808",120,4],["pb02","lead - raven fifth","lead",162,4],["pb03","bell - hollow fang","bell",162,4],
+ ["pb04","bass - crushed fur","bass",162,4],["pb05","lead - velvet stairs","lead",99,4],["pb06","pad - dark throne","pad",99,4],
+ ["pb07","pad - black cathedral","pad",142,8],["pb08","pad - crypt glow","pad",142,8],["pb09","pad - funeral silk","pad",142,8],
+ ["pb10","keys - velvet tomb","keys",142,4],["pb11","arp - witch signal","arp",142,8],["pb12","pad - seance pulse","pad",142,8],
+ ["pb13","808 - grave knock","808",142,8],["pb14","chord - fifth wound","chord",131,4]
+];
+const ICON={ // small filled glyphs
+ "808":'<circle cx="8" cy="8" r="7"/>',
+ bass:'<rect x="1" y="9" width="14" height="6"/><rect x="1" y="1" width="6" height="6"/>',
+ lead:'<path d="M1 15 8 1l7 14z"/>',
+ pad:'<rect x="1" y="4" width="14" height="8"/>',
+ bell:'<path d="M8 1c4 0 5 4 5 7l2 4H1l2-4c0-3 1-7 5-7z"/><circle cx="8" cy="14.5" r="1.5"/>',
+ keys:'<rect x="1" y="2" width="3" height="12"/><rect x="6.5" y="2" width="3" height="12"/><rect x="12" y="2" width="3" height="12"/>',
+ arp:'<rect x="1" y="9" width="3" height="6"/><rect x="6.5" y="5" width="3" height="10"/><rect x="12" y="1" width="3" height="14"/>',
+ chord:'<rect x="1" y="1" width="14" height="3"/><rect x="1" y="6.5" width="14" height="3"/><rect x="1" y="12" width="14" height="3"/>'
+};
+const SEG=32;
+const fmt=s=>{s=Math.max(0,s|0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+const list=document.getElementById("list");
+SOUNDS.forEach((s,i)=>{
+  const [id,name,type,bpm,bars]=s;
+  const r=document.createElement("div");r.className="row";r.dataset.i=i;
+  const seg=()=>"<s></s>".repeat(SEG);
+  r.innerHTML=
+   '<button class="go" aria-label="play '+name+'"><svg class="pl" viewBox="0 0 14 14"><path d="M2 0v14l11-7z"/></svg><svg class="pa" viewBox="0 0 14 14"><rect x="1" y="0" width="4" height="14"/><rect x="9" y="0" width="4" height="14"/></svg></button>'+
+   '<span class="no lab">ck-pb-'+String(i+1).padStart(3,"0")+'</span>'+
+   '<span class="nm"><svg viewBox="0 0 16 16">'+ICON[type]+'</svg><span>'+name+'</span></span>'+
+   '<span class="inf"><span class="f lab">'+type+'</span><span class="f lab">'+bpm+' bpm</span><span class="f lab">'+bars+' bars</span></span>'+
+   '<span class="tm lab">0:00</span>'+
+   '<div class="meter"><span class="ch">L</span><div class="bar" data-c="0">'+seg()+'</div><span class="db lab">-inf</span><span class="ch">R</span><div class="bar" data-c="1">'+seg()+'</div></div>'+
+   '<span class="prog"></span>';
+  list.appendChild(r);
+});
+// desktop: "tempo" col is bpm, "bars" col; fields come from .inf (display:contents)
+
+const audio=new Audio();audio.preload="auto";audio.crossOrigin="anonymous";
+let ctx,an=[],buf=[],cur=-1,pk=[0,0],pkT=[0,0],raf=0;
+function setup(){
+  if(ctx)return;
+  ctx=new (window.AudioContext||window.webkitAudioContext)();
+  const src=ctx.createMediaElementSource(audio),sp=ctx.createChannelSplitter(2);
+  src.connect(ctx.destination);src.connect(sp);
+  for(let c=0;c<2;c++){const a=ctx.createAnalyser();a.fftSize=1024;a.smoothingTimeConstant=0;sp.connect(a,c);an.push(a);buf.push(new Float32Array(a.fftSize))}
+}
+function rowEl(i){return list.children[i]}
+function clearRow(i){
+  const r=rowEl(i);if(!r)return;r.classList.remove("on");
+  r.querySelectorAll(".bar s").forEach(e=>e.className="");
+  r.querySelector(".db").textContent="-inf";r.querySelector(".tm").textContent="0:00";r.querySelector(".prog").style.width="0";
+}
+function play(i){
+  setup();ctx.resume();
+  if(cur===i){ if(audio.paused){audio.play();rowEl(i).classList.add("on");loop()} else {audio.pause();rowEl(i).classList.remove("on")} return }
+  if(cur>=0)clearRow(cur);
+  cur=i;pk=[0,0];pkT=[0,0];
+  audio.src="cleanpage/snd/"+SOUNDS[i][0]+".mp3";
+  audio.currentTime=0;audio.play();rowEl(i).classList.add("on");loop();
+}
+audio.addEventListener("ended",()=>{if(cur>=0)clearRow(cur);cur=-1});
+const dbOf=v=>v<=1e-5?-Infinity:20*Math.log10(v);
+function loop(){
+  cancelAnimationFrame(raf);
+  const tick=()=>{
+    if(cur<0)return;
+    const r=rowEl(cur),bars=r.querySelectorAll(".bar");
+    let maxdb=-Infinity;
+    for(let c=0;c<2;c++){
+      an[c].getFloatTimeDomainData(buf[c]);
+      let m=0;for(let k=0;k<buf[c].length;k++){const v=Math.abs(buf[c][k]);if(v>m)m=v}
+      const db=dbOf(m);maxdb=Math.max(maxdb,db);
+      // -48 dB .. 0 dB across SEG segments
+      const lvl=db===-Infinity?0:Math.max(0,Math.min(SEG,Math.round((db+48)/48*SEG)));
+      const now=performance.now();
+      if(lvl>=pk[c]){pk[c]=lvl;pkT[c]=now}else if(now-pkT[c]>650){pk[c]=Math.max(lvl,pk[c]-1)}
+      const segs=bars[c].children;
+      for(let k=0;k<SEG;k++)segs[k].className=k<lvl?"on":(k===pk[c]-1&&pk[c]>0?"pk":"");
+    }
+    r.querySelector(".db").textContent=maxdb===-Infinity?"-inf":maxdb.toFixed(1);
+    const d=audio.duration||0,t=audio.currentTime;
+    r.querySelector(".tm").textContent=fmt(t)+" / "+fmt(d);
+    r.querySelector(".prog").style.width=(d?t/d*100:0)+"%";
+    if(!audio.paused||audio.currentTime>0)raf=requestAnimationFrame(tick);
+  };
+  raf=requestAnimationFrame(tick);
+}
+list.addEventListener("click",e=>{
+  const b=e.target.closest(".go");if(b)play(+b.closest(".row").dataset.i);
+});
+document.addEventListener("keydown",e=>{
+  if(e.code==="Space"){e.preventDefault();play(cur<0?0:cur)}
+  if(e.code==="ArrowDown"){e.preventDefault();play(Math.min(SOUNDS.length-1,cur+1))}
+  if(e.code==="ArrowUp"){e.preventDefault();play(Math.max(0,cur-1))}
+});
+
+// disc: tiny tilt + moving sheen, eases back on leave
+const hero=document.getElementById("hero"),tilt=document.getElementById("tilt"),sheen=document.getElementById("sheen");
+hero.addEventListener("pointermove",e=>{
+  const b=tilt.getBoundingClientRect(),x=(e.clientX-(b.left+b.width/2))/(innerWidth/2),y=(e.clientY-(b.top+b.height/2))/(innerHeight/2);
+  const cx=Math.max(-1,Math.min(1,x)),cy=Math.max(-1,Math.min(1,y));
+  tilt.classList.add("live");
+  tilt.style.transform="rotateY("+(cx*7)+"deg) rotateX("+(-cy*7)+"deg)";
+  sheen.style.setProperty("--a",(20+cx*70-cy*40)+"deg");
+});
+hero.addEventListener("pointerleave",()=>{tilt.classList.remove("live");tilt.style.transform="";sheen.style.setProperty("--a","20deg")});
+</script>
+</body>
+</html>
