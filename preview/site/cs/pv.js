@@ -2,7 +2,7 @@
    Press a waveform or PREVIEW = all three. Press a name tag = only that sound. OPIUM 2 look only. */
 (function(){
   if(window.CS_NOPV)return;
-  var PUR="#5a47c9",PURL="#d42a24";
+  var PUR="#E4FF3A",PURL="#fbffe6";
   var ctx=null,tracks=[],sec=null,btnEl=null,state={playing:false,solo:-1,t0:0},raf=0,ready=false,srcs=[];
   function pid(){return window.CS_PACK||decodeURIComponent(location.pathname.split("/")[2]||new URLSearchParams(location.search).get("id")||"")}
   function kindOf(s){return String(s.name).split(/\s+/)[0].toUpperCase()}
@@ -105,7 +105,7 @@
     if(!pk||!top||!ready||!document.documentElement.classList.contains("opium2"))return;
     sec=document.createElement("section");sec.className="pks cs-pv";sec.id="csPv";
     var kinds=tracks.map(function(t){return t.kind}).join(" + ");
-    sec.innerHTML='<div class="cs-pvh"><span class="cs-pvt">Preview</span><span class="cs-pvs">'+esc(kinds)+' · played together</span><button class="cs-pvb" type="button">▶ Preview</button></div>'+
+    sec.innerHTML='<div class="cs-pvh"><span class="cs-pvs">'+esc(kinds)+' · played together</span><button class="cs-pvb" type="button">▶ Preview</button></div>'+
       tracks.map(function(t,i){return '<div class="cs-pvr" data-i="'+i+'"><div class="cs-pvw" role="button" aria-label="Play all three together"><canvas></canvas><i class="cs-pvl"></i></div><button class="cs-pvtag" type="button" aria-label="Play only '+esc(t.name)+'"><span class="cs-pvk">'+esc(t.kind)+'</span><span class="cs-pvn">'+esc(t.name)+'</span></button></div>'}).join("");
     top.after(sec);
     btnEl=sec.querySelector(".cs-pvb");btnEl.addEventListener("click",panelClick);

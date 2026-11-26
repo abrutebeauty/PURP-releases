@@ -5,7 +5,7 @@ html.opium2 .cs-pvt{border:2px solid #E4FF3A;color:#E4FF3A;padding:13px 24px;fon
 html.opium2 .cs-pvs{font:700 12px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.3em;color:#8c8a96;text-transform:uppercase}
 html.opium2 .cs-pvb{margin-left:auto;height:46px;padding:0 28px;border:0;background:#E4FF3A;color:#0b0a0e;font:700 14px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
 html.opium2 .cs-pvr{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,24%);gap:26px;align-items:center;margin:0 0 14px}
-html.opium2 .cs-pvw{position:relative;height:96px;background:#121018;cursor:pointer;box-sizing:border-box;border:2px solid transparent;transition:opacity .25s ease}
+html.opium2 .cs-pvw{position:relative;height:96px;background:transparent;cursor:pointer;box-sizing:border-box;border:2px solid transparent;transition:opacity .25s ease}
 html.opium2 .cs-pvw canvas{display:block;width:100%;height:100%}
 html.opium2 .cs-pvl{position:absolute;left:0;top:8px;bottom:8px;width:2px;background:#fff;opacity:0;pointer-events:none;will-change:transform}
 html.opium2 .cs-pvr.cs-solo .cs-pvw{border-color:#E4FF3A}
