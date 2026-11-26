@@ -140,3 +140,24 @@
 .csget li small{font-size:11px;letter-spacing:.1em;opacity:.8}
 .csget .s1,.csget .s2{color:#8b6cf6}.csget .v{color:#4ade9c}.csget .w{color:#5eead4}
 @media (max-width:900px){.cstop{grid-template-columns:1fr;padding:30px 0 40px}.cstc{width:min(86%,380px)}.cshand{display:none}}
+
+/* ===== top edits on the live product page (Eman 26 Nov) ===== */
+html .cs-buy{display:flex!important;align-items:center;flex-wrap:wrap;gap:8px}
+html .cs-buy .btn.acid{height:42px!important;min-height:0!important;width:auto!important;min-width:0!important;padding:0 22px!important;font-size:12px!important;line-height:1!important;display:inline-flex;align-items:center;justify-content:center}
+html .cs-pick{height:42px;display:inline-flex;align-items:center;gap:8px;padding:0 18px;background:#1f1d27;color:#ecebf0;font:700 12px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+html .cs-pick b{color:#E4FF3A;font-weight:700}
+html .cs-pick s{color:#6f6c7b;font-weight:500}
+html .cs-pick:hover{background:#1f1d27}
+html #pkTop .ww .wwb{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;height:auto!important}
+html #pkTop .ww .wwl{gap:22px!important}
+@media (max-width:700px){html .cs-pick{padding:0 14px;letter-spacing:.1em}}
+
+/* order: price, 3 slots, buy row, get this pack, trust (CSS order, because the look script keeps moving the works-with block) */
+html #pkTop .pki{display:flex!important;flex-direction:column;align-items:flex-start}
+html #pkTop .pki>*{order:0}
+html #pkTop .pki>.pbuy{order:10}html #pkTop .pki>.op-t3{order:11}html #pkTop .pki>.buy{order:12}html #pkTop .pki>.ww{order:13}html #pkTop .pki>.trio{order:14}html #pkTop .pki>.trust{order:15}html #pkTop .pki>.madewith{order:16}
+/* buy row: smaller ADD TO CART with PICK 3 FOR 2 beside it */
+html #pkTop .pki>.buy.cs-buy{width:auto!important;max-width:100%!important;flex-wrap:nowrap!important;flex-direction:row!important;gap:8px!important;margin:12px 0 22px!important}
+html #pkTop .pki>.buy.cs-buy .btn.acid{flex:0 0 auto!important;width:auto!important;height:42px!important;padding:0 24px!important;font-size:12px!important;letter-spacing:.14em!important;min-height:0!important}
+html #pkTop .pki>.buy.cs-buy .cs-pick{flex:0 0 auto}
+@media (max-width:520px){html #pkTop .pki>.buy.cs-buy{flex-wrap:wrap!important}}

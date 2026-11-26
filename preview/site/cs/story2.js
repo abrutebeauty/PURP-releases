@@ -112,7 +112,7 @@ function waveClick(w,ev){
 function soloFrame(){
   var p=cur&&aud.duration?aud.currentTime/aud.duration:0,pl=!!cur&&!aud.paused;
   for(var i=0;i<waves.length;i++){var w=waves[i];if(w.stack||!w.host.isConnected)continue;var mine=cur&&w.s.id===cur.id;w.setProg(mine?p:0);w.playing=mine&&pl;w.level=.35}
-  if(cur){$$('.cs2 .tile[data-id="'+cur.id+'"] .el,.cslb .lrow[data-id="'+cur.id+'"] .tm').forEach(function(t){t.textContent=fmt(aud.currentTime)})}
+  if(cur){$$('.cs2 .tile[data-id="'+cur.id+'"] .el,.cslb .lrow[data-id="'+cur.id+'"] .tm').forEach(function(t){setT(t,fmt(aud.currentTime))})}
 }
 
 /* ================= stack engine ================= */
@@ -155,7 +155,7 @@ function applySolo(){
     if(t.gain)t.gain.gain.setTargetAtTime(on?1:0,ctx.currentTime,.015);
     t.dim=!on;t.wave.dim=!on;t.wave.dirty=true;
     t.row.classList.toggle("dim",!on);t.row.classList.toggle("solo",stk.solo===i);
-    $(".cs-st",t.row).textContent=stk.solo===i?"SOLO":(on?"":"PAUSED");
+    setT($(".cs-st",t.row),stk.solo===i?"SOLO":(on?"":"PAUSED"));
     $(".cs-st",t.row).style.display=(stk.solo===i||!on)?"inline":"none";
   });
   var a=$("#csChipStack"),b=$("#csChipSolo");if(a){a.classList.toggle("cs-on",stk.solo<0);b.classList.toggle("cs-on",stk.solo>=0)}
@@ -166,7 +166,7 @@ function stackFrame(){
   if(!tracks.length||!$("#csPh"))return;
   var pos=stk.playing?((ctx.currentTime-stk.t0)%stk.dur):stk.off,prog=pos/stk.dur;
   $("#csPh").style.transform="translateX("+(prog*$("#csPhw").clientWidth)+"px)";
-  $("#csTime").textContent=fmt(pos)+" / "+fmt(stk.dur);
+  setT($("#csTime"),fmt(pos)+" / "+fmt(stk.dur));
   tracks.forEach(function(t){
     var lv=0;
     if(stk.playing&&t.an&&!t.dim){t.an.getByteTimeDomainData(tb);var sum=0;for(var k=0;k<512;k++){var v=(tb[k]-128)/128;sum+=v*v}lv=Math.min(1,Math.sqrt(sum/512)*5)}
@@ -271,12 +271,48 @@ function renderLB(){
 
 
 /* ================= new top (Eman 26 Nov): shorter right column, plain-text synths, $24, PICK 3 FOR 2 ================= */
+/* per-frame text: only touch the page when the text changed, and edit the text node itself (no child-list churn, which would starve the look script) */
+function setT(el,txt){if(!el)return;var n=el.firstChild;if(n&&n.nodeType===3&&el.childNodes.length===1){if(n.nodeValue!==txt)n.nodeValue=txt}else if(el.textContent!==txt)el.textContent=txt}
 var IC={
  serum:'<svg viewBox="0 0 16 16"><path d="M1 8c2-6 4-6 6 0s4 6 6 0" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
  serum2:'<svg viewBox="0 0 16 16"><path d="M1 9c2-6 4-6 6 0s4 6 6 0" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 2v2.5M15 2v2.5" stroke="currentColor" stroke-width="1.2"/></svg>',
  vital:'<svg viewBox="0 0 16 16"><path d="M2 3l6 10 6-10" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>',
  wt:'<svg viewBox="0 0 16 16"><path d="M2 3v10M5 3v10M8 3v10M11 6h4M11 9h4M11 12h4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>'};
-function buildTop(p){
+/* Eman 26 Nov: the live product top stays as it is (title, 3 slots, handwriting, cover). Only the listed edits are applied on top of it. */
+function patchTop(p){
+  var top=document.getElementById("pkTop");if(!top||top.dataset.cs)return;top.dataset.cs="1";
+  var st=document.createElement("style");st.textContent="#review,#opMag,#pkTop .op-rv,#pkTop .rvs,#pkTop #pkStars,#pkTop .tiles,#pkTop a.trio{display:none!important}html.opium #pkSounds{display:block!important}";document.head.appendChild(st);
+  var busy=false;
+  function fix(){
+    if(busy)return;busy=true;
+    try{
+      var pki=top.querySelector(".pki");if(!pki)return;
+      var price=pki.querySelector(".pbuy .price");if(price&&price.textContent.trim()!=="$24")price.textContent="$24";
+      var ps=pki.querySelector(".pbuy .ps");if(ps&&ps.textContent.indexOf("$")<0)ps.textContent="$0.24 per sound";
+      var buy=pki.querySelector(".buy"),ww=pki.querySelector(".ww"),t3=pki.querySelector(".op-t3");
+      /* 3 slots sit above the buy row */
+      /* PICK 3 FOR 2 button next to ADD TO CART */
+      if(buy&&!buy.querySelector(".cs-pick")){
+        var a=document.createElement("a");a.className="cs-pick";a.href="/bundle?trio=crystal";
+        a.innerHTML='Pick 3 for 2 <b>$48</b> <s>$72</s>';buy.appendChild(a);
+        buy.classList.add("cs-buy");
+      }
+      /* works-with block moves under the buy row, title GET THIS PACK, SERUM 1 -> SERUM, plain text */
+      if(ww){
+        var sm=ww.querySelector("small");if(sm&&sm.textContent.trim().toLowerCase()!=="get this pack")sm.textContent="Get this pack";
+        ww.querySelectorAll(".wwb").forEach(function(b){
+          var n=b.lastChild;
+          [].slice.call(b.childNodes).forEach(function(c){if(c.nodeType===3&&/^\s*Serum 1\s*$/.test(c.textContent))c.textContent="Serum"});
+        });
+      }
+    }finally{busy=false}
+  }
+  fix();
+  new MutationObserver(function(){fix()}).observe(top,{childList:true,subtree:true});
+  /* nudge the look script (it re-runs on any page change) so its extra parts appear after this render */
+  var i=document.createElement("i");i.hidden=true;document.getElementById("pk").appendChild(i);setTimeout(function(){i.remove();fix()},120);
+}
+function buildTopOLD(p){
   var pk=document.getElementById("pk");if(!pk||document.getElementById("csTop"))return;
   var t=document.createElement("div");t.id="csTop";t.className="cstop";
   t.innerHTML='<div class="cstc"><img class="cl l" src="/img/op/glyph-l-out.svg" alt=""><img class="cl r" src="/img/op/glyph-r-out.svg" alt=""><img class="cscd" src="/img/cs/case-fang.webp" alt="Crystal Core CD" width="520" height="520"></div>'+
@@ -288,7 +324,7 @@ function buildTop(p){
    '<div class="csget"><div class="cslab">Get the pack</div><p>All packs include presets for Serum, Serum 2, Vital and Ableton Wavetable.</p>'+
    '<ul><li class="s1">'+IC.serum+'Serum</li><li class="s2">'+IC.serum2+'Serum 2</li><li class="v">'+IC.vital+'Vital <small>(free synth)</small></li><li class="w">'+IC.wt+'Ableton Wavetable</li></ul></div></div>';
   pk.insertBefore(t,document.getElementById("pkTop"));
-  var st=document.createElement("style");st.textContent="#pkTop,#review,#opMag{display:none!important}html.opium #pkSounds{display:block!important}";document.head.appendChild(st);
+  var st=document.createElement("style");st.textContent="#review,#opMag,#pkTop .op-rv,#pkTop .rvs,#pkTop #pkStars,#pkTop .tiles,#pkTop a.trio{display:none!important}html.opium #pkSounds{display:block!important}";document.head.appendChild(st);
   document.getElementById("csAdd").addEventListener("click",function(){
     try{if(typeof addToCart==="function"){addToCart(p&&p.id||"crystal-core-i");return}}catch(e){}
     try{var c=JSON.parse(localStorage.getItem("ck-cart")||"[]");if(c.indexOf("crystal-core-i")<0)c.push("crystal-core-i");localStorage.setItem("ck-cart",JSON.stringify(c))}catch(e){}
@@ -299,7 +335,7 @@ function buildTop(p){
 /* ================= mount ================= */
 window.csMount=function(p){
   var host=document.getElementById("pkSounds");if(!host)return;
-  buildTop(p);
+  patchTop(p);
   if(mounted){stackStop();if(!aud.paused)aud.pause();cur=null}
   waves=waves.filter(function(w){return w.host.isConnected&&false});
   host.innerHTML="";host.classList.add("cs2");
