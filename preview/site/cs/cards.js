@@ -226,11 +226,14 @@ function ckEditor(sec){
   var thumbs=pkl.map(function(i){var sh=SHP[i];fs=99;var d=sh.f(52,34);return '<button data-sh="'+i+'" class="'+(i===cur?"on":"")+'" title="'+(i+1)+" "+sh.n+'"><svg viewBox="-12 -12 76 58"><path'+(sh.dash?' class="dash"':"")+' d="'+d+'"/></svg><i>'+String(i+1).padStart(2,"0")+'</i></button>'}).join("");
   el.innerHTML='<h5><span>'+nm.toUpperCase()+' · whole site</span><button class="x" data-x>×</button></h5>'+
    '<div class="lb">Shape (only '+nm.toLowerCase()+', every pack)</div><div class="shg">'+thumbs+'</div><div class="row"><button data-sh="-1">Default shape</button></div>'+
-   '<div class="lb">Colours</div><div class="cl"><span>Cards + preview</span><input type="color" data-c="col" value="'+(c.col||"#ecebf0")+'"><button data-r="col">Reset</button></div>'+
+   '<div class="lb">Colours</div><label class="lk"><input type="checkbox" data-l'+(c.link?' checked':'')+'> Link colours (move one, both match)</label><div class="cl"><span>Cards + preview</span><input type="color" data-c="col" value="'+(c.col||"#ecebf0")+'"><button data-r="col">Reset</button></div>'+
    '<div class="cl"><span>Category title</span><input type="color" data-c="tcol" value="'+(c.tcol||"#ecebf0")+'"><button data-r="tcol">Reset</button></div>'+
    '<div class="lb">Waveform</div><div class="row">'+CK_WNAMES.map(function(n,i){return '<button data-w="'+i+'" class="'+((+c.wave||0)===i?"on":"")+'">'+n+'</button>'}).join("")+'</div>';
   document.body.appendChild(el);
-  el.addEventListener("input",function(e){var i=e.target.closest("[data-c]");if(i)ckSet(k,i.dataset.c,i.value)});
+  el.addEventListener("input",function(e){var i=e.target.closest("[data-c]");if(!i)return;ckSet(k,i.dataset.c,i.value);
+    var lk=el.querySelector("[data-l]");if(lk&&lk.checked){var o=i.dataset.c==="col"?"tcol":"col",oi=el.querySelector('[data-c="'+o+'"]');if(oi)oi.value=i.value;ckSet(k,o,i.value)}});
+  el.addEventListener("change",function(e){var l=e.target.closest("[data-l]");if(!l)return;ckSet(k,"link",l.checked?true:null);
+    if(l.checked){var ci=el.querySelector('[data-c="col"]'),ti=el.querySelector('[data-c="tcol"]'),v=(ckCfg(k).col||ckCfg(k).tcol||ci.value);ci.value=v;ti.value=v;ckSet(k,"col",v);ckSet(k,"tcol",v)}});
   el.addEventListener("click",function(e){e.stopPropagation();var t=e.target;
     if(t.closest("[data-x]")){el.remove();return}
     var s=t.closest("[data-sh]");if(s){var v=+s.dataset.sh;ckSet(k,"shape",v<0?null:v);el.querySelectorAll(".shg button").forEach(function(b){b.classList.toggle("on",+b.dataset.sh===v)});return}

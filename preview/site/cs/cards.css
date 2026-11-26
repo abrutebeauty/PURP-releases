@@ -98,3 +98,5 @@ html.opium2 .cs-pv.cs-card .pc-rows{margin-top:18px}
 html.opium2 .cs-pv.cs-card .cs-pvstack{padding:16px 14px 18px!important}
 html.opium2 .cs-pv.cs-card .cs-pvr{padding:10px 0}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvw{height:54px!important}
+
+.ck-ed .lk{display:flex;align-items:center;gap:8px;font:700 10px/1.2 Inter,sans-serif;letter-spacing:.06em;color:#cfc8dc;cursor:pointer;margin:2px 0 4px}.ck-ed .lk input{width:16px;height:16px;accent-color:#E4FF3A;cursor:pointer}
