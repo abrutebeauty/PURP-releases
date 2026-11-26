@@ -185,3 +185,13 @@ cs/box.js
 box-page.html
 cs/bx.js
 cs/bx.css
+cs/ref/cells.jpg
+cs/ref/dashes.jpg
+cs/ref/dots.jpg
+cs/ref/dotsrb.jpg
+cs/ref/ledgrid.jpg
+cs/ref/melt.jpg
+cs/ref/slit.jpg
+cs/ref/tiles.jpg
+cs/ref/vhs.jpg
+cs/ref/zebra.jpg
