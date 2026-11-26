@@ -21,16 +21,6 @@
       }
       fd.set.call(this,v)}})}
   }catch(e){}
-  /* thicken the thin wave lines on the collage cards so the colours read clean and saturated, not dull */
-  try{
-    var P2=CanvasRenderingContext2D.prototype;
-    if(!P2.__csFill){P2.__csFill=1;var of=P2.fill;P2.fill=function(){
-      of.apply(this,arguments);
-      try{var cv=this.canvas;
-        if(COLLAGE&&cv&&cv.classList&&cv.classList.contains("wf")&&!cv.classList.contains("ld")&&cv.closest(".op-cat")&&arguments[0]&&arguments[0].constructor===Path2D){
-          this.save();this.globalAlpha=1;this.strokeStyle=this.fillStyle;this.lineWidth=.9;this.stroke(arguments[0]);this.restore()}
-      }catch(e){}}}
-  }catch(e){}
   var busy=false;
   function fix(){
     if(busy||!document.documentElement.classList.contains("opium2"))return;
@@ -75,7 +65,7 @@
   /* collage: every sound mixed together, a repeating but shuffled mix of card sizes */
   var SZ=["a","a","w","a","b","a","t","a","w","a","a","b","a","t","a","w","a","a"];
   /* type colours (Eman 26 Nov): only these six, similar types share one */
-  var PAL={red:"#ff2b2b",purple:"#a05cff",pink:"#ff2e9a",green:"#4dff2e",cyan:"#12d9ff",blue:"#2f6bff"},
+  var PAL={red:"#d42a24",purple:"#8a4dff",pink:"#ff3ea5",green:"#7dff4a",cyan:"#3ad8ff",blue:"#3d6bff"},
       TYPE={bass:"red",lead:"blue",pluck:"green",plucks:"green",pad:"cyan",pads:"cyan",texture:"cyan",fx:"cyan",keys:"pink",arp:"pink",arps:"pink",stab:"pink",chip:"purple",vox:"purple"},
       ORD=["red","blue","green","cyan","pink","purple"];
   function tcol(k){k=(k||"").toLowerCase().trim();return PAL[TYPE[k]||ORD[hash(k)%6]]}
