@@ -57,6 +57,8 @@ h1{font-family:var(--sans);font-weight:900;font-size:clamp(52px,10.5vw,148px);li
 .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--ink);flex-wrap:wrap}
 .head h2{font:600 22px var(--sans);letter-spacing:-.02em;text-transform:lowercase}
+.back{display:inline-block;font:600 15px var(--sans);letter-spacing:-.01em;text-transform:lowercase;color:var(--ink);text-decoration:none;border:1px solid var(--ink);padding:9px 16px;transition:background .15s,color .15s}
+.back:hover{background:var(--ink);color:var(--paper)}
 .vsw{display:flex;flex-wrap:wrap}
 .vsw button{flex:none;font:400 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:9px 13px;border:1px solid var(--ink);margin-left:-1px;color:var(--ink);background:transparent}
 .vsw button.on{background:var(--ink);color:var(--paper)}
@@ -260,7 +262,7 @@ h1{font-family:var(--sans);font-weight:900;font-size:clamp(52px,10.5vw,148px);li
   <div class="grain" style="opacity:.14"></div>
   <div class="wrap">
     <div class="head">
-      <div><h2>the sounds</h2><div class="lab" style="margin-top:6px;color:var(--ink3)">14 of 20 shown</div></div>
+      <div><a class="back" href="packs-test.html">back to all sounds</a><div class="lab" style="margin-top:6px;color:var(--ink3)">14 of 20 shown</div></div>
       <div class="vsw" id="vsw"><button data-v="a">a / boxes</button><button data-v="b">b / label sheet</button><button data-v="c">c / thorn</button><button data-v="d">d / dark</button><button data-v="e">e / cream labels</button><button data-v="f">f / white purple</button><button data-v="g">g / kraft</button><button data-v="h">h / charcoal</button><button data-v="i">i / acid</button><button data-v="j">j / side strip</button><button data-v="k">k / ticket</button><button data-v="l">l / split</button><button data-v="m">m / blueprint</button><button data-v="n">n / receipt</button></div>
     </div>
     <div id="list" data-v="a"></div>
