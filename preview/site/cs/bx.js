@@ -227,8 +227,8 @@
   PHN.forEach(function(n){STY[n]=photo(n,STY[n])});
   var MAP={bass:["zebra","crowd","iso_spike","melt","iso_star","ledgrid"],lead:["slit","iso_star","vhs","iso_spike","dotsrb","dots"],chip:["ledgrid","iso_cells","cells","tiles","dots"],pluck:["dashes","iso_spike","slit","iso_cells","ledgrid"],pad:["terrain","melt","iso_wave","iso_rings","contour","cells"],keys:["contour","tiles","iso_rings","iso_wave","dots","terrain"],arp:["cells","iso_star","tiles","iso_cells","dotsrb","dashes"],stab:["vhs","iso_spike","dashes","iso_star","zebra"],vox:["melt","iso_wave","dotsrb","contour","vhs"],texture:["terrain","iso_cells","contour","iso_rings","cells"],fx:["vhs","iso_spike","zebra","iso_star","slit"],kick:["zebra","crowd","dots","iso_spike"],snare:["vhs","zebra","dashes","iso_spike"],hat:["dashes","ledgrid","iso_cells"],clap:["vhs","tiles","slit","iso_star"],perc:["tiles","dots","dotsrb","iso_cells"],loop:["crowd","tiles","terrain","cells","iso_rings"],"808":["zebra","crowd","melt","iso_star","iso_spike"]};
   function pick(kind,name){var m=MAP[String(kind||"").toLowerCase()]||["terrain","cells","vhs","dotsrb","tiles"],h=0,s=String(name||"");for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return m[h%m.length]}
-  var sts=new WeakMap();
-  function draw(cv,style,t,a){var st=sts.get(cv);if(!st){st={};sts.set(cv,st)}var g=cv.__g||(cv.__g=cv.getContext("2d")),f=STY[style]||terrain;f(st,g,cv.width,cv.height,t,a,cv)}
+  var sts=new WeakMap(),PHS={zebra:1,melt:1,vhs:1,dots:1,ledgrid:1,slit:1,dashes:1,dotsrb:1,tiles:1,cells:1};
+  function draw(cv,style,t,a){var st=sts.get(cv);if(!st){st={};sts.set(cv,st)}var g=cv.__g||(cv.__g=cv.getContext("2d")),f=STY[style]||terrain;var w=cv.width,h=cv.height;if(!a.play&&!PHS[style]){var k=style+w+"x"+h;if(st.stillKey===k)return;st.stillKey=k;if(st.t0==null)st.t0=5+Math.random()*60;t=st.t0}else if(a.play)st.stillKey=null;f(st,g,w,h,t,a,cv)}
   /* ---- audio reading ---- */
   function reader(an){var fd=new Uint8Array(an.frequencyBinCount),pk={b:.2,m:.2,h:.1},A={lvl:.1,bass:.1,mid:.1,hi:.1,beat:0,play:1},pb=0;
     function avg(x,y){var s=0;for(var i=x;i<y;i++)s+=fd[i];return s/(y-x)/255}
