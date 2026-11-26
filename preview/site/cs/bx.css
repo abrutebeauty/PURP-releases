@@ -31,3 +31,12 @@ html.cs-box.opium2 .cs-lt{font-size:12px;line-height:1.75}
 html.cs-box.opium2 .cs-lt .cs-x{color:#e8e8ee}
 /* the PREVIEW EVERY SOUND strip: white instead of purple */
 html.cs-box.opium2 #opMag>.op-magh{filter:grayscale(1) brightness(2.4)}
+/* category header: readable title left, info block flush right, no barcode */
+html.cs-box.cs-collage.opium2 #opMag .op-cat .op-h .op-box{background:#e8e8ee!important;color:#0c0b0b!important;font-size:clamp(26px,3.4vw,40px)!important;padding:10px 18px 9px!important;opacity:1!important;text-shadow:none!important}
+html.cs-box.cs-collage.opium2 #opMag .op-cat .op-h .op-box::after{content:" SOUNDS )";font-size:.38em;letter-spacing:.2em;font-weight:500}
+html.cs-box.opium2 .cs-lab{align-items:stretch;gap:18px}
+html.cs-box.opium2 .cs-lab .cs-lic{order:0;align-self:flex-end}
+html.cs-box.opium2 .cs-lab .cs-lt{order:1}
+html.cs-box.opium2 .cs-lab .cs-bar{order:2;width:2px!important;min-width:2px;height:auto!important;background:#e8e8ee;align-self:stretch}
+html.cs-box.opium2 .cs-lab .cs-bar i{display:none}
+html.cs-box.opium2 .cs-lt>span:nth-child(1),html.cs-box.opium2 .cs-lt>span:nth-child(6){display:none}
