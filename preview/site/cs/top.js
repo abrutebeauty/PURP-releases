@@ -71,13 +71,20 @@
   function tcol(k){k=(k||"").toLowerCase().trim();return PAL[TYPE[k]||ORD[hash(k)%6]]}
   function hash(s){var h=7;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
   function collage(m){
-    var redraw=0,W=m.clientWidth,mob=window.innerWidth<=900,N=Math.max(2,Math.floor((W+8)/((mob?112:122)+8)));
-    if(!W)return;
-    if(m.__csN!==N){m.__csN=N;m.style.setProperty("--csc",N)}
-    var pvs=[].slice.call(m.querySelectorAll(".op-cat .pv"));
-    pvs.forEach(function(p){var n=(p.querySelector(".nm")||p).textContent||"",h=hash(n);p.__csh=h;
-      var t=p.querySelector(".nm .tc"),c=tcol(t?t.textContent:(n.split(" ")[0]));
-      if(p.__cst!==c){p.__cst=c;p.style.setProperty("--tc",c);if(p.querySelector("canvas.wf"))redraw=1}});
+    var redraw=0,mob=window.innerWidth<=900;
+    [].forEach.call(m.querySelectorAll(":scope>.op-cat"),function(cat){
+      var grid=cat.querySelector(".op-grid"),W=grid&&grid.clientWidth;if(!W)return;
+      var N=Math.max(2,Math.floor((W+8)/((mob?112:122)+8)));
+      if(grid.__csN!==N){grid.__csN=N;grid.style.setProperty("--csc",N)}
+      var pvs=[].slice.call(grid.querySelectorAll(".pv")),first=null;
+      pvs.forEach(function(p){var n=(p.querySelector(".nm")||p).textContent||"",h=hash(n);p.__csh=h;
+        var t=p.querySelector(".nm .tc"),c=tcol(t?t.textContent:(n.split(" ")[0]));if(!first)first=c;
+        if(p.__cst!==c){p.__cst=c;p.style.setProperty("--tc",c);if(p.querySelector("canvas.wf"))redraw=1}});
+      if(first&&cat.style.getPropertyValue("--tc")!==first)cat.style.setProperty("--tc",first);
+      pack(pvs,N)});
+    if(redraw)setTimeout(function(){window.dispatchEvent(new Event("resize"))},60);
+  }
+  function pack(pvs,N){
     pvs.sort(function(a,b){return a.__csh-b.__csh});
     /* pack the cards exactly like the grid does (first free cell), shrink a size that does not fit, then grow cards into any leftover hole so the block ends as one solid box */
     var occ=[],free=function(x,y){return x<N&&!(occ[y]&&occ[y][x])},cards=[];
@@ -104,7 +111,6 @@
       var g="span "+c.w;if(p.style.gridColumn!==g)p.style.gridColumn=g;
       g="span "+c.h;if(p.style.gridRow!==g)p.style.gridRow=g;
       p.classList.toggle("cs-zl",c.w*c.h>=3)});
-    if(redraw)setTimeout(function(){window.dispatchEvent(new Event("resize"))},60);
   }
   function start(){
     var pk=document.getElementById("pk");if(!pk)return;

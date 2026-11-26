@@ -65,10 +65,12 @@ html.opium2 .cs-q:hover em,html.opium2 .cs-q:focus em,html.opium2 .cs-q:focus-wi
 @media (max-width:520px){html.opium2 .cs-q em{width:220px}}
 
 /* ===== COLLAGE (Eman 26 Nov): all sounds mixed, different card sizes, one purple outline + purple wave, coloured type label before the name. Roll back with ?look=columns ===== */
-html.cs-collage.opium2 #opMag{display:grid!important;grid-template-columns:repeat(var(--csc,8),minmax(0,1fr));grid-auto-rows:116px;grid-auto-flow:row dense;gap:8px;grid-auto-columns:auto;overflow:visible;padding:0;align-items:stretch}
+html.cs-collage.opium2 #opMag{display:block!important;overflow:visible;padding:0;grid-template-columns:none}
 html.cs-collage.opium2 #opMag>.op-magh{grid-column:1/-1;grid-row:auto}
-html.cs-collage.opium2 #opMag .op-cat,html.cs-collage.opium2 #opMag .op-cat .op-grid{display:contents!important}
-html.cs-collage.opium2 #opMag .op-cat .op-h{display:none!important}
+html.cs-collage.opium2 #opMag .op-cat{display:block!important;margin:0 0 40px!important;min-width:0}
+html.cs-collage.opium2 #opMag .op-cat .op-grid{display:grid!important;grid-template-columns:repeat(var(--csc,8),minmax(0,1fr))!important;grid-auto-rows:116px;grid-auto-flow:row dense;gap:8px!important;grid-auto-columns:auto}
+html.cs-collage.opium2 #opMag .op-cat .op-h{display:block!important;margin:0 0 12px}
+html.cs-collage.opium2 #opMag .op-cat .op-h .op-box{color:var(--tc,#8a4dff)!important;font:700 14px/1.2 "OpSpace","JetBrains Mono",monospace!important;letter-spacing:.2em!important}
 html.cs-collage.opium2 #opMag .op-cat .pv{height:auto!important;min-height:0;min-width:0;grid-column:span 1;grid-row:span 1}
 html.cs-collage.opium2 #opMag .op-cat .pv.cs-zw{grid-column:span 2}
 html.cs-collage.opium2 #opMag .op-cat .pv.cs-zt{grid-row:span 2}
@@ -80,7 +82,7 @@ html.cs-collage.opium2 #opMag .op-cat .pv>button .nm .tc{display:inline-block!im
 html.cs-collage.opium2 #opMag .op-cat .pv>button canvas.wf{flex:1 1 auto;width:100%!important;height:auto!important;min-height:30px;margin-top:6px}
 html.cs-collage.opium2 #opMag .op-cat .pv.cs-zl>button .nm{font-size:13px!important}
 html.cs-collage.opium2 #opMag .op-cat .pv>button .pl{transform:scale(.8);transform-origin:0 0}
-@media (max-width:900px){html.cs-collage.opium2 #opMag{grid-template-columns:repeat(var(--csc,3),minmax(0,1fr));grid-auto-flow:row dense;grid-auto-columns:auto;overflow:visible;padding-bottom:0}html.cs-collage.opium2 #opMag>.op-magh{grid-column:1/-1}}
+@media (max-width:900px){html.cs-collage.opium2 #opMag{display:block!important;overflow:visible;padding-bottom:0}html.cs-collage.opium2 #opMag .op-cat{margin-bottom:32px!important}}
 html.cs-collage.opium2 #opMag .op-all{display:none!important}
 
 /* per-type colour: outline + label box take the type colour (--tc set by top.js) */
