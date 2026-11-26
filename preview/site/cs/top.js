@@ -13,7 +13,10 @@
       if(typeof v==="string"&&this.canvas&&this.canvas.classList&&this.canvas.classList.contains("wf")&&document.documentElement.classList.contains("opium2")){
         var lv=v.toLowerCase(),card=this.canvas.closest&&this.canvas.closest(".op-cat");
         if(lv==="#e4ff3a")v=card?"#ffffff":"#fbffe6";
-        else if(card&&!COLLAGE&&(lv==="#8b6cf6"||lv==="#b8a4ff"))v="#bdbdc6";
+        else if(card&&(lv==="#8b6cf6"||lv==="#b8a4ff")){
+          var pv=COLLAGE&&this.canvas.closest(".pv");
+          v=(pv&&pv.__cst)||"#bdbdc6";
+        }
       }
       fd.set.call(this,v)}})}
   }catch(e){}
@@ -60,11 +63,20 @@
   }
   /* collage: every sound mixed together, a repeating but shuffled mix of card sizes */
   var SZ=["a","a","w","a","b","a","t","a","w","a","a","b","a","t","a","w","a","a"];
+  /* type colours (Eman 26 Nov): only these six, similar types share one */
+  var PAL={red:"#d42a24",purple:"#8a4dff",pink:"#ff3ea5",green:"#7dff4a",cyan:"#3ad8ff",yellow:"#E4FF3A"},
+      TYPE={bass:"red",lead:"yellow",pluck:"green",plucks:"green",pad:"cyan",pads:"cyan",texture:"cyan",fx:"cyan",keys:"pink",arp:"pink",arps:"pink",stab:"pink",chip:"purple",vox:"purple"},
+      ORD=["red","yellow","green","cyan","pink","purple"];
+  function tcol(k){k=(k||"").toLowerCase().trim();return PAL[TYPE[k]||ORD[hash(k)%6]]}
   function hash(s){var h=7;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
   function collage(m){
+    var redraw=0;
     var pvs=[].slice.call(m.querySelectorAll(".op-cat .pv"));
     pvs.forEach(function(p){var n=(p.querySelector(".nm")||p).textContent||"",h=hash(n);
-      if(p.__csh!==h){p.__csh=h;p.style.order=h%1000}});
+      if(p.__csh!==h){p.__csh=h;p.style.order=h%1000}
+      var t=p.querySelector(".nm .tc"),c=tcol(t?t.textContent:(n.split(" ")[0]));
+      if(p.__cst!==c){p.__cst=c;p.style.setProperty("--tc",c);if(p.querySelector("canvas.wf"))redraw=1}});
+    if(redraw)setTimeout(function(){window.dispatchEvent(new Event("resize"))},60);
     pvs.slice().sort(function(a,b){return (+a.style.order)-(+b.style.order)}).forEach(function(p,i){
       var c="cs-z"+SZ[i%SZ.length];
       if(p.__csz!==c){if(p.__csz)p.classList.remove(p.__csz);p.classList.add(c);p.__csz=c}});
