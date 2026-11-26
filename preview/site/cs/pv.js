@@ -239,10 +239,10 @@ function drawText(str,cap,o){
     var m=(tracks[0]&&tracks[0].meta)||"",mp=m.split("\u00b7"),bpm=parseInt(mp[0],10),ky=(mp[1]||"").trim().toUpperCase();
     var rows=tracks.map(function(t,i){return '<div class="cs-pvr cs-p'+i+'" data-i="'+i+'"><span class="pc-n">0'+(i+1)+'</span><button class="cs-pvtag" type="button" aria-label="Play only '+esc(t.name)+'"><b class="pc-k">'+esc(t.kind.toLowerCase())+'</b><span class="pc-nm">'+esc(t.name.toLowerCase())+'</span></button><div class="cs-pvw" role="button" aria-label="Play all three together"><canvas></canvas><i class="cs-pvl"></i></div><span class="pc-tm">0:00 / 0:00</span></div>'}).join("");
     return '<div class="cs-pvstack"><div class="pc"><svg class="pc-fr" aria-hidden="true"><path/></svg>'+
-      '<div class="pc-top"><i class="ck-chip">PREVIEW / '+String(tracks.length).padStart(3,"0")+'</i><svg class="pc-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round"><path d="M16 2C17 11 21 15 30 16C21 17 17 21 16 30C15 21 11 17 2 16C11 15 15 11 16 2Z"/><path d="M26 4C26.3 6.2 27.3 7.2 29.5 7.5C27.3 7.8 26.3 8.8 26 11C25.7 8.8 24.7 7.8 22.5 7.5C24.7 7.2 25.7 6.2 26 4Z"/></svg></div>'+
-      '<div class="pc-title">preview pack</div><div class="pc-sub">&gt; '+tracks.map(function(t){return esc(t.kind)}).join(" + ")+(bpm?"<br>"+bpm+" BPM"+(ky?" / "+esc(ky):""):"")+'</div>'+
-      '<div class="pc-rows">'+rows+'</div>'+
-      '<div class="pc-bot"><button class="pc-play" type="button" aria-label="Play all three together"><svg class="pl" viewBox="0 0 14 14"><path d="M2 0v14l11-7z"/></svg><svg class="pa" viewBox="0 0 14 14"><rect x="1" y="0" width="4" height="14"/><rect x="9" y="0" width="4" height="14"/></svg></button><span class="pc-st">STATUS: &gt; IDLE</span></div></div></div>'}
+      '<div class="pc-top"><button class="pc-play" type="button" aria-label="Play all three together"><svg class="pl" viewBox="0 0 14 14"><path d="M2 0v14l11-7z"/></svg><svg class="pa" viewBox="0 0 14 14"><rect x="1" y="0" width="4" height="14"/><rect x="9" y="0" width="4" height="14"/></svg></button>'+
+      '<div class="pc-hd"><div class="pc-title">preview pack</div><div class="pc-sub">&gt; '+tracks.map(function(t){return esc(t.kind)}).join(" + ")+(bpm?" &nbsp;/&nbsp; "+bpm+" BPM"+(ky?" / "+esc(ky):""):"")+'</div></div>'+
+      '<svg class="pc-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round"><path d="M16 2C17 11 21 15 30 16C21 17 17 21 16 30C15 21 11 17 2 16C11 15 15 11 16 2Z"/><path d="M26 4C26.3 6.2 27.3 7.2 29.5 7.5C27.3 7.8 26.3 8.8 26 11C25.7 8.8 24.7 7.8 22.5 7.5C24.7 7.2 25.7 6.2 26 4Z"/></svg></div>'+
+      '<div class="pc-rows">'+rows+'</div></div></div>'}
   function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
   var LW=900;
   function mount(){

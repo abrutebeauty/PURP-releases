@@ -87,3 +87,14 @@ html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvtag:hover,html.opium2 .cs-pv.cs-card .c
 
 html.opium2 .cs-pv.cs-card .cs-pvr.cs-pvr{left:auto!important;top:auto!important;right:auto!important;bottom:auto!important;width:auto!important;transform:none!important;min-height:0!important}
 html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvw canvas{display:block;width:100%;height:100%}
+
+html.opium2 .cs-pv.cs-card .pc{padding:26px 40px 22px}
+html.opium2 .cs-pv.cs-card .pc-top{align-items:center;gap:22px}
+html.opium2 .cs-pv.cs-card .pc-hd{flex:1;min-width:0}
+html.opium2 .cs-pv.cs-card .pc-title{margin-top:0}
+html.opium2 .cs-pv.cs-card .pc-sub{margin-top:6px}
+html.opium2 .cs-pv.cs-card .pc-ic{width:44px;height:44px;align-self:center}
+html.opium2 .cs-pv.cs-card .pc-rows{margin-top:18px}
+html.opium2 .cs-pv.cs-card .cs-pvstack{padding:16px 14px 18px!important}
+html.opium2 .cs-pv.cs-card .cs-pvr{padding:10px 0}
+html.opium2 .cs-pv.cs-card .cs-pvr .cs-pvw{height:54px!important}
