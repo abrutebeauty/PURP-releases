@@ -63,3 +63,22 @@ html.opium2 .cs-q i{display:inline-flex;align-items:center;justify-content:cente
 html.opium2 .cs-q em{position:absolute;left:-8px;bottom:calc(100% + 8px);width:270px;padding:10px 12px;background:#17151d;border:1px solid #3a3744;color:#d7d3df;font:400 12px/1.45 "Inter","Helvetica Neue",Arial,sans-serif;font-style:normal;letter-spacing:0;text-transform:none;opacity:0;visibility:hidden;transition:opacity .15s;pointer-events:none;z-index:20}
 html.opium2 .cs-q:hover em,html.opium2 .cs-q:focus em,html.opium2 .cs-q:focus-within em{opacity:1;visibility:visible}
 @media (max-width:520px){html.opium2 .cs-q em{width:220px}}
+
+/* ===== COLLAGE (Eman 26 Nov): all sounds mixed, different card sizes, one purple outline + purple wave, coloured type label before the name. Roll back with ?look=columns ===== */
+html.cs-collage.opium2 #opMag{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));grid-auto-rows:116px;grid-auto-flow:row dense;gap:8px;grid-auto-columns:auto;overflow:visible;padding:0;align-items:stretch}
+html.cs-collage.opium2 #opMag>.op-magh{grid-column:1/-1;grid-row:auto}
+html.cs-collage.opium2 #opMag .op-cat,html.cs-collage.opium2 #opMag .op-cat .op-grid{display:contents!important}
+html.cs-collage.opium2 #opMag .op-cat .op-h{display:none!important}
+html.cs-collage.opium2 #opMag .op-cat .pv{height:auto!important;min-height:0;min-width:0;grid-column:span 1;grid-row:span 1}
+html.cs-collage.opium2 #opMag .op-cat .pv.cs-zw{grid-column:span 2}
+html.cs-collage.opium2 #opMag .op-cat .pv.cs-zt{grid-row:span 2}
+html.cs-collage.opium2 #opMag .op-cat .pv.cs-zb{grid-column:span 2;grid-row:span 2}
+html.cs-collage.opium2 #opMag .op-cat .pv>button{height:100%!important;width:100%;border:1px solid #8b6cf6!important;padding:8px 8px 6px!important;background:#0c0b0b!important;display:flex;flex-direction:column;align-items:stretch;overflow:hidden}
+html.cs-collage.opium2 #opMag .op-cat .pv>button .mt{display:none!important}
+html.cs-collage.opium2 #opMag .op-cat .pv>button .nm{font:400 11px/1.25 "Inter","Helvetica Neue",Arial,sans-serif!important;color:#d6d6de!important;text-transform:lowercase!important;letter-spacing:.01em!important;display:block}
+html.cs-collage.opium2 #opMag .op-cat .pv>button .nm .tc{display:inline-block!important;vertical-align:1px;margin:0 6px 0 0;padding:2px 5px 1px;background:var(--cc,#8b6cf6)!important;color:#0c0b0b!important;border:0!important;font:700 8px/1.2 "OpSpace","JetBrains Mono",monospace!important;letter-spacing:.1em!important;text-transform:uppercase!important}
+html.cs-collage.opium2 #opMag .op-cat .pv>button canvas.wf{flex:1 1 auto;width:100%!important;height:auto!important;min-height:30px;margin-top:6px}
+html.cs-collage.opium2 #opMag .op-cat .pv.cs-zb>button .nm,html.cs-collage.opium2 #opMag .op-cat .pv.cs-zt>button .nm{font-size:13px!important}
+html.cs-collage.opium2 #opMag .op-cat .pv>button .pl{transform:scale(.8);transform-origin:0 0}
+@media (max-width:900px){html.cs-collage.opium2 #opMag{grid-template-columns:repeat(auto-fill,minmax(112px,1fr));grid-auto-flow:row dense;grid-auto-columns:auto;overflow:visible;padding-bottom:0}html.cs-collage.opium2 #opMag>.op-magh{grid-column:1/-1}}
+html.cs-collage.opium2 #opMag .op-all{display:none!important}

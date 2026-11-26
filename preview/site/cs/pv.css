@@ -45,3 +45,8 @@ html.opium2 .cs-pvr.cs-dim .cs-pvtag{opacity:.5}
   html.opium2 .cs-pvb{margin-left:0}
   html.opium2 .cs-pvs{letter-spacing:.2em}
 }
+
+/* drawn text (stroke alphabet) */
+html.opium2 .cs-pvtx{display:block}
+html.opium2 .cs-hw{display:block;overflow:visible;max-width:100%;height:auto;filter:drop-shadow(0 0 5px rgba(255,255,255,.18))}
+html.opium2 .cs-pvht .cs-hw{filter:drop-shadow(0 0 7px rgba(255,255,255,.2))}
