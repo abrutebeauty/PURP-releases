@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>/* EARLY_P (speed 20 Nov): start the product list download now, not after shop.js runs. shop.js uses window.__ckP */try{window.__ckP=fetch("/api/products?lite=1",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()});window.__ckP.catch(function(){})}catch(e){}</script>
+<title>COREKULT · Crystal Core (stack test)</title><meta name="robots" content="noindex">
+<meta name="description" content="Dark Serum preset packs and drum kits. Crystal Core, Dreamcore, LOOK MOM I CAN FLY, 2HOLLCORE.">
+<meta property="og:title" content="COREKULT">
+<meta property="og:description" content="Dark Serum preset packs and drum kits.">
+<meta property="og:image" content="https://corekult.com/img/og.jpg">
+<meta name="theme-color" content="#0b0a0e">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css?v=1">
+<link rel="stylesheet" href="/speed.css?v=4">
+<link rel="stylesheet" href="/cdfx.css?v=3"><!-- 3D stack CSS only; frost script cdfx.js removed (Eman 20 Nov 00:46) --><!-- FONTS_SELF (speed 20 Nov). old: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cormorant+Garamond:ital,wght@1,300&family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap"> -->
+<link rel="stylesheet" href="/shop.css?v=81">
+<link rel="stylesheet" href="/day-cdfx.css?v=1"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day-shop.css?v=6"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day.css?v=1"><!-- DAY_MODE: day palette + switch, keep last -->
+<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+<script src="/fx.js?v=1"></script><!-- FX (Eman 24 Nov): CD 3D page transition + UI sounds. Remove this line = off -->
+<script src="/opium.js?v=6"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/" aria-label="COREKULT home"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="110" height="34"></a><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#crystal">Crystal</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#dream">Dream</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#travis">Travis</a> --><!-- NAV_WORLDS off (Eman 20 Nov 00:36)
+  <a class="nl hide-s" href="/#holl">2Holl</a> -->
+  <a class="nl" href="/#packs">Shop</a>
+  <div class="curw" id="curW"></div><div class="cartw"><button class="nl cartb" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 16 16"><path d="M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="13.3" r="1.2"/><circle cx="12" cy="13.3" r="1.2"/></svg><span id="cartN" hidden>0</span></button><div class="cdd" id="cartDd" hidden></div></div>
+</div></nav>
+
+<div class="pkx">
+<div class="pkban" id="pkBan" aria-hidden="true"><i></i></div>
+<aside class="rail rl"><div class="rin" id="railL"></div></aside>
+<main class="wrap pk" id="pk">
+  <a class="nl back bigback" href="/">← All packs</a>
+  <div class="pkt" id="pkTop"></div>
+  <section class="pks"><div id="pkSounds"></div></section>
+  <section class="pks"><div class="offer" id="pkOffer"></div></section>
+  <section class="pks rvsec" id="review"><h2>Reviews</h2><div id="pkRev"></div></section>
+  <section class="pks simsec"><h2>Similar packs</h2><div class="simg" id="pkSim"></div></section>
+</main>
+<aside class="rail rr"><div class="rin" id="railR"></div></aside>
+</div>
+
+<footer><div class="wrap">
+  <span class="logo"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="84" height="26"></span>
+  <span>Packs marked “inspired by” are not affiliated with or endorsed by any artist.</span>
+  <span>© <span id="yr"></span> COREKULT</span>
+</div></footer>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Free samples">
+  <div class="dv" data-v="free" hidden>
+    <div class="dh"><b>Free samples</b><button class="x" data-close aria-label="Close">×</button></div>
+    <div class="dbody">
+      <div class="frh"><img id="frCover" alt=""><b id="frName"></b></div>
+      <div id="frForm"><label class="fl">Email<input id="frEmail" data-clarity-mask="true" type="email" autocomplete="email" placeholder="you@email.com"></label><label class="optin"><input type="checkbox" id="frDrops"><span>Also send me new drops and free packs (max 2 emails a month, unsubscribe any time)</span></label><button class="btn acid wide" id="frGo">Get free samples</button></div>
+      <div id="frList" class="dl-list" hidden></div>
+    </div>
+  </div>
+</aside>
+
+<script src="/shop.js?v=113"></script>
+<script src="/free-picks.js?v=3"></script>
+<link rel="stylesheet" href="/cs/story2.css?v=1"><script src="/cs/story2.js?v=1"></script>
+<script>
+$("#yr").textContent = new Date().getFullYear();
+const ID = "crystal-core-i";   /* TEST PAGE: always Crystal Core I */
+function similar(p) {
+  const score = (q) => (q.world === p.world ? 2 : 0) + (q.type === p.type ? 1 : 0);
+  return PRODUCTS.filter((q) => q.id !== p.id).sort((a, b) => score(b) - score(a)).slice(0, 4);
+}
+/* PACK_SSR (speed 20 Nov): build the pack top AROUND the cover the worker already painted, never moving that img (moving it counts as a new paint) */
+function pkTopSet(ssr, html) {
+  const top = $("#pkTop"), opkc = ssr && ssr.closest("#pkTop .pkc");
+  const t = document.createElement("div"); t.innerHTML = html;
+  const npkc = t.querySelector(".pkc"), ni = npkc && npkc.querySelector(".pq img");
+  if (!opkc || !ni || ni.getAttribute("src") !== ssr.getAttribute("src")) { top.innerHTML = html; return; }
+  ssr.alt = ni.alt; ssr.removeAttribute("id");
+  [...npkc.childNodes].forEach((n) => { if (!(n.classList && n.classList.contains("pq"))) opkc.appendChild(n); });
+  let before = true; [...t.childNodes].forEach((n) => { if (n === npkc) { before = false; return; } if (before) opkc.before(n); else top.appendChild(n); });
+}
+function render() {
+  const p = byId(ID); if (p) p.cover = "/img/cs/case-fang.webp";   /* TEST: new fang cover */
+  if (!p) { $("#pk").innerHTML = `<div class="empty">Pack not found.<br><br><a class="btn acid" href="/">All packs</a></div>`; return; }
+  document.title = p.name + " · COREKULT";
+  if (typeof SEC_OPEN !== "undefined") document.documentElement.classList.toggle("secopen", SEC_OPEN.includes(p.id));
+  if (typeof SEC_CLEAN !== "undefined") { document.documentElement.classList.toggle("secclean", SEC_CLEAN.includes(p.id)); document.documentElement.classList.toggle("tapplay", SEC_CLEAN.includes(p.id)); }
+  if (typeof CARD_ART !== "undefined") { const a = CARD_ART[p.id]; document.documentElement.classList.toggle("cart", !!a); (a || []).forEach((u, n) => document.documentElement.style.setProperty("--art" + n, `url("${u}")`)); }
+  const w = WORLDS.find((x) => x.id === p.world);
+  const fromGet = /[?&]from=get\b/.test(location.search);
+  const ssr = $("#pkSsr");   // PACK_SSR (speed 20 Nov): the worker already painted the cover; keep that same img node so the first paint counts
+  pkTopSet(ssr, `${fromGet ? `<a class="backfs" href="/get/${encodeURIComponent(p.id)}${QS}">← Back to free sample</a>` : ""}<div class="pkc"><span class="pq"><img src="${esc(abs(p.cover, 1))}" alt="${esc(p.name)} cover" fetchpriority="high"><i class="gl"></i></span><span class="stamp">${esc(p.stamp)}</span>${p.isNew ? '<span class="badge">NEW</span>' : ""}</div>
+    <div class="pki">
+      <div class="eyebrow">${esc(w ? w.name : "")}</div>
+      <h1>${esc(p.name)}</h1>
+      <div class="pf">${esc(p.sub)} · ${esc(p.count)}</div>
+      <div class="rvs" id="pkRvs" hidden></div>
+      ${creatorStrip(p)}
+      <div class="tiles"><span>${esc(p.count)}</span>${kinds(p).split(" · ").filter(Boolean).map((k) => `<span>${esc(k)}</span>`).join("")}</div>
+      <p class="pi">${esc(p.blurb)}</p>
+      <div class="pbuy"><div class="price">${show(p.price)}</div><span class="ps">${perSound(p)}</span><span class="deal">3 for 2 · mix any packs</span></div>
+      <div class="buy"><button class="btn" data-free="${p.id}">Free samples</button><button class="btn acid" data-add="${p.id}">Add to cart</button></div>
+      ${worksWith(p)}
+      ${(() => { const t = typeof trios === "function" ? trios().find((x) => x.ids.includes(p.id)) : null; return t ? `<a class="trio" href="/bundle?trio=${encodeURIComponent(t.world)}"><span class="trc">${t.ids.map((id) => `<img src="${esc(abs(byId(id).cover))}" alt="">`).join("")}</span><span class="trt"><b>${esc(t.name)} 3-pack</b><small>Buy 2, get 1 free</small></span><span class="trp"><b>${show(t.price)}</b><s>${show(t.full)}</s></span></a>` : ""; })()}
+      <div class="trust"><span>✓ 100% royalty-free</span><span>✓ Instant download</span><span id="pkStars"></span></div>
+      ${p.demo ? `<div class="madewith"><small>Made with this pack</small><div class="pv">${sounds({ sounds: [{ name: p.demo.name || "Beat", meta: p.demo.meta || "", file: p.demo.file }] })}</div></div>` : ""}
+    </div>`);
+  paintReviews(p);
+  // group by the first word of the name (BASS, ARP, Kick...) under gothic headings, 4 tiles per row
+  const NICE = { BASS: "Basslines", ARP: "Arps", LEAD: "Leads", PAD: "Pads", PLUCK: "Plucks", KEYS: "Keys", CHORD: "Chords", BELL: "Bells", FLUTE: "Flutes", "808": "808s", SYNTH: "Synths", FX: "FX", TEXTURE: "Textures", VOX: "Vox", SAW: "Saws", CHIP: "Chip", STAB: "Stabs", KICK: "Kicks", SNARE: "Snares", CLAP: "Claps", HAT: "Hats", OPEN: "Open hats", CRASH: "Crashes", PERC: "Percs", LOOP: "Loops", GUITAR: "Guitars", CHOIR: "Choirs", BRASS: "Brass", ORGAN: "Organs", PIANO: "Pianos", STRINGS: "Strings" };
+  const groups = new Map();
+  p.sounds.forEach((x) => { const k = String(x.name).split(/\s+/)[0].toUpperCase(); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(x); });
+  // loops first: hearing the style is more exciting than one hit alone
+  const SG = typeof SONG_GROUP !== "undefined" && SONG_GROUP; if (SG) NICE.SONG = "Song sounds";   // 19 Nov: song-named sounds first (flag in shop.js)
+  const top = (k) => (SG && k === "SONG" ? 2 : k === "LOOP" ? 1 : 0);
+  const rk = typeof secRank === "function" ? secRank(p.id, top) : top;   // SEC_ORDER in shop.js (Eman 20 Nov: esskid melodies first)
+  const shortN = (x, k) => ({ ...x, _k: k, _tc: typeof tcOf === "function" ? tcOf(x.name, k) : undefined, name: String(x.name).split(/\s+/).length > 1 ? String(x.name).replace(/^\S+\s+/, "") : x.name });
+  const PK_COLS = typeof LOOK_ON !== "undefined" && LOOK_ON;   // Eman 20 Nov 17:33: all sounds stay on the page under the preview, one compact column per kind (ARPS, LEADS…), 5 columns a row. false = big tiles + SEE ALL
+  // CAT_FILTER (Eman 20 Nov 17:44): the column names are buttons + ALL on the side. One kind = its sounds in full-width rows. The row slides sideways when the kinds don't fit
+  const CAT_FILTER = true;
+  const sortedG = [...groups].sort((a, b) => rk(b[0]) - rk(a[0])), cf = CAT_FILTER && window.__ckCf && window.__ckCf.pid === p.id && groups.has(window.__ckCf.k) ? window.__ckCf.k : "";
+  const nShown = p.sounds.filter((s) => !s.hidden || ADMIN).length;
+  const PREV_BIG = true;   // Eman 20 Nov: "Crystal Core (Preview)" at one size. false = small grey PREVIEW
+  const lk = (k) => (ADMIN ? `<i class="lkp" data-look="${esc(k)}" title="Look">✎</i>` : "");
+  const colsHTML = () => `<div class="cflt${cf ? " one" : ""}">${CAT_FILTER ? `<button class="call${cf ? "" : " on"}" data-cf="">All<span>${nShown}</span></button>` : ""}<div class="cscroll"><div class="cols">${sortedG.map(([k, list]) => `<div class="col" data-k="${esc(k)}"><h3 class="sg" data-k="${esc(k)}">${CAT_FILTER ? `<button class="cfb${cf === k ? " on" : ""}" data-cf="${esc(k)}">${esc(NICE[k] || (k.charAt(0) + k.slice(1).toLowerCase() + "s"))}<span>${list.length}</span></button>` : `${esc(NICE[k] || (k.charAt(0) + k.slice(1).toLowerCase() + "s"))}<span>${list.length}</span>`}${lk(k)}</h3>
+    ${cf ? "" : `<div class="pv cmp" data-k="${esc(k)}">${sounds({ sounds: list.map((x) => shortN(x, k)) })}</div>`}</div>`).join("")}</div></div></div>${cf ? `<div class="pv big cone" data-k="${esc(cf)}">${sounds({ sounds: groups.get(cf).map((x) => shortN(x, cf)) })}</div>` : ""}`;
+  const allHTML0 = () => [...groups].sort((a, b) => rk(b[0]) - rk(a[0])).map(([k, list]) => `<h3 class="sg" data-k="${esc(k)}">${esc(NICE[k] || (k.charAt(0) + k.slice(1).toLowerCase() + "s"))}<span>${list.length}</span></h3>
+    <div class="pv big" data-k="${esc(k)}">${sounds({ sounds: list.map((x) => shortN(x, k)) })}</div>`).join("");
+  /* PK_SECT (Eman 21 Nov 15:21): no category tab bar. The page scrolls through one section per category, each in its colour family with its icon, 4 waveforms a row. false = old columns + tabs */
+  const PK_SECT = typeof CAT_ICONS !== "undefined" && CAT_ICONS;
+  const sectHTML = () => sortedG.map(([k, list]) => { const [f, i] = catInfo(k); return `<section class="psec" data-k="${esc(k)}" style="--cc:${CAT_FAM[f]}"><h3 class="sg psh" data-k="${esc(k)}"><svg viewBox="0 0 16 16" aria-hidden="true">${CAT_ICON[i]}</svg>${esc(NICE[k] || (k.charAt(0) + k.slice(1).toLowerCase() + "s"))}<span>${list.length}</span>${lk(k)}</h3>
+    <div class="pv big ps4" data-k="${esc(k)}">${sounds({ sounds: list.map((x) => shortN(x, k)) })}</div></section>`; }).join("");
+  const allHTML = PK_SECT ? sectHTML : PK_COLS ? colsHTML : allHTML0;
+  // TOP PREVIEW (Eman 20 Nov): the best few sounds first, the full list only loads on SEE ALL (faster + cleaner). LOOK.prev = 0 turns it off
+  const nPrev = typeof LOOK_ON !== "undefined" && LOOK_ON ? (LOOK.prev == null ? 6 : +LOOK.prev) : 0, shown = p.sounds.filter((s) => !s.hidden).length;
+  let allOpen = PK_COLS || !nPrev || shown <= nPrev + 2; try { if (sessionStorage.getItem("ck-all:" + p.id)) allOpen = true; } catch (e) {}
+  const tops = nPrev ? topPicks(p, nPrev, (k) => rk(k)).map((x) => { const k = String(x.name).split(/\s+/)[0].toUpperCase(); const y = shortN(x, k); delete y._pid; return y; }) : [];
+  $("#pkSounds").innerHTML = (nPrev && tops.length ? `<div class="tpv" style="--cv:url('${esc(abs(p.cover))}')"><h3 class="sg tpvh${PREV_BIG ? " pvbig" : ""}" data-k="_all"${ADMIN ? ` data-prevpick="${esc(p.id)}"` : ""}>${PK_COLS ? (PREV_BIG ? `${esc(p.name)} <span class="pvb">Preview</span>` : `${esc(p.name)}<span>preview</span>`) : `Top sounds<span>${tops.length}</span>`}${lk("_all")}</h3><div class="pv big mood">${sounds({ sounds: tops })}</div>
+    ${allOpen ? "" : `<button class="btn seeall" data-seeall>See all ${shown} sounds</button>`}</div>` : "") + `<div id="pkAll">${allOpen ? allHTML() : ""}</div>`;
+  window.__ckAll = () => { try { sessionStorage.setItem("ck-all:" + p.id, 1); } catch (e) {} $("#pkAll").innerHTML = allHTML(); $("#pkAll").classList.add("rev"); document.querySelector("[data-seeall]")?.remove(); watchWaves($("#pkAll")); document.dispatchEvent(new Event("ck-allin")); };
+  // (old swap removed: pkTopSet keeps the painted img in place)
+  $("#pkSim").innerHTML = similar(p).map((q) => `<div class="mc"><a class="mcv" href="${packUrl(q.id)}"><span class="pq"><img src="${esc(abs(q.cover))}" alt="" loading="lazy" decoding="async"><i class="gl"></i></span></a><a href="${packUrl(q.id)}"><b>${esc(q.name)}</b></a><div class="mp"><span>${show(q.price)}</span><button class="btn acid" data-add="${q.id}">Add to cart</button></div></div>`).join("");
+  $("#pkBan i").style.backgroundImage = `url("${abs(p.banner || p.cover, !p.banner)}")`; /* PACK_BAN_SSR: same big cover the worker painted, old = abs(p.banner || p.cover) */
+  // left side: the other packs, same world first
+  const others = PRODUCTS.filter((q) => q.id !== p.id).sort((a, b) => (b.world === p.world) - (a.world === p.world));
+  $("#railL").innerHTML = `<h4>More packs</h4><div class="rkg">${others.map((q) => { const bs = bestSound(q);
+    return `<div class="rkb"><div class="rkw"><a class="rkc" href="${packUrl(q.id)}"><span class="pq"><img src="${esc(abs(q.cover))}" alt="" loading="lazy" decoding="async"><i class="gl"></i></span></a>${bs ? `<button class="rkp" data-rp="${esc(abs(bs.file))}" data-rpid="${q.id}" aria-label="Play ${esc(q.name)}">${PLAY}</button>` : ""}</div>
+      <a class="rkt" href="${packUrl(q.id)}"><b>${esc(q.name)}</b><small>${esc(q.sub)}</small><em>${show(q.price)}</em></a></div>`; }).join("")}</div>
+    <a class="nl rall" href="/">All packs</a>`;
+  paintOffer(); paintRight(); watchWaves($("#pkSounds"));
+  if (window.csMount) csMount(p);   /* TEST: stack + coloured categories replace the sound list */
+}
+/* reviews: approved ones show; average stars only once there are 3+. Anyone can leave one, Eman approves in the admin. */
+let REVS = null, RSTAR = 0;
+/* REV_TOP (Eman 20 Nov): rating up top as 0-5 square boxes + count + one short quote; press jumps to the reviews. Sample reviews = ADMIN ONLY (never shown to customers) */
+const REV_TOP = true;
+let SAMP = null;
+const boxes = (v) => `<span class="rbx">${[1, 2, 3, 4, 5].map((i) => `<i style="--f:${Math.max(0, Math.min(1, v - i + 1)) * 100}%"></i>`).join("")}</span>`;
+function sampFor(p) { return ((SAMP || {})[p.id] || []).map((r) => ({ ...r, text: String(r.text).replace(/\{\{f:([^}]*)\}\}/g, (m, f) => { const s = p.sounds.find((x) => x.file === f) || p.sounds.find((x) => String(x.file).split("#")[0] === f.split("#")[0]); const n = s ? String(s.name).replace(/^\S+\s+/, "") : "this one"; return n.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()); }) })); }
+function paintReviews(p) {
+  if (REV_TOP && ADMIN && SAMP === null) { SAMP = {}; fetch("/admin/sample-reviews.json?v=1").then((r) => r.json()).then((j) => { SAMP = j || {}; paintReviews(p); }).catch(() => {}); }
+  if (REV_TOP) return paintReviews2(p);
+  if (REVS === null) { REVS = []; fetch("/api/reviews?pack=" + encodeURIComponent(p.id)).then((r) => r.json()).then((r) => { REVS = r.reviews || []; paintReviews(p); }).catch(() => {}); }
+  const n = REVS.length, avg = n ? REVS.reduce((s, r) => s + r.stars, 0) / n : 0;
+  if ($("#pkStars")) $("#pkStars").innerHTML = n >= 3 ? `★ ${avg.toFixed(1)} · ${n} reviews` : "";
+  if ($("#pkStars")) $("#pkStars").hidden = n < 3;
+  $("#pkRev").innerHTML = (n ? `<div class="rvl">${REVS.slice(-6).reverse().map((r) => `<div class="rv"><span class="st">${"★".repeat(r.stars)}<i>${"★".repeat(5 - r.stars)}</i></span><p>${esc(r.text)}</p><small>${esc(r.name || "Producer")}</small></div>`).join("")}</div>` : `<p class="rnote">No reviews yet. Made something with it? Tell us.</p>`) +
+    `<div class="rvf" id="rvForm"><div class="stars" role="radiogroup" aria-label="Stars">${[1, 2, 3, 4, 5].map((i) => `<button data-star="${i}" class="${i <= RSTAR ? "on" : ""}" aria-label="${i} stars">★</button>`).join("")}</div>
+     <textarea id="rvText" maxlength="400" rows="2" placeholder="What did you make with it?"></textarea><input id="rvName" maxlength="30" placeholder="Name or @ (optional)"><button class="btn acid" id="rvGo">Send review</button></div>`;
+}
+function paintReviews2(p) {
+  if (REVS === null) { REVS = []; fetch("/api/reviews?pack=" + encodeURIComponent(p.id)).then((r) => r.json()).then((r) => { REVS = r.reviews || []; paintReviews(p); }).catch(() => {}); }
+  const list = [...REVS, ...(ADMIN ? sampFor(p) : [])], n = list.length, avg = n ? list.reduce((s, r) => s + r.stars, 0) / n : 0;
+  const top = $("#pkRvs");
+  if (top) {
+    const q = list.filter((r) => r.stars >= 5 && r.text).sort((a, b) => a.text.length - b.text.length)[0];
+    top.hidden = false; top.classList.toggle("adm-s", ADMIN && !REVS.length && n > 0);
+    top.innerHTML = n ? `<a href="#review" class="rvt">${boxes(avg)}<b>${avg.toFixed(1)}</b><small>${n} review${n === 1 ? "" : "s"}${ADMIN && !REVS.length ? " · sample, only you see this" : ""}</small></a>${q ? `<a href="#review" class="rvq">“${esc(q.text.length > 90 ? q.text.slice(0, 88) + "…" : q.text)}” <small>${esc(q.name)}</small></a>` : ""}${ADMIN && !REVS.length ? `<a href="#review" class="rvt rv0 pv-only"><small>No reviews yet · write the first</small></a>` : ""}`
+      : `<a href="#review" class="rvt rv0"><small>No reviews yet · write the first</small></a>`;
+  }
+  if ($("#pkStars")) $("#pkStars").hidden = true;
+  $("#pkRev").innerHTML = (n ? `${ADMIN && !REVS.length ? `<p class="rnote pv-only">No reviews yet. Made something with it? Tell us.</p>` : ""}<div class="rvsum${ADMIN && !REVS.length ? " smp" : ""}">${boxes(avg)}<b>${avg.toFixed(1)}</b><small>${n} review${n === 1 ? "" : "s"}</small></div><div class="rvl">${list.slice().reverse().map((r) => `<div class="rv${r.sample ? " smp" : ""}">${boxes(r.stars)}<p>${esc(r.text)}</p><small>${esc(r.name || "Producer")}${r.sample ? " · sample, only you see this" : ""}</small></div>`).join("")}</div>` : `<p class="rnote">No reviews yet. Made something with it? Tell us.</p>`) +
+    `<div class="rvf" id="rvForm"><div class="stars" role="radiogroup" aria-label="Rating">${[1, 2, 3, 4, 5].map((i) => `<button data-star="${i}" class="${i <= RSTAR ? "on" : ""}" aria-label="${i} of 5"></button>`).join("")}</div>
+     <textarea id="rvText" maxlength="400" rows="2" placeholder="What did you make with it?"></textarea><input id="rvName" maxlength="30" placeholder="Name or @ (optional)"><button class="btn acid" id="rvGo">Send review</button></div>`;
+}
+document.addEventListener("click", (e) => {
+  const s = e.target.closest("[data-star]"); if (s) { RSTAR = +s.dataset.star; document.querySelectorAll("[data-star]").forEach((b) => b.classList.toggle("on", +b.dataset.star <= RSTAR)); return; }
+  if (e.target.closest("#rvGo")) {
+    if (!RSTAR) { $(".rvf .stars").classList.add("bad"); return; }
+    fetch("/api/review", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ pack: ID, stars: RSTAR, text: $("#rvText").value, name: $("#rvName").value, email: myEmail() }) });
+    $("#rvForm").innerHTML = `<p class="rnote">Thanks! It shows up here once we've had a look.</p>`;
+  }
+});
+/* right side: 3 for 2 progress, cart, free samples */
+function paintRight() {
+  const p = byId(ID); if (!p || !$("#railR")) return;
+  const items = cart.map(byId).filter(Boolean);
+  $("#railR").innerHTML = cartBox() + `
+    <h4>Try first</h4><button class="btn wide" data-free="${p.id}">Free samples</button>`;
+}
+function paintOffer() { $("#pkOffer").innerHTML = offerHTML(); }
+const _paint = paintCart; paintCart = function () { _paint(); if ($("#pkOffer")) { paintOffer(); paintRight(); } };
+document.addEventListener("click", (e) => {
+  const f = e.target.closest("[data-cf]"); if (f && !e.target.closest("[data-look]")) { e.preventDefault(); const sx = document.querySelector(".cscroll") ? document.querySelector(".cscroll").scrollLeft : 0, y = scrollY;
+    window.__ckCf = { pid: ID, k: f.dataset.cf }; render(); scrollTo(0, y); const sc = document.querySelector(".cscroll"); if (sc) sc.scrollLeft = sx; document.dispatchEvent(new Event("ck-allin")); return; }
+  if (e.target.closest("[data-seeall]")) { e.preventDefault(); window.__ckAll && window.__ckAll(); return; } shopClick(e); });
+document.addEventListener("ck-cur", () => { render(); paintCart(); });
+loadShop().then(() => { render(); paintCart(); });
+</script>
+</body>
+</html>
