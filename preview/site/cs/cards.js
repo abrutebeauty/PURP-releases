@@ -270,4 +270,24 @@ var ckT=0;function ckSoon(){clearTimeout(ckT);ckT=setTimeout(ckScan,120)}
 if(window.MutationObserver)new MutationObserver(ckSoon).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:["class"]});
 setInterval(ckScan,1500);document.addEventListener("DOMContentLoaded",ckSoon);requestAnimationFrame(ckLoop);
 
+
+/* ---- D (admin on/off) keeps the page where it is: remember what sits at the top of the screen, put it back after the layout changes ---- */
+(function(){
+  var Y=function(){return Math.min(140,Math.round(window.innerHeight/3))};
+  function pick(){var y=Y(),el=document.elementFromPoint(Math.round(window.innerWidth/2),y),q=null;
+    var b=el&&el.closest&&el.closest(".pv>button[data-src],.pv"),s;
+    if(b){var bb=b.matches&&b.matches("button")?b:b.querySelector("button[data-src]");if(bb&&bb.dataset.src)return {sel:'#opMag .pv>button[data-src="'+String(bb.dataset.src).replace(/"/g,'\\"')+'"]',off:bb.getBoundingClientRect().top-y}}
+    var secs=document.querySelectorAll("#opMag .op-cat");
+    for(var i=0;i<secs.length;i++){var r=secs[i].getBoundingClientRect();if(r.top<=y&&r.bottom>y){var k=secs[i].getAttribute("data-k");if(k)return {sel:'#opMag .op-cat[data-k="'+k+'"]',off:r.top-y}}}
+    for(var j=0;j<secs.length;j++){var r2=secs[j].getBoundingClientRect();if(r2.top>y){var k2=secs[j].getAttribute("data-k");if(k2)return {sel:'#opMag .op-cat[data-k="'+k2+'"]',off:r2.top-y}}}
+    return null}
+  var run=0;
+  function hold(a){var t0=performance.now(),stable=0,id=++run;
+    var stop=function(){run++};window.addEventListener("wheel",stop,{once:true,passive:true});window.addEventListener("touchstart",stop,{once:true,passive:true});
+    (function f(){if(id!==run)return;var el=document.querySelector(a.sel);if(el){var d=el.getBoundingClientRect().top-Y()-a.off;if(Math.abs(d)>1){window.scrollBy(0,d);stable=0}else stable++}
+      if(performance.now()-t0<1800&&stable<45)requestAnimationFrame(f)})()}
+  addEventListener("keydown",function(e){if(e.key!=="d"&&e.key!=="D")return;if(e.metaKey||e.ctrlKey||e.altKey||e.repeat)return;
+    var t=e.target;if(t&&(/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)||t.isContentEditable))return;
+    var a;try{a=pick()}catch(x){a=null}if(a)hold(a)},true);
+})();
 })();
