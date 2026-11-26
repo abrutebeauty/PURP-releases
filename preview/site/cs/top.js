@@ -35,7 +35,12 @@
       }
       var ww=pki.querySelector(".ww");
       if(ww){
-        var sm=ww.querySelector("small");if(sm&&sm.textContent.trim().toLowerCase()!=="get this pack")sm.textContent="Get this pack";
+        var wt=ww.querySelector(".op-wwt");
+        if(wt&&!wt.querySelector(".cs-q")){
+          var q=document.createElement("span");q.className="cs-q";q.tabIndex=0;q.setAttribute("role","button");q.setAttribute("aria-label","About the sounds");
+          q.innerHTML='<i>?</i><em role="tooltip">Sounds can vary slightly between synths because of each synth\u2019s nature and capabilities. All sounds in the previews are from Serum.</em>';
+          wt.appendChild(q);
+        }
         ww.querySelectorAll(".wwb").forEach(function(b){[].slice.call(b.childNodes).forEach(function(c){if(c.nodeType===3&&/^\s*Serum 1\s*$/.test(c.textContent))c.textContent="Serum"})});
       }
     }finally{busy=false}

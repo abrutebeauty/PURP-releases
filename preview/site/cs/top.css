@@ -55,3 +55,11 @@ html.opium2 #opMag .op-cat .pv>button .pl{transform:scale(.7);transform-origin:0
 html.opium2 #opMag .op-cat .pv>button canvas.wf{height:34px!important}
 @media (max-width:900px){html.opium2 #opMag{display:grid!important;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:96px;overflow-x:auto;padding-bottom:10px}html.opium2 #opMag>.op-magh,html.opium2 #opMag>:not(.op-cat){grid-column:auto}}
 html.opium2 #opMag .op-cat{margin-top:26px}
+
+/* no small GET THIS PACK label; a small ? after the compatibility sentence shows a disclaimer (Eman 26 Nov) */
+html.opium2 #pkTop .ww>small{display:none!important}
+html.opium2 .cs-q{position:relative;display:inline-block;margin-left:8px;vertical-align:1px;outline:0}
+html.opium2 .cs-q i{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border:1px solid #8d8995;color:#c9c5d3;font:700 11px/1 "Inter",Arial,sans-serif;font-style:normal;cursor:help}
+html.opium2 .cs-q em{position:absolute;left:-8px;bottom:calc(100% + 8px);width:270px;padding:10px 12px;background:#17151d;border:1px solid #3a3744;color:#d7d3df;font:400 12px/1.45 "Inter","Helvetica Neue",Arial,sans-serif;font-style:normal;letter-spacing:0;text-transform:none;opacity:0;visibility:hidden;transition:opacity .15s;pointer-events:none;z-index:20}
+html.opium2 .cs-q:hover em,html.opium2 .cs-q:focus em,html.opium2 .cs-q:focus-within em{opacity:1;visibility:visible}
+@media (max-width:520px){html.opium2 .cs-q em{width:220px}}
