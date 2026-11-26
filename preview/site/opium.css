@@ -935,3 +935,6 @@ html.opium2 .ww .wwb[data-wc] .wwn{color:inherit;opacity:.85}
 
 /* stats: hide the raw numbers until the count-up takes over (no one-frame jump) */
 html.opium2:not(.op-stv) #stats>*:not([data-cu]) b{visibility:hidden}
+
+/* SELECTED SOUND OUTLINE ALWAYS RED (Eman 26 Nov): was yellow-ish when idle, red only on hover */
+html.opium2 .pv button.on,html.opium2 .pv button.sel,html.opium2 .pv button.on:hover,html.opium2 .pv button.sel:hover,html.opium2 .cols .pv button.on:hover,html.opium2 .cols .pv button.sel:hover{border-color:#d42a24!important;outline-color:#d42a24!important}

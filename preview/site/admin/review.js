@@ -219,6 +219,13 @@
   window.addEventListener("pointerup", scEnd, true); window.addEventListener("pointercancel", scEnd, true);
   window.addEventListener("click", (e) => { if (!window.__rvSynth && !sc && Date.now() - scT < 350) { e.preventDefault(); e.stopPropagation(); } }, true);   // the click that ends a drag (it may land outside the wave) must never play / pause
 
+  // 26 Nov: pressing play on the card again (not the waveform scrub, not Space) starts from the beginning, also after a Space pause
+  window.addEventListener("click", (e) => {
+    if (window.__rvSynth || inPv()) return; const t = e.target; if (!t.closest) return;
+    const b = t.closest(".pv button[data-pid]"); if (!b || playing(b) || t.closest(".rvr,.rvc,.rvov,canvas.wf,.nm,[data-rv],[data-a]")) return;
+    paused = null; try { if (typeof tapResume !== "undefined") tapResume.delete(b.dataset.src); } catch (x) {} paintPh(b);
+  }, true);
+
   /* ---- ORIGINS (Eman 25 Nov): where the sound came from + where the MIDI came from. Base labels live in /admin/origins.json (written from the old pack threads,
      "?" = not recorded); anything Eman edits is saved in D.review[pack][sound].src / .midi and wins over the base. ---- */
   let ORG = {}; fetch("/admin/origins.json?v=1", { cache: "no-cache" }).then((r) => r.ok ? r.json() : {}).then((j) => { ORG = j || {}; syncAll(); }).catch(() => {});
