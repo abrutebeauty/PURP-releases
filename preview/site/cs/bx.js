@@ -175,15 +175,15 @@
     g.fillStyle="#020203";g.fillRect(0,0,W,H);
     var n=mode==="spike"||mode==="cells"?64:52,c=W/n,ny=Math.round(H/c),F=[],i,j,N=4+Math.floor(st.nn*7),ph=sd*40;
     for(j=0;j<=ny;j++){F[j]=[];for(i=0;i<=n;i++){var x=i/n,y=j/ny,f;
-      if(mode==="blob"){f=fbm(i*.085+ph+t*.09,j*.085,t*.12+a.lvl*.8);f+=.2*a.bass*Math.sin((i+j)*.25-t*4)}
+      if(mode==="blob"){var zs=.075+.16*(.5+.5*Math.cos(t*.32+ph*.05));f=fbm(i*zs+ph+t*.09,j*zs,t*.12+a.lvl*.8);f+=.1*a.bass*Math.sin((i+j)*.25-t*4)}
       else if(mode==="spike"){var r=fbm(i*.1+ph+t*.2,j*.1,t*.25),q=1-Math.abs(2*fbm(i*.21+t*.3,j*.21+ph,t*.2+a.hi)-1);f=.45*r+.55*q*q*(.8+a.bass*.7)}
       else if(mode==="star"){var dx=x-.5-.12*Math.sin(t*.6+ph),dy=y-.5-.12*Math.cos(t*.5+ph),d=Math.sqrt(dx*dx+dy*dy),an=Math.atan2(dy,dx);f=.95-d*1.5+(.1+.2*a.bass+.08*a.hi)*Math.cos(an*N+t*(.8+a.mid*2))*(.5+d*2.2)+(fbm(i*.1+ph,j*.1,t*.1)-.5)*.2}
-      else if(mode==="rings"){var dx2=x-.5-.2*Math.sin(t*.4+ph),dy2=y-.5-.2*Math.cos(t*.35+ph),d2=Math.sqrt(dx2*dx2+dy2*dy2);f=.5+.5*Math.sin(d2*(11+st.nn*6)-t*(1.5+a.bass*3)+(fbm(i*.06,j*.06,t*.1)-.5)*4)}
+      else if(mode==="rings"){var dx2=x-.5-.2*Math.sin(t*.4+ph),dy2=y-.5-.2*Math.cos(t*.35+ph),d2=Math.sqrt(dx2*dx2+dy2*dy2);f=.5+.5*Math.sin(d2*(8+st.nn*5)-t*(1.5+a.bass*3)+(fbm(i*.06,j*.06,t*.1)-.5)*4)}
       else if(mode==="cells"){var X=x*(5+st.nn*4)+ph*.1,Y=y*(5+st.nn*4),fx=Math.floor(X),fy=Math.floor(Y),m=9,u,v;for(u=-1;u<=1;u++)for(v=-1;v<=1;v++){var px=fx+u+.5+.45*Math.sin(t*(.5+a.mid)+hash(fx+u,fy+v,1)*6.3),py=fy+v+.5+.45*Math.cos(t*(.6+a.mid)+hash(fx+u,fy+v,2)*6.3),dd=(X-px)*(X-px)+(Y-py)*(Y-py);if(dd<m)m=dd}f=Math.sqrt(m)*1.1}
-      else{f=.5+.28*Math.sin(i*.17+Math.sin(j*.09+t+ph)*2.2+t*.8)+.2*Math.sin(j*.12-t*(1+a.bass))}
+      else{f=.5+.3*Math.sin(i*.075+Math.sin(j*.045+t*2.2+ph)*1.6+t*1.8)+.2*Math.sin(j*.06-t*(2.2+a.bass*2))}
       F[j][i]=f}}
-    g.lineWidth=1.2;
-    [.38,.46,.54,.62].forEach(function(th,li){
+    g.lineWidth=mode==="rings"?.9:mode==="wave"?1.6:1.2;
+    (mode==="rings"?[.5]:mode==="wave"?[.4,.6]:[.38,.46,.54,.62]).forEach(function(th,li){
       g.strokeStyle=li%2?P[1]:P[0];g.globalAlpha=.55+.1*li+a.lvl*.25;g.beginPath();
       for(j=0;j<ny;j++)for(i=0;i<n;i++){
         var va=F[j][i],b=F[j][i+1],cc=F[j+1][i+1],d=F[j+1][i],k=(va>th?1:0)|(b>th?2:0)|(cc>th?4:0)|(d>th?8:0),e=MS[k];if(!e)continue;
