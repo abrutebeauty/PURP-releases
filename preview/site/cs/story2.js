@@ -278,10 +278,10 @@ var IC={
  serum2:'<svg viewBox="0 0 16 16"><path d="M1 9c2-6 4-6 6 0s4 6 6 0" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 2v2.5M15 2v2.5" stroke="currentColor" stroke-width="1.2"/></svg>',
  vital:'<svg viewBox="0 0 16 16"><path d="M2 3l6 10 6-10" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>',
  wt:'<svg viewBox="0 0 16 16"><path d="M2 3v10M5 3v10M8 3v10M11 6h4M11 9h4M11 12h4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>'};
-/* Eman 26 Nov: the live product top stays as it is (title, 3 slots, handwriting, cover). Only the listed edits are applied on top of it. */
+/* test page only: price shown as $24 and the sound list replaced by the stack. The shared top (buttons, boxes) is cs/top.js */
 function patchTop(p){
   var top=document.getElementById("pkTop");if(!top||top.dataset.cs)return;top.dataset.cs="1";
-  var st=document.createElement("style");st.textContent="#review,#opMag,#pkTop .op-rv,#pkTop .rvs,#pkTop #pkStars,#pkTop .tiles,#pkTop a.trio{display:none!important}html.opium #pkSounds{display:block!important}";document.head.appendChild(st);
+  var st=document.createElement("style");st.textContent="#review,#opMag{display:none!important}html.opium #pkSounds{display:block!important}";document.head.appendChild(st);
   var busy=false;
   function fix(){
     if(busy)return;busy=true;
@@ -289,27 +289,10 @@ function patchTop(p){
       var pki=top.querySelector(".pki");if(!pki)return;
       var price=pki.querySelector(".pbuy .price");if(price&&price.textContent.trim()!=="$24")price.textContent="$24";
       var ps=pki.querySelector(".pbuy .ps");if(ps&&ps.textContent.indexOf("$")<0)ps.textContent="$0.24 per sound";
-      var buy=pki.querySelector(".buy"),ww=pki.querySelector(".ww"),t3=pki.querySelector(".op-t3");
-      /* 3 slots sit above the buy row */
-      /* PICK 3 FOR 2 button next to ADD TO CART */
-      if(buy&&!buy.querySelector(".cs-pick")){
-        var a=document.createElement("a");a.className="cs-pick";a.href="/bundle?trio=crystal";
-        a.innerHTML='Pick 3 for 2 <b>$48</b> <s>$72</s>';buy.appendChild(a);
-        buy.classList.add("cs-buy");
-      }
-      /* works-with block moves under the buy row, title GET THIS PACK, SERUM 1 -> SERUM, plain text */
-      if(ww){
-        var sm=ww.querySelector("small");if(sm&&sm.textContent.trim().toLowerCase()!=="get this pack")sm.textContent="Get this pack";
-        ww.querySelectorAll(".wwb").forEach(function(b){
-          var n=b.lastChild;
-          [].slice.call(b.childNodes).forEach(function(c){if(c.nodeType===3&&/^\s*Serum 1\s*$/.test(c.textContent))c.textContent="Serum"});
-        });
-      }
     }finally{busy=false}
   }
   fix();
   new MutationObserver(function(){fix()}).observe(top,{childList:true,subtree:true});
-  /* nudge the look script (it re-runs on any page change) so its extra parts appear after this render */
   var i=document.createElement("i");i.hidden=true;document.getElementById("pk").appendChild(i);setTimeout(function(){i.remove();fix()},120);
 }
 function buildTopOLD(p){

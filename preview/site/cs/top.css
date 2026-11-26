@@ -1,0 +1,15 @@
+/* COREKULT product top, OPIUM 2 (Eman 26 Nov) */
+html.opium2 #pkTop .op-rv,html.opium2 #pkTop .rvs,html.opium2 #pkTop #pkStars,html.opium2 #pkTop .tiles,html.opium2 #pkTop a.trio{display:none!important}
+html.opium2 #pkTop .pki{display:flex!important;flex-direction:column;align-items:flex-start}
+html.opium2 #pkTop .pki>*{order:0}
+html.opium2 #pkTop .pki>.pbuy{order:10}html.opium2 #pkTop .pki>.op-t3{order:11}html.opium2 #pkTop .pki>.buy{order:12}html.opium2 #pkTop .pki>.ww{order:13}html.opium2 #pkTop .pki>.trio{order:14}html.opium2 #pkTop .pki>.trust{order:15}html.opium2 #pkTop .pki>.madewith{order:16}
+html.opium2 #pkTop .pki>.buy.cs-buy{display:flex!important;width:auto!important;max-width:100%!important;flex-wrap:nowrap!important;flex-direction:row!important;align-items:center;gap:10px!important;margin:12px 0 24px!important}
+html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid{flex:0 0 auto!important;width:auto!important;height:52px!important;min-height:0!important;padding:0 36px!important;font-size:14px!important;letter-spacing:.16em!important;line-height:1!important;display:inline-flex;align-items:center;justify-content:center}
+html.opium2 .cs-pick{flex:0 0 auto;height:52px;display:inline-flex;align-items:center;gap:10px;padding:0 28px;background:#1f1d27;color:#ecebf0;font:700 14px/1 "OpSpace","JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+html.opium2 .cs-pick b{color:#E4FF3A;font-weight:700}
+html.opium2 .cs-pick s{color:#6f6c7b;font-weight:500}
+html.opium2 .cs-pick:hover{background:#1f1d27}
+/* works-with: grey boxes, coloured text and icons */
+html.opium2 #pkTop .ww .wwb{background:#23212b!important;border:0!important;box-shadow:none!important;padding:0 14px!important;height:34px!important;display:inline-flex;align-items:center;gap:8px}
+html.opium2 #pkTop .ww .wwl{gap:8px!important}
+@media (max-width:700px){html.opium2 #pkTop .pki>.buy.cs-buy{flex-wrap:wrap!important}html.opium2 .cs-pick{padding:0 18px;letter-spacing:.1em}html.opium2 #pkTop .pki>.buy.cs-buy .btn.acid{padding:0 26px!important}}

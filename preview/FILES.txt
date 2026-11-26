@@ -176,3 +176,5 @@ img/cs/title.webp
 crystal-test.html
 cs/story2.css
 cs/story2.js
+cs/top.js
+cs/top.css
