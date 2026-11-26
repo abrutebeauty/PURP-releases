@@ -38,10 +38,20 @@
     return t.p;
   }
   function draw(i,pos){
-    if(window.CS_BOX&&window.csBox)return;
     var t=tracks[i],cv=t.cv,w=cv.clientWidth,h=cv.clientHeight;if(!w||!h||!t.pk)return;
     var dpr=window.devicePixelRatio||1;if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
     var g=cv.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,w,h);
+    if(window.CS_BOX){
+      var dk=w+"x"+h+"x"+t.pk.length;
+      if(t.dk!==dk){t.dk=dk;var sd=(t.name||"x").split("").reduce(function(a,c){return (a*31+c.charCodeAt(0))>>>0},7)||1,rn=function(){sd=(sd+0x6D2B79F5)>>>0;var z=sd;z=Math.imul(z^z>>>15,z|1);z^=z+Math.imul(z^z>>>7,z|61);return((z^z>>>14)>>>0)/4294967296},D=[],mid0=h/2;
+        for(var x=0;x<w;x+=1){var f0=x/w,pi0=Math.min(t.pk.length-1,Math.floor(f0*t.pk.length)),am=Math.min(1,Math.max(.08,Math.pow(t.pk[pi0],.55)*1.25)),nd=Math.round(3+am*16);
+          for(var q=0;q<nd;q++){var sg=rn()<.5?-1:1,u=rn(),dd=Math.pow(u,1.5)*am*h*.48;D.push(x,mid0+sg*dd)}
+          if(rn()<.02+am*.03){var sg2=rn()<.5?-1:1;for(var q2=0;q2<3;q2++)D.push(x,mid0+sg2*(am*h*.46+rn()*h*.2*(q2+1)))}}
+        t.dots=D}
+      var D2=t.dots,sz=Math.max(1.4,1.5*(w/900)),cut=w*pos;
+      g.fillStyle="#e8e8f0";for(var j=0;j<D2.length;j+=2){if(pos>0&&D2[j]<cut)continue;g.fillRect(D2[j],D2[j+1],sz,sz)}
+      if(pos>0){g.fillStyle="#a56bff";for(var j2=0;j2<D2.length;j2+=2){if(D2[j2]>=cut)continue;g.fillRect(D2[j2],D2[j2+1],sz,sz)}}
+      return}
     if(window.csRibbon){
       var N=Math.max(40,Math.floor(w/3)),am=[];
       for(var k=0;k<N;k++){var pi=Math.min(t.pk.length-1,Math.floor(k/N*t.pk.length));am.push(Math.max(.1,Math.pow(t.pk[pi],.8)))}
@@ -168,7 +178,7 @@ function drawText(str,cap,o){
       draw(i,0);
     });
     new ResizeObserver(function(){tracks.forEach(function(t,i){draw(i,0)})}).observe(sec);
-    if(window.CS_BOX&&window.csBox&&!window.__csPvLoop){window.__csPvLoop=1;
+    if(window.CS_PVBOXES&&window.csBox&&!window.__csPvLoop){window.__csPvLoop=1;
       (function lp(ms){requestAnimationFrame(lp);var t=ms/1000,id=csBox.idle(t);
         tracks.forEach(function(tr){if(!tr.cv||tr.vis===false)return;var w=Math.round(tr.cv.clientWidth/2),h=Math.round(tr.cv.clientHeight/2);if(!w||!h)return;
           if(tr.cv.width!==w||tr.cv.height!==h){tr.cv.width=w;tr.cv.height=h}
