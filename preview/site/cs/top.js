@@ -16,9 +16,20 @@
         else if(card&&(lv==="#8b6cf6"||lv==="#b8a4ff")){
           var pv=COLLAGE&&this.canvas.closest(".pv");
           v=(pv&&pv.__cst)||"#bdbdc6";
+          if(pv)this.globalAlpha=1;
         }
       }
       fd.set.call(this,v)}})}
+  }catch(e){}
+  /* thicken the thin wave lines on the collage cards so the colours read clean and saturated, not dull */
+  try{
+    var P2=CanvasRenderingContext2D.prototype;
+    if(!P2.__csFill){P2.__csFill=1;var of=P2.fill;P2.fill=function(){
+      of.apply(this,arguments);
+      try{var cv=this.canvas;
+        if(COLLAGE&&cv&&cv.classList&&cv.classList.contains("wf")&&!cv.classList.contains("ld")&&cv.closest(".op-cat")&&arguments[0]&&arguments[0].constructor===Path2D){
+          this.save();this.globalAlpha=1;this.strokeStyle=this.fillStyle;this.lineWidth=.9;this.stroke(arguments[0]);this.restore()}
+      }catch(e){}}}
   }catch(e){}
   var busy=false;
   function fix(){
@@ -64,26 +75,51 @@
   /* collage: every sound mixed together, a repeating but shuffled mix of card sizes */
   var SZ=["a","a","w","a","b","a","t","a","w","a","a","b","a","t","a","w","a","a"];
   /* type colours (Eman 26 Nov): only these six, similar types share one */
-  var PAL={red:"#d42a24",purple:"#8a4dff",pink:"#ff3ea5",green:"#7dff4a",cyan:"#3ad8ff",yellow:"#E4FF3A"},
-      TYPE={bass:"red",lead:"yellow",pluck:"green",plucks:"green",pad:"cyan",pads:"cyan",texture:"cyan",fx:"cyan",keys:"pink",arp:"pink",arps:"pink",stab:"pink",chip:"purple",vox:"purple"},
-      ORD=["red","yellow","green","cyan","pink","purple"];
+  var PAL={red:"#ff2b2b",purple:"#a05cff",pink:"#ff2e9a",green:"#4dff2e",cyan:"#12d9ff",blue:"#2f6bff"},
+      TYPE={bass:"red",lead:"blue",pluck:"green",plucks:"green",pad:"cyan",pads:"cyan",texture:"cyan",fx:"cyan",keys:"pink",arp:"pink",arps:"pink",stab:"pink",chip:"purple",vox:"purple"},
+      ORD=["red","blue","green","cyan","pink","purple"];
   function tcol(k){k=(k||"").toLowerCase().trim();return PAL[TYPE[k]||ORD[hash(k)%6]]}
   function hash(s){var h=7;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
   function collage(m){
-    var redraw=0;
+    var redraw=0,W=m.clientWidth,mob=window.innerWidth<=900,N=Math.max(2,Math.floor((W+8)/((mob?112:122)+8)));
+    if(!W)return;
+    if(m.__csN!==N){m.__csN=N;m.style.setProperty("--csc",N)}
     var pvs=[].slice.call(m.querySelectorAll(".op-cat .pv"));
-    pvs.forEach(function(p){var n=(p.querySelector(".nm")||p).textContent||"",h=hash(n);
-      if(p.__csh!==h){p.__csh=h;p.style.order=h%1000}
+    pvs.forEach(function(p){var n=(p.querySelector(".nm")||p).textContent||"",h=hash(n);p.__csh=h;
       var t=p.querySelector(".nm .tc"),c=tcol(t?t.textContent:(n.split(" ")[0]));
       if(p.__cst!==c){p.__cst=c;p.style.setProperty("--tc",c);if(p.querySelector("canvas.wf"))redraw=1}});
+    pvs.sort(function(a,b){return a.__csh-b.__csh});
+    /* pack the cards exactly like the grid does (first free cell), shrink a size that does not fit, then grow cards into any leftover hole so the block ends as one solid box */
+    var occ=[],free=function(x,y){return x<N&&!(occ[y]&&occ[y][x])},cards=[];
+    var set=function(x,y,w,h,v){for(var j=y;j<y+h;j++){occ[j]=occ[j]||[];for(var i=x;i<x+w;i++)occ[j][i]=v}};
+    pvs.forEach(function(p,i){
+      var s=SZ[i%SZ.length],w=(s==="w"||s==="b")?2:1,h=(s==="t"||s==="b")?2:1,x=0,y=0;
+      outer:for(y=0;;y++)for(x=0;x<N;x++)if(free(x,y))break outer;
+      while(w>1&&!free(x+w-1,y))w--;
+      while(h>1&&!(function(){for(var i2=0;i2<w;i2++)if(occ[y+h-1]&&occ[y+h-1][x+i2])return true;return false})())break;
+      for(var hh=h;hh>1;hh--){var ok=true;for(var j=1;j<hh;j++)for(var i3=0;i3<w;i3++)if(occ[y+j]&&occ[y+j][x+i3])ok=false;if(ok)break;h=hh-1}
+      var c={p:p,x:x,y:y,w:w,h:h};set(x,y,w,h,c);cards.push(c)});
+    var rows=occ.length,ch=true,guard=0;
+    while(ch&&guard++<200){ch=false;
+      for(var yy=0;yy<rows&&!ch;yy++)for(var xx=0;xx<N&&!ch;xx++){
+        if(occ[yy]&&occ[yy][xx])continue;
+        var L=xx>0&&occ[yy]&&occ[yy][xx-1],U=yy>0&&occ[yy-1]&&occ[yy-1][xx];
+        if(L&&L.y===yy||L){var ok2=true;for(var j2=L.y;j2<L.y+L.h;j2++)if(occ[j2]&&occ[j2][xx])ok2=false;
+          if(ok2&&L.x+L.w===xx){set(xx,L.y,1,L.h,L);L.w++;ch=true;continue}}
+        if(U&&U.y+U.h===yy){var ok3=true;for(var i4=U.x;i4<U.x+U.w;i4++)if(occ[yy]&&occ[yy][i4])ok3=false;
+          if(ok3){set(U.x,yy,U.w,1,U);U.h++;ch=true}}
+      }}
+    cards.forEach(function(c,i){var p=c.p;
+      p.style.order=i;
+      var g="span "+c.w;if(p.style.gridColumn!==g)p.style.gridColumn=g;
+      g="span "+c.h;if(p.style.gridRow!==g)p.style.gridRow=g;
+      p.classList.toggle("cs-zl",c.w*c.h>=3)});
     if(redraw)setTimeout(function(){window.dispatchEvent(new Event("resize"))},60);
-    pvs.slice().sort(function(a,b){return (+a.style.order)-(+b.style.order)}).forEach(function(p,i){
-      var c="cs-z"+SZ[i%SZ.length];
-      if(p.__csz!==c){if(p.__csz)p.classList.remove(p.__csz);p.classList.add(c);p.__csz=c}});
   }
   function start(){
     var pk=document.getElementById("pk");if(!pk)return;
     fix();new MutationObserver(function(){fix()}).observe(pk,{childList:true,subtree:true});
+    var rt;window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){var m=document.getElementById("opMag");if(m&&COLLAGE)collage(m)},150)});
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start);else start();
 })();
