@@ -3,17 +3,19 @@
 //   node build-dreamcore.js <rows.json> <out songs dir> <template.state> <mode>
 // rows.json: [{ pack, sitePack, pattern, siteBpm, siteKey, fxp, midi }]
 // template.state: a Serum 2 state from killtoy-host getState (VC2! + VST3PluginState XML).
+// mode: "s1-A" / "s1-B" / "s1-C" = Serum 1 lanes with the original .fxp, exact (way from serum1-state.js probe). Eman 27 Nov: Serum 1.
 // mode: "preset" = each row's serumPreset (.SerumPreset) is turned into a Serum 2 state by serum2-preset-state.js (the way that works).
 //   The old modes ("comp-fxp" etc., feeding the Serum 1 .fxp straight in) were tested and Serum 2 ignores them.
 const fs = require('fs'); const path = require('path');
 const [rowsFile, outDir, templateFile, mode] = process.argv.slice(2);
-const UID = 'VST3-Serum 2-a59c2861-c441d38e';
+const S1 = mode.startsWith('s1-'); const UID = S1 ? 'VST3-Serum-c32f6b61-aaff6c8e' : 'VST3-Serum 2-a59c2861-c441d38e'; const SYN = S1 ? 'Serum' : 'Serum 2';
 const T = '.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+';
 function jenc(buf) { const bits = buf.length * 8; let s = buf.length + '.'; for (let pos = 0; pos < bits; pos += 6) { let d = 0; for (let b = 0; b < 6; b++) { const p = pos + b; if (p < bits && (buf[p >> 3] >> (p & 7)) & 1) d |= 1 << b; } s += T[d]; } return s; }
 const tagSet = (xml, t, buf) => xml.replace(new RegExp('<' + t + '>[^<]*</' + t + '>'), '<' + t + '>' + jenc(buf) + '</' + t + '>');
 const wrap = (xml) => { const x = Buffer.from(xml, 'utf8'); const h = Buffer.alloc(8); h.write('VC2!', 0, 'latin1'); h.writeUInt32LE(x.length, 4); return Buffer.concat([h, x]); };
 const templateXml = fs.readFileSync(templateFile).subarray(8).toString('utf8');
 function stateFor(fxpFile, row) {
+  if (S1) return require('./serum1-state.js').makeState(fs.readFileSync(templateFile), fxpFile, mode.slice(3)).toString('base64');
   if (mode === 'preset') return require('./serum2-preset-state.js').makeState(fs.readFileSync(templateFile), row.serumPreset).state.toString('base64');
   const fxp = fs.readFileSync(fxpFile);
   const chunk = fxp.subarray(8, 12).toString('latin1') === 'FPCh' ? fxp.subarray(60) : fxp;
@@ -57,7 +59,7 @@ for (const pack of packs) {
   for (const r of list) {
     const n = readMidi(r.midi); const lastEnd = n.reduce((m, x) => Math.max(m, x[1] + x[2]), 0);
     const beats = Math.max(4, Math.ceil(lastEnd / 4) * 4);
-    lanes.push({ name: r.pattern, role: 'inst', instrument: 'Serum 2', vst: { uid: UID, name: 'Serum 2', state: stateFor(r.fxp, r) },
+    lanes.push({ name: r.pattern, role: 'inst', instrument: SYN, vst: { uid: UID, name: SYN, state: stateFor(r.fxp, r) },
       clips: [{ name: r.pattern, start: at, beats, n }], about: `${r.siteBpm || ''} BPM ${r.siteKey || ''}`.trim() });
     at += beats + 4;   // one bar of air between patterns
   }
