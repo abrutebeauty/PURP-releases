@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>/* EARLY_P (speed 20 Nov): start the product list download now, not after shop.js runs. shop.js uses window.__ckP */try{window.__ckP=fetch("/api/products?lite=1",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()});window.__ckP.catch(function(){})}catch(e){}</script>
+<title>Creator · COREKULT</title>
+<meta name="description" content="Dark Serum preset packs and drum kits. Crystal Core, Dreamcore, LOOK MOM I CAN FLY, 2HOLLCORE.">
+<meta property="og:title" content="COREKULT">
+<meta property="og:description" content="Dark Serum preset packs and drum kits.">
+<meta property="og:image" content="https://corekult.com/img/og.jpg">
+<meta name="theme-color" content="#0b0a0e">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/b-e82d717278.css">
+
+
+
+
+<!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<!-- DAY_MODE: day palette + switch, keep last -->
+<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+<script src="/opium.js?v=8"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/" aria-label="COREKULT home"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="110" height="34"></a>
+  <a class="nl" href="/#packs">Shop</a>
+  <div class="curw" id="curW"></div><div class="cartw"><button class="nl cartb" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 16 16"><path d="M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="13.3" r="1.2"/><circle cx="12" cy="13.3" r="1.2"/></svg><span id="cartN" hidden>0</span></button><div class="cdd" id="cartDd" hidden></div></div>
+</div></nav>
+
+<main class="wrap crp" id="cr"></main>
+<footer><div class="wrap">
+  <span class="logo"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="84" height="26"></span>
+  <span>Packs marked “inspired by” are not affiliated with or endorsed by any artist.</span>
+  <span>© <span id="yr"></span> COREKULT</span>
+</div></footer>
+<script src="/shop.js?v=114"></script>
+<script>
+/* creator page: /creator/<id>. Creators are COREKULT aliases from creators.json (rename there). */
+$("#yr").textContent = new Date().getFullYear();
+const CID = decodeURIComponent(location.pathname.split("/")[2] || "");
+function render() {
+  const c = CREATORS.find((x) => x.id === CID);
+  if (!c) { $("#cr").innerHTML = `<div class="empty">Creator not found.<br><br><a class="btn acid" href="/">All packs</a></div>`; return; }
+  document.title = c.name + " · COREKULT";
+  const ps = packsOf(c), ref = "c-" + c.id;
+  $("#cr").innerHTML = `<header class="crh">${avatarHTML(c, "big")}<div><span class="ccb">COREKULT creator</span><h1>${typeof CREATOR_AT !== "undefined" && CREATOR_AT ? "@" : ""}${esc(c.name)}</h1><div class="crv">${esc(c.vibe)}</div><p>${esc(c.bio || "")}</p>
+      <div class="crs"><span><b>${ps.length}</b>${ps.length === 1 ? "Kit" : "Kits"}</span><span><b>${ps.reduce((n, p) => n + ((String(p.count).match(/\d+/) || [0])[0] | 0), 0)}</b>Sounds</span></div></div></header>
+    <h2 class="sg">Kits by ${esc(c.name)}</h2>
+    <div class="grid crg">${ps.map((p) => `<article class="card"><a class="cv" href="${packUrl(p.id)}"><span class="pq"><img src="${esc(abs(p.cover))}" alt="${esc(p.name)} cover" loading="lazy"><i class="gl"></i></span><span class="stamp">${esc(p.stamp)}</span></a>
+      <div class="cb"><a class="ph" href="${packUrl(p.id)}"><div><div class="pn">${esc(p.name)}</div><div class="pf">${esc(p.sub)} · ${esc(p.count)}</div></div><div class="price">${show(p.price)}</div></a>
+      <div class="buy"><a class="btn" href="/get/${encodeURIComponent(p.id)}?ref=${ref}">Free sample</a><button class="btn acid" data-add="${p.id}">Add to cart</button></div></div></article>`).join("") || `<p class="note">New kits coming soon.</p>`}</div>`;
+  track("view", null, "creator:" + c.id);
+}
+document.addEventListener("click", (e) => { shopClick(e); });
+document.addEventListener("ck-cur", () => { render(); paintCart(); });
+loadShop().then(() => { render(); paintCart(); });
+</script>
+</body>
+</html>

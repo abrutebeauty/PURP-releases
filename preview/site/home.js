@@ -12,13 +12,13 @@ function render() {
   // collage: up to 10 covers; open spots show packs that are on the way (marked SOON)
   const SOON = ["img/soon-fakemink.jpg", "img/soon-leancore.jpg", "img/soon-esskid-serum.jpg", "img/soon-witchcore.jpg", "img/soon-esskid-drums.jpg", "img/soon-fakemink-drums.jpg", "img/soon-leancore-drums.jpg"];
   const N = 12;   // 4 x 3 collage that fills the hero beside the logo (Eman 18 Nov)
-  const tiles = PRODUCTS.slice(0, N).map((p) => `<i><img src="${esc(abs(p.cover))}" alt=""></i>`).concat(SOON.slice(0, Math.max(0, N - PRODUCTS.length)).map((u) => `<i class="soon"><img src="/${u}?v=2" alt=""><small>Soon</small></i>`));
+  const tiles = PRODUCTS.slice(0, N).map((p) => `<i><img src="${esc(abs(p.cover))}" alt="" loading="lazy" decoding="async"></i>`).concat(SOON.slice(0, Math.max(0, N - PRODUCTS.length)).map((u) => `<i class="soon"><img src="/${u}?v=2" alt="" loading="lazy" decoding="async"><small>Soon</small></i>`));
   if ($("#bcG")) $("#bcG").innerHTML = tiles.join("");
   if ($("#mbN")) $("#mbN").textContent = `All ${PRODUCTS.length} packs in one`;
-  if ($("#mbCov")) $("#mbCov").innerHTML = PRODUCTS.slice(0, 3).map((p) => `<img src="${esc(abs(p.cover))}" alt="">`).join("");
+  if ($("#mbCov")) $("#mbCov").innerHTML = PRODUCTS.slice(0, 3).map((p) => `<img src="${esc(abs(p.cover))}" alt="" loading="lazy" decoding="async">`).join("");
   document.body.classList.toggle("bf-old", BUNDLE_FLOW_OLD);
   if (!BUNDLE_FLOW_OLD) document.querySelectorAll(".bflow").forEach(BF_PILE ? bpile : bflow);
-  if (BF_PILE && typeof BUNDLE10 !== "undefined" && BUNDLE10) { if ($("#mbN")) $("#mbN").textContent = `Pick 10 packs · save ${show(BUNDLE_OFF)}`; const me = document.querySelector(".mbund em"); if (me) me.textContent = `${show(BUNDLE_OFF)} off`; if ($("#mbCov")) $("#mbCov").innerHTML = bundleMix().slice(0, 3).map((id) => byId(id)).filter(Boolean).map((p) => `<img src="${esc(abs(p.cover))}" alt="">`).join(""); }
+  if (BF_PILE && typeof BUNDLE10 !== "undefined" && BUNDLE10) { if ($("#mbN")) $("#mbN").textContent = `Pick 10 packs · save ${show(BUNDLE_OFF)}`; const me = document.querySelector(".mbund em"); if (me) me.textContent = `${show(BUNDLE_OFF)} off`; if ($("#mbCov")) $("#mbCov").innerHTML = bundleMix().slice(0, 3).map((id) => byId(id)).filter(Boolean).map((p) => `<img src="${esc(abs(p.cover))}" alt="" loading="lazy" decoding="async">`).join(""); }
   $("#stats").innerHTML = `<div><b>${PRODUCTS.length}</b>Packs</div><div><b>450+</b>Serum presets</div>${BF_PILE && typeof BUNDLE10 !== "undefined" && BUNDLE10 ? `<div><b>${show(BUNDLE_OFF)}</b>Off 10 packs</div>` : `<div><b>50%</b>The bundle</div>`}`;
   const FS = FREE_CARDS ? PRODUCTS.filter((p) => hasFree(p) && (typeof FREE_ONE === "undefined" || !FREE_ONE || isFreeHost(p))) : [];
   const chips = [["all", "All", PRODUCTS.length + FS.length], ...(FS.length ? [["free", "Free", FS.length]] : []), ...WORLDS.map((w) => [w.id, w.name, PRODUCTS.filter((p) => p.world === w.id).length]), ["drums", "Drums", PRODUCTS.filter((p) => p.type === "drums").length], ...(CARDS_CHIP && PRODUCTS.some((p) => p.look === "card") ? [["cards", "Cards", PRODUCTS.filter((p) => p.look === "card").length]] : [])];
