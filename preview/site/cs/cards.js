@@ -237,12 +237,15 @@ function ckScan(){if(ckBusy)return;ckBusy=1;try{try{ckChips();ckApplyOrder();win
 
 /* ---- 5 waveform designs per category (called from the canvas fill hook in top.js) ---- */
 var CK_WNAMES=["Lines","Bars","Smooth","Outline","Floor peaks"];
-/* kid-crayon zig-zag fill behind the playhead, outline waveform only (Eman 27 Nov). env(x) = half height of the wave at x */
-window.ckScribble=function(g,env,mid,x1,col,t){if(!(x1>3))return;g.save();g.strokeStyle=col;g.lineCap="round";g.lineJoin="round";
-  [[4.6,1.5,.95,0],[7.4,1.1,.5,2.3]].forEach(function(p){var s=p[0],sd=17+p[3]*9,r=function(){sd=(sd*16807)%2147483647;return sd/2147483647},up=1,x=p[3];g.globalAlpha=p[2];g.lineWidth=p[1];g.beginPath();
-    var h0=env(Math.max(0,x));g.moveTo(x,mid);
-    while(x<x1){var h=Math.max(1.2,env(x)*.9)*(.9+r()*.12),j=(r()-.5)*1.6;g.lineTo(x+j,mid+up*h);up=-up;x+=s*(.8+r()*.45)}
-    var hl=Math.max(1.2,env(x1)*.9);g.lineTo(x1,mid+up*hl);g.stroke()});
+/* thin-pen zig-zag fill inside the Outline waveform (Eman 27 Nov). Every play paints a new random zig-zag on top of the earlier ones; kept in memory only while the person stays on this page (reset on a page change). env(x) = half height of the wave at x */
+var CK_SCR={nav:"",s:{}};
+function ckScrLayers(key,f){var nv=location.pathname+location.search;if(CK_SCR.nav!==nv){CK_SCR.nav=nv;CK_SCR.s={}}var S=CK_SCR.s[key]||(CK_SCR.s[key]={L:[],cur:null});
+  if(f!=null&&f>0){var cu=S.cur;if(!cu||cu.done||f<cu.f-.04){if(cu)S.L.push(cu);cu=S.cur={seed:1+Math.floor(Math.random()*2147483000),f:0,done:false}}cu.f=Math.max(cu.f,f);if(cu.f>=.985){cu.f=1;cu.done=true}}
+  var out=S.L.map(function(l){return {seed:l.seed,f:1}});if(S.cur)out.push({seed:S.cur.seed,f:(S.cur.done||S.cur.f>.93)?1:S.cur.f});return out}
+window.ckScribble=function(g,env,mid,W,key,f,col){var Ls=ckScrLayers(key,f);if(!Ls.length)return;g.save();g.strokeStyle=col;g.lineCap="round";g.lineJoin="round";g.lineWidth=.9;g.globalAlpha=.85;
+  Ls.forEach(function(L){var x1=L.f*W;if(!(x1>2))return;var sd=L.seed,r=function(){sd=(sd*16807)%2147483647;return sd/2147483647},up=r()<.5?1:-1,x=r()*3;g.beginPath();g.moveTo(x,mid);
+    while(x<x1){var h=Math.max(1.2,env(x)*(.78+r()*.2));g.lineTo(x+(r()-.5)*1.4,mid+up*h);up=-up;x+=3.4+r()*3.6}
+    g.lineTo(x1,mid+up*Math.max(1.2,env(x1)*.85));g.stroke()});
   g.restore()};
 window.ckWave=function(g,cv,r,mode,col){
   var W=Math.round(cv.clientWidth)||100,H=Math.round(cv.clientHeight)||40,mid=H/2,pts=[],last=-9;
@@ -251,7 +254,7 @@ window.ckWave=function(g,cv,r,mode,col){
   g.save();g.fillStyle=col;g.strokeStyle=col;g.globalAlpha=1;
   if(mode===1){for(var a=0;a<pts.length;a+=5/3>1?2:1){var q=pts[a],h=Math.max(1,q[1]);g.fillRect(q[0],mid-h,3,h*2)}}
   else if(mode===2||mode===3){g.beginPath();g.moveTo(0,mid);pts.forEach(function(q){g.lineTo(q[0],mid-Math.max(.8,q[1]))});for(var b=pts.length-1;b>=0;b--)g.lineTo(pts[b][0],mid+Math.max(.8,pts[b][1]));g.closePath();
-    if(mode===2)g.fill();else{g.globalAlpha=.14;g.fill();g.globalAlpha=1;g.lineWidth=1.3;g.stroke();try{var bt=cv.closest&&cv.closest('button'),au=(typeof CK_AUDIO!=='undefined')?CK_AUDIO:null;if(bt&&bt.classList.contains('on')&&au&&au.duration>0){var tn=performance.now();if(!(cv.__sfT&&tn-cv.__sfT<6)){cv.__sfT=tn;var px=W*au.currentTime/au.duration;window.ckScribble(g,function(x){var lo=0,hi=pts.length-1;while(hi-lo>1){var m=(lo+hi)>>1;if(pts[m][0]<=x)lo=m;else hi=m}return pts[lo][1]},mid,px,col,tn)}}}catch(e){}}}
+    if(mode===2)g.fill();else{g.globalAlpha=.14;g.fill();g.globalAlpha=1;g.lineWidth=1.3;g.stroke();try{var bt=cv.closest&&cv.closest('button'),au=(typeof CK_AUDIO!=='undefined')?CK_AUDIO:null;if(bt&&bt.dataset.src){var tn=performance.now();if(!(cv.__sfT&&tn-cv.__sfT<6)){cv.__sfT=tn;var fp=(bt.classList.contains('on')&&au&&au.duration>0)?au.currentTime/au.duration:null;window.ckScribble(g,function(x){var lo=0,hi=pts.length-1;while(hi-lo>1){var m=(lo+hi)>>1;if(pts[m][0]<=x)lo=m;else hi=m}return pts[lo][1]},mid,W,bt.dataset.src,fp,col)}}}catch(e){}}}
   else if(mode===4){for(var c=0;c<pts.length;c+=2){var h2=Math.max(1,Math.min(H-1,pts[c][1]*1.9));g.fillRect(pts[c][0],H-h2,2,h2)}}
   g.restore();return true};
 
