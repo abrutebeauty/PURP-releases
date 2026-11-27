@@ -1,345 +1,541 @@
 {
-"lead-pan-flute": {
+"lead-pan-flute-mp3": {
 "name": "Pan Flute",
 "bpm": 126,
 "key": "Am",
 "n": 20,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pan Flute"
+]
 },
-"lead-cowbell-808": {
+"lead-cowbell-808-mp3": {
 "name": "Cowbell 808",
 "bpm": 126,
 "key": "Am",
 "n": 20,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cowbell 808"
+]
 },
-"lead-ache": {
+"lead-ache-mp3": {
 "name": "Ache Lead",
 "bpm": 126,
 "key": "Am",
 "n": 20,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ache"
+]
 },
-"lead-fast-chiff-flute": {
+"lead-fast-chiff-flute-mp3": {
 "name": "Fast Chiff Flute",
 "bpm": 132,
 "key": "Dm",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Fast Chiff Flute"
+]
 },
-"lead-mono-saw": {
+"lead-mono-saw-mp3": {
 "name": "Mono Saw",
 "bpm": 132,
 "key": "Dm",
 "n": 9,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Mono Saw"
+]
 },
-"lead-arp-lead-sine": {
+"lead-arp-lead-sine-mp3": {
 "name": "Arp Lead Sine",
 "bpm": 140,
 "key": "Am",
 "n": 24,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Arp Lead Sine"
+]
 },
-"lead-digital": {
+"lead-digital-mp3": {
 "name": "Digital Lead",
 "bpm": 140,
 "key": "Am",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Digital"
+]
 },
-"lead-squeezed-fm": {
+"lead-squeezed-fm-mp3": {
 "name": "Squeezed FM",
 "bpm": 140,
 "key": "F",
 "n": 4,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Squeezed FM"
+]
 },
-"lead-square": {
+"lead-square-mp3": {
 "name": "Square Lead",
 "bpm": 105,
 "key": "C#m",
 "n": 22,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Square"
+]
 },
-"lead-attack": {
+"lead-attack-mp3": {
 "name": "Attack Lead",
 "bpm": 128,
 "key": "Am",
 "n": 35,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Attack"
+]
 },
-"lead-trip-fm": {
+"lead-trip-fm-mp3": {
 "name": "Trip FM Lead",
 "bpm": 132,
 "key": "Dm",
 "n": 9,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Trip FM"
+]
 },
-"lead-mono-key": {
+"lead-mono-key-mp3": {
 "name": "Mono Key",
 "bpm": 170,
 "key": "Dm",
 "n": 9,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Mono Key"
+]
 },
-"bell-crystal-crash": {
+"bell-crystal-crash-mp3": {
 "name": "Crystal Crash Bell",
 "bpm": 126,
 "key": "Am",
 "n": 20,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BELL Crystal Crash"
+]
 },
-"bell-dark-cloud": {
+"bell-dark-cloud-mp3": {
 "name": "Dark Cloud Bell",
 "bpm": 120,
 "key": "G",
 "n": 32,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BELL Dark Cloud"
+]
 },
-"bell-pluck": {
+"bell-pluck-mp3": {
 "name": "Pluck Bellz",
 "bpm": 131,
 "key": "Cm",
 "n": 44,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BELL Pluck"
+]
 },
-"bell-vibrasine": {
+"bell-vibrasine-mp3": {
 "name": "Vibrasine Bells",
 "bpm": 131,
 "key": "Cm",
 "n": 44,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BELL Vibrasine"
+]
 },
-"bell-sparkling": {
+"bell-sparkling-mp3": {
 "name": "Sparkling Bells",
 "bpm": 140,
 "key": "Am",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BELL Sparkling"
+]
 },
-"pluck-glass-eyes": {
+"pluck-glass-eyes-mp3": {
 "name": "Glass Eyes Pluck",
 "bpm": 126,
 "key": "Am",
 "n": 24,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Glass Eyes"
+]
 },
-"pluck-rest": {
+"pluck-rest-mp3": {
 "name": "Rest Pluck",
 "bpm": 120,
 "key": "G",
 "n": 32,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Rest"
+]
 },
-"pluck-sad-arp": {
+"pluck-sad-arp-mp3": {
 "name": "Sad Arp",
 "bpm": 120,
 "key": "G",
 "n": 64,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sad Arp"
+]
 },
-"pluck-prepared-saz": {
+"pluck-prepared-saz-mp3": {
 "name": "Prepared Saz Pluck",
 "bpm": 132,
 "key": "Dm",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Prepared Saz"
+]
 },
-"pluck-block": {
+"pluck-block-mp3": {
 "name": "Block Pluck",
 "bpm": 140,
 "key": "F#m",
 "n": 120,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Block"
+]
 },
-"pluck-pluck-eerie": {
+"pluck-pluck-eerie-mp3": {
 "name": "Pluck Eerie",
 "bpm": 140,
 "key": "Am",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Eerie"
+]
 },
-"pluck-guitar": {
+"pluck-guitar-mp3": {
 "name": "Guitar Pluck",
 "bpm": 140,
 "key": "Am",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Guitar"
+]
 },
-"pluck-tiny-arp": {
+"pluck-tiny-arp-mp3": {
 "name": "Tiny Arp",
 "bpm": 108,
 "key": "D",
 "n": 64,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Tiny Arp"
+]
 },
-"pluck-plucky-key": {
+"pluck-plucky-key-mp3": {
 "name": "Plucky Key",
 "bpm": 108,
 "key": "D",
 "n": 64,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Plucky Key"
+]
 },
-"pluck-lo-fi-distorted-sine": {
+"pluck-lo-fi-distorted-sine-mp3": {
 "name": "Lo-Fi Distorted Sine",
 "bpm": 105,
 "key": "C#m",
 "n": 22,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Lo-Fi Distorted Sine"
+]
 },
-"pluck-trip-synth": {
+"pluck-trip-synth-mp3": {
 "name": "Trip Synth Pluck",
 "bpm": 132,
 "key": "Dm",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Trip Synth"
+]
 },
-"keys-cry": {
+"keys-cry-mp3": {
 "name": "Cry Key",
 "bpm": 120,
 "key": "G",
 "n": 32,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Cry"
+]
 },
-"keys-ghost": {
+"keys-ghost-mp3": {
 "name": "Ghost Key",
 "bpm": 120,
 "key": "G",
 "n": 32,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Ghost"
+]
 },
-"keys-cold-piano": {
+"keys-cold-piano-mp3": {
 "name": "Cold Piano Keys",
 "bpm": 140,
 "key": "F#m",
 "n": 120,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Cold Piano"
+]
 },
-"keys-drain-layer": {
+"keys-drain-layer-mp3": {
 "name": "Drain Layer",
 "bpm": 140,
 "key": "F#m",
 "n": 120,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Drain Layer"
+]
 },
-"keys-dark-glass-organ": {
+"keys-dark-glass-organ-mp3": {
 "name": "Dark Glass Organ",
 "bpm": 131,
 "key": "Cm",
 "n": 24,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Dark Glass Organ"
+]
 },
-"keys-sine": {
+"keys-sine-mp3": {
 "name": "Sine Keys",
 "bpm": 130,
 "key": "Am",
 "n": 35,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Sine"
+]
 },
-"keys-dune-pluck-az": {
+"keys-dune-pluck-az-mp3": {
 "name": "Dune Pluck AZ",
 "bpm": 140,
 "key": "F",
 "n": 12,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Dune Pluck AZ"
+]
 },
-"keys-miami-piano": {
+"keys-miami-piano-mp3": {
 "name": "Miami Piano",
 "bpm": 105,
 "key": "C#m",
 "n": 24,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Miami Piano"
+]
 },
-"pad-tube-strings": {
+"pad-tube-strings-mp3": {
 "name": "Tube Strings",
 "bpm": 131,
 "key": "Cm",
 "n": 24,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tube Strings"
+]
 },
-"pad-transition": {
+"pad-transition-mp3": {
 "name": "Transition Pad",
 "bpm": 130,
 "key": "Am",
 "n": 16,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"PAD Transition"
+]
 },
-"bass-ambient-sub": {
+"bass-ambient-sub-mp3": {
 "name": "Ambient Sub Bass",
 "bpm": 126,
 "key": "Am",
 "n": 8,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ambient Sub"
+]
 },
-"bass-anvil": {
+"bass-anvil-mp3": {
 "name": "Anvil Bass",
 "bpm": 120,
 "key": "G",
 "n": 21,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BASS Anvil"
+]
 },
-"bass-glide": {
+"bass-glide-mp3": {
 "name": "Glide Bass",
 "bpm": 130,
 "key": "Am",
 "n": 9,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BASS Glide"
+]
 },
-"bass-piece-reese": {
+"bass-piece-reese-mp3": {
 "name": "Piece Reese",
 "bpm": 108,
 "key": "D",
 "n": 4,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BASS Piece Reese"
+]
 },
-"bass-smooth-bass-layer": {
+"bass-smooth-bass-layer-mp3": {
 "name": "Smooth Bass Layer",
 "bpm": 140,
 "key": "F",
 "n": 4,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BASS Smooth Bass Layer"
+]
 },
-"bass-rage-reese": {
+"bass-rage-reese-mp3": {
 "name": "Rage Reese Bass",
 "bpm": 105,
 "key": "C#m",
 "n": 4,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BASS Rage Reese"
+]
 },
-"bass-trip-subtle": {
+"bass-trip-subtle-mp3": {
 "name": "Trip Subtle Bass",
 "bpm": 132,
 "key": "Dm",
 "n": 4,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"BASS Trip Subtle"
+]
 },
-"808-long-808-bass": {
+"808-long-808-bass-mp3": {
 "name": "Long 808 Bass",
 "bpm": 126,
 "key": "Am",
 "n": 8,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"808 Long Bass"
+]
 },
-"808-strip": {
+"808-strip-mp3": {
 "name": "Strip 808",
 "bpm": 131,
 "key": "Cm",
 "n": 4,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"808 Strip"
+]
 },
-"808-rex": {
+"808-rex-mp3": {
 "name": "REX 808",
 "bpm": 140,
 "key": "Am",
 "n": 6,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"808 REX"
+]
 },
-"808-dying": {
+"808-dying-mp3": {
 "name": "Dying 808",
 "bpm": 128,
 "key": "Am",
 "n": 9,
-"midi": true
+"midi": true,
+"score": 200,
+"names": [
+"808 Dying"
+]
 }
 }

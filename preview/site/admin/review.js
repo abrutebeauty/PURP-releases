@@ -563,11 +563,24 @@
   }
   const gzBlob = async (o) => new Response(new Blob([JSON.stringify(o)]).stream().pipeThrough(new CompressionStream("gzip"))).blob();
   const v3Cache = new Map();
+  const v3Slug = (f) => String(kOf(f)).split("/").pop().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");   // same as v3_build_pack.py slug_of
+  const v3Blobs = new Map();   // shared wavetables / samples: admin/v3/_b/<hash>.json.gz, written as { "$b": hash } in the sound files
+  const v3Blob = (h) => { if (!v3Blobs.has(h)) v3Blobs.set(h, readJson("/admin/v3/_b/" + h + ".json.gz").catch((e) => { v3Blobs.delete(h); throw e; })); return v3Blobs.get(h); };
+  async function v3Unslim(d) {
+    const st = d && d.preset && d.preset.data && d.preset.data.settings; if (!st) return d;
+    if (Array.isArray(st.wavetables)) st.wavetables = await Promise.all(st.wavetables.map((w) => (w && w.$b ? v3Blob(w.$b) : w)));
+    if (st.sample && st.sample.$b) st.sample = await v3Blob(st.sample.$b);
+    return JSON.parse(JSON.stringify(d));   // own copy: blobs are shared between sounds
+  }
   async function v3Source(b, v) {   // { bpm, key, notes, preset, from } for this version, or null (no V3 preset for this sound yet)
     const c = ctx(b); if (!c) return null;
-    const own = v && v.v3, slug = String(kOf(c.s.file)).split("/").pop().replace(/\.[a-z0-9]+$/i, "");
-    let base = null; const bu = "/admin/v3/" + c.p.id + "/" + encodeURIComponent(slug) + ".json.gz";
-    try { base = v3Cache.has(bu) ? v3Cache.get(bu) : await readJson(bu); v3Cache.set(bu, base); } catch (e) { v3Cache.set(bu, null); }
+    const own = v && v.v3, dir = "/admin/v3/" + c.p.id + "/";
+    const get = async (slug) => { const bu = dir + slug + ".json.gz"; if (!v3Cache.has(bu)) { try { v3Cache.set(bu, await v3Unslim(await readJson(bu))); } catch (e) { v3Cache.set(bu, null); } } return v3Cache.get(bu); };
+    let base = await get(v3Slug(c.s.file));
+    if (!base) {   // the sound's file changed since the pack was built: find it by name in the pack's index
+      try { const ix = v3Cache.has(dir) ? v3Cache.get(dir) : await readJson(dir + "index.json"); v3Cache.set(dir, ix); const nm = String(c.s.name || "").toLowerCase();
+        const hit = ix && Object.keys(ix).find((k) => (ix[k].names || []).some((x) => String(x).toLowerCase() === nm)); if (hit) base = await get(hit); } catch (e) { v3Cache.set(dir, null); }
+    }
     if (own && own.preset) { try { const pr = await readJson(new URL(own.preset, location.href).href); return { bpm: own.bpm || (base && base.bpm), key: own.key || (base && base.key) || "", notes: own.notes || [], preset: pr, from: v.name }; } catch (e) { toast("That version's V3 sound did not load, opening the original"); } }
     return base ? Object.assign({ from: "" }, base) : null;
   }
