@@ -143,6 +143,7 @@ function ckGroup(k){k=String(k||"").toUpperCase().trim();return CK_GROUP[k]||CK_
 var CK_SRV=null,CK_DONE=false;
 function ckHas(l){return !!(l&&((l.ck&&Object.keys(l.ck).length)||(l.ckShapes&&l.ckShapes.length)))}
 function ckLookObj(){var adm=false;try{adm=ckAdm()}catch(e){}
+  try{if(window.ADM){var AL=window.ADM.look=window.ADM.look||{};if(CK_SRV&&ckHas(CK_SRV)&&!ckHas(AL)){if(CK_SRV.ck)AL.ck=JSON.parse(JSON.stringify(CK_SRV.ck));if(CK_SRV.ckShapes&&!(AL.ckShapes&&AL.ckShapes.length))AL.ckShapes=CK_SRV.ckShapes.slice()}}}catch(e){}
   try{if(adm&&window.ADM&&window.ADM.look)return window.ADM.look}catch(e){}
   if(CK_DONE&&CK_SRV)return CK_SRV;
   try{if(typeof LOOK!=="undefined"&&LOOK&&ckHas(LOOK))return LOOK}catch(e){}
