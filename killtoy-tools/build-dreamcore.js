@@ -64,7 +64,8 @@ for (const pack of packs) {
     at += beats + 4;   // one bar of air between patterns
   }
   const name = `${pack} - SYNTH`; const dir = slug(name);
-  const j = { name, bpm, key: list[0].siteKey || 'Dm', lengthBars: Math.ceil(at / 4) + 2, lanes };
+  // every KILLTOY song has a Beat lane from "reference"; there is no beat here, so it points at a file that isn't there and stays muted (never loaded)
+  const j = { name, bpm, key: list[0].siteKey || 'Dm', lengthBars: Math.ceil(at / 4) + 2, reference: 'no-beat.mp3', referenceMuted: true, lanes };
   fs.mkdirSync(path.join(outDir, dir), { recursive: true });
   fs.writeFileSync(path.join(outDir, dir, 'session.json'), JSON.stringify(j));
   made.push(dir); console.log('MADE', name, lanes.length, 'lanes,', at, 'beats,', bpm, 'BPM');
