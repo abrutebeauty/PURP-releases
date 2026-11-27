@@ -100,6 +100,13 @@
   .lbtab.on{background:#8b6cf6;color:#fff}
   .lbpane[hidden]{display:none}
   .lbmidi iframe{width:100%;height:min(640px,calc(100vh - 230px));border:1px solid #2a2733;background:#0b0a0e;display:block}
+  .lbmidi .lbsv{display:flex;align-items:center;gap:10px;margin:10px 0 0}
+  .lbmidi .lbsv .rvb{height:34px;padding:0 16px}
+  .lbmidi .lbsv .lbsave{background:#E4FF3A;color:#0b0a0e}
+  .lbmidi .lbsv .lbsave.busy{background:#1f1d27;color:#a29db0;pointer-events:none}
+  .lbmidi .lbsv .lbst{font:400 11px/1.3 var(--mono,monospace);letter-spacing:.06em;color:#a5a4ad}
+  .lbmidi .lbsv .lbst.dirty{color:#ff6b7a}
+  .lbmidi .lbsv .lbpn{margin-left:auto;font:800 10px/1 Inter,sans-serif;letter-spacing:.14em;color:#8b6cf6;text-transform:uppercase}
   .lbmidi .lbmn{color:#a5a4ad;font:400 11px/1.4 var(--mono,monospace);margin:8px 0 0;letter-spacing:.04em}
   .lbci{display:flex;align-items:center;gap:8px}
   .lbci input{flex:1;min-width:0;height:32px;box-sizing:border-box;background:#0b0a0e;border:1px solid #3a3446;color:#ecebf0;padding:0 10px;font:500 13px/1 Inter,sans-serif;outline:0;border-radius:0}
@@ -266,7 +273,7 @@
     const st = c && c.s.srcTag; if (st && st !== "?") return { c: SRC_OLD[st] || st, s: "" };
     const m = oBase(b).src; return m ? { c: m.c || "?", s: m.s || "" } : { c: "?", s: "" };
   }
-  function oMidi(b) { const o = rec(b); if (o && o.midi) return o.midi; return oBase(b).midi || {}; }
+  function oMidi(b) { const o = rec(b); if (o && o.midi && !Array.isArray(o.midi)) return o.midi; return oBase(b).midi || {}; }
   function midiLabel(m) {
     if (!m) return "?"; if (m.none) return "—";
     const p = []; if (m.song) p.push((m.pct === -1 ? "≈ " : (m.pct && m.pct < 100) ? "~" + m.pct + "% " : "1:1 ") + m.song);
@@ -540,16 +547,74 @@
   /* ---- big lightbox for one sound (Eman 26 Nov): press the code chip of a card in admin mode.
      Big waveform you can click to jump, play / pause, and comments with marked spots (the same comments as on the card). ---- */
   let lb = null;
-  function lbFlush(L) { try { const f = L.el.querySelector(".lbmidi iframe"), n = f && f.contentWindow.__ktNotes && f.contentWindow.__ktNotes(); if (n && JSON.stringify(n) !== JSON.stringify((rec(L.b) || {}).midi || [])) { rec(L.b, true).midi = n; save(); } } catch (e) {} }
-  function lbClose() { if (!lb) return; lbFlush(lb); if (lb.mw) removeEventListener("message", lb.mw); try { lb.au.pause(); } catch (e) {} cancelAnimationFrame(lb.raf); lb.el.remove(); lb = null; }
+  /* V3 EDITOR (Eman 27 Nov): the MIDI tab opens the sound's own TOY MACHINE V3 preset + MIDI (admin/v3/<pack>/<sound>.json.gz,
+     or the saved V3 state of the version you are on). SAVE renders it and adds it as a new version (V2, V3...), carrying
+     { v3: { preset (uploaded .json.gz), notes, bpm } } so the next edit starts from it. Edits that were not saved keep the
+     box open on the first close (a second close throws them away). V3_EDIT = false = the old V1 lab with saved notes. */
+  const V3_EDIT = true;
+  const lbDirty = (L) => !!(L && L.v3 && L.v3.dirty && !L.v3.saving);
+  function lbClose(force) { if (!lb) return;
+    if (!force && lbDirty(lb)) { if (!lb.v3.warned) { lb.v3.warned = true; toast("Not saved · press SAVE, or close again to throw it away"); const st = lb.el.querySelector(".lbst"); if (st) st.classList.add("dirty"); return; } } if (lb.mw) removeEventListener("message", lb.mw); if (lb.v3 && lb.v3.poll) clearInterval(lb.v3.poll); try { lb.au.pause(); } catch (e) {} cancelAnimationFrame(lb.raf); lb.el.remove(); lb = null; }
+  const v3Sig = (p) => { try { return JSON.stringify(p.data && p.data.settings ? Object.assign({}, p.data.settings, { wavetables: 0, sample: 0 }) : p) + "|" + JSON.stringify((p.data && p.data.settings && p.data.settings.wavetables) || "").length; } catch (e) { return ""; } };
+  async function readJson(u) {   // plain JSON or gzip bytes (the .json.gz files), whatever the server sends
+    const r = await fetch(u); if (!r.ok) throw new Error(r.status); const a = new Uint8Array(await r.arrayBuffer());
+    if (a[0] === 0x1f && a[1] === 0x8b) return JSON.parse(await new Response(new Blob([a]).stream().pipeThrough(new DecompressionStream("gzip"))).text());
+    return JSON.parse(new TextDecoder().decode(a));
+  }
+  const gzBlob = async (o) => new Response(new Blob([JSON.stringify(o)]).stream().pipeThrough(new CompressionStream("gzip"))).blob();
+  const v3Cache = new Map();
+  async function v3Source(b, v) {   // { bpm, key, notes, preset, from } for this version, or null (no V3 preset for this sound yet)
+    const c = ctx(b); if (!c) return null;
+    const own = v && v.v3, slug = String(kOf(c.s.file)).split("/").pop().replace(/\.[a-z0-9]+$/i, "");
+    let base = null; const bu = "/admin/v3/" + c.p.id + "/" + encodeURIComponent(slug) + ".json.gz";
+    try { base = v3Cache.has(bu) ? v3Cache.get(bu) : await readJson(bu); v3Cache.set(bu, base); } catch (e) { v3Cache.set(bu, null); }
+    if (own && own.preset) { try { const pr = await readJson(new URL(own.preset, location.href).href); return { bpm: own.bpm || (base && base.bpm), key: own.key || (base && base.key) || "", notes: own.notes || [], preset: pr, from: v.name }; } catch (e) { toast("That version's V3 sound did not load, opening the original"); } }
+    return base ? Object.assign({ from: "" }, base) : null;
+  }
+  function wavOf(chs, sr) {   // 16-bit stereo WAV
+    const n = chs[0].length, view = new DataView(new ArrayBuffer(44 + n * 4)), str = (o, t) => { for (let i = 0; i < t.length; i++) view.setUint8(o + i, t.charCodeAt(i)); };
+    str(0, "RIFF"); view.setUint32(4, 36 + n * 4, true); str(8, "WAVEfmt "); view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 2, true);
+    view.setUint32(24, sr, true); view.setUint32(28, sr * 4, true); view.setUint16(32, 4, true); view.setUint16(34, 16, true); str(36, "data"); view.setUint32(40, n * 4, true);
+    const L = chs[0], R = chs[1] || chs[0]; let o = 44; for (let i = 0; i < n; i++) { view.setInt16(o, Math.max(-1, Math.min(1, L[i])) * 32767, true); view.setInt16(o + 2, Math.max(-1, Math.min(1, R[i])) * 32767, true); o += 4; }
+    return new Blob([view], { type: "audio/wav" });
+  }
+  const rmsOf = (chs) => { let s = 0, n = 0; for (const ch of chs) for (let i = 0; i < ch.length; i++) { s += ch[i] * ch[i]; n++; } return Math.sqrt(s / Math.max(1, n)); };
+  async function upload(blob, name) {
+    const r = await fetch("/api/admin/upload?name=" + encodeURIComponent(name), { method: "POST", headers: { "content-type": blob.type || "application/octet-stream" }, body: blob }).catch(() => null);
+    const d = r && (await r.json().catch(() => ({}))); if (!d || !d.ok) throw new Error("upload failed"); return d.url;
+  }
+  async function v3Save(L) {   // render what is in the editor, match the loudness of the version it came from, upload, add it as the next version
+    if (!L || !L.v3 || L.v3.saving || !L.v3.init) return; const b = L.b, el = L.el, sv = el.querySelector(".lbsave"), st = el.querySelector(".lbst");
+    const say = (t, bad) => { if (st) { st.textContent = t; st.classList.toggle("dirty", !!bad); } };
+    L.v3.saving = true; if (sv) sv.classList.add("busy");
+    try {
+      const w = L.v3.f.contentWindow; say("RENDERING…");
+      const state = await w.__ktState(), r = await w.__ktRender(2);
+      const ac = new (window.AudioContext || window.webkitAudioContext)(), dec = await ac.decodeAudioData(await r.wav.arrayBuffer()); ac.close && ac.close();
+      const chs = [dec.getChannelData(0), dec.numberOfChannels > 1 ? dec.getChannelData(1) : dec.getChannelData(0)].map((x) => Float32Array.from(x));
+      let g = 1; const ref = L.refRms || 0, now = rmsOf(chs), pk = Math.max(...chs.map((ch) => ch.reduce((m, x) => Math.max(m, Math.abs(x)), 0)));
+      if (now > 1e-6) g = ref > 1e-6 ? ref / now : 0.25 / now;   // same loudness as the sound it replaces
+      if (pk * g > 0.97) g = 0.97 / pk;
+      for (const ch of chs) for (let i = 0; i < ch.length; i++) ch[i] *= g;
+      const c = ctx(b), base = String(kOf(c.s.file)).split("/").pop().replace(/\.[a-z0-9]+$/i, ""), n = verList(b).length + 1;
+      say("UPLOADING…");
+      const fileUrl = await upload(wavOf(chs, dec.sampleRate), base + "-v" + n + ".wav");
+      const presetUrl = state.preset ? await upload(await gzBlob(state.preset), base + "-v" + n + "-v3.json.gz") : null;
+      const o = rec(b, true), id = "v" + n + "-" + uid();
+      o.vers.push({ id, name: "V" + n, file: fileUrl, at: Date.now(), v3: { preset: presetUrl, notes: state.notes, bpm: state.bpm, key: (L.v3.init && L.v3.init.key) || "", from: selV(b) } });
+      save(); L.v3.dirty = false; L.v3.saving = false;
+      applyVer(b, id); sync(b); toast("Saved as V" + n + " · TOY MACHINE V3");
+      lbOpen(b);   // reopen on the new version: its waveform, ready to play and comment
+    } catch (e) { L.v3.saving = false; if (sv) sv.classList.remove("busy"); say("NOT SAVED · " + (e && e.message || e), true); }
+  }
   async function lbOpen(b) {
-    lbClose(); try { if (typeof audio !== "undefined") audio.pause(); } catch (e) {}
+    lbClose(true); try { if (typeof audio !== "undefined") audio.pause(); } catch (e) {}
     const c = ctx(b); if (!c) return;
     const v = verList(b).find((x) => x.id === selV(b)) || verList(b)[0], sp = spr(v.file), url = new URL(sp.u, location.href).href;
     const chip = (b.querySelector(".ck-chip") || {}).textContent || "";
     const el = document.createElement("div"); el.className = "rvlb";
     el.innerHTML = `<div class="lbx"><div class="lbh"><b class="lbc">${esc(chip)}</b><span class="lbn">${esc(c.s.name || "")}</span><span class="lbv">${esc(v.name)}</span><span class="rvsp"></span><em class="rvb rvsq" data-lb="x">&times;</em></div>
-      <div class="lbtabs"><em class="rvb lbtab on" data-lb="tab" data-tab="wave">WAVEFORM + COMMENTS</em><em class="rvb lbtab" data-lb="tab" data-tab="midi">MIDI · TOY MACHINE V1</em></div>
+      <div class="lbtabs"><em class="rvb lbtab on" data-lb="tab" data-tab="wave">WAVEFORM + COMMENTS</em><em class="rvb lbtab" data-lb="tab" data-tab="midi">${V3_EDIT ? "MIDI + TOY MACHINE V3" : "MIDI · TOY MACHINE V1"}</em></div>
       <div class="lbpane" data-pane="wave"><div class="lbw"><canvas></canvas><div class="lbov"></div><i class="lbph"></i></div>
       <div class="lbt"><em class="rvb lbpl" data-lb="play">PLAY</em><span class="lbtm">0:00.0 / 0:00.0</span><span class="rvsp"></span><em class="rvb lbad" data-lb="add">+ COMMENT AT PLAYHEAD</em></div>
       <div class="lbl"></div></div>
@@ -598,11 +663,27 @@
       const host = el.querySelector(".lbmidi"); if (host.firstChild) return;
       const m = /(\d{2,3})\s*[·.,]\s*([A-G][#b]?m?)/.exec(c.s.meta || "") || [], o = rec(b);
       const f = document.createElement("iframe"); f.src = "/admin/kt/lab.html?go=1"; f.allow = "autoplay; midi"; host.appendChild(f);
-      host.insertAdjacentHTML("beforeend", '<p class="lbmn">Plays through TOY MACHINE V1 on a neutral Init patch (pick any sound in the VST tab). Your notes are saved with this sound.</p>');
+      const legacy = (o && (Array.isArray(o.midi) ? o.midi : o.notes)) || [];
+      if (!V3_EDIT) host.insertAdjacentHTML("beforeend", '<p class="lbmn">Plays through TOY MACHINE V1 on a neutral Init patch (pick any sound in the VST tab). Your notes are saved with this sound.</p>');
+      else host.insertAdjacentHTML("beforeend", '<div class="lbsv"><em class="rvb lbsave busy" data-lb="v3save">SAVE AS NEW VERSION</em><span class="lbst">LOADING…</span><span class="lbpn"></span></div>');
+      const src = V3_EDIT ? v3Source(b, v) : Promise.resolve(null);
+      L.v3 = { f, init: null, dirty: false };
       L.mw = (e) => { const d = e.data; if (!d || e.source !== f.contentWindow) return;
-        if (d.kt === "hello") f.contentWindow.postMessage({ kt: "init", bpm: m[1] || 120, key: m[2] || "", notes: (o && o.midi) || [] }, "*");
-        if (d.kt === "notes") { const rr = rec(b, true); rr.midi = d.notes; save(); } };
+        if (d.kt === "hello" && !L.v3.sent) { L.v3.sent = true; src.then((S) => {
+          const init = S ? { kt: "init", bpm: S.bpm || m[1] || 120, key: S.key || m[2] || "", notes: S.notes || [], preset: S.preset || null }
+                         : { kt: "init", bpm: m[1] || 120, key: m[2] || "", notes: legacy };
+          L.v3.init = init; L.v3.src = S; f.contentWindow.postMessage(init, "*");
+          const pn = host.querySelector(".lbpn"); if (pn) pn.textContent = S && S.preset ? "THE PRESET · " + (S.preset.name || "") + (S.from ? " · " + S.from : "") : "NO V3 PRESET YET · INIT";
+        }); }
+        if (d.kt === "ready") { const sv = host.querySelector(".lbsave"), st = host.querySelector(".lbst"); if (sv) sv.classList.remove("busy"); if (st) st.textContent = "READY"; L.v3.base = JSON.stringify(d.notes || (L.v3.init && L.v3.init.notes) || []); }
+        if (d.kt === "error") { const st = host.querySelector(".lbst"); if (st) { st.textContent = "DID NOT LOAD · " + (d.msg || ""); st.classList.add("dirty"); } }
+        if (d.kt === "notes") { if (!V3_EDIT) { const rr = rec(b, true); rr.notes = d.notes; save(); return; }
+          L.v3.dirty = JSON.stringify(d.notes) !== JSON.stringify((L.v3.init && L.v3.init.notes) || []) || L.v3.dirty; const st = host.querySelector(".lbst"); if (st && L.v3.dirty) st.textContent = "EDITED · NOT SAVED"; } };
       addEventListener("message", L.mw);
+      if (V3_EDIT) L.v3.poll = setInterval(async () => {   // sound edits (VST tab) count as edits too
+        if (lb !== L) return clearInterval(L.v3.poll); if (L.v3.dirty || !L.v3.init || L.v3.saving) return;
+        try { const s2 = await f.contentWindow.__ktState(); if (s2 && s2.preset && L.v3.init.preset && v3Sig(s2.preset) !== v3Sig(L.v3.init.preset)) { L.v3.dirty = true; const st = host.querySelector(".lbst"); if (st) st.textContent = "EDITED · NOT SAVED"; } } catch (e) { /* not ready */ }
+      }, 1500);
     };
     el.addEventListener("click", (e) => {
       const t = e.target.closest("[data-lb]"); if (e.target === el) return lbClose();
@@ -610,6 +691,7 @@
       if (!t && w && !e.target.closest(".lbm")) { const r = cv.getBoundingClientRect(); seek((e.clientX - r.left) / r.width); if (au.paused) au.play().catch(() => {}); return; }
       if (!t) return; const k = t.dataset.lb;
       if (k === "x") return lbClose();
+      if (k === "v3save") return v3Save(L);
       if (k === "tab") return tab(t.dataset.tab);
       if (k === "play") { if (au.paused) { if (frac() >= 0.995) seek(0); au.play().catch(() => {}); } else au.pause(); return; }
       if (k === "add") return addAt(L.dur ? frac() : null);
@@ -622,7 +704,7 @@
     el.addEventListener("focusout", (e) => { const i = e.target.closest && e.target.closest(".lbci input"); if (i && lb === L) commit(i.closest(".lbci").dataset.id, i.value); });
     marks(); L.raf = requestAnimationFrame(tick); el.tabIndex = -1; el.focus();
     try { const buf = await (await fetch(url)).arrayBuffer(), ac = new (window.AudioContext || window.webkitAudioContext)(), dec = await ac.decodeAudioData(buf); ac.close && ac.close();
-      if (lb !== L) return; L.dur = sp.b != null ? sp.b - L.a : dec.duration; L.peaks = peaksFor(dec, Math.max(300, Math.round(cv.clientWidth * (devicePixelRatio || 1) / (devicePixelRatio || 1)))); marks();
+      if (lb !== L) return; L.dur = sp.b != null ? sp.b - L.a : dec.duration; try { const sr = dec.sampleRate, i0 = Math.floor(L.a * sr), i1 = Math.min(dec.length, Math.floor((L.a + L.dur) * sr)); L.refRms = rmsOf([...Array(dec.numberOfChannels)].map((_, k) => dec.getChannelData(k).subarray(i0, i1))); } catch (e) {} L.peaks = peaksFor(dec, Math.max(300, Math.round(cv.clientWidth * (devicePixelRatio || 1) / (devicePixelRatio || 1)))); marks();
     } catch (e) { if (lb === L) { L.dur = L.dur || 0; } }
   }
   window.addEventListener("click", (e) => {

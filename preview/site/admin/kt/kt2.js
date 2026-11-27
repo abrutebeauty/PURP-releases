@@ -11,6 +11,7 @@
   // project opens (184 -> 242 px) and no grip bar on the footer edge (hovering the edge still shows the resize cursor).
   // KT2_HEAD_OLD = 52 px header, KT2_FOOT_OLD = 184 px footer, KT2_GRIP_SHOW = the little bar back.
   if (!window.KT2_HEAD_OLD) html.classList.add("k2-head-tall");
+  if (window.KT2_GLOW_OLD) html.classList.add("k2-glow-old");   // speed pass 27 Nov: pulsing glows that repaint (kt2.css, kt2-explain.js)
   if (!window.KT2_FOOT_OLD) html.classList.add("k2-foot-tall");
   if (!window.KT2_GRIP_SHOW) html.classList.add("k2-grip-bare");
   // Eman, 15 Nov 00:24: footer default 205 px, top bar contents ~18% bigger (KT2_FOOT205_OLD, KT2_TOPBIG_OLD)
@@ -1017,6 +1018,7 @@
   function volDrag(e, c, node, tag) {
     if (e.button !== 0) return;
     const canvas = node.querySelector("canvas"), y0 = e.clientY, lin0 = dbToLin(c.gain || 0);
+    if (window.clipLive) clipLive(canvas);   // the picture squashes live while dragging
     let db = c.gain || 0;
     node.classList.add("k2-voldrag");
     liveDrag(e, (ev) => {

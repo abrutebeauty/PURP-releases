@@ -52,7 +52,13 @@ window.KT2Explain = (function () {
     box-shadow: 0 0 0 3px rgba(139, 108, 255, 0.18), 0 0 18px rgba(139, 108, 255, 0.45); animation: k2x-pulse 1.6s ease-in-out infinite; }
   @keyframes k2x-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
   @keyframes k2x-pulse { 50% { box-shadow: 0 0 0 5px rgba(139, 108, 255, 0.1), 0 0 26px rgba(139, 108, 255, 0.6); } }
-  @media (prefers-reduced-motion: reduce) { .k2x-tip, .k2x-ring { animation: none; } }
+  /* speed pass 27 Nov: a pulsing box-shadow repaints the whole screen 60 times a second (with 100 patterns that was 60% of
+     the idle work). The glow now fades in and out on its own layer (only its see-through changes): the same pulse, no repaint.
+     window.KT2_GLOW_OLD = the old pulse. */
+  html:not(.k2-glow-old) .k2x-ring { animation: none; }
+  html:not(.k2-glow-old) .k2x-ring::after { content: ""; position: absolute; inset: -1.5px; pointer-events: none; box-shadow: 0 0 0 5px rgba(139, 108, 255, 0.1), 0 0 26px rgba(139, 108, 255, 0.6); opacity: 0; animation: k2x-pulse2 1.6s ease-in-out infinite; }
+  @keyframes k2x-pulse2 { 50% { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .k2x-tip, .k2x-ring, .k2x-ring::after { animation: none; } }
   /* the tours in KT2 colours: square, purple buttons (yellow stays for marker, loop, selection) */
   html.k2x-on .kt-card, html.k2x-on .kt-invite, html.k2x-on .kt-spot, html.k2x-on .kt-back, html.k2x-on .kt-next, html.k2x-on .kt-act, html.k2x-on .kt-x { border-radius: 0; }
   html.k2x-on .kt-next { background: #8b6cff; color: #fff; }

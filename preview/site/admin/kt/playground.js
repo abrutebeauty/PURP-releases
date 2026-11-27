@@ -615,8 +615,10 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
             clips: parts.map((x) => ({ id: id(), name: x.name || l.name, kind: "midi", start: x.start * spb, length: x.beats * spb, beats: x.beats, offset: 0, take: 0, takes: 0,
                       delay: l.delay || 0, lowShelf: x.lowShelf || 0, notes: x.notes.map((n) => ({ ...n })),
                       plugins: [{ id: id(), name: l.instrument, type: "vst", enabled: true, instrument: true, params: [], ...(l.synth ? { synth: l.synth } : {}),
-                                 ...(/toy machine/i.test(l.instrument || "") ? { toy: { id: l.preset || (l.toyPreset && l.toyPreset.basedOn) || null, preset: l.toyPreset ? JSON.parse(JSON.stringify(l.toyPreset)) : null, song: 1 } } : {}),
+                                 ...(/toy machine/i.test(l.instrument || "") && !/toy machine v[23]/i.test(l.instrument || "") ? { toy: { id: l.preset || (l.toyPreset && l.toyPreset.basedOn) || null, preset: l.toyPreset ? JSON.parse(JSON.stringify(l.toyPreset)) : null, song: 1 } } : {}),
                                  ...(/toy keys/i.test(l.instrument || "") && window.ToyKeys ? { toy: { preset: l.toyPreset ? JSON.parse(JSON.stringify(l.toyPreset)) : ToyKeys.preset(l.preset) || ToyKeys.preset(ToyKeys.DEFAULT) } } : {}),
+                                 ...(/toy machine v2/i.test(l.instrument || "") && window.TM2Web ? { toy: { preset: TM2Web.isTm2(l.toyPreset) ? JSON.parse(JSON.stringify(l.toyPreset)) : TM2Web.preset(TM2Web.DEFAULT) } } : {}),   // TOY MACHINE V2 (26 Nov)
+                                 ...(/toy machine v3/i.test(l.instrument || "") && window.TM3Web ? { toy: { preset: TM3Web.isTm3(l.toyPreset) ? JSON.parse(JSON.stringify(l.toyPreset)) : TM3Web.preset(TM3Web.DEFAULT) } } : {}),   // TOY MACHINE V3 (27 Nov), KT2_TM3_OFF
                                  // TOY GTR (13 Nov): { "instrument": "TOY GTR", "preset": "Chorus Clean" } or an inline "toyPreset"
                                  ...(/toy gtr/i.test(l.instrument || "") && window.ToyGtr ? { toy: { preset: l.toyPreset ? JSON.parse(JSON.stringify(l.toyPreset)) : ToyGtr.preset(l.preset) || ToyGtr.preset(ToyGtr.DEFAULT) } } : {}),
                                  ...(l.kit ? { kit: Object.fromEntries(Object.entries(l.kit).map(([p, f]) => [p, keyOf(f.file || f)])),
@@ -2016,6 +2018,21 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
       }
       // a STACKED synth (Eman, 1 Nov): this lane has no patterns of its own; it plays its main
       // lane's patterns with its own TOY MACHINE, octave, effects and fader, all at the same time
+      // a stacked synth that isn't a TOY MACHINE (ANY SYNTH STACKS, 26 Nov): it plays the same patterns through its own
+      // instrument (u wanna, KILLTOY Synth, 4OSC/Serum stand-in...), its own octave, effects and fader
+      const LX = t.layerOf && !window.KT2_LAYER_ANY_OLD && !tmPlugins(t).length ? (t.plugins || []).find((q) => q.instrument && !q.kit) : null;
+      if (LX && LX.enabled !== false) {
+        const m = S.tracks.find((x) => x.id === t.layerOf);
+        for (const c of m ? tempoClips(m) : []) {
+          const own = t.linked === false;
+          if (c.kind !== "midi" || c.active === false || c.plugins.some((q) => q.instrument && q.kit) || c.start + c.length <= pos) continue;
+          const sh = 12 * (t.oct || 0), src = own ? (c.stack && c.stack[t.id]) || [] : c.notes || [];
+          const cc = { ...c, plugins: [LX], gain: 0, fadeIn: 0, fadeOut: 0, takeNotes: undefined, notes: src.map((n) => ({ ...n, pitch: Math.max(0, Math.min(127, n.pitch + sh)) })) };
+          const wait = (when + (c.start - pos) - BUILD_AHEAD - ctx.currentTime) * 1000;
+          if (wait <= 0) playMidi(cc, pos, when, laneIn);
+          else laterTimers.push(setTimeout(() => playMidi(cc, pos, when, laneIn), wait));
+        }
+      }
       if (t.layerOf) {
         const m = S.tracks.find((x) => x.id === t.layerOf), L = tmPlugins(t)[0];
         if (m && L && L.enabled !== false) for (const c of tempoClips(m)) {
@@ -2381,7 +2398,9 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
                       { key: "builtin:toydrums", name: "KILLDRUM", group: "KILLTOY", instrument: true },
                       { key: "builtin:blob", name: "BLOB", group: "KILLTOY", instrument: true },
                       { key: "builtin:toykeys", name: "TOY KEYS", group: "KILLTOY", instrument: true },
-                      { key: "builtin:toygtr", name: "TOY GTR", group: "KILLTOY", instrument: true }];   // TOY GTR (13 Nov), KT2_TOYGTR_OFF hides it
+                      { key: "builtin:toygtr", name: "TOY GTR", group: "KILLTOY", instrument: true },
+                      { key: "builtin:toymachine2", name: "TOY MACHINE V2", group: "KILLTOY", instrument: true },
+                      { key: "builtin:toymachine3", name: "TOY MACHINE V3", group: "KILLTOY", instrument: true }];   // TOY MACHINE V3 (27 Nov, playground/tm3-web.js), KT2_TM3_OFF hides it; TOY MACHINE V2 (26 Nov, playground/tm2-web.js), KT2_TM2_OFF hides it   // TOY GTR (13 Nov), KT2_TOYGTR_OFF hides it
   // A TOY DRUMS lane made here (not from a song) plays a starter kit from the Library's remade
   // one-shots, and its first clip starts with a simple beat to change.
   // KILLDRUM's nine pads: kick 36, 808 35, perc 37, snare 38, clap 39, closed hat 42, open hat 46, FX 49, texture 51.
@@ -2420,7 +2439,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
   // dB taken off on lanes made here (t.lvl), measured with bounceMix (13.7, 11.0 and 16.3 LUFS before)
   const UW_STANDARD_DB = { "808": -5.3, lead: -10.0, kt: -6.7 };
   const origListPlugins = handlers.listPlugins;
-  handlers.listPlugins = () => [...origListPlugins(), ...UW_PLUGINS.filter((x) => x.key !== "builtin:toygtr" || (!window.KT2_TOYGTR_OFF && window.ToyGtr))];
+  handlers.listPlugins = () => [...origListPlugins(), ...UW_PLUGINS.filter((x) => (x.key !== "builtin:toygtr" || (!window.KT2_TOYGTR_OFF && window.ToyGtr)) && (x.key !== "builtin:toymachine2" || (!window.KT2_TM2_OFF && window.TM2Web && window.ToyMachine2)) && (x.key !== "builtin:toymachine3" || (!window.KT2_TM3_OFF && window.TM3Web && window.ToyMachine3)))];
   for (const name of ["newInstrumentLane", "setInstrument"]) {
     const orig = handlers[name];
     handlers[name] = (args) => {
@@ -2440,12 +2459,14 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
           if (p.key === "builtin:toydrums") { if (!x.kit) Object.assign(x, starterKit()); loadKit(x); } else { delete x.kit; uwEnsure(x); }
           // TOY KEYS (Eman, 7 Nov): its own preset; swapping away from it gives TOY MACHINE its own sound back.
           // TOY GTR (13 Nov) works the same way with its own presets (keys <-> guitar swaps the preset too).
-          const wasKeys = !!(x.toy && window.ToyKeys && ToyKeys.isKeys(x.toy.preset)), wasGtr = !!(x.toy && window.ToyGtr && ToyGtr.isGtr(x.toy.preset));
+          const wasKeys = !!(x.toy && window.ToyKeys && ToyKeys.isKeys(x.toy.preset)), wasGtr = !!(x.toy && window.ToyGtr && ToyGtr.isGtr(x.toy.preset)), wasTm2 = !!(x.toy && window.TM2Web && TM2Web.isTm2(x.toy.preset)), wasTm3 = !!(x.toy && window.TM3Web && TM3Web.isTm3(x.toy.preset));
           if (p.key === "builtin:toykeys") { if (!wasKeys) x.toy = { preset: tkFirst || (tkFirst = ToyKeys.preset(args.preset || ToyKeys.DEFAULT)) }; }
           else if (p.key === "builtin:toygtr" && window.ToyGtr) { if (!wasGtr) x.toy = { preset: tkFirst || (tkFirst = ToyGtr.preset(args.preset || ToyGtr.DEFAULT) || ToyGtr.preset(ToyGtr.DEFAULT)) }; }
-          else if (wasKeys || wasGtr) delete x.toy;
+          else if (p.key === "builtin:toymachine2" && window.TM2Web) { if (!wasTm2) x.toy = { preset: tkFirst || (tkFirst = TM2Web.preset(TM2Web.DEFAULT)) }; }
+          else if (p.key === "builtin:toymachine3" && window.TM3Web) { if (!wasTm3) x.toy = { preset: tkFirst || (tkFirst = TM3Web.preset(TM3Web.DEFAULT)) }; }
+          else if (wasKeys || wasGtr || wasTm2 || wasTm3) delete x.toy;
         }));
-        if (p.key === "builtin:toykeys" || p.key === "builtin:toygtr") { const tps = t.clips.flatMap((c) => c.plugins).filter((x) => x.instrument && x.toy); tps.forEach((q) => (q.toy = tps[0].toy)); }
+        if (p.key === "builtin:toykeys" || p.key === "builtin:toygtr" || p.key === "builtin:toymachine2" || p.key === "builtin:toymachine3") { const tps = t.clips.flatMap((c) => c.plugins).filter((x) => x.instrument && x.toy); tps.forEach((q) => (q.toy = tps[0].toy)); }
         for (const [pid, k] of [...tmKeys]) if (k.laneId === t.id) handlers.toyMachineClose({ pluginId: pid });   // its keyboard engine was the old instrument
         changed();
       }
@@ -2458,10 +2479,10 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     const t = S.tracks.find((x) => x.id === args.trackId), c = t && t.clips[t.clips.length - 1];
     const other = t && t.clips.flatMap((x) => x.plugins).find((x) => x.instrument && x.params && x.params.length && c && !c.plugins.includes(x));
     if (c && t && t.face === "blob") c.plugins.forEach((x) => { if (x.instrument) x.face = "blob"; });   // a BLOB lane's clips play TOY MACHINE
-    if (c && t && /toy keys|toy gtr/i.test(t.instrument || "")) {   // a TOY KEYS (or TOY GTR) lane's new pattern plays the lane's sound
-      const gtr = /toy gtr/i.test(t.instrument || "") && window.ToyGtr, E = gtr ? window.ToyGtr : window.ToyKeys;
+    if (c && t && (/toy keys|toy gtr/i.test(t.instrument || "") || (/toy machine v2/i.test(t.instrument || "") && window.TM2Web) || (/toy machine v3/i.test(t.instrument || "") && window.TM3Web))) {   // a TOY KEYS (or TOY GTR, TOY MACHINE V2) lane's new pattern plays the lane's sound
+      const gtr = /toy gtr/i.test(t.instrument || "") && window.ToyGtr, v2 = /toy machine v2/i.test(t.instrument || ""), v3 = /toy machine v3/i.test(t.instrument || ""), E = v3 ? window.TM3Web : v2 ? window.TM2Web : gtr ? window.ToyGtr : window.ToyKeys;
       const had = t.clips.flatMap((x) => x.plugins).find((x) => x.instrument && x.toy && !c.plugins.includes(x));
-      c.plugins.forEach((x) => { if (x.instrument) { x.name = gtr ? "TOY GTR" : "TOY KEYS"; x.toy = had ? had.toy : { preset: E.preset(E.DEFAULT) }; } });
+      c.plugins.forEach((x) => { if (x.instrument) { x.name = v3 ? "TOY MACHINE V3" : v2 ? "TOY MACHINE V2" : gtr ? "TOY GTR" : "TOY KEYS"; x.toy = had ? had.toy : { preset: E.preset(E.DEFAULT) }; } });
     }
     if (c) c.plugins.forEach((x) => { if (uwEnsure(x) && other) { x.params = other.params.map((q) => ({ ...q })); if (other.synth) x.synth = other.synth; } });
     if (c && t && /^(TOY DRUMS|KILLDRUM)$/.test(t.instrument || "")) { // the lane's kit (or the starter kit), and a beat in its first clip
@@ -2787,13 +2808,14 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
   // gets a TOY KEYS engine (same calls), everything else the TOY MACHINE wasm.
   // TOY GTR (playground/toy-gtr.js, 13 Nov) is a web engine the same way (preset engine "toygtr"):
   // isTK = "plays on a web engine (TOY KEYS or TOY GTR)", webEng = which one.
-  const webEng = (pr) => (!pr ? null : window.ToyGtr && ToyGtr.isGtr(pr) ? window.ToyGtr : window.ToyKeys && ToyKeys.isKeys(pr) ? window.ToyKeys : null);
+  // TOY MACHINE V2 (playground/tm2-web.js, 26 Nov) is one too (preset engine "tm2"); window.KT2_TM2_OFF hides its tile.
+  const webEng = (pr) => (!pr ? null : window.TM3Web && TM3Web.isTm3(pr) ? window.TM3Web : window.TM2Web && TM2Web.isTm2(pr) ? window.TM2Web : window.ToyGtr && ToyGtr.isGtr(pr) ? window.ToyGtr : window.ToyKeys && ToyKeys.isKeys(pr) ? window.ToyKeys : null);
   const isTK = (pr) => !!webEng(pr);
-  const isTKPlug = (p) => !!p && p.instrument && /toy keys|toy gtr/i.test(p.name || "");
-  const plugEng = (p) => (/toy gtr/i.test((p && p.name) || "") && window.ToyGtr ? window.ToyGtr : window.ToyKeys);   // the web engine a TOY KEYS / TOY GTR plugin defaults to
+  const isTKPlug = (p) => !!p && p.instrument && (/toy keys|toy gtr/i.test(p.name || "") || (/toy machine v2/i.test(p.name || "") && !!window.TM2Web) || (/toy machine v3/i.test(p.name || "") && !!window.TM3Web));
+  const plugEng = (p) => (/toy machine v3/i.test((p && p.name) || "") && window.TM3Web ? window.TM3Web : /toy machine v2/i.test((p && p.name) || "") && window.TM2Web ? window.TM2Web : /toy gtr/i.test((p && p.name) || "") && window.ToyGtr ? window.ToyGtr : window.ToyKeys);   // the web engine a TOY KEYS / TOY GTR plugin defaults to
   // which engine an engine object is / a preset wants: "keys", "gtr" or "tm" (a swap between them makes a new engine)
-  const engKind = (s) => (s.isToyGtr ? "gtr" : s.isToyKeys ? "keys" : "tm");
-  const prKind = (pr) => { const E = webEng(pr); return !E ? "tm" : E === window.ToyGtr ? "gtr" : "keys"; };
+  const engKind = (s) => (s.isTm3 ? "tm3" : s.isTm2 ? "tm2" : s.isToyGtr ? "gtr" : s.isToyKeys ? "keys" : "tm");
+  const prKind = (pr) => { const E = webEng(pr); return !E ? "tm" : E === window.TM3Web ? "tm3" : E === window.TM2Web ? "tm2" : E === window.ToyGtr ? "gtr" : "keys"; };
   function tmCreate(opts) { const E = webEng(opts.preset); return E ? E.load(ctx).create(opts) : tmApi.create(opts); }
   var tmPresets = tmPresets || new Map();   // (var: lanes are read before this part runs) preset id -> preset object (fetched from toy-machine/presets/)
   let tmIndex = null;
@@ -3125,6 +3147,15 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     for (const pr of new Set(tmPlugins(f.t).map(tmPresetOf))) if (pr && pr.macros && pr.macros[index]) pr.macros[index].value = value;
     for (const s of tmSynths(f.t)) s.setMacro(index, value);
     return { ok: true };
+  };
+  // TOY MACHINE V3 window knobs (tm3-web.js, KT2_TM3_UI_OLD = old window): one settings key at a time, live on the engine and in the lane's saved preset
+  handlers.toyMachineSetParam = ({ pluginId, key, value }) => {
+    const f = tmFind(pluginId);
+    if (!f || typeof key !== "string" || !(value - value === 0)) return { ok: false };
+    for (const pr of new Set(tmPlugins(f.t).map(tmPresetOf))) if (pr && pr.engine === "tm3" && pr.data) (pr.data.settings || (pr.data.settings = {}))[key] = value;
+    let n = 0;
+    for (const s of tmSynths(f.t)) if (s.isTm3 && s.setParam) { s.setParam(key, value); n++; }
+    return { ok: true, engines: n };
   };
   handlers.toyMachineSetPad = ({ pluginId, index, x, y, star }) => {
     const f = tmFind(pluginId);
@@ -4036,7 +4067,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
   handlers.openPlugin = ({ pluginId }) => {
     const p = [...S.master.plugins, ...(S.returns || []).flatMap((r) => r.plugins), ...S.tracks.flatMap((t) => [...(t.plugins || []), ...t.clips.flatMap((c) => c.plugins)])].find((x) => x.id === pluginId);
     if (!p) return { error: "That plugin isn't there any more." };
-    if (isTM(p)) return { ok: true, toyMachine: true, blobFace: p.face === "blob", toyKeys: isTKPlug(p) && !/toy gtr/i.test(p.name || "") && !!window.ToyKeys, toyGtr: /toy gtr/i.test(p.name || "") && !!window.ToyGtr };
+    if (isTM(p)) return { ok: true, toyMachine: true, blobFace: p.face === "blob", toyKeys: isTKPlug(p) && !/toy gtr|toy machine v[23]/i.test(p.name || "") && !!window.ToyKeys, toyGtr: /toy gtr/i.test(p.name || "") && !!window.ToyGtr, toyMachine2: /toy machine v2/i.test(p.name || "") && !!window.TM2Web, toyMachine3: /toy machine v3/i.test(p.name || "") && !!window.TM3Web };
     if (isBLOB(p)) return window.BlobEngine ? { ok: true, blob: true } : { error: "BLOB didn't load on this page." };
     if (p.type === "kttoytune") return window.ToyTuneUI ? { ok: true, toyTune: true } : { error: "TOYTUNE didn't load on this page." };
     if (p.type === "kttoyvox") return window.ToyVoxUI ? { ok: true, toyVox: true } : { error: "TOY VOX didn't load on this page." };
@@ -4831,6 +4862,8 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     const needTM = T.list.some(({ c }) => c.kind === "midi" && c.plugins.some(isTM));
     await off.audioWorklet.addModule(peekTapUrl);
     const api = needTM && window.ToyMachine ? await window.ToyMachine.load(off, "toy-machine.wasm").catch(() => null) : null;
+    if (needTM && window.TM2Web && window.ToyMachine2) await TM2Web.load(off).ready;   // TOY MACHINE V2 engines are made synchronously in this context
+    if (needTM && window.TM3Web && window.ToyMachine3) await TM3Web.load(off).ready;   // so are V3's
     for (const { c } of T.list) for (const p of c.plugins || []) {
       if (!isTM(p)) continue;
       if (p.toy && p.toy.id && !p.toy.preset && !tmPresets.has(p.toy.id.replace(/\.json$/, ""))) await tmFetchPreset(p.toy.id).catch(() => null);
@@ -4938,6 +4971,8 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     const off = new OfflineAudioContext(2, N, SR);
     const needTM = T.list.some(({ c }) => c.kind === "midi" && c.plugins.some(isTM));
     const api = needTM && window.ToyMachine ? await window.ToyMachine.load(off, "toy-machine.wasm").catch(() => null) : null;
+    if (needTM && window.TM2Web && window.ToyMachine2) await TM2Web.load(off).ready;   // TOY MACHINE V2 engines are made synchronously in this context
+    if (needTM && window.TM3Web && window.ToyMachine3) await TM3Web.load(off).ready;   // so are V3's
     for (const { c } of T.list) for (const p of c.plugins || []) {
       if (!isTM(p)) continue;
       if (p.toy && p.toy.id && !p.toy.preset && !tmPresets.has(p.toy.id.replace(/\.json$/, ""))) await tmFetchPreset(p.toy.id).catch(() => null);
@@ -5316,9 +5351,19 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     if (main && main.layerOf) main = S.tracks.find((t) => t.id === main.layerOf) || main;
     if (!main) return { error: "Pick a MIDI pattern first." };
     const blob = key === "builtin:blob", mine = S.tracks.filter((t) => t.layerOf === main.id);
-    const plug = { id: id(), name: "TOY MACHINE", type: "vst", enabled: true, instrument: true, params: [], ...(blob ? { face: "blob" } : {}) };
+    // ANY SYNTH STACKS (Eman, 26 Nov: "with any synth ... you can still add several serums"): a stacked synth can be any
+    // instrument in the list (u wanna, KILLTOY Synth, TOY KEYS, TOY GTR, 4OSC, Serum...), not only TOY MACHINE / BLOB.
+    // KT2_LAYER_ANY_OLD = every stacked synth is a TOY MACHINE (or BLOB)
+    const pick = !window.KT2_LAYER_ANY_OLD && key && !blob && key !== "builtin:toymachine" && key !== "builtin:toydrums"
+      ? (handlers.listPlugins() || []).find((x) => x.key === key && x.instrument) : null;
+    const plug = { id: id(), name: pick ? pick.name : "TOY MACHINE", type: "vst", enabled: true, instrument: true, params: [], ...(blob ? { face: "blob" } : {}) };
+    if (pick) {
+      if (key === "builtin:toykeys" && window.ToyKeys) plug.toy = { preset: ToyKeys.preset(ToyKeys.DEFAULT) };
+      else if (key === "builtin:toygtr" && window.ToyGtr) plug.toy = { preset: ToyGtr.preset(ToyGtr.DEFAULT) };
+      else uwEnsure(plug);
+    }
     const COLS = window.KT2_RED_CLIPS_OLD ? ["#4f8cff", "#2fd4e8", "#ff5fa8", "#7dff5a", "#ff3b4e", "#e4ff3a"] : ["#4f8cff", "#2fd4e8", "#ff5fa8", "#7dff5a", "#b07cff", "#5eead4"], used = new Set(mine.map((x) => x.color));
-    const L = { id: id(), name: `${main.name} \u00b7 ${mine.length + 2}`, kind: "inst", role: main.role || "inst", instrument: blob ? "BLOB" : "TOY MACHINE",
+    const L = { id: id(), name: `${main.name} \u00b7 ${mine.length + 2}`, kind: "inst", role: main.role || "inst", instrument: blob ? "BLOB" : pick ? pick.name : "TOY MACHINE",
                 layerOf: main.id, oct: 0, linked: true, armed: false, muted: false, solo: false, volume: 0, clips: [], plugins: [plug],
                 color: COLS.find((x) => !used.has(x)) || COLS[mine.length % COLS.length], ...(blob ? { face: "blob" } : {}) };
     const at = S.tracks.indexOf(mine.length ? mine[mine.length - 1] : main) + 1;
@@ -5710,7 +5755,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
   // TOY MACHINE sends the whole preset on every knob move: one undo step per settled change
   // (calls less than half a second apart, on the same synth, belong to the same step).
   let tmUndoAt = 0, tmUndoPid = null, tmUndoStep = null, tmRestoreAt = -1e9;
-  for (const name of ["toyMachineSetPreset", "toyMachineSetMacro", "toyMachineSetDropSample", "toyMachineSetSample"]) {
+  for (const name of ["toyMachineSetPreset", "toyMachineSetMacro", "toyMachineSetParam", "toyMachineSetDropSample", "toyMachineSetSample"]) {
     const orig = handlers[name];
     if (!orig) continue;
     handlers[name] = (args) => {

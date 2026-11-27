@@ -589,7 +589,7 @@
 (function () {
   let n = 0; const t = setInterval(() => {
     if (++n > 80) return clearInterval(t);
-    if (window.ADM && document.querySelector(".adm-top") && !window.__rvLoaded) { clearInterval(t); const s = document.createElement("script"); s.src = "/admin/review.js?v=9"; document.head.appendChild(s); }
+    if (window.ADM && document.querySelector(".adm-top") && !window.__rvLoaded) { clearInterval(t); const s = document.createElement("script"); s.src = "/admin/review.js?v=10"; document.head.appendChild(s); }
   }, 250);
 })();
 

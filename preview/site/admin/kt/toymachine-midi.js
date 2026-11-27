@@ -1683,6 +1683,12 @@
         ar.innerHTML = '<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
         q("tmm-pg").append(ar);
         ar.onclick = (e) => { e.stopPropagation(); TmDice.toggle(pane); };
+        // Speed pass round 2 (27 Nov): the dice panel is the slowest part of opening a pattern (~95 ms with its
+        // cards and picture), and it starts folded away. The piano roll now shows first and the dice panel is
+        // built right after that first picture. KT2_DICE_NOW_OLD = build it before the window shows, like before.
+        const mountDice = () => {
+        if (pane.dataset.tmmDiceUp === "1" || !pane.isConnected && !window.KT2_DICE_NOW_OLD) return;
+        pane.dataset.tmmDiceUp = "1";
         TmDice.mount(pane, { full: () => { const c = S && S.clipId && findClip(S.clipId); if (!c || !S.notes) return false; const keep = S.notes.filter((n) => n.locked && (S.voice !== "*" || !n._v)); return isFull(keep, Math.max(1, c.beats || 16)); }, fullUsed: () => S && S.fullUsed, bars: () => { const c = S && S.clipId && findClip(S.clipId); return c ? Math.max(1, Math.round((c.beats || 16) / 4)) : Number(q("tmm-bars").value) || 4; }, setBars: (b) => { if (S && S.clipId) run("setClipLength", { clipId: S.clipId, beats: b * 4 }); }, prompt: () => pr.value, owner: () => (S && S.trackId != null ? ((typeof ui !== "undefined" && ui.state && ui.state.session) || "") + "|" + S.trackId : null), live: (dial, final) => liveEdit(dial, final) || (["hits", "len"].includes(dial) && (rerhythmLive(final) || rerhythmLine(final))) || (dial === "voices" && restackLive(final)), armed: () => liveArmed(),
           // the dice chat: edit one chord, read and put back the notes (its own undo), roll
           chordMood: (which, dir) => { if (!S || !S.notes) return { err: "Open a pattern first." }; const ns = S.notes.map((n) => ({ ...n })), r = editChordMood(ns, which, dir); if (!r.err) { S.notes = ns; S.sel = null; draw(); commit(); } return r; },
@@ -1692,6 +1698,11 @@
         // cards and the STYLE card, since the mode was set before the panel existed). KT2_DICE_PART_OLD = as before
         if (!window.KT2_DICE_PART_OLD) TmDice.setPart(pane, modeNow());
         document.addEventListener("chordbrain", () => TmDice.refresh(pane));
+        if (window.TmDice && !window.KT2_DICE_ROW_OLD) TmDice.refresh(pane);
+        };
+        pane.dataset.tmmDiceUp = "";
+        if (window.KT2_DICE_NOW_OLD) mountDice();
+        else { requestAnimationFrame(() => setTimeout(mountDice, 0)); ar.addEventListener("click", mountDice, true); }
       }
       pr.value = dice.prompt || "";
       // NO PROMPT BOX (Eman, 15 Nov: "remove this"): the box is gone from the bar, and words left in it from before are

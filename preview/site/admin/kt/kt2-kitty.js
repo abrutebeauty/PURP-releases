@@ -426,8 +426,23 @@
       if (f && f.width && f.top < innerHeight - 20 && Math.abs(f.top - spot.y) < 80) spot.y = f.top + 2;
       cv.style.transform = `translate(${Math.round(spot.x - BW / 2)}px, ${Math.round(spot.y - FOOT)}px)`;
     }
+    // Speed pass 27 Nov: the 3D kitty was drawn 60 times a second with full antialiasing, the biggest constant
+    // graphics cost in the app (in the cloud test it slowed a 100-pattern drag from 46 to 943 ms per move).
+    // Now it draws 30 times a second (its moves are slow, so they look the same) and holds still while a mouse
+    // button is down and for 0.4 s after a click or key, so drags, knob turns and clicks get the whole machine.
+    // KT2_KITTY_FAST_OLD = always 60 a second.
+    let kkDown = false, kkLast = 0, kkUntil = 0;
+    const kkMine = function (e) { return !!(e && e.target && e.target.closest && e.target.closest(".kt-ai")); };   // the kitty's own head spot answers at once
+    const kkRest = function (e) { kkDown = false; if (!kkMine(e)) kkUntil = performance.now() + 400; };
+    addEventListener("pointerdown", function (e) { if (!kkMine(e)) kkDown = true; }, true);
+    addEventListener("pointerup", kkRest, true);
+    addEventListener("pointercancel", kkRest, true);
+    addEventListener("keydown", kkRest, true);
+    addEventListener("blur", function () { kkDown = false; });
     function frame(now) {
       requestAnimationFrame(frame);
+      if (!window.KT2_KITTY_FAST_OLD && (kkDown || now < kkUntil || now - kkLast < 30)) return;
+      kkLast = now;
       const dt = Math.min(0.1, (now - last) / 1000); last = now;
       if (document.hidden || document.body.classList.contains("at-home")) return;
       { const u = U(); st.bpm = (u && u.state && +u.state.bpm) || 120; }
@@ -468,5 +483,11 @@
   }
 
   const go = () => start().then(() => { if (!window.KT2Kitty) html.classList.remove("kt2-kitty-wait"); }).catch((e) => { console.warn("[kitty] not shown:", e && e.message); html.classList.remove("kt2-kitty"); html.classList.remove("kt2-kitty-wait"); });
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(go, 300)); else setTimeout(go, 300);
+  // Speed pass round 2 (27 Nov): the kitty (4 MB with its 3D engine) is a second-wave download: it comes once the
+  // page has loaded and is quiet, so the editor is ready first. KT2_WAVE2_OLD = 0.3 s after the page is read, like before.
+  if (window.KT2_WAVE2_OLD) { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(go, 300)); else setTimeout(go, 300); }
+  else {
+    const later = () => setTimeout(() => (window.requestIdleCallback ? requestIdleCallback(go, { timeout: 3000 }) : go()), 500);
+    if (document.readyState === "complete") later(); else addEventListener("load", later, { once: true });
+  }
 })();

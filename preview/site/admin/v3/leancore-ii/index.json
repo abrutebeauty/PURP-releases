@@ -1,0 +1,345 @@
+{
+"lead-pan-flute": {
+"name": "Pan Flute",
+"bpm": 126,
+"key": "Am",
+"n": 20,
+"midi": true
+},
+"lead-cowbell-808": {
+"name": "Cowbell 808",
+"bpm": 126,
+"key": "Am",
+"n": 20,
+"midi": true
+},
+"lead-ache": {
+"name": "Ache Lead",
+"bpm": 126,
+"key": "Am",
+"n": 20,
+"midi": true
+},
+"lead-fast-chiff-flute": {
+"name": "Fast Chiff Flute",
+"bpm": 132,
+"key": "Dm",
+"n": 12,
+"midi": true
+},
+"lead-mono-saw": {
+"name": "Mono Saw",
+"bpm": 132,
+"key": "Dm",
+"n": 9,
+"midi": true
+},
+"lead-arp-lead-sine": {
+"name": "Arp Lead Sine",
+"bpm": 140,
+"key": "Am",
+"n": 24,
+"midi": true
+},
+"lead-digital": {
+"name": "Digital Lead",
+"bpm": 140,
+"key": "Am",
+"n": 12,
+"midi": true
+},
+"lead-squeezed-fm": {
+"name": "Squeezed FM",
+"bpm": 140,
+"key": "F",
+"n": 4,
+"midi": true
+},
+"lead-square": {
+"name": "Square Lead",
+"bpm": 105,
+"key": "C#m",
+"n": 22,
+"midi": true
+},
+"lead-attack": {
+"name": "Attack Lead",
+"bpm": 128,
+"key": "Am",
+"n": 35,
+"midi": true
+},
+"lead-trip-fm": {
+"name": "Trip FM Lead",
+"bpm": 132,
+"key": "Dm",
+"n": 9,
+"midi": true
+},
+"lead-mono-key": {
+"name": "Mono Key",
+"bpm": 170,
+"key": "Dm",
+"n": 9,
+"midi": true
+},
+"bell-crystal-crash": {
+"name": "Crystal Crash Bell",
+"bpm": 126,
+"key": "Am",
+"n": 20,
+"midi": true
+},
+"bell-dark-cloud": {
+"name": "Dark Cloud Bell",
+"bpm": 120,
+"key": "G",
+"n": 32,
+"midi": true
+},
+"bell-pluck": {
+"name": "Pluck Bellz",
+"bpm": 131,
+"key": "Cm",
+"n": 44,
+"midi": true
+},
+"bell-vibrasine": {
+"name": "Vibrasine Bells",
+"bpm": 131,
+"key": "Cm",
+"n": 44,
+"midi": true
+},
+"bell-sparkling": {
+"name": "Sparkling Bells",
+"bpm": 140,
+"key": "Am",
+"n": 12,
+"midi": true
+},
+"pluck-glass-eyes": {
+"name": "Glass Eyes Pluck",
+"bpm": 126,
+"key": "Am",
+"n": 24,
+"midi": true
+},
+"pluck-rest": {
+"name": "Rest Pluck",
+"bpm": 120,
+"key": "G",
+"n": 32,
+"midi": true
+},
+"pluck-sad-arp": {
+"name": "Sad Arp",
+"bpm": 120,
+"key": "G",
+"n": 64,
+"midi": true
+},
+"pluck-prepared-saz": {
+"name": "Prepared Saz Pluck",
+"bpm": 132,
+"key": "Dm",
+"n": 12,
+"midi": true
+},
+"pluck-block": {
+"name": "Block Pluck",
+"bpm": 140,
+"key": "F#m",
+"n": 120,
+"midi": true
+},
+"pluck-pluck-eerie": {
+"name": "Pluck Eerie",
+"bpm": 140,
+"key": "Am",
+"n": 12,
+"midi": true
+},
+"pluck-guitar": {
+"name": "Guitar Pluck",
+"bpm": 140,
+"key": "Am",
+"n": 12,
+"midi": true
+},
+"pluck-tiny-arp": {
+"name": "Tiny Arp",
+"bpm": 108,
+"key": "D",
+"n": 64,
+"midi": true
+},
+"pluck-plucky-key": {
+"name": "Plucky Key",
+"bpm": 108,
+"key": "D",
+"n": 64,
+"midi": true
+},
+"pluck-lo-fi-distorted-sine": {
+"name": "Lo-Fi Distorted Sine",
+"bpm": 105,
+"key": "C#m",
+"n": 22,
+"midi": true
+},
+"pluck-trip-synth": {
+"name": "Trip Synth Pluck",
+"bpm": 132,
+"key": "Dm",
+"n": 12,
+"midi": true
+},
+"keys-cry": {
+"name": "Cry Key",
+"bpm": 120,
+"key": "G",
+"n": 32,
+"midi": true
+},
+"keys-ghost": {
+"name": "Ghost Key",
+"bpm": 120,
+"key": "G",
+"n": 32,
+"midi": true
+},
+"keys-cold-piano": {
+"name": "Cold Piano Keys",
+"bpm": 140,
+"key": "F#m",
+"n": 120,
+"midi": true
+},
+"keys-drain-layer": {
+"name": "Drain Layer",
+"bpm": 140,
+"key": "F#m",
+"n": 120,
+"midi": true
+},
+"keys-dark-glass-organ": {
+"name": "Dark Glass Organ",
+"bpm": 131,
+"key": "Cm",
+"n": 24,
+"midi": true
+},
+"keys-sine": {
+"name": "Sine Keys",
+"bpm": 130,
+"key": "Am",
+"n": 35,
+"midi": true
+},
+"keys-dune-pluck-az": {
+"name": "Dune Pluck AZ",
+"bpm": 140,
+"key": "F",
+"n": 12,
+"midi": true
+},
+"keys-miami-piano": {
+"name": "Miami Piano",
+"bpm": 105,
+"key": "C#m",
+"n": 24,
+"midi": true
+},
+"pad-tube-strings": {
+"name": "Tube Strings",
+"bpm": 131,
+"key": "Cm",
+"n": 24,
+"midi": true
+},
+"pad-transition": {
+"name": "Transition Pad",
+"bpm": 130,
+"key": "Am",
+"n": 16,
+"midi": true
+},
+"bass-ambient-sub": {
+"name": "Ambient Sub Bass",
+"bpm": 126,
+"key": "Am",
+"n": 8,
+"midi": true
+},
+"bass-anvil": {
+"name": "Anvil Bass",
+"bpm": 120,
+"key": "G",
+"n": 21,
+"midi": true
+},
+"bass-glide": {
+"name": "Glide Bass",
+"bpm": 130,
+"key": "Am",
+"n": 9,
+"midi": true
+},
+"bass-piece-reese": {
+"name": "Piece Reese",
+"bpm": 108,
+"key": "D",
+"n": 4,
+"midi": true
+},
+"bass-smooth-bass-layer": {
+"name": "Smooth Bass Layer",
+"bpm": 140,
+"key": "F",
+"n": 4,
+"midi": true
+},
+"bass-rage-reese": {
+"name": "Rage Reese Bass",
+"bpm": 105,
+"key": "C#m",
+"n": 4,
+"midi": true
+},
+"bass-trip-subtle": {
+"name": "Trip Subtle Bass",
+"bpm": 132,
+"key": "Dm",
+"n": 4,
+"midi": true
+},
+"808-long-808-bass": {
+"name": "Long 808 Bass",
+"bpm": 126,
+"key": "Am",
+"n": 8,
+"midi": true
+},
+"808-strip": {
+"name": "Strip 808",
+"bpm": 131,
+"key": "Cm",
+"n": 4,
+"midi": true
+},
+"808-rex": {
+"name": "REX 808",
+"bpm": 140,
+"key": "Am",
+"n": 6,
+"midi": true
+},
+"808-dying": {
+"name": "Dying 808",
+"bpm": 128,
+"key": "Am",
+"n": 9,
+"midi": true
+}
+}

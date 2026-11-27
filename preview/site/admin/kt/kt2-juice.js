@@ -1659,7 +1659,7 @@ window.KT2Juice = (function () {
       const lv = loudAt(c, sec);
       if (lv < 0.08) continue;
       const amt = Math.min(1, lv * (bar ? 1 : 0.7) + bass * 0.35);
-      const art = el.querySelector("canvas") || el;
+      const art = el.querySelector("img.kimg") || el.querySelector("canvas") || el;   // the picture you see (speed pass: an image over the hidden canvas)
       art.animate([{ scale: `1 ${1 + 0.16 * amt}`, filter: `brightness(${1 + 0.45 * amt})` }, { scale: "1 1", filter: "none" }], { duration: bar ? 260 : 190, easing: "cubic-bezier(.1,.7,.3,1)" });
       // a short bright tick at the marker inside the clip, as tall as it is loud
       const ph = document.getElementById("playhead"), r = el.getBoundingClientRect();

@@ -1280,6 +1280,16 @@ html.kt2 header.top .readouts { margin-right: 64px; }
 .kt2 .iw-sound.off .iw-dot { background: transparent; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.35); animation: none; }
 .kt2 .iw-sound.off { color: rgba(185, 180, 196, 0.45); }
 @keyframes iw-breathe { 50% { opacity: 0.45; box-shadow: 0 0 2px #3ef08a; } }
+/* speed pass 27 Nov: glows that pulse their shadow or colour repaint the whole screen every frame (the window's green dot,
+   the cable plugs). They now pulse only their see-through (done by the graphics card, no repaint), same rhythm.
+   html.k2-glow-old (window.KT2_GLOW_OLD) = the old pulses. */
+html:not(.k2-glow-old).kt2 .iw-dot { animation-name: iw-breathe2; }
+@keyframes iw-breathe2 { 50% { opacity: 0.45; } }
+html:not(.k2-glow-old).kt2 .k2t-link.on .k2t-plug { animation: none; }
+html:not(.k2-glow-old).kt2 .k2t-link.on .k2t-plug::after { content: ""; position: absolute; inset: 0; background: #e4ff3a; box-shadow: 0 0 10px #e4ff3a; opacity: 0; animation: k2t-plug2 1.1s ease-in-out infinite; pointer-events: none; }
+html:not(.k2-glow-old).kt2 .k2t-link.on:hover .k2t-plug::after { display: none; }
+@keyframes k2t-plug2 { 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { html:not(.k2-glow-old).kt2 .k2t-link .k2t-plug::after { animation: none !important; } }
 @media (prefers-reduced-motion: reduce) { .kt2 .iw-dot { animation: none; } }
 .kt2 .tmm-bar.tmm-tight .tmm-dslide { width: 22px; }
 .kt2 .tmm-bar.tmm-tight .tmm-dg { gap: 3px; }

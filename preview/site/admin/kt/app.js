@@ -125,6 +125,7 @@ const ui = {
   peaks: new Map(),
   openTakes: new Set(), // clips whose take folder is open
   laneSig: "",
+  rollTickPos: null, rollTickN: 0,
   rackSig: "",
   dragging: null,
   meter: { level: -100, peak: -100, peakHold: 0 },
@@ -298,6 +299,45 @@ function allClips() {
 }
 function findClip(id) { return allClips().find((c) => c.id === id) || null; }
 const isSel = (id) => id === ui.selectedClip || ui.extraClips.has(id);
+// Re-draw just the patterns whose selection changed (see render). False = not possible here, rebuild all.
+function reSelect(was, now) {
+  const a = new Set(was.filter(Boolean)), b = new Set(now.filter(Boolean));
+  const ids = new Set([...a, ...b].filter((id) => a.has(id) !== b.has(id)));
+  if (a.size === 1) ids.add([...a][0]);   // a single pick shows its volume line, so the old and new single picks redraw too
+  if (b.size === 1) ids.add([...b][0]);
+  const jobs = [];
+  for (const id of ids) {
+    const t = ui.state.tracks.find((x) => x.clips.some((c) => c.id === id)), c = t && t.clips.find((x) => x.id === id);
+    const node = document.querySelector('#rows .clip[data-clip-id="' + CSS.escape(String(id)) + '"]');
+    if (!c || !node) return false;
+    jobs.push([c, t, node]);
+  }
+  for (const [c, t, node] of jobs) node.replaceWith(renderClip(c, t, colorOf(t)));
+  return true;
+}
+// Rebuild only the patterns of the lanes whose patterns changed (see render). False = rebuild everything.
+function reLanes(was, now, selWas, selNow) {
+  if (was.glob !== now.glob || was.metas.length !== now.metas.length || was.metas.some((m, i) => m !== now.metas[i])) return false;
+  const tracks = ui.state.tracks, todo = [];
+  for (let i = 0; i < tracks.length; i++) {
+    if (was.clips[i] === now.clips[i]) continue;
+    const t = tracks[i];
+    if (t.kind === "beat") return false;   // the Reference lane's card shows its clip's name
+    const lane = document.querySelector('#rows .row[data-track-id="' + CSS.escape(String(t.id)) + '"] > .lane');
+    if (!lane) return false;
+    todo.push([t, lane]);
+  }
+  if (!todo.length) return false;
+  for (const [t, lane] of todo) {
+    const color = colorOf(t);
+    lane.querySelectorAll(":scope > .clip").forEach((n) => n.remove());
+    for (const c of t.clips) lane.append(renderClip(c, t, color));
+  }
+  const done = new Set(todo.map(([t]) => t.id));
+  // a selection change in the lanes that stayed is drawn the same way as a plain pick
+  const keep = (ids) => ids.filter((id) => { const t = tracks.find((x) => x.clips.some((c) => c.id === id)); return t && !done.has(t.id); });
+  return reSelect(keep(selWas.filter(Boolean)), keep(selNow.filter(Boolean)));
+}
 const selectedIds = () => (ui.selectedClip ? [ui.selectedClip, ...ui.extraClips] : []);
 
 // Volume. A clip's gain line sits in the middle at 0 dB, the top is +12 dB, the bottom
@@ -375,11 +415,27 @@ function render() {
     for (const c of t.clips || []) if (c.color) c.color = laneTint(c.color);
   }
   ui.autoColors = autoColors(s.tracks);
-  const laneSig = JSON.stringify([s.tracks.map((t) => [t.id, t.name, t.role, t.color, t.armed, t.muted, t.solo, t.layerOf, t.linked,
+  const laneArr = ([s.tracks.map((t) => [t.id, t.name, t.role, t.color, t.armed, t.muted, t.solo, t.layerOf, t.linked,
     t.volume, t.autoOpen, t.automation, t.clips.map((c) => [c.id, c.row, c.name, c.color, c.start, c.length, c.offset, c.take, c.takes, c.comp, c.plugins.length, c.gain, c.fadeIn, c.fadeOut, c.audition, c.active, c.reversed, (c.takeInfo || []).map((x) => x && x.name), c.kind === "midi" ? notesSig(c) : 0, c.orig && [c.orig.bpm, c.orig.key, c.orig.drift, !!c.orig.unfixed], c.fit, c.mk])]), s.key && s.key.name,
     variationSig(), s.master && [s.master.automation, s.master.autoOpen], window.killtoyReturns && killtoyReturns.sig(), s.sections, s.bpm, ui.pxPerSec, ui.selectedClip, [...ui.extraClips], [...ui.openTakes]]);
+  const laneSig = JSON.stringify(laneArr);
+  // Speed pass round 2 (27 Nov): picking a pattern used to throw away and rebuild every pattern in the song
+  // (100 patterns = 100 rebuilt boxes plus the restyle and repaint of all of them). When nothing but the
+  // selection changed, only the patterns whose selection changed are drawn again now; everything else stays.
+  // KT2_SEL_REBUILD_OLD = rebuild everything like before.
+  const selNow = [ui.selectedClip, ...ui.extraClips];
+  const restSig = JSON.stringify([laneArr.slice(0, -3), laneArr[laneArr.length - 1]]);
+  if (laneSig !== ui.laneSig && !window.KT2_SEL_REBUILD_OLD && ui.laneSig && restSig === ui.restSig && !ui.openTakes.size && ui.selDrawn && reSelect(ui.selDrawn, selNow)) {
+    ui.laneSig = laneSig; ui.selDrawn = selNow;
+  }
+  // ...and when only the patterns of some lanes changed (move, new, duplicate, delete, notes, undo of those),
+  // only those lanes' patterns are built again. KT2_LANE_REBUILD_OLD = rebuild everything.
+  const parts = { glob: JSON.stringify([laneArr.slice(1, -3), laneArr[laneArr.length - 1], timelineWidth()]), metas: laneArr[0].map((x) => JSON.stringify(x.slice(0, 12))), clips: laneArr[0].map((x) => JSON.stringify(x[12])) };
+  if (laneSig !== ui.laneSig && !window.KT2_LANE_REBUILD_OLD && !window.KT2_SEL_REBUILD_OLD && ui.laneSig && ui.laneParts && !ui.openTakes.size && ui.selDrawn && reLanes(ui.laneParts, parts, ui.selDrawn, selNow)) {
+    ui.laneSig = laneSig; ui.restSig = restSig; ui.selDrawn = selNow; ui.laneParts = parts;
+  }
   if (laneSig !== ui.laneSig) {
-    ui.laneSig = laneSig;
+    ui.laneSig = laneSig; ui.restSig = restSig; ui.selDrawn = selNow; ui.laneParts = parts;
     // rebuilding the rows empties them for a moment, which would snap the view back to the top
     const sc = $("scroll"), top = sc ? sc.scrollTop : 0, left = sc ? sc.scrollLeft : 0;
     renderTimeline();
@@ -1531,7 +1587,7 @@ function keepCanvas(canvas, c, what, draw) {
   if (sig == null) return draw();
   // all clips of one render are handled together: measure every canvas first, then swap, so the
   // page lays out once instead of once per clip
-  KEEP_Q.push({ canvas, c, sig, draw });
+  KEEP_Q.push({ canvas, c, sig, draw, what });
   if (KEEP_Q.length === 1) queueMicrotask(flushKeep);
 }
 const KEEP_Q = [];
@@ -1544,13 +1600,79 @@ function flushKeep() {
     if (j.w && old && old.sig === j.sig && old.el !== j.canvas && !old.el.isConnected && old.el.width === j.W && old.el.height === j.H && j.canvas.isConnected) {
       old.el.className = j.canvas.className; old.el.style.cssText = j.canvas.style.cssText;
       j.canvas.replaceWith(old.el);
+      clipImgBack(old.el);
       continue;
     }
     CANVAS_KEEP.set(j.c.id, { sig: j.sig, el: j.canvas });
-    later.push(j.draw);
+    later.push(j);
   }
   while (CANVAS_KEEP.size > 600) CANVAS_KEEP.delete(CANVAS_KEEP.keys().next().value);
-  for (const d of later) d();
+  for (const j of later) { const r = j.draw(); if (/^(n|kd)/.test(j.what) && !(r && r.then)) clipImg(j.canvas); }
+}
+
+// Speed pass round 3 (27 Nov): every pattern picture was a canvas, and the browser keeps each canvas as its own
+// graphics layer: 100 patterns = 140 layers to sort and send on every frame while playing or dragging. Once a
+// MIDI / KILLDRUM pattern's picture is drawn, an image of the same pixels is laid over it and the canvas is hidden
+// (it stays in place, so everything that measures or reads it still works). Measured while playing with 100
+// patterns: 142 -> 22 layers, about 390 ms less frame work per 3 s. Drags that squash the picture (volume) show
+// the live canvas again. Same look: the image gets the canvas's classes and every ".clip ... canvas" style rule
+// is copied for it. KT2_CLIPIMG_OLD = canvases only, like before.
+const CLIPIMG_Q = [];
+let clipImgCss = -1;
+function clipImgStyles() {
+  // copy the clip canvas style rules for the image twin (once per new style sheet)
+  const sheets = [...document.styleSheets];
+  if (sheets.length === clipImgCss) return;
+  clipImgCss = sheets.length;
+  const walk = (list, sheet) => {
+    for (let i = 0; i < list.length; i++) {
+      const r = list[i];
+      if (r.cssRules && !r.selectorText) { walk(r.cssRules, sheet); continue; }
+      if (!r.selectorText || r.ktImg || !/\bcanvas\b/.test(r.selectorText) || !/\.clip\b/.test(r.selectorText)) continue;
+      r.ktImg = 1;
+      const sel = r.selectorText.split(",").filter((x) => /\.clip\b/.test(x) && /\bcanvas\b/.test(x)).map((x) => x.replace(/\bcanvas\b/g, "img.kimg")).join(",");
+      if (!sel) continue;
+      try { const owner = r.parentRule || sheet; owner.insertRule(sel + "{" + r.style.cssText + "}", i + 1); const nr = list[i + 1]; if (nr) nr.ktImg = 1; i++; } catch (e) { /* a rule the browser won't take back */ }
+    }
+  };
+  for (const sh of sheets) { let rules; try { rules = sh.cssRules; } catch (e) { continue; } if (rules) walk(rules, sh); }
+}
+function clipImg(cv) {
+  if (window.KT2_CLIPIMG_OLD || !cv || !cv.toBlob || !cv.width || !cv.height) return;
+  cv.ktImgGen = (cv.ktImgGen || 0) + 1;
+  clipImgDrop(cv);
+  CLIPIMG_Q.push([cv, cv.ktImgGen]);
+  if (CLIPIMG_Q.length === 1) (window.requestIdleCallback || setTimeout)(clipImgRun, { timeout: 600 });
+}
+function clipImgRun() {
+  clipImgStyles();
+  for (const [cv, gen] of CLIPIMG_Q.splice(0)) {
+    if (!cv.isConnected || cv.ktImgGen !== gen) continue;
+    cv.toBlob((b) => {
+      if (!b || !cv.isConnected || cv.ktImgGen !== gen) return;
+      const im = new Image(), url = URL.createObjectURL(b);
+      im.className = cv.className ? cv.className + " kimg" : "kimg";
+      im.alt = ""; im.draggable = false; im.src = url;
+      im.decode().then(() => {
+        URL.revokeObjectURL(url);
+        if (!cv.isConnected || cv.ktImgGen !== gen) return;
+        im.style.cssText = cv.style.cssText; im.style.pointerEvents = "none";
+        cv.after(im); cv.ktImg = im; cv.style.visibility = "hidden";
+      }).catch(() => URL.revokeObjectURL(url));
+    });
+  }
+}
+// the image off again, the canvas shows (a drag that changes the picture live, or a redraw)
+function clipImgDrop(cv) {
+  if (!cv || !cv.ktImg) return;
+  cv.ktImg.remove(); cv.ktImg = null; cv.style.visibility = "";
+}
+window.clipLive = (cv) => { if (cv) { cv.ktImgGen = (cv.ktImgGen || 0) + 1; clipImgDrop(cv); } };
+// a kept canvas went back into a new clip box: its image goes with it
+function clipImgBack(cv) {
+  if (!cv.ktImg) return;
+  if (window.KT2_CLIPIMG_OLD) return clipImgDrop(cv);
+  cv.after(cv.ktImg); cv.ktImg.style.cssText = cv.style.cssText; cv.ktImg.style.pointerEvents = "none"; cv.style.visibility = "hidden";
 }
 
 // A canvas's size on the page without an animation's squash: the copy pop scales a new clip's height for 150 ms,
@@ -1703,6 +1825,7 @@ function liveDrag(e, onMove, onEnd) {
 function gainDrag(e, c, node, line, tag) {
   if (e.button !== 0) return;
   const canvas = node.querySelector("canvas");
+  window.clipLive(canvas);   // the picture squashes live while dragging
   const h = node.getBoundingClientRect().height, y0 = e.clientY, f0 = gainToFrac(c.gain || 0), lin0 = dbToLin(c.gain || 0) || 1e-3;
   let db = c.gain || 0;
   node.classList.add("gain-drag");
@@ -3048,6 +3171,8 @@ async function openPluginWindow(p) {
   const r = await run("openPlugin", { pluginId: p.id });
   if (r && r.toyTune && window.KT2ToyTune) return KT2ToyTune.open(p);   // TOYTUNE (ui/kt2-toytune.js, 16 Nov)
   if (r && r.toyVox && window.KT2ToyVox) return KT2ToyVox.open(p);   // TOY VOX (ui/kt2-toyvox.js, 24 Nov)
+  if (r && r.toyMachine3 && window.openToyMachine3) return openToyMachine3(p);   // TOY MACHINE V3 (playground/tm3-web.js, 27 Nov)
+  if (r && r.toyMachine2 && window.openToyMachine2) return openToyMachine2(p);   // TOY MACHINE V2 (ui/tm2-window.js, 26 Nov)
   if (r && r.toyGtr && window.openToyGtr) return openToyGtr(p);   // TOY GTR (ui/toygtr.js, 13 Nov)
   if (r && r.toyKeys && window.openToyKeys) return openToyKeys(p);
   if (r && r.toyMachine) return openToyMachine(p);
@@ -4338,8 +4463,13 @@ function renderTransport() {
 
   updateMeter(t.input);
   updateMasterMeter(t.master);
-  if (ui.roll && !ui.roll.drag) drawRoll();
-  if (window.TmMidi && !$("iw-tmidi").hidden) TmMidi.draw();
+  // Speed pass 27 Nov: the transport ticks 30 times a second even when stopped, and every tick redrew the whole open
+  // piano roll (the biggest idle cost with a pattern window open). Edits redraw it themselves, so while stopped and the
+  // marker is still it is now redrawn only every 8th tick (as a safety net). KT2_ROLL_TICK_OLD = every tick.
+  const rollTick = window.KT2_ROLL_TICK_OLD || t.playing || t.position !== ui.rollTickPos || ++ui.rollTickN % 8 === 0;
+  ui.rollTickPos = t.position;
+  if (rollTick && ui.roll && !ui.roll.drag) drawRoll();
+  if (rollTick && window.TmMidi && !$("iw-tmidi").hidden) TmMidi.draw();
 }
 
 function updateMeter(db) {
@@ -4364,7 +4494,7 @@ function selectClip(id) {
     document.querySelectorAll(".row.selected").forEach((n) => n.classList.remove("selected"));
   }
   document.querySelectorAll(".clip").forEach((n) => n.classList.toggle("selected", isSel(n.dataset.clipId)));
-  ui.laneSig = "";
+  if (window.KT2_SEL_REBUILD_OLD) ui.laneSig = "";   // the selection is part of the lane check, so render() redraws what changed
   render();
 }
 
@@ -5364,6 +5494,12 @@ const isKillDrumLane = (t) => !!t && (/toy ?drums|killdrum/i.test(t.instrument |
 // A TOY MACHINE lane (Eman, 27 Oct): tabs TOY MACHINE | Split | MIDI, it always opens on TOY MACHINE,
 // and its MIDI tab is TOY MACHINE's own MIDI view (ui/toymachine-midi.js), not the app's piano roll.
 const isToyMachineLane = (t) => !!t && (/toy (machine|keys)/i.test(t.instrument || "") || /toy (machine|keys)/i.test((laneInstrument(t, null) || {}).name || ""));
+// MIDI FOR EVERY SYNTH (Eman, 26 Nov: "the midi creator is the midi in the daw, not connected to toy machine specifically"):
+// the MIDI tab (dice, sciences, slides, rhythm row, all of it) opens on every instrument lane (KILLTOY Synth, u wanna,
+// TOY GTR, BLOB, Serum or any plugin in the app), not only TOY MACHINE / TOY KEYS. KILLDRUM keeps its own BEAT page.
+// KT2_MIDI_ANY_OLD = other synths get the old plain piano roll.
+const isMidiToolLane = (t) => isToyMachineLane(t) || (!window.KT2_MIDI_ANY_OLD && !!t && !isKillDrumLane(t) && !!window.TmMidi &&
+  (t.kind === "inst" || t.role === "inst" || (t.clips || []).some((c) => c.kind === "midi")));
 
 // how long a new MIDI pattern is: 4 bars everywhere
 function NEW_PATTERN_BARS() { return 4; }   // KILLTOY 2 too (Eman, 5 Nov 01:56; was 16 there)
@@ -5428,10 +5564,11 @@ function setLaneView(v) {
   const kdLane = isKillDrumLane(t), tmLane = isToyMachineLane(t);
   if (!kdLane && !tmLane) ui.laneSplit = v === "split";
   $("iw-card").classList.toggle("split", v === "split");
-  $("roll").hidden = v === "inst" || tmLane;
-  $("iw-tmidi").hidden = v === "inst" || !tmLane;
+  const midiLane = isMidiToolLane(t);
+  $("roll").hidden = v === "inst" || midiLane;
+  $("iw-tmidi").hidden = v === "inst" || !midiLane;
   $("iw-inst").hidden = v === "midi";
-  if (tmLane && v !== "inst") { showToyMachineMidi(t); laneVoiceFromPick(t); }
+  if (midiLane && v !== "inst") { showToyMachineMidi(t); laneVoiceFromPick(t); }
   else if (window.TmMidi) TmMidi.hide();
   for (const b of document.querySelectorAll(".iw-tab")) b.classList.toggle("on", b.dataset.view === v);
   if (v !== "midi") showLaneInst();
@@ -5492,6 +5629,8 @@ async function showLaneInst() {
     if (!wanted()) return;
     if (fresh && fresh.tracks) ui.state = fresh;
   }
+  if (r && r.toyMachine3 && window.openToyMachine3) { w.inst = "tk"; await openToyMachine3(hit.p, pane, wanted); return wanted() && foldLaneHead(); }   // TOY MACHINE V3
+  if (r && r.toyMachine2 && window.openToyMachine2) { w.inst = "tk"; await openToyMachine2(hit.p, pane, wanted); return wanted() && foldLaneHead(); }   // TOY MACHINE V2 (ui/tm2-window.js)
   if (r && r.toyGtr && window.openToyGtr) { w.inst = "tk"; await openToyGtr(hit.p, pane, wanted); return wanted() && foldLaneHead(); }   // TOY GTR (ui/toygtr.js)
   if (r && r.toyKeys && window.openToyKeys) { w.inst = "tk"; await openToyKeys(hit.p, pane, wanted); return wanted() && foldLaneHead(); }   // TOY KEYS (ui/toykeys.js)
   if (r && r.toyMachine && r.blobFace && window.KT2Blob && window.BLOB2) { w.inst = "blob"; KT2Blob.mountTM(pane, hit.p, wanted); return wanted() && foldLaneHead(); }
@@ -5536,7 +5675,7 @@ function refreshLaneWindow() {
   if ($("iw-tab-create")) { $("iw-tab-create").hidden = !tm || !window.ToyMachineCreate || !!window.KT2_TM_CREATE_TAB_OLD; laneTmMode(); }
   const tabsEl = document.querySelector("#iw .iw-tabs"); if (tabsEl) tabsEl.hidden = kd; // KILLDRUM's own BEAT | FX are its tabs
   if (kd && iw.view !== "inst") setLaneView("inst");
-  if ((tm || /toy keys|toy gtr/i.test(name)) && !$("iw-tmidi").hidden) showToyMachineMidi(t);   // TOY KEYS uses the same MIDI view
+  if ((tm || /toy keys|toy gtr/i.test(name) || isMidiToolLane(t)) && !$("iw-tmidi").hidden) showToyMachineMidi(t);   // TOY KEYS uses the same MIDI view
   laneSoundTabs(t);
   $("iw-logo").src = tm ? "toymachine-logo.png" : kd ? "killdrum-logo.png" : "logo.png";
   $("iw-logo").alt = tm ? "TOY MACHINE" : kd ? "KILLDRUM" : "KILLTOY";
@@ -5691,8 +5830,9 @@ function laneLayerRow(t) {
   const canStack = !isKillDrumLane(t) && clip;
   const plus = el("button", "iw-ladd", "+");
   plus.title = "Stack another instrument on this pattern";
-  plus.onclick = (e) => {
+  plus.onclick = async (e) => {
     e.stopPropagation();
+    if (!window.KT2_LAYER_ANY_OLD && !(ui.plugins || []).length) ui.plugins = (await booth("listPlugins").catch(() => null)) || [];
     const add = async (key, nm) => {
       // a new synth starts empty, unlinked (Eman, 9 Nov: a new synth is a new part); cutting an existing
       // synth's link still keeps a copy of its notes. KT2_LAYER_NEW_COPY = the old way (linked, same notes)
@@ -5709,11 +5849,21 @@ function laneLayerRow(t) {
       refreshLaneWindow();
       toast(r.empty ? `${nm} added with its own empty notes. Link it to play the pattern's notes.` : `${nm} stacked on this pattern. It plays the same notes.`);
     };
-    showMenu(plus, [
+    const base = [
       { heading: "STACK AN INSTRUMENT" },
       { label: "TOY MACHINE", meta: "presets and macros", run: () => add("builtin:toymachine", "TOY MACHINE") },
       { label: "BLOB", meta: "a sound as a creature", run: () => add("builtin:blob", "BLOB") },
-    ]);
+    ];
+    // ANY SYNTH STACKS (Eman, 26 Nov): another copy of this lane's own synth first ("several Serums"), then every other
+    // instrument. KT2_LAYER_ANY_OLD = TOY MACHINE and BLOB only
+    if (!window.KT2_LAYER_ANY_OLD) {
+      const own = laneInstrument(t, clip), ownName = own && own.name;
+      const list = (ui.plugins || []).filter((x) => x.instrument && !/toy drums|killdrum/i.test(x.name) && !/^builtin:(toymachine|blob|toydrums)$/.test(x.key));
+      const mine = ownName && !/toy machine/i.test(ownName) && !(own && own.face === "blob") ? list.find((x) => x.name === ownName) : null;
+      if (mine) base.splice(1, 0, { label: "Another " + mine.name, meta: "same synth, its own sound", run: () => add(mine.key, mine.name) });
+      for (const x of list) if (x !== mine) base.push({ label: x.name, meta: x.group || "", run: () => add(x.key, x.name) });
+    }
+    showMenu(plus, base);
   };
   const cells = folded ? [] : shown.map((lane) => {
     const i = stack.indexOf(lane);

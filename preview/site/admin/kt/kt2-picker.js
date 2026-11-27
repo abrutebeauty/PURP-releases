@@ -12,6 +12,8 @@
     { key: "builtin:toykeys", name: "TOY KEYS", img: "pick/syn-toykeys.jpg", what: "piano, EP, organ, clav" },   // Eman, 7 Nov: the keys you own from the start
     { key: "builtin:toygtr", name: "TOY GTR", img: "pick/syn-toygtr.jpg", what: "real acoustic + electric guitar", off: () => window.KT2_TOYGTR_OFF || !window.ToyGtr },   // Eman, 13 Nov
     { key: "builtin:toymachine", name: "TOY MACHINE", img: "pick/syn-toymachine.jpg", what: "presets, macros, the disc", stack: true },
+    { key: "builtin:toymachine2", name: "TOY MACHINE V2", img: "pick/syn-toymachine.jpg", what: "plays Serum 2 presets", off: () => window.KT2_TM2_OFF || !window.TM2Web || !window.ToyMachine2 },   // 26 Nov, playground/tm2-web.js
+    { key: "builtin:toymachine3", name: "TOY MACHINE V3", img: "pick/syn-toymachine.jpg", what: window.KT2_TM3_ONEPACK_OLD ? "new engine, 15 presets" : "new engine, 74 presets", off: () => window.KT2_TM3_OFF || !window.TM3Web || !window.ToyMachine3 },   // 27 Nov, playground/tm3-web.js
     { key: "builtin:blob", name: "BLOB", img: "pick/syn-blob.jpg", what: "a sound as a creature", stack: true },
     { key: "builtin:toydrums", name: "KILLDRUM", img: "pick/syn-killdrum.jpg", what: "drums and kits" },
     { key: "builtin:uw808", name: "u wanna 808", img: "pick/syn-uw808.jpg", what: "808 bass" },

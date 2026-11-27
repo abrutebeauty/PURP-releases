@@ -17,3 +17,10 @@
   };
   window.__ktPackKeys = () => pack("presets").then((P) => new Set(Object.keys(P)));
 })();
+
+/* Each lab opens a clean KILLTOY session (27 Nov): on this site the app only lives inside the admin MIDI editor, and its
+   autosave would otherwise add one more lane to the same stored session every time a sound is opened. */
+(() => {
+  try { for (const n of ["killtoy-sessions", "killtoy-variations"]) indexedDB.deleteDatabase(n); } catch (e) { /* storage blocked */ }
+  try { localStorage.removeItem("ktLastOpen"); } catch (e) { /* storage blocked */ }
+})();

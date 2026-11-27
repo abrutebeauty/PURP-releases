@@ -4795,7 +4795,7 @@ const STAR = { c: [0.5, 0.5], r: 0.4969, ri: 0.48,
     }
 
     // ------------------------------------------------ animation
-    let raf = 0, lastFrame = 0, lastMeter = 0;
+    let raf = 0, lastFrame = 0, lastMeter = 0, lastDraw = 0, lastSig = "", idleDt = 0;
     function loop(ts) {
       raf = requestAnimationFrame(loop);
       if (closed || document.hidden || !root.isConnected) return;
@@ -4832,6 +4832,20 @@ const STAR = { c: [0.5, 0.5], r: 0.4969, ri: 0.48,
       if (force.filter) bright *= Math.pow(2, (force.filter.x - 0.5) * 1.4);
       if (force.analog) hueShift += Math.sin(now * 0.35) * force.analog.x * 30 + force.analog.y * 8;
       if (force.clip) hueShift += 0;
+      // Speed pass 27 Nov: the landscape is painted pixel by pixel on the processor, and it grows its own detail until
+      // a frame costs ~12-20 ms, so an open TOY MACHINE kept a big part of the processor busy even with nothing
+      // playing or moving. When it is idle (no sound, no drag, nothing changed) it now repaints 4 times a second
+      // instead of 30 (at rest it moves too slowly to see the difference); any change or sound repaints right away.
+      // KT2_TM_IDLE_OLD = always 30 a second.
+      idleDt += dt;
+      if (!window.KT2_TM_IDLE_OLD) {
+        const idle = snd.act < 0.01 && snd.hit < 0.01 && dragEnergy < 0.01 && activePad < 0;
+        const sig = idle ? JSON.stringify([pads, force, bright, hueShift, full.macros.map((x) => x.value), fxDirt(), land.image || null]) : "";
+        if (idle && sig === lastSig && ts - lastDraw < 250) { dragEnergy *= 0.94; return; }
+        lastSig = sig;
+      }
+      lastDraw = ts;
+      const dtAll = Math.min(0.5, idleDt); idleDt = 0;
       land.draw({
         pads,
         force,
@@ -4843,7 +4857,7 @@ const STAR = { c: [0.5, 0.5], r: 0.4969, ri: 0.48,
         bright: clamp(bright, 0.3, 1.7),
         speed: dragEnergy * 3 + snd.act * (0.7 + (force.motion ? force.motion.y * 0.5 : 0)) + snd.hit * 0.6,
         audio: snd,
-      }, dt);
+      }, dtAll);
       dragEnergy *= 0.94;
     }
     // how much the effects chain itself distorts, 0..1 each (the image looks follow it too)

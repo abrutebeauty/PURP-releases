@@ -6,3 +6,4 @@ html.kt-lab .tour, html.kt-lab .kq-tip, html.kt-lab [class*="coach"], html.kt-la
 html.kt-lab #iw-card, html.kt-lab .iw-card { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; margin: 0 !important; transform: none !important; border-radius: 0 !important; }
 html.kt-lab .iw-head .iw-x, html.kt-lab .tm-topright .tm-done, html.kt-lab [data-done], html.kt-lab .iw-close { display: none !important; }
 html.kt-lab #iw-card, html.kt-lab .iw-card { zoom: 1 !important; }
+html.kt-lab #iw-done, html.kt-lab #plugwin-done { display: none !important; }

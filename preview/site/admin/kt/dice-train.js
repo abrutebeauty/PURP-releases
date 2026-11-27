@@ -189,5 +189,17 @@
 
   var API = { load: load, setData: setData, data: function () { return DATA; }, ready: ready, on: on, chords: chords, bass: bass, melody: melody, THEORY: THEORY, MORPHS: MORPHS, runs: runs, toMode: toMode };
   if (typeof module !== "undefined" && module.exports) module.exports = API;
-  if (typeof window !== "undefined") { window.KT2DiceTrain = API; if (on()) load(); }
+  // Speed pass round 2 (27 Nov): the 0.8 MB of song data is a second-wave download now. It loads once the page is up
+  // and quiet, so it no longer competes with the editor opening (a roll that needs it before then waits for it, as
+  // before). KT2_WAVE2_OLD = load it at once.
+  if (typeof window !== "undefined") {
+    window.KT2DiceTrain = API;
+    if (on()) {
+      if (W.KT2_WAVE2_OLD) load();
+      else {
+        var later = function () { if (W.requestIdleCallback) W.requestIdleCallback(function () { load(); }, { timeout: 4000 }); else setTimeout(load, 1500); };
+        if (document.readyState === "complete") later(); else W.addEventListener("load", later, { once: true });
+      }
+    }
+  }
 })();

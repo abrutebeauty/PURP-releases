@@ -695,6 +695,7 @@ window.KillToyCompound = (function () {
       dd.replaceWith(d2);
     }
     const old = node.querySelector("canvas"), cv = el("canvas");
+    if (window.clipLive && old) clipLive(old);
     if (old) old.replaceWith(cv); else node.append(cv);
     drawInside(cv, g);
   }
@@ -785,7 +786,10 @@ window.KillToyCompound = (function () {
     let tagSig = "";
     window.render = render = function () {
       // app.js keeps lanes it drew if nothing it knows about changed: a compound tag is new to it
-      const sig = ui.state ? JSON.stringify(ui.state.tracks.map((t) => t.clips.map((c) => c.cmp || 0))) : "";
+      // (speed pass round 2: only the tags themselves count, so a new or deleted plain pattern no longer forces
+      // every lane to be rebuilt; KT2_LANE_REBUILD_OLD = the old check)
+      const sig = !ui.state ? "" : window.KT2_LANE_REBUILD_OLD ? JSON.stringify(ui.state.tracks.map((t) => t.clips.map((c) => c.cmp || 0)))
+        : JSON.stringify(ui.state.tracks.map((t) => t.clips.filter((c) => c.cmp).map((c) => [c.id, c.cmp])));
       if (sig !== tagSig) { tagSig = sig; ui.laneSig = ""; }
       // a click on a compound picks all of it, so it moves, copies and deletes as one
       if (!C.open && ui.selectedClip) {
