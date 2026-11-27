@@ -5,9 +5,9 @@
   var COLLAGE=!/[?&](look=columns|cols=1)\b/.test(location.search);
   if(COLLAGE)document.documentElement.classList.add("cs-collage");
   /* sound cards (Eman 26 Nov): clean-test cards on every OPIUM 2 pack. Remove these 2 lines = old grid */
-  if(!window.CS_NOCARDS&&!/[?&]cards=0\b/.test(location.search)){var gs=document.createElement("style");gs.id="ck-gate";gs.textContent="html:not(.ck-ready) #opMag .op-cat{visibility:hidden!important}";document.head.appendChild(gs);var gr=function(){document.documentElement.classList.add("ck-ready")};setTimeout(gr,6000);window.addEventListener("load",function(){setTimeout(function(){if(!document.documentElement.classList.contains("opium2"))gr()},1500)});var cj=document.createElement("script");cj.src="/cs/cards.js?v=4";document.head.appendChild(cj)}
+  if(!window.CS_NOCARDS&&!/[?&]cards=0\b/.test(location.search)){var gs=document.createElement("style");gs.id="ck-gate";gs.textContent="html:not(.ck-ready) #opMag .op-cat{visibility:hidden!important}";document.head.appendChild(gs);var gr=function(){document.documentElement.classList.add("ck-ready")};setTimeout(gr,6000);window.addEventListener("load",function(){setTimeout(function(){if(!document.documentElement.classList.contains("opium2"))gr()},1500)});var cj=document.createElement("script");cj.src="/cs/cards.js?v=5";document.head.appendChild(cj)}
   /* PREVIEW stack (Eman 26 Nov) loads from here, so pack.html only needs the one top line */
-  if(!window.CS_NOPV){var l=document.createElement("link");l.rel="stylesheet";l.href="/cs/pv.css?v=1";document.head.appendChild(l);var s=document.createElement("script");s.src="/cs/pv.js?v=1";document.head.appendChild(s)}
+  if(!window.CS_NOPV){var l=document.createElement("link");l.rel="stylesheet";l.href="/cs/pv.css?v=1";document.head.appendChild(l);var s=document.createElement("script");s.src="/cs/pv.js?v=2";document.head.appendChild(s)}
   /* already-played part of a sound card wave: almost white instead of acid yellow (Eman 26 Nov), only on the sound-card canvases in OPIUM 2 */
   try{
     var proto=CanvasRenderingContext2D.prototype,fd=Object.getOwnPropertyDescriptor(proto,"fillStyle");
