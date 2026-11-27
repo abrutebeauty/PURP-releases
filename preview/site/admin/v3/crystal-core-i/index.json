@@ -1,0 +1,743 @@
+{
+"cc1-arp-ash-fawn-mp3": {
+"name": "CC ARP Ash Fawn",
+"bpm": 126,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Silence Knights",
+"ARP Ash Fawn"
+]
+},
+"cc1-lead-chapel-crown-mp3": {
+"name": "CC LEAD Chapel Crown",
+"bpm": 126,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chapel Crown",
+"LEAD Panther Ornament"
+]
+},
+"cc1-pad-bleach-wire-mp3": {
+"name": "CC PAD Bleach Wire",
+"bpm": 120,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Bleach Wire",
+"PAD Flesh Baptism"
+]
+},
+"cc1-bass-black-lung-mp3": {
+"name": "CC BASS Black Lung",
+"bpm": 120,
+"key": "Em",
+"n": 192,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Lung",
+"BASS Platinum Eyes"
+]
+},
+"cc1-arp-ether-crown-mp3": {
+"name": "CC ARP Ether Crown",
+"bpm": 86,
+"key": "Em",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Ether Crown",
+"ARP Empathy Wave"
+]
+},
+"cc1-arp-night-kiss-mp3": {
+"name": "CC ARP Night Kiss",
+"bpm": 126,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Enth Concrete",
+"ARP Night Kiss"
+]
+},
+"cc1-bass-bleach-choir-mp3": {
+"name": "CC BASS Bleach Choir",
+"bpm": 129,
+"key": "Bm",
+"n": 112,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Bleach Choir",
+"BASS War Frail"
+]
+},
+"cc1-bass-ghost-fever-mp3": {
+"name": "CC BASS Ghost Fever",
+"bpm": 120,
+"key": "F#m",
+"n": 120,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Youth Fainting",
+"BASS Ghost Fever"
+]
+},
+"cc1-bass-ghost-shard-mp3": {
+"name": "CC BASS Ghost Shard",
+"bpm": 120,
+"key": "Gm",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ghost Shard",
+"BASS Reckless Kept"
+]
+},
+"cc1-bass-hex-grain-mp3": {
+"name": "CC BASS Hex Grain",
+"bpm": 126,
+"key": "F#m",
+"n": 88,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hex Grain",
+"BASS Dreams Telepath"
+]
+},
+"cc1-bass-mercy-shard-mp3": {
+"name": "CC BASS Mercy Shard",
+"bpm": 120,
+"key": "Gm",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Charade Sad",
+"BASS Mercy Shard"
+]
+},
+"cc1-bass-silk-grain-mp3": {
+"name": "CC BASS Silk Grain",
+"bpm": 126,
+"key": "D#m",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Silk Grain",
+"BASS Violent Insulin"
+]
+},
+"cc1-bass-smoke-swarm-mp3": {
+"name": "CC BASS Smoke Swarm",
+"bpm": 106,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Smoke Swarm",
+"BASS Vanished Suffocation"
+]
+},
+"cc1-chip-bone-vein-mp3": {
+"name": "CC CHIP Bone Vein",
+"bpm": 120,
+"key": "Fm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"CHIP Bone Vein",
+"CHIP Fleece Mercenary"
+]
+},
+"cc1-chip-bruise-arcade-mp3": {
+"name": "CC CHIP Bruise Arcade",
+"bpm": 136,
+"key": "A#m",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"CHIP Hosiery Char",
+"CHIP Bruise Arcade"
+]
+},
+"cc1-chip-opal-veil-mp3": {
+"name": "CC CHIP Opal Veil",
+"bpm": 120,
+"key": "F#",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"CHIP Crime Deicide",
+"CHIP Opal Veil"
+]
+},
+"cc1-chip-pixel-lullaby-mp3": {
+"name": "CC CHIP Pixel Lullaby",
+"bpm": 126,
+"key": "F#m",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"CHIP Pixel Lullaby",
+"CHIP Telepath Practice"
+]
+},
+"cc1-chip-saint-lantern-mp3": {
+"name": "CC CHIP Saint Lantern",
+"bpm": 120,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"CHIP War Affection",
+"CHIP Saint Lantern"
+]
+},
+"cc1-chip-static-mist-mp3": {
+"name": "CC CHIP Static Mist",
+"bpm": 106,
+"key": "C#m",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"CHIP Kindness Pale",
+"CHIP Static Mist"
+]
+},
+"cc1-chip-tomb-glow-mp3": {
+"name": "CC CHIP Tomb Glow",
+"bpm": 126,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"CHIP Kept Intimate",
+"CHIP Tomb Glow"
+]
+},
+"cc1-fx-doll-cult-mp3": {
+"name": "CC FX Doll Cult",
+"bpm": 123,
+"key": "E",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Doll Cult",
+"FX Wrath Alice"
+]
+},
+"cc1-keys-ember-ghost-mp3": {
+"name": "CC KEYS Ember Ghost",
+"bpm": 132,
+"key": "F#m",
+"n": 104,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Caring Kerosene",
+"KEYS Ember Ghost"
+]
+},
+"cc1-keys-lilac-cathedral-mp3": {
+"name": "CC KEYS Lilac Cathedral",
+"bpm": 115,
+"key": "A#m",
+"n": 88,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Sad Wave",
+"KEYS Lilac Cathedral"
+]
+},
+"cc1-keys-opal-cult-mp3": {
+"name": "CC KEYS Opal Cult",
+"bpm": 126,
+"key": "Gm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Ornament Birds",
+"KEYS Opal Cult"
+]
+},
+"cc1-keys-tar-kiss-mp3": {
+"name": "CC KEYS Tar Kiss",
+"bpm": 126,
+"key": "Gm",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Caring Untrust",
+"KEYS Tar Kiss"
+]
+},
+"cc1-lead-chapel-siren-mp3": {
+"name": "CC LEAD Chapel Siren",
+"bpm": 120,
+"key": "Em",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Frail Enth",
+"LEAD Chapel Siren"
+]
+},
+"cc1-lead-ember-tide-mp3": {
+"name": "CC LEAD Ember Tide",
+"bpm": 132,
+"key": "F#m",
+"n": 40,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ember Tide",
+"LEAD Kindness Doe"
+]
+},
+"cc1-lead-ghost-arcade-mp3": {
+"name": "CC LEAD Ghost Arcade",
+"bpm": 126,
+"key": "F#m",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ghost Arcade",
+"LEAD Courtship Concrete"
+]
+},
+"cc1-lead-halo-wreck-mp3": {
+"name": "CC LEAD Halo Wreck",
+"bpm": 120,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Halo Wreck",
+"LEAD Panther Spells"
+]
+},
+"cc1-lead-ice-wreck-mp3": {
+"name": "CC LEAD Ice Wreck",
+"bpm": 123,
+"key": "Bm",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Spells Affection",
+"LEAD Ice Wreck"
+]
+},
+"cc1-lead-pale-engine-mp3": {
+"name": "CC LEAD Pale Engine",
+"bpm": 126,
+"key": "Gm",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Plague Fainting",
+"LEAD Pale Engine"
+]
+},
+"cc1-lead-pale-grain-mp3": {
+"name": "CC LEAD Pale Grain",
+"bpm": 115,
+"key": "A#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pale Grain",
+"LEAD Violent Insulin"
+]
+},
+"cc1-lead-pixel-riot-mp3": {
+"name": "CC LEAD Pixel Riot",
+"bpm": 86,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Alice Charade",
+"LEAD Pixel Riot"
+]
+},
+"cc1-lead-prism-lantern-mp3": {
+"name": "CC LEAD Prism Lantern",
+"bpm": 120,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Prism Lantern",
+"LEAD Fleece Sadist"
+]
+},
+"cc1-lead-saint-shard-mp3": {
+"name": "CC LEAD Saint Shard",
+"bpm": 126,
+"key": "Gm",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Courtship Doe",
+"LEAD Saint Shard"
+]
+},
+"cc1-lead-salt-lung-mp3": {
+"name": "CC LEAD Salt Lung",
+"bpm": 120,
+"key": "C#m",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Salt Lung",
+"LEAD Magic Vanished"
+]
+},
+"cc1-lead-sour-sleep-mp3": {
+"name": "CC LEAD Sour Sleep",
+"bpm": 123,
+"key": "Bm",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Untrust Knights",
+"LEAD Sour Sleep"
+]
+},
+"cc1-lead-sugar-fracture-mp3": {
+"name": "CC LEAD Sugar Fracture",
+"bpm": 120,
+"key": "F#m",
+"n": 40,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Sugar Fracture",
+"LEAD Pale Reckless"
+]
+},
+"cc1-lead-tar-grain-mp3": {
+"name": "CC LEAD Tar Grain",
+"bpm": 99,
+"key": "D#m",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Deer Deicide",
+"LEAD Tar Grain"
+]
+},
+"cc1-pad-cold-hymn-mp3": {
+"name": "CC PAD Cold Hymn",
+"bpm": 120,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cold Hymn",
+"PAD Plague Wrath"
+]
+},
+"cc1-pad-grave-ritual-mp3": {
+"name": "CC PAD Grave Ritual",
+"bpm": 120,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Grave Ritual",
+"PAD Eyes Birds"
+]
+},
+"cc1-pad-opal-glow-mp3": {
+"name": "CC PAD Opal Glow",
+"bpm": 126,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Opal Glow",
+"PAD Practice Kerosene"
+]
+},
+"cc1-pad-opal-spell-mp3": {
+"name": "CC PAD Opal Spell",
+"bpm": 120,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Opal Spell",
+"PAD Platinum Panther"
+]
+},
+"cc1-pad-velvet-fracture-mp3": {
+"name": "CC PAD Velvet Fracture",
+"bpm": 123,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Velvet Fracture",
+"PAD Dreams Practice"
+]
+},
+"cc1-pluck-chapel-kiss-mp3": {
+"name": "CC PLUCK Chapel Kiss",
+"bpm": 120,
+"key": "F#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Flesh Silence",
+"PLUCK Chapel Kiss"
+]
+},
+"cc1-pluck-lace-static-mp3": {
+"name": "CC PLUCK Lace Static",
+"bpm": 120,
+"key": "Em",
+"n": 40,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Lace Static",
+"PLUCK Deer Dreams"
+]
+},
+"cc1-pluck-neon-swarm-mp3": {
+"name": "CC PLUCK Neon Swarm",
+"bpm": 120,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sadist Magic",
+"PLUCK Neon Swarm"
+]
+},
+"cc1-pluck-pale-hymn-mp3": {
+"name": "CC PLUCK Pale Hymn",
+"bpm": 115,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Pale Hymn",
+"PLUCK Affection Youth"
+]
+},
+"cc1-pluck-siren-vein-mp3": {
+"name": "CC PLUCK Siren Vein",
+"bpm": 110,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Siren Vein",
+"PLUCK Char Deicide"
+]
+},
+"cc1-pluck-vapor-grain-mp3": {
+"name": "CC PLUCK Vapor Grain",
+"bpm": 120,
+"key": "D#m",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Suffocation Insulin",
+"PLUCK Vapor Grain"
+]
+},
+"cc1-pluck-wolf-bloom-mp3": {
+"name": "CC PLUCK Wolf Bloom",
+"bpm": 126,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Wolf Bloom",
+"PLUCK Celestica Violent"
+]
+},
+"cc1-stab-lace-siren-mp3": {
+"name": "CC STAB Lace Siren",
+"bpm": 106,
+"key": "C#m",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Lace Siren",
+"STAB Eyes Hosiery"
+]
+},
+"cc1-stab-night-fever-mp3": {
+"name": "CC STAB Night Fever",
+"bpm": 126,
+"key": "Gm",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Celestica Telepath",
+"STAB Night Fever"
+]
+},
+"cc1-stab-tomb-sleep-mp3": {
+"name": "CC STAB Tomb Sleep",
+"bpm": 126,
+"key": "Gm",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Intimate Empathy",
+"STAB Tomb Sleep"
+]
+},
+"cc1-texture-black-vein-mp3": {
+"name": "CC TEXTURE Black Vein",
+"bpm": 120,
+"key": "F#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Celestica Kindness",
+"TEXTURE Black Vein"
+]
+},
+"cc1-texture-bleach-dust-mp3": {
+"name": "CC TEXTURE Bleach Dust",
+"bpm": 126,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Bleach Dust",
+"TEXTURE Vanished Pale"
+]
+},
+"cc1-vox-frost-daze-mp3": {
+"name": "CC VOX Frost Daze",
+"bpm": 136,
+"key": "A#m",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"VOX War Magic",
+"VOX Frost Daze"
+]
+},
+"cc1-vox-hollow-wound-mp3": {
+"name": "CC VOX Hollow Wound",
+"bpm": 126,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Platinum Baptism",
+"VOX Hollow Wound"
+]
+},
+"cc1-vox-wire-fracture-mp3": {
+"name": "CC VOX Wire Fracture",
+"bpm": 129,
+"key": "Am",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Wire Fracture",
+"VOX Caring Plague"
+]
+},
+"cc1-bass-vanished-dread-mp3": {
+"name": "CC BASS Vanished Dread",
+"bpm": 120,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Vanished Dread"
+]
+},
+"cc1-bass-suffocate-mp3": {
+"name": "CC BASS SUFFOCATE BASS",
+"bpm": 120,
+"key": "Gm",
+"n": 44,
+"midi": true,
+"score": 190,
+"names": [
+"BASS Suffocate"
+]
+},
+"cc1-lead-vanished-halo-mp3": {
+"name": "CC LEAD Vanished Halo",
+"bpm": 120,
+"key": "Gm",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Vanished Halo"
+]
+}
+}

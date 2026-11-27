@@ -1,0 +1,17 @@
+/* speed / no page jump (Eman 20 Nov 00:36 "super fast"): reserve space for parts filled in by JS, so nothing jumps when the pack list arrives. Delete this file's link to undo. */
+#worlds:empty{min-height:160vh}
+#chips:empty{min-height:40px}
+#stats:empty{min-height:62.6px}
+#pkTop:empty{min-height:620px}
+#pkSounds:empty{min-height:150vh}
+#bn:empty{min-height:180vh}
+.curw{display:inline-block;min-width:62px;height:30px}
+@media (max-width:620px){#pkTop:empty{min-height:760px}}
+/* pack page: the worker paints the cover first (PACK_SSR); hold the full top height so the sounds don't jump when name/price fill in */
+#pkTop:has(#pkSsr){min-height:535px}
+@media (max-width:760px){#pkTop:has(#pkSsr){min-height:945px}}
+/* PKC_W (speed 20 Nov): on phone the pack cover box is centred with margin:auto in a grid, so it was 0 wide until the image loaded (CLS 0.1). Give it its final width from the start. */
+@media (max-width:760px){#pkTop .pkc{width:100%}}
+
+/* speed 27 Nov (OPIUM 2): the three stats stay on one row, so the hero does not jump for one frame while the stats are rebuilt */
+html.opium2 header.hero .stats{flex-wrap:nowrap}

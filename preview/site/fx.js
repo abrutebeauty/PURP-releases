@@ -76,8 +76,11 @@
 
   /* click sounds (capture phase, so we read the state BEFORE shop.js changes it) */
   var SKIP = "#opMag .pv,.cs-pv,.bflow,#pkSounds,.wv,.snd,.sfxm,audio,[data-noclick]";
+  /* NO UI SOUND ON SOUND PREVIEWS (Eman 27 Nov): pressing play/pause/seek or hovering a sound card, its play button, waveform, chip or admin buttons plays ONLY the sample. This guard runs first, so no later rule can add a click/tick/add/ok sound there on any page. Remove = old behaviour. */
+  var SND = ".pv,[data-src],canvas.wf,.pl,.cs-pv,#pkSounds,#lgSounds,.ckb,.rvr,.ad,.lb-sn,.wv,.snd,audio";
   addEventListener("click", function (e) {
     var t = e.target; if (!t || !t.closest) return;
+    if (t.closest(SND)) return;
     var add = t.closest("[data-add]"); if (add) { play(/in cart/i.test(add.textContent || "") ? "open" : "add"); return; }
     if (t.closest("[data-rm]")) { play("rm"); return; }
     if (t.closest("#cartBtn")) { play(t.closest("#cartBtn").classList.contains("open") ? "close" : "open"); return; }
@@ -91,7 +94,7 @@
   /* very soft hover tick on buttons and CD art */
   var hov = null;
   addEventListener("pointerover", function (e) {
-    if (e.pointerType && e.pointerType !== "mouse") return; var t = e.target && e.target.closest && e.target.closest(".btn,.ch,.chip,.cv,.nl,[data-add],[data-rm]");
+    if (e.pointerType && e.pointerType !== "mouse") return; if (e.target && e.target.closest && e.target.closest(SND)) return; var t = e.target && e.target.closest && e.target.closest(".btn,.ch,.chip,.cv,.nl,[data-add],[data-rm]");
     if (!t || t === hov || (t.closest && t.closest(SKIP))) { hov = t || null; return; } hov = t; play("tick");
   }, { passive: true });
 

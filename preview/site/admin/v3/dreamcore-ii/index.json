@@ -1,0 +1,602 @@
+{
+"dc2-pluck-gentle-ribbon-mp3": {
+"name": "DC2 PLUCK Gentle Ribbon",
+"bpm": 95,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Snowfell Sweet",
+"PLUCK Gentle Ribbon"
+]
+},
+"dc2-chord-linen-daydream-mp3": {
+"name": "DC2 CHORD Linen Daydream",
+"bpm": 95,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Linen Daydream",
+"CHORD Samsara Dust"
+]
+},
+"dc2-synth-snow-shore-mp3": {
+"name": "DC2 SYNTH Snow Shore",
+"bpm": 95,
+"key": "Dm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Snowfell Boyhood",
+"SYNTH Snow Shore"
+]
+},
+"dc2-pluck-velvet-orchard-mp3": {
+"name": "DC2 PLUCK Velvet Orchard",
+"bpm": 95,
+"key": "Dm",
+"n": 50,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Velvet Orchard",
+"PLUCK Snow Nothings"
+]
+},
+"dc2-chord-cold-swing-mp3": {
+"name": "DC2 CHORD Cold Swing",
+"bpm": 95,
+"key": "Dm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Cold Swing",
+"CHORD Dreamland Close"
+]
+},
+"dc2-chord-cotton-morning-mp3": {
+"name": "DC2 CHORD Cotton Morning",
+"bpm": 85,
+"key": "Em",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Cotton Morning",
+"CHORD Repercussion Apathy"
+]
+},
+"dc2-chord-fogged-attic-mp3": {
+"name": "DC2 CHORD Fogged Attic",
+"bpm": 95,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Fogged Attic",
+"CHORD Perfect Outside"
+]
+},
+"dc2-chord-gentle-lantern-mp3": {
+"name": "DC2 CHORD Gentle Lantern",
+"bpm": 95,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Lifeglow Comfort",
+"CHORD Gentle Lantern"
+]
+},
+"dc2-chord-lilac-garden-mp3": {
+"name": "DC2 CHORD Lilac Garden",
+"bpm": 74,
+"key": "Dm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Blood Haunted",
+"CHORD Lilac Garden"
+]
+},
+"dc2-chord-low-bus-stop-mp3": {
+"name": "DC2 CHORD Low Bus Stop",
+"bpm": 95,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Chance Predictability",
+"CHORD Low Bus Stop"
+]
+},
+"dc2-chord-moth-hallway-mp3": {
+"name": "DC2 CHORD Moth Hallway",
+"bpm": 86,
+"key": "Em",
+"n": 19,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Moth Hallway",
+"CHORD Gone Seeing"
+]
+},
+"dc2-chord-quiet-memory-mp3": {
+"name": "DC2 CHORD Quiet Memory",
+"bpm": 86,
+"key": "Em",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Pretty Yourself",
+"CHORD Quiet Memory"
+]
+},
+"dc2-chord-rain-window-mp3": {
+"name": "DC2 CHORD Rain Window",
+"bpm": 95,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Rain Window",
+"CHORD Dreams Satellites"
+]
+},
+"dc2-chord-sleepy-station-mp3": {
+"name": "DC2 CHORD Sleepy Station",
+"bpm": 85,
+"key": "Em",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Sleepy Station",
+"CHORD Believing Gyroscope"
+]
+},
+"dc2-chord-slow-blanket-mp3": {
+"name": "DC2 CHORD Slow Blanket",
+"bpm": 74,
+"key": "Dm",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Slow Blanket",
+"CHORD True Seeing"
+]
+},
+"dc2-chord-soft-train-mp3": {
+"name": "DC2 CHORD Soft Train",
+"bpm": 85,
+"key": "Em",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Eyes Gyroscope",
+"CHORD Soft Train"
+]
+},
+"dc2-chord-velvet-postcard-mp3": {
+"name": "DC2 CHORD Velvet Postcard",
+"bpm": 74,
+"key": "Dm",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Velvet Postcard",
+"CHORD Searching Snowfall"
+]
+},
+"dc2-chord-winter-puddle-mp3": {
+"name": "DC2 CHORD Winter Puddle",
+"bpm": 86,
+"key": "Em",
+"n": 38,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Winter Puddle",
+"CHORD Blood Nothings"
+]
+},
+"dc2-pluck-cold-mirror-mp3": {
+"name": "DC2 PLUCK Cold Mirror",
+"bpm": 86,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Cold Mirror",
+"PLUCK Apathy Feeling"
+]
+},
+"dc2-pluck-dim-chapel-mp3": {
+"name": "DC2 PLUCK Dim Chapel",
+"bpm": 95,
+"key": "Dm",
+"n": 50,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Dim Chapel",
+"PLUCK Snow Predictability"
+]
+},
+"dc2-pluck-drowsy-letter-mp3": {
+"name": "DC2 PLUCK Drowsy Letter",
+"bpm": 128,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Drowsy Letter",
+"PLUCK Next True"
+]
+},
+"dc2-pluck-dusk-window-mp3": {
+"name": "DC2 PLUCK Dusk Window",
+"bpm": 95,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Dusk Window",
+"PLUCK Snow Satellites"
+]
+},
+"dc2-pluck-frost-blanket-mp3": {
+"name": "DC2 PLUCK Frost Blanket",
+"bpm": 74,
+"key": "Dm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Frost Blanket",
+"PLUCK Dreamland Repercussion"
+]
+},
+"dc2-pluck-ghost-echo-mp3": {
+"name": "DC2 PLUCK Ghost Echo",
+"bpm": 85,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Ghost Echo",
+"PLUCK True Comfort"
+]
+},
+"dc2-pluck-glass-bedroom-mp3": {
+"name": "DC2 PLUCK Glass Bedroom",
+"bpm": 95,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Snowfell Perfect",
+"PLUCK Glass Bedroom"
+]
+},
+"dc2-pluck-hush-nursery-mp3": {
+"name": "DC2 PLUCK Hush Nursery",
+"bpm": 74,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Hush Nursery",
+"PLUCK Dreamlands Trip"
+]
+},
+"dc2-pluck-lilac-snowfall-mp3": {
+"name": "DC2 PLUCK Lilac Snowfall",
+"bpm": 86,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Apathy Trip",
+"PLUCK Lilac Snowfall"
+]
+},
+"dc2-pluck-low-lantern-mp3": {
+"name": "DC2 PLUCK Low Lantern",
+"bpm": 85,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Low Lantern",
+"PLUCK Dreams Haunted"
+]
+},
+"dc2-pluck-milk-morning-mp3": {
+"name": "DC2 PLUCK Milk Morning",
+"bpm": 74,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Milk Morning",
+"PLUCK Dreamland Dust"
+]
+},
+"dc2-pluck-paper-train-mp3": {
+"name": "DC2 PLUCK Paper Train",
+"bpm": 95,
+"key": "Dm",
+"n": 50,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Snow Lifeglow",
+"PLUCK Paper Train"
+]
+},
+"dc2-pluck-quiet-postcard-mp3": {
+"name": "DC2 PLUCK Quiet Postcard",
+"bpm": 86,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Apathy Hurts",
+"PLUCK Quiet Postcard"
+]
+},
+"dc2-pluck-rain-cassette-mp3": {
+"name": "DC2 PLUCK Rain Cassette",
+"bpm": 128,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Next Feeling",
+"PLUCK Rain Cassette"
+]
+},
+"dc2-pluck-sleepy-feather-mp3": {
+"name": "DC2 PLUCK Sleepy Feather",
+"bpm": 74,
+"key": "Dm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Dreamlands Seeing",
+"PLUCK Sleepy Feather"
+]
+},
+"dc2-pluck-slow-candle-mp3": {
+"name": "DC2 PLUCK Slow Candle",
+"bpm": 74,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Slow Candle",
+"PLUCK Dreamlands Chance"
+]
+},
+"dc2-pluck-snow-curtain-mp3": {
+"name": "DC2 PLUCK Snow Curtain",
+"bpm": 74,
+"key": "Dm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Dreamlands Wistful",
+"PLUCK Snow Curtain"
+]
+},
+"dc2-pluck-winter-station-mp3": {
+"name": "DC2 PLUCK Winter Station",
+"bpm": 85,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK True Passengers",
+"PLUCK Winter Station"
+]
+},
+"dc2-synth-ashen-harbor-mp3": {
+"name": "DC2 SYNTH Ashen Harbor",
+"bpm": 128,
+"key": "Em",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Ashen Harbor",
+"SYNTH Next Wistful"
+]
+},
+"dc2-synth-blue-cassette-mp3": {
+"name": "DC2 SYNTH Blue Cassette",
+"bpm": 128,
+"key": "Em",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Next Searching",
+"SYNTH Blue Cassette"
+]
+},
+"dc2-synth-dim-curtain-mp3": {
+"name": "DC2 SYNTH Dim Curtain",
+"bpm": 95,
+"key": "Dm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Dim Curtain",
+"SYNTH Snowfell Repercussion"
+]
+},
+"dc2-synth-faded-train-mp3": {
+"name": "DC2 SYNTH Faded Train",
+"bpm": 85,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Dreams Dust",
+"SYNTH Faded Train"
+]
+},
+"dc2-synth-gentle-sweater-mp3": {
+"name": "DC2 SYNTH Gentle Sweater",
+"bpm": 85,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Gentle Sweater",
+"SYNTH Dreams Chance"
+]
+},
+"dc2-synth-hollow-ribbon-mp3": {
+"name": "DC2 SYNTH Hollow Ribbon",
+"bpm": 95,
+"key": "Dm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Snowfell Believing",
+"SYNTH Hollow Ribbon"
+]
+},
+"dc2-synth-low-letter-mp3": {
+"name": "DC2 SYNTH Low Letter",
+"bpm": 128,
+"key": "Em",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Low Letter",
+"SYNTH Next Samsara"
+]
+},
+"dc2-synth-muted-nursery-mp3": {
+"name": "DC2 SYNTH Muted Nursery",
+"bpm": 86,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Muted Nursery",
+"SYNTH Apathetic Outside"
+]
+},
+"dc2-synth-paper-echo-mp3": {
+"name": "DC2 SYNTH Paper Echo",
+"bpm": 86,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Apathy Feeling",
+"SYNTH Paper Echo"
+]
+},
+"dc2-synth-quiet-orchard-mp3": {
+"name": "DC2 SYNTH Quiet Orchard",
+"bpm": 74,
+"key": "Dm",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Dreamland Trip",
+"SYNTH Quiet Orchard"
+]
+},
+"dc2-synth-silver-puddle-mp3": {
+"name": "DC2 SYNTH Silver Puddle",
+"bpm": 86,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Apathetic Eyes",
+"SYNTH Silver Puddle"
+]
+},
+"dc2-synth-slow-chapel-mp3": {
+"name": "DC2 SYNTH Slow Chapel",
+"bpm": 74,
+"key": "Dm",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Slow Chapel",
+"SYNTH Dreamland Passengers"
+]
+},
+"dc2-synth-soft-station-mp3": {
+"name": "DC2 SYNTH Soft Station",
+"bpm": 74,
+"key": "Dm",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Soft Station",
+"SYNTH Dreamlands Close"
+]
+},
+"dc2-synth-winter-attic-mp3": {
+"name": "DC2 SYNTH Winter Attic",
+"bpm": 85,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Winter Attic",
+"SYNTH Dreams Gyroscope"
+]
+}
+}

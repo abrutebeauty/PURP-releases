@@ -1,0 +1,1214 @@
+{
+"fakeminkcore-i-mp3-t-0-000": {
+"name": "FM BASS Fizz Hop",
+"bpm": 170,
+"key": "C",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Fizz Hop",
+"BASS Head Relief"
+]
+},
+"fakeminkcore-i-mp3-t-5-947": {
+"name": "FM BASS Neon Jerk",
+"bpm": 182,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ragebait Fire",
+"BASS Neon Jerk"
+]
+},
+"fakeminkcore-i-mp3-t-11-522": {
+"name": "FM BASS Cherry Kiss",
+"bpm": 172,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Loser Phantasmagoria",
+"BASS Cherry Kiss"
+]
+},
+"fakeminkcore-i-mp3-t-17-403": {
+"name": "FM BASS Saviour Fever",
+"bpm": 120,
+"key": "F",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Saviour Fever",
+"BASS Candy Deathmatch"
+]
+},
+"fakeminkcore-i-mp3-t-25-703": {
+"name": "FM BASS Frost Braces",
+"bpm": 176,
+"key": "A#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Frost Braces",
+"BASS London Crush"
+]
+},
+"fakeminkcore-i-mp3-t-31-458": {
+"name": "FM BASS Blush Ride",
+"bpm": 174,
+"key": "A#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Blush Ride",
+"BASS Affair Rewind"
+]
+},
+"fakeminkcore-i-mp3-t-37-275": {
+"name": "FM BASS Cloud Riot",
+"bpm": 182,
+"key": "Dm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Cloud Riot",
+"BASS Kitten Kiss"
+]
+},
+"fakeminkcore-i-mp3-t-42-850": {
+"name": "FM BASS Dizzy Riot",
+"bpm": 172,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Dizzy Riot",
+"BASS Angel Easter"
+]
+},
+"fakeminkcore-i-mp3-t-48-731": {
+"name": "FM BASS Sugar Chase",
+"bpm": 190,
+"key": "G",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Creed Missing",
+"BASS Sugar Chase"
+]
+},
+"fakeminkcore-i-mp3-t-54-084": {
+"name": "FM BASS Pixel Wave",
+"bpm": 170,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Pixel Wave",
+"BASS Playlist Pony"
+]
+},
+"fakeminkcore-i-mp3-t-60-031": {
+"name": "FM BASS Nite Ride",
+"bpm": 190,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Eyes Fleeting",
+"BASS Nite Ride"
+]
+},
+"fakeminkcore-i-mp3-t-65-383": {
+"name": "FM 808 Ribbon Rain",
+"bpm": 172,
+"key": "Cm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Wookies Fidelio",
+"808 Ribbon Rain"
+]
+},
+"fakeminkcore-i-mp3-t-71-265": {
+"name": "FM 808 Silk Hop",
+"bpm": 118,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Jasmine Forget",
+"808 Silk Hop"
+]
+},
+"fakeminkcore-i-mp3-t-79-700": {
+"name": "FM 808 Rave Smile",
+"bpm": 115,
+"key": "C",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Saviour Life",
+"808 Rave Smile"
+]
+},
+"fakeminkcore-i-mp3-t-88-348": {
+"name": "FM 808 Chrome Riot",
+"bpm": 170,
+"key": "A#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Night Furever",
+"808 Chrome Riot"
+]
+},
+"fakeminkcore-i-mp3-t-94-295": {
+"name": "FM 808 Pink Drip",
+"bpm": 170,
+"key": "D",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Fleeting Milk",
+"808 Pink Drip"
+]
+},
+"fakeminkcore-i-mp3-t-100-242": {
+"name": "FM 808 Silk Charm",
+"bpm": 126,
+"key": "A#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Silk Charm",
+"808 Jasmine Air"
+]
+},
+"fakeminkcore-i-mp3-t-108-161": {
+"name": "FM 808 Cherry Party",
+"bpm": 176,
+"key": "C",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Cherry Party",
+"808 Jungle Nobody"
+]
+},
+"fakeminkcore-i-mp3-t-113-916": {
+"name": "FM 808 Ilford Dream",
+"bpm": 180,
+"key": "Am",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Monologue Sleep",
+"808 Ilford Dream"
+]
+},
+"fakeminkcore-i-mp3-t-119-549": {
+"name": "FM 808 Fizz Tape",
+"bpm": 184,
+"key": "A#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Fizz Tape",
+"808 Missing Death"
+]
+},
+"fakeminkcore-i-mp3-t-125-067": {
+"name": "FM 808 Laser Daze",
+"bpm": 172,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Pink Feeling",
+"808 Laser Daze"
+]
+},
+"fakeminkcore-i-mp3-t-130-948": {
+"name": "FM LEAD Chrome Night",
+"bpm": 166,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Monologue Head",
+"LEAD Chrome Night"
+]
+},
+"fakeminkcore-i-mp3-t-137-031": {
+"name": "FM LEAD Pastel Wave",
+"bpm": 186,
+"key": "F",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Affair Terrified",
+"LEAD Pastel Wave"
+]
+},
+"fakeminkcore-i-mp3-t-142-492": {
+"name": "FM LEAD Saviour Rain",
+"bpm": 166,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Saviour Rain",
+"LEAD Essex Feeling"
+]
+},
+"fakeminkcore-i-mp3-t-148-576": {
+"name": "FM LEAD Dizzy Riot",
+"bpm": 174,
+"key": "G#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Dizzy Riot",
+"LEAD Pink Kitten"
+]
+},
+"fakeminkcore-i-mp3-t-154-393": {
+"name": "FM LEAD Lilac Bounce",
+"bpm": 186,
+"key": "Dm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Crush Music",
+"LEAD Lilac Bounce"
+]
+},
+"fakeminkcore-i-mp3-t-159-854": {
+"name": "FM LEAD Saviour Pulse",
+"bpm": 170,
+"key": "C",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Saviour Pulse",
+"LEAD Girls Eyes"
+]
+},
+"fakeminkcore-i-mp3-t-165-801": {
+"name": "FM LEAD Honey Blur",
+"bpm": 180,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Fidelio Furever",
+"LEAD Honey Blur"
+]
+},
+"fakeminkcore-i-mp3-t-171-434": {
+"name": "FM LEAD Mink Skip",
+"bpm": 186,
+"key": "E",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Mink Skip",
+"LEAD Essex Creep"
+]
+},
+"fakeminkcore-i-mp3-t-176-896": {
+"name": "FM LEAD Glitter Halo",
+"bpm": 182,
+"key": "C",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Etna Forget",
+"LEAD Glitter Halo"
+]
+},
+"fakeminkcore-i-mp3-t-182-470": {
+"name": "FM LEAD Silk Tape",
+"bpm": 124,
+"key": "A#",
+"n": 40,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Silk Tape",
+"LEAD London Wookies"
+]
+},
+"fakeminkcore-i-mp3-t-190-512": {
+"name": "FM LEAD Silk Rain",
+"bpm": 186,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Jungle Rewind",
+"LEAD Silk Rain"
+]
+},
+"fakeminkcore-i-mp3-t-195-974": {
+"name": "FM LEAD Saviour Sky",
+"bpm": 126,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Saviour Sky",
+"LEAD Life Night"
+]
+},
+"fakeminkcore-i-mp3-t-203-893": {
+"name": "FM LEAD Saviour Skip",
+"bpm": 180,
+"key": "Gm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Relief Deathmatch",
+"LEAD Saviour Skip"
+]
+},
+"fakeminkcore-i-mp3-t-209-526": {
+"name": "FM SYNTH Blush Braces",
+"bpm": 178,
+"key": "Dm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Blush Braces",
+"SYNTH Creep Girls"
+]
+},
+"fakeminkcore-i-mp3-t-215-219": {
+"name": "FM SYNTH Pixel Kiss",
+"bpm": 190,
+"key": "Em",
+"n": 90,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Easter Candy",
+"SYNTH Pixel Kiss"
+]
+},
+"fakeminkcore-i-mp3-t-220-572": {
+"name": "FM SYNTH Cloud Ride",
+"bpm": 172,
+"key": "C",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Angel Death",
+"SYNTH Cloud Ride"
+]
+},
+"fakeminkcore-i-mp3-t-226-453": {
+"name": "FM SYNTH Candy Tears",
+"bpm": 190,
+"key": "C",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Phantasmagoria Music",
+"SYNTH Candy Tears"
+]
+},
+"fakeminkcore-i-mp3-t-231-806": {
+"name": "FM SYNTH Glitter Bounce",
+"bpm": 180,
+"key": "C",
+"n": 84,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Glitter Bounce",
+"SYNTH Blooming Milk"
+]
+},
+"fakeminkcore-i-mp3-t-237-439": {
+"name": "FM SYNTH Velvet Braces",
+"bpm": 170,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Velvet Braces",
+"SYNTH Ice Saviour"
+]
+},
+"fakeminkcore-i-mp3-t-243-386": {
+"name": "FM SYNTH Glitter Swirl",
+"bpm": 190,
+"key": "F#m",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Creep Fidelio",
+"SYNTH Glitter Swirl"
+]
+},
+"fakeminkcore-i-mp3-t-248-739": {
+"name": "FM SYNTH Satin Fever",
+"bpm": 190,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Playlist Jasmine",
+"SYNTH Satin Fever"
+]
+},
+"fakeminkcore-i-mp3-t-254-092": {
+"name": "FM SYNTH Velvet Bus",
+"bpm": 186,
+"key": "A#",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Terrified Blooming",
+"SYNTH Velvet Bus"
+]
+},
+"fakeminkcore-i-mp3-t-259-553": {
+"name": "FM PAD Easter Wish",
+"bpm": 178,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Kitten Girls",
+"PAD Easter Wish"
+]
+},
+"fakeminkcore-i-mp3-t-265-246": {
+"name": "FM PAD Ilford Daze",
+"bpm": 180,
+"key": "C",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Nobody Head",
+"PAD Ilford Daze"
+]
+},
+"fakeminkcore-i-mp3-t-270-880": {
+"name": "FM PAD Petal Swirl",
+"bpm": 118,
+"key": "A#",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Petal Swirl",
+"PAD Creed Fire"
+]
+},
+"fakeminkcore-i-mp3-t-279-315": {
+"name": "FM PAD Glow Bus",
+"bpm": 118,
+"key": "D",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Glow Bus",
+"PAD Affair Ragebait"
+]
+},
+"fakeminkcore-i-mp3-t-287-751": {
+"name": "FM PAD Lilac Blur",
+"bpm": 184,
+"key": "Gm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Lilac Blur",
+"PAD Ice Deathmatch"
+]
+},
+"fakeminkcore-i-mp3-t-293-268": {
+"name": "FM PAD Nite Chase",
+"bpm": 176,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Fleeting Wookies",
+"PAD Nite Chase"
+]
+},
+"fakeminkcore-i-mp3-t-299-023": {
+"name": "FM PAD Easter Daze",
+"bpm": 180,
+"key": "F#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Saviour Life",
+"PAD Easter Daze"
+]
+},
+"fakeminkcore-i-mp3-t-304-656": {
+"name": "FM PAD Prism Jerk",
+"bpm": 166,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Prism Jerk",
+"PAD Essex Fire"
+]
+},
+"fakeminkcore-i-mp3-t-310-739": {
+"name": "FM PAD Silk Rain",
+"bpm": 184,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Air Furever",
+"PAD Silk Rain"
+]
+},
+"fakeminkcore-i-mp3-t-316-257": {
+"name": "FM PAD Honey Halo",
+"bpm": 190,
+"key": "Gm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Pink Etna",
+"PAD Honey Halo"
+]
+},
+"fakeminkcore-i-mp3-t-321-609": {
+"name": "FM PAD Easter Spark",
+"bpm": 190,
+"key": "C",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Kiss Missing",
+"PAD Easter Spark"
+]
+},
+"fakeminkcore-i-mp3-t-326-962": {
+"name": "FM PAD Pastel Heart",
+"bpm": 126,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Pony Sleep",
+"PAD Pastel Heart"
+]
+},
+"fakeminkcore-i-mp3-t-334-881": {
+"name": "FM BELL Sugar Braces",
+"bpm": 124,
+"key": "Gm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Night Crush",
+"BELL Sugar Braces"
+]
+},
+"fakeminkcore-i-mp3-t-342-923": {
+"name": "FM BELL Satin Drip",
+"bpm": 190,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Nobody Loser",
+"BELL Satin Drip"
+]
+},
+"fakeminkcore-i-mp3-t-348-275": {
+"name": "FM BELL Nite Bounce",
+"bpm": 124,
+"key": "C",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Feeling Zealousy",
+"BELL Nite Bounce"
+]
+},
+"fakeminkcore-i-mp3-t-356-317": {
+"name": "FM BELL Glow Rush",
+"bpm": 172,
+"key": "Cm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Glow Rush",
+"BELL Forget Blooming"
+]
+},
+"fakeminkcore-i-mp3-t-362-199": {
+"name": "FM BELL Halo Chase",
+"bpm": 178,
+"key": "Dm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BELL London Terrified",
+"BELL Halo Chase"
+]
+},
+"fakeminkcore-i-mp3-t-367-892": {
+"name": "FM BELL Jelly Hop",
+"bpm": 170,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Milk Kiss",
+"BELL Jelly Hop"
+]
+},
+"fakeminkcore-i-mp3-t-373-839": {
+"name": "FM BELL Glitter Rocket",
+"bpm": 180,
+"key": "Dm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Etna Pony",
+"BELL Glitter Rocket"
+]
+},
+"fakeminkcore-i-mp3-t-379-472": {
+"name": "FM PLUCK Velvet Smile",
+"bpm": 120,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Velvet Smile",
+"PLUCK Fleeting Playlist"
+]
+},
+"fakeminkcore-i-mp3-t-387-772": {
+"name": "FM PLUCK Bubble Halo",
+"bpm": 184,
+"key": "C#",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Ice Monologue",
+"PLUCK Bubble Halo"
+]
+},
+"fakeminkcore-i-mp3-t-393-290": {
+"name": "FM PLUCK Bunny Bus",
+"bpm": 190,
+"key": "A#",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Milk Phantasmagoria",
+"PLUCK Bunny Bus"
+]
+},
+"fakeminkcore-i-mp3-t-398-642": {
+"name": "FM PLUCK Static Braces",
+"bpm": 182,
+"key": "C",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Static Braces",
+"PLUCK Music Death"
+]
+},
+"fakeminkcore-i-mp3-t-404-217": {
+"name": "FM PLUCK Cloud Party",
+"bpm": 170,
+"key": "C",
+"n": 31,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Cloud Party",
+"PLUCK Creed Angel"
+]
+},
+"fakeminkcore-i-mp3-t-410-164": {
+"name": "FM PLUCK Silk Smile",
+"bpm": 174,
+"key": "C",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Silk Smile",
+"PLUCK Fidelio Jasmine"
+]
+},
+"fakeminkcore-i-mp3-t-415-981": {
+"name": "FM PLUCK Silk Tide",
+"bpm": 178,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Eyes Creed",
+"PLUCK Silk Tide"
+]
+},
+"fakeminkcore-i-mp3-t-421-675": {
+"name": "FM PLUCK Nite Riot",
+"bpm": 180,
+"key": "Am",
+"n": 31,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Nite Riot",
+"PLUCK Sleep Phantasmagoria"
+]
+},
+"fakeminkcore-i-mp3-t-427-308": {
+"name": "FM PLUCK Pastel Tape",
+"bpm": 170,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Pastel Tape",
+"PLUCK Candy Ragebait"
+]
+},
+"fakeminkcore-i-mp3-t-433-255": {
+"name": "FM PLUCK Glitter Tears",
+"bpm": 172,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Glitter Tears",
+"PLUCK Relief Nobody"
+]
+},
+"fakeminkcore-i-mp3-t-439-136": {
+"name": "FM PLUCK Halo Skip",
+"bpm": 170,
+"key": "Dm",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Halo Skip",
+"PLUCK Eyes Deathmatch"
+]
+},
+"fakeminkcore-i-mp3-t-445-084": {
+"name": "FM PLUCK Silk Rain",
+"bpm": 184,
+"key": "A#",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Pony Missing",
+"PLUCK Silk Rain"
+]
+},
+"fakeminkcore-i-mp3-t-450-601": {
+"name": "FM KEYS Lilac Rose",
+"bpm": 176,
+"key": "A#",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Lilac Rose",
+"KEYS Death Furever"
+]
+},
+"fakeminkcore-i-mp3-t-456-355": {
+"name": "FM KEYS Toy Zone",
+"bpm": 174,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Music Blooming",
+"KEYS Toy Zone"
+]
+},
+"fakeminkcore-i-mp3-t-462-173": {
+"name": "FM KEYS Honey Rocket",
+"bpm": 166,
+"key": "A#",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Loser Rewind",
+"KEYS Honey Rocket"
+]
+},
+"fakeminkcore-i-mp3-t-468-256": {
+"name": "FM KEYS Rave Heart",
+"bpm": 178,
+"key": "E",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Easter Rewind",
+"KEYS Rave Heart"
+]
+},
+"fakeminkcore-i-mp3-t-473-949": {
+"name": "FM KEYS Sugar Swirl",
+"bpm": 172,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Air Easter",
+"KEYS Sugar Swirl"
+]
+},
+"fakeminkcore-i-mp3-t-479-830": {
+"name": "FM KEYS Saviour Daze",
+"bpm": 180,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Saviour Daze",
+"KEYS Head Loser"
+]
+},
+"fakeminkcore-i-mp3-t-485-464": {
+"name": "FM KEYS Bunny Tape",
+"bpm": 172,
+"key": "F",
+"n": 90,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Zealousy London",
+"KEYS Bunny Tape"
+]
+},
+"fakeminkcore-i-mp3-t-491-345": {
+"name": "FM KEYS Flash Daze",
+"bpm": 178,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Flash Daze",
+"KEYS Essex Affair"
+]
+},
+"fakeminkcore-i-mp3-t-497-039": {
+"name": "FM KEYS Pink Tide",
+"bpm": 180,
+"key": "A#",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Pink Tide",
+"KEYS Kitten Candy"
+]
+},
+"fakeminkcore-i-mp3-t-502-672": {
+"name": "FM KEYS Dizzy Jerk",
+"bpm": 186,
+"key": "Dm",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Dizzy Jerk",
+"KEYS Fire Monologue"
+]
+},
+"fakeminkcore-i-mp3-t-508-133": {
+"name": "FM KEYS Peach Rain",
+"bpm": 172,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Air Relief",
+"KEYS Peach Rain"
+]
+},
+"fakeminkcore-i-mp3-t-514-015": {
+"name": "FM KEYS Glow Shine",
+"bpm": 184,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Girls Saviour",
+"KEYS Glow Shine"
+]
+},
+"fakeminkcore-i-mp3-t-519-532": {
+"name": "FM VOX Pastel Blur",
+"bpm": 174,
+"key": "C",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Pastel Blur",
+"VOX Creep Wookies"
+]
+},
+"fakeminkcore-i-mp3-t-525-349": {
+"name": "FM VOX Fizz Chase",
+"bpm": 124,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Fizz Chase",
+"VOX Crush Affair"
+]
+},
+"fakeminkcore-i-mp3-t-533-391": {
+"name": "FM VOX Milk Zone",
+"bpm": 170,
+"key": "C",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Playlist Jungle",
+"VOX Milk Zone"
+]
+},
+"fakeminkcore-i-mp3-t-539-338": {
+"name": "FM VOX Laser Pulse",
+"bpm": 182,
+"key": "D#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Laser Pulse",
+"VOX Ice Night"
+]
+},
+"fakeminkcore-i-mp3-t-544-913": {
+"name": "FM VOX Toy Rose",
+"bpm": 174,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"VOX London Playlist",
+"VOX Toy Rose"
+]
+},
+"fakeminkcore-i-mp3-t-550-730": {
+"name": "FM VOX Cherry Halo",
+"bpm": 172,
+"key": "A#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Cherry Halo",
+"VOX Nobody Kiss"
+]
+},
+"fakeminkcore-i-mp3-t-556-611": {
+"name": "FM FX Pixel Pulse",
+"bpm": 190,
+"key": "C",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"FX Phantasmagoria Deathmatch",
+"FX Pixel Pulse"
+]
+},
+"fakeminkcore-i-mp3-t-561-964": {
+"name": "FM FX Glitter Bounce",
+"bpm": 182,
+"key": "D",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Life Jungle",
+"FX Glitter Bounce"
+]
+},
+"fakeminkcore-i-mp3-t-567-539": {
+"name": "FM FX Pastel Tears",
+"bpm": 170,
+"key": "Dm",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"FX Candy Angel",
+"FX Pastel Tears"
+]
+},
+"fakeminkcore-i-mp3-t-573-486": {
+"name": "FM FX Peach Shine",
+"bpm": 184,
+"key": "F",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FX Peach Shine",
+"FX Easter Air"
+]
+},
+"fakeminkcore-i-mp3-t-579-003": {
+"name": "FM FX Flash Rocket",
+"bpm": 182,
+"key": "F",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Flash Rocket",
+"FX Zealousy Angel"
+]
+},
+"fakeminkcore-i-mp3-t-584-578": {
+"name": "FM FX Peach Swirl",
+"bpm": 170,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Missing Kitten",
+"FX Peach Swirl"
+]
+},
+"fakeminkcore-i-mp3-t-590-525": {
+"name": "FM FX Easter Dream",
+"bpm": 172,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"FX Easter Dream",
+"FX Fidelio Furever"
+]
+},
+"fakeminkcore-i-mp3-t-596-406": {
+"name": "FM FX Pink Zone",
+"bpm": 172,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"FX Pink Zone",
+"FX Forget Sleep"
+]
+},
+"fakeminkcore-i-mp3-t-602-288": {
+"name": "FM FX Pastel Swirl",
+"bpm": 186,
+"key": "A#",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"FX Ragebait Terrified",
+"FX Pastel Swirl"
+]
+}
+}

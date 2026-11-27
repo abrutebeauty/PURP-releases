@@ -1,0 +1,318 @@
+/* KILLDRUM: the drum machine's window. It wears TOY MACHINE's frame (.tm-root, .tm-top) so the
+   two instruments look like one family; only the pads, side panel and vibe box are its own. */
+.kd-root { grid-template-rows: 52px minmax(0, 1fr) auto; }
+.kd-logo { height: 34px !important; }
+.kd-nav { gap: 10px; }
+.kd-kitname { min-width: 200px; max-width: 340px; padding: 6px 14px; font-size: 15px; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-radius: 8px; }
+.kd-root .kd-kitname:hover { background: var(--tm-panel2); color: var(--tm-acid); }
+.kd-small { padding: 4px 10px; border-radius: 6px; font-size: 12px; color: var(--tm-ink2); box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kd-root .kd-small:hover { color: #fff; }
+.kd-root .kd-dice:hover, .kd-root .kd-paddice:hover { color: var(--tm-acid); }
+
+.kd-main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr); min-height: 0; }
+.kd-padsWrap { padding: 18px; min-height: 0; display: flex; }
+.kd-pads { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 10px; min-height: 0; }
+.kd-pad { position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 10px 12px; border-radius: 10px; text-align: left; overflow: hidden;
+  background: var(--tm-panel); box-shadow: inset 0 0 0 1px var(--tm-line); transition: box-shadow 0.12s, background 0.12s; min-height: 70px; }
+.kd-root .kd-pad:hover { background: var(--tm-panel2); }
+.kd-pad.kd-sel { box-shadow: inset 0 0 0 1.5px var(--tm-purple), 0 0 18px rgba(139, 92, 246, 0.22); }
+.kd-pad.kd-empty { opacity: 0.5; }
+.kd-pad.kd-flash { animation: kd-flash 0.28s var(--tm-ease); }
+@keyframes kd-flash { from { background: rgba(228, 255, 58, 0.22); } to { background: var(--tm-panel); } }
+.kd-padpic { position: absolute; inset: 8px 8px 38px 8px; width: calc(100% - 16px); height: calc(100% - 46px); opacity: 0.85; pointer-events: none; }
+.kd-padname { position: relative; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; }
+.kd-padsnd { position: relative; font-size: 11px; color: var(--tm-ink3); max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-key { position: absolute; top: 7px; right: 9px; font-size: 10px; color: var(--tm-ink3); }
+.kd-uses { position: absolute; top: 7px; left: 10px; font-size: 10px; color: var(--tm-ink3); }
+.kd-pad.kd-hot .kd-padname { color: var(--tm-acid); }
+
+.kd-side { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px 12px 4px; min-height: 0; }
+.kd-padhead { display: flex; align-items: center; gap: 10px; }
+.kd-padlabel { font-family: var(--tm-display); font-weight: 900; font-size: 18px; letter-spacing: 0.03em; text-transform: uppercase; }
+.kd-padsound { flex: 1; font-size: 12px; color: var(--tm-ink2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-shape { width: 100%; height: 86px; border-radius: 8px; background: rgba(0, 0, 0, 0.22); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-knobs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+.kd-knob { display: grid; grid-template-columns: 46px minmax(0, 1fr) 58px; align-items: center; gap: 8px; font-size: 11.5px; }
+.kd-kname { color: var(--tm-ink2); }
+.kd-kval { text-align: right; color: var(--tm-ink); font-variant-numeric: tabular-nums; }
+.kd-root input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 3px; border-radius: 2px; background: var(--tm-line2); outline: none; }
+.kd-root input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 11px; height: 11px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.35); cursor: pointer; }
+.kd-root input[type="range"]::-moz-range-thumb { width: 11px; height: 11px; border: 0; border-radius: 50%; background: #fff; cursor: pointer; }
+.kd-fx { display: flex; gap: 6px; flex-wrap: wrap; }
+.kd-fxcard { display: flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 7px; box-shadow: inset 0 0 0 1px var(--tm-line); font-size: 11.5px; color: var(--tm-ink3); }
+.kd-fxcard.kd-on { color: var(--tm-acid); box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.35); background: rgba(228, 255, 58, 0.05); }
+.kd-fxcard input { width: 60px; }
+.kd-browse { flex: 1; min-height: 80px; display: flex; flex-direction: column; gap: 6px; }
+.kd-search { padding: 6px 10px; border-radius: 7px; border: 0; background: rgba(0, 0, 0, 0.25); box-shadow: inset 0 0 0 1px var(--tm-line); font-size: 12px; }
+.kd-list, .kd-kits { overflow: auto; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; }
+.kd-list { flex: 1; min-height: 0; }
+.kd-row { display: flex; align-items: center; gap: 10px; padding: 5px 8px; border-radius: 6px; font-size: 12px; cursor: pointer; }
+.kd-row:hover { background: var(--tm-panel2); }
+.kd-row.kd-cur { color: var(--tm-acid); }
+.kd-rname { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-rtags { font-size: 10.5px; color: var(--tm-ink3); white-space: nowrap; }
+.kd-x { color: var(--tm-ink3); padding: 0 4px; }
+.kd-root .kd-x:hover { color: var(--tm-red); }
+.kd-none { padding: 8px; font-size: 12px; color: var(--tm-ink3); }
+
+.kd-vibe { display: flex; align-items: center; gap: 10px; padding: 10px 18px 14px; border-top: 1px solid var(--tm-line); }
+.kd-prompt { flex: 0 1 560px; padding: 9px 14px; border-radius: 9px; border: 0; background: rgba(0, 0, 0, 0.28); box-shadow: inset 0 0 0 1px var(--tm-line2); font-size: 13px; }
+.kd-prompt:focus { box-shadow: inset 0 0 0 1px var(--tm-purple); }
+.kd-go { padding: 8px 14px; border-radius: 8px; background: var(--tm-purple); color: #fff; font-weight: 600; font-size: 12.5px; }
+.kd-root .kd-go:hover { filter: brightness(1.15); }
+.kd-said { flex: 1; font-size: 12px; color: var(--tm-ink2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-kits { position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 340px; max-height: 60%; padding: 8px; border-radius: 10px; z-index: 5;
+  background: #1d1e22; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 0 0 1px var(--tm-line2); }
+.kd-kits-t { padding: 8px 8px 4px; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tm-ink3); }
+.kd-ph { font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tm-ink3); padding: 1px 5px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--tm-line2); }
+/* tabs (KIT, BEAT, FX…): other files add theirs through window.KillDrumTabs */
+.kd-tabs { display: flex; gap: 2px; padding: 2px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-tabs:empty { display: none; }
+.kd-tab { padding: 4px 12px; border-radius: 6px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tm-ink3); }
+.kd-root .kd-tab:hover { color: var(--tm-ink); }
+.kd-tab.kd-tabon { color: #fff; background: var(--tm-panel2); box-shadow: inset 0 -2px 0 var(--tm-purple); }
+.kd-panes { position: relative; min-height: 0; }
+.kd-pane { position: absolute; inset: 0; overflow: hidden; }
+
+/* ======================================================================================
+   KILLDRUM LOOK v1 (design thread "Design the KILLDRUM look", 2026-10-27).
+   Two tabs that share one frame: BEAT (pads + ring sequencer) and FX (Portal-style XY
+   circle for drum effects; its classes say kd-warp). Same left pad column on both tabs, a big circle in the middle,
+   a slim panel on the right. Spec + DOM skeletons: docs/KILLDRUM-LOOK.md.
+   Rules: dark grey, purple, acid for anything active/on, never red (red = recording only),
+   no background picture, few buttons (row buttons stay dim until hover).
+   ====================================================================================== */
+.kd-root {
+  --kd-lilac: #b79cff;
+  --kd-acid-dim: rgba(228, 255, 58, 0.16);
+  --kd-purple-dim: rgba(139, 92, 246, 0.18);
+  --kd-padcol: 232px;          /* left pad column */
+  --kd-side: 292px;            /* right panel */
+  --kd-row: 54px;              /* pad row height (9 rows) */
+  --kd-r: 10px;                /* card radius */
+  --kd-cap: 10px;              /* small caps labels */
+  --kd-track: 0.32em;          /* label letter spacing, like Portal's axis names */
+  --kd-off: rgba(255, 255, 255, 0.045);   /* empty step */
+  --kd-duo-lo: #121214;        /* picture duotone: shadows */
+  --kd-duo-hi: #cbb8ff;        /* picture duotone: highlights (acid when selected) */
+}
+.kd-label { font-size: var(--kd-cap); font-weight: 700; letter-spacing: var(--kd-track); text-transform: uppercase; color: var(--tm-ink3); }
+
+/* top bar: tabs are plain words, the open one gets an acid underline */
+.kd-root .kd-tabs { box-shadow: none; gap: 14px; padding: 0 6px 0 0; }
+.kd-root .kd-tab { padding: 6px 0; border-radius: 0; font-size: 11.5px; letter-spacing: 0.22em; background: none; }
+.kd-root .kd-tab.kd-tabon { color: #fff; background: none; box-shadow: inset 0 -2px 0 var(--tm-acid); }
+
+/* the two tab bodies share one 3-column frame */
+.kd-beat, .kd-warp { position: absolute; inset: 0; display: grid; grid-template-columns: var(--kd-padcol) minmax(0, 1fr) var(--kd-side); gap: 0; min-height: 0; }
+
+/* ---------------------------------------------------------------- left: pad column */
+.kd-plist { display: flex; flex-direction: column; gap: 4px; padding: 14px 6px 14px 14px; min-height: 0; overflow: auto; scrollbar-width: none; }
+.kd-plist-h { display: flex; align-items: center; justify-content: space-between; padding: 0 4px 6px 4px; }
+.kd-prow { position: relative; flex: 0 0 var(--kd-row); display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 9px; padding: 0 6px 0 7px; border-radius: var(--kd-r); cursor: pointer;
+  transition: background 0.12s, box-shadow 0.12s; }
+.kd-root .kd-prow:hover { background: var(--tm-panel2); }
+.kd-prow.kd-sel { background: var(--tm-panel2); box-shadow: inset 0 0 0 1.5px var(--tm-purple), 0 0 18px rgba(139, 92, 246, 0.16); }
+.kd-ppic { width: 40px; height: 40px; border-radius: 8px; overflow: hidden; background: #000; box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-ppic > :is(img, canvas) { width: 100%; height: 100%; object-fit: cover; display: block; }
+.kd-pmeta { min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left; }
+.kd-pname { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; white-space: nowrap; }
+.kd-psnd { font-size: 10.5px; color: var(--tm-ink3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-prow.kd-sel .kd-pname { color: var(--tm-acid); }
+.kd-pbtns { display: flex; align-items: center; gap: 1px; }
+.kd-ibtn { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 6px; color: var(--tm-ink3); opacity: 0.35; transition: opacity 0.12s, color 0.12s; }
+.kd-ibtn svg { width: 15px; height: 15px; }
+.kd-root .kd-prow:is(:hover, .kd-sel) .kd-ibtn { opacity: 1; }
+.kd-root .kd-ibtn:hover { color: #fff; background: var(--tm-panel2); }
+/* how many sounds on the pad: 4 small bars, drag up/down on them (1..4) */
+.kd-pcount { display: flex; align-items: flex-end; gap: 2px; height: 14px; padding: 0 5px; cursor: ns-resize; }
+.kd-pcount i { width: 3px; border-radius: 1px; background: var(--tm-line2); }
+.kd-pcount i:nth-child(1) { height: 5px; } .kd-pcount i:nth-child(2) { height: 8px; } .kd-pcount i:nth-child(3) { height: 11px; } .kd-pcount i:nth-child(4) { height: 14px; }
+.kd-pcount i.kd-on { background: var(--kd-lilac); }
+/* states */
+.kd-prow.kd-locked::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: var(--tm-acid); }
+.kd-prow.kd-locked .kd-lock { opacity: 1; color: var(--tm-acid); }
+.kd-prow.kd-muted :is(.kd-ppic, .kd-pmeta) { opacity: 0.35; }
+.kd-prow.kd-hit .kd-ppic { box-shadow: inset 0 0 0 1.5px var(--tm-acid), 0 0 14px rgba(228, 255, 58, 0.35); }
+.kd-prow.kd-hit .kd-ppic > * { filter: brightness(1.5); }
+/* WARP tab: the row's buttons become one "into WARP" switch */
+.kd-send { width: 26px; height: 15px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--tm-line2); position: relative; }
+.kd-send::after { content: ""; position: absolute; top: 3px; left: 3px; width: 9px; height: 9px; border-radius: 50%; background: var(--tm-ink3); transition: transform 0.15s var(--tm-ease), background 0.15s; }
+.kd-send.kd-on { box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.5); background: var(--kd-acid-dim); }
+.kd-send.kd-on::after { transform: translateX(11px); background: var(--tm-acid); }
+
+/* ---------------------------------------------------------------- middle: the circle (ring on BEAT, XY on WARP) */
+.kd-stage { position: relative; display: grid; grid-template-rows: minmax(0, 1fr) auto; justify-items: center; min-width: 0; min-height: 0; padding: 10px 8px 12px; container-type: size; }
+.kd-circle { position: relative; align-self: center; width: min(94cqw, calc(100cqh - 64px)); aspect-ratio: 1; }
+.kd-circle > svg, .kd-circle > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* ring sequencer (SVG viewBox 0 0 1000 1000): one track per pad, kick outside, texture inside */
+.kd-step { fill: var(--kd-off); stroke: none; cursor: pointer; transition: fill 0.08s; }
+.kd-step:hover { fill: rgba(255, 255, 255, 0.12); }
+.kd-trk.kd-sel .kd-step { fill: rgba(255, 255, 255, 0.075); }
+.kd-step.kd-on { fill: var(--tm-purple); fill-opacity: var(--vel, 1); }
+/* every other track: add .kd-alt so neighbours read apart; ghost notes: .kd-ghost (or --vel) */
+.kd-trk.kd-alt .kd-step.kd-on { fill: var(--kd-lilac); }
+.kd-step.kd-on.kd-ghost { fill-opacity: 0.45; }
+.kd-trk.kd-sel .kd-step.kd-on { fill: var(--tm-acid); }
+.kd-step.kd-now { fill: #fff !important; fill-opacity: 1; }
+.kd-trk.kd-muted { opacity: 0.3; }
+.kd-ringrim { fill: none; stroke: var(--tm-line2); stroke-width: 1.5; }
+.kd-beatmark { stroke: var(--tm-ink3); stroke-width: 2; }
+.kd-playhead { stroke: var(--tm-acid); stroke-width: 3; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(228, 255, 58, 0.6)); }
+.kd-face { position: absolute; left: 50%; top: 50%; width: 29%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 1px var(--tm-line2), 0 0 40px rgba(139, 92, 246, 0.25); }
+.kd-face > :is(img, canvas) { width: 100%; height: 100%; object-fit: cover; display: block; }
+.kd-facename { position: absolute; left: 0; right: 0; bottom: 14%; text-align: center; font-family: var(--tm-display); font-weight: 900; font-size: 15px; letter-spacing: 0.06em; color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8); pointer-events: none; }
+/* under the ring: roll everything / only sounds / only the pattern, steps, swing */
+.kd-rollbar { display: flex; align-items: center; gap: 8px; height: 40px; }
+.kd-roll { display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 16px 0 12px; border-radius: 17px; background: var(--tm-acid); color: #111; font-weight: 800; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+.kd-roll svg { width: 18px; height: 18px; }
+.kd-root .kd-roll:hover { filter: brightness(1.08); }
+.kd-roll2 { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px 0 9px; border-radius: 15px; box-shadow: inset 0 0 0 1px var(--tm-line2); color: var(--tm-ink2); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.kd-roll2 svg { width: 15px; height: 15px; }
+.kd-root .kd-roll2:hover { color: var(--tm-acid); box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.45); }
+.kd-seg { display: flex; padding: 2px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-seg > button { padding: 4px 9px; border-radius: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: var(--tm-ink3); }
+.kd-seg > button.kd-on { color: #111; background: var(--tm-acid); }
+.kd-mini { display: flex; align-items: baseline; gap: 6px; padding: 0 6px; cursor: ns-resize; }
+.kd-mini b { font-size: 12px; color: var(--tm-ink); font-variant-numeric: tabular-nums; }
+
+/* WARP: the XY circle. Rim = purple -> lilac -> acid, faint dot grid inside, axis names in an L like Portal */
+.kd-xy { border-radius: 50%; cursor: crosshair;
+  background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.10), transparent 62%), radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.3px) 0 0 / 22px 22px; }
+.kd-xy::before { content: ""; position: absolute; inset: 0; border-radius: 50%; padding: 2px; pointer-events: none;
+  background: conic-gradient(from 200deg, var(--tm-purple), var(--kd-lilac), var(--tm-acid), var(--kd-lilac), var(--tm-purple));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.kd-xydot { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; box-shadow: inset 0 0 0 2px var(--tm-acid), 0 0 22px rgba(228, 255, 58, 0.45); cursor: grab; }
+.kd-xydot::after { content: ""; position: absolute; inset: 8px; border-radius: 50%; background: var(--kd-lilac); }
+.kd-xyhome { position: absolute; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--tm-ink3); }
+.kd-axis { position: absolute; font-size: 11px; font-weight: 800; letter-spacing: 0.34em; text-transform: uppercase; white-space: nowrap; }
+.kd-axis-y { left: -34px; bottom: 16%; transform: rotate(-90deg); transform-origin: left bottom; color: var(--kd-lilac); }
+.kd-axis-x { left: 14%; bottom: -26px; color: var(--tm-acid); }
+.kd-bracket { position: absolute; left: -22px; bottom: -18px; width: 15%; height: 30%; border-left: 1px solid var(--tm-ink3); border-bottom: 1px solid var(--tm-ink3); border-bottom-left-radius: 6px; pointer-events: none; }
+.kd-xyread { display: flex; gap: 18px; align-items: baseline; height: 40px; padding-top: 10px; }
+.kd-xyread b { font-size: 20px; font-weight: 300; font-variant-numeric: tabular-nums; color: var(--tm-ink); }
+
+/* ---------------------------------------------------------------- right panel */
+.kd-detail { display: flex; flex-direction: column; gap: 12px; padding: 14px 16px 12px 6px; min-height: 0; overflow: auto; scrollbar-width: none; }
+.kd-dpic { position: relative; height: 132px; flex: 0 0 auto; border-radius: 12px; overflow: hidden; background: #000; box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-dpic > :is(img, canvas) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.kd-dname { position: absolute; left: 12px; top: 9px; font-family: var(--tm-display); font-weight: 900; font-size: 22px; letter-spacing: 0.03em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7); }
+.kd-dbtns { position: absolute; right: 6px; top: 6px; display: flex; gap: 2px; }
+.kd-dbtns .kd-ibtn { opacity: 1; color: #fff; background: rgba(0, 0, 0, 0.35); }
+.kd-dsound { display: flex; align-items: center; gap: 6px; font-size: 12.5px; }
+.kd-dsound span { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* how many: the dial (drag up/down), then the sounds on the pad */
+.kd-howmany { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 4px 12px; align-items: center; padding: 10px 12px; border-radius: var(--kd-r); background: var(--tm-panel); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-dial { position: relative; width: 58px; height: 58px; grid-row: span 2; cursor: ns-resize; }
+.kd-dial svg { width: 100%; height: 100%; }
+.kd-dial-n { position: absolute; inset: 0; display: grid; place-items: center; font-size: 19px; font-weight: 800; color: #fff; }
+.kd-dial .kd-arc0 { stroke: var(--tm-line2); } .kd-dial .kd-arc1 { stroke: var(--tm-acid); }
+.kd-layers { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
+.kd-layer { display: grid; grid-template-columns: 40px minmax(0, 1fr) 46px 18px; gap: 7px; align-items: center; height: 24px; padding: 0 4px 0 6px; border-radius: 6px; font-size: 11px; color: var(--tm-ink2); }
+.kd-layer:hover { background: var(--tm-panel2); }
+.kd-layer em { font-size: 9.5px; color: var(--tm-ink3); font-style: normal; }
+.kd-layer .kd-lv { height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--kd-lilac) var(--v, 70%), var(--tm-line2) 0); }
+/* bar sliders: label inside left, value right, fill = value. Drag = acid, dbl-click = reset */
+.kd-bars { display: flex; flex-direction: column; gap: 5px; }
+.kd-bar { position: relative; height: 24px; border-radius: 6px; overflow: hidden; background: rgba(0, 0, 0, 0.22); box-shadow: inset 0 0 0 1px var(--tm-line); cursor: ew-resize; display: flex; align-items: center; justify-content: space-between; padding: 0 9px; font-size: 10.5px; }
+.kd-bar::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--v, 0.5) * 100%); background: linear-gradient(90deg, rgba(139, 92, 246, 0.35), rgba(183, 156, 255, 0.55)); }
+/* centred bars (Pitch, Pan): JS sets --a = min(v, .5) and --w = |v - .5| */
+.kd-bar.kd-mid::before { left: calc(var(--a, 0.5) * 100%); width: calc(var(--w, 0) * 100%); }
+.kd-bar.kd-drag::before { background: linear-gradient(90deg, rgba(228, 255, 58, 0.25), rgba(228, 255, 58, 0.55)); }
+.kd-bar > * { position: relative; }
+.kd-bar span { font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tm-ink2); }
+.kd-bar b { font-weight: 500; color: var(--tm-ink); font-variant-numeric: tabular-nums; }
+
+/* WARP panel: world name, two macro knobs (Y lilac, X acid), wet, motion */
+.kd-worldname { font-family: var(--tm-display); font-weight: 900; font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; flex: 1; }
+.kd-worlds { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.kd-worlds > button { height: 28px; border-radius: 7px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; color: var(--tm-ink3); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-worlds > button.kd-on { color: var(--tm-acid); box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.45); background: var(--kd-acid-dim); }
+.kd-macro { display: grid; justify-items: center; gap: 6px; }
+.kd-knob2 { position: relative; width: 104px; height: 104px; cursor: ns-resize; }
+.kd-knob2 svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.kd-knob2 .kd-cap { position: absolute; inset: 22px; border-radius: 50%; background: radial-gradient(circle at 40% 30%, #4a4b50, #26272b 70%); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08); }
+.kd-macro .kd-label { color: inherit; font-size: 11px; }
+.kd-macro small { font-size: 10.5px; color: var(--tm-ink3); }
+.kd-wet { position: relative; height: 40px; border-radius: 8px; background: rgba(0, 0, 0, 0.35); box-shadow: inset 0 0 0 1px var(--tm-line); cursor: ew-resize; overflow: hidden; }
+.kd-wet i { position: absolute; top: 3px; bottom: 3px; width: 10px; margin-left: -5px; border-radius: 4px; background: #e8e8ea; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5); }
+/* FX tab (v1.1): X/Y are read out under the circle; the knobs are MIX, PUNCH, MOTION (72 px) + a hold-to-reverse REV pill */
+.kd-root .kd-arc0 { stroke: var(--tm-line2); } .kd-root .kd-arc1 { stroke: var(--tm-acid); } .kd-root .kd-arc1.kd-lil { stroke: var(--kd-lilac); }
+.kd-knobrow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; justify-items: center; }
+.kd-kn { display: grid; justify-items: center; gap: 3px; }
+.kd-knob3 { position: relative; width: 72px; height: 72px; cursor: ns-resize; }
+.kd-knob3 svg { position: absolute; inset: 0; width: 100%; height: 100%; } /* after .kd-cap in the DOM, so the pointer line sits on the cap */
+.kd-knob3 .kd-cap { position: absolute; inset: 15px; border-radius: 50%; background: radial-gradient(circle at 40% 30%, #4a4b50, #26272b 70%); box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08); }
+.kd-kn b { font-size: 11px; font-weight: 500; color: var(--tm-ink); font-variant-numeric: tabular-nums; }
+.kd-kn.kd-locked .kd-label { color: var(--tm-acid); }
+.kd-rev { height: 28px; padding: 0 16px; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--tm-line2); font-size: 10.5px; font-weight: 800; letter-spacing: 0.2em; color: var(--tm-ink2); }
+.kd-root .kd-rev:active, .kd-rev.kd-on { color: #111; background: var(--kd-lilac); box-shadow: none; }
+.kd-xyguide { position: absolute; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05); pointer-events: none; }
+.kd-lockable { display: inline-flex; align-items: center; gap: 5px; }
+.kd-lockable .kd-ibtn { opacity: 0.5; }
+.kd-lockable.kd-locked .kd-ibtn { opacity: 1; color: var(--tm-acid); }
+
+/* LAYERS (Eman 14 Nov): the whole panel in the dial's height. Head = LAYERS + STACK/CYCLE, then one
+   small volume knob per sound (name under it, x on hover), + adds one. KD_LAYERS_OLD = the old panel. */
+.kd-howmany.kd-lnew { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px 7px; border-radius: 4px; }
+.kd-lnew .kd-lhead { display: flex; align-items: center; justify-content: space-between; height: 20px; }
+.kd-lnew .kd-seg { padding: 1px; border-radius: 3px; }
+.kd-lnew .kd-seg > button { padding: 2px 7px; border-radius: 2px; font-size: 9px; }
+.kd-lnew .kd-lrow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+.kd-lk { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 0; }
+.kd-lknob { position: relative; width: 34px; height: 34px; cursor: ns-resize; touch-action: none; }
+.kd-lknob svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.kd-lknob b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 10.5px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; pointer-events: none; }
+.kd-lknob .kd-lk0 { stroke: var(--tm-line2); } .kd-lknob .kd-lk1 { stroke: var(--kd-lilac); stroke-linecap: round; }
+.kd-lmain .kd-lknob .kd-lk1 { stroke: var(--tm-acid); }
+.kd-lknob.kd-drag .kd-lk1 { stroke: var(--tm-acid); }
+.kd-lk > span { max-width: 100%; font-size: 9px; line-height: 11px; color: var(--tm-ink3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-lmain > span { color: var(--tm-ink2); }
+.kd-lx { position: absolute; top: -3px; right: 2px; width: 14px; height: 14px; display: none; place-items: center; border-radius: 2px; font-size: 11px; line-height: 1; color: var(--tm-ink2); background: var(--tm-panel2); }
+.kd-lk:hover .kd-lx { display: grid; } .kd-lx:hover { color: #fff; }
+.kd-ladd { align-self: start; justify-self: center; width: 34px; height: 34px; border-radius: 3px; font-size: 16px; color: var(--tm-ink3); box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kd-ladd:hover { color: var(--tm-acid); box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.5); }
+/* option 2: the sound's picture sits inside the knob, STACK/CYCLE is one flip button */
+.kd-lv2 .kd-lknob canvas { position: absolute; inset: 6px; width: 22px; height: 22px; border-radius: 50%; opacity: 0.55; }
+.kd-lv2 .kd-lknob b { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9); }
+.kd-lmode { height: 18px; padding: 0 8px; border-radius: 2px; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tm-ink2); box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kd-lmode.kd-on { color: var(--tm-acid); box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.5); }
+/* the six pad sliders as small dials in one row (value inside, name under, drag up/down) */
+.kd-detail .kd-bars:has(.kd-bk) { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 2px; padding: 6px 4px 5px; border-radius: 4px; background: var(--tm-panel); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-bk { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1px; min-width: 0; cursor: ns-resize; touch-action: none; }
+.kd-bk svg { width: 32px; height: 32px; }
+.kd-bk .kd-lk0 { stroke: var(--tm-line2); } .kd-bk .kd-lk1 { stroke: var(--kd-lilac); stroke-linecap: butt; }
+.kd-bk.kd-drag .kd-lk1 { stroke: var(--tm-acid); }
+.kd-bk b { position: absolute; top: 0; left: 0; right: 0; height: 32px; display: grid; place-items: center; font-size: 8.5px; font-weight: 700; color: var(--tm-ink); font-variant-numeric: tabular-nums; pointer-events: none; white-space: nowrap; }
+.kd-bk > span { font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tm-ink3); }
+.kd-bk .kd-abtn { position: absolute; top: -2px; right: 0; transform: scale(0.8); }
+/* RHYTHM widget: mini rhythm card + this pad's pattern lock; the list drops under it */
+.kd-rw { display: flex; gap: 4px; align-items: stretch; flex: 0 0 auto; }
+.kd-rwcard { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px; padding: 7px 9px 8px; border-radius: 4px; text-align: left; background: var(--tm-panel); box-shadow: inset 0 0 0 1px var(--tm-line); }
+.kd-rwcard:hover { box-shadow: inset 0 0 0 1px var(--tm-line2); }
+.kd-rwtop { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.kd-rwname { font-size: 12.5px; font-weight: 800; color: #fff; white-space: nowrap; }
+.kd-rw.kd-auto .kd-rwname { color: var(--tm-acid); letter-spacing: 0.12em; text-transform: uppercase; font-size: 11px; }
+.kd-rwtop em { flex: 1; min-width: 0; font-style: normal; font-size: 9.5px; color: var(--tm-ink3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-rwcar { font-style: normal; font-size: 9px; color: var(--tm-ink3); margin-left: auto; }
+.kd-rwdots { display: flex; flex-direction: column; gap: 1px; }
+.kd-rwdots .kr-row { height: 6px; } .kd-rwdots .kr-row i.kr-big { height: 6px; } .kd-rwdots .kr-row i.kr-dot { height: 4px; } .kd-rwdots .kr-row i { height: 2px; }
+.kd-rwlock { width: 28px; flex: 0 0 28px; height: auto; border-radius: 4px; background: var(--tm-panel); box-shadow: inset 0 0 0 1px var(--tm-line); opacity: 1; }
+.kd-rwlock.kb-lit { color: var(--tm-acid); box-shadow: inset 0 0 0 1px rgba(228, 255, 58, 0.5); }
+.kd-rw2 .kd-rwcard { flex-direction: row; align-items: center; gap: 8px; padding: 6px 9px; }
+.kd-rw2 .kd-rwtop { flex: 0 0 auto; max-width: 48%; } .kd-rw2 .kd-rwtop em { display: none; }
+.kd-rw2 .kd-rwdots { flex: 1; min-width: 0; }
+.kd-rwpop { position: fixed; z-index: 9000; overflow: auto; padding: 4px; border-radius: 4px; background: #1b1b1f; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), inset 0 0 0 1px var(--tm-line2); scrollbar-width: thin; }
+.kd-rwgrp { padding: 8px 6px 3px; font-size: 8.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tm-ink3); }
+.kd-rwrow { display: grid; grid-template-columns: minmax(0, 1fr) 70px; gap: 8px; align-items: center; width: 100%; padding: 5px 6px; border-radius: 2px; text-align: left; font-size: 11px; color: var(--tm-ink2); }
+.kd-rwrow > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kd-rwrow:hover { background: var(--tm-panel2); color: #fff; }
+.kd-rwrow.kd-on { color: var(--tm-acid); box-shadow: inset 2px 0 0 var(--tm-acid); }
+.kd-rwrow .kr-dots { display: flex; flex-direction: column; gap: 1px; } .kd-rwrow .kr-row { height: 4px; gap: 1px; } .kd-rwrow .kr-row i { height: 2px; } .kd-rwrow .kr-row i.kr-dot { height: 3px; } .kd-rwrow .kr-row i.kr-big { height: 4px; }
+.kd-lnew .kd-lhead .kd-label { margin-right: auto; }
+.kd-bk .kd-abtn:not(.kd-ahas) { opacity: 0; } .kd-bk:hover .kd-abtn { opacity: 1; }
+/* the list lives on <body>, outside the window's colour tokens */
+.kd-rwpop { --tm-acid: #e4ff3a; --tm-ink: #ececee; --tm-ink2: rgba(236, 236, 238, 0.66); --tm-ink3: rgba(236, 236, 238, 0.38); --tm-line: rgba(255, 255, 255, 0.07); --tm-line2: rgba(255, 255, 255, 0.14); --tm-panel2: rgba(255, 255, 255, 0.05); --kd-lilac: #b79cff; --kd-off: rgba(255, 255, 255, 0.07); font-family: inherit; color: var(--tm-ink2); }
+/* CDATA: the CUSTOM DATA switch as a small button right of Save (Eman, 16 Nov) */
+.kd-root .kt2-cdata.kd-cdata-top { height: auto; padding: 4px 10px; border: 0; border-radius: 6px; box-shadow: inset 0 0 0 1px var(--tm-line2); font: 700 11px/1.3 inherit; letter-spacing: 0.08em; }
+.kd-root .kt2-cdata.kd-cdata-top.on { box-shadow: none; }

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOY MACHINE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="toymachine.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #111214; }
+  #host { position: fixed; inset: 0; }
+</style>
+</head>
+<body>
+<div id="host"></div>
+<script src="toymachine-arps.js" onerror="this.remove()"></script>
+<script src="toymachine-arps-songs.js" onerror="this.remove()"></script>
+<script src="toymachine.js"></script>
+<script src="toymachine-analyze.js" onerror="this.remove()"></script>
+<script src="toymachine-dropzone.js" onerror="this.remove()"></script>
+<script>
+/* A test page for the TOY MACHINE window: a few hand-written presets and a fake
+   engine made of plain WebAudio oscillators (good enough to hear the keys). */
+const PRESETS = {
+  "Gunk Reese": {
+    name: "Gunk Reese", genre: "Electronic", category: "Bass", key: "D#m", tags: ["reese", "dark", "wide"],
+    source: { song: "Overmono - Gunk", part: "main bass", time: "1:12-1:20" },
+    voice: { mode: "mono", glide: 0.06 },
+    oscA: { wave: "saw", unison: { voices: 4, detune: 18, spread: 0.8, blend: 0.7 } },
+    oscB: { on: true, frames: [[1, 0.5, 0.33, 0.25], [1, 0, 0.33, 0, 0.2]], pos: 0.3, oct: -1, level: 0.5 },
+    sub: { on: true, level: 0.6 },
+    filter: { cutoff: 1100, res: 0.25, drive: 3, env: 2.5 },
+    filterEnv: { a: 0.001, d: 0.25, s: 0.2, r: 0.2 },
+    lfo1: { shape: "sine", sync: "1/4", retrig: true },
+    mods: [{ src: "lfo1", dst: "filter.cutoff", amt: 0 }],
+    fx: [{ type: "drive", mode: "tube", amount: 5, mix: 0.6 }, { type: "ott", depth: 0.5 }, { type: "reverb", size: 0.6, decay: 2.5, mix: 0.15 }],
+    macros: [
+      { name: "Grit", value: 0.2, targets: [{ param: "fx.drive.amount", from: 0, to: 24 }, { param: "filter.drive", from: 0, to: 9 }] },
+      { name: "Bright", value: 0.4, targets: [{ param: "filter.cutoff", from: 200, to: 6000 }] },
+      { name: "Move", value: 0.0, targets: [{ param: "mod.0.amt", from: 0, to: 3 }] },
+      { name: "Space", value: 0.15, targets: [{ param: "fx.reverb.mix", from: 0, to: 0.5 }] },
+    ],
+    pads: [{ kind: "macro", x: 0, y: 1 }, { kind: "macro", x: 2, y: 3 }, { kind: "clip", pos: [0.55, 0.72] }],
+    look: { style: "liquid", hue: 8, hue2: 30, seed: 17 },
+  },
+  "Glass Pluck": {
+    name: "Glass Pluck", genre: "Electronic", category: "Plucks", key: "F#m", tags: ["pluck", "bright"],
+    source: { song: "Fred again.. - Delilah", part: "lead pluck" },
+    oscA: { wave: "harmonic", pos: 0.55, level: 0.8 },
+    oscB: { on: true, wave: "metal", pos: 0.3, oct: 1, level: 0.3 },
+    filter: { type: "lp12", cutoff: 600, res: 0.35, env: 4.5 },
+    ampEnv: { a: 0.001, d: 0.45, s: 0, r: 0.3 },
+    filterEnv: { a: 0.001, d: 0.22, s: 0, r: 0.2 },
+    fx: [{ type: "chorus", mix: 0.25 }, { type: "delay", sync: "1/8d", feedback: 0.4, mix: 0.25, pingpong: true }, { type: "reverb", size: 0.7, decay: 3, mix: 0.22 }],
+    macros: [
+      { name: "Snap", value: 0.5, targets: [{ param: "filterEnv.d", from: 0.05, to: 0.6 }] },
+      { name: "Tone", value: 0.4, targets: [{ param: "filter.cutoff", from: 200, to: 4000 }] },
+      { name: "Echo", value: 0.3, targets: [{ param: "fx.delay.mix", from: 0, to: 0.6 }] },
+      { name: "Shine", value: 0.3, targets: [{ param: "oscB.level", from: 0, to: 0.8 }] },
+    ],
+    pads: [{ kind: "macro", x: 0, y: 1 }, { kind: "macro", x: 2, y: 3 }, { kind: "arp", pos: [0.62, 0.3] }],
+    look: { style: "dots", hue: 265, hue2: 320, seed: 4 },
+  },
+  "Night Bus Pad": {
+    name: "Night Bus Pad", genre: "Electronic", category: "Pads", key: "C", tags: ["pad", "warm", "slow"],
+    source: { song: "Burial - Archangel", part: "pad bed" },
+    oscA: { wave: "vocal", pos: 0.4, unison: { voices: 6, detune: 24, spread: 1, blend: 0.6 } },
+    oscB: { on: true, wave: "organ", pos: 0.5, oct: 1, level: 0.35 },
+    noise: { on: true, color: -0.4, grain: 0.6, level: 0.12 },
+    filter: { type: "lp24", cutoff: 2400, res: 0.15 },
+    ampEnv: { a: 0.9, d: 1, s: 0.8, r: 2.4 },
+    lfo2: { shape: "smooth", rate: 0.3 },
+    mods: [{ src: "lfo2", dst: "oscA.pos", amt: 0.3 }],
+    fx: [{ type: "chorus", mix: 0.4 }, { type: "reverb", size: 0.9, decay: 7, mix: 0.45 }, { type: "texture", mode: "cloud", size: 0.2, density: 30, mix: 0.35 }],
+    macros: [
+      { name: "Haze", value: 0.5, targets: [{ param: "fx.reverb.mix", from: 0.1, to: 0.8 }] },
+      { name: "Air", value: 0.5, targets: [{ param: "filter.cutoff", from: 400, to: 9000 }] },
+    ],
+    pads: [{ kind: "macro", x: 0, y: 1 }, { kind: "space", pos: [0.6, 0.55] }, { kind: "analog", pos: [0.4, 0.6] }],
+    look: { style: "grain", hue: 230, hue2: 300, seed: 9 },
+  },
+  "Chrome Lead": {
+    name: "Chrome Lead", genre: "Electronic", category: "Leads", key: "A#m", source: { song: "SOPHIE - Immaterial", part: "hook lead" },
+    oscA: { wave: "digital", pos: 0.6, warp: { type: "fold", amount: 0.4 } }, filter: { cutoff: 5200, res: 0.3 },
+    fx: [{ type: "drive", mode: "hard", amount: 10 }, { type: "delay", sync: "1/8", mix: 0.2 }],
+    macros: [{ name: "Fold", value: 0.4, targets: [{ param: "oscA.warp.amount", from: 0, to: 1 }] }, { name: "Cut", value: 0.6, targets: [{ param: "filter.cutoff", from: 300, to: 12000 }] }],
+    pads: [{ kind: "macro", x: 0, y: 1 }, { kind: "drive", pos: [0.4, 0.4] }, { kind: "motion", pos: [0.45, 0.4] }],
+    look: { style: "chrome", hue: 290, hue2: 190, seed: 3 },
+  },
+  "Contour Arp": {
+    name: "Contour Arp", genre: "Electronic", category: "Arps", key: "Gm", source: { song: "Four Tet - Baby", part: "arp" },
+    oscA: { wave: "square", level: 0.7 }, filter: { cutoff: 1800, res: 0.4, env: 2 }, ampEnv: { a: 0.002, d: 0.2, s: 0.2, r: 0.15 },
+    macros: [{ name: "Cut", value: 0.5, targets: [{ param: "filter.cutoff", from: 300, to: 8000 }] }, { name: "Decay", value: 0.3, targets: [{ param: "ampEnv.d", from: 0.05, to: 1 }] }],
+    pads: [{ kind: "macro", x: 0, y: 1 }, { kind: "crush", pos: [0.3, 0.35] }, { kind: "gate", pos: [0.5, 0.5] }],
+    look: { style: "terrain", hue: 150, hue2: 70, seed: 21 },
+  },
+  "Tape Keys": {
+    name: "Tape Keys", genre: "Electronic", category: "Keys", key: "Ebm", source: { song: "Bonobo - Kerala", part: "keys" },
+    oscA: { wave: "organ", pos: 0.3 }, oscB: { on: true, wave: "triangle", level: 0.4 }, filter: { cutoff: 3000 }, ampEnv: { a: 0.005, d: 0.8, s: 0.5, r: 0.5 },
+    macros: [{ name: "Tone", value: 0.5, targets: [{ param: "filter.cutoff", from: 400, to: 9000 }] }, { name: "Body", value: 0.5, targets: [{ param: "oscB.level", from: 0, to: 0.8 }] }],
+    pads: [{ kind: "macro", x: 0, y: 1 }, { kind: "filter", pos: [0.5, 0.75] }],
+    look: { style: "waves", hue: 280, hue2: 60, seed: 5 },
+  },
+};
+const INDEX = Object.values(PRESETS).map((p) => ({ name: p.name, genre: p.genre, category: p.category, file: "presets/" + p.genre + "/" + p.category + "/" + p.name + ".json", tags: p.tags || [], source: p.source, key: p.key }));
+
+// ---- fake engine: a saw/square per note through a lowpass
+let ctx = null, master = null, analyser = null, lastPreset = null, bend = 0;
+const voices = new Map();
+window.__tmLog = [];
+function audio() {
+  if (!ctx) {
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+    master = ctx.createGain(); master.gain.value = 0.25;
+    analyser = ctx.createAnalyser(); analyser.fftSize = 512;
+    master.connect(analyser); analyser.connect(ctx.destination);
+  }
+  if (ctx.state === "suspended") ctx.resume();
+  return ctx;
+}
+function full() { return ToyMachineUI.applyMacros(ToyMachineUI.withDefaults(lastPreset || {})); }
+function startVoice(p, pitch, vel, len) {
+  const c = audio(), t = c.currentTime;
+  const f = 440 * Math.pow(2, (pitch - 69 + bend * p.voice.bend) / 12);
+  const g = c.createGain(), flt = c.createBiquadFilter();
+  flt.type = /^hp/.test(p.filter.type) ? "highpass" : /^bp/.test(p.filter.type) ? "bandpass" : "lowpass";
+  flt.frequency.value = p.filter.on ? Math.min(18000, p.filter.cutoff * Math.pow(2, Math.max(0, p.filter.env) * 0.4)) : 18000;
+  flt.Q.value = 0.7 + p.filter.res * 12;
+  const oscs = [];
+  const add = (o, detune) => { const n = c.createOscillator(); n.type = /square|pwm|hollow/.test(o.wave) ? "square" : /sine|basic/.test(o.wave) && o.pos < 0.3 ? "sine" : /triangle|organ/.test(o.wave) ? "triangle" : "sawtooth"; n.frequency.value = f * Math.pow(2, o.oct + o.semi / 12); n.detune.value = o.fine + detune; const og = c.createGain(); og.gain.value = o.level / Math.sqrt(o.unison.voices); n.connect(og); og.connect(o.filter ? flt : g); n.start(t); oscs.push(n); };
+  [p.oscA, p.oscB].forEach((o) => { if (!o.on) return; const n = Math.min(4, o.unison.voices); for (let i = 0; i < n; i++) add(o, n > 1 ? o.unison.detune * (i / (n - 1) - 0.5) : 0); });
+  if (p.sub.on) { const n = c.createOscillator(); n.frequency.value = f * Math.pow(2, p.sub.oct); const sg = c.createGain(); sg.gain.value = p.sub.level * 0.8; n.connect(sg); sg.connect(g); n.start(t); oscs.push(n); }
+  flt.connect(g); g.connect(master);
+  const e = p.ampEnv, peak = (1 - p.voice.velocity * (1 - vel / 127)) * 0.5;
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(peak, t + Math.max(0.002, e.a));
+  g.gain.setTargetAtTime(peak * e.s, t + e.a, Math.max(0.01, e.d / 3));
+  const v = { g, oscs, r: e.r };
+  if (len) setTimeout(() => stopVoice(v), len * 1000);
+  return v;
+}
+function stopVoice(v) { const t = ctx.currentTime; v.g.gain.cancelScheduledValues(t); v.g.gain.setTargetAtTime(0, t, Math.max(0.01, v.r / 3)); v.oscs.forEach((o) => o.stop(t + v.r * 2 + 0.1)); }
+let setPresetCalls = 0;
+const api = {
+  setPreset(p) { lastPreset = p; setPresetCalls++; window.__tmLog.push(["setPreset", p.name]); if (setPresetCalls % 20 === 1) console.log("[demo] setPreset", p.name, "(calls: " + setPresetCalls + ")"); },
+  setMacro(i, v) { window.__tmLog.push(["setMacro", i, +v.toFixed(3)]); },
+  setPads(pads) { window.__tmLog.push(["setPads", pads.length]); },
+  setSample(s) { window.__tmLog.push(["setSample", s && s.sampleRate]); },
+  noteOn(n, vel) { window.__tmLog.push(["noteOn", n]); if (voices.has(n)) stopVoice(voices.get(n)); voices.set(n, startVoice(full(), n, vel)); },
+  noteOff(n) { window.__tmLog.push(["noteOff", n]); const v = voices.get(n); if (v) { stopVoice(v); voices.delete(n); } },
+  pitchBend(b) { bend = b; },
+  modWheel(v) { window.__tmLog.push(["modWheel", +v.toFixed(2)]); },
+  audition(p) { window.__tmLog.push(["audition", p.name]); try { startVoice(ToyMachineUI.applyMacros(ToyMachineUI.withDefaults(p)), 60, 100, 0.6); } catch (e) { console.warn(e); } },
+  meter() { if (!analyser) return { l: 0, r: 0 }; const d = new Float32Array(analyser.fftSize); analyser.getFloatTimeDomainData(d); let pk = 0; for (const x of d) pk = Math.max(pk, Math.abs(x)); return { l: pk, r: pk * 0.96 }; },
+};
+
+// stub analyser so drop-a-sound works on this page even without toymachine-analyze.js
+if (!window.ToyMachineAnalyze) {
+  window.ToyMachineAnalyze = {
+    async fromFile(file, actx) {
+      await new Promise((r) => setTimeout(r, 900));
+      const name = String(file.name || "Dropped").replace(/\.[^.]+$/, "");
+      return {
+        preset: { name, genre: "Electronic", category: "Synths", oscA: { wave: "growl", pos: 0.4 }, filter: { cutoff: 2000, res: 0.3 },
+          macros: [{ name: "Tone", value: 0.5, targets: [{ param: "filter.cutoff", from: 300, to: 9000 }] }, { name: "Grit", value: 0.2, targets: [] }],
+          pads: [{ kind: "macro", x: 0, y: 1 }, { kind: "clip", pos: [0.3, 0.5] }], look: { style: "liquid", hue: 330, hue2: 60, seed: 42 } },
+        sample: { data: new Float32Array(4410), sampleRate: 44100, root: 60 },
+        report: { notes: ["Pitch: C4 (stub analyser on the demo page)", "Bright, saw-like spectrum, so Osc A uses the growl table", "Short attack, long tail"] },
+      };
+    },
+  };
+}
+
+const params = new URLSearchParams(location.search);
+const startEmpty = params.has("empty");
+const first = startEmpty ? null : JSON.parse(JSON.stringify(PRESETS[params.get("preset") || "Gunk Reese"] || PRESETS["Gunk Reese"]));
+lastPreset = first;
+window.tm = ToyMachineUI.open(document.getElementById("host"), {
+  preset: first,
+  presetIndex: INDEX,
+  loadPreset: async (e) => JSON.parse(JSON.stringify(PRESETS[e.name])),
+  api,
+  title: "Demo",
+});
+document.addEventListener("pointerdown", () => audio(), { once: true });
+</script>
+</body>
+</html>

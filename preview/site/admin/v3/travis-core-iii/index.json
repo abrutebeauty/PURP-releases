@@ -1,0 +1,1080 @@
+{
+"tc3-025-mp3": {
+"name": "TC3 ASTRO FUTURE BLUES Lead",
+"bpm": 153,
+"key": "Gm",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Astro Future Blues"
+]
+},
+"tc3-026-mp3": {
+"name": "TC3 ASTRO MINIMOOG Lead",
+"bpm": 153,
+"key": "Gm",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Astro Minimoog"
+]
+},
+"tc3-027-mp3": {
+"name": "TC3 FE!N JUN-6 Lead",
+"bpm": 148.3,
+"key": "D#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Fe!n Jun-6"
+]
+},
+"tc3-028-mp3": {
+"name": "TC3 FE!N JUN-6 Lead Punch",
+"bpm": 148.3,
+"key": "D#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Fe!n Jun-6 Lead Punch"
+]
+},
+"tc3-029-mp3": {
+"name": "TC3 FE!N SYNTH #2 Lead",
+"bpm": 148.3,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Fe!n Synth #2"
+]
+},
+"tc3-030-mp3": {
+"name": "TC3 GOOSEBUMPS CHEESE DELAY Lead",
+"bpm": 130,
+"key": "Em",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Goosebumps Cheese Delay"
+]
+},
+"tc3-031-mp3": {
+"name": "TC3 HITR OUTRO Lead",
+"bpm": 152.996,
+"key": "Dm",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hitr Outro"
+]
+},
+"tc3-032-mp3": {
+"name": "TC3 MY EYES DEEP SYNTH Lead",
+"bpm": 147,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD My Eyes Deep Synth"
+]
+},
+"tc3-033-mp3": {
+"name": "TC3 MY EYES DEEP SYNTH Lead Slow",
+"bpm": 147,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD My Eyes Deep Synth Lead Slow"
+]
+},
+"tc3-034-mp3": {
+"name": "TC3 STARGAZING SYLENTH1 Lead",
+"bpm": 150,
+"key": "Gm",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stargazing Sylenth1"
+]
+},
+"tc3-035-mp3": {
+"name": "TC3 STARGAZING SYLENTH1 Lead Vinyl",
+"bpm": 150,
+"key": "Gm",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stargazing Sylenth1 Lead Vinyl"
+]
+},
+"tc3-090-mp3": {
+"name": "TC3 NARZA BLESSED Organ Lead",
+"bpm": 155,
+"key": "C#m",
+"n": 3,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Narza Blessed Organ"
+]
+},
+"tc3-045-mp3": {
+"name": "TC3 ANTIDOTE SYNTH Bell",
+"bpm": 131,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Antidote Synth"
+]
+},
+"tc3-046-mp3": {
+"name": "TC3 ANTIDOTE SYNTH Bell Vinyl",
+"bpm": 131,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Antidote Synth Bell Vinyl"
+]
+},
+"tc3-047-mp3": {
+"name": "TC3 ANTIDOTE TAPPER Bell",
+"bpm": 131,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Antidote Tapper"
+]
+},
+"tc3-052-mp3": {
+"name": "TC3 GOOSEBUMPS CHRISTMAS Bell",
+"bpm": 130,
+"key": "Em",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Goosebumps Christmas"
+]
+},
+"tc3-053-mp3": {
+"name": "TC3 GOOSEBUMPS CHRISTMAS Bell Vinyl",
+"bpm": 130,
+"key": "Em",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Goosebumps Christmas Bell Vinyl"
+]
+},
+"tc3-061-mp3": {
+"name": "TC3 SICKO BELL PLUCK Bell",
+"bpm": 155,
+"key": "Gm",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Sicko Bell Pluck"
+]
+},
+"tc3-063-mp3": {
+"name": "TC3 SICKO SODASTREAM Bell",
+"bpm": 155,
+"key": "D#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Sicko Sodastream"
+]
+},
+"tc3-064-mp3": {
+"name": "TC3 SICKO CATHEDRAL DROPS Bell",
+"bpm": 155,
+"key": "D#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Sicko Cathedral Drops"
+]
+},
+"tc3-065-mp3": {
+"name": "TC3 STARGAZING PT 2 BELL Bell",
+"bpm": 165.5,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 190,
+"names": [
+"BELL Stargazing Pt 2"
+]
+},
+"tc3-094-mp3": {
+"name": "TC3 HARMO CLUSTER Bell",
+"bpm": 155,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Harmo Cluster"
+]
+},
+"tc3-083-mp3": {
+"name": "TC3 ASTRO ARP 303 Arp",
+"bpm": 153,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Astro Arp 303"
+]
+},
+"tc3-084-mp3": {
+"name": "TC3 ASTRO ARP 303 Arp Tape",
+"bpm": 153,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Astro Arp 303 Arp Tape"
+]
+},
+"tc3-085-mp3": {
+"name": "TC3 FE!N SPARKLY Arp",
+"bpm": 148.3,
+"key": "D#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Fe!n Sparkly"
+]
+},
+"tc3-086-mp3": {
+"name": "TC3 MY EYES PULSE Arp",
+"bpm": 147,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP My Eyes Pulse"
+]
+},
+"tc3-036-mp3": {
+"name": "TC3 ANTIDOTE TC GUITAR Pluck",
+"bpm": 131,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Antidote Tc Guitar"
+]
+},
+"tc3-037-mp3": {
+"name": "TC3 ASTRO SLICE Pluck",
+"bpm": 153,
+"key": "Gm",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Astro Slice"
+]
+},
+"tc3-038-mp3": {
+"name": "TC3 FE!N GUITAR Pluck",
+"bpm": 148.3,
+"key": "D#m",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Fe!n Guitar"
+]
+},
+"tc3-039-mp3": {
+"name": "TC3 GOOSEBUMPS BARITONE Pluck",
+"bpm": 130,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Goosebumps Baritone"
+]
+},
+"tc3-040-mp3": {
+"name": "TC3 HITR GT CLEAN CHORUS Pluck",
+"bpm": 76,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Hitr Gt Clean Chorus"
+]
+},
+"tc3-041-mp3": {
+"name": "TC3 HITR SC GUITAR Pluck",
+"bpm": 152.996,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Hitr Sc Guitar"
+]
+},
+"tc3-042-mp3": {
+"name": "TC3 HITR SJ GUITAR Pluck",
+"bpm": 152.996,
+"key": "Dm",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Hitr Sj Guitar"
+]
+},
+"tc3-043-mp3": {
+"name": "TC3 SHONCI PLUCK Pluck",
+"bpm": 73,
+"key": "F#m",
+"n": 4,
+"midi": true,
+"score": 190,
+"names": [
+"PLUCK Shonci"
+]
+},
+"tc3-044-mp3": {
+"name": "TC3 SICKO HARP Pluck",
+"bpm": 139,
+"key": "Gm",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sicko Harp"
+]
+},
+"tc3-091-mp3": {
+"name": "TC3 SCORCH 2 GUITARS Pluck",
+"bpm": 155,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Scorch 2 Guitars"
+]
+},
+"tc3-048-mp3": {
+"name": "TC3 ASTRO EVP88 Keys",
+"bpm": 153,
+"key": "Gm",
+"n": 19,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Astro Evp88"
+]
+},
+"tc3-049-mp3": {
+"name": "TC3 BUTTERFLY LEAD Keys",
+"bpm": 141,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Butterfly Lead"
+]
+},
+"tc3-050-mp3": {
+"name": "TC3 BUTTERFLY LEAD Keys Pump",
+"bpm": 141,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 150,
+"names": [
+"KEYS Butterfly Lead"
+]
+},
+"tc3-051-mp3": {
+"name": "TC3 BUTTERFLY LEAD Keys Tape",
+"bpm": 141,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Butterfly Lead Keys Tape"
+]
+},
+"tc3-054-mp3": {
+"name": "TC3 GOOSEBUMPS REVERSED PIANO Keys",
+"bpm": 130,
+"key": "Em",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Goosebumps Reversed Piano"
+]
+},
+"tc3-055-mp3": {
+"name": "TC3 I KNOW PIANO Keys",
+"bpm": 118,
+"key": "Cm",
+"n": 37,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS I Know Piano"
+]
+},
+"tc3-056-mp3": {
+"name": "TC3 I KNOW PIANO Keys Tape",
+"bpm": 118,
+"key": "Cm",
+"n": 37,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS I Know Piano Keys Tape"
+]
+},
+"tc3-057-mp3": {
+"name": "TC3 MY EYES BITCRUSHED Keys",
+"bpm": 147,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS My Eyes Bitcrushed"
+]
+},
+"tc3-058-mp3": {
+"name": "TC3 MY EYES KEYS Keys",
+"bpm": 147,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 190,
+"names": [
+"KEYS My Eyes"
+]
+},
+"tc3-059-mp3": {
+"name": "TC3 MY EYES SYNTH Keys",
+"bpm": 119,
+"key": "Gm",
+"n": 27,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS My Eyes Synth"
+]
+},
+"tc3-060-mp3": {
+"name": "TC3 MY EYES SYNTH Keys Tape",
+"bpm": 119,
+"key": "Gm",
+"n": 27,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS My Eyes Synth Keys Tape"
+]
+},
+"tc3-062-mp3": {
+"name": "TC3 SICKO RAPMAN WAW Keys",
+"bpm": 139,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Sicko Rapman Waw"
+]
+},
+"tc3-066-mp3": {
+"name": "TC3 STARGAZING TAL ORGAN Keys",
+"bpm": 165.5,
+"key": "Bm",
+"n": 53,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Stargazing Tal Organ"
+]
+},
+"tc3-067-mp3": {
+"name": "TC3 STARGAZING TAL ORGAN Pump",
+"bpm": 165.5,
+"key": "Bm",
+"n": 53,
+"midi": true,
+"score": 150,
+"names": [
+"KEYS Stargazing Tal Organ"
+]
+},
+"tc3-068-mp3": {
+"name": "TC3 STARGAZING VIBRATO Keys",
+"bpm": 150,
+"key": "Gm",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Stargazing Vibrato"
+]
+},
+"tc3-092-mp3": {
+"name": "TC3 GOODUMS COLORS Keys",
+"bpm": 155,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Goodums Colors"
+]
+},
+"tc3-093-mp3": {
+"name": "TC3 GOODUMS COLORS Keys Vinyl",
+"bpm": 155,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Goodums Colors Keys Vinyl"
+]
+},
+"tc3-095-mp3": {
+"name": "TC3 SCORCH KEY VYBZ EP Keys",
+"bpm": 155,
+"key": "C#m",
+"n": 21,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Scorch Key Vybz Ep"
+]
+},
+"tc3-096-mp3": {
+"name": "TC3 SCORCH OFFSPRING Keys",
+"bpm": 155,
+"key": "C#m",
+"n": 21,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Scorch Offspring"
+]
+},
+"tc3-097-mp3": {
+"name": "TC3 UPPER ECHELONS Keys",
+"bpm": 155,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Upper Echelons"
+]
+},
+"tc3-070-mp3": {
+"name": "TC3 ASTRO BOYS CHOIR Choir",
+"bpm": 153,
+"key": "Gm",
+"n": 5,
+"midi": true,
+"score": 190,
+"names": [
+"CHOIR Astro Boys"
+]
+},
+"tc3-072-mp3": {
+"name": "TC3 BUTTERFLY LOW VOCAL Choir",
+"bpm": 141,
+"key": "C#m",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Butterfly Low Vocal"
+]
+},
+"tc3-073-mp3": {
+"name": "TC3 HITR INTRO FLUTE Choir",
+"bpm": 76,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Hitr Intro Flute"
+]
+},
+"tc3-075-mp3": {
+"name": "TC3 HITR SOPRANO Choir",
+"bpm": 152.996,
+"key": "Dm",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Hitr Soprano"
+]
+},
+"tc3-076-mp3": {
+"name": "TC3 HITR SOPRANO Choir Slide",
+"bpm": 152.996,
+"key": "Dm",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Hitr Soprano Choir Slide"
+]
+},
+"tc3-078-mp3": {
+"name": "TC3 I KNOW VOX Choir",
+"bpm": 118,
+"key": "Cm",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR I Know Vox"
+]
+},
+"tc3-079-mp3": {
+"name": "TC3 MY EYES BOYS CHOIR Choir",
+"bpm": 147,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 190,
+"names": [
+"CHOIR My Eyes Boys"
+]
+},
+"tc3-080-mp3": {
+"name": "TC3 SHONCI ARCADE 2 Choir",
+"bpm": 73,
+"key": "F#m",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Shonci Arcade 2"
+]
+},
+"tc3-081-mp3": {
+"name": "TC3 SHONCI ARCADE OOOH Choir",
+"bpm": 73,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Shonci Arcade Oooh"
+]
+},
+"tc3-069-mp3": {
+"name": "TC3 ANTIDOTE SHIMMER Pad",
+"bpm": 131,
+"key": "A#m",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Antidote Shimmer"
+]
+},
+"tc3-071-mp3": {
+"name": "TC3 BUTTERFLY LOW SYNTH Pad",
+"bpm": 141,
+"key": "C#m",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Butterfly Low Synth"
+]
+},
+"tc3-074-mp3": {
+"name": "TC3 HITR SOFT SYNTH Pad",
+"bpm": 152.996,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Hitr Soft Synth"
+]
+},
+"tc3-077-mp3": {
+"name": "TC3 I KNOW STRINGS Pad",
+"bpm": 118,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD I Know Strings"
+]
+},
+"tc3-082-mp3": {
+"name": "TC3 SICKO SINEPAD Pad",
+"bpm": 155,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sicko Sinepad"
+]
+},
+"tc3-098-mp3": {
+"name": "TC3 SCORCH MIO Pad",
+"bpm": 155,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Scorch Mio"
+]
+},
+"tc3-013-mp3": {
+"name": "TC3 FE!N BASS #3 Bass",
+"bpm": 148.3,
+"key": "D#m",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Fe!n Bass #3"
+]
+},
+"tc3-014-mp3": {
+"name": "TC3 FE!N BASS #3 Bass Dark",
+"bpm": 148.3,
+"key": "D#m",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Fe!n Bass #3 Bass Dark"
+]
+},
+"tc3-015-mp3": {
+"name": "TC3 GOOSEBUMPS SUB Bass",
+"bpm": 130,
+"key": "Em",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Goosebumps Sub"
+]
+},
+"tc3-016-mp3": {
+"name": "TC3 GOOSEBUMPS SUB Bass Pulse",
+"bpm": 130,
+"key": "Em",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Goosebumps Sub Bass Pulse"
+]
+},
+"tc3-017-mp3": {
+"name": "TC3 HITR INTRO BASS Bass",
+"bpm": 76,
+"key": "Dm",
+"n": 14,
+"midi": true,
+"score": 190,
+"names": [
+"BASS Hitr Intro"
+]
+},
+"tc3-018-mp3": {
+"name": "TC3 HITR MAALY SUB Bass",
+"bpm": 152.996,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hitr Maaly Sub"
+]
+},
+"tc3-019-mp3": {
+"name": "TC3 HITR OUTRO Bass",
+"bpm": 152.996,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hitr Outro"
+]
+},
+"tc3-020-mp3": {
+"name": "TC3 I KNOW BASS PIANO Bass",
+"bpm": 118,
+"key": "Cm",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"BASS I Know Bass Piano"
+]
+},
+"tc3-021-mp3": {
+"name": "TC3 MY EYES DEEP WOBBLE Bass",
+"bpm": 147,
+"key": "Cm",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"BASS My Eyes Deep Wobble"
+]
+},
+"tc3-022-mp3": {
+"name": "TC3 SICKO MODE Bass",
+"bpm": 139,
+"key": "Gm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sicko Mode"
+]
+},
+"tc3-023-mp3": {
+"name": "TC3 SICKO MODE Bass Growl",
+"bpm": 139,
+"key": "Gm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sicko Mode Bass Growl"
+]
+},
+"tc3-024-mp3": {
+"name": "TC3 SICKO PRIDZ Bass",
+"bpm": 155,
+"key": "D#m",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sicko Pridz"
+]
+},
+"tc3-088-mp3": {
+"name": "TC3 JAYS DETROIT Bass",
+"bpm": 155,
+"key": "C#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Jays Detroit"
+]
+},
+"tc3-089-mp3": {
+"name": "TC3 SCORCH GEDEZA Bass",
+"bpm": 155,
+"key": "C#m",
+"n": 3,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Scorch Gedeza"
+]
+},
+"tc3-001-mp3": {
+"name": "TC3 ANTIDOTE 808",
+"bpm": 131,
+"key": "A#m",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"808 Antidote"
+]
+},
+"tc3-002-mp3": {
+"name": "TC3 ASTRO SLIDE 808",
+"bpm": 153,
+"key": "Gm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"808 Astro Slide"
+]
+},
+"tc3-003-mp3": {
+"name": "TC3 BUTTERFLY SPINZ 808",
+"bpm": 141,
+"key": "C#m",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"808 Butterfly Spinz"
+]
+},
+"tc3-004-mp3": {
+"name": "TC3 FE!N SUB 808",
+"bpm": 148.3,
+"key": "D#m",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"808 Fe!n Sub"
+]
+},
+"tc3-005-mp3": {
+"name": "TC3 GOOSEBUMPS WILLAFOOL 808",
+"bpm": 130,
+"key": "Em",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Goosebumps Willafool"
+]
+},
+"tc3-006-mp3": {
+"name": "TC3 HITR DRO 808",
+"bpm": 76,
+"key": "Dm",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"808 Hitr Dro"
+]
+},
+"tc3-007-mp3": {
+"name": "TC3 I KNOW SPINZ 808",
+"bpm": 118,
+"key": "Cm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"808 I Know Spinz"
+]
+},
+"tc3-008-mp3": {
+"name": "TC3 I KNOW SPINZ 808 Long",
+"bpm": 118,
+"key": "Cm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"808 I Know Spinz 808 Long"
+]
+},
+"tc3-009-mp3": {
+"name": "TC3 SHONCI SUB 808",
+"bpm": 73,
+"key": "F#m",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Shonci Sub"
+]
+},
+"tc3-010-mp3": {
+"name": "TC3 SICKO LEX LUGER 808",
+"bpm": 155,
+"key": "D#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"808 Sicko Lex Luger"
+]
+},
+"tc3-011-mp3": {
+"name": "TC3 STARGAZING SPINZ 808",
+"bpm": 150,
+"key": "Gm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Stargazing Spinz"
+]
+},
+"tc3-012-mp3": {
+"name": "TC3 STARGAZING SPINZ 808 Tube",
+"bpm": 150,
+"key": "Gm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Stargazing Spinz 808 Tube"
+]
+},
+"tc3-087-mp3": {
+"name": "TC3 GOLIATH 808",
+"bpm": 155,
+"key": "C#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"808 Goliath"
+]
+}
+}

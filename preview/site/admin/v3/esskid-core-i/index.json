@@ -1,0 +1,1214 @@
+{
+"esskid-core-i-mp3-t-0-000": {
+"name": "EK 808 Black Ritual",
+"bpm": 143,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"808 Black Ritual",
+"808 Rebel Dirty"
+]
+},
+"esskid-core-i-mp3-t-7-013": {
+"name": "EK 808 Scar Wolf",
+"bpm": 157,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Scar Wolf",
+"808 Rottweiler Phantom"
+]
+},
+"esskid-core-i-mp3-t-13-428": {
+"name": "EK 808 Dock Omen",
+"bpm": 130,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"808 Dock Omen",
+"808 Tartan Panic"
+]
+},
+"esskid-core-i-mp3-t-21-113": {
+"name": "EK 808 Cold Omen",
+"bpm": 126,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Dirty Panic",
+"808 Cold Omen"
+]
+},
+"esskid-core-i-mp3-t-29-032": {
+"name": "EK 808 Steel Hunter",
+"bpm": 157,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Steel Hunter",
+"808 Mist Panic"
+]
+},
+"esskid-core-i-mp3-t-35-446": {
+"name": "EK 808 Cold Pulse",
+"bpm": 140,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Rebel Rottweiler",
+"808 Cold Pulse"
+]
+},
+"esskid-core-i-mp3-t-42-603": {
+"name": "EK 808 Concrete Siren",
+"bpm": 143,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Rebel Tartan",
+"808 Concrete Siren"
+]
+},
+"esskid-core-i-mp3-t-49-617": {
+"name": "EK 808 Scar Halo",
+"bpm": 143,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Phantom Tartan",
+"808 Scar Halo"
+]
+},
+"esskid-core-i-mp3-t-56-630": {
+"name": "EK 808 Silent Riot",
+"bpm": 132,
+"key": "D#m",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"808 Raws Prague",
+"808 Silent Riot"
+]
+},
+"esskid-core-i-mp3-t-64-203": {
+"name": "EK 808 Static Ghost",
+"bpm": 126,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"808 Static Ghost",
+"808 Raws Cali"
+]
+},
+"esskid-core-i-mp3-t-72-122": {
+"name": "EK 808 Burner Halo",
+"bpm": 150,
+"key": "D#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Burner Halo",
+"808 Panic Sandals"
+]
+},
+"esskid-core-i-mp3-t-78-822": {
+"name": "EK 808 Night Tower",
+"bpm": 139,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Night Tower",
+"808 Phantom Cali"
+]
+},
+"esskid-core-i-mp3-t-86-028": {
+"name": "EK BASS Rust Ghost",
+"bpm": 132,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Tartan Panic",
+"BASS Rust Ghost"
+]
+},
+"esskid-core-i-mp3-t-93-601": {
+"name": "EK BASS Ash Blade",
+"bpm": 140,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Tartan Dirty",
+"BASS Ash Blade"
+]
+},
+"esskid-core-i-mp3-t-100-758": {
+"name": "EK BASS Ferry Hunter",
+"bpm": 140,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sandals Mist",
+"BASS Ferry Hunter"
+]
+},
+"esskid-core-i-mp3-t-107-915": {
+"name": "EK BASS Smoke Vault",
+"bpm": 140,
+"key": "Bm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Smoke Vault",
+"BASS Dirty Mist"
+]
+},
+"esskid-core-i-mp3-t-115-072": {
+"name": "EK BASS Scar Halo",
+"bpm": 140,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Scar Halo",
+"BASS Prague Mist"
+]
+},
+"esskid-core-i-mp3-t-122-230": {
+"name": "EK BASS Frost Tower",
+"bpm": 150,
+"key": "D#m",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Raws Panic",
+"BASS Frost Tower"
+]
+},
+"esskid-core-i-mp3-t-128-930": {
+"name": "EK BASS Black Pulse",
+"bpm": 143,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Pulse",
+"BASS Tartan Cali"
+]
+},
+"esskid-core-i-mp3-t-135-943": {
+"name": "EK BASS Silent Docks",
+"bpm": 140,
+"key": "Bm",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Silent Docks",
+"BASS Panic Mist"
+]
+},
+"esskid-core-i-mp3-t-143-100": {
+"name": "EK LEAD Brick Signal",
+"bpm": 143,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Prague Rebel",
+"LEAD Brick Signal"
+]
+},
+"esskid-core-i-mp3-t-150-113": {
+"name": "EK LEAD Hollow Blade",
+"bpm": 143,
+"key": "A#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Mist Phantom",
+"LEAD Hollow Blade"
+]
+},
+"esskid-core-i-mp3-t-157-127": {
+"name": "EK LEAD Hood Glass",
+"bpm": 157,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Tartan Rottweiler",
+"LEAD Hood Glass"
+]
+},
+"esskid-core-i-mp3-t-163-541": {
+"name": "EK LEAD Hollow Lamp",
+"bpm": 132,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Tartan Mist",
+"LEAD Hollow Lamp"
+]
+},
+"esskid-core-i-mp3-t-171-114": {
+"name": "EK LEAD Sodium Lamp",
+"bpm": 140,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Dirty Rebel",
+"LEAD Sodium Lamp"
+]
+},
+"esskid-core-i-mp3-t-178-271": {
+"name": "EK LEAD Rain Docks",
+"bpm": 143,
+"key": "D#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Raws Prague",
+"LEAD Rain Docks"
+]
+},
+"esskid-core-i-mp3-t-185-284": {
+"name": "EK LEAD Rain Siren",
+"bpm": 157,
+"key": "Em",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Raws Mist",
+"LEAD Rain Siren"
+]
+},
+"esskid-core-i-mp3-t-191-699": {
+"name": "EK LEAD Ash Bridge",
+"bpm": 140,
+"key": "Em",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ash Bridge",
+"LEAD Panic Phantom"
+]
+},
+"esskid-core-i-mp3-t-198-856": {
+"name": "EK LEAD Smoke Engine",
+"bpm": 132,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Smoke Engine",
+"LEAD Cali Mist"
+]
+},
+"esskid-core-i-mp3-t-206-429": {
+"name": "EK LEAD Ferry Alley",
+"bpm": 143,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Prague Sandals",
+"LEAD Ferry Alley"
+]
+},
+"esskid-core-i-mp3-t-213-442": {
+"name": "EK LEAD Rain Bridge",
+"bpm": 140,
+"key": "D#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rain Bridge",
+"LEAD Prague Panic"
+]
+},
+"esskid-core-i-mp3-t-220-599": {
+"name": "EK LEAD Fog Siren",
+"bpm": 157,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Raws Panic",
+"LEAD Fog Siren"
+]
+},
+"esskid-core-i-mp3-t-227-014": {
+"name": "EK LEAD Wet Static",
+"bpm": 140,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Wet Static",
+"LEAD Mist Panic"
+]
+},
+"esskid-core-i-mp3-t-234-171": {
+"name": "EK LEAD Ferry Wolf",
+"bpm": 132,
+"key": "Em",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ferry Wolf",
+"LEAD Tartan Raws"
+]
+},
+"esskid-core-i-mp3-t-241-744": {
+"name": "EK BELL Steel Riot",
+"bpm": 132,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Panic Raws",
+"BELL Steel Riot"
+]
+},
+"esskid-core-i-mp3-t-249-317": {
+"name": "EK BELL Cold Gate",
+"bpm": 132,
+"key": "F#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Cold Gate",
+"BELL Sandals Cali"
+]
+},
+"esskid-core-i-mp3-t-256-889": {
+"name": "EK BELL Bleak Chain",
+"bpm": 157,
+"key": "A#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Cali Rebel",
+"BELL Bleak Chain"
+]
+},
+"esskid-core-i-mp3-t-263-304": {
+"name": "EK BELL Grey Mirror",
+"bpm": 140,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Sandals Rottweiler",
+"BELL Grey Mirror"
+]
+},
+"esskid-core-i-mp3-t-270-461": {
+"name": "EK BELL Static Hunter",
+"bpm": 139,
+"key": "A#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Dirty Sandals",
+"BELL Static Hunter"
+]
+},
+"esskid-core-i-mp3-t-277-668": {
+"name": "EK BELL Ghost Fog",
+"bpm": 130,
+"key": "A#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Rottweiler Panic",
+"BELL Ghost Fog"
+]
+},
+"esskid-core-i-mp3-t-285-352": {
+"name": "EK BELL Frost Hunter",
+"bpm": 140,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Rottweiler Raws",
+"BELL Frost Hunter"
+]
+},
+"esskid-core-i-mp3-t-292-509": {
+"name": "EK BELL Smoke Tower",
+"bpm": 143,
+"key": "A#m",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Sandals Panic",
+"BELL Smoke Tower"
+]
+},
+"esskid-core-i-mp3-t-299-523": {
+"name": "EK BELL Night Pulse",
+"bpm": 140,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Raws Mist",
+"BELL Night Pulse"
+]
+},
+"esskid-core-i-mp3-t-306-680": {
+"name": "EK BELL Scar Halo",
+"bpm": 140,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Scar Halo",
+"BELL Sandals Tartan"
+]
+},
+"esskid-core-i-mp3-t-313-837": {
+"name": "EK BELL Frost Fog",
+"bpm": 157,
+"key": "Bm",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Rottweiler Cali",
+"BELL Frost Fog"
+]
+},
+"esskid-core-i-mp3-t-320-251": {
+"name": "EK BELL Fog Blade",
+"bpm": 140,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Prague Raws",
+"BELL Fog Blade"
+]
+},
+"esskid-core-i-mp3-t-327-409": {
+"name": "EK ARP Ferry Bridge",
+"bpm": 150,
+"key": "Bm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Ferry Bridge",
+"ARP Tartan Phantom"
+]
+},
+"esskid-core-i-mp3-t-334-109": {
+"name": "EK ARP Static Bridge",
+"bpm": 150,
+"key": "G#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Mist Rebel",
+"ARP Static Bridge"
+]
+},
+"esskid-core-i-mp3-t-340-809": {
+"name": "EK ARP Bleak Signal",
+"bpm": 150,
+"key": "C#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Bleak Signal",
+"ARP Mist Sandals"
+]
+},
+"esskid-core-i-mp3-t-347-509": {
+"name": "EK ARP Estate Bridge",
+"bpm": 150,
+"key": "D#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Panic Mist",
+"ARP Estate Bridge"
+]
+},
+"esskid-core-i-mp3-t-354-209": {
+"name": "EK ARP Estate Mirror",
+"bpm": 150,
+"key": "G#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Mist Raws",
+"ARP Estate Mirror"
+]
+},
+"esskid-core-i-mp3-t-360-909": {
+"name": "EK ARP Dock Lamp",
+"bpm": 150,
+"key": "Em",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Dock Lamp",
+"ARP Rebel Mist"
+]
+},
+"esskid-core-i-mp3-t-367-609": {
+"name": "EK ARP Scar Prayer",
+"bpm": 126,
+"key": "Dm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Rottweiler Dirty",
+"ARP Scar Prayer"
+]
+},
+"esskid-core-i-mp3-t-375-528": {
+"name": "EK ARP Steel Vault",
+"bpm": 140,
+"key": "D#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Rebel Rottweiler",
+"ARP Steel Vault"
+]
+},
+"esskid-core-i-mp3-t-382-685": {
+"name": "EK ARP Smoke Hunter",
+"bpm": 140,
+"key": "G#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Dirty Cali",
+"ARP Smoke Hunter"
+]
+},
+"esskid-core-i-mp3-t-389-842": {
+"name": "EK ARP Ferry Riot",
+"bpm": 126,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Raws Panic",
+"ARP Ferry Riot"
+]
+},
+"esskid-core-i-mp3-t-397-761": {
+"name": "EK ARP Brick Mirror",
+"bpm": 132,
+"key": "G#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Dirty Rebel",
+"ARP Brick Mirror"
+]
+},
+"esskid-core-i-mp3-t-405-334": {
+"name": "EK ARP Cold Omen",
+"bpm": 143,
+"key": "Bm",
+"n": 19,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Cold Omen",
+"ARP Dirty Mist"
+]
+},
+"esskid-core-i-mp3-t-412-347": {
+"name": "EK PLUCK Frost Crow",
+"bpm": 126,
+"key": "F#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Frost Crow",
+"PLUCK Tartan Sandals"
+]
+},
+"esskid-core-i-mp3-t-420-266": {
+"name": "EK PLUCK Scar Ritual",
+"bpm": 140,
+"key": "F#m",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Scar Ritual",
+"PLUCK Tartan Cali"
+]
+},
+"esskid-core-i-mp3-t-427-423": {
+"name": "EK PLUCK Murk Wire",
+"bpm": 140,
+"key": "D#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Cali Mist",
+"PLUCK Murk Wire"
+]
+},
+"esskid-core-i-mp3-t-434-580": {
+"name": "EK PLUCK Wet Blade",
+"bpm": 140,
+"key": "A#m",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Wet Blade",
+"PLUCK Phantom Dirty"
+]
+},
+"esskid-core-i-mp3-t-441-738": {
+"name": "EK PLUCK Black Halo",
+"bpm": 140,
+"key": "A#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Black Halo",
+"PLUCK Raws Rebel"
+]
+},
+"esskid-core-i-mp3-t-448-895": {
+"name": "EK PLUCK Night Mask",
+"bpm": 140,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Rebel Dirty",
+"PLUCK Night Mask"
+]
+},
+"esskid-core-i-mp3-t-456-052": {
+"name": "EK PLUCK Iron Siren",
+"bpm": 126,
+"key": "D#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Rottweiler Cali",
+"PLUCK Iron Siren"
+]
+},
+"esskid-core-i-mp3-t-463-971": {
+"name": "EK PLUCK Smoke Ghost",
+"bpm": 132,
+"key": "Dm",
+"n": 55,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Cali Tartan",
+"PLUCK Smoke Ghost"
+]
+},
+"esskid-core-i-mp3-t-471-544": {
+"name": "EK PLUCK Steel Ghost",
+"bpm": 150,
+"key": "Dm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Phantom Cali",
+"PLUCK Steel Ghost"
+]
+},
+"esskid-core-i-mp3-t-478-244": {
+"name": "EK KEYS Smoke Blade",
+"bpm": 150,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Smoke Blade",
+"KEYS Panic Mist"
+]
+},
+"esskid-core-i-mp3-t-484-944": {
+"name": "EK KEYS Smoke Prayer",
+"bpm": 143,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Smoke Prayer",
+"KEYS Cali Tartan"
+]
+},
+"esskid-core-i-mp3-t-491-957": {
+"name": "EK KEYS Static Siren",
+"bpm": 126,
+"key": "D#m",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Static Siren",
+"KEYS Phantom Tartan"
+]
+},
+"esskid-core-i-mp3-t-499-876": {
+"name": "EK KEYS Smoke Mirror",
+"bpm": 140,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Smoke Mirror",
+"KEYS Rottweiler Tartan"
+]
+},
+"esskid-core-i-mp3-t-507-033": {
+"name": "EK KEYS Grey Tower",
+"bpm": 150,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Grey Tower",
+"KEYS Mist Sandals"
+]
+},
+"esskid-core-i-mp3-t-513-733": {
+"name": "EK KEYS Tunnel Docks",
+"bpm": 143,
+"key": "Cm",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Rottweiler Mist",
+"KEYS Tunnel Docks"
+]
+},
+"esskid-core-i-mp3-t-520-746": {
+"name": "EK KEYS Murk Omen",
+"bpm": 140,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Cali Panic",
+"KEYS Murk Omen"
+]
+},
+"esskid-core-i-mp3-t-527-903": {
+"name": "EK KEYS Iron Pulse",
+"bpm": 132,
+"key": "D#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Raws Sandals",
+"KEYS Iron Pulse"
+]
+},
+"esskid-core-i-mp3-t-535-476": {
+"name": "EK PAD Cold Prayer",
+"bpm": 150,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Rebel Mist",
+"PAD Cold Prayer"
+]
+},
+"esskid-core-i-mp3-t-542-176": {
+"name": "EK PAD Ghost Shadow",
+"bpm": 157,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Dirty Tartan",
+"PAD Ghost Shadow"
+]
+},
+"esskid-core-i-mp3-t-548-591": {
+"name": "EK PAD Silent Saint",
+"bpm": 143,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tartan Panic",
+"PAD Silent Saint"
+]
+},
+"esskid-core-i-mp3-t-555-604": {
+"name": "EK PAD Silent Halo",
+"bpm": 139,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cali Phantom",
+"PAD Silent Halo"
+]
+},
+"esskid-core-i-mp3-t-562-811": {
+"name": "EK PAD Steel Vault",
+"bpm": 143,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Steel Vault",
+"PAD Panic Sandals"
+]
+},
+"esskid-core-i-mp3-t-569-824": {
+"name": "EK PAD Grey Siren",
+"bpm": 143,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cali Raws",
+"PAD Grey Siren"
+]
+},
+"esskid-core-i-mp3-t-576-837": {
+"name": "EK PAD Cold Wire",
+"bpm": 157,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cold Wire",
+"PAD Raws Mist"
+]
+},
+"esskid-core-i-mp3-t-583-252": {
+"name": "EK PAD Hollow Ghost",
+"bpm": 143,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tartan Dirty",
+"PAD Hollow Ghost"
+]
+},
+"esskid-core-i-mp3-t-590-265": {
+"name": "EK PAD Fog Gate",
+"bpm": 157,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cali Tartan",
+"PAD Fog Gate"
+]
+},
+"esskid-core-i-mp3-t-596-680": {
+"name": "EK PAD Tunnel Ritual",
+"bpm": 140,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tunnel Ritual",
+"PAD Prague Panic"
+]
+},
+"esskid-core-i-mp3-t-603-837": {
+"name": "EK PAD Hood Mirror",
+"bpm": 157,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tartan Sandals",
+"PAD Hood Mirror"
+]
+},
+"esskid-core-i-mp3-t-610-252": {
+"name": "EK PAD Bleak Omen",
+"bpm": 157,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Panic Dirty",
+"PAD Bleak Omen"
+]
+},
+"esskid-core-i-mp3-t-616-666": {
+"name": "EK STAB Wet Glass",
+"bpm": 140,
+"key": "G#m",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Wet Glass",
+"STAB Mist Sandals"
+]
+},
+"esskid-core-i-mp3-t-623-823": {
+"name": "EK STAB Bleak Docks",
+"bpm": 126,
+"key": "Em",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Bleak Docks",
+"STAB Rebel Tartan"
+]
+},
+"esskid-core-i-mp3-t-631-742": {
+"name": "EK STAB Cold Blade",
+"bpm": 139,
+"key": "G#m",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Rebel Phantom",
+"STAB Cold Blade"
+]
+},
+"esskid-core-i-mp3-t-638-949": {
+"name": "EK STAB Grey Halo",
+"bpm": 132,
+"key": "A#m",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Grey Halo",
+"STAB Prague Raws"
+]
+},
+"esskid-core-i-mp3-t-646-522": {
+"name": "EK STAB Smoke Signal",
+"bpm": 140,
+"key": "D#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Smoke Signal",
+"STAB Dirty Mist"
+]
+},
+"esskid-core-i-mp3-t-653-679": {
+"name": "EK STAB Silent Halo",
+"bpm": 140,
+"key": "Em",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Sandals Mist",
+"STAB Silent Halo"
+]
+},
+"esskid-core-i-mp3-t-660-836": {
+"name": "EK STAB Tunnel Prayer",
+"bpm": 143,
+"key": "C#m",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Phantom Prague",
+"STAB Tunnel Prayer"
+]
+},
+"esskid-core-i-mp3-t-667-849": {
+"name": "EK STAB Cold Mirror",
+"bpm": 140,
+"key": "F#m",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"STAB Dirty Raws",
+"STAB Cold Mirror"
+]
+},
+"esskid-core-i-mp3-t-675-006": {
+"name": "EK FX Ash Ghost",
+"bpm": 150,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Ash Ghost",
+"FX Mist Dirty"
+]
+},
+"esskid-core-i-mp3-t-681-706": {
+"name": "EK FX Black Glass",
+"bpm": 139,
+"key": "Bm",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"FX Prague Tartan",
+"FX Black Glass"
+]
+},
+"esskid-core-i-mp3-t-688-913": {
+"name": "EK FX Silent Static",
+"bpm": 140,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FX Silent Static",
+"FX Rebel Prague"
+]
+},
+"esskid-core-i-mp3-t-696-070": {
+"name": "EK FX Black Docks",
+"bpm": 143,
+"key": "Em",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"FX Black Docks",
+"FX Panic Cali"
+]
+},
+"esskid-core-i-mp3-t-703-083": {
+"name": "EK FX Sodium Chain",
+"bpm": 126,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Sodium Chain",
+"FX Mist Tartan"
+]
+},
+"esskid-core-i-mp3-t-711-002": {
+"name": "EK FX Murk Lamp",
+"bpm": 140,
+"key": "Dm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"FX Dirty Tartan",
+"FX Murk Lamp"
+]
+}
+}

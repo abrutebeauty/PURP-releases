@@ -1,0 +1,710 @@
+{
+"cc2-arp-prism-glow-mp3": {
+"name": "CC ARP Prism Glow",
+"bpm": 132,
+"key": "F#m",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Crimes Baptism",
+"ARP Prism Glow"
+]
+},
+"cc2-lead-venom-lung-mp3": {
+"name": "CC LEAD Venom Lung",
+"bpm": 132,
+"key": "F#m",
+"n": 40,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Venom Lung",
+"LEAD Crime Magic"
+]
+},
+"cc2-pad-ice-choir-mp3": {
+"name": "CC PAD Ice Choir",
+"bpm": 126,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Ice Choir",
+"PAD Vanishing Celestica"
+]
+},
+"cc2-bass-velvet-riot-mp3": {
+"name": "CC2 BASS Velvet Riot",
+"bpm": 132,
+"key": "F#m",
+"n": 104,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Velvet Riot",
+"BASS Kerosene Ornament"
+]
+},
+"cc2-arp-bleach-pulse-mp3": {
+"name": "CC2 ARP Bleach Pulse",
+"bpm": 120,
+"key": "Em",
+"n": 192,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Bleach Pulse",
+"ARP Crimewave Sad"
+]
+},
+"cc2-arp-bone-bloom-mp3": {
+"name": "CC ARP Bone Bloom",
+"bpm": 106,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Suffocation Kept",
+"ARP Bone Bloom"
+]
+},
+"cc2-arp-chapel-hymn-mp3": {
+"name": "CC2 ARP Chapel Hymn",
+"bpm": 120,
+"key": "Em",
+"n": 192,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Crime Courtship",
+"ARP Chapel Hymn"
+]
+},
+"cc2-arp-ghost-choir-mp3": {
+"name": "CC ARP Ghost Choir",
+"bpm": 120,
+"key": "Em",
+"n": 192,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Ghost Choir",
+"ARP Crime Affection"
+]
+},
+"cc2-arp-ice-heart-mp3": {
+"name": "CC ARP Ice Heart",
+"bpm": 140,
+"key": "Em",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Ice Heart",
+"ARP Transgender Doe"
+]
+},
+"cc2-arp-lace-wave-mp3": {
+"name": "CC ARP Lace Wave",
+"bpm": 120,
+"key": "Em",
+"n": 192,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Lace Wave",
+"ARP Crimewave Spells"
+]
+},
+"cc2-arp-pixel-daze-mp3": {
+"name": "CC ARP Pixel Daze",
+"bpm": 120,
+"key": "Gm",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Pixel Daze",
+"ARP Vanishing Practice"
+]
+},
+"cc2-arp-prism-bloom-mp3": {
+"name": "CC2 ARP Prism Bloom",
+"bpm": 120,
+"key": "Em",
+"n": 192,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Prism Bloom",
+"ARP Crimes Wrath"
+]
+},
+"cc2-arp-prism-lung-mp3": {
+"name": "CC2 ARP Prism Lung",
+"bpm": 120,
+"key": "Gm",
+"n": 112,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Vanish Plague",
+"ARP Prism Lung"
+]
+},
+"cc2-arp-shiver-fracture-mp3": {
+"name": "CC2 ARP Shiver Fracture",
+"bpm": 120,
+"key": "C#m",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Shiver Fracture",
+"ARP Suffocation Silence"
+]
+},
+"cc2-bass-cold-riot-mp3": {
+"name": "CC BASS Cold Riot",
+"bpm": 140,
+"key": "Em",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Cold Riot",
+"BASS Transgender Frail"
+]
+},
+"cc2-bass-dread-tape-mp3": {
+"name": "CC BASS Dread Tape",
+"bpm": 120,
+"key": "Gm",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Vanishing Birds",
+"BASS Dread Tape"
+]
+},
+"cc2-bass-ether-static-mp3": {
+"name": "CC2 BASS Ether Static",
+"bpm": 126,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Kerosene Empathy",
+"BASS Ether Static"
+]
+},
+"cc2-bass-moth-prayer-mp3": {
+"name": "CC BASS Moth Prayer",
+"bpm": 126,
+"key": "Gm",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Kerosene Sadist",
+"BASS Moth Prayer"
+]
+},
+"cc2-bass-opal-fracture-mp3": {
+"name": "CC BASS Opal Fracture",
+"bpm": 106,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Suffocating Knights",
+"BASS Opal Fracture"
+]
+},
+"cc2-bass-pale-garden-mp3": {
+"name": "CC BASS Pale Garden",
+"bpm": 126,
+"key": "Gm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Pale Garden",
+"BASS Kerosene Insulin"
+]
+},
+"cc2-bass-shiver-wound-mp3": {
+"name": "CC2 BASS Shiver Wound",
+"bpm": 126,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Shiver Wound",
+"BASS Untrusting Mercenary"
+]
+},
+"cc2-bass-tar-flood-mp3": {
+"name": "CC2 BASS Tar Flood",
+"bpm": 140,
+"key": "Em",
+"n": 88,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Tar Flood",
+"BASS Transgender Concrete"
+]
+},
+"cc2-lead-bleach-cult-mp3": {
+"name": "CC LEAD Bleach Cult",
+"bpm": 106,
+"key": "C#m",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Bleach Cult",
+"LEAD Suffocating Flesh"
+]
+},
+"cc2-lead-bone-heart-mp3": {
+"name": "CC LEAD Bone Heart",
+"bpm": 120,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Suffocating Alice",
+"LEAD Bone Heart"
+]
+},
+"cc2-lead-chalk-lullaby-mp3": {
+"name": "CC LEAD Chalk Lullaby",
+"bpm": 106,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Suffocation Hosiery",
+"LEAD Chalk Lullaby"
+]
+},
+"cc2-lead-chapel-pulse-mp3": {
+"name": "CC2 LEAD Chapel Pulse",
+"bpm": 120,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Kerosene Reckless",
+"LEAD Chapel Pulse"
+]
+},
+"cc2-lead-cold-fever-mp3": {
+"name": "CC2 LEAD Cold Fever",
+"bpm": 126,
+"key": "Gm",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Kerosene Charade",
+"LEAD Cold Fever"
+]
+},
+"cc2-lead-crush-choir-mp3": {
+"name": "CC2 LEAD Crush Choir",
+"bpm": 106,
+"key": "C#m",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Suffocating Dreams",
+"LEAD Crush Choir"
+]
+},
+"cc2-lead-crush-mass-mp3": {
+"name": "CC LEAD Crush Mass",
+"bpm": 120,
+"key": "C#m",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Crush Mass",
+"LEAD Suffocating Char"
+]
+},
+"cc2-lead-doll-grain-mp3": {
+"name": "CC LEAD Doll Grain",
+"bpm": 120,
+"key": "Gm",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Doll Grain",
+"LEAD Vanishing Eyes"
+]
+},
+"cc2-lead-doll-lung-mp3": {
+"name": "CC LEAD Doll Lung",
+"bpm": 120,
+"key": "Em",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Crimewave Panther",
+"LEAD Doll Lung"
+]
+},
+"cc2-lead-doll-static-mp3": {
+"name": "CC2 LEAD Doll Static",
+"bpm": 126,
+"key": "Gm",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Doll Static",
+"LEAD Untrusted Knights"
+]
+},
+"cc2-lead-ghost-machine-mp3": {
+"name": "CC LEAD Ghost Machine",
+"bpm": 140,
+"key": "Em",
+"n": 104,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ghost Machine",
+"LEAD Transgender Fleece"
+]
+},
+"cc2-lead-glass-fracture-mp3": {
+"name": "CC2 LEAD Glass Fracture",
+"bpm": 126,
+"key": "Gm",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Glass Fracture",
+"LEAD Untrust Magic"
+]
+},
+"cc2-lead-glass-tide-mp3": {
+"name": "CC LEAD Glass Tide",
+"bpm": 126,
+"key": "Gm",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Untrust Sadist",
+"LEAD Glass Tide"
+]
+},
+"cc2-lead-halo-fever-mp3": {
+"name": "CC2 LEAD Halo Fever",
+"bpm": 120,
+"key": "Gm",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Halo Fever",
+"LEAD Vanished Enth"
+]
+},
+"cc2-lead-hollow-glow-mp3": {
+"name": "CC2 LEAD Hollow Glow",
+"bpm": 126,
+"key": "Gm",
+"n": 44,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Untrust Sad",
+"LEAD Hollow Glow"
+]
+},
+"cc2-lead-hollow-kiss-mp3": {
+"name": "CC2 LEAD Hollow Kiss",
+"bpm": 126,
+"key": "Gm",
+"n": 88,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hollow Kiss",
+"LEAD Kerosene Vanished"
+]
+},
+"cc2-lead-opal-choir-mp3": {
+"name": "CC LEAD Opal Choir",
+"bpm": 120,
+"key": "Gm",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Vanishing War",
+"LEAD Opal Choir"
+]
+},
+"cc2-lead-opal-riot-mp3": {
+"name": "CC LEAD Opal Riot",
+"bpm": 140,
+"key": "Em",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Opal Riot",
+"LEAD Transgender Fainting"
+]
+},
+"cc2-lead-opal-tape-mp3": {
+"name": "CC2 LEAD Opal Tape",
+"bpm": 106,
+"key": "C#m",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Suffocate Telepath",
+"LEAD Opal Tape"
+]
+},
+"cc2-lead-rust-vein-mp3": {
+"name": "CC LEAD Rust Vein",
+"bpm": 106,
+"key": "C#m",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rust Vein",
+"LEAD Suffocating Wave"
+]
+},
+"cc2-lead-siren-lullaby-mp3": {
+"name": "CC LEAD Siren Lullaby",
+"bpm": 120,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Siren Lullaby",
+"LEAD Vanished Pale"
+]
+},
+"cc2-lead-smoke-hymn-mp3": {
+"name": "CC2 LEAD Smoke Hymn",
+"bpm": 120,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Vanish Char",
+"LEAD Smoke Hymn"
+]
+},
+"cc2-lead-static-fracture-mp3": {
+"name": "CC2 LEAD Static Fracture",
+"bpm": 120,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Vanish Deer",
+"LEAD Static Fracture"
+]
+},
+"cc2-lead-static-riot-mp3": {
+"name": "CC2 LEAD Static Riot",
+"bpm": 126,
+"key": "Gm",
+"n": 56,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Static Riot",
+"LEAD Untrusted War"
+]
+},
+"cc2-lead-static-tape-mp3": {
+"name": "CC LEAD Static Tape",
+"bpm": 126,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Untrusting Youth",
+"LEAD Static Tape"
+]
+},
+"cc2-lead-tar-lullaby-mp3": {
+"name": "CC LEAD Tar Lullaby",
+"bpm": 140,
+"key": "Em",
+"n": 104,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Tar Lullaby",
+"LEAD Transgender Baptism"
+]
+},
+"cc2-lead-velvet-fracture-mp3": {
+"name": "CC LEAD Velvet Fracture",
+"bpm": 106,
+"key": "C#m",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Velvet Fracture",
+"LEAD Suffocating Insulin"
+]
+},
+"cc2-lead-velvet-veil-mp3": {
+"name": "CC LEAD Velvet Veil",
+"bpm": 126,
+"key": "Gm",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Velvet Veil",
+"LEAD Untrusted Courtship"
+]
+},
+"cc2-lead-venom-fracture-mp3": {
+"name": "CC LEAD Venom Fracture",
+"bpm": 140,
+"key": "Em",
+"n": 104,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Venom Fracture",
+"LEAD Transgender Kindness"
+]
+},
+"cc2-pad-cinder-glow-mp3": {
+"name": "CC PAD Cinder Glow",
+"bpm": 140,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cinder Glow",
+"PAD Transgender Concrete"
+]
+},
+"cc2-pad-ghost-wave-mp3": {
+"name": "CC2 PAD Ghost Wave",
+"bpm": 120,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Suffocating Flesh",
+"PAD Ghost Wave"
+]
+},
+"cc2-pad-hex-lantern-mp3": {
+"name": "CC PAD Hex Lantern",
+"bpm": 106,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Suffocate Caring",
+"PAD Hex Lantern"
+]
+},
+"cc2-pad-ice-bloom-mp3": {
+"name": "CC2 PAD Ice Bloom",
+"bpm": 140,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Ice Bloom",
+"PAD Transgender Hosiery"
+]
+},
+"cc2-pad-pixel-spell-mp3": {
+"name": "CC PAD Pixel Spell",
+"bpm": 120,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Vanish Platinum",
+"PAD Pixel Spell"
+]
+},
+"cc2-pad-tomb-signal-mp3": {
+"name": "CC PAD Tomb Signal",
+"bpm": 120,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tomb Signal",
+"PAD Vanished Charade"
+]
+},
+"cc2-pad-wire-dust-mp3": {
+"name": "CC PAD Wire Dust",
+"bpm": 120,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Vanished Celestica",
+"PAD Wire Dust"
+]
+},
+"cc2-pad-wolf-machine-mp3": {
+"name": "CC2 PAD Wolf Machine",
+"bpm": 140,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wolf Machine",
+"PAD Transgender Panther"
+]
+}
+}

@@ -1,0 +1,34 @@
+/* TOY GTR window (ui/toygtr.js). It wears TOY KEYS' frame (ui/toykeys.css, .tk-*); this file only adds
+   the guitar parts: the switches under the tiles and the fretboard. Square edges, acid yellow = on. ASCII only. */
+.tg-root { grid-template-rows: 48px minmax(0, 1fr) 132px; }
+.tg-root .tk-tiles { gap: 10px; }
+.tg-root .tk-grid { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.tg-root .tk-tile { height: 60px; padding: 9px 10px 8px; }
+.tg-root .tk-tile svg { width: 22px; height: 22px; }
+.tg-root .tk-tile span { font-size: 10.5px; letter-spacing: 0.08em; }
+.tg-root .tk-grplabel { margin-bottom: 4px; }
+.tg-left { min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; }
+.tg-sws { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.tg-root .tg-sw { height: 38px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; border: 1px solid var(--tk-line) !important; background: rgba(255, 255, 255, 0.025); color: var(--tk-ink2); }
+.tg-sw small { font-size: 10px; letter-spacing: 0.18em; color: var(--tk-ink3); }
+.tg-sw b { font: 700 11px/1 "Martian Mono", ui-monospace, monospace; letter-spacing: 0.06em; }
+.tg-sw:hover { border-color: var(--tk-line2) !important; color: #fff; }
+.tg-sw.on { border-color: var(--tk-acid) !important; color: var(--tk-acid); }
+.tg-sw.on small { color: var(--tk-acid); opacity: 0.7; }
+
+/* the neck: 6 strings (high E on top) x 16 frets, rosewood-dark with grey dots */
+.tg-neck { position: relative; display: grid; grid-template-columns: 0.7fr repeat(calc(var(--frets) - 1), minmax(0, 1fr)); grid-template-rows: repeat(6, minmax(0, 1fr));
+  margin: 8px 10px 10px; background: linear-gradient(180deg, #1d1a1f, #141215); border-left: 4px solid #d8d6de; touch-action: none; }
+.tg-fret { grid-row: 1 / span 6; position: relative; border-right: 2px solid rgba(200, 198, 210, 0.28); pointer-events: none; }
+.tg-fret:first-child { border-right-color: rgba(230, 228, 236, 0.5); }
+.tg-fret.dot::after, .tg-fret.dot2::before, .tg-fret.dot2::after { content: ""; position: absolute; left: 50%; width: 7px; height: 7px; margin-left: -3.5px; background: rgba(255, 255, 255, 0.13); }
+.tg-fret.dot::after { top: 50%; margin-top: -3.5px; }
+.tg-fret.dot2::before { top: 30%; margin-top: -3.5px; }
+.tg-fret.dot2::after { top: 70%; margin-top: -3.5px; }
+.tg-root .tg-cell { position: relative; margin: 0; background: transparent; padding: 0; z-index: 1; }
+.tg-cell::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: var(--sw); margin-top: calc(var(--sw) / -2); background: linear-gradient(180deg, #e8e6ee, #9c9aa6); opacity: 0.75; pointer-events: none; }
+.tg-cell.open::before { opacity: 0.4; }
+.tg-root .tg-cell:hover, .tg-root .tg-cell:not(.b):hover { background: rgba(139, 92, 246, 0.16); }
+.tg-root .tg-cell.on, .tg-root .tg-cell.on:hover { background: transparent; }
+.tg-cell.on::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; background: var(--tk-purple); box-shadow: 0 0 10px 1px var(--tk-purple); }
+.tg-cell.on::before { background: var(--tk-acid); opacity: 1; }

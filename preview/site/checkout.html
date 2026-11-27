@@ -9,13 +9,13 @@
 <link rel="icon" href="/favicon.png?v=2" type="image/png">
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts.css?v=1">
-<link rel="stylesheet" href="/speed.css?v=4"><!-- FONTS_SELF (speed 20 Nov). old: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap"> -->
+<link rel="stylesheet" href="/speed.css?v=5">
 <link rel="stylesheet" href="/shop.css?v=81">
-<link rel="stylesheet" href="/day-shop.css?v=6"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
-<link rel="stylesheet" href="/day.css?v=1"><!-- DAY_MODE: day palette + switch, keep last -->
-<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
-<script src="/fx.js?v=1"></script><!-- FX (Eman 24 Nov): CD 3D page transition + UI sounds. Remove this line = off -->
-<script src="/opium.js?v=6"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
+<link rel="stylesheet" href="/day-shop.css?v=7"><!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<link rel="stylesheet" href="/day.css?v=2"><!-- DAY_MODE: day palette + switch, keep last -->
+<link rel="stylesheet" href="/day-opium.css?v=2"><link rel="stylesheet" href="/day-opium-fix.css?v=4"><!-- DAY_MODE OPIUM 2 (Eman 26 Nov): light look + no hover glow. Remove = old behaviour --><script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+<script src="/fx.js?v=2" defer></script><!-- FX (Eman 24 Nov): CD 3D page transition + UI sounds. Remove this line = off -->
+<script src="/opium.js?v=8"></script><!-- OPIUM look (Eman 24 Nov): admin switch OG/OPIUM. Remove = OG only -->
 </head>
 <body>
 <nav class="top co-top"><div class="wrap">
@@ -53,7 +53,7 @@
   </div>
 </main>
 
-<script src="/shop.js?v=113"></script>
+<script src="/shop.js?v=114"></script>
 <script>
 function paint() {
   const items = cart.map(byId), rest = PRODUCTS.filter((p) => !inCart(p.id));

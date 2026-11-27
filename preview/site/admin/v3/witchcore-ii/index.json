@@ -1,0 +1,1113 @@
+{
+"lead-hypersaw-mp3": {
+"name": "W2 LEAD Hypersaw",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hypersaw"
+]
+},
+"lead-hypersaw-squashed-mp3": {
+"name": "W2 LEAD Hypersaw Squashed",
+"bpm": 132,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hypersaw Squashed"
+]
+},
+"lead-hypersaw-eight-witches-mp3": {
+"name": "W2 LEAD Hypersaw Eight Witches",
+"bpm": 112,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hypersaw Eight Witches"
+]
+},
+"lead-hypersaw-dissonance-mp3": {
+"name": "W2 LEAD Hypersaw Dissonance",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hypersaw Dissonance"
+]
+},
+"lead-rave-mp3": {
+"name": "W2 LEAD Rave",
+"bpm": 112,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rave"
+]
+},
+"lead-rave-drag-mp3": {
+"name": "W2 LEAD Rave Drag",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rave Drag"
+]
+},
+"lead-rave-smash-mp3": {
+"name": "W2 LEAD Rave Smash",
+"bpm": 132,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rave Smash"
+]
+},
+"lead-chaos-mp3": {
+"name": "W2 LEAD Chaos",
+"bpm": 132,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chaos"
+]
+},
+"lead-chaos-drone-mp3": {
+"name": "W2 LEAD Chaos Drone",
+"bpm": 112,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chaos Drone"
+]
+},
+"lead-chaos-metallic-chorus-mp3": {
+"name": "W2 LEAD Chaos Metallic Chorus",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chaos Metallic Chorus"
+]
+},
+"lead-walk-mp3": {
+"name": "W2 LEAD Walk",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Walk"
+]
+},
+"lead-walk-unreal-territory-mp3": {
+"name": "W2 LEAD Walk Unreal Territory",
+"bpm": 115,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Walk Unreal Territory"
+]
+},
+"lead-walk-dread-not-mp3": {
+"name": "W2 LEAD Walk Dread Not",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Walk Dread Not"
+]
+},
+"lead-bathroom-mp3": {
+"name": "W2 LEAD Bathroom",
+"bpm": 132,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Bathroom"
+]
+},
+"lead-bathroom-new-wave-mp3": {
+"name": "W2 LEAD Bathroom New Wave",
+"bpm": 112,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Bathroom New Wave"
+]
+},
+"lead-bathroom-morphine-mp3": {
+"name": "W2 LEAD Bathroom Morphine",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Bathroom Morphine"
+]
+},
+"lead-cursed-mp3": {
+"name": "W2 LEAD Cursed",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cursed"
+]
+},
+"lead-cursed-airy-pluck-mp3": {
+"name": "W2 LEAD Cursed Airy Pluck",
+"bpm": 115,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cursed Airy Pluck"
+]
+},
+"lead-cursed-slide-mp3": {
+"name": "W2 LEAD Cursed Slide",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cursed Slide"
+]
+},
+"lead-cursed-granulized-mp3": {
+"name": "W2 LEAD Cursed Granulized",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cursed Granulized"
+]
+},
+"lead-chaos-lead-mp3": {
+"name": "W2 LEAD Chaos Lead",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chaos Lead"
+]
+},
+"lead-chaos-lead-lo-fi-ghost-mp3": {
+"name": "W2 LEAD Chaos Lead Lo-Fi Ghost",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chaos Lead Lo-Fi Ghost"
+]
+},
+"lead-chaos-lead-old-school-mp3": {
+"name": "W2 LEAD Chaos Lead Old School",
+"bpm": 115,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chaos Lead Old School"
+]
+},
+"lead-aurora-mp3": {
+"name": "W2 LEAD Aurora",
+"bpm": 115,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Aurora"
+]
+},
+"lead-aurora-messed-up-trails-mp3": {
+"name": "W2 LEAD Aurora Messed Up Trails",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Aurora Messed Up Trails"
+]
+},
+"lead-aurora-human-weirdness-mp3": {
+"name": "W2 LEAD Aurora Human Weirdness",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Aurora Human Weirdness"
+]
+},
+"lead-stranded-mp3": {
+"name": "W2 LEAD Stranded",
+"bpm": 112,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stranded"
+]
+},
+"lead-stranded-rev-peak-mp3": {
+"name": "W2 LEAD Stranded Rev Peak",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stranded Rev Peak"
+]
+},
+"lead-stranded-smoke-break-mp3": {
+"name": "W2 LEAD Stranded Smoke Break",
+"bpm": 132,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stranded Smoke Break"
+]
+},
+"synth-rave-root-mp3": {
+"name": "W2 SYNTH Rave Root",
+"bpm": 115,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Rave Root"
+]
+},
+"synth-rave-root-impact-mp3": {
+"name": "W2 SYNTH Rave Root Impact",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Rave Root Impact"
+]
+},
+"synth-rave-root-blood-overdrive-mp3": {
+"name": "W2 SYNTH Rave Root Blood Overdrive",
+"bpm": 120,
+"key": "A#m",
+"n": 120,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Rave Root Blood Overdrive"
+]
+},
+"synth-squelch-mp3": {
+"name": "W2 SYNTH Squelch",
+"bpm": 112,
+"key": "Fm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Squelch"
+]
+},
+"synth-squelch-octave-ghost-mp3": {
+"name": "W2 SYNTH Squelch Octave Ghost",
+"bpm": 110,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Squelch Octave Ghost"
+]
+},
+"synth-squelch-blown-out-mp3": {
+"name": "W2 SYNTH Squelch Blown Out",
+"bpm": 132,
+"key": "C#m",
+"n": 120,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Squelch Blown Out"
+]
+},
+"hoover-hoover-mp3": {
+"name": "W2 HOOVER Hoover",
+"bpm": 115,
+"key": "Am",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Hoover"
+]
+},
+"hoover-hoover-human-weirdness-mp3": {
+"name": "W2 HOOVER Hoover Human Weirdness",
+"bpm": 112,
+"key": "Fm",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Hoover Human Weirdness"
+]
+},
+"hoover-hoover-vinyl-ghost-mp3": {
+"name": "W2 HOOVER Hoover Vinyl Ghost",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Hoover Vinyl Ghost"
+]
+},
+"hoover-hoover-rev-peak-mp3": {
+"name": "W2 HOOVER Hoover Rev Peak",
+"bpm": 115,
+"key": "Am",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Hoover Rev Peak"
+]
+},
+"hoover-bee-swarm-mp3": {
+"name": "W2 HOOVER Bee Swarm",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Bee Swarm"
+]
+},
+"hoover-bee-swarm-vector-grain-mp3": {
+"name": "W2 HOOVER Bee Swarm Vector Grain",
+"bpm": 115,
+"key": "Am",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Bee Swarm Vector Grain"
+]
+},
+"hoover-bee-swarm-choir-smear-mp3": {
+"name": "W2 HOOVER Bee Swarm Choir Smear",
+"bpm": 112,
+"key": "Fm",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Bee Swarm Choir Smear"
+]
+},
+"bell-ghost-bell-mp3": {
+"name": "W2 BELL Ghost Bell",
+"bpm": 112,
+"key": "Fm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Ghost Bell"
+]
+},
+"bell-ghost-bell-metallic-chorus-mp3": {
+"name": "W2 BELL Ghost Bell Metallic Chorus",
+"bpm": 110,
+"key": "Am",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Ghost Bell Metallic Chorus"
+]
+},
+"bell-digital-hits-mp3": {
+"name": "W2 BELL Digital Hits",
+"bpm": 110,
+"key": "Am",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Digital Hits"
+]
+},
+"bell-digital-hits-unreal-territory-mp3": {
+"name": "W2 BELL Digital Hits Unreal Territory",
+"bpm": 132,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Digital Hits Unreal Territory"
+]
+},
+"arp-synth-heaven-mp3": {
+"name": "W2 ARP Synth Heaven",
+"bpm": 112,
+"key": "Fm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Synth Heaven"
+]
+},
+"arp-synth-heaven-weird-waves-mp3": {
+"name": "W2 ARP Synth Heaven Weird Waves",
+"bpm": 110,
+"key": "Am",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Synth Heaven Weird Waves"
+]
+},
+"arp-synth-heaven-ghost-noise-mp3": {
+"name": "W2 ARP Synth Heaven Ghost Noise",
+"bpm": 132,
+"key": "C#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Synth Heaven Ghost Noise"
+]
+},
+"arp-poizone-mp3": {
+"name": "W2 ARP Poizone",
+"bpm": 115,
+"key": "Am",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Poizone"
+]
+},
+"arp-poizone-choir-smear-mp3": {
+"name": "W2 ARP Poizone Choir Smear",
+"bpm": 112,
+"key": "Fm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Poizone Choir Smear"
+]
+},
+"arp-poizone-classic-flange-mp3": {
+"name": "W2 ARP Poizone Classic Flange",
+"bpm": 120,
+"key": "A#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Poizone Classic Flange"
+]
+},
+"pluck-bellyz-mp3": {
+"name": "W2 PLUCK Bellyz",
+"bpm": 115,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Bellyz"
+]
+},
+"pluck-bellyz-room-boom-mp3": {
+"name": "W2 PLUCK Bellyz Room Boom",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Bellyz Room Boom"
+]
+},
+"pluck-bellyz-demon-laugh-mp3": {
+"name": "W2 PLUCK Bellyz Demon Laugh",
+"bpm": 120,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Bellyz Demon Laugh"
+]
+},
+"keys-classic-detune-mp3": {
+"name": "W2 KEYS Classic Detune",
+"bpm": 115,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Classic Detune"
+]
+},
+"keys-classic-detune-squashed-mp3": {
+"name": "W2 KEYS Classic Detune Squashed",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Classic Detune Squashed"
+]
+},
+"keys-classic-detune-eight-witches-mp3": {
+"name": "W2 KEYS Classic Detune Eight Witches",
+"bpm": 120,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Classic Detune Eight Witches"
+]
+},
+"keys-grain-stab-mp3": {
+"name": "W2 KEYS Grain Stab",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Grain Stab"
+]
+},
+"keys-grain-stab-room-wobble-mp3": {
+"name": "W2 KEYS Grain Stab Room Wobble",
+"bpm": 110,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Grain Stab Room Wobble"
+]
+},
+"keys-grain-stab-drag-mp3": {
+"name": "W2 KEYS Grain Stab Drag",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Grain Stab Drag"
+]
+},
+"choir-rose-mp3": {
+"name": "W2 CHOIR Rose",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Rose"
+]
+},
+"choir-rose-poison-mp3": {
+"name": "W2 CHOIR Rose Poison",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Rose Poison"
+]
+},
+"choir-rose-uneasy-mp3": {
+"name": "W2 CHOIR Rose Uneasy",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Rose Uneasy"
+]
+},
+"choir-rose-crunch-bus-mp3": {
+"name": "W2 CHOIR Rose Crunch Bus",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Rose Crunch Bus"
+]
+},
+"choir-haunted-mp3": {
+"name": "W2 CHOIR Haunted",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Haunted"
+]
+},
+"choir-haunted-stab-gate-mp3": {
+"name": "W2 CHOIR Haunted Stab Gate",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Haunted Stab Gate"
+]
+},
+"choir-haunted-backward-noise-mp3": {
+"name": "W2 CHOIR Haunted Backward Noise",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Haunted Backward Noise"
+]
+},
+"pad-shimmer-mp3": {
+"name": "W2 PAD Shimmer",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Shimmer"
+]
+},
+"pad-shimmer-respace-mp3": {
+"name": "W2 PAD Shimmer Respace",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Shimmer Respace"
+]
+},
+"pad-shimmer-screwgaze-mp3": {
+"name": "W2 PAD Shimmer Screwgaze",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Shimmer Screwgaze"
+]
+},
+"pad-operator-mp3": {
+"name": "W2 PAD Operator",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Operator"
+]
+},
+"pad-operator-imperfection-mp3": {
+"name": "W2 PAD Operator Imperfection",
+"bpm": 120,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Operator Imperfection"
+]
+},
+"pad-operator-real-witch-mp3": {
+"name": "W2 PAD Operator Real Witch",
+"bpm": 115,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Operator Real Witch"
+]
+},
+"pad-meld-mp3": {
+"name": "W2 PAD Meld",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Meld"
+]
+},
+"pad-meld-cathedral-mp3": {
+"name": "W2 PAD Meld Cathedral",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Meld Cathedral"
+]
+},
+"pad-meld-dragged-out-mp3": {
+"name": "W2 PAD Meld Dragged Out",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Meld Dragged Out"
+]
+},
+"texture-schizophrenia-mp3": {
+"name": "W2 TEXTURE Schizophrenia",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Schizophrenia"
+]
+},
+"texture-schizophrenia-warped-mp3": {
+"name": "W2 TEXTURE Schizophrenia Warped",
+"bpm": 120,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Schizophrenia Warped"
+]
+},
+"texture-schizophrenia-aqua-bright-mp3": {
+"name": "W2 TEXTURE Schizophrenia Aqua Bright",
+"bpm": 115,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Schizophrenia Aqua Bright"
+]
+},
+"bass-black-tears-mp3": {
+"name": "W2 BASS Black Tears",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Tears"
+]
+},
+"bass-black-tears-aqua-bright-mp3": {
+"name": "W2 BASS Black Tears Aqua Bright",
+"bpm": 120,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Tears Aqua Bright"
+]
+},
+"bass-black-tears-witches-house-mp3": {
+"name": "W2 BASS Black Tears Witches House",
+"bpm": 115,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Tears Witches House"
+]
+},
+"bass-black-tears-poison-mp3": {
+"name": "W2 BASS Black Tears Poison",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Tears Poison"
+]
+},
+"bass-black-tears-uneasy-mp3": {
+"name": "W2 BASS Black Tears Uneasy",
+"bpm": 120,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Tears Uneasy"
+]
+},
+"bass-reese-mp3": {
+"name": "W2 BASS Reese",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Reese"
+]
+},
+"bass-reese-large-hall-mp3": {
+"name": "W2 BASS Reese Large Hall",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Reese Large Hall"
+]
+},
+"bass-reese-stab-gate-mp3": {
+"name": "W2 BASS Reese Stab Gate",
+"bpm": 110,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Reese Stab Gate"
+]
+},
+"bass-reese-backward-noise-mp3": {
+"name": "W2 BASS Reese Backward Noise",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Reese Backward Noise"
+]
+},
+"bass-three-saw-mp3": {
+"name": "W2 BASS Three Saw",
+"bpm": 110,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Three Saw"
+]
+},
+"bass-three-saw-room-boom-mp3": {
+"name": "W2 BASS Three Saw Room Boom",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Three Saw Room Boom"
+]
+},
+"bass-three-saw-demon-laugh-mp3": {
+"name": "W2 BASS Three Saw Demon Laugh",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Three Saw Demon Laugh"
+]
+},
+"bass-chord-bass-mp3": {
+"name": "W2 BASS Chord Bass",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Chord Bass"
+]
+},
+"bass-chord-bass-weird-waves-mp3": {
+"name": "W2 BASS Chord Bass Weird Waves",
+"bpm": 120,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Chord Bass Weird Waves"
+]
+},
+"bass-chord-bass-ghost-noise-mp3": {
+"name": "W2 BASS Chord Bass Ghost Noise",
+"bpm": 115,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Chord Bass Ghost Noise"
+]
+},
+"bass-europa-mp3": {
+"name": "W2 BASS Europa",
+"bpm": 110,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Europa"
+]
+},
+"bass-europa-impact-mp3": {
+"name": "W2 BASS Europa Impact",
+"bpm": 132,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Europa Impact"
+]
+},
+"bass-europa-blood-overdrive-mp3": {
+"name": "W2 BASS Europa Blood Overdrive",
+"bpm": 112,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Europa Blood Overdrive"
+]
+},
+"bass-wave-five-mp3": {
+"name": "W2 BASS Wave Five",
+"bpm": 112,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Wave Five"
+]
+},
+"bass-wave-five-octave-ghost-mp3": {
+"name": "W2 BASS Wave Five Octave Ghost",
+"bpm": 120,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Wave Five Octave Ghost"
+]
+},
+"bass-wave-five-blown-out-mp3": {
+"name": "W2 BASS Wave Five Blown Out",
+"bpm": 115,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Wave Five Blown Out"
+]
+}
+}

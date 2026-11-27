@@ -34,9 +34,13 @@
     return o.map(function(v){return mx?v/mx:0});
   }
   function ac(){if(!ctx)ctx=new (window.AudioContext||window.webkitAudioContext)();return ctx}
+  /* SPRITE_CLIPS (speed 27 Nov): "x.mp3#t=a,b" plays its own small clip file audio/sp/<pack>/a-b.mp3 instead of downloading the whole 11-17 MB pack file (which also played the wrong sound from 0:00). Missing clip: falls back to the pack file and cuts a..b out of it. */
+  function spLoc(u){var m=String(u||"").match(/^(.*\/audio\/sp\/[^\/]+)\.mp3#t=([\d.]+),([\d.]+)$/);return m?{c:m[1]+"/"+m[2]+"-"+m[3]+".mp3",u:m[1]+".mp3",a:+m[2],b:+m[3]}:null}
+  function cut(buf,a,b){var c=ac(),sr=buf.sampleRate,s0=Math.max(0,Math.floor(a*sr)),s1=Math.min(buf.length,Math.ceil(b*sr)),n=Math.max(1,s1-s0),o=c.createBuffer(buf.numberOfChannels,n,sr);for(var ch=0;ch<buf.numberOfChannels;ch++)o.getChannelData(ch).set(buf.getChannelData(ch).subarray(s0,s0+n));return o}
+  function dec(b){return new Promise(function(ok,bad){ac().decodeAudioData(b,ok,bad)})}
   function load(i){
     var t=tracks[i];if(t.buf)return Promise.resolve();if(t.p)return t.p;
-    t.p=fetch(t.src).then(function(r){return r.arrayBuffer()}).then(function(b){return new Promise(function(ok,bad){ac().decodeAudioData(b,ok,bad)})}).then(function(buf){t.buf=buf;t.dur=buf.duration;if(!t.pk)t.pk=fromBuf(buf);if(t.tm)t.tm.textContent="0:00 / "+fmtT(t.dur);draw(i,0)});
+    t.p=fetch(t.src).then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(dec).catch(function(e){if(!t.sp)throw e;return fetch(t.sp.u).then(function(r){return r.arrayBuffer()}).then(dec).then(function(buf){return cut(buf,t.sp.a,t.sp.b)})}).then(function(buf){t.buf=buf;t.dur=buf.duration;if(!t.pk)t.pk=fromBuf(buf);if(t.tm)t.tm.textContent="0:00 / "+fmtT(t.dur);draw(i,0)});
     return t.p;
   }
   function glitchBox(w,h,pk,name){
@@ -285,10 +289,14 @@ function drawText(str,cap,o){
   document.addEventListener("play",function(){if(state.playing)pause()},true);
   document.addEventListener("click",function(e){if(state.playing&&e.target.closest&&e.target.closest(".pv button"))pause()},true);
   function init(){
-    fetch("/api/products").then(function(r){return r.json()}).then(function(d){
+    /* speed 27 Nov: the small product list the page already loads (window.__ckP) + this pack's waveforms only (/api/wd), instead of the full 1 MB list with every pack's waveforms */
+    var lp=window.__ckP||fetch("/api/products?lite=1").then(function(r){return r.json()});
+    lp.then(function(d){var P=(d&&d.products)||d||[],p=P.filter(function(x){return x.id===pid()})[0];if(!p||!p.sounds||!p.sounds.length||typeof p.sounds==="number")return d;
+      if(p.sounds.some(function(s){return s.wd}))return d;
+      return fetch("/api/wd?id="+encodeURIComponent(p.id)).then(function(r){return r.ok?r.json():{}}).then(function(m){p.sounds=p.sounds.map(function(s){return m&&m[s.file]&&!s.wd?Object.assign({},s,{wd:m[s.file]}):s});return d}).catch(function(){return d})}).then(function(d){
       var P=(d&&d.products)||d||[],p=P.filter(function(x){return x.id===pid()})[0];if(!p||!p.sounds||!p.sounds.length||typeof p.sounds==="number")return;
       var ch=pick(p.sounds);if(!ch)return;
-      tracks=ch.map(function(s){return{src:absu(s.file),name:nameOf(s),kind:kindOf(s),meta:s.meta||"",pk:peaksOf(s),dur:0}});
+      tracks=ch.map(function(s){var sp=spLoc(absu(s.file));return{src:sp?sp.c:absu(s.file),sp:sp,name:nameOf(s),kind:kindOf(s),meta:s.meta||"",pk:peaksOf(s),dur:0}});
       ready=true;mount();
       new MutationObserver(mount).observe(document.getElementById("pk"),{childList:true});
     }).catch(function(){});

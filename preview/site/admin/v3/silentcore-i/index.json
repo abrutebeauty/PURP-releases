@@ -1,0 +1,1214 @@
+{
+"silentcore-i-mp3-t-0-000": {
+"name": "SC BASS Static Rain",
+"bpm": 150,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Nightlife Delusion",
+"BASS Static Rain"
+]
+},
+"silentcore-i-mp3-t-6-700": {
+"name": "SC BASS Grey Pier",
+"bpm": 94,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Grey Pier",
+"BASS Lost Fairy"
+]
+},
+"silentcore-i-mp3-t-17-213": {
+"name": "SC BASS Wet Stair",
+"bpm": 84,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sink Jovian",
+"BASS Wet Stair"
+]
+},
+"silentcore-i-mp3-t-28-941": {
+"name": "SC BASS Quiet Lullaby",
+"bpm": 135,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Machines Bridge",
+"BASS Quiet Lullaby"
+]
+},
+"silentcore-i-mp3-t-36-352": {
+"name": "SC BASS Ward Chain",
+"bpm": 84,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ward Chain",
+"BASS Null Mantis"
+]
+},
+"silentcore-i-mp3-t-48-081": {
+"name": "SC BASS Hollow Bell",
+"bpm": 90,
+"key": "F#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hollow Bell",
+"BASS Slowly Marine"
+]
+},
+"silentcore-i-mp3-t-59-048": {
+"name": "SC BASS Ward Alley",
+"bpm": 130,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Bloodstone Foley",
+"BASS Ward Alley"
+]
+},
+"silentcore-i-mp3-t-66-732": {
+"name": "SC BASS Quiet Cellar",
+"bpm": 85,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Quiet Cellar",
+"BASS Space Letter"
+]
+},
+"silentcore-i-mp3-t-78-326": {
+"name": "SC BASS Hollow Shore",
+"bpm": 96,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hollow Shore",
+"BASS Tomorrow Angel"
+]
+},
+"silentcore-i-mp3-t-88-626": {
+"name": "SC BASS Glass Radio",
+"bpm": 130,
+"key": "D#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Tender Permutation",
+"BASS Glass Radio"
+]
+},
+"silentcore-i-mp3-t-96-311": {
+"name": "SC BASS Veil Road",
+"bpm": 90,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Room Moon",
+"BASS Veil Road"
+]
+},
+"silentcore-i-mp3-t-107-278": {
+"name": "SC BASS Ash Field",
+"bpm": 86,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ash Field",
+"BASS Waiting Slowly"
+]
+},
+"silentcore-i-mp3-t-118-741": {
+"name": "SC 808 Rust Gate",
+"bpm": 135,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Noiz Permutation",
+"808 Rust Gate"
+]
+},
+"silentcore-i-mp3-t-126-152": {
+"name": "SC 808 Mire Lullaby",
+"bpm": 145,
+"key": "Gm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"808 Dust Machines",
+"808 Mire Lullaby"
+]
+},
+"silentcore-i-mp3-t-133-072": {
+"name": "SC 808 Rust Sleep",
+"bpm": 150,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Rust Sleep",
+"808 Bloodstone Brass"
+]
+},
+"silentcore-i-mp3-t-139-772": {
+"name": "SC 808 Iron Rain",
+"bpm": 138,
+"key": "D#m",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"808 Space Natureland",
+"808 Iron Rain"
+]
+},
+"silentcore-i-mp3-t-147-029": {
+"name": "SC 808 Lantern Lamp",
+"bpm": 138,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Sugar Handful",
+"808 Lantern Lamp"
+]
+},
+"silentcore-i-mp3-t-154-285": {
+"name": "SC 808 Glass Gate",
+"bpm": 140,
+"key": "G#m",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"808 Natureland Foley",
+"808 Glass Gate"
+]
+},
+"silentcore-i-mp3-t-161-443": {
+"name": "SC 808 Glass Radio",
+"bpm": 140,
+"key": "Cm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Bricolage Handful",
+"808 Glass Radio"
+]
+},
+"silentcore-i-mp3-t-168-600": {
+"name": "SC 808 Ash Mirror",
+"bpm": 140,
+"key": "Fm",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"808 Ash Mirror",
+"808 Waiting Rain"
+]
+},
+"silentcore-i-mp3-t-175-757": {
+"name": "SC 808 Lantern Gate",
+"bpm": 130,
+"key": "Gm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Lantern Gate",
+"808 Bridge Jovian"
+]
+},
+"silentcore-i-mp3-t-183-441": {
+"name": "SC LEAD Rust Hymn",
+"bpm": 148,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Supermodified Delusion",
+"LEAD Rust Hymn"
+]
+},
+"silentcore-i-mp3-t-190-228": {
+"name": "SC LEAD Wet Cellar",
+"bpm": 145,
+"key": "G#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Wet Cellar",
+"LEAD Never Rain"
+]
+},
+"silentcore-i-mp3-t-197-149": {
+"name": "SC LEAD Pale Hallway",
+"bpm": 92,
+"key": "Dm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Marine Bricolage",
+"LEAD Pale Hallway"
+]
+},
+"silentcore-i-mp3-t-207-883": {
+"name": "SC LEAD Lantern Motel",
+"bpm": 148,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Petals Letter",
+"LEAD Lantern Motel"
+]
+},
+"silentcore-i-mp3-t-214-670": {
+"name": "SC LEAD Wire Pier",
+"bpm": 138,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Wire Pier",
+"LEAD Fear Mantis"
+]
+},
+"silentcore-i-mp3-t-221-926": {
+"name": "SC LEAD Tin Radio",
+"bpm": 78,
+"key": "G#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Nightlife Moon",
+"LEAD Tin Radio"
+]
+},
+"silentcore-i-mp3-t-234-534": {
+"name": "SC LEAD Iron Letter",
+"bpm": 150,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Never Angel",
+"LEAD Iron Letter"
+]
+},
+"silentcore-i-mp3-t-241-234": {
+"name": "SC LEAD Rust Door",
+"bpm": 142,
+"key": "Bm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Sink Noiz",
+"LEAD Rust Door"
+]
+},
+"silentcore-i-mp3-t-248-295": {
+"name": "SC PLUCK Dusk Stair",
+"bpm": 78,
+"key": "F#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Hometown Brass",
+"PLUCK Dusk Stair"
+]
+},
+"silentcore-i-mp3-t-260-902": {
+"name": "SC PLUCK Cold Field",
+"bpm": 78,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Cold Field",
+"PLUCK Tender Supermodified"
+]
+},
+"silentcore-i-mp3-t-273-510": {
+"name": "SC PLUCK Lead Chain",
+"bpm": 78,
+"key": "Gm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Room Handful",
+"PLUCK Lead Chain"
+]
+},
+"silentcore-i-mp3-t-286-118": {
+"name": "SC PLUCK Static Rain",
+"bpm": 86,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Fairy Never",
+"PLUCK Static Rain"
+]
+},
+"silentcore-i-mp3-t-297-580": {
+"name": "SC PLUCK Mire Hallway",
+"bpm": 84,
+"key": "Am",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Brass Lost",
+"PLUCK Mire Hallway"
+]
+},
+"silentcore-i-mp3-t-309-309": {
+"name": "SC PLUCK Cinder Lamp",
+"bpm": 82,
+"key": "G#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sink Fear",
+"PLUCK Cinder Lamp"
+]
+},
+"silentcore-i-mp3-t-321-316": {
+"name": "SC PLUCK Mire Mirror",
+"bpm": 96,
+"key": "A#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Mire Mirror",
+"PLUCK Supermodified Petals"
+]
+},
+"silentcore-i-mp3-t-331-616": {
+"name": "SC PLUCK Glass Cellar",
+"bpm": 88,
+"key": "Am",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Hometown Letter",
+"PLUCK Glass Cellar"
+]
+},
+"silentcore-i-mp3-t-342-825": {
+"name": "SC PLUCK Grey Cellar",
+"bpm": 82,
+"key": "Dm",
+"n": 11,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Grey Cellar",
+"PLUCK Promise Bloodstone"
+]
+},
+"silentcore-i-mp3-t-354-833": {
+"name": "SC BELL Dim Alley",
+"bpm": 96,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Fairy Space",
+"BELL Dim Alley"
+]
+},
+"silentcore-i-mp3-t-365-133": {
+"name": "SC BELL Pale Letter",
+"bpm": 130,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Days Sugar",
+"BELL Pale Letter"
+]
+},
+"silentcore-i-mp3-t-372-817": {
+"name": "SC BELL Ash Motel",
+"bpm": 90,
+"key": "Gm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Noiz Hometown",
+"BELL Ash Motel"
+]
+},
+"silentcore-i-mp3-t-383-784": {
+"name": "SC BELL Quiet Gate",
+"bpm": 94,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Quiet Gate",
+"BELL Angel Null"
+]
+},
+"silentcore-i-mp3-t-394-297": {
+"name": "SC BELL Lead Doll",
+"bpm": 142,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Lead Doll",
+"BELL Natureland Petals"
+]
+},
+"silentcore-i-mp3-t-401-357": {
+"name": "SC BELL Tin Lullaby",
+"bpm": 80,
+"key": "F#m",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Tin Lullaby",
+"BELL Verbal Moon"
+]
+},
+"silentcore-i-mp3-t-413-657": {
+"name": "SC BELL Ward Field",
+"bpm": 92,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Ward Field",
+"BELL Mantis Days"
+]
+},
+"silentcore-i-mp3-t-424-392": {
+"name": "SC BELL Quiet Doll",
+"bpm": 142,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Quiet Doll",
+"BELL Lost Sugar"
+]
+},
+"silentcore-i-mp3-t-431-453": {
+"name": "SC BELL Soot Window",
+"bpm": 84,
+"key": "Cm",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Soot Window",
+"BELL Verbal Tender"
+]
+},
+"silentcore-i-mp3-t-443-181": {
+"name": "SC PAD Hollow Cellar",
+"bpm": 80,
+"key": "G#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Hollow Cellar",
+"PAD Kitchen Fear"
+]
+},
+"silentcore-i-mp3-t-455-481": {
+"name": "SC PAD Ash Stair",
+"bpm": 140,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Permutation Bloodstone",
+"PAD Ash Stair"
+]
+},
+"silentcore-i-mp3-t-462-639": {
+"name": "SC PAD Wire Mirror",
+"bpm": 78,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wire Mirror",
+"PAD Tomorrow Machines"
+]
+},
+"silentcore-i-mp3-t-475-246": {
+"name": "SC PAD Wire Siren",
+"bpm": 140,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wire Siren",
+"PAD Nightlife Jovian"
+]
+},
+"silentcore-i-mp3-t-482-403": {
+"name": "SC PAD Tin Chain",
+"bpm": 90,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Bridge Noiz",
+"PAD Tin Chain"
+]
+},
+"silentcore-i-mp3-t-493-370": {
+"name": "SC PAD Grey Chain",
+"bpm": 140,
+"key": "Dm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Grey Chain",
+"PAD Handful Room"
+]
+},
+"silentcore-i-mp3-t-500-527": {
+"name": "SC PAD Moth Letter",
+"bpm": 86,
+"key": "F#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Moth Letter",
+"PAD Permutation Marine"
+]
+},
+"silentcore-i-mp3-t-511-990": {
+"name": "SC PAD Chapel Cellar",
+"bpm": 140,
+"key": "D#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tomorrow Sugar",
+"PAD Chapel Cellar"
+]
+},
+"silentcore-i-mp3-t-519-147": {
+"name": "SC PAD Tin Tower",
+"bpm": 90,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tin Tower",
+"PAD Sink Nightlife"
+]
+},
+"silentcore-i-mp3-t-530-114": {
+"name": "SC PAD Cinder Mirror",
+"bpm": 148,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Foley Hometown",
+"PAD Cinder Mirror"
+]
+},
+"silentcore-i-mp3-t-536-900": {
+"name": "SC PAD Rust Fever",
+"bpm": 96,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Rust Fever",
+"PAD Verbal Jovian"
+]
+},
+"silentcore-i-mp3-t-547-200": {
+"name": "SC CHOIR Rust Tower",
+"bpm": 86,
+"key": "D#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Tomorrow Promise",
+"CHOIR Rust Tower"
+]
+},
+"silentcore-i-mp3-t-558-663": {
+"name": "SC CHOIR Wire Lullaby",
+"bpm": 80,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Wire Lullaby",
+"CHOIR Waiting Bricolage"
+]
+},
+"silentcore-i-mp3-t-570-963": {
+"name": "SC CHOIR Veil Gate",
+"bpm": 84,
+"key": "Bm",
+"n": 11,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Veil Gate",
+"CHOIR Marine Fairy"
+]
+},
+"silentcore-i-mp3-t-582-692": {
+"name": "SC CHOIR Wet Shore",
+"bpm": 85,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Wet Shore",
+"CHOIR Petals Mantis"
+]
+},
+"silentcore-i-mp3-t-594-286": {
+"name": "SC CHOIR Soot Alley",
+"bpm": 86,
+"key": "C#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bridge Lost",
+"CHOIR Soot Alley"
+]
+},
+"silentcore-i-mp3-t-605-749": {
+"name": "SC CHOIR Lead Stair",
+"bpm": 78,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Lead Stair",
+"CHOIR Angel Days"
+]
+},
+"silentcore-i-mp3-t-618-356": {
+"name": "SC CHOIR Grey Rain",
+"bpm": 84,
+"key": "Gm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Grey Rain",
+"CHOIR Never Waiting"
+]
+},
+"silentcore-i-mp3-t-630-085": {
+"name": "SC CHOIR Lantern Doll",
+"bpm": 86,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Lantern Doll",
+"CHOIR Kitchen Promise"
+]
+},
+"silentcore-i-mp3-t-641-548": {
+"name": "SC CHOIR Dim Hallway",
+"bpm": 84,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Dust Letter",
+"CHOIR Dim Hallway"
+]
+},
+"silentcore-i-mp3-t-653-276": {
+"name": "SC KEYS Lost Stair",
+"bpm": 96,
+"key": "Gm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Room Rain",
+"KEYS Lost Stair"
+]
+},
+"silentcore-i-mp3-t-663-576": {
+"name": "SC KEYS Dusk Prayer",
+"bpm": 96,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Dusk Prayer",
+"KEYS Verbal Fear"
+]
+},
+"silentcore-i-mp3-t-673-876": {
+"name": "SC KEYS Soot Door",
+"bpm": 135,
+"key": "A#m",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Soot Door",
+"KEYS Rain Kitchen"
+]
+},
+"silentcore-i-mp3-t-681-287": {
+"name": "SC KEYS Ash Hallway",
+"bpm": 86,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Bricolage Machines",
+"KEYS Ash Hallway"
+]
+},
+"silentcore-i-mp3-t-692-750": {
+"name": "SC KEYS Lead Prayer",
+"bpm": 94,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Lead Prayer",
+"KEYS Handful Foley"
+]
+},
+"silentcore-i-mp3-t-703-263": {
+"name": "SC KEYS Chapel Bell",
+"bpm": 130,
+"key": "Fm",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Chapel Bell",
+"KEYS Natureland Supermodified"
+]
+},
+"silentcore-i-mp3-t-710-947": {
+"name": "SC KEYS Veil Hymn",
+"bpm": 80,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Veil Hymn",
+"KEYS Bricolage Tomorrow"
+]
+},
+"silentcore-i-mp3-t-723-247": {
+"name": "SC KEYS Bone Water",
+"bpm": 84,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Bone Water",
+"KEYS Natureland Bloodstone"
+]
+},
+"silentcore-i-mp3-t-734-976": {
+"name": "SC ARP Grey Door",
+"bpm": 140,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Jovian Brass",
+"ARP Grey Door"
+]
+},
+"silentcore-i-mp3-t-742-133": {
+"name": "SC ARP Glass Shore",
+"bpm": 130,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Moon Letter",
+"ARP Glass Shore"
+]
+},
+"silentcore-i-mp3-t-749-818": {
+"name": "SC ARP Rust Sleep",
+"bpm": 150,
+"key": "Em",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Marine Tender",
+"ARP Rust Sleep"
+]
+},
+"silentcore-i-mp3-t-756-518": {
+"name": "SC ARP Hollow Doll",
+"bpm": 145,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Never Angel",
+"ARP Hollow Doll"
+]
+},
+"silentcore-i-mp3-t-763-438": {
+"name": "SC ARP Tin Lamp",
+"bpm": 150,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Tin Lamp",
+"ARP Hometown Moon"
+]
+},
+"silentcore-i-mp3-t-770-138": {
+"name": "SC DRONE Dusk Rain",
+"bpm": 86,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Dusk Rain",
+"DRONE Noiz Petals"
+]
+},
+"silentcore-i-mp3-t-781-601": {
+"name": "SC DRONE Cinder Lullaby",
+"bpm": 96,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Sink Rain",
+"DRONE Cinder Lullaby"
+]
+},
+"silentcore-i-mp3-t-791-901": {
+"name": "SC DRONE Rust Siren",
+"bpm": 86,
+"key": "Em",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Rust Siren",
+"DRONE Room Machines"
+]
+},
+"silentcore-i-mp3-t-803-364": {
+"name": "SC DRONE Dim Road",
+"bpm": 96,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Dim Road",
+"DRONE Verbal Days"
+]
+},
+"silentcore-i-mp3-t-813-664": {
+"name": "SC DRONE Ember Cellar",
+"bpm": 80,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Days Supermodified",
+"DRONE Ember Cellar"
+]
+},
+"silentcore-i-mp3-t-825-964": {
+"name": "SC DRONE Dusk Window",
+"bpm": 85,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Permutation Promise",
+"DRONE Dusk Window"
+]
+},
+"silentcore-i-mp3-t-837-558": {
+"name": "SC DRONE Fog Lamp",
+"bpm": 96,
+"key": "A#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Fog Lamp",
+"DRONE Null Waiting"
+]
+},
+"silentcore-i-mp3-t-847-858": {
+"name": "SC DRONE Dusk Bell",
+"bpm": 84,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Tender Slowly",
+"DRONE Dusk Bell"
+]
+},
+"silentcore-i-mp3-t-859-587": {
+"name": "SC DRONE Smoke Shore",
+"bpm": 85,
+"key": "Cm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Smoke Shore",
+"DRONE Brass Mantis"
+]
+},
+"silentcore-i-mp3-t-871-181": {
+"name": "SC DRONE Bone Hymn",
+"bpm": 78,
+"key": "Fm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Bone Hymn",
+"DRONE Nightlife Machines"
+]
+},
+"silentcore-i-mp3-t-883-789": {
+"name": "SC DRONE Fog Cellar",
+"bpm": 94,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"DRONE Fog Cellar",
+"DRONE Sugar Delusion"
+]
+},
+"silentcore-i-mp3-t-894-301": {
+"name": "SC FX Cold Stair",
+"bpm": 84,
+"key": "F#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"FX Cold Stair",
+"FX Room Moon"
+]
+},
+"silentcore-i-mp3-t-906-030": {
+"name": "SC FX Iron Lullaby",
+"bpm": 82,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FX Iron Lullaby",
+"FX Petals Bricolage"
+]
+},
+"silentcore-i-mp3-t-918-037": {
+"name": "SC FX Cinder Lullaby",
+"bpm": 78,
+"key": "G#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"FX Cinder Lullaby",
+"FX Waiting Hometown"
+]
+},
+"silentcore-i-mp3-t-930-645": {
+"name": "SC FX Veil Motel",
+"bpm": 86,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FX Tender Permutation",
+"FX Veil Motel"
+]
+},
+"silentcore-i-mp3-t-942-108": {
+"name": "SC FX Glass Wound",
+"bpm": 94,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FX Lost Space",
+"FX Glass Wound"
+]
+},
+"silentcore-i-mp3-t-952-620": {
+"name": "SC FX Wet Water",
+"bpm": 86,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Wet Water",
+"FX Bridge Angel"
+]
+},
+"silentcore-i-mp3-t-964-083": {
+"name": "SC FX Ash Door",
+"bpm": 85,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Ash Door",
+"FX Slowly Null"
+]
+},
+"silentcore-i-mp3-t-975-677": {
+"name": "SC FX Ash Lamp",
+"bpm": 82,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Fear Space",
+"FX Ash Lamp"
+]
+},
+"silentcore-i-mp3-t-987-685": {
+"name": "SC FX Cold Pier",
+"bpm": 86,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Cold Pier",
+"FX Sink Mantis"
+]
+},
+"silentcore-i-mp3-t-999-147": {
+"name": "SC FX Ember Wound",
+"bpm": 84,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Lost Kitchen",
+"FX Ember Wound"
+]
+}
+}

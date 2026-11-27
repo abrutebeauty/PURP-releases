@@ -1,0 +1,1214 @@
+{
+"2hollcore-ii-mp3-t-0-000": {
+"name": "H2 SAW Cloud Night",
+"bpm": 140,
+"key": "F#",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Cloud Night",
+"SAW Crush Star"
+]
+},
+"2hollcore-ii-mp3-t-7-157": {
+"name": "H2 SAW Bubble Bandit",
+"bpm": 145,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Eldest Girl",
+"SAW Bubble Bandit"
+]
+},
+"2hollcore-ii-mp3-t-14-078": {
+"name": "H2 SAW Teal Hunter",
+"bpm": 150,
+"key": "F#",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Safe Ego",
+"SAW Teal Hunter"
+]
+},
+"2hollcore-ii-mp3-t-20-778": {
+"name": "H2 SAW Nova Runner",
+"bpm": 150,
+"key": "D#m",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Style Child",
+"SAW Nova Runner"
+]
+},
+"2hollcore-ii-mp3-t-27-478": {
+"name": "H2 SAW Ember Maze",
+"bpm": 140,
+"key": "G#m",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Nerve Sidekick",
+"SAW Ember Maze"
+]
+},
+"2hollcore-ii-mp3-t-34-635": {
+"name": "H2 SAW Ember Lantern",
+"bpm": 155,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Light Girl",
+"SAW Ember Lantern"
+]
+},
+"2hollcore-ii-mp3-t-41-129": {
+"name": "H2 SAW Sparkle Dagger",
+"bpm": 152,
+"key": "Am",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Sparkle Dagger",
+"SAW Safe Sidekick"
+]
+},
+"2hollcore-ii-mp3-t-47-744": {
+"name": "H2 SAW Honey Fountain",
+"bpm": 160,
+"key": "G#m",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Beginning Star",
+"SAW Honey Fountain"
+]
+},
+"2hollcore-ii-mp3-t-54-044": {
+"name": "H2 SAW Toxic Ranger",
+"bpm": 140,
+"key": "C#m",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Toxic Ranger",
+"SAW Nerve Sports"
+]
+},
+"2hollcore-ii-mp3-t-61-201": {
+"name": "H2 SAW Blush Runner",
+"bpm": 160,
+"key": "D#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Blush Runner",
+"SAW Destroy Flash"
+]
+},
+"2hollcore-ii-mp3-t-67-501": {
+"name": "H2 SAW Tinsel Lagoon",
+"bpm": 160,
+"key": "G#m",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Tinsel Lagoon",
+"SAW Girl Sports"
+]
+},
+"2hollcore-ii-mp3-t-73-801": {
+"name": "H2 LEAD Jelly Cascade",
+"bpm": 148,
+"key": "F#",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Eldest Rain",
+"LEAD Jelly Cascade"
+]
+},
+"2hollcore-ii-mp3-t-80-588": {
+"name": "H2 LEAD Holo Storm",
+"bpm": 148,
+"key": "Bm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Nice Style",
+"LEAD Holo Storm"
+]
+},
+"2hollcore-ii-mp3-t-87-374": {
+"name": "H2 LEAD Teal Voyage",
+"bpm": 145,
+"key": "F#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Light Star",
+"LEAD Teal Voyage"
+]
+},
+"2hollcore-ii-mp3-t-94-295": {
+"name": "H2 LEAD Holo Mirage",
+"bpm": 152,
+"key": "Fm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Holo Mirage",
+"LEAD Beginning Gold"
+]
+},
+"2hollcore-ii-mp3-t-100-911": {
+"name": "H2 LEAD Ruby Engine",
+"bpm": 142,
+"key": "C#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cope Child",
+"LEAD Ruby Engine"
+]
+},
+"2hollcore-ii-mp3-t-107-971": {
+"name": "H2 LEAD Echo Spell",
+"bpm": 140,
+"key": "Cm",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Nice Forfeit",
+"LEAD Echo Spell"
+]
+},
+"2hollcore-ii-mp3-t-115-129": {
+"name": "H2 LEAD Magic Trance",
+"bpm": 150,
+"key": "Cm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Forfeit Style",
+"LEAD Magic Trance"
+]
+},
+"2hollcore-ii-mp3-t-121-829": {
+"name": "H2 LEAD Melt Engine",
+"bpm": 158,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Destroy Sidekick",
+"LEAD Melt Engine"
+]
+},
+"2hollcore-ii-mp3-t-128-205": {
+"name": "H2 PLUCK Nova Night",
+"bpm": 152,
+"key": "G#m",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Nova Night",
+"PLUCK Sidekick Eldest"
+]
+},
+"2hollcore-ii-mp3-t-134-820": {
+"name": "H2 PLUCK Mint Crown",
+"bpm": 142,
+"key": "Gm",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Mint Crown",
+"PLUCK Burn Style"
+]
+},
+"2hollcore-ii-mp3-t-141-881": {
+"name": "H2 PLUCK Petal Locket",
+"bpm": 160,
+"key": "D",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Flash Rain",
+"PLUCK Petal Locket"
+]
+},
+"2hollcore-ii-mp3-t-148-181": {
+"name": "H2 PLUCK Violet Swarm",
+"bpm": 160,
+"key": "G#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Violet Swarm",
+"PLUCK Beginning Nerve"
+]
+},
+"2hollcore-ii-mp3-t-154-481": {
+"name": "H2 PLUCK Lunar Ranger",
+"bpm": 158,
+"key": "D#m",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sports Cope",
+"PLUCK Lunar Ranger"
+]
+},
+"2hollcore-ii-mp3-t-160-857": {
+"name": "H2 PLUCK Comet Summer",
+"bpm": 150,
+"key": "D#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Comet Summer",
+"PLUCK Nerve Cope"
+]
+},
+"2hollcore-ii-mp3-t-167-557": {
+"name": "H2 PLUCK Fairy Wire",
+"bpm": 155,
+"key": "Bm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Fairy Wire",
+"PLUCK Child Light"
+]
+},
+"2hollcore-ii-mp3-t-174-050": {
+"name": "H2 PLUCK Zero Burst",
+"bpm": 150,
+"key": "A",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Ego Crush",
+"PLUCK Zero Burst"
+]
+},
+"2hollcore-ii-mp3-t-180-750": {
+"name": "H2 BELL Lunar Omen",
+"bpm": 140,
+"key": "A",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Lunar Omen",
+"BELL Child Beginning"
+]
+},
+"2hollcore-ii-mp3-t-187-907": {
+"name": "H2 BELL Holo Phantom",
+"bpm": 150,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Holo Phantom",
+"BELL Forfeit Style"
+]
+},
+"2hollcore-ii-mp3-t-194-607": {
+"name": "H2 BELL Cloud Flight",
+"bpm": 150,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Eldest Crush",
+"BELL Cloud Flight"
+]
+},
+"2hollcore-ii-mp3-t-201-307": {
+"name": "H2 BELL Wish Memory",
+"bpm": 160,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Wish Memory",
+"BELL Eldest Star"
+]
+},
+"2hollcore-ii-mp3-t-207-607": {
+"name": "H2 BELL Mint Portal",
+"bpm": 148,
+"key": "Fm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Mint Portal",
+"BELL Dream Nerve"
+]
+},
+"2hollcore-ii-mp3-t-214-394": {
+"name": "H2 BELL Bubble Storm",
+"bpm": 142,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Bubble Storm",
+"BELL Ego Boy"
+]
+},
+"2hollcore-ii-mp3-t-221-455": {
+"name": "H2 BELL Ember Flight",
+"bpm": 152,
+"key": "C#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Nice Child",
+"BELL Ember Flight"
+]
+},
+"2hollcore-ii-mp3-t-228-070": {
+"name": "H2 BELL Solar Cascade",
+"bpm": 160,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Solar Cascade",
+"BELL Destroy Star"
+]
+},
+"2hollcore-ii-mp3-t-234-370": {
+"name": "H2 BELL Bubble Temple",
+"bpm": 145,
+"key": "E",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Bubble Temple",
+"BELL Burn Nerve"
+]
+},
+"2hollcore-ii-mp3-t-241-291": {
+"name": "H2 BELL Teal Ranger",
+"bpm": 142,
+"key": "Bm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Girl Afraid",
+"BELL Teal Ranger"
+]
+},
+"2hollcore-ii-mp3-t-248-352": {
+"name": "H2 808 Siren Spiral",
+"bpm": 142,
+"key": "Bm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Siren Spiral",
+"808 Gold Light"
+]
+},
+"2hollcore-ii-mp3-t-255-412": {
+"name": "H2 808 Zero Parade",
+"bpm": 150,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Zero Parade",
+"808 Crush Rain"
+]
+},
+"2hollcore-ii-mp3-t-262-112": {
+"name": "H2 808 Opal Cascade",
+"bpm": 142,
+"key": "F#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Ego Burn",
+"808 Opal Cascade"
+]
+},
+"2hollcore-ii-mp3-t-269-173": {
+"name": "H2 808 Quartz Engine",
+"bpm": 145,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Cope Destroy",
+"808 Quartz Engine"
+]
+},
+"2hollcore-ii-mp3-t-276-093": {
+"name": "H2 808 Flare Bridge",
+"bpm": 140,
+"key": "Am",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Beginning Style",
+"808 Flare Bridge"
+]
+},
+"2hollcore-ii-mp3-t-283-251": {
+"name": "H2 808 Comet Garden",
+"bpm": 150,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Dream Girl",
+"808 Comet Garden"
+]
+},
+"2hollcore-ii-mp3-t-289-951": {
+"name": "H2 808 Solar Runner",
+"bpm": 150,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Solar Runner",
+"808 Sports Destroy"
+]
+},
+"2hollcore-ii-mp3-t-296-651": {
+"name": "H2 BASS Wish Parade",
+"bpm": 160,
+"key": "Gm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ego Burn",
+"BASS Wish Parade"
+]
+},
+"2hollcore-ii-mp3-t-302-951": {
+"name": "H2 BASS Tinsel Chase",
+"bpm": 152,
+"key": "Cm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Tinsel Chase",
+"BASS Sidekick Gold"
+]
+},
+"2hollcore-ii-mp3-t-309-566": {
+"name": "H2 BASS Silk Bounce",
+"bpm": 145,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Crush Flash",
+"BASS Silk Bounce"
+]
+},
+"2hollcore-ii-mp3-t-316-487": {
+"name": "H2 BASS Daisy Lagoon",
+"bpm": 142,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Nice Sports",
+"BASS Daisy Lagoon"
+]
+},
+"2hollcore-ii-mp3-t-323-548": {
+"name": "H2 BASS Pearl Bandit",
+"bpm": 150,
+"key": "G#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Beginning Sidekick",
+"BASS Pearl Bandit"
+]
+},
+"2hollcore-ii-mp3-t-330-248": {
+"name": "H2 BASS Daisy Bounce",
+"bpm": 160,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Daisy Bounce",
+"BASS Flash Destroy"
+]
+},
+"2hollcore-ii-mp3-t-336-548": {
+"name": "H2 BASS Milk Parade",
+"bpm": 160,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Milk Parade",
+"BASS Star Gold"
+]
+},
+"2hollcore-ii-mp3-t-342-848": {
+"name": "H2 BASS Mint Thunder",
+"bpm": 152,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Nice Safe",
+"BASS Mint Thunder"
+]
+},
+"2hollcore-ii-mp3-t-349-463": {
+"name": "H2 BASS Plush Night",
+"bpm": 150,
+"key": "Em",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Dream Girl",
+"BASS Plush Night"
+]
+},
+"2hollcore-ii-mp3-t-356-163": {
+"name": "H2 BASS Flare Thunder",
+"bpm": 150,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Flare Thunder",
+"BASS Cope Gold"
+]
+},
+"2hollcore-ii-mp3-t-362-863": {
+"name": "H2 BASS Plush Flight",
+"bpm": 145,
+"key": "D#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Cope Safe",
+"BASS Plush Flight"
+]
+},
+"2hollcore-ii-mp3-t-369-784": {
+"name": "H2 BASS Gold Radio",
+"bpm": 152,
+"key": "A",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Gold Radio",
+"BASS Boy Forfeit"
+]
+},
+"2hollcore-ii-mp3-t-376-400": {
+"name": "H2 BASS Aqua Omen",
+"bpm": 150,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Aqua Omen",
+"BASS Light Eldest"
+]
+},
+"2hollcore-ii-mp3-t-383-100": {
+"name": "H2 BASS Twilight Swarm",
+"bpm": 145,
+"key": "E",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Twilight Swarm",
+"BASS Sports Light"
+]
+},
+"2hollcore-ii-mp3-t-390-020": {
+"name": "H2 BASS Tinsel Queen",
+"bpm": 142,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Tinsel Queen",
+"BASS Gold Sidekick"
+]
+},
+"2hollcore-ii-mp3-t-397-081": {
+"name": "H2 PAD Siren Cradle",
+"bpm": 145,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Ego Nerve",
+"PAD Siren Cradle"
+]
+},
+"2hollcore-ii-mp3-t-404-002": {
+"name": "H2 PAD Flare Locket",
+"bpm": 152,
+"key": "D",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Flare Locket",
+"PAD Light Safe"
+]
+},
+"2hollcore-ii-mp3-t-410-618": {
+"name": "H2 PAD Violet Scream",
+"bpm": 160,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Dream Girl",
+"PAD Violet Scream"
+]
+},
+"2hollcore-ii-mp3-t-416-918": {
+"name": "H2 PAD Cloud Swarm",
+"bpm": 158,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cloud Swarm",
+"PAD Nice Crush"
+]
+},
+"2hollcore-ii-mp3-t-423-293": {
+"name": "H2 PAD Quartz Mirage",
+"bpm": 152,
+"key": "C#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sports Nerve",
+"PAD Quartz Mirage"
+]
+},
+"2hollcore-ii-mp3-t-429-909": {
+"name": "H2 PAD Daisy Scream",
+"bpm": 155,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Gold Beginning",
+"PAD Daisy Scream"
+]
+},
+"2hollcore-ii-mp3-t-436-403": {
+"name": "H2 PAD Violet Code",
+"bpm": 145,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Violet Code",
+"PAD Cope Afraid"
+]
+},
+"2hollcore-ii-mp3-t-443-323": {
+"name": "H2 PAD Sparkle Mirage",
+"bpm": 142,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sparkle Mirage",
+"PAD Child Style"
+]
+},
+"2hollcore-ii-mp3-t-450-384": {
+"name": "H2 PAD Honey Lantern",
+"bpm": 145,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Flash Dream",
+"PAD Honey Lantern"
+]
+},
+"2hollcore-ii-mp3-t-457-305": {
+"name": "H2 PAD Gold Portal",
+"bpm": 160,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Beginning Eldest",
+"PAD Gold Portal"
+]
+},
+"2hollcore-ii-mp3-t-463-605": {
+"name": "H2 PAD Shiver Memory",
+"bpm": 145,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Style Ego",
+"PAD Shiver Memory"
+]
+},
+"2hollcore-ii-mp3-t-470-525": {
+"name": "H2 PAD Aqua Spiral",
+"bpm": 140,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Eldest Boy",
+"PAD Aqua Spiral"
+]
+},
+"2hollcore-ii-mp3-t-477-683": {
+"name": "H2 PAD Ice Wire",
+"bpm": 140,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sidekick Destroy",
+"PAD Ice Wire"
+]
+},
+"2hollcore-ii-mp3-t-484-840": {
+"name": "H2 PAD Echo Cradle",
+"bpm": 158,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Echo Cradle",
+"PAD Star Style"
+]
+},
+"2hollcore-ii-mp3-t-491-216": {
+"name": "H2 PAD Nova Queen",
+"bpm": 150,
+"key": "Em",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Beginning Destroy",
+"PAD Nova Queen"
+]
+},
+"2hollcore-ii-mp3-t-497-916": {
+"name": "H2 ARP Jelly Drift",
+"bpm": 150,
+"key": "F#",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Afraid Sidekick",
+"ARP Jelly Drift"
+]
+},
+"2hollcore-ii-mp3-t-504-616": {
+"name": "H2 ARP Solar Dancer",
+"bpm": 160,
+"key": "G#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Solar Dancer",
+"ARP Flash Destroy"
+]
+},
+"2hollcore-ii-mp3-t-510-916": {
+"name": "H2 ARP Stellar Machine",
+"bpm": 155,
+"key": "Am",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Stellar Machine",
+"ARP Sports Sidekick"
+]
+},
+"2hollcore-ii-mp3-t-517-409": {
+"name": "H2 ARP Ice Thunder",
+"bpm": 155,
+"key": "C#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Star Dream",
+"ARP Ice Thunder"
+]
+},
+"2hollcore-ii-mp3-t-523-903": {
+"name": "H2 ARP Honey Dancer",
+"bpm": 142,
+"key": "Em",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Safe Afraid",
+"ARP Honey Dancer"
+]
+},
+"2hollcore-ii-mp3-t-530-963": {
+"name": "H2 ARP Gem Fable",
+"bpm": 152,
+"key": "Fm",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Burn Forfeit",
+"ARP Gem Fable"
+]
+},
+"2hollcore-ii-mp3-t-537-579": {
+"name": "H2 ARP Opal Chase",
+"bpm": 155,
+"key": "D#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Opal Chase",
+"ARP Eldest Ego"
+]
+},
+"2hollcore-ii-mp3-t-544-073": {
+"name": "H2 ARP Ashen Storm",
+"bpm": 142,
+"key": "Em",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Star Gold",
+"ARP Ashen Storm"
+]
+},
+"2hollcore-ii-mp3-t-551-133": {
+"name": "H2 ARP Acid Maze",
+"bpm": 148,
+"key": "E",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Acid Maze",
+"ARP Forfeit Afraid"
+]
+},
+"2hollcore-ii-mp3-t-557-920": {
+"name": "H2 ARP Snow Wire",
+"bpm": 155,
+"key": "D",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Girl Boy",
+"ARP Snow Wire"
+]
+},
+"2hollcore-ii-mp3-t-564-413": {
+"name": "H2 CHORD Silk Memory",
+"bpm": 160,
+"key": "E",
+"n": 60,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Light Boy",
+"CHORD Silk Memory"
+]
+},
+"2hollcore-ii-mp3-t-570-713": {
+"name": "H2 CHORD Fairy Wraith",
+"bpm": 158,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Fairy Wraith",
+"CHORD Afraid Crush"
+]
+},
+"2hollcore-ii-mp3-t-577-089": {
+"name": "H2 CHORD Snow Hunter",
+"bpm": 152,
+"key": "G#m",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Eldest Style",
+"CHORD Snow Hunter"
+]
+},
+"2hollcore-ii-mp3-t-583-705": {
+"name": "H2 CHORD Dawn Chase",
+"bpm": 145,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Afraid Boy",
+"CHORD Dawn Chase"
+]
+},
+"2hollcore-ii-mp3-t-590-626": {
+"name": "H2 CHORD Stellar Crown",
+"bpm": 160,
+"key": "Em",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Stellar Crown",
+"CHORD Forfeit Dream"
+]
+},
+"2hollcore-ii-mp3-t-596-926": {
+"name": "H2 CHORD Opal Machine",
+"bpm": 160,
+"key": "A",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Gold Crush",
+"CHORD Opal Machine"
+]
+},
+"2hollcore-ii-mp3-t-603-226": {
+"name": "H2 CHORD Baby Dagger",
+"bpm": 150,
+"key": "Gm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Baby Dagger",
+"CHORD Star Crush"
+]
+},
+"2hollcore-ii-mp3-t-609-926": {
+"name": "H2 CHORD Acid Portal",
+"bpm": 145,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Acid Portal",
+"CHORD Light Forfeit"
+]
+},
+"2hollcore-ii-mp3-t-616-846": {
+"name": "H2 CHORD Pearl Skater",
+"bpm": 145,
+"key": "Em",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Pearl Skater",
+"CHORD Dream Flash"
+]
+},
+"2hollcore-ii-mp3-t-623-767": {
+"name": "H2 VOX Ruby Lagoon",
+"bpm": 150,
+"key": "Em",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Ruby Lagoon",
+"VOX Gold Eldest"
+]
+},
+"2hollcore-ii-mp3-t-630-467": {
+"name": "H2 VOX Fairy Dagger",
+"bpm": 145,
+"key": "B",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Child Crush",
+"VOX Fairy Dagger"
+]
+},
+"2hollcore-ii-mp3-t-637-388": {
+"name": "H2 VOX Wish Fountain",
+"bpm": 142,
+"key": "F#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Wish Fountain",
+"VOX Destroy Ego"
+]
+},
+"2hollcore-ii-mp3-t-644-448": {
+"name": "H2 VOX Petal Dancer",
+"bpm": 160,
+"key": "D",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Boy Sidekick",
+"VOX Petal Dancer"
+]
+},
+"2hollcore-ii-mp3-t-650-748": {
+"name": "H2 VOX Vapor Escape",
+"bpm": 155,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Vapor Escape",
+"VOX Cope Destroy"
+]
+},
+"2hollcore-ii-mp3-t-657-242": {
+"name": "H2 VOX Snow Cradle",
+"bpm": 158,
+"key": "Em",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Afraid Safe",
+"VOX Snow Cradle"
+]
+},
+"2hollcore-ii-mp3-t-663-618": {
+"name": "H2 VOX Vapor Phantom",
+"bpm": 160,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Ego Style",
+"VOX Vapor Phantom"
+]
+},
+"2hollcore-ii-mp3-t-669-918": {
+"name": "H2 VOX Blush Machine",
+"bpm": 158,
+"key": "D#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Light Girl",
+"VOX Blush Machine"
+]
+}
+}
