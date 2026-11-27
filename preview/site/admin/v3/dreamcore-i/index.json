@@ -1,0 +1,1214 @@
+{
+"dc1-pad-quiet-arcade-mp3": {
+"name": "DC PAD Quiet Arcade",
+"bpm": 72,
+"key": "A",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Quiet Arcade",
+"PAD Next Boyhood"
+]
+},
+"dc1-keys-morning-hallway-mp3": {
+"name": "DC KEYS Morning Hallway",
+"bpm": 79,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Morning Hallway",
+"KEYS Snow Gone"
+]
+},
+"dc1-pluck-rosewater-stairwell-mp3": {
+"name": "DC PLUCK Rosewater Stairwell",
+"bpm": 82,
+"key": "F#m",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Rosewater Stairwell",
+"PLUCK Panic Hurts"
+]
+},
+"dc1-lead-feather-waiting-room-mp3": {
+"name": "DC LEAD Feather Waiting Room",
+"bpm": 91,
+"key": "G#m",
+"n": 21,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chance Dreams",
+"LEAD Feather Waiting Room"
+]
+},
+"dc1-arp-lantern-balcony-mp3": {
+"name": "DC ARP Lantern Balcony",
+"bpm": 83,
+"key": "Dm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Lantern Balcony",
+"ARP Gyro Samsara"
+]
+},
+"dc1-arp-lilac-lighthouse-mp3": {
+"name": "DC ARP Lilac Lighthouse",
+"bpm": 95,
+"key": "A",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Seeing Comfort",
+"ARP Lilac Lighthouse"
+]
+},
+"dc1-arp-lonely-bus-stop-mp3": {
+"name": "DC ARP Lonely Bus Stop",
+"bpm": 87,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Lonely Bus Stop",
+"ARP Falling Yourself"
+]
+},
+"dc1-arp-morning-ribbon-mp3": {
+"name": "DC ARP Morning Ribbon",
+"bpm": 85,
+"key": "A#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Morning Ribbon",
+"ARP Pretty Snowfall"
+]
+},
+"dc1-arp-plastic-night-light-mp3": {
+"name": "DC ARP Plastic Night Light",
+"bpm": 88,
+"key": "C#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Leave Wistful",
+"ARP Plastic Night Light"
+]
+},
+"dc1-arp-porcelain-haze-mp3": {
+"name": "DC ARP Porcelain Haze",
+"bpm": 95,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Porcelain Haze",
+"ARP Trip Apathy"
+]
+},
+"dc1-arp-starlit-lullaby-mp3": {
+"name": "DC ARP Starlit Lullaby",
+"bpm": 87,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Perfect Dust",
+"ARP Starlit Lullaby"
+]
+},
+"dc1-arp-summer-chapel-mp3": {
+"name": "DC ARP Summer Chapel",
+"bpm": 92,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Pretty Believing",
+"ARP Summer Chapel"
+]
+},
+"dc1-bass-cloud-stairwell-mp3": {
+"name": "DC BASS Cloud Stairwell",
+"bpm": 86,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Cloud Stairwell",
+"BASS Next True"
+]
+},
+"dc1-bass-lonely-hotel-mp3": {
+"name": "DC BASS Lonely Hotel",
+"bpm": 81,
+"key": "D#m",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Lonely Hotel",
+"BASS Snow Close"
+]
+},
+"dc1-bass-midnight-sky-mp3": {
+"name": "DC BASS Midnight Sky",
+"bpm": 77,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Midnight Sky",
+"BASS Repercussion Predictability"
+]
+},
+"dc1-bass-milk-bus-stop-mp3": {
+"name": "DC BASS Milk Bus Stop",
+"bpm": 84,
+"key": "Cm",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hurts Haunted",
+"BASS Milk Bus Stop"
+]
+},
+"dc1-bass-rain-comet-mp3": {
+"name": "DC BASS Rain Comet",
+"bpm": 78,
+"key": "A",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Rain Comet",
+"BASS Next Believing"
+]
+},
+"dc1-bass-sleepy-afternoon-mp3": {
+"name": "DC BASS Sleepy Afternoon",
+"bpm": 89,
+"key": "D#m",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sleepy Afternoon",
+"BASS Hurts Satellites"
+]
+},
+"dc1-bass-soft-lake-mp3": {
+"name": "DC BASS Soft Lake",
+"bpm": 86,
+"key": "Bm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Apathy Yourself",
+"BASS Soft Lake"
+]
+},
+"dc1-bass-sugar-mall-mp3": {
+"name": "DC BASS Sugar Mall",
+"bpm": 84,
+"key": "C#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sugar Mall",
+"BASS Eyes Wistful"
+]
+},
+"dc1-bass-underwater-lake-mp3": {
+"name": "DC BASS Underwater Lake",
+"bpm": 89,
+"key": "F#m",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Underwater Lake",
+"BASS Owari Blood"
+]
+},
+"dc1-bass-velvet-ceiling-mp3": {
+"name": "DC BASS Velvet Ceiling",
+"bpm": 80,
+"key": "A#m",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Owari Perfect",
+"BASS Velvet Ceiling"
+]
+},
+"dc1-chord-cloud-playground-mp3": {
+"name": "DC CHORD Cloud Playground",
+"bpm": 79,
+"key": "D#m",
+"n": 76,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Reallife Outside",
+"CHORD Cloud Playground"
+]
+},
+"dc1-chord-ivory-sky-mp3": {
+"name": "DC CHORD Ivory Sky",
+"bpm": 91,
+"key": "G",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Ivory Sky",
+"CHORD Trip Satellites"
+]
+},
+"dc1-chord-milk-bloom-mp3": {
+"name": "DC CHORD Milk Bloom",
+"bpm": 82,
+"key": "A#m",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD True Repercussion",
+"CHORD Milk Bloom"
+]
+},
+"dc1-chord-opal-bloom-mp3": {
+"name": "DC CHORD Opal Bloom",
+"bpm": 84,
+"key": "D",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Trip Haunted",
+"CHORD Opal Bloom"
+]
+},
+"dc1-chord-pale-glow-mp3": {
+"name": "DC CHORD Pale Glow",
+"bpm": 88,
+"key": "Em",
+"n": 52,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Gyro Samsara",
+"CHORD Pale Glow"
+]
+},
+"dc1-chord-plastic-pillow-mp3": {
+"name": "DC CHORD Plastic Pillow",
+"bpm": 90,
+"key": "Bm",
+"n": 78,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Seeing Feeling",
+"CHORD Plastic Pillow"
+]
+},
+"dc1-fx-blue-sky-mp3": {
+"name": "DC FX Blue Sky",
+"bpm": 75,
+"key": "Cm",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Dreams Eyes",
+"FX Blue Sky"
+]
+},
+"dc1-fx-feather-mall-mp3": {
+"name": "DC FX Feather Mall",
+"bpm": 85,
+"key": "D#m",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Feather Mall",
+"FX Close Dreamland"
+]
+},
+"dc1-fx-golden-swing-mp3": {
+"name": "DC FX Golden Swing",
+"bpm": 73,
+"key": "Cm",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Golden Swing",
+"FX Perfect Blood"
+]
+},
+"dc1-fx-hazy-train-mp3": {
+"name": "DC FX Hazy Train",
+"bpm": 83,
+"key": "Gm",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Hazy Train",
+"FX Nostalgia Satellites"
+]
+},
+"dc1-fx-ivory-postcard-mp3": {
+"name": "DC FX Ivory Postcard",
+"bpm": 84,
+"key": "Bm",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Ivory Postcard",
+"FX Searching Snowfall"
+]
+},
+"dc1-fx-lucid-signal-mp3": {
+"name": "DC FX Lucid Signal",
+"bpm": 77,
+"key": "Fm",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Nothings Boyhood",
+"FX Lucid Signal"
+]
+},
+"dc1-fx-saltwater-sunroom-mp3": {
+"name": "DC FX Saltwater Sunroom",
+"bpm": 90,
+"key": "G",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Dreamland Dreams",
+"FX Saltwater Sunroom"
+]
+},
+"dc1-fx-underwater-afternoon-mp3": {
+"name": "DC FX Underwater Afternoon",
+"bpm": 89,
+"key": "Bm",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Passengers Nostalgia",
+"FX Underwater Afternoon"
+]
+},
+"dc1-keys-backyard-attic-mp3": {
+"name": "DC KEYS Backyard Attic",
+"bpm": 74,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Feeling Panic",
+"KEYS Backyard Attic"
+]
+},
+"dc1-keys-cassette-arcade-mp3": {
+"name": "DC KEYS Cassette Arcade",
+"bpm": 83,
+"key": "A#",
+"n": 31,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Cassette Arcade",
+"KEYS Next Chance"
+]
+},
+"dc1-keys-distant-fountain-mp3": {
+"name": "DC KEYS Distant Fountain",
+"bpm": 76,
+"key": "Dm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Distant Fountain",
+"KEYS Gyro Falling"
+]
+},
+"dc1-keys-feather-wish-mp3": {
+"name": "DC KEYS Feather Wish",
+"bpm": 89,
+"key": "D",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Snowfell Blood",
+"KEYS Feather Wish"
+]
+},
+"dc1-keys-ivory-train-mp3": {
+"name": "DC KEYS Ivory Train",
+"bpm": 85,
+"key": "C#",
+"n": 39,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Snowfell Boyhood",
+"KEYS Ivory Train"
+]
+},
+"dc1-keys-lavender-comet-mp3": {
+"name": "DC KEYS Lavender Comet",
+"bpm": 88,
+"key": "Dm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Lavender Comet",
+"KEYS True Panic"
+]
+},
+"dc1-keys-lonely-aquarium-mp3": {
+"name": "DC KEYS Lonely Aquarium",
+"bpm": 84,
+"key": "Bm",
+"n": 25,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Next Wistful",
+"KEYS Lonely Aquarium"
+]
+},
+"dc1-keys-moth-ceiling-mp3": {
+"name": "DC KEYS Moth Ceiling",
+"bpm": 74,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Moth Ceiling",
+"KEYS Next Apathy"
+]
+},
+"dc1-keys-paper-ceiling-mp3": {
+"name": "DC KEYS Paper Ceiling",
+"bpm": 80,
+"key": "F#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Paper Ceiling",
+"KEYS Apathetic Seeing"
+]
+},
+"dc1-keys-plastic-shoreline-mp3": {
+"name": "DC KEYS Plastic Shoreline",
+"bpm": 81,
+"key": "C#m",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Plastic Shoreline",
+"KEYS Pretty Feeling"
+]
+},
+"dc1-keys-polaroid-field-mp3": {
+"name": "DC KEYS Polaroid Field",
+"bpm": 77,
+"key": "Bm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Polaroid Field",
+"KEYS Pretty Repercussion"
+]
+},
+"dc1-keys-soft-sunroom-mp3": {
+"name": "DC KEYS Soft Sunroom",
+"bpm": 78,
+"key": "Am",
+"n": 11,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Soft Sunroom",
+"KEYS Leave Falling"
+]
+},
+"dc1-keys-velvet-wish-mp3": {
+"name": "DC KEYS Velvet Wish",
+"bpm": 73,
+"key": "A#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Velvet Wish",
+"KEYS Care Hurts"
+]
+},
+"dc1-lead-cotton-pillow-mp3": {
+"name": "DC LEAD Cotton Pillow",
+"bpm": 76,
+"key": "C#",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Dreams Yourself",
+"LEAD Cotton Pillow"
+]
+},
+"dc1-lead-daydream-swing-mp3": {
+"name": "DC LEAD Daydream Swing",
+"bpm": 81,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chance Nostalgia",
+"LEAD Daydream Swing"
+]
+},
+"dc1-lead-empty-snowglobe-mp3": {
+"name": "DC LEAD Empty Snowglobe",
+"bpm": 81,
+"key": "F",
+"n": 25,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Real Passengers",
+"LEAD Empty Snowglobe"
+]
+},
+"dc1-lead-forgotten-ceiling-mp3": {
+"name": "DC LEAD Forgotten Ceiling",
+"bpm": 85,
+"key": "F",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Trip Passengers",
+"LEAD Forgotten Ceiling"
+]
+},
+"dc1-lead-fragile-bloom-mp3": {
+"name": "DC LEAD Fragile Bloom",
+"bpm": 80,
+"key": "A#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hurts Snowfall",
+"LEAD Fragile Bloom"
+]
+},
+"dc1-lead-glass-haze-mp3": {
+"name": "DC LEAD Glass Haze",
+"bpm": 88,
+"key": "Em",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Dust Close",
+"LEAD Glass Haze"
+]
+},
+"dc1-lead-hollow-aquarium-mp3": {
+"name": "DC LEAD Hollow Aquarium",
+"bpm": 83,
+"key": "Em",
+"n": 19,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Hollow Aquarium",
+"LEAD Apathy Nothings"
+]
+},
+"dc1-lead-rain-aquarium-mp3": {
+"name": "DC LEAD Rain Aquarium",
+"bpm": 83,
+"key": "Gm",
+"n": 35,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rain Aquarium",
+"LEAD Panic Lifeglow"
+]
+},
+"dc1-lead-satellite-comet-mp3": {
+"name": "DC LEAD Satellite Comet",
+"bpm": 84,
+"key": "F#m",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Satellite Comet",
+"LEAD Snow Searching"
+]
+},
+"dc1-lead-sleepy-balcony-mp3": {
+"name": "DC LEAD Sleepy Balcony",
+"bpm": 85,
+"key": "Dm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Snowfell Believing",
+"LEAD Sleepy Balcony"
+]
+},
+"dc1-lead-soft-chapel-mp3": {
+"name": "DC LEAD Soft Chapel",
+"bpm": 85,
+"key": "F#m",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Next Gyroscope",
+"LEAD Soft Chapel"
+]
+},
+"dc1-pad-cotton-sky-mp3": {
+"name": "DC PAD Cotton Sky",
+"bpm": 76,
+"key": "Bm",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cotton Sky",
+"PAD Passengers Nostalgia"
+]
+},
+"dc1-pad-dim-lake-mp3": {
+"name": "DC PAD Dim Lake",
+"bpm": 74,
+"key": "D#m",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Perfect Gone",
+"PAD Dim Lake"
+]
+},
+"dc1-pad-golden-comet-mp3": {
+"name": "DC PAD Golden Comet",
+"bpm": 71,
+"key": "D",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Golden Comet",
+"PAD True Gone"
+]
+},
+"dc1-pad-hazy-mirror-mp3": {
+"name": "DC PAD Hazy Mirror",
+"bpm": 81,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Feeling Samsara",
+"PAD Hazy Mirror"
+]
+},
+"dc1-pad-hollow-halo-mp3": {
+"name": "DC PAD Hollow Halo",
+"bpm": 76,
+"key": "F#m",
+"n": 21,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Hollow Halo",
+"PAD Gyroscope Lifeglow"
+]
+},
+"dc1-pad-ocean-aquarium-mp3": {
+"name": "DC PAD Ocean Aquarium",
+"bpm": 72,
+"key": "A#m",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Chance Dust",
+"PAD Ocean Aquarium"
+]
+},
+"dc1-pad-pastel-parking-lot-mp3": {
+"name": "DC PAD Pastel Parking Lot",
+"bpm": 80,
+"key": "G#m",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Chance Gyroscope",
+"PAD Pastel Parking Lot"
+]
+},
+"dc1-pad-plastic-mirror-mp3": {
+"name": "DC PAD Plastic Mirror",
+"bpm": 79,
+"key": "Gm",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Plastic Mirror",
+"PAD Close Gone"
+]
+},
+"dc1-pad-rain-ribbon-mp3": {
+"name": "DC PAD Rain Ribbon",
+"bpm": 76,
+"key": "Cm",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Rain Ribbon",
+"PAD Boyhood Satellites"
+]
+},
+"dc1-pad-rosewater-garden-mp3": {
+"name": "DC PAD Rosewater Garden",
+"bpm": 79,
+"key": "G#",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Rosewater Garden",
+"PAD Next Haunted"
+]
+},
+"dc1-pad-saltwater-wish-mp3": {
+"name": "DC PAD Saltwater Wish",
+"bpm": 74,
+"key": "Bm",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Saltwater Wish",
+"PAD Perfect Lifeglow"
+]
+},
+"dc1-pad-satellite-classroom-mp3": {
+"name": "DC PAD Satellite Classroom",
+"bpm": 81,
+"key": "F#m",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Falling Dreamland",
+"PAD Satellite Classroom"
+]
+},
+"dc1-pad-sleepy-chapel-mp3": {
+"name": "DC PAD Sleepy Chapel",
+"bpm": 76,
+"key": "F#",
+"n": 27,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Blood Nothings",
+"PAD Sleepy Chapel"
+]
+},
+"dc1-pad-soft-stairwell-mp3": {
+"name": "DC PAD Soft Stairwell",
+"bpm": 80,
+"key": "Gm",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Soft Stairwell",
+"PAD Next Yourself"
+]
+},
+"dc1-pad-summer-playground-mp3": {
+"name": "DC PAD Summer Playground",
+"bpm": 73,
+"key": "C",
+"n": 21,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Haunted Samsara",
+"PAD Summer Playground"
+]
+},
+"dc1-pad-tender-nursery-mp3": {
+"name": "DC PAD Tender Nursery",
+"bpm": 72,
+"key": "C#",
+"n": 25,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Tender Nursery",
+"PAD Next Believing"
+]
+},
+"dc1-pad-underwater-lullaby-mp3": {
+"name": "DC PAD Underwater Lullaby",
+"bpm": 83,
+"key": "Gm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Care Gyroscope",
+"PAD Underwater Lullaby"
+]
+},
+"dc1-pluck-blue-echo-mp3": {
+"name": "DC PLUCK Blue Echo",
+"bpm": 95,
+"key": "Bm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Blue Echo",
+"PLUCK Perfect Comfort"
+]
+},
+"dc1-pluck-dusty-nursery-mp3": {
+"name": "DC PLUCK Dusty Nursery",
+"bpm": 81,
+"key": "Em",
+"n": 21,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Dusty Nursery",
+"PLUCK Satellites Gyroscope"
+]
+},
+"dc1-pluck-fragile-window-mp3": {
+"name": "DC PLUCK Fragile Window",
+"bpm": 88,
+"key": "D#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Searching Gone",
+"PLUCK Fragile Window"
+]
+},
+"dc1-pluck-hollow-nursery-mp3": {
+"name": "DC PLUCK Hollow Nursery",
+"bpm": 80,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Real Apathy",
+"PLUCK Hollow Nursery"
+]
+},
+"dc1-pluck-ivory-window-mp3": {
+"name": "DC PLUCK Ivory Window",
+"bpm": 89,
+"key": "A#m",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Ivory Window",
+"PLUCK Chance Dreamland"
+]
+},
+"dc1-pluck-lonely-sky-mp3": {
+"name": "DC PLUCK Lonely Sky",
+"bpm": 87,
+"key": "F#m",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Lonely Sky",
+"PLUCK Trip Seeing"
+]
+},
+"dc1-pluck-lucid-dollhouse-mp3": {
+"name": "DC PLUCK Lucid Dollhouse",
+"bpm": 83,
+"key": "G",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK True Samsara",
+"PLUCK Lucid Dollhouse"
+]
+},
+"dc1-pluck-morning-balcony-mp3": {
+"name": "DC PLUCK Morning Balcony",
+"bpm": 90,
+"key": "C#",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Blood Comfort",
+"PLUCK Morning Balcony"
+]
+},
+"dc1-pluck-silver-tide-mp3": {
+"name": "DC PLUCK Silver Tide",
+"bpm": 86,
+"key": "Dm",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Silver Tide",
+"PLUCK Gyro Sweet"
+]
+},
+"dc1-pluck-sleepy-station-mp3": {
+"name": "DC PLUCK Sleepy Station",
+"bpm": 80,
+"key": "Dm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Gyro Yourself",
+"PLUCK Sleepy Station"
+]
+},
+"dc1-pluck-vapour-balcony-mp3": {
+"name": "DC PLUCK Vapour Balcony",
+"bpm": 85,
+"key": "F#",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Panic Repercussion",
+"PLUCK Vapour Balcony"
+]
+},
+"dc1-texture-cloud-comet-mp3": {
+"name": "DC TEXTURE Cloud Comet",
+"bpm": 75,
+"key": "G#m",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Cloud Comet",
+"TEXTURE Falling Believing"
+]
+},
+"dc1-texture-feather-bus-stop-mp3": {
+"name": "DC TEXTURE Feather Bus Stop",
+"bpm": 81,
+"key": "A",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Feather Bus Stop",
+"TEXTURE Feeling Close"
+]
+},
+"dc1-texture-glass-orchard-mp3": {
+"name": "DC TEXTURE Glass Orchard",
+"bpm": 74,
+"key": "E",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Glass Orchard",
+"TEXTURE Outside Eyes"
+]
+},
+"dc1-texture-lantern-bloom-mp3": {
+"name": "DC TEXTURE Lantern Bloom",
+"bpm": 75,
+"key": "G#",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Nothings Eyes",
+"TEXTURE Lantern Bloom"
+]
+},
+"dc1-texture-lavender-pillow-mp3": {
+"name": "DC TEXTURE Lavender Pillow",
+"bpm": 74,
+"key": "C#m",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Lavender Pillow",
+"TEXTURE Repercussion Nothings"
+]
+},
+"dc1-texture-lonely-bath-mp3": {
+"name": "DC TEXTURE Lonely Bath",
+"bpm": 73,
+"key": "Gm",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Lonely Bath",
+"TEXTURE Lifeglow Eyes"
+]
+},
+"dc1-texture-plastic-parking-lot-mp3": {
+"name": "DC TEXTURE Plastic Parking Lot",
+"bpm": 75,
+"key": "F#m",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Outside Boyhood",
+"TEXTURE Plastic Parking Lot"
+]
+},
+"dc1-texture-rosewater-window-mp3": {
+"name": "DC TEXTURE Rosewater Window",
+"bpm": 80,
+"key": "F#",
+"n": 2,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Outside Seeing",
+"TEXTURE Rosewater Window"
+]
+},
+"dc1-texture-starlit-swing-mp3": {
+"name": "DC TEXTURE Starlit Swing",
+"bpm": 73,
+"key": "Am",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Searching Falling",
+"TEXTURE Starlit Swing"
+]
+},
+"dc1-texture-summer-garden-mp3": {
+"name": "DC TEXTURE Summer Garden",
+"bpm": 82,
+"key": "Gm",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Pretty Close",
+"TEXTURE Summer Garden"
+]
+},
+"dc1-vox-hollow-stars-mp3": {
+"name": "DC VOX Hollow Stars",
+"bpm": 82,
+"key": "Em",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Hollow Stars",
+"VOX Care Searching"
+]
+},
+"dc1-vox-static-rooftop-mp3": {
+"name": "DC VOX Static Rooftop",
+"bpm": 80,
+"key": "Bm",
+"n": 9,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Owari Dust",
+"VOX Static Rooftop"
+]
+},
+"dc1-vox-underwater-mall-mp3": {
+"name": "DC VOX Underwater Mall",
+"bpm": 82,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Snowfall Trip",
+"VOX Underwater Mall"
+]
+}
+}

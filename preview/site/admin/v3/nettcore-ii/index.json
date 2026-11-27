@@ -1,0 +1,1113 @@
+{
+"lead-harmonica-mp3": {
+"name": "N2 LEAD Harmonica",
+"bpm": 173,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Harmonica"
+]
+},
+"lead-harmonica-closure-mp3": {
+"name": "N2 LEAD Harmonica Closure",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Harmonica Closure"
+]
+},
+"lead-harmonica-sayonara-mp3": {
+"name": "N2 LEAD Harmonica Sayonara",
+"bpm": 178,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Harmonica Sayonara"
+]
+},
+"lead-recorder-mp3": {
+"name": "N2 LEAD Recorder",
+"bpm": 173,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Recorder"
+]
+},
+"lead-recorder-cut-self-mp3": {
+"name": "N2 LEAD Recorder Cut Self",
+"bpm": 163,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Recorder Cut Self"
+]
+},
+"lead-recorder-dist-short-mp3": {
+"name": "N2 LEAD Recorder Dist Short",
+"bpm": 178,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Recorder Dist Short"
+]
+},
+"lead-classic-mp3": {
+"name": "N2 LEAD Classic",
+"bpm": 163,
+"key": "F",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Classic"
+]
+},
+"lead-classic-sayonara-mp3": {
+"name": "N2 LEAD Classic Sayonara",
+"bpm": 140,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Classic Sayonara"
+]
+},
+"lead-classic-happy-dark-mp3": {
+"name": "N2 LEAD Classic Happy Dark",
+"bpm": 155,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Classic Happy Dark"
+]
+},
+"lead-stolen-mp3": {
+"name": "N2 LEAD Stolen",
+"bpm": 178,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stolen"
+]
+},
+"lead-stolen-wasp-mp3": {
+"name": "N2 LEAD Stolen Wasp",
+"bpm": 173,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stolen Wasp"
+]
+},
+"lead-stolen-glass-break-mp3": {
+"name": "N2 LEAD Stolen Glass Break",
+"bpm": 163,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stolen Glass Break"
+]
+},
+"lead-stolen-chant-mp3": {
+"name": "N2 LEAD Stolen Chant",
+"bpm": 178,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stolen Chant"
+]
+},
+"lead-stolen-going-crazy-mp3": {
+"name": "N2 LEAD Stolen Going Crazy",
+"bpm": 173,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stolen Going Crazy"
+]
+},
+"lead-stolen-sunrise-mp3": {
+"name": "N2 LEAD Stolen Sunrise",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stolen Sunrise"
+]
+},
+"lead-sabre-mp3": {
+"name": "N2 LEAD Sabre",
+"bpm": 178,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Sabre"
+]
+},
+"lead-sabre-precious-mp3": {
+"name": "N2 LEAD Sabre Precious",
+"bpm": 173,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Sabre Precious"
+]
+},
+"lead-sabre-pockets-mp3": {
+"name": "N2 LEAD Sabre Pockets",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Sabre Pockets"
+]
+},
+"lead-sabre-closure-mp3": {
+"name": "N2 LEAD Sabre Closure",
+"bpm": 178,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Sabre Closure"
+]
+},
+"lead-digi-mp3": {
+"name": "N2 LEAD Digi",
+"bpm": 155,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Digi"
+]
+},
+"lead-digi-pockets-mp3": {
+"name": "N2 LEAD Digi Pockets",
+"bpm": 163,
+"key": "F",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Digi Pockets"
+]
+},
+"lead-digi-closure-mp3": {
+"name": "N2 LEAD Digi Closure",
+"bpm": 140,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Digi Closure"
+]
+},
+"lead-rising-mp3": {
+"name": "N2 LEAD Rising",
+"bpm": 163,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rising"
+]
+},
+"lead-rising-sunrise-mp3": {
+"name": "N2 LEAD Rising Sunrise",
+"bpm": 178,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rising Sunrise"
+]
+},
+"lead-rising-patience-mp3": {
+"name": "N2 LEAD Rising Patience",
+"bpm": 173,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rising Patience"
+]
+},
+"lead-pretty-mp3": {
+"name": "N2 LEAD Pretty",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pretty"
+]
+},
+"lead-pretty-happy-dark-mp3": {
+"name": "N2 LEAD Pretty Happy Dark",
+"bpm": 178,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pretty Happy Dark"
+]
+},
+"lead-pretty-spin-out-mp3": {
+"name": "N2 LEAD Pretty Spin Out",
+"bpm": 173,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pretty Spin Out"
+]
+},
+"lead-gold-frog-mp3": {
+"name": "N2 LEAD Gold Frog",
+"bpm": 163,
+"key": "F",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Gold Frog"
+]
+},
+"lead-gold-frog-sayonara-mp3": {
+"name": "N2 LEAD Gold Frog Sayonara",
+"bpm": 140,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Gold Frog Sayonara"
+]
+},
+"lead-gold-frog-happy-dark-mp3": {
+"name": "N2 LEAD Gold Frog Happy Dark",
+"bpm": 155,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Gold Frog Happy Dark"
+]
+},
+"bell-tubular-mp3": {
+"name": "N2 BELL Tubular",
+"bpm": 178,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Tubular"
+]
+},
+"bell-tubular-precious-mp3": {
+"name": "N2 BELL Tubular Precious",
+"bpm": 173,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Tubular Precious"
+]
+},
+"bell-tubular-pockets-mp3": {
+"name": "N2 BELL Tubular Pockets",
+"bpm": 163,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Tubular Pockets"
+]
+},
+"bell-catchy-mp3": {
+"name": "N2 BELL Catchy",
+"bpm": 163,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Catchy"
+]
+},
+"bell-catchy-space-mp3": {
+"name": "N2 BELL Catchy Space",
+"bpm": 178,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Catchy Space"
+]
+},
+"bell-catchy-dry-zay-mp3": {
+"name": "N2 BELL Catchy Dry Zay",
+"bpm": 173,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Catchy Dry Zay"
+]
+},
+"arp-shaper-mp3": {
+"name": "N2 ARP Shaper",
+"bpm": 178,
+"key": "A#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Shaper"
+]
+},
+"arp-shaper-precious-mp3": {
+"name": "N2 ARP Shaper Precious",
+"bpm": 173,
+"key": "C#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Shaper Precious"
+]
+},
+"arp-shaper-pockets-mp3": {
+"name": "N2 ARP Shaper Pockets",
+"bpm": 163,
+"key": "A#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Shaper Pockets"
+]
+},
+"pluck-gate-mp3": {
+"name": "N2 PLUCK Gate",
+"bpm": 163,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Gate"
+]
+},
+"pluck-gate-happy-dark-mp3": {
+"name": "N2 PLUCK Gate Happy Dark",
+"bpm": 178,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Gate Happy Dark"
+]
+},
+"pluck-gate-spin-out-mp3": {
+"name": "N2 PLUCK Gate Spin Out",
+"bpm": 173,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Gate Spin Out"
+]
+},
+"pluck-little-mp3": {
+"name": "N2 PLUCK Little",
+"bpm": 155,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Little"
+]
+},
+"pluck-little-pockets-mp3": {
+"name": "N2 PLUCK Little Pockets",
+"bpm": 163,
+"key": "F",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Little Pockets"
+]
+},
+"pluck-little-closure-mp3": {
+"name": "N2 PLUCK Little Closure",
+"bpm": 140,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Little Closure"
+]
+},
+"keys-accordion-mp3": {
+"name": "N2 KEYS Accordion",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Accordion"
+]
+},
+"keys-accordion-glass-break-mp3": {
+"name": "N2 KEYS Accordion Glass Break",
+"bpm": 163,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Accordion Glass Break"
+]
+},
+"keys-accordion-chant-mp3": {
+"name": "N2 KEYS Accordion Chant",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Accordion Chant"
+]
+},
+"keys-accordion-going-crazy-mp3": {
+"name": "N2 KEYS Accordion Going Crazy",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Accordion Going Crazy"
+]
+},
+"keys-musette-mp3": {
+"name": "N2 KEYS Musette",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Musette"
+]
+},
+"keys-musette-patience-mp3": {
+"name": "N2 KEYS Musette Patience",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Musette Patience"
+]
+},
+"keys-musette-precious-mp3": {
+"name": "N2 KEYS Musette Precious",
+"bpm": 163,
+"key": "F",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Musette Precious"
+]
+},
+"keys-trill-mp3": {
+"name": "N2 KEYS Trill",
+"bpm": 163,
+"key": "F",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Trill"
+]
+},
+"keys-trill-going-crazy-mp3": {
+"name": "N2 KEYS Trill Going Crazy",
+"bpm": 140,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Trill Going Crazy"
+]
+},
+"keys-trill-sunrise-mp3": {
+"name": "N2 KEYS Trill Sunrise",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Trill Sunrise"
+]
+},
+"keys-clavidul-mp3": {
+"name": "N2 KEYS Clavidul",
+"bpm": 163,
+"key": "F",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Clavidul"
+]
+},
+"keys-clavidul-dist-short-mp3": {
+"name": "N2 KEYS Clavidul Dist Short",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Clavidul Dist Short"
+]
+},
+"keys-clavidul-space-mp3": {
+"name": "N2 KEYS Clavidul Space",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Clavidul Space"
+]
+},
+"keys-reggae-mp3": {
+"name": "N2 KEYS Reggae",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Reggae"
+]
+},
+"keys-reggae-happy-dark-mp3": {
+"name": "N2 KEYS Reggae Happy Dark",
+"bpm": 178,
+"key": "A#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Reggae Happy Dark"
+]
+},
+"keys-reggae-spin-out-mp3": {
+"name": "N2 KEYS Reggae Spin Out",
+"bpm": 173,
+"key": "C#m",
+"n": 36,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Reggae Spin Out"
+]
+},
+"pad-scanner-mp3": {
+"name": "N2 PAD Scanner",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Scanner"
+]
+},
+"pad-scanner-space-mp3": {
+"name": "N2 PAD Scanner Space",
+"bpm": 178,
+"key": "A#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Scanner Space"
+]
+},
+"pad-scanner-dry-zay-mp3": {
+"name": "N2 PAD Scanner Dry Zay",
+"bpm": 173,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Scanner Dry Zay"
+]
+},
+"pad-stars-mp3": {
+"name": "N2 PAD Stars",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Stars"
+]
+},
+"pad-stars-sunrise-mp3": {
+"name": "N2 PAD Stars Sunrise",
+"bpm": 178,
+"key": "A#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Stars Sunrise"
+]
+},
+"pad-stars-patience-mp3": {
+"name": "N2 PAD Stars Patience",
+"bpm": 173,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Stars Patience"
+]
+},
+"pad-really-cool-mp3": {
+"name": "N2 PAD Really Cool",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Really Cool"
+]
+},
+"pad-really-cool-slick-mp3": {
+"name": "N2 PAD Really Cool Slick",
+"bpm": 163,
+"key": "F",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Really Cool Slick"
+]
+},
+"pad-really-cool-cut-self-mp3": {
+"name": "N2 PAD Really Cool Cut Self",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Really Cool Cut Self"
+]
+},
+"pad-pulsating-mp3": {
+"name": "N2 PAD Pulsating",
+"bpm": 163,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Pulsating"
+]
+},
+"pad-pulsating-space-mp3": {
+"name": "N2 PAD Pulsating Space",
+"bpm": 178,
+"key": "A#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Pulsating Space"
+]
+},
+"pad-pulsating-dry-zay-mp3": {
+"name": "N2 PAD Pulsating Dry Zay",
+"bpm": 173,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Pulsating Dry Zay"
+]
+},
+"pad-wide-mp3": {
+"name": "N2 PAD Wide",
+"bpm": 163,
+"key": "F",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wide"
+]
+},
+"pad-wide-going-crazy-mp3": {
+"name": "N2 PAD Wide Going Crazy",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wide Going Crazy"
+]
+},
+"pad-wide-sunrise-mp3": {
+"name": "N2 PAD Wide Sunrise",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wide Sunrise"
+]
+},
+"texture-creeper-mp3": {
+"name": "N2 TEXTURE Creeper",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Creeper"
+]
+},
+"texture-creeper-glass-break-mp3": {
+"name": "N2 TEXTURE Creeper Glass Break",
+"bpm": 163,
+"key": "F",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"TEXTURE Creeper Glass Break"
+]
+},
+"bass-trombone-mp3": {
+"name": "N2 BASS Trombone",
+"bpm": 140,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Trombone"
+]
+},
+"bass-trombone-spin-out-mp3": {
+"name": "N2 BASS Trombone Spin Out",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Trombone Spin Out"
+]
+},
+"bass-trombone-chush-mp3": {
+"name": "N2 BASS Trombone Chush",
+"bpm": 163,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Trombone Chush"
+]
+},
+"bass-imposter-mp3": {
+"name": "N2 BASS Imposter",
+"bpm": 155,
+"key": "A#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Imposter"
+]
+},
+"bass-imposter-glass-break-mp3": {
+"name": "N2 BASS Imposter Glass Break",
+"bpm": 163,
+"key": "F",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Imposter Glass Break"
+]
+},
+"bass-imposter-chant-mp3": {
+"name": "N2 BASS Imposter Chant",
+"bpm": 140,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Imposter Chant"
+]
+},
+"bass-evolving-mp3": {
+"name": "N2 BASS Evolving",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Evolving"
+]
+},
+"bass-evolving-slick-mp3": {
+"name": "N2 BASS Evolving Slick",
+"bpm": 163,
+"key": "F",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Evolving Slick"
+]
+},
+"bass-evolving-cut-self-mp3": {
+"name": "N2 BASS Evolving Cut Self",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Evolving Cut Self"
+]
+},
+"808-best-sub-mp3": {
+"name": "N2 808 Best Sub",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Best Sub"
+]
+},
+"808-best-sub-dry-zay-mp3": {
+"name": "N2 808 Best Sub Dry Zay",
+"bpm": 155,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Best Sub Dry Zay"
+]
+},
+"808-best-sub-wasp-mp3": {
+"name": "N2 808 Best Sub Wasp",
+"bpm": 163,
+"key": "F",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Best Sub Wasp"
+]
+},
+"808-best-sub-glass-break-mp3": {
+"name": "N2 808 Best Sub Glass Break",
+"bpm": 140,
+"key": "Cm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Best Sub Glass Break"
+]
+},
+"808-held-mp3": {
+"name": "N2 808 Held",
+"bpm": 178,
+"key": "A#m",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Held"
+]
+},
+"808-held-chush-mp3": {
+"name": "N2 808 Held Chush",
+"bpm": 173,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Held Chush"
+]
+},
+"808-held-slick-mp3": {
+"name": "N2 808 Held Slick",
+"bpm": 163,
+"key": "A#m",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Held Slick"
+]
+},
+"808-spinz-mp3": {
+"name": "N2 808 Spinz",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Spinz"
+]
+},
+"808-spinz-slick-mp3": {
+"name": "N2 808 Spinz Slick",
+"bpm": 163,
+"key": "F",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Spinz Slick"
+]
+},
+"808-spinz-cut-self-mp3": {
+"name": "N2 808 Spinz Cut Self",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Spinz Cut Self"
+]
+},
+"808-clipper-mp3": {
+"name": "N2 808 Clipper",
+"bpm": 155,
+"key": "A#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Clipper"
+]
+},
+"808-clipper-glass-break-mp3": {
+"name": "N2 808 Clipper Glass Break",
+"bpm": 163,
+"key": "F",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Clipper Glass Break"
+]
+},
+"808-clipper-chant-mp3": {
+"name": "N2 808 Clipper Chant",
+"bpm": 140,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Clipper Chant"
+]
+}
+}

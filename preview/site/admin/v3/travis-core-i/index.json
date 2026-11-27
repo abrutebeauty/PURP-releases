@@ -1,0 +1,1214 @@
+{
+"tc1-bell-rusted-prayer-mp3": {
+"name": "TC BELL Rusted Prayer",
+"bpm": 155,
+"key": "F#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Outside Rodeo",
+"BELL Rusted Prayer"
+]
+},
+"tc1-bass-mirage-horizon-mp3": {
+"name": "TC BASS Mirage Horizon",
+"bpm": 141,
+"key": "F#m",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Mirage Horizon",
+"BASS Sirens Escape"
+]
+},
+"tc1-flute-purple-fog-mp3": {
+"name": "TC FLUTE Purple Fog",
+"bpm": 130,
+"key": "Bm",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Purple Fog",
+"FLUTE Coffee Stargazing"
+]
+},
+"tc1-808-mirage-throne-mp3": {
+"name": "TC 808 Mirage Throne",
+"bpm": 130,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Forever Meltdown",
+"808 Mirage Throne"
+]
+},
+"tc1-bass-haze-ritual-mp3": {
+"name": "TC BASS Haze Ritual",
+"bpm": 136,
+"key": "Gm",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Haze Ritual",
+"BASS Sicko Night"
+]
+},
+"tc1-bass-velvet-throne-mp3": {
+"name": "TC BASS Velvet Throne",
+"bpm": 128,
+"key": "Fm",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Eyes Champions",
+"BASS Velvet Throne"
+]
+},
+"tc1-bass-pale-fog-mp3": {
+"name": "TC BASS Pale Fog",
+"bpm": 131,
+"key": "D#m",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Pale Fog",
+"BASS Room Lost"
+]
+},
+"tc1-bass-wicked-carnival-mp3": {
+"name": "TC BASS Wicked Carnival",
+"bpm": 152,
+"key": "Fm",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Carousel Utopia",
+"BASS Wicked Carnival"
+]
+},
+"tc1-bass-halo-dream-mp3": {
+"name": "TC BASS Halo Dream",
+"bpm": 130,
+"key": "Bm",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Halo Dream",
+"BASS Trap Coordinate"
+]
+},
+"tc1-bass-desert-throne-mp3": {
+"name": "TC BASS Desert Throne",
+"bpm": 136,
+"key": "F#m",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Desert Throne",
+"BASS Nightcrawler Country"
+]
+},
+"tc1-bass-rose-choir-mp3": {
+"name": "TC BASS Rose Choir",
+"bpm": 155,
+"key": "Gm",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Rose Choir",
+"BASS Jam Antidote"
+]
+},
+"tc1-bass-saint-chapel-mp3": {
+"name": "TC BASS Saint Chapel",
+"bpm": 130,
+"key": "Em",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Saint Chapel",
+"BASS Franchise Uptown"
+]
+},
+"tc1-bass-mirage-glow-mp3": {
+"name": "TC BASS Mirage Glow",
+"bpm": 136,
+"key": "A#m",
+"n": 5,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Mirage Glow",
+"BASS Birds Effect"
+]
+},
+"tc1-bass-hollow-siren-mp3": {
+"name": "TC BASS Hollow Siren",
+"bpm": 148,
+"key": "Bm",
+"n": 7,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Yosemite Astrothunder",
+"BASS Hollow Siren"
+]
+},
+"tc1-bass-black-dream-mp3": {
+"name": "TC BASS Black Dream",
+"bpm": 140,
+"key": "Bm",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Black Dream",
+"BASS Delresto Pharaoh"
+]
+},
+"tc1-bass-pale-wave-mp3": {
+"name": "TC BASS Pale Wave",
+"bpm": 148,
+"key": "Fm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Pale Wave",
+"BASS Guidance Parasail"
+]
+},
+"tc1-808-ghost-sermon-mp3": {
+"name": "TC 808 Ghost Sermon",
+"bpm": 148,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Ghost Sermon",
+"808 Wasted Flying"
+]
+},
+"tc1-808-molten-dream-mp3": {
+"name": "TC 808 Molten Dream",
+"bpm": 152,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Molten Dream",
+"808 Owl Maximus"
+]
+},
+"tc1-808-lucid-lantern-mp3": {
+"name": "TC 808 Lucid Lantern",
+"bpm": 152,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Lucid Lantern",
+"808 Goosebumps Sweet"
+]
+},
+"tc1-808-opal-echo-mp3": {
+"name": "TC 808 Opal Echo",
+"bpm": 152,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Opal Echo",
+"808 Telekinesis Notice"
+]
+},
+"tc1-808-fever-smoke-mp3": {
+"name": "TC 808 Fever Smoke",
+"bpm": 150,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Fever Smoke",
+"808 Franchise Pharaoh"
+]
+},
+"tc1-808-pale-omen-mp3": {
+"name": "TC 808 Pale Omen",
+"bpm": 130,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Astrothunder Twins",
+"808 Pale Omen"
+]
+},
+"tc1-808-lucid-signal-mp3": {
+"name": "TC 808 Lucid Signal",
+"bpm": 128,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Effect Mamacita",
+"808 Lucid Signal"
+]
+},
+"tc1-808-cathedral-horizon-mp3": {
+"name": "TC 808 Cathedral Horizon",
+"bpm": 152,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Circus Night",
+"808 Cathedral Horizon"
+]
+},
+"tc1-808-lunar-glow-mp3": {
+"name": "TC 808 Lunar Glow",
+"bpm": 155,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Hyaena Quintana",
+"808 Lunar Glow"
+]
+},
+"tc1-bell-midnight-glow-mp3": {
+"name": "TC BELL Midnight Glow",
+"bpm": 130,
+"key": "G#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Midnight Glow",
+"BELL Modern Skeletons"
+]
+},
+"tc1-bell-molten-vapor-mp3": {
+"name": "TC BELL Molten Vapor",
+"bpm": 155,
+"key": "F#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Wasted Butterfly",
+"BELL Molten Vapor"
+]
+},
+"tc1-bell-fever-wave-mp3": {
+"name": "TC BELL Fever Wave",
+"bpm": 131,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Echelon Birds",
+"BELL Fever Wave"
+]
+},
+"tc1-bell-haze-mass-mp3": {
+"name": "TC BELL Haze Mass",
+"bpm": 136,
+"key": "Fm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Mamacita Forever",
+"BELL Haze Mass"
+]
+},
+"tc1-bell-pale-lantern-mp3": {
+"name": "TC BELL Pale Lantern",
+"bpm": 148,
+"key": "Cm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Pale Lantern",
+"BELL Topia Jam"
+]
+},
+"tc1-bell-sinister-mirage-mp3": {
+"name": "TC BELL Sinister Mirage",
+"bpm": 152,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Skitzo Delresto",
+"BELL Sinister Mirage"
+]
+},
+"tc1-bell-ember-smoke-mp3": {
+"name": "TC BELL Ember Smoke",
+"bpm": 136,
+"key": "Dm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Ember Smoke",
+"BELL Yosemite Utopia"
+]
+},
+"tc1-bell-chrome-haunt-mp3": {
+"name": "TC BELL Chrome Haunt",
+"bpm": 128,
+"key": "D#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Chrome Haunt",
+"BELL Goosebumps Carousel"
+]
+},
+"tc1-bell-midnight-choir-mp3": {
+"name": "TC BELL Midnight Choir",
+"bpm": 141,
+"key": "A#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Midnight Choir",
+"BELL Uptown Mafia"
+]
+},
+"tc1-bell-hollow-ritual-mp3": {
+"name": "TC BELL Hollow Ritual",
+"bpm": 131,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Hollow Ritual",
+"BELL Room Parasail"
+]
+},
+"tc1-bell-ghost-vapor-mp3": {
+"name": "TC BELL Ghost Vapor",
+"bpm": 155,
+"key": "A#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Ghost Vapor",
+"BELL Rodeo Sirens"
+]
+},
+"tc1-pluck-neon-smoke-mp3": {
+"name": "TC PLUCK Neon Smoke",
+"bpm": 131,
+"key": "D#m",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Neon Smoke",
+"PLUCK Eyes Sweet"
+]
+},
+"tc1-pluck-pale-heat-mp3": {
+"name": "TC PLUCK Pale Heat",
+"bpm": 155,
+"key": "C#m",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Modern Flying",
+"PLUCK Pale Heat"
+]
+},
+"tc1-pluck-ghost-gospel-mp3": {
+"name": "TC PLUCK Ghost Gospel",
+"bpm": 131,
+"key": "C#m",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Guidance Maximus",
+"PLUCK Ghost Gospel"
+]
+},
+"tc1-pluck-halo-mirage-mp3": {
+"name": "TC PLUCK Halo Mirage",
+"bpm": 140,
+"key": "A#m",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Coordinate Stargazing",
+"PLUCK Halo Mirage"
+]
+},
+"tc1-pluck-smoke-vapor-mp3": {
+"name": "TC PLUCK Smoke Vapor",
+"bpm": 140,
+"key": "Am",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Meltdown Quintana",
+"PLUCK Smoke Vapor"
+]
+},
+"tc1-pluck-lucid-coaster-mp3": {
+"name": "TC PLUCK Lucid Coaster",
+"bpm": 140,
+"key": "Fm",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Lucid Coaster",
+"PLUCK Mafia Circus"
+]
+},
+"tc1-pluck-fever-tunnel-mp3": {
+"name": "TC PLUCK Fever Tunnel",
+"bpm": 140,
+"key": "G#m",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Nightcrawler Country",
+"PLUCK Fever Tunnel"
+]
+},
+"tc1-pluck-violet-ride-mp3": {
+"name": "TC PLUCK Violet Ride",
+"bpm": 150,
+"key": "Cm",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Violet Ride",
+"PLUCK Highest Antidote"
+]
+},
+"tc1-pluck-fever-horizon-mp3": {
+"name": "TC PLUCK Fever Horizon",
+"bpm": 150,
+"key": "G#m",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Fever Horizon",
+"PLUCK Twins Late"
+]
+},
+"tc1-pluck-lunar-drift-mp3": {
+"name": "TC PLUCK Lunar Drift",
+"bpm": 130,
+"key": "A#m",
+"n": 30,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Highest Butterfly",
+"PLUCK Lunar Drift"
+]
+},
+"tc1-keys-ember-tunnel-mp3": {
+"name": "TC KEYS Ember Tunnel",
+"bpm": 136,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Ember Tunnel",
+"KEYS Hyaena Echelon"
+]
+},
+"tc1-keys-hollow-spiral-mp3": {
+"name": "TC KEYS Hollow Spiral",
+"bpm": 148,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Coffee Eyes",
+"KEYS Hollow Spiral"
+]
+},
+"tc1-keys-velvet-horizon-mp3": {
+"name": "TC KEYS Velvet Horizon",
+"bpm": 148,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Velvet Horizon",
+"KEYS Skeletons Utopia"
+]
+},
+"tc1-keys-faded-heat-mp3": {
+"name": "TC KEYS Faded Heat",
+"bpm": 136,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Sweet Sirens",
+"KEYS Faded Heat"
+]
+},
+"tc1-keys-hollow-wave-mp3": {
+"name": "TC KEYS Hollow Wave",
+"bpm": 136,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Hollow Wave",
+"KEYS Hyaena Stargazing"
+]
+},
+"tc1-keys-syrup-riot-mp3": {
+"name": "TC KEYS Syrup Riot",
+"bpm": 131,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Outside Topia",
+"KEYS Syrup Riot"
+]
+},
+"tc1-keys-fever-spiral-mp3": {
+"name": "TC KEYS Fever Spiral",
+"bpm": 131,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Skitzo Skeletons",
+"KEYS Fever Spiral"
+]
+},
+"tc1-keys-ember-ride-mp3": {
+"name": "TC KEYS Ember Ride",
+"bpm": 150,
+"key": "Bm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Notice Night",
+"KEYS Ember Ride"
+]
+},
+"tc1-keys-sinister-vapor-mp3": {
+"name": "TC KEYS Sinister Vapor",
+"bpm": 128,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Sinister Vapor",
+"KEYS Parasail Quintana"
+]
+},
+"tc1-keys-desert-wave-mp3": {
+"name": "TC KEYS Desert Wave",
+"bpm": 131,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Owl Telekinesis",
+"KEYS Desert Wave"
+]
+},
+"tc1-keys-saint-coaster-mp3": {
+"name": "TC KEYS Saint Coaster",
+"bpm": 140,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Antidote Effect",
+"KEYS Saint Coaster"
+]
+},
+"tc1-synth-sinister-glow-mp3": {
+"name": "TC SYNTH Sinister Glow",
+"bpm": 128,
+"key": "Gm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Goosebumps Jam",
+"SYNTH Sinister Glow"
+]
+},
+"tc1-synth-neon-heat-mp3": {
+"name": "TC SYNTH Neon Heat",
+"bpm": 136,
+"key": "Am",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Neon Heat",
+"SYNTH Mafia Champions"
+]
+},
+"tc1-synth-pale-drift-mp3": {
+"name": "TC SYNTH Pale Drift",
+"bpm": 131,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Pale Drift",
+"SYNTH Maximus Basement"
+]
+},
+"tc1-synth-rose-horizon-mp3": {
+"name": "TC SYNTH Rose Horizon",
+"bpm": 141,
+"key": "G#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Rose Horizon",
+"SYNTH Mamacita Echelon"
+]
+},
+"tc1-synth-velvet-siren-mp3": {
+"name": "TC SYNTH Velvet Siren",
+"bpm": 150,
+"key": "Gm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Velvet Siren",
+"SYNTH Late Outside"
+]
+},
+"tc1-synth-dusty-throne-mp3": {
+"name": "TC SYNTH Dusty Throne",
+"bpm": 141,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Nightcrawler Escape",
+"SYNTH Dusty Throne"
+]
+},
+"tc1-synth-halo-gospel-mp3": {
+"name": "TC SYNTH Halo Gospel",
+"bpm": 140,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Halo Gospel",
+"SYNTH Sicko Yosemite"
+]
+},
+"tc1-synth-black-throne-mp3": {
+"name": "TC SYNTH Black Throne",
+"bpm": 136,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Black Throne",
+"SYNTH Guidance Circus"
+]
+},
+"tc1-lead-comet-smoke-mp3": {
+"name": "TC LEAD Comet Smoke",
+"bpm": 131,
+"key": "Dm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pharaoh Astrothunder",
+"LEAD Comet Smoke"
+]
+},
+"tc1-lead-silver-spiral-mp3": {
+"name": "TC LEAD Silver Spiral",
+"bpm": 128,
+"key": "Fm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Silver Spiral",
+"LEAD Coffee Coordinate"
+]
+},
+"tc1-lead-sinister-mass-mp3": {
+"name": "TC LEAD Sinister Mass",
+"bpm": 148,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Champions Late",
+"LEAD Sinister Mass"
+]
+},
+"tc1-lead-wicked-vapor-mp3": {
+"name": "TC LEAD Wicked Vapor",
+"bpm": 155,
+"key": "D#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Rodeo Sicko",
+"LEAD Wicked Vapor"
+]
+},
+"tc1-lead-cathedral-haunt-mp3": {
+"name": "TC LEAD Cathedral Haunt",
+"bpm": 140,
+"key": "Bm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cathedral Haunt",
+"LEAD Room Butterfly"
+]
+},
+"tc1-lead-syrup-coaster-mp3": {
+"name": "TC LEAD Syrup Coaster",
+"bpm": 131,
+"key": "Bm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Twins Birds",
+"LEAD Syrup Coaster"
+]
+},
+"tc1-lead-cathedral-tunnel-mp3": {
+"name": "TC LEAD Cathedral Tunnel",
+"bpm": 155,
+"key": "C#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cathedral Tunnel",
+"LEAD Lost Uptown"
+]
+},
+"tc1-lead-purple-prayer-mp3": {
+"name": "TC LEAD Purple Prayer",
+"bpm": 152,
+"key": "Fm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Wasted Flying",
+"LEAD Purple Prayer"
+]
+},
+"tc1-flute-halo-psalm-mp3": {
+"name": "TC FLUTE Halo Psalm",
+"bpm": 152,
+"key": "A#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Halo Psalm",
+"FLUTE Telekinesis Butterfly"
+]
+},
+"tc1-flute-ghost-smoke-mp3": {
+"name": "TC FLUTE Ghost Smoke",
+"bpm": 130,
+"key": "D#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Ghost Smoke",
+"FLUTE Delresto Owl"
+]
+},
+"tc1-flute-opal-prayer-mp3": {
+"name": "TC FLUTE Opal Prayer",
+"bpm": 140,
+"key": "Bm",
+"n": 19,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Lost Outside",
+"FLUTE Opal Prayer"
+]
+},
+"tc1-flute-pale-signal-mp3": {
+"name": "TC FLUTE Pale Signal",
+"bpm": 130,
+"key": "A#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Country Mafia",
+"FLUTE Pale Signal"
+]
+},
+"tc1-flute-halo-mass-mp3": {
+"name": "TC FLUTE Halo Mass",
+"bpm": 140,
+"key": "C#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Halo Mass",
+"FLUTE Escape Basement"
+]
+},
+"tc1-pad-haze-lantern-mp3": {
+"name": "TC PAD Haze Lantern",
+"bpm": 155,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Jam Owl",
+"PAD Haze Lantern"
+]
+},
+"tc1-pad-wicked-psalm-mp3": {
+"name": "TC PAD Wicked Psalm",
+"bpm": 128,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wicked Psalm",
+"PAD Modern Coordinate"
+]
+},
+"tc1-pad-static-signal-mp3": {
+"name": "TC PAD Static Signal",
+"bpm": 148,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sweet Mamacita",
+"PAD Static Signal"
+]
+},
+"tc1-pad-desert-mirage-mp3": {
+"name": "TC PAD Desert Mirage",
+"bpm": 128,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Highest Escape",
+"PAD Desert Mirage"
+]
+},
+"tc1-pad-rose-coaster-mp3": {
+"name": "TC PAD Rose Coaster",
+"bpm": 148,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Rose Coaster",
+"PAD Modern Birds"
+]
+},
+"tc1-pad-lucid-ferris-mp3": {
+"name": "TC PAD Lucid Ferris",
+"bpm": 130,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Lucid Ferris",
+"PAD Lost Skitzo"
+]
+},
+"tc1-pad-rose-engine-mp3": {
+"name": "TC PAD Rose Engine",
+"bpm": 136,
+"key": "A#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Franchise Champions",
+"PAD Rose Engine"
+]
+},
+"tc1-pad-desert-ritual-mp3": {
+"name": "TC PAD Desert Ritual",
+"bpm": 152,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Meltdown Effect",
+"PAD Desert Ritual"
+]
+},
+"tc1-pad-opal-carnival-mp3": {
+"name": "TC PAD Opal Carnival",
+"bpm": 130,
+"key": "G#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Wasted Telekinesis",
+"PAD Opal Carnival"
+]
+},
+"tc1-pad-haze-chapel-mp3": {
+"name": "TC PAD Haze Chapel",
+"bpm": 128,
+"key": "Gm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Quintana Nightcrawler",
+"PAD Haze Chapel"
+]
+},
+"tc1-pad-fever-carnival-mp3": {
+"name": "TC PAD Fever Carnival",
+"bpm": 155,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Fever Carnival",
+"PAD Flying Night"
+]
+},
+"tc1-pad-cathedral-ferris-mp3": {
+"name": "TC PAD Cathedral Ferris",
+"bpm": 140,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Astrothunder Forever",
+"PAD Cathedral Ferris"
+]
+},
+"tc1-pad-mirage-riot-mp3": {
+"name": "TC PAD Mirage Riot",
+"bpm": 130,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Mirage Riot",
+"PAD Franchise Echelon"
+]
+},
+"tc1-arp-hollow-haunt-mp3": {
+"name": "TC ARP Hollow Haunt",
+"bpm": 128,
+"key": "Cm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Twins Sirens",
+"ARP Hollow Haunt"
+]
+},
+"tc1-arp-hollow-gospel-mp3": {
+"name": "TC ARP Hollow Gospel",
+"bpm": 136,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Hollow Gospel",
+"ARP Topia Eyes"
+]
+},
+"tc1-arp-haze-tunnel-mp3": {
+"name": "TC ARP Haze Tunnel",
+"bpm": 128,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Forever Maximus",
+"ARP Haze Tunnel"
+]
+},
+"tc1-arp-haze-horizon-mp3": {
+"name": "TC ARP Haze Horizon",
+"bpm": 141,
+"key": "G#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Haze Horizon",
+"ARP Notice Uptown"
+]
+},
+"tc1-arp-chrome-riot-mp3": {
+"name": "TC ARP Chrome Riot",
+"bpm": 152,
+"key": "A#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Delresto Topia",
+"ARP Chrome Riot"
+]
+},
+"tc1-fx-smoke-lantern-mp3": {
+"name": "TC FX Smoke Lantern",
+"bpm": 131,
+"key": "Gm",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"FX Yosemite Coffee",
+"FX Smoke Lantern"
+]
+},
+"tc1-fx-ashen-glow-mp3": {
+"name": "TC FX Ashen Glow",
+"bpm": 148,
+"key": "Em",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"FX Ashen Glow",
+"FX Utopia Guidance"
+]
+},
+"tc1-fx-velvet-mass-mp3": {
+"name": "TC FX Velvet Mass",
+"bpm": 141,
+"key": "D#m",
+"n": 1,
+"midi": true,
+"score": 200,
+"names": [
+"FX Night Circus",
+"FX Velvet Mass"
+]
+},
+"tc1-fx-ember-prayer-mp3": {
+"name": "TC FX Ember Prayer",
+"bpm": 141,
+"key": "F#m",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"FX Pharaoh Highest",
+"FX Ember Prayer"
+]
+},
+"tc1-fx-black-coaster-mp3": {
+"name": "TC FX Black Coaster",
+"bpm": 152,
+"key": "Bm",
+"n": 4,
+"midi": true,
+"score": 200,
+"names": [
+"FX Carousel Country",
+"FX Black Coaster"
+]
+}
+}

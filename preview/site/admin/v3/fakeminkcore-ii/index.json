@@ -1,0 +1,1113 @@
+{
+"lead-odd-mp3": {
+"name": "F2 LEAD Odd",
+"bpm": 180,
+"key": "G#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Odd"
+]
+},
+"lead-odd-deepnd-mp3": {
+"name": "F2 LEAD Odd Deepnd",
+"bpm": 170,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Odd Deepnd"
+]
+},
+"lead-odd-sirens-mp3": {
+"name": "F2 LEAD Odd Sirens",
+"bpm": 170,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Odd Sirens"
+]
+},
+"lead-odd-good-day-mp3": {
+"name": "F2 LEAD Odd Good Day",
+"bpm": 180,
+"key": "G#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Odd Good Day"
+]
+},
+"lead-witch-mp3": {
+"name": "F2 LEAD Witch",
+"bpm": 170,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Witch"
+]
+},
+"lead-witch-beat-shuffle-mp3": {
+"name": "F2 LEAD Witch Beat Shuffle",
+"bpm": 180,
+"key": "G#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Witch Beat Shuffle"
+]
+},
+"lead-witch-shaker-bounce-mp3": {
+"name": "F2 LEAD Witch Shaker Bounce",
+"bpm": 170,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Witch Shaker Bounce"
+]
+},
+"lead-witch-highway-mp3": {
+"name": "F2 LEAD Witch Highway",
+"bpm": 170,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Witch Highway"
+]
+},
+"lead-witch-halftime-bed-mp3": {
+"name": "F2 LEAD Witch Halftime Bed",
+"bpm": 180,
+"key": "G#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Witch Halftime Bed"
+]
+},
+"lead-witch-slow-love-mp3": {
+"name": "F2 LEAD Witch Slow Love",
+"bpm": 170,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Witch Slow Love"
+]
+},
+"bell-yeet-mp3": {
+"name": "F2 BELL Yeet",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Yeet"
+]
+},
+"bell-yeet-halftime-bed-mp3": {
+"name": "F2 BELL Yeet Halftime Bed",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Yeet Halftime Bed"
+]
+},
+"bell-yeet-slow-love-mp3": {
+"name": "F2 BELL Yeet Slow Love",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Yeet Slow Love"
+]
+},
+"bell-yeet-triplet-flow-mp3": {
+"name": "F2 BELL Yeet Triplet Flow",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Yeet Triplet Flow"
+]
+},
+"bell-yeet-ethereal-mp3": {
+"name": "F2 BELL Yeet Ethereal",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Yeet Ethereal"
+]
+},
+"bell-boomwhacker-mp3": {
+"name": "F2 BELL Boomwhacker",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Boomwhacker"
+]
+},
+"bell-boomwhacker-slow-love-mp3": {
+"name": "F2 BELL Boomwhacker Slow Love",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Boomwhacker Slow Love"
+]
+},
+"bell-boomwhacker-triplet-flow-mp3": {
+"name": "F2 BELL Boomwhacker Triplet Flow",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Boomwhacker Triplet Flow"
+]
+},
+"bell-boomwhacker-ethereal-mp3": {
+"name": "F2 BELL Boomwhacker Ethereal",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Boomwhacker Ethereal"
+]
+},
+"arp-stack-arp-mp3": {
+"name": "F2 ARP Stack Arp",
+"bpm": 170,
+"key": "Cm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Stack Arp"
+]
+},
+"arp-stack-arp-offbeat-mp3": {
+"name": "F2 ARP Stack Arp Offbeat",
+"bpm": 170,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Stack Arp Offbeat"
+]
+},
+"arp-stack-arp-beat-shuffle-mp3": {
+"name": "F2 ARP Stack Arp Beat Shuffle",
+"bpm": 180,
+"key": "G#",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Stack Arp Beat Shuffle"
+]
+},
+"arp-stack-arp-shaker-bounce-mp3": {
+"name": "F2 ARP Stack Arp Shaker Bounce",
+"bpm": 170,
+"key": "Cm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Stack Arp Shaker Bounce"
+]
+},
+"arp-triplet-flip-mp3": {
+"name": "F2 ARP Triplet Flip",
+"bpm": 170,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Triplet Flip"
+]
+},
+"arp-triplet-flip-offbeat-mp3": {
+"name": "F2 ARP Triplet Flip Offbeat",
+"bpm": 180,
+"key": "G#",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Triplet Flip Offbeat"
+]
+},
+"arp-triplet-flip-beat-shuffle-mp3": {
+"name": "F2 ARP Triplet Flip Beat Shuffle",
+"bpm": 170,
+"key": "Cm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Triplet Flip Beat Shuffle"
+]
+},
+"arp-triplet-flip-shaker-bounce-mp3": {
+"name": "F2 ARP Triplet Flip Shaker Bounce",
+"bpm": 170,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Triplet Flip Shaker Bounce"
+]
+},
+"arp-triplet-flip-highway-mp3": {
+"name": "F2 ARP Triplet Flip Highway",
+"bpm": 180,
+"key": "G#",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Triplet Flip Highway"
+]
+},
+"pluck-sniffany-mp3": {
+"name": "F2 PLUCK Sniffany",
+"bpm": 170,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sniffany"
+]
+},
+"pluck-sniffany-sirens-mp3": {
+"name": "F2 PLUCK Sniffany Sirens",
+"bpm": 170,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sniffany Sirens"
+]
+},
+"pluck-sniffany-good-day-mp3": {
+"name": "F2 PLUCK Sniffany Good Day",
+"bpm": 180,
+"key": "G#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Sniffany Good Day"
+]
+},
+"pluck-boing-mp3": {
+"name": "F2 PLUCK Boing",
+"bpm": 170,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Boing"
+]
+},
+"pluck-boing-slow-love-mp3": {
+"name": "F2 PLUCK Boing Slow Love",
+"bpm": 180,
+"key": "G#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Boing Slow Love"
+]
+},
+"pluck-boing-triplet-flow-mp3": {
+"name": "F2 PLUCK Boing Triplet Flow",
+"bpm": 170,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Boing Triplet Flow"
+]
+},
+"pluck-boing-ethereal-mp3": {
+"name": "F2 PLUCK Boing Ethereal",
+"bpm": 170,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Boing Ethereal"
+]
+},
+"keys-low-keys-mp3": {
+"name": "F2 KEYS Low Keys",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Low Keys"
+]
+},
+"keys-low-keys-stop-and-go-mp3": {
+"name": "F2 KEYS Low Keys Stop And Go",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Low Keys Stop And Go"
+]
+},
+"keys-low-keys-fresh-air-mp3": {
+"name": "F2 KEYS Low Keys Fresh Air",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Low Keys Fresh Air"
+]
+},
+"keys-low-keys-mystical-mp3": {
+"name": "F2 KEYS Low Keys Mystical",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Low Keys Mystical"
+]
+},
+"keys-little-piano-mp3": {
+"name": "F2 KEYS Little Piano",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Little Piano"
+]
+},
+"keys-little-piano-beat-shuffle-mp3": {
+"name": "F2 KEYS Little Piano Beat Shuffle",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Little Piano Beat Shuffle"
+]
+},
+"keys-little-piano-shaker-bounce-mp3": {
+"name": "F2 KEYS Little Piano Shaker Bounce",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Little Piano Shaker Bounce"
+]
+},
+"keys-little-piano-highway-mp3": {
+"name": "F2 KEYS Little Piano Highway",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Little Piano Highway"
+]
+},
+"choir-bliss-mp3": {
+"name": "F2 CHOIR Bliss",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bliss"
+]
+},
+"choir-bliss-highway-mp3": {
+"name": "F2 CHOIR Bliss Highway",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bliss Highway"
+]
+},
+"choir-bliss-halftime-bed-mp3": {
+"name": "F2 CHOIR Bliss Halftime Bed",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bliss Halftime Bed"
+]
+},
+"choir-bliss-slow-love-mp3": {
+"name": "F2 CHOIR Bliss Slow Love",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bliss Slow Love"
+]
+},
+"choir-bliss-triplet-flow-mp3": {
+"name": "F2 CHOIR Bliss Triplet Flow",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bliss Triplet Flow"
+]
+},
+"choir-bliss-ethereal-mp3": {
+"name": "F2 CHOIR Bliss Ethereal",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bliss Ethereal"
+]
+},
+"choir-ambient-chop-mp3": {
+"name": "F2 CHOIR Ambient Chop",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Ambient Chop"
+]
+},
+"choir-ambient-chop-ethereal-mp3": {
+"name": "F2 CHOIR Ambient Chop Ethereal",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Ambient Chop Ethereal"
+]
+},
+"choir-ambient-chop-pre-hook-mp3": {
+"name": "F2 CHOIR Ambient Chop Pre Hook",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Ambient Chop Pre Hook"
+]
+},
+"choir-ambient-chop-stop-and-go-mp3": {
+"name": "F2 CHOIR Ambient Chop Stop And Go",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Ambient Chop Stop And Go"
+]
+},
+"choir-ambient-chop-fresh-air-mp3": {
+"name": "F2 CHOIR Ambient Chop Fresh Air",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Ambient Chop Fresh Air"
+]
+},
+"choir-ambient-chop-mystical-mp3": {
+"name": "F2 CHOIR Ambient Chop Mystical",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Ambient Chop Mystical"
+]
+},
+"choir-a-oh-mp3": {
+"name": "F2 CHOIR A Oh",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR A Oh"
+]
+},
+"choir-a-oh-sirens-mp3": {
+"name": "F2 CHOIR A Oh Sirens",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR A Oh Sirens"
+]
+},
+"choir-a-oh-good-day-mp3": {
+"name": "F2 CHOIR A Oh Good Day",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR A Oh Good Day"
+]
+},
+"choir-a-oh-saucy-mp3": {
+"name": "F2 CHOIR A Oh Saucy",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR A Oh Saucy"
+]
+},
+"pad-dreamy-chop-mp3": {
+"name": "F2 PAD Dreamy Chop",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Dreamy Chop"
+]
+},
+"pad-dreamy-chop-fresh-air-mp3": {
+"name": "F2 PAD Dreamy Chop Fresh Air",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Dreamy Chop Fresh Air"
+]
+},
+"pad-dreamy-chop-mystical-mp3": {
+"name": "F2 PAD Dreamy Chop Mystical",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Dreamy Chop Mystical"
+]
+},
+"pad-dreamy-chop-double-cut-mp3": {
+"name": "F2 PAD Dreamy Chop Double Cut",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Dreamy Chop Double Cut"
+]
+},
+"pad-dreamy-chop-deepnd-mp3": {
+"name": "F2 PAD Dreamy Chop Deepnd",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Dreamy Chop Deepnd"
+]
+},
+"pad-electro-world-mp3": {
+"name": "F2 PAD Electro World",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Electro World"
+]
+},
+"pad-electro-world-stop-and-go-mp3": {
+"name": "F2 PAD Electro World Stop And Go",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Electro World Stop And Go"
+]
+},
+"pad-electro-world-fresh-air-mp3": {
+"name": "F2 PAD Electro World Fresh Air",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Electro World Fresh Air"
+]
+},
+"pad-electro-world-mystical-mp3": {
+"name": "F2 PAD Electro World Mystical",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Electro World Mystical"
+]
+},
+"pad-electro-world-double-cut-mp3": {
+"name": "F2 PAD Electro World Double Cut",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Electro World Double Cut"
+]
+},
+"pad-sauce-mp3": {
+"name": "F2 PAD Sauce",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sauce"
+]
+},
+"pad-sauce-deepnd-mp3": {
+"name": "F2 PAD Sauce Deepnd",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sauce Deepnd"
+]
+},
+"pad-sauce-sirens-mp3": {
+"name": "F2 PAD Sauce Sirens",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sauce Sirens"
+]
+},
+"pad-sauce-good-day-mp3": {
+"name": "F2 PAD Sauce Good Day",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sauce Good Day"
+]
+},
+"pad-huge-mp3": {
+"name": "F2 PAD Huge",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Huge"
+]
+},
+"pad-huge-stop-and-go-mp3": {
+"name": "F2 PAD Huge Stop And Go",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Huge Stop And Go"
+]
+},
+"pad-huge-fresh-air-mp3": {
+"name": "F2 PAD Huge Fresh Air",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Huge Fresh Air"
+]
+},
+"pad-huge-mystical-mp3": {
+"name": "F2 PAD Huge Mystical",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Huge Mystical"
+]
+},
+"pad-huge-double-cut-mp3": {
+"name": "F2 PAD Huge Double Cut",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Huge Double Cut"
+]
+},
+"bass-crushed-mp3": {
+"name": "F2 BASS Crushed",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Crushed"
+]
+},
+"bass-crushed-stop-and-go-mp3": {
+"name": "F2 BASS Crushed Stop And Go",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Crushed Stop And Go"
+]
+},
+"bass-crushed-fresh-air-mp3": {
+"name": "F2 BASS Crushed Fresh Air",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Crushed Fresh Air"
+]
+},
+"bass-crushed-mystical-mp3": {
+"name": "F2 BASS Crushed Mystical",
+"bpm": 180,
+"key": "G#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Crushed Mystical"
+]
+},
+"bass-crushed-double-cut-mp3": {
+"name": "F2 BASS Crushed Double Cut",
+"bpm": 170,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Crushed Double Cut"
+]
+},
+"808-crash-out-mp3": {
+"name": "F2 808 Crash Out",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Crash Out"
+]
+},
+"808-crash-out-good-day-mp3": {
+"name": "F2 808 Crash Out Good Day",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Crash Out Good Day"
+]
+},
+"808-crash-out-saucy-mp3": {
+"name": "F2 808 Crash Out Saucy",
+"bpm": 170,
+"key": "Cm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Crash Out Saucy"
+]
+},
+"808-crash-out-offbeat-mp3": {
+"name": "F2 808 Crash Out Offbeat",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Crash Out Offbeat"
+]
+},
+"808-crash-out-beat-shuffle-mp3": {
+"name": "F2 808 Crash Out Beat Shuffle",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Crash Out Beat Shuffle"
+]
+},
+"808-grit-mp3": {
+"name": "F2 808 Grit",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Grit"
+]
+},
+"808-grit-slow-love-mp3": {
+"name": "F2 808 Grit Slow Love",
+"bpm": 170,
+"key": "Cm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Grit Slow Love"
+]
+},
+"808-grit-triplet-flow-mp3": {
+"name": "F2 808 Grit Triplet Flow",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Grit Triplet Flow"
+]
+},
+"808-grit-ethereal-mp3": {
+"name": "F2 808 Grit Ethereal",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Grit Ethereal"
+]
+},
+"808-root-clip-mp3": {
+"name": "F2 808 Root Clip",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Root Clip"
+]
+},
+"808-root-clip-sirens-mp3": {
+"name": "F2 808 Root Clip Sirens",
+"bpm": 170,
+"key": "Cm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Root Clip Sirens"
+]
+},
+"808-root-clip-good-day-mp3": {
+"name": "F2 808 Root Clip Good Day",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Root Clip Good Day"
+]
+},
+"808-root-clip-saucy-mp3": {
+"name": "F2 808 Root Clip Saucy",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Root Clip Saucy"
+]
+},
+"808-brain-rot-mp3": {
+"name": "F2 808 Brain Rot",
+"bpm": 170,
+"key": "Cm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Brain Rot"
+]
+},
+"808-brain-rot-offbeat-mp3": {
+"name": "F2 808 Brain Rot Offbeat",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Brain Rot Offbeat"
+]
+},
+"808-brain-rot-beat-shuffle-mp3": {
+"name": "F2 808 Brain Rot Beat Shuffle",
+"bpm": 180,
+"key": "G#",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Brain Rot Beat Shuffle"
+]
+},
+"808-brain-rot-shaker-bounce-mp3": {
+"name": "F2 808 Brain Rot Shaker Bounce",
+"bpm": 170,
+"key": "Cm",
+"n": 8,
+"midi": true,
+"score": 200,
+"names": [
+"808 Brain Rot Shaker Bounce"
+]
+},
+"808-brain-rot-highway-mp3": {
+"name": "F2 808 Brain Rot Highway",
+"bpm": 170,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"808 Brain Rot Highway"
+]
+}
+}

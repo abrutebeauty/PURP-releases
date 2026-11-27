@@ -1,0 +1,1216 @@
+{
+"hc1-saw-starlight-mirror-mp3": {
+"name": "HC SAW Starlight Mirror",
+"bpm": 142,
+"key": "B",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Crush Afraid",
+"SAW Starlight Mirror"
+]
+},
+"hc1-lead-glitter-message-mp3": {
+"name": "HC LEAD Glitter Message",
+"bpm": 150,
+"key": "B",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Glitter Message",
+"LEAD Forfeit Girl"
+]
+},
+"hc1-pluck-lonely-haze-mp3": {
+"name": "HC PLUCK Lonely Haze",
+"bpm": 155,
+"key": "D",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Lonely Haze",
+"PLUCK Afraid Cope"
+]
+},
+"hc1-808-cyber-crystal-mp3": {
+"name": "HC 808 Cyber Crystal",
+"bpm": 145,
+"key": "C#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Crush Light",
+"808 Cyber Crystal"
+]
+},
+"hc1-808-chrome-halo-mp3": {
+"name": "HC 808 Chrome Halo",
+"bpm": 142,
+"key": "B",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Chrome Halo",
+"808 Flash Gold"
+]
+},
+"hc1-808-electric-bloom-mp3": {
+"name": "HC 808 Electric Bloom",
+"bpm": 148,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Flash Star",
+"808 Electric Bloom"
+]
+},
+"hc1-808-glass-ritual-mp3": {
+"name": "HC 808 Glass Ritual",
+"bpm": 158,
+"key": "Bm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Nerve Child",
+"808 Glass Ritual"
+]
+},
+"hc1-808-halo-glitch-mp3": {
+"name": "HC 808 Halo Glitch",
+"bpm": 145,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Forfeit Child",
+"808 Halo Glitch"
+]
+},
+"hc1-808-infinite-ribbon-mp3": {
+"name": "HC 808 Infinite Ribbon",
+"bpm": 155,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Safe Girl",
+"808 Infinite Ribbon"
+]
+},
+"hc1-808-lilac-ribbon-mp3": {
+"name": "HC 808 Lilac Ribbon",
+"bpm": 142,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Gold Ego",
+"808 Lilac Ribbon"
+]
+},
+"hc1-808-pink-pixel-mp3": {
+"name": "HC 808 Pink Pixel",
+"bpm": 160,
+"key": "Fm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Pink Pixel",
+"808 Sports Beginning"
+]
+},
+"hc1-808-silver-rewind-mp3": {
+"name": "HC 808 Silver Rewind",
+"bpm": 152,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Silver Rewind",
+"808 Cope Nerve"
+]
+},
+"hc1-808-starlight-riot-mp3": {
+"name": "HC 808 Starlight Riot",
+"bpm": 150,
+"key": "D#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Child Nice",
+"808 Starlight Riot"
+]
+},
+"hc1-808-sugar-stitch-mp3": {
+"name": "HC 808 Sugar Stitch",
+"bpm": 140,
+"key": "F#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Sugar Stitch",
+"808 Burn Beginning"
+]
+},
+"hc1-808-velvet-glitch-mp3": {
+"name": "HC 808 Velvet Glitch",
+"bpm": 158,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Velvet Glitch",
+"808 Safe Burn"
+]
+},
+"hc1-arp-cherry-halo-mp3": {
+"name": "HC ARP Cherry Halo",
+"bpm": 158,
+"key": "D",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Cherry Halo",
+"ARP Destroy Boy"
+]
+},
+"hc1-arp-digital-pixel-mp3": {
+"name": "HC ARP Digital Pixel",
+"bpm": 145,
+"key": "Cm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Gold Dream",
+"ARP Digital Pixel"
+]
+},
+"hc1-arp-electric-bruise-mp3": {
+"name": "HC ARP Electric Bruise",
+"bpm": 140,
+"key": "Bm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Electric Bruise",
+"ARP Afraid Dream"
+]
+},
+"hc1-arp-heartbreak-sky-mp3": {
+"name": "HC ARP Heartbreak Sky",
+"bpm": 158,
+"key": "F#",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Heartbreak Sky",
+"ARP Forfeit Girl"
+]
+},
+"hc1-arp-lilac-signal-mp3": {
+"name": "HC ARP Lilac Signal",
+"bpm": 155,
+"key": "D",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Lilac Signal",
+"ARP Child Sidekick"
+]
+},
+"hc1-arp-lonely-ritual-mp3": {
+"name": "HC ARP Lonely Ritual",
+"bpm": 142,
+"key": "C#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Lonely Ritual",
+"ARP Girl Style"
+]
+},
+"hc1-arp-pixel-spark-mp3": {
+"name": "HC ARP Pixel Spark",
+"bpm": 150,
+"key": "D",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Pixel Spark",
+"ARP Dream Destroy"
+]
+},
+"hc1-arp-prism-signal-mp3": {
+"name": "HC ARP Prism Signal",
+"bpm": 142,
+"key": "Fm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Prism Signal",
+"ARP Gold Destroy"
+]
+},
+"hc1-bass-frost-rocket-mp3": {
+"name": "HC BASS Frost Rocket",
+"bpm": 152,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Frost Rocket",
+"BASS Rain Light"
+]
+},
+"hc1-bass-gloss-drip-mp3": {
+"name": "HC BASS Gloss Drip",
+"bpm": 150,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Beginning Nerve",
+"BASS Gloss Drip"
+]
+},
+"hc1-bass-lace-overdrive-mp3": {
+"name": "HC BASS Lace Overdrive",
+"bpm": 142,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Lace Overdrive",
+"BASS Ego Crush"
+]
+},
+"hc1-bass-lucid-ribbon-mp3": {
+"name": "HC BASS Lucid Ribbon",
+"bpm": 145,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Lucid Ribbon",
+"BASS Dream Flash"
+]
+},
+"hc1-bass-sapphire-haze-mp3": {
+"name": "HC BASS Sapphire Haze",
+"bpm": 155,
+"key": "D#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sapphire Haze",
+"BASS Beginning Nice"
+]
+},
+"hc1-bass-starlight-static-mp3": {
+"name": "HC BASS Starlight Static",
+"bpm": 148,
+"key": "Cm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Starlight Static",
+"BASS Eldest Light"
+]
+},
+"hc1-bell-cherry-static-mp3": {
+"name": "HC BELL Cherry Static",
+"bpm": 148,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Star Destroy",
+"BELL Cherry Static"
+]
+},
+"hc1-bell-glass-sky-mp3": {
+"name": "HC BELL Glass Sky",
+"bpm": 148,
+"key": "D#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Style Cope",
+"BELL Glass Sky"
+]
+},
+"hc1-bell-gloss-pixel-mp3": {
+"name": "HC BELL Gloss Pixel",
+"bpm": 148,
+"key": "Fm",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Gloss Pixel",
+"BELL Style Flash"
+]
+},
+"hc1-bell-kiss-ghost-mp3": {
+"name": "HC BELL Kiss Ghost",
+"bpm": 145,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Kiss Ghost",
+"BELL Sidekick Crush"
+]
+},
+"hc1-bell-lonely-mode-mp3": {
+"name": "HC BELL Lonely Mode",
+"bpm": 148,
+"key": "Cm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Nerve Sports",
+"BELL Lonely Mode"
+]
+},
+"hc1-bell-mercury-sky-mp3": {
+"name": "HC BELL Mercury Sky",
+"bpm": 155,
+"key": "A",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Sidekick Rain",
+"BELL Mercury Sky"
+]
+},
+"hc1-bell-neon-heaven-mp3": {
+"name": "HC BELL Neon Heaven",
+"bpm": 150,
+"key": "E",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Burn Style",
+"BELL Neon Heaven"
+]
+},
+"hc1-bell-prism-bruise-mp3": {
+"name": "HC BELL Prism Bruise",
+"bpm": 155,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Prism Bruise",
+"BELL Star Flash"
+]
+},
+"hc1-bell-rose-arcade-mp3": {
+"name": "HC BELL Rose Arcade",
+"bpm": 145,
+"key": "Gm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Rose Arcade",
+"BELL Ego Child"
+]
+},
+"hc1-bell-satellite-wave-mp3": {
+"name": "HC BELL Satellite Wave",
+"bpm": 142,
+"key": "C#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Satellite Wave",
+"BELL Rain Beginning"
+]
+},
+"hc1-chord-chrome-thorn-mp3": {
+"name": "HC CHORD Chrome Thorn",
+"bpm": 158,
+"key": "C#",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Chrome Thorn",
+"CHORD Crush Gold"
+]
+},
+"hc1-chord-fever-drip-mp3": {
+"name": "HC CHORD Fever Drip",
+"bpm": 158,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Nerve Gold",
+"CHORD Fever Drip"
+]
+},
+"hc1-chord-glow-pulse-mp3": {
+"name": "HC CHORD Glow Pulse",
+"bpm": 150,
+"key": "Am",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Glow Pulse",
+"CHORD Ego Destroy"
+]
+},
+"hc1-chord-ivory-daze-mp3": {
+"name": "HC CHORD Ivory Daze",
+"bpm": 148,
+"key": "Bm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Burn Forfeit",
+"CHORD Ivory Daze"
+]
+},
+"hc1-chord-lace-rewind-mp3": {
+"name": "HC CHORD Lace Rewind",
+"bpm": 160,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Lace Rewind",
+"CHORD Nice Star"
+]
+},
+"hc1-chord-lucid-shine-mp3": {
+"name": "HC CHORD Lucid Shine",
+"bpm": 140,
+"key": "D#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Lucid Shine",
+"CHORD Sidekick Safe"
+]
+},
+"hc1-chord-polar-fever-mp3": {
+"name": "HC CHORD Polar Fever",
+"bpm": 150,
+"key": "C#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Polar Fever",
+"CHORD Forfeit Sidekick"
+]
+},
+"hc1-chord-starlight-rain-mp3": {
+"name": "HC CHORD Starlight Rain",
+"bpm": 152,
+"key": "Em",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"CHORD Starlight Rain",
+"CHORD Beginning Light"
+]
+},
+"hc1-lead-candy-mirror-mp3": {
+"name": "HC LEAD Candy Mirror",
+"bpm": 150,
+"key": "F#m",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Flash Safe",
+"LEAD Candy Mirror"
+]
+},
+"hc1-lead-cherry-stitch-mp3": {
+"name": "HC LEAD Cherry Stitch",
+"bpm": 158,
+"key": "E",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Cope Crush",
+"LEAD Cherry Stitch"
+]
+},
+"hc1-lead-chrome-stitch-mp3": {
+"name": "HC LEAD Chrome Stitch",
+"bpm": 152,
+"key": "Fm",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chrome Stitch",
+"LEAD Forfeit Boy"
+]
+},
+"hc1-lead-diamond-star-mp3": {
+"name": "HC LEAD Diamond Star",
+"bpm": 160,
+"key": "F#m",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Poster Dream",
+"POSTER LEAD High",
+"LEAD Diamond Star"
+]
+},
+"hc1-lead-digital-rain-mp3": {
+"name": "HC LEAD Digital Rain",
+"bpm": 155,
+"key": "D#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Poster Style",
+"POSTER LEAD Low",
+"LEAD Digital Rain"
+]
+},
+"hc1-lead-electric-spark-mp3": {
+"name": "HC LEAD Electric Spark",
+"bpm": 148,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Electric Spark",
+"LEAD Cope Safe"
+]
+},
+"hc1-lead-ivory-star-mp3": {
+"name": "HC LEAD Ivory Star",
+"bpm": 150,
+"key": "C#m",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ivory Star",
+"LEAD Cope Style"
+]
+},
+"hc1-lead-mercury-cut-mp3": {
+"name": "HC LEAD Mercury Cut",
+"bpm": 150,
+"key": "G#m",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Mercury Cut",
+"LEAD Forfeit Sports"
+]
+},
+"hc1-lead-midnight-daze-mp3": {
+"name": "HC LEAD Midnight Daze",
+"bpm": 150,
+"key": "Em",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Style Star",
+"LEAD Midnight Daze"
+]
+},
+"hc1-lead-neon-shine-mp3": {
+"name": "HC LEAD Neon Shine",
+"bpm": 145,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Neon Shine",
+"LEAD Afraid Boy"
+]
+},
+"hc1-lead-sweet-sorrow-mp3": {
+"name": "HC LEAD Sweet Sorrow",
+"bpm": 150,
+"key": "Bm",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Sweet Sorrow",
+"LEAD Sports Destroy"
+]
+},
+"hc1-pad-butterfly-rain-mp3": {
+"name": "HC PAD Butterfly Rain",
+"bpm": 150,
+"key": "C#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Butterfly Rain",
+"PAD Eldest Dream"
+]
+},
+"hc1-pad-cherry-drip-mp3": {
+"name": "HC PAD Cherry Drip",
+"bpm": 152,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Cherry Drip",
+"PAD Ego Nice"
+]
+},
+"hc1-pad-glitter-lust-mp3": {
+"name": "HC PAD Glitter Lust",
+"bpm": 142,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Glitter Lust",
+"PAD Child Burn"
+]
+},
+"hc1-pad-halo-ritual-mp3": {
+"name": "HC PAD Halo Ritual",
+"bpm": 158,
+"key": "D#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Halo Ritual",
+"PAD Child Sidekick"
+]
+},
+"hc1-pad-hyper-flash-mp3": {
+"name": "HC PAD Hyper Flash",
+"bpm": 150,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Hyper Flash",
+"PAD Ego Sidekick"
+]
+},
+"hc1-pad-midnight-rush-mp3": {
+"name": "HC PAD Midnight Rush",
+"bpm": 152,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Forfeit Ego",
+"PAD Midnight Rush"
+]
+},
+"hc1-pad-plastic-ritual-mp3": {
+"name": "HC PAD Plastic Ritual",
+"bpm": 155,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Plastic Ritual",
+"PAD Ego Destroy"
+]
+},
+"hc1-pad-sapphire-sorrow-mp3": {
+"name": "HC PAD Sapphire Sorrow",
+"bpm": 152,
+"key": "C#",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sapphire Sorrow",
+"PAD Beginning Nerve"
+]
+},
+"hc1-pad-starlight-glitch-mp3": {
+"name": "HC PAD Starlight Glitch",
+"bpm": 140,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Gold Burn",
+"PAD Starlight Glitch"
+]
+},
+"hc1-pad-static-blade-mp3": {
+"name": "HC PAD Static Blade",
+"bpm": 158,
+"key": "A",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Nice Beginning",
+"PAD Static Blade"
+]
+},
+"hc1-pluck-chrome-promise-mp3": {
+"name": "HC PLUCK Chrome Promise",
+"bpm": 140,
+"key": "Bm",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Chrome Promise",
+"PLUCK Rain Safe"
+]
+},
+"hc1-pluck-cosmic-bloom-mp3": {
+"name": "HC PLUCK Cosmic Bloom",
+"bpm": 145,
+"key": "F#m",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Style Destroy",
+"PLUCK Cosmic Bloom"
+]
+},
+"hc1-pluck-electric-kiss-mp3": {
+"name": "HC PLUCK Electric Kiss",
+"bpm": 160,
+"key": "F#",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Electric Kiss",
+"PLUCK Star Light"
+]
+},
+"hc1-pluck-faded-drip-mp3": {
+"name": "HC PLUCK Faded Drip",
+"bpm": 160,
+"key": "Cm",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Nerve Gold",
+"PLUCK Faded Drip"
+]
+},
+"hc1-pluck-glitter-ghosts-mp3": {
+"name": "HC PLUCK Glitter Ghosts",
+"bpm": 152,
+"key": "F#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Style Afraid",
+"PLUCK Glitter Ghosts"
+]
+},
+"hc1-pluck-glow-signal-mp3": {
+"name": "HC PLUCK Glow Signal",
+"bpm": 150,
+"key": "Cm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Crush Afraid",
+"PLUCK Glow Signal"
+]
+},
+"hc1-pluck-infinite-diary-mp3": {
+"name": "HC PLUCK Infinite Diary",
+"bpm": 152,
+"key": "Bm",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Flash Sports",
+"PLUCK Infinite Diary"
+]
+},
+"hc1-pluck-lilac-wings-mp3": {
+"name": "HC PLUCK Lilac Wings",
+"bpm": 140,
+"key": "G#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Forfeit Crush",
+"PLUCK Lilac Wings"
+]
+},
+"hc1-pluck-midnight-ghost-mp3": {
+"name": "HC PLUCK Midnight Ghost",
+"bpm": 150,
+"key": "D#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Midnight Ghost",
+"PLUCK Afraid Destroy"
+]
+},
+"hc1-pluck-satellite-heaven-mp3": {
+"name": "HC PLUCK Satellite Heaven",
+"bpm": 145,
+"key": "Gm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Child Nerve",
+"PLUCK Satellite Heaven"
+]
+},
+"hc1-pluck-silver-spark-mp3": {
+"name": "HC PLUCK Silver Spark",
+"bpm": 145,
+"key": "Cm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Silver Spark",
+"PLUCK Crush Style"
+]
+},
+"hc1-pluck-starlight-blade-mp3": {
+"name": "HC PLUCK Starlight Blade",
+"bpm": 155,
+"key": "D",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Starlight Blade",
+"PLUCK Rain Gold"
+]
+},
+"hc1-pluck-teardrop-star-mp3": {
+"name": "HC PLUCK Teardrop Star",
+"bpm": 148,
+"key": "C#m",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Teardrop Star",
+"PLUCK Boy Destroy"
+]
+},
+"hc1-saw-fever-signal-mp3": {
+"name": "HC SAW Fever Signal",
+"bpm": 158,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Fever Signal",
+"SAW Boy Sports"
+]
+},
+"hc1-saw-glitter-drip-mp3": {
+"name": "HC SAW Glitter Drip",
+"bpm": 150,
+"key": "F#",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Gold Boy",
+"SAW Glitter Drip"
+]
+},
+"hc1-saw-heartbreak-blade-mp3": {
+"name": "HC SAW Heartbreak Blade",
+"bpm": 142,
+"key": "Fm",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Heartbreak Blade",
+"SAW Safe Sports"
+]
+},
+"hc1-saw-ivory-star-mp3": {
+"name": "HC SAW Ivory Star",
+"bpm": 160,
+"key": "F#",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Ivory Star",
+"SAW Beginning Afraid"
+]
+},
+"hc1-saw-kiss-heaven-mp3": {
+"name": "HC SAW Kiss Heaven",
+"bpm": 145,
+"key": "Cm",
+"n": 128,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Kiss Heaven",
+"SAW Dream Nice"
+]
+},
+"hc1-saw-lucid-hollow-mp3": {
+"name": "HC SAW Lucid Hollow",
+"bpm": 152,
+"key": "Bm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Afraid Safe",
+"SAW Lucid Hollow"
+]
+},
+"hc1-saw-neon-moon-mp3": {
+"name": "HC SAW Neon Moon",
+"bpm": 158,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Neon Moon",
+"SAW Boy Cope"
+]
+},
+"hc1-saw-plastic-mirror-mp3": {
+"name": "HC SAW Plastic Mirror",
+"bpm": 155,
+"key": "Fm",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Cope Style",
+"SAW Plastic Mirror"
+]
+},
+"hc1-saw-prism-mirror-mp3": {
+"name": "HC SAW Prism Mirror",
+"bpm": 150,
+"key": "Cm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Crush Burn",
+"SAW Prism Mirror"
+]
+},
+"hc1-saw-rage-wings-mp3": {
+"name": "HC SAW Rage Wings",
+"bpm": 158,
+"key": "F#m",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Nerve Forfeit",
+"SAW Rage Wings"
+]
+},
+"hc1-saw-static-heaven-mp3": {
+"name": "HC SAW Static Heaven",
+"bpm": 155,
+"key": "Am",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Child Nerve",
+"SAW Static Heaven"
+]
+},
+"hc1-vox-crush-ribbon-mp3": {
+"name": "HC VOX Crush Ribbon",
+"bpm": 142,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Crush Ribbon",
+"VOX Child Safe"
+]
+},
+"hc1-vox-diamond-moon-mp3": {
+"name": "HC VOX Diamond Moon",
+"bpm": 150,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Diamond Moon",
+"VOX Sports Cope"
+]
+},
+"hc1-vox-digital-cut-mp3": {
+"name": "HC VOX Digital Cut",
+"bpm": 158,
+"key": "D#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Nice Sports",
+"VOX Digital Cut"
+]
+},
+"hc1-vox-mercury-rocket-mp3": {
+"name": "HC VOX Mercury Rocket",
+"bpm": 150,
+"key": "B",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Light Rain",
+"VOX Mercury Rocket"
+]
+},
+"hc1-vox-midnight-ribbon-mp3": {
+"name": "HC VOX Midnight Ribbon",
+"bpm": 148,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Midnight Ribbon",
+"VOX Flash Boy"
+]
+},
+"hc1-vox-prism-spark-mp3": {
+"name": "HC VOX Prism Spark",
+"bpm": 155,
+"key": "Gm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Prism Spark",
+"VOX Dream Crush"
+]
+},
+"hc1-vox-satellite-heart-mp3": {
+"name": "HC VOX Satellite Heart",
+"bpm": 142,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Satellite Heart",
+"VOX Destroy Eldest"
+]
+},
+"hc1-vox-silver-lover-mp3": {
+"name": "HC VOX Silver Lover",
+"bpm": 158,
+"key": "F#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Silver Lover",
+"VOX Boy Light"
+]
+},
+"hc1-vox-starlight-ribbon-mp3": {
+"name": "HC VOX Starlight Ribbon",
+"bpm": 152,
+"key": "A",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"VOX Starlight Ribbon",
+"VOX Rain Gold"
+]
+}
+}

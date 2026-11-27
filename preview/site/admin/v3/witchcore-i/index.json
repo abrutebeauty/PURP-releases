@@ -1,0 +1,1214 @@
+{
+"witchcore-i-mp3-t-0-000": {
+"name": "WC BASS Smoke Pulse",
+"bpm": 74,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Smoke Pulse",
+"BASS Starfall Eyess"
+]
+},
+"witchcore-i-mp3-t-13-273": {
+"name": "WC BASS Thorn Gate",
+"bpm": 70,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Wander Hearts",
+"BASS Thorn Gate"
+]
+},
+"witchcore-i-mp3-t-27-287": {
+"name": "WC BASS Cinder Rain",
+"bpm": 128,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Cinder Rain",
+"BASS King Roses"
+]
+},
+"witchcore-i-mp3-t-35-087": {
+"name": "WC BASS Funeral Coffin",
+"bpm": 66,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Funeral Coffin",
+"BASS Traxx Apart"
+]
+},
+"witchcore-i-mp3-t-49-933": {
+"name": "WC BASS Ivory Ribbon",
+"bpm": 132,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ivory Ribbon",
+"BASS Love Sick"
+]
+},
+"witchcore-i-mp3-t-57-505": {
+"name": "WC BASS Specter Dream",
+"bpm": 132,
+"key": "F#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS River Leprechaun",
+"BASS Specter Dream"
+]
+},
+"witchcore-i-mp3-t-65-078": {
+"name": "WC BASS Crypt Shadow",
+"bpm": 72,
+"key": "Bm",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Frost Boar",
+"BASS Crypt Shadow"
+]
+},
+"witchcore-i-mp3-t-78-711": {
+"name": "WC BASS Altar Halo",
+"bpm": 76,
+"key": "Cm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Burnout Red",
+"BASS Altar Halo"
+]
+},
+"witchcore-i-mp3-t-91-643": {
+"name": "WC BASS Hollow Rain",
+"bpm": 135,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Night Wonder",
+"BASS Hollow Rain"
+]
+},
+"witchcore-i-mp3-t-99-054": {
+"name": "WC BASS Cinder Grove",
+"bpm": 130,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Cinder Grove",
+"BASS Finna Fires"
+]
+},
+"witchcore-i-mp3-t-106-739": {
+"name": "WC BASS Moon Lullaby",
+"bpm": 132,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Moon Lullaby",
+"BASS Legion Suckers"
+]
+},
+"witchcore-i-mp3-t-114-312": {
+"name": "WC BASS Lace Chain",
+"bpm": 138,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Catacombs Night",
+"BASS Lace Chain"
+]
+},
+"witchcore-i-mp3-t-121-568": {
+"name": "WC 808 Veil Chain",
+"bpm": 138,
+"key": "Bm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Hound Burnout",
+"808 Veil Chain"
+]
+},
+"witchcore-i-mp3-t-128-825": {
+"name": "WC 808 Raven Chain",
+"bpm": 74,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Raven Chain",
+"808 Starfall Leprechaun"
+]
+},
+"witchcore-i-mp3-t-142-098": {
+"name": "WC 808 Coven Cross",
+"bpm": 68,
+"key": "A#m",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Coven Cross",
+"808 Tair Skullcrusher"
+]
+},
+"witchcore-i-mp3-t-156-515": {
+"name": "WC 808 Rosary Doll",
+"bpm": 70,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Expect Tair",
+"808 Rosary Doll"
+]
+},
+"witchcore-i-mp3-t-170-530": {
+"name": "WC 808 Spell Rain",
+"bpm": 135,
+"key": "A#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Spell Rain",
+"808 Held Apart"
+]
+},
+"witchcore-i-mp3-t-177-941": {
+"name": "WC 808 Raven Garden",
+"bpm": 78,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Roses Wander",
+"808 Raven Garden"
+]
+},
+"witchcore-i-mp3-t-190-548": {
+"name": "WC 808 Silver Choir",
+"bpm": 72,
+"key": "Em",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Wonder Heaven",
+"808 Silver Choir"
+]
+},
+"witchcore-i-mp3-t-204-182": {
+"name": "WC 808 Omen Lantern",
+"bpm": 130,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Birds Held",
+"808 Omen Lantern"
+]
+},
+"witchcore-i-mp3-t-211-866": {
+"name": "WC 808 Spell Gate",
+"bpm": 76,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Spell Gate",
+"808 Skullcrusher Motion"
+]
+},
+"witchcore-i-mp3-t-224-798": {
+"name": "WC HOOVER Ether Lullaby",
+"bpm": 130,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Ether Lullaby",
+"HOOVER Boar Dirt"
+]
+},
+"witchcore-i-mp3-t-232-482": {
+"name": "WC HOOVER Crypt Gate",
+"bpm": 138,
+"key": "Gm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Finna Legion",
+"HOOVER Crypt Gate"
+]
+},
+"witchcore-i-mp3-t-239-739": {
+"name": "WC HOOVER Ash Tide",
+"bpm": 76,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Ash Tide",
+"HOOVER Water Sick"
+]
+},
+"witchcore-i-mp3-t-252-671": {
+"name": "WC HOOVER Velvet Gate",
+"bpm": 76,
+"key": "D#m",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Velvet Gate",
+"HOOVER Traxx Red"
+]
+},
+"witchcore-i-mp3-t-265-602": {
+"name": "WC HOOVER Static Signal",
+"bpm": 135,
+"key": "Am",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Static Signal",
+"HOOVER Fires River"
+]
+},
+"witchcore-i-mp3-t-273-013": {
+"name": "WC HOOVER Specter Tomb",
+"bpm": 128,
+"key": "Bm",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"HOOVER Seaww Catacombs",
+"HOOVER Specter Tomb"
+]
+},
+"witchcore-i-mp3-t-280-813": {
+"name": "WC LEAD Coven Feather",
+"bpm": 68,
+"key": "Em",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Coven Feather",
+"LEAD Eyess King"
+]
+},
+"witchcore-i-mp3-t-295-231": {
+"name": "WC LEAD Chapel Lullaby",
+"bpm": 76,
+"key": "Em",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Chapel Lullaby",
+"LEAD Heaven Skullcrusher"
+]
+},
+"witchcore-i-mp3-t-308-163": {
+"name": "WC LEAD Moon Fog",
+"bpm": 135,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Moon Fog",
+"LEAD Finna Dirt"
+]
+},
+"witchcore-i-mp3-t-315-574": {
+"name": "WC LEAD Smoke Tide",
+"bpm": 66,
+"key": "Bm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Frost Braids",
+"LEAD Smoke Tide"
+]
+},
+"witchcore-i-mp3-t-330-419": {
+"name": "WC LEAD Ivory Coffin",
+"bpm": 140,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ivory Coffin",
+"LEAD River Expect"
+]
+},
+"witchcore-i-mp3-t-337-576": {
+"name": "WC LEAD Pale Prayer",
+"bpm": 72,
+"key": "Bm",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pale Prayer",
+"LEAD Sick Frost"
+]
+},
+"witchcore-i-mp3-t-351-210": {
+"name": "WC LEAD Lace Grove",
+"bpm": 140,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Braids Roses",
+"LEAD Lace Grove"
+]
+},
+"witchcore-i-mp3-t-358-367": {
+"name": "WC LEAD Ivory Grove",
+"bpm": 76,
+"key": "Am",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ivory Grove",
+"LEAD Touch Apart"
+]
+},
+"witchcore-i-mp3-t-371-298": {
+"name": "WC LEAD Moon Mirror",
+"bpm": 72,
+"key": "A#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Love Starfall",
+"LEAD Moon Mirror"
+]
+},
+"witchcore-i-mp3-t-384-932": {
+"name": "WC LEAD Ash Choir",
+"bpm": 80,
+"key": "Cm",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ash Choir",
+"LEAD Water Fires"
+]
+},
+"witchcore-i-mp3-t-397-232": {
+"name": "WC LEAD Rust Saint",
+"bpm": 66,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Suckers Hound",
+"LEAD Rust Saint"
+]
+},
+"witchcore-i-mp3-t-412-077": {
+"name": "WC LEAD Spell Doll",
+"bpm": 80,
+"key": "G#m",
+"n": 35,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Spell Doll",
+"LEAD Tair Dirt"
+]
+},
+"witchcore-i-mp3-t-424-377": {
+"name": "WC SYNTH Ether Seance",
+"bpm": 130,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Ether Seance",
+"SYNTH Redlights Braids"
+]
+},
+"witchcore-i-mp3-t-432-062": {
+"name": "WC SYNTH Wraith Chain",
+"bpm": 135,
+"key": "D#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Red Legion",
+"SYNTH Wraith Chain"
+]
+},
+"witchcore-i-mp3-t-439-473": {
+"name": "WC SYNTH Veil Sleep",
+"bpm": 80,
+"key": "Am",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Veil Sleep",
+"SYNTH Eyess Held"
+]
+},
+"witchcore-i-mp3-t-451-773": {
+"name": "WC SYNTH Candle Saint",
+"bpm": 138,
+"key": "Am",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Candle Saint",
+"SYNTH Redlights Capulets"
+]
+},
+"witchcore-i-mp3-t-459-029": {
+"name": "WC SYNTH Omen Cathedral",
+"bpm": 138,
+"key": "A#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Omen Cathedral",
+"SYNTH Water Night"
+]
+},
+"witchcore-i-mp3-t-466-286": {
+"name": "WC SYNTH Funeral Grove",
+"bpm": 68,
+"key": "Em",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Wonder Catacombs",
+"SYNTH Funeral Grove"
+]
+},
+"witchcore-i-mp3-t-480-704": {
+"name": "WC SYNTH Shroud Garden",
+"bpm": 78,
+"key": "Gm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Wander Wings",
+"SYNTH Shroud Garden"
+]
+},
+"witchcore-i-mp3-t-493-311": {
+"name": "WC SYNTH Silver Cross",
+"bpm": 80,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Boar Motion",
+"SYNTH Silver Cross"
+]
+},
+"witchcore-i-mp3-t-505-611": {
+"name": "WC PAD Rust Rose",
+"bpm": 70,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Boar Trapdoor",
+"PAD Rust Rose"
+]
+},
+"witchcore-i-mp3-t-519-626": {
+"name": "WC PAD Veil Rain",
+"bpm": 140,
+"key": "A#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Veil Rain",
+"PAD Traxx Hollow"
+]
+},
+"witchcore-i-mp3-t-526-783": {
+"name": "WC PAD Bone Signal",
+"bpm": 140,
+"key": "Fm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Seaww Motion",
+"PAD Bone Signal"
+]
+},
+"witchcore-i-mp3-t-533-940": {
+"name": "WC PAD Ivory Doll",
+"bpm": 68,
+"key": "G#m",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Ivory Doll",
+"PAD Roses King"
+]
+},
+"witchcore-i-mp3-t-548-357": {
+"name": "WC PAD Ritual Pulse",
+"bpm": 132,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Finna Starfall",
+"PAD Ritual Pulse"
+]
+},
+"witchcore-i-mp3-t-555-930": {
+"name": "WC PAD Chapel Mirror",
+"bpm": 135,
+"key": "Bm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Hearts Seaww",
+"PAD Chapel Mirror"
+]
+},
+"witchcore-i-mp3-t-563-341": {
+"name": "WC PAD Static Garden",
+"bpm": 128,
+"key": "Em",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Heaven Love",
+"PAD Static Garden"
+]
+},
+"witchcore-i-mp3-t-571-141": {
+"name": "WC PAD Crypt Bride",
+"bpm": 68,
+"key": "G#m",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Crypt Bride",
+"PAD Trapdoor Held"
+]
+},
+"witchcore-i-mp3-t-585-559": {
+"name": "WC PAD Coven Tomb",
+"bpm": 78,
+"key": "D#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Eyess Water",
+"PAD Coven Tomb"
+]
+},
+"witchcore-i-mp3-t-598-167": {
+"name": "WC PAD Ivory Mirror",
+"bpm": 78,
+"key": "F#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Motion Expect",
+"PAD Ivory Mirror"
+]
+},
+"witchcore-i-mp3-t-610-774": {
+"name": "WC PAD Pale Gate",
+"bpm": 135,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Hollow Trapdoor",
+"PAD Pale Gate"
+]
+},
+"witchcore-i-mp3-t-618-185": {
+"name": "WC PAD Rosary Ribbon",
+"bpm": 66,
+"key": "A#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Suckers Love",
+"PAD Rosary Ribbon"
+]
+},
+"witchcore-i-mp3-t-633-031": {
+"name": "WC CHOIR Vigil Doll",
+"bpm": 130,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Expect Redlights",
+"CHOIR Vigil Doll"
+]
+},
+"witchcore-i-mp3-t-640-715": {
+"name": "WC CHOIR Crypt Bride",
+"bpm": 72,
+"key": "Gm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Catacombs Capulets",
+"CHOIR Crypt Bride"
+]
+},
+"witchcore-i-mp3-t-654-349": {
+"name": "WC CHOIR Raven Rose",
+"bpm": 138,
+"key": "Cm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Raven Rose",
+"CHOIR Redlights Hearts"
+]
+},
+"witchcore-i-mp3-t-661-605": {
+"name": "WC CHOIR Wraith Grove",
+"bpm": 132,
+"key": "Bm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Wraith Grove",
+"CHOIR Hollow Hearts"
+]
+},
+"witchcore-i-mp3-t-669-178": {
+"name": "WC CHOIR Crypt Chain",
+"bpm": 80,
+"key": "Fm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR King Wings",
+"CHOIR Crypt Chain"
+]
+},
+"witchcore-i-mp3-t-681-478": {
+"name": "WC CHOIR Specter Dream",
+"bpm": 76,
+"key": "Cm",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Specter Dream",
+"CHOIR Heaven Suckers"
+]
+},
+"witchcore-i-mp3-t-694-410": {
+"name": "WC CHOIR Haze Halo",
+"bpm": 66,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Skullcrusher Frost",
+"CHOIR Haze Halo"
+]
+},
+"witchcore-i-mp3-t-709-255": {
+"name": "WC CHOIR Silver Eclipse",
+"bpm": 72,
+"key": "D#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Night Tair",
+"CHOIR Silver Eclipse"
+]
+},
+"witchcore-i-mp3-t-722-888": {
+"name": "WC CHOIR Bone Tide",
+"bpm": 74,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Bone Tide",
+"CHOIR Sick Hound"
+]
+},
+"witchcore-i-mp3-t-736-161": {
+"name": "WC BELL Bone Garden",
+"bpm": 130,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Bone Garden",
+"BELL Burnout Fires"
+]
+},
+"witchcore-i-mp3-t-743-846": {
+"name": "WC BELL Bone Chain",
+"bpm": 128,
+"key": "Em",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Seaww Red",
+"BELL Bone Chain"
+]
+},
+"witchcore-i-mp3-t-751-646": {
+"name": "WC BELL Dusk Shadow",
+"bpm": 78,
+"key": "D#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Dusk Shadow",
+"BELL Apart Hollow"
+]
+},
+"witchcore-i-mp3-t-764-254": {
+"name": "WC BELL Wraith Halo",
+"bpm": 128,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Wraith Halo",
+"BELL Trapdoor Skullcrusher"
+]
+},
+"witchcore-i-mp3-t-772-054": {
+"name": "WC BELL Moth Ritual",
+"bpm": 72,
+"key": "A#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Moth Ritual",
+"BELL Traxx Capulets"
+]
+},
+"witchcore-i-mp3-t-785-687": {
+"name": "WC BELL Haze Ritual",
+"bpm": 68,
+"key": "D#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Braids Suckers",
+"BELL Haze Ritual"
+]
+},
+"witchcore-i-mp3-t-800-105": {
+"name": "WC BELL Chapel Eclipse",
+"bpm": 140,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Burnout Wings",
+"BELL Chapel Eclipse"
+]
+},
+"witchcore-i-mp3-t-807-262": {
+"name": "WC BELL Coven Abyss",
+"bpm": 74,
+"key": "Am",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL River Hound",
+"BELL Coven Abyss"
+]
+},
+"witchcore-i-mp3-t-820-535": {
+"name": "WC BELL Specter Mass",
+"bpm": 66,
+"key": "F#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Specter Mass",
+"BELL Leprechaun Dirt"
+]
+},
+"witchcore-i-mp3-t-835-380": {
+"name": "WC KEYS Thorn Dust",
+"bpm": 70,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Starfall Traxx",
+"KEYS Thorn Dust"
+]
+},
+"witchcore-i-mp3-t-849-395": {
+"name": "WC KEYS Ivory Mass",
+"bpm": 135,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Ivory Mass",
+"KEYS Seaww Held"
+]
+},
+"witchcore-i-mp3-t-856-806": {
+"name": "WC KEYS Bone Kiss",
+"bpm": 68,
+"key": "Fm",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Bone Kiss",
+"KEYS Frost Sick"
+]
+},
+"witchcore-i-mp3-t-871-223": {
+"name": "WC KEYS Altar Kiss",
+"bpm": 68,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Altar Kiss",
+"KEYS Redlights Birds"
+]
+},
+"witchcore-i-mp3-t-885-641": {
+"name": "WC KEYS Vigil Sleep",
+"bpm": 74,
+"key": "Gm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Vigil Sleep",
+"KEYS Capulets Tair"
+]
+},
+"witchcore-i-mp3-t-898-914": {
+"name": "WC KEYS Hollow Garden",
+"bpm": 68,
+"key": "Bm",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Hollow Garden",
+"KEYS Hearts Eyess"
+]
+},
+"witchcore-i-mp3-t-913-332": {
+"name": "WC KEYS Funeral Signal",
+"bpm": 78,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Funeral Signal",
+"KEYS Legion Motion"
+]
+},
+"witchcore-i-mp3-t-925-939": {
+"name": "WC KEYS Chapel Coffin",
+"bpm": 74,
+"key": "Fm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Chapel Coffin",
+"KEYS Hound Hollow"
+]
+},
+"witchcore-i-mp3-t-939-212": {
+"name": "WC PLUCK Mourning Prayer",
+"bpm": 135,
+"key": "G#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Mourning Prayer",
+"PLUCK Red Braids"
+]
+},
+"witchcore-i-mp3-t-946-623": {
+"name": "WC PLUCK Shroud Dream",
+"bpm": 130,
+"key": "Cm",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Boar Night",
+"PLUCK Shroud Dream"
+]
+},
+"witchcore-i-mp3-t-954-308": {
+"name": "WC PLUCK Thorn Wound",
+"bpm": 138,
+"key": "Cm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Thorn Wound",
+"PLUCK Finna River"
+]
+},
+"witchcore-i-mp3-t-961-565": {
+"name": "WC PLUCK Velvet Fog",
+"bpm": 68,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Velvet Fog",
+"PLUCK Dirt Wings"
+]
+},
+"witchcore-i-mp3-t-975-982": {
+"name": "WC PLUCK Thorn Throne",
+"bpm": 72,
+"key": "Am",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Thorn Throne",
+"PLUCK Touch Apart"
+]
+},
+"witchcore-i-mp3-t-989-615": {
+"name": "WC PLUCK Wraith Tide",
+"bpm": 80,
+"key": "Am",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Wraith Tide",
+"PLUCK Water Capulets"
+]
+},
+"witchcore-i-mp3-t-1001-915": {
+"name": "WC PLUCK Moth Rain",
+"bpm": 72,
+"key": "F#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Braids Suckers",
+"PLUCK Moth Rain"
+]
+},
+"witchcore-i-mp3-t-1015-549": {
+"name": "WC PLUCK Rosary Ritual",
+"bpm": 138,
+"key": "Gm",
+"n": 23,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Fires Seaww",
+"PLUCK Rosary Ritual"
+]
+},
+"witchcore-i-mp3-t-1022-805": {
+"name": "WC PLUCK Altar Fog",
+"bpm": 140,
+"key": "Cm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Roses King",
+"PLUCK Altar Fog"
+]
+},
+"witchcore-i-mp3-t-1029-962": {
+"name": "WC PLUCK Coven Saint",
+"bpm": 128,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Wander Water",
+"PLUCK Coven Saint"
+]
+},
+"witchcore-i-mp3-t-1037-762": {
+"name": "WC FX Silver Signal",
+"bpm": 132,
+"key": "F#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Catacombs Wonder",
+"FX Silver Signal"
+]
+},
+"witchcore-i-mp3-t-1045-335": {
+"name": "WC FX Funeral Hymn",
+"bpm": 140,
+"key": "Am",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"FX Funeral Hymn",
+"FX Skullcrusher Burnout"
+]
+},
+"witchcore-i-mp3-t-1052-492": {
+"name": "WC FX Smoke Prayer",
+"bpm": 72,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Smoke Prayer",
+"FX Heaven Wander"
+]
+},
+"witchcore-i-mp3-t-1066-126": {
+"name": "WC FX Ether Doll",
+"bpm": 66,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Ether Doll",
+"FX Touch Love"
+]
+},
+"witchcore-i-mp3-t-1080-971": {
+"name": "WC FX Moth Prayer",
+"bpm": 74,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FX Moth Prayer",
+"FX Sick Night"
+]
+},
+"witchcore-i-mp3-t-1094-244": {
+"name": "WC FX Ash Feather",
+"bpm": 72,
+"key": "C#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"FX Hound Eyess",
+"FX Ash Feather"
+]
+}
+}

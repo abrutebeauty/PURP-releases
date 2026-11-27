@@ -1,0 +1,1401 @@
+{
+"bladecore-i-mp3-t-0-000": {
+"name": "BC SAW Lunar Rose",
+"bpm": 155,
+"key": "C#",
+"n": 160,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Lunar Rose",
+"SAW Surf Icedancer"
+]
+},
+"bladecore-i-mp3-t-6-494": {
+"name": "BC SAW Prism Thread",
+"bpm": 155,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Prism Thread",
+"SAW Romeo Powerline"
+]
+},
+"bladecore-i-mp3-t-12-987": {
+"name": "BC SAW Star Spider",
+"bpm": 142,
+"key": "F#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Cold Waste",
+"SAW Star Spider"
+]
+},
+"bladecore-i-mp3-t-20-048": {
+"name": "BC SAW Glow Lily",
+"bpm": 140,
+"key": "A",
+"n": 160,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Security Reality",
+"SAW Glow Lily"
+]
+},
+"bladecore-i-mp3-t-27-205": {
+"name": "BC SAW Dew Charm",
+"bpm": 160,
+"key": "B",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Ghost Peroxide",
+"SAW Dew Charm"
+]
+},
+"bladecore-i-mp3-t-33-505": {
+"name": "BC SAW Ether Charm",
+"bpm": 140,
+"key": "E",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Ether Charm",
+"SAW Eyes Skin"
+]
+},
+"bladecore-i-mp3-t-40-662": {
+"name": "BC SAW Moon Flame",
+"bpm": 155,
+"key": "Bm",
+"n": 176,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Sunset Hotel",
+"SAW Moon Flame"
+]
+},
+"bladecore-i-mp3-t-47-155": {
+"name": "BC SAW Snow Field",
+"bpm": 135,
+"key": "Am",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Snow Field",
+"SAW Visions Time"
+]
+},
+"bladecore-i-mp3-t-54-567": {
+"name": "BC SAW Winter Lily",
+"bpm": 155,
+"key": "G",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Winter Lily",
+"SAW Breakfast Fool"
+]
+},
+"bladecore-i-mp3-t-61-060": {
+"name": "BC SAW Lunar Kiss",
+"bpm": 145,
+"key": "F#m",
+"n": 176,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Lunar Kiss",
+"SAW Exeter Fragile"
+]
+},
+"bladecore-i-mp3-t-67-981": {
+"name": "BC SAW Dew Ring",
+"bpm": 140,
+"key": "Bm",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Dew Ring",
+"SAW Silver Nice"
+]
+},
+"bladecore-i-mp3-t-75-138": {
+"name": "BC SAW Prism Song",
+"bpm": 145,
+"key": "D",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SAW Fortune Raw",
+"SAW Prism Song"
+]
+},
+"bladecore-i-mp3-t-82-059": {
+"name": "BC LEAD Glass Wave",
+"bpm": 135,
+"key": "C#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Nice Obedient",
+"LEAD Glass Wave"
+]
+},
+"bladecore-i-mp3-t-89-470": {
+"name": "BC LEAD Velvet Shell",
+"bpm": 150,
+"key": "F#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Nice Eversince",
+"LEAD Velvet Shell"
+]
+},
+"bladecore-i-mp3-t-96-170": {
+"name": "BC LEAD Halo Ring",
+"bpm": 150,
+"key": "D",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Nice Person",
+"LEAD Halo Ring"
+]
+},
+"bladecore-i-mp3-t-102-870": {
+"name": "BC LEAD Angel Lily",
+"bpm": 160,
+"key": "D",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Angel Lily",
+"LEAD Nice Star"
+]
+},
+"bladecore-i-mp3-t-109-170": {
+"name": "BC LEAD Satin Gate",
+"bpm": 150,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Nice Westside",
+"LEAD Satin Gate"
+]
+},
+"bladecore-i-mp3-t-115-870": {
+"name": "BC LEAD Glass Shell",
+"bpm": 155,
+"key": "D",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Missing Fields",
+"LEAD Glass Shell"
+]
+},
+"bladecore-i-mp3-t-122-363": {
+"name": "BC LEAD Satin Lily",
+"bpm": 135,
+"key": "Am",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Missing Blue",
+"LEAD Satin Lily"
+]
+},
+"bladecore-i-mp3-t-129-774": {
+"name": "BC LEAD Opal Orbit",
+"bpm": 135,
+"key": "E",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Opal Orbit",
+"LEAD Dying Bliss"
+]
+},
+"bladecore-i-mp3-t-137-185": {
+"name": "BC LEAD Ether Pulse",
+"bpm": 142,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ether Pulse",
+"LEAD Spiderr Raw"
+]
+},
+"bladecore-i-mp3-t-144-246": {
+"name": "BC LEAD Diamond Field",
+"bpm": 148,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Red Bliss",
+"LEAD Diamond Field"
+]
+},
+"bladecore-i-mp3-t-151-033": {
+"name": "BC LEAD Pearl Flame",
+"bpm": 140,
+"key": "G",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Romeo Trash",
+"LEAD Pearl Flame"
+]
+},
+"bladecore-i-mp3-t-158-190": {
+"name": "BC PLUCK Glass Gate",
+"bpm": 160,
+"key": "Em",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Glass Gate",
+"PLUCK Nice Surf"
+]
+},
+"bladecore-i-mp3-t-164-490": {
+"name": "BC PLUCK Dew Skater",
+"bpm": 150,
+"key": "G#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Nice Star",
+"PLUCK Dew Skater"
+]
+},
+"bladecore-i-mp3-t-171-190": {
+"name": "BC PLUCK Satin Kiss",
+"bpm": 145,
+"key": "Bm",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Satin Kiss",
+"PLUCK Nice Spiderr"
+]
+},
+"bladecore-i-mp3-t-178-110": {
+"name": "BC PLUCK Dream Tower",
+"bpm": 140,
+"key": "E",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Dream Tower",
+"PLUCK Nice Lovestory"
+]
+},
+"bladecore-i-mp3-t-185-268": {
+"name": "BC PLUCK Opal Wing",
+"bpm": 140,
+"key": "Em",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Opal Wing",
+"PLUCK Nice Eversince"
+]
+},
+"bladecore-i-mp3-t-192-425": {
+"name": "BC PLUCK Prism Lily",
+"bpm": 160,
+"key": "E",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Prism Lily",
+"PLUCK Nice Cold"
+]
+},
+"bladecore-i-mp3-t-198-725": {
+"name": "BC PLUCK Pearl Charm",
+"bpm": 148,
+"key": "E",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Peroxide Gate",
+"PLUCK Pearl Charm"
+]
+},
+"bladecore-i-mp3-t-205-511": {
+"name": "BC PLUCK Halo Ribbon",
+"bpm": 145,
+"key": "E",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Halo Ribbon",
+"PLUCK City Blue"
+]
+},
+"bladecore-i-mp3-t-212-432": {
+"name": "BC PLUCK Halo Kiss",
+"bpm": 160,
+"key": "D#m",
+"n": 26,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Waste Red",
+"PLUCK Halo Kiss"
+]
+},
+"bladecore-i-mp3-t-218-732": {
+"name": "BC PLUCK Holy Spider",
+"bpm": 150,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Diamonds Obedient",
+"PLUCK Holy Spider"
+]
+},
+"bladecore-i-mp3-t-225-432": {
+"name": "BC PLUCK Halo Tower",
+"bpm": 155,
+"key": "Em",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Exeter Eyes",
+"PLUCK Halo Tower"
+]
+},
+"bladecore-i-mp3-t-231-925": {
+"name": "BC PLUCK Dew Garden",
+"bpm": 155,
+"key": "Am",
+"n": 29,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Dew Garden",
+"PLUCK Fortune Insects"
+]
+},
+"bladecore-i-mp3-t-238-419": {
+"name": "BC PLUCK Mirror Spider",
+"bpm": 140,
+"key": "Em",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Lovestory Fool",
+"PLUCK Mirror Spider"
+]
+},
+"bladecore-i-mp3-t-245-576": {
+"name": "BC BELL Glow Gate",
+"bpm": 145,
+"key": "B",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Glow Gate",
+"BELL City Crest"
+]
+},
+"bladecore-i-mp3-t-252-497": {
+"name": "BC BELL Dew Rain",
+"bpm": 155,
+"key": "C#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Rainbow Security",
+"BELL Dew Rain"
+]
+},
+"bladecore-i-mp3-t-258-990": {
+"name": "BC BELL Glass Skater",
+"bpm": 148,
+"key": "F#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Glass Skater",
+"BELL Reality Sunset"
+]
+},
+"bladecore-i-mp3-t-265-777": {
+"name": "BC BELL Prism Rain",
+"bpm": 145,
+"key": "C",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Trash Dying",
+"BELL Prism Rain"
+]
+},
+"bladecore-i-mp3-t-272-697": {
+"name": "BC BELL Satin Dancer",
+"bpm": 140,
+"key": "F#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Satin Dancer",
+"BELL Hotel Westside"
+]
+},
+"bladecore-i-mp3-t-279-855": {
+"name": "BC BELL Diamond Light",
+"bpm": 130,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Icedancer Cold",
+"BELL Diamond Light"
+]
+},
+"bladecore-i-mp3-t-287-539": {
+"name": "BC BELL Diamond Ring",
+"bpm": 140,
+"key": "F#",
+"n": 15,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Light Spiderr",
+"BELL Diamond Ring"
+]
+},
+"bladecore-i-mp3-t-294-696": {
+"name": "BC BELL Halo Charm",
+"bpm": 145,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Person Fragile",
+"BELL Halo Charm"
+]
+},
+"bladecore-i-mp3-t-301-617": {
+"name": "BC BELL Mirror Echo",
+"bpm": 140,
+"key": "B",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Mirror Echo",
+"BELL Visions Powerline"
+]
+},
+"bladecore-i-mp3-t-308-774": {
+"name": "BC BELL Ether Tower",
+"bpm": 142,
+"key": "E",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Rainbow Trash",
+"BELL Ether Tower"
+]
+},
+"bladecore-i-mp3-t-315-835": {
+"name": "BC FLUTE Spirit Wing",
+"bpm": 140,
+"key": "D",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Silver Raw",
+"FLUTE Spirit Wing"
+]
+},
+"bladecore-i-mp3-t-322-992": {
+"name": "BC FLUTE Halo Gate",
+"bpm": 145,
+"key": "G",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Sugar Exeter",
+"FLUTE Halo Gate"
+]
+},
+"bladecore-i-mp3-t-329-913": {
+"name": "BC FLUTE Dream Song",
+"bpm": 145,
+"key": "C#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Dream Song",
+"FLUTE Sugar Breakfast"
+]
+},
+"bladecore-i-mp3-t-336-833": {
+"name": "BC FLUTE Satin Rain",
+"bpm": 160,
+"key": "F#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Satin Rain",
+"FLUTE Icedancer Reality"
+]
+},
+"bladecore-i-mp3-t-343-133": {
+"name": "BC FLUTE Snow Lake",
+"bpm": 142,
+"key": "C#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Snow Lake",
+"FLUTE Insects Sugar"
+]
+},
+"bladecore-i-mp3-t-350-194": {
+"name": "BC FLUTE Cloud Heart",
+"bpm": 150,
+"key": "Em",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Lovestory Time",
+"FLUTE Cloud Heart"
+]
+},
+"bladecore-i-mp3-t-356-894": {
+"name": "BC FLUTE Glass Kiss",
+"bpm": 155,
+"key": "G#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"FLUTE Fragile Surf",
+"FLUTE Glass Kiss"
+]
+},
+"bladecore-i-mp3-t-363-387": {
+"name": "BC PAD Lunar Song",
+"bpm": 142,
+"key": "C#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Security Calcium",
+"PAD Lunar Song"
+]
+},
+"bladecore-i-mp3-t-370-448": {
+"name": "BC PAD Winter Field",
+"bpm": 155,
+"key": "B",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Winter Field",
+"PAD Gate Westside"
+]
+},
+"bladecore-i-mp3-t-376-941": {
+"name": "BC PAD Pearl Light",
+"bpm": 135,
+"key": "G#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Fields Calcium",
+"PAD Pearl Light"
+]
+},
+"bladecore-i-mp3-t-384-353": {
+"name": "BC PAD Mist Song",
+"bpm": 155,
+"key": "G",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Mist Song",
+"PAD Crest Red"
+]
+},
+"bladecore-i-mp3-t-390-846": {
+"name": "BC PAD Halo Garden",
+"bpm": 145,
+"key": "D",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Halo Garden",
+"PAD Person Visions"
+]
+},
+"bladecore-i-mp3-t-397-767": {
+"name": "BC PAD Ether Shell",
+"bpm": 140,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Ether Shell",
+"PAD Eversince Sunset"
+]
+},
+"bladecore-i-mp3-t-404-924": {
+"name": "BC PAD Opal Gate",
+"bpm": 142,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Breakfast Time",
+"PAD Opal Gate"
+]
+},
+"bladecore-i-mp3-t-411-984": {
+"name": "BC PAD Silver Sky",
+"bpm": 155,
+"key": "F#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Silver Sky",
+"PAD Diamonds Bliss"
+]
+},
+"bladecore-i-mp3-t-418-478": {
+"name": "BC PAD Ether Charm",
+"bpm": 135,
+"key": "C#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Ether Charm",
+"PAD Gate Powerline"
+]
+},
+"bladecore-i-mp3-t-425-889": {
+"name": "BC PAD Diamond Heart",
+"bpm": 145,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Ghost Story",
+"PAD Diamond Heart"
+]
+},
+"bladecore-i-mp3-t-432-810": {
+"name": "BC PAD Halo Orbit",
+"bpm": 150,
+"key": "C#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Fields Obedient",
+"PAD Halo Orbit"
+]
+},
+"bladecore-i-mp3-t-439-510": {
+"name": "BC CHOIR Glass Thread",
+"bpm": 150,
+"key": "B",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Glass Thread",
+"CHOIR Diamonds City"
+]
+},
+"bladecore-i-mp3-t-446-210": {
+"name": "BC CHOIR Neon Tear",
+"bpm": 148,
+"key": "B",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Dying Star",
+"CHOIR Neon Tear"
+]
+},
+"bladecore-i-mp3-t-452-996": {
+"name": "BC CHOIR Crystal Pulse",
+"bpm": 155,
+"key": "B",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Crystal Pulse",
+"CHOIR Peroxide Hotel"
+]
+},
+"bladecore-i-mp3-t-459-490": {
+"name": "BC CHOIR Silver Dancer",
+"bpm": 155,
+"key": "D",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Peroxide Blue",
+"CHOIR Silver Dancer"
+]
+},
+"bladecore-i-mp3-t-465-983": {
+"name": "BC CHOIR Glow Heart",
+"bpm": 142,
+"key": "B",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Insects Spiderr",
+"CHOIR Glow Heart"
+]
+},
+"bladecore-i-mp3-t-473-044": {
+"name": "BC CHOIR Opal Shell",
+"bpm": 145,
+"key": "F#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Story Crest",
+"CHOIR Opal Shell"
+]
+},
+"bladecore-i-mp3-t-479-965": {
+"name": "BC CHOIR Snow Kiss",
+"bpm": 145,
+"key": "G#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Waste Surf",
+"CHOIR Snow Kiss"
+]
+},
+"bladecore-i-mp3-t-486-885": {
+"name": "BC CHOIR Snow Tear",
+"bpm": 145,
+"key": "F#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Light Cold",
+"CHOIR Snow Tear"
+]
+},
+"bladecore-i-mp3-t-493-806": {
+"name": "BC KEYS Glass Echo",
+"bpm": 160,
+"key": "Am",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Glass Echo",
+"KEYS Waste Eyes"
+]
+},
+"bladecore-i-mp3-t-500-106": {
+"name": "BC KEYS Star Rain",
+"bpm": 150,
+"key": "A",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Star Rain",
+"KEYS Breakfast Romeo"
+]
+},
+"bladecore-i-mp3-t-506-806": {
+"name": "BC KEYS Ether Lake",
+"bpm": 150,
+"key": "G",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Fool Gate",
+"KEYS Ether Lake"
+]
+},
+"bladecore-i-mp3-t-513-506": {
+"name": "BC KEYS Spirit Light",
+"bpm": 145,
+"key": "Am",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Skin Story",
+"KEYS Spirit Light"
+]
+},
+"bladecore-i-mp3-t-520-427": {
+"name": "BC KEYS Lunar Ring",
+"bpm": 155,
+"key": "A",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Lunar Ring",
+"KEYS Fields Obedient"
+]
+},
+"bladecore-i-mp3-t-526-920": {
+"name": "BC KEYS Glow Tower",
+"bpm": 135,
+"key": "E",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Glow Tower",
+"KEYS Crest Icedancer"
+]
+},
+"bladecore-i-mp3-t-534-331": {
+"name": "BC KEYS Neon Tower",
+"bpm": 160,
+"key": "G#m",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Neon Tower",
+"KEYS Lovestory Sunset"
+]
+},
+"bladecore-i-mp3-t-540-631": {
+"name": "BC ARP Glass Pulse",
+"bpm": 150,
+"key": "Am",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Glass Pulse",
+"ARP Rainbow Blue"
+]
+},
+"bladecore-i-mp3-t-547-331": {
+"name": "BC ARP Angel Wave",
+"bpm": 145,
+"key": "C",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Angel Wave",
+"ARP Calcium Light"
+]
+},
+"bladecore-i-mp3-t-554-252": {
+"name": "BC ARP Star Light",
+"bpm": 150,
+"key": "F#",
+"n": 176,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Fragile Insects",
+"ARP Star Light"
+]
+},
+"bladecore-i-mp3-t-560-952": {
+"name": "BC ARP Pearl Thread",
+"bpm": 155,
+"key": "G",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Missing Romeo",
+"ARP Pearl Thread"
+]
+},
+"bladecore-i-mp3-t-567-446": {
+"name": "BC ARP Neon Lily",
+"bpm": 160,
+"key": "C",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Visions Person",
+"ARP Neon Lily"
+]
+},
+"bladecore-i-mp3-t-573-746": {
+"name": "BC ARP Moon Ring",
+"bpm": 135,
+"key": "G#m",
+"n": 160,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Moon Ring",
+"ARP Light Security"
+]
+},
+"bladecore-i-mp3-t-581-157": {
+"name": "BC 808 Crystal Bloom",
+"bpm": 142,
+"key": "B",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"808 Bliss Westside",
+"808 Crystal Bloom"
+]
+},
+"bladecore-i-mp3-t-588-217": {
+"name": "BC 808 Glass Feather",
+"bpm": 145,
+"key": "E",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 City Powerline",
+"808 Glass Feather"
+]
+},
+"bladecore-i-mp3-t-595-138": {
+"name": "BC 808 Glass Echo",
+"bpm": 142,
+"key": "G",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"808 Glass Echo",
+"808 Silver Dying"
+]
+},
+"bladecore-i-mp3-t-602-198": {
+"name": "BC 808 Mist Rose",
+"bpm": 140,
+"key": "B",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Missing Story",
+"808 Mist Rose"
+]
+},
+"bladecore-i-mp3-t-609-356": {
+"name": "BC 808 Pale Gate",
+"bpm": 130,
+"key": "D#m",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"808 Exeter Fool",
+"808 Pale Gate"
+]
+},
+"bladecore-i-mp3-t-617-040": {
+"name": "BC 808 Snow Garden",
+"bpm": 135,
+"key": "Em",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Snow Garden",
+"808 Diamonds Eversince"
+]
+},
+"bladecore-i-mp3-t-624-451": {
+"name": "BC 808 Cloud Charm",
+"bpm": 130,
+"key": "C",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Hotel Cold",
+"808 Cloud Charm"
+]
+},
+"bladecore-i-mp3-t-632-136": {
+"name": "BC 808 Ether Feather",
+"bpm": 130,
+"key": "D",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Sugar Reality",
+"808 Ether Feather"
+]
+},
+"bladecore-i-mp3-t-639-821": {
+"name": "BC 808 Holy Skater",
+"bpm": 160,
+"key": "D",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"808 Holy Skater",
+"808 Skin Raw"
+]
+},
+"bladecore-i-mp3-t-646-121": {
+"name": "BC 808 Mirror Feather",
+"bpm": 135,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Mirror Feather",
+"808 Person Visions"
+]
+},
+"bladecore-i-mp3-t-653-532": {
+"name": "BC 808 Butterfly Sky",
+"bpm": 140,
+"key": "C",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Security Icedancer",
+"808 Butterfly Sky"
+]
+},
+"bladecore-i-mp3-t-660-689": {
+"name": "BC 808 Velvet Ribbon",
+"bpm": 145,
+"key": "A",
+"n": 48,
+"midi": true,
+"score": 200,
+"names": [
+"808 Velvet Ribbon",
+"808 Eversince Exeter"
+]
+},
+"bladecore-i-mp3-t-667-610": {
+"name": "BC FX Butterfly Lily",
+"bpm": 135,
+"key": "C#m",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"FX Silver Fortune",
+"FX Butterfly Lily"
+]
+},
+"bladecore-i-mp3-t-675-021": {
+"name": "BC FX Prism Field",
+"bpm": 160,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"FX Missing Lovestory",
+"FX Prism Field"
+]
+},
+"bladecore-i-mp3-t-681-321": {
+"name": "BC FX Angel Wing",
+"bpm": 148,
+"key": "E",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"FX Surf Powerline",
+"FX Angel Wing"
+]
+},
+"bladecore-i-mp3-t-688-107": {
+"name": "BC FX Snow Skater",
+"bpm": 130,
+"key": "C",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"FX Snow Skater",
+"FX Fortune Bliss"
+]
+},
+"bc-song-bcs01-mp3": {
+"name": "BE NICE 2 ME Lead",
+"bpm": 139,
+"key": "D",
+"n": 21,
+"midi": true,
+"score": 200,
+"names": [
+"SONG BE NICE 2 ME Lead"
+]
+},
+"bc-song-bcs02-mp3": {
+"name": "BE NICE 2 ME Harp Pluck",
+"bpm": 139,
+"key": "D",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"SONG BE NICE 2 ME Harp Pluck"
+]
+},
+"bc-song-bcs03-mp3": {
+"name": "BE NICE 2 ME Pad",
+"bpm": 139,
+"key": "D",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SONG BE NICE 2 ME Pad"
+]
+},
+"bc-song-bcs04-mp3": {
+"name": "REALITY SURF Pad",
+"bpm": 160,
+"key": "Em",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SONG REALITY SURF Pad"
+]
+},
+"bc-song-bcs05-mp3": {
+"name": "REALITY SURF Lead",
+"bpm": 160,
+"key": "Em",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"SONG REALITY SURF Lead"
+]
+},
+"bc-song-bcs06-mp3": {
+"name": "REALITY SURF Arp",
+"bpm": 160,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SONG REALITY SURF Arp"
+]
+},
+"bc-song-bcs07-mp3": {
+"name": "GIRLS JUST WANT TO HAVE FUN Main Synth",
+"bpm": 152,
+"key": "C",
+"n": 208,
+"midi": true,
+"score": 200,
+"names": [
+"SONG GIRLS JUST WANT TO HAVE FUN Main Synth"
+]
+},
+"bc-song-bcs08-mp3": {
+"name": "GIRLS JUST WANT TO HAVE FUN Whistle",
+"bpm": 152,
+"key": "C",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SONG GIRLS JUST WANT TO HAVE FUN Whistle"
+]
+},
+"bc-song-bcs09-mp3": {
+"name": "GIRLS JUST WANT TO HAVE FUN Shimmer Pad",
+"bpm": 152,
+"key": "C",
+"n": 10,
+"midi": true,
+"score": 200,
+"names": [
+"SONG GIRLS JUST WANT TO HAVE FUN Shimmer Pad"
+]
+},
+"bc-song-bcs10-mp3": {
+"name": "GIRLS JUST WANT TO HAVE FUN Bells",
+"bpm": 152,
+"key": "C",
+"n": 22,
+"midi": true,
+"score": 200,
+"names": [
+"SONG GIRLS JUST WANT TO HAVE FUN Bells"
+]
+},
+"bc-song-bcs11-mp3": {
+"name": "THE FLAG IS RAISED Main Synth",
+"bpm": 138,
+"key": "Cm",
+"n": 18,
+"midi": true,
+"score": 200,
+"names": [
+"SONG THE FLAG IS RAISED Main Synth"
+]
+},
+"bc-song-bcs12-mp3": {
+"name": "THE FLAG IS RAISED Log Drum Lead",
+"bpm": 138,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SONG THE FLAG IS RAISED Log Drum Lead"
+]
+},
+"bc-song-bcs13-mp3": {
+"name": "THE FLAG IS RAISED Noisy Pluck",
+"bpm": 138,
+"key": "Cm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SONG THE FLAG IS RAISED Noisy Pluck"
+]
+},
+"bc-song-bcs14-mp3": {
+"name": "THE FLAG IS RAISED Reese Bass",
+"bpm": 138,
+"key": "Cm",
+"n": 6,
+"midi": true,
+"score": 200,
+"names": [
+"SONG THE FLAG IS RAISED Reese Bass"
+]
+},
+"bc-song-bcs15-mp3": {
+"name": "WESTERN UNION FM Pluck",
+"bpm": 147,
+"key": "E",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SONG WESTERN UNION FM Pluck"
+]
+},
+"bc-song-bcs16-mp3": {
+"name": "WESTERN UNION Chorus Pluck",
+"bpm": 147,
+"key": "E",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"SONG WESTERN UNION Chorus Pluck"
+]
+},
+"bc-song-bcs17-mp3": {
+"name": "WESTERN UNION Bells",
+"bpm": 147,
+"key": "E",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"SONG WESTERN UNION Bells"
+]
+}
+}

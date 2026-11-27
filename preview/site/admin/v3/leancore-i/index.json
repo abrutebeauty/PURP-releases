@@ -1,0 +1,1214 @@
+{
+"leancore-i-mp3-t-0-000": {
+"name": "LC 808 Dusk Garden",
+"bpm": 150,
+"key": "C#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Violence Kyoto",
+"808 Dusk Garden"
+]
+},
+"leancore-i-mp3-t-6-700": {
+"name": "LC 808 Lilac Petal",
+"bpm": 164,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Intuition Monster",
+"808 Lilac Petal"
+]
+},
+"leancore-i-mp3-t-12-854": {
+"name": "LC 808 Blue Harbor",
+"bpm": 120,
+"key": "F#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Strip Unknown",
+"808 Blue Harbor"
+]
+},
+"leancore-i-mp3-t-21-154": {
+"name": "LC 808 Ivory Angel",
+"bpm": 150,
+"key": "A",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"808 Ivory Angel",
+"808 Ghosttown Agony"
+]
+},
+"leancore-i-mp3-t-27-854": {
+"name": "LC 808 Satin Drift",
+"bpm": 110,
+"key": "B",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Sea Moon",
+"808 Satin Drift"
+]
+},
+"leancore-i-mp3-t-36-881": {
+"name": "LC 808 Lucid Bloom",
+"bpm": 120,
+"key": "E",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Lucid Bloom",
+"808 Starz Psykos"
+]
+},
+"leancore-i-mp3-t-45-181": {
+"name": "LC 808 Cloud Lake",
+"bpm": 110,
+"key": "Bm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Cloud Lake",
+"808 Lavender Miami"
+]
+},
+"leancore-i-mp3-t-54-208": {
+"name": "LC 808 Lilac Kiss",
+"bpm": 140,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"808 Plastic Metallic",
+"808 Lilac Kiss"
+]
+},
+"leancore-i-mp3-t-61-365": {
+"name": "LC BASS Neon Echo",
+"bpm": 120,
+"key": "G",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Boylife Hunting",
+"BASS Neon Echo"
+]
+},
+"leancore-i-mp3-t-69-665": {
+"name": "LC BASS Chrome Drift",
+"bpm": 110,
+"key": "F#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Chrome Drift",
+"BASS Fire Bottom"
+]
+},
+"leancore-i-mp3-t-78-693": {
+"name": "LC BASS Glacier Sky",
+"bpm": 115,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Glacier Sky",
+"BASS Memory Butterfly"
+]
+},
+"leancore-i-mp3-t-87-340": {
+"name": "LC BASS Angel Orbit",
+"bpm": 164,
+"key": "Cm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Ultras Silver",
+"BASS Angel Orbit"
+]
+},
+"leancore-i-mp3-t-93-494": {
+"name": "LC BASS Moon Bloom",
+"bpm": 115,
+"key": "C#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Emails Leanworld",
+"BASS Moon Bloom"
+]
+},
+"leancore-i-mp3-t-102-142": {
+"name": "LC BASS Crystal Heart",
+"bpm": 110,
+"key": "F#",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Stardust Arrows",
+"BASS Crystal Heart"
+]
+},
+"leancore-i-mp3-t-111-169": {
+"name": "LC BASS Hollow Night",
+"bpm": 110,
+"key": "D",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Sandman Red",
+"BASS Hollow Night"
+]
+},
+"leancore-i-mp3-t-120-196": {
+"name": "LC BASS Hollow Memory",
+"bpm": 120,
+"key": "D",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hollow Memory",
+"BASS Paradise Patrol"
+]
+},
+"leancore-i-mp3-t-128-496": {
+"name": "LC BASS Snow Signal",
+"bpm": 124,
+"key": "Fm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Muddy Sky",
+"BASS Snow Signal"
+]
+},
+"leancore-i-mp3-t-136-538": {
+"name": "LC BASS Hollow Petal",
+"bpm": 105,
+"key": "D",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Hollow Petal",
+"BASS Leaves Volt"
+]
+},
+"leancore-i-mp3-t-145-981": {
+"name": "LC BASS Winter Breath",
+"bpm": 115,
+"key": "Am",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Winter Breath",
+"BASS Memory Sun"
+]
+},
+"leancore-i-mp3-t-154-629": {
+"name": "LC BASS Chrome Petal",
+"bpm": 120,
+"key": "E",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"BASS Chrome Petal",
+"BASS Oreomilkshake Hurt"
+]
+},
+"leancore-i-mp3-t-162-929": {
+"name": "LC LEAD Ghost Breath",
+"bpm": 152,
+"key": "Bm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Highway Violence",
+"LEAD Ghost Breath"
+]
+},
+"leancore-i-mp3-t-169-545": {
+"name": "LC LEAD Lotus Tea",
+"bpm": 105,
+"key": "Am",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Lotus Tea",
+"LEAD Warlord Sea"
+]
+},
+"leancore-i-mp3-t-178-988": {
+"name": "LC LEAD Lucid Echo",
+"bpm": 118,
+"key": "G",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Dukes Red",
+"LEAD Lucid Echo"
+]
+},
+"leancore-i-mp3-t-187-423": {
+"name": "LC LEAD Ivory Comet",
+"bpm": 140,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ivory Comet",
+"LEAD Skin Oreomilkshake"
+]
+},
+"leancore-i-mp3-t-194-580": {
+"name": "LC LEAD Crystal Halo",
+"bpm": 164,
+"key": "G#m",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ultras Paradise",
+"LEAD Crystal Halo"
+]
+},
+"leancore-i-mp3-t-200-734": {
+"name": "LC LEAD Neon Mirror",
+"bpm": 120,
+"key": "Bm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Neon Mirror",
+"LEAD Hunting Lavender"
+]
+},
+"leancore-i-mp3-t-209-034": {
+"name": "LC LEAD Velvet Rose",
+"bpm": 115,
+"key": "E",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Ginseng Sandman",
+"LEAD Velvet Rose"
+]
+},
+"leancore-i-mp3-t-217-682": {
+"name": "LC LEAD Neon Lantern",
+"bpm": 120,
+"key": "Em",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Neon Lantern",
+"LEAD Arrows Skimask"
+]
+},
+"leancore-i-mp3-t-225-982": {
+"name": "LC LEAD Satin Window",
+"bpm": 118,
+"key": "E",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Satin Window",
+"LEAD Highway Sailor"
+]
+},
+"leancore-i-mp3-t-234-418": {
+"name": "LC LEAD Ivory Night",
+"bpm": 110,
+"key": "E",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Stranger Psykos",
+"LEAD Ivory Night"
+]
+},
+"leancore-i-mp3-t-243-445": {
+"name": "LC LEAD Glacier Lantern",
+"bpm": 110,
+"key": "E",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Glacier Lantern",
+"LEAD Shiva Dukes"
+]
+},
+"leancore-i-mp3-t-252-472": {
+"name": "LC LEAD Pastel Harbor",
+"bpm": 110,
+"key": "Gm",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Pastel Harbor",
+"LEAD Silver Shiva"
+]
+},
+"leancore-i-mp3-t-261-499": {
+"name": "LC LEAD Soft Lullaby",
+"bpm": 164,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Soft Lullaby",
+"LEAD Plastic Muddy"
+]
+},
+"leancore-i-mp3-t-267-653": {
+"name": "LC LEAD Opal Lullaby",
+"bpm": 110,
+"key": "Cm",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Opal Lullaby",
+"LEAD Hurt Butterfly"
+]
+},
+"leancore-i-mp3-t-276-680": {
+"name": "LC LEAD Pearl Bloom",
+"bpm": 152,
+"key": "Am",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"LEAD Metallic Bottom",
+"LEAD Pearl Bloom"
+]
+},
+"leancore-i-mp3-t-283-296": {
+"name": "LC BELL Blue Sky",
+"bpm": 150,
+"key": "Em",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Warlord Sun",
+"BELL Blue Sky"
+]
+},
+"leancore-i-mp3-t-289-996": {
+"name": "LC BELL Sapphire Bloom",
+"bpm": 115,
+"key": "B",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Unknown Intuition",
+"BELL Sapphire Bloom"
+]
+},
+"leancore-i-mp3-t-298-644": {
+"name": "LC BELL Opal Night",
+"bpm": 164,
+"key": "C#",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Blue Fallen",
+"BELL Opal Night"
+]
+},
+"leancore-i-mp3-t-304-798": {
+"name": "LC BELL Faded Signal",
+"bpm": 110,
+"key": "F#",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Faded Signal",
+"BELL Stranger Skimask"
+]
+},
+"leancore-i-mp3-t-313-825": {
+"name": "LC BELL Hollow Window",
+"bpm": 120,
+"key": "F",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Hollow Window",
+"BELL Boylife Lost"
+]
+},
+"leancore-i-mp3-t-322-125": {
+"name": "LC BELL Ivory Memory",
+"bpm": 115,
+"key": "F#m",
+"n": 14,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Leanworld Blue",
+"BELL Ivory Memory"
+]
+},
+"leancore-i-mp3-t-330-773": {
+"name": "LC BELL Pastel Rose",
+"bpm": 105,
+"key": "C#m",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Pastel Rose",
+"BELL Miami Kyoto"
+]
+},
+"leancore-i-mp3-t-340-216": {
+"name": "LC BELL Mist Signal",
+"bpm": 118,
+"key": "F#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Mist Signal",
+"BELL Lost Stardust"
+]
+},
+"leancore-i-mp3-t-348-651": {
+"name": "LC BELL Ice Halo",
+"bpm": 120,
+"key": "G#m",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Ice Halo",
+"BELL Leaves Strip"
+]
+},
+"leancore-i-mp3-t-356-951": {
+"name": "LC BELL Prism Ribbon",
+"bpm": 118,
+"key": "B",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Prism Ribbon",
+"BELL Patrol Sailor"
+]
+},
+"leancore-i-mp3-t-365-387": {
+"name": "LC BELL Ice Memory",
+"bpm": 152,
+"key": "E",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Ice Memory",
+"BELL Moon Psykos"
+]
+},
+"leancore-i-mp3-t-372-003": {
+"name": "LC BELL Lilac Wave",
+"bpm": 150,
+"key": "D",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"BELL Lilac Wave",
+"BELL Intuition Dukes"
+]
+},
+"leancore-i-mp3-t-378-703": {
+"name": "LC PLUCK Cloud Kiss",
+"bpm": 124,
+"key": "Em",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Cloud Kiss",
+"PLUCK Fallen Stranger"
+]
+},
+"leancore-i-mp3-t-386-744": {
+"name": "LC PLUCK Hollow Sleep",
+"bpm": 115,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Ginseng Butterfly",
+"PLUCK Hollow Sleep"
+]
+},
+"leancore-i-mp3-t-395-392": {
+"name": "LC PLUCK Chrome Diary",
+"bpm": 115,
+"key": "F#m",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Chrome Diary",
+"PLUCK Agony Volt"
+]
+},
+"leancore-i-mp3-t-404-040": {
+"name": "LC PLUCK Sad Orbit",
+"bpm": 152,
+"key": "Bm",
+"n": 38,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Miami Sky",
+"PLUCK Sad Orbit"
+]
+},
+"leancore-i-mp3-t-410-656": {
+"name": "LC PLUCK Lotus Tea",
+"bpm": 115,
+"key": "Em",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Oreomilkshake Moon",
+"PLUCK Lotus Tea"
+]
+},
+"leancore-i-mp3-t-419-304": {
+"name": "LC PLUCK Sad Lake",
+"bpm": 120,
+"key": "Cm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Starz Hurt",
+"PLUCK Sad Lake"
+]
+},
+"leancore-i-mp3-t-427-604": {
+"name": "LC PLUCK Haze Drift",
+"bpm": 124,
+"key": "C#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Haze Drift",
+"PLUCK Agony Sandman"
+]
+},
+"leancore-i-mp3-t-435-646": {
+"name": "LC PLUCK Angel Signal",
+"bpm": 124,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Angel Signal",
+"PLUCK Monster Skin"
+]
+},
+"leancore-i-mp3-t-443-688": {
+"name": "LC PLUCK Lilac Feather",
+"bpm": 105,
+"key": "G#m",
+"n": 63,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Boylife Leanworld",
+"PLUCK Lilac Feather"
+]
+},
+"leancore-i-mp3-t-453-130": {
+"name": "LC PLUCK Glacier Lake",
+"bpm": 105,
+"key": "Em",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Ultras Paradise",
+"PLUCK Glacier Lake"
+]
+},
+"leancore-i-mp3-t-462-573": {
+"name": "LC PLUCK Prism Vapor",
+"bpm": 156,
+"key": "D",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PLUCK Prism Vapor",
+"PLUCK Skin Shiva"
+]
+},
+"leancore-i-mp3-t-469-027": {
+"name": "LC ARP Ghost Kiss",
+"bpm": 110,
+"key": "Cm",
+"n": 62,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Ghost Kiss",
+"ARP Sailor Emails"
+]
+},
+"leancore-i-mp3-t-478-054": {
+"name": "LC ARP Chrome Lake",
+"bpm": 110,
+"key": "C#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Chrome Lake",
+"ARP Metallic Skimask"
+]
+},
+"leancore-i-mp3-t-487-082": {
+"name": "LC ARP Rain Tea",
+"bpm": 156,
+"key": "F#",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Rain Tea",
+"ARP Kyoto Lost"
+]
+},
+"leancore-i-mp3-t-493-536": {
+"name": "LC ARP Ivory Ribbon",
+"bpm": 140,
+"key": "C#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Ivory Ribbon",
+"ARP Blue Fire"
+]
+},
+"leancore-i-mp3-t-500-693": {
+"name": "LC ARP Jade Signal",
+"bpm": 115,
+"key": "C#m",
+"n": 64,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Sun Warlord",
+"ARP Jade Signal"
+]
+},
+"leancore-i-mp3-t-509-340": {
+"name": "LC ARP Moon Drift",
+"bpm": 120,
+"key": "C#",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"ARP Monster Fire",
+"ARP Moon Drift"
+]
+},
+"leancore-i-mp3-t-517-640": {
+"name": "LC SYNTH Snow Sky",
+"bpm": 118,
+"key": "B",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Fallen Muddy",
+"SYNTH Snow Sky"
+]
+},
+"leancore-i-mp3-t-526-076": {
+"name": "LC SYNTH Soft Bloom",
+"bpm": 115,
+"key": "B",
+"n": 96,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Soft Bloom",
+"SYNTH Unknown City"
+]
+},
+"leancore-i-mp3-t-534-724": {
+"name": "LC SYNTH Lucid Signal",
+"bpm": 150,
+"key": "B",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Highway Memory",
+"SYNTH Lucid Signal"
+]
+},
+"leancore-i-mp3-t-541-424": {
+"name": "LC SYNTH Ghost Bloom",
+"bpm": 110,
+"key": "D",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Ghost Bloom",
+"SYNTH Red Silver"
+]
+},
+"leancore-i-mp3-t-550-451": {
+"name": "LC SYNTH Ocean Lake",
+"bpm": 124,
+"key": "B",
+"n": 72,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Hunting Warlord",
+"SYNTH Ocean Lake"
+]
+},
+"leancore-i-mp3-t-558-493": {
+"name": "LC SYNTH Prism Signal",
+"bpm": 120,
+"key": "Cm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Prism Signal",
+"SYNTH City Ghosttown"
+]
+},
+"leancore-i-mp3-t-566-793": {
+"name": "LC SYNTH Blue Lullaby",
+"bpm": 120,
+"key": "Gm",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Emails Leaves",
+"SYNTH Blue Lullaby"
+]
+},
+"leancore-i-mp3-t-575-093": {
+"name": "LC SYNTH Lucid Wave",
+"bpm": 156,
+"key": "Cm",
+"n": 80,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Lucid Wave",
+"SYNTH Ghosttown Unknown"
+]
+},
+"leancore-i-mp3-t-581-547": {
+"name": "LC SYNTH Satin Ribbon",
+"bpm": 120,
+"key": "Am",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"SYNTH Satin Ribbon",
+"SYNTH Muddy Butterfly"
+]
+},
+"leancore-i-mp3-t-589-847": {
+"name": "LC PAD Soft Lullaby",
+"bpm": 124,
+"key": "A",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sky Lavender",
+"PAD Soft Lullaby"
+]
+},
+"leancore-i-mp3-t-597-889": {
+"name": "LC PAD Chrome Tea",
+"bpm": 118,
+"key": "G",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Oreomilkshake Stardust",
+"PAD Chrome Tea"
+]
+},
+"leancore-i-mp3-t-606-325": {
+"name": "LC PAD Velvet Tide",
+"bpm": 124,
+"key": "Gm",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Velvet Tide",
+"PAD Violence Emails"
+]
+},
+"leancore-i-mp3-t-614-366": {
+"name": "LC PAD Mist Harbor",
+"bpm": 118,
+"key": "A",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Mist Harbor",
+"PAD Plastic Sea"
+]
+},
+"leancore-i-mp3-t-622-802": {
+"name": "LC PAD Paper Wave",
+"bpm": 156,
+"key": "E",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Paper Wave",
+"PAD Ginseng Arrows"
+]
+},
+"leancore-i-mp3-t-629-256": {
+"name": "LC PAD Sakura Ribbon",
+"bpm": 156,
+"key": "G#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Sky Volt",
+"PAD Sakura Ribbon"
+]
+},
+"leancore-i-mp3-t-635-710": {
+"name": "LC PAD Velvet Garden",
+"bpm": 150,
+"key": "Am",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Velvet Garden",
+"PAD Sandman Dukes"
+]
+},
+"leancore-i-mp3-t-642-410": {
+"name": "LC PAD Angel Tide",
+"bpm": 120,
+"key": "F",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Angel Tide",
+"PAD Patrol Hunting"
+]
+},
+"leancore-i-mp3-t-650-710": {
+"name": "LC PAD Kawaii Night",
+"bpm": 115,
+"key": "D#m",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"PAD Fallen Agony",
+"PAD Kawaii Night"
+]
+},
+"leancore-i-mp3-t-659-358": {
+"name": "LC CHOIR Satin Feather",
+"bpm": 164,
+"key": "G",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Satin Feather",
+"CHOIR Monster Bottom"
+]
+},
+"leancore-i-mp3-t-665-511": {
+"name": "LC CHOIR Lucid Breath",
+"bpm": 110,
+"key": "Fm",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Skimask Fire",
+"CHOIR Lucid Breath"
+]
+},
+"leancore-i-mp3-t-674-539": {
+"name": "LC CHOIR Silver Signal",
+"bpm": 120,
+"key": "G#m",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Paradise Leanworld",
+"CHOIR Silver Signal"
+]
+},
+"leancore-i-mp3-t-682-839": {
+"name": "LC CHOIR Soft Vapor",
+"bpm": 110,
+"key": "Am",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Stranger Moon",
+"CHOIR Soft Vapor"
+]
+},
+"leancore-i-mp3-t-691-866": {
+"name": "LC CHOIR Lotus Mirror",
+"bpm": 110,
+"key": "E",
+"n": 17,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Lotus Mirror",
+"CHOIR Leaves Ginseng"
+]
+},
+"leancore-i-mp3-t-700-893": {
+"name": "LC CHOIR Kawaii Harbor",
+"bpm": 124,
+"key": "Em",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Kawaii Harbor",
+"CHOIR Strip Silver"
+]
+},
+"leancore-i-mp3-t-708-935": {
+"name": "LC CHOIR Rain Memory",
+"bpm": 118,
+"key": "B",
+"n": 20,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Rain Memory",
+"CHOIR Violence Strip"
+]
+},
+"leancore-i-mp3-t-717-371": {
+"name": "LC CHOIR Kawaii Garden",
+"bpm": 140,
+"key": "D#m",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"CHOIR Kawaii Garden",
+"CHOIR City Kyoto"
+]
+},
+"leancore-i-mp3-t-724-528": {
+"name": "LC KEYS Crystal Glow",
+"bpm": 140,
+"key": "Em",
+"n": 34,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Volt Blue",
+"KEYS Crystal Glow"
+]
+},
+"leancore-i-mp3-t-731-685": {
+"name": "LC KEYS Pastel Garden",
+"bpm": 156,
+"key": "F",
+"n": 16,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Sun Bottom",
+"KEYS Pastel Garden"
+]
+},
+"leancore-i-mp3-t-738-139": {
+"name": "LC KEYS Mist Glow",
+"bpm": 115,
+"key": "D",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Mist Glow",
+"KEYS Highway Metallic"
+]
+},
+"leancore-i-mp3-t-746-787": {
+"name": "LC KEYS Snow Vapor",
+"bpm": 124,
+"key": "D",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Snow Vapor",
+"KEYS Miami City"
+]
+},
+"leancore-i-mp3-t-754-828": {
+"name": "LC KEYS Angel Mirror",
+"bpm": 115,
+"key": "Fm",
+"n": 24,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Shiva Plastic",
+"KEYS Angel Mirror"
+]
+},
+"leancore-i-mp3-t-763-476": {
+"name": "LC KEYS Lilac Echo",
+"bpm": 150,
+"key": "F",
+"n": 12,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Lilac Echo",
+"KEYS Intuition Starz"
+]
+},
+"leancore-i-mp3-t-770-176": {
+"name": "LC KEYS Pearl Wave",
+"bpm": 124,
+"key": "A",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Sea Lost",
+"KEYS Pearl Wave"
+]
+},
+"leancore-i-mp3-t-778-218": {
+"name": "LC KEYS Ice Ribbon",
+"bpm": 124,
+"key": "C#m",
+"n": 28,
+"midi": true,
+"score": 200,
+"names": [
+"KEYS Ice Ribbon",
+"KEYS Dukes Stardust"
+]
+},
+"leancore-i-mp3-t-786-260": {
+"name": "LC FX Velvet Wing",
+"bpm": 115,
+"key": "Em",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"FX Velvet Wing",
+"FX Ghosttown Bottom"
+]
+},
+"leancore-i-mp3-t-794-908": {
+"name": "LC FX Glacier Halo",
+"bpm": 120,
+"key": "E",
+"n": 32,
+"midi": true,
+"score": 200,
+"names": [
+"FX Intuition Skin",
+"FX Glacier Halo"
+]
+},
+"leancore-i-mp3-t-803-208": {
+"name": "LC FX Rain Wing",
+"bpm": 124,
+"key": "F",
+"n": 13,
+"midi": true,
+"score": 200,
+"names": [
+"FX Rain Wing",
+"FX Sea Shiva"
+]
+}
+}
