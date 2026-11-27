@@ -137,7 +137,7 @@
   const G_PRE = { LEAD: "SYNTH", SYNTH: "SYNTH", SAW: "SYNTH", HOOVER: "SYNTH", CHIP: "SYNTH", FLUTE: "SYNTH", PLUCK: "PLUCK", ARP: "PLUCK", STAB: "PLUCK", BASS: "BASS", "808": "BASS", SUB: "BASS", PAD: "PAD", DRONE: "PAD", CHOIR: "PAD", KEY: "KEYS", KEYS: "KEYS", CHORD: "KEYS", BELL: "KEYS", CHIME: "KEYS", PIANO: "KEYS", TEXTURE: "FX", FX: "FX", SFX: "FX", RISER: "FX", IMPACT: "FX", VOX: "VOX", VOCAL: "VOX" };
   const G_DRM = { "808": "808", KICK: "KICK", SNARE: "SNARE", CLAP: "SNARE", HAT: "HATS", OPEN: "HATS", CRASH: "HATS", CYMBAL: "HATS", ROLL: "HATS", SHAKER: "HATS", RIDE: "HATS", PERC: "PERC", PERCUSSION: "PERC", RIM: "PERC", FOLEY: "PERC", TOM: "PERC", FILL: "PERC", CONGA: "PERC", BONGO: "PERC", CLAVE: "PERC", COWBELL: "PERC", TAMB: "PERC", SNAP: "PERC", CLICK: "PERC", STICK: "PERC", TEXTURE: "FX", FX: "FX", SFX: "FX", RISER: "FX", IMPACT: "FX" };
   const GNAME = { SYNTH: "SYNTH", PLUCK: "PLUCK / ARP", BASS: "BASS", PAD: "PAD", KEYS: "KEYS", FX: "TEXTURE / FX", VOX: "VOX", "808": "808", KICK: "KICK", SNARE: "SNARE / CLAP", HATS: "HATS / CYMBALS", PERC: "PERCUSSION" };
-  const G_ORD_PRE = ["SYNTH", "PLUCK", "BASS", "PAD", "KEYS", "FX", "VOX"], G_ORD_DRM = ["808", "KICK", "SNARE", "HATS", "PERC", "FX"];
+  const G_ORD_PRE = ["SYNTH", "PLUCK", "BASS", "PAD", "KEYS", "FX", "VOX"], G_ORD_DRM = ["LOOP", "808", "KICK", "SNARE", "HATS", "PERC", "FX"];
   const isDrumPack = (p) => !!p && (p.type === "drums" || /(^|-)(drums?|kit)(-|$)/.test(String(p.id || "")));
   let CUR_DRUM = false;
   function groupsOf(p) {
