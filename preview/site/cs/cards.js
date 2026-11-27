@@ -160,7 +160,7 @@ function ckMarks(){var a=[];try{a=JSON.parse(localStorage.getItem("ck-shape-mark
 function ckPicks(){var m=ckMarks(),o=m.slice();[1,2,3,4,5,6].forEach(function(n){if(o.indexOf(n)<0)o.push(n)});var l=o.map(function(n){return n-1}),ex=[];for(var xi=31;xi<SHP.length;xi++)if(l.indexOf(xi)<0)ex.push(xi);return {marks:m,list:l,all:l.concat(ex)}}
 var CK_CATORDER=["SYNTH","PLUCK","BASS","PAD","KEY","FX","VOX","KICK","SNARE","HAT","PERC","808","LEAD","CHIP","ARP","STAB","TEXTURE","BELL","SYNTH","CHORD","CHOIR","SAW","FLUTE","HOOVER","DRONE","SONG","KICK","SNARE","CLAP","HAT","OPEN","PERC","LOOP","RIM","CRASH","SHAKER","CYMBAL","FOLEY","CHIME","ROLL","TOM","RIDE","FILL","DRUM","GUITAR","BRASS","ORGAN","PIANO","STRINGS"];
 function ckDefIdx(k){var p=ckPicks().list,g=ckGKey(k),i=CK_CATORDER.indexOf(g);if(i<0){i=0;for(var q=0;q<g.length;i=(i*31+g.charCodeAt(q++))>>>0);i=CK_CATORDER.length+i}return p[i%p.length]}
-function ckShapeFor(k){var c=ckCfg(k),pk=ckPicks().all;if(c.shape!=null&&SHP[c.shape]&&pk.indexOf(c.shape)>=0)return SHP[c.shape].f;var di=ckDefIdx(k);if(di!=null&&SHP[di])return SHP[di].f;var g=ckGroup(k);if(g)return CK_SHAPE[g];var h=0,s=String(k||"").toUpperCase();for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return CK_EXTRA[h%CK_EXTRA.length]}
+function ckShapeFor(k){var c=ckCfg(k),pk=ckPicks().all;if(c.shape==="none")return function(){return ""};if(c.shape!=null&&SHP[c.shape]&&pk.indexOf(c.shape)>=0)return SHP[c.shape].f;var di=ckDefIdx(k);if(di!=null&&SHP[di])return SHP[di].f;var g=ckGroup(k);if(g)return CK_SHAPE[g];var h=0,s=String(k||"").toUpperCase();for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return CK_EXTRA[h%CK_EXTRA.length]}
 window.CK_SHP=SHP;window.CK_CATSHAPE={group:CK_GROUP,shapes:CK_SHAPE,extra:CK_EXTRA,shapeFor:ckShapeFor};
 
 /* ---- audio: remember the page's player so the cards can show time + status ---- */
@@ -275,7 +275,7 @@ function ckEditor(sec){
   var el=document.createElement("div");el.className="ck-ed";
   var thumbs=pkl.map(function(i){var sh=SHP[i];fs=99;var d=sh.f(52,34);return '<button data-sh="'+i+'" class="'+(i===cur?"on":"")+'" title="'+(i+1)+" "+sh.n+'"><svg viewBox="-12 -12 76 58"><path'+(sh.dash?' class="dash"':"")+' d="'+d+'"/></svg><i>'+String(i+1).padStart(2,"0")+'</i></button>'}).join("");
   el.innerHTML='<h5><span>'+nm.toUpperCase()+' · whole site</span><button class="x" data-x>×</button></h5>'+
-   '<div class="lb">Shape (only '+nm.toLowerCase()+', every pack)</div><div class="shg">'+thumbs+'</div><div class="row"><button data-sh="-1">Default shape</button></div>'+
+   '<div class="lb">Shape (only '+nm.toLowerCase()+', every pack)</div><div class="shg">'+thumbs+'</div><div class="row"><button data-sh="none" class="'+(c.shape==="none"?"on":"")+'">No shape</button><button data-sh="-1">Default shape</button></div>'+
    '<div class="lb">Colours</div><label class="lk"><input type="checkbox" data-l'+(c.link?' checked':'')+'> Link colours (move one, both match)</label><div class="cl"><span>Cards + preview</span><input type="color" data-c="col" value="'+(c.col||"#ecebf0")+'"><button data-r="col">Reset</button></div>'+
    '<div class="cl"><span>Category title</span><input type="color" data-c="tcol" value="'+(c.tcol||"#ecebf0")+'"><button data-r="tcol">Reset</button></div>'+
    '<div class="lb">Waveform</div><div class="row">'+CK_WNAMES.map(function(n,i){return '<button data-w="'+i+'" class="'+((+c.wave||0)===i?"on":"")+'">'+n+'</button>'}).join("")+'</div>'+ckOrderList();
@@ -286,7 +286,7 @@ function ckEditor(sec){
     if(l.checked){var ci=el.querySelector('[data-c="col"]'),ti=el.querySelector('[data-c="tcol"]'),v=(ckCfg(k).col||ckCfg(k).tcol||ci.value);ci.value=v;ti.value=v;ckSet(k,"col",v);ckSet(k,"tcol",v)}});
   el.addEventListener("click",function(e){e.stopPropagation();var t=e.target;
     if(t.closest("[data-x]")){el.remove();return}
-    var s=t.closest("[data-sh]");if(s){var v=+s.dataset.sh;ckSet(k,"shape",v<0?null:v);el.querySelectorAll(".shg button").forEach(function(b){b.classList.toggle("on",+b.dataset.sh===v)});return}
+    var s=t.closest("[data-sh]");if(s){var v=s.dataset.sh==="none"?"none":+s.dataset.sh;ckSet(k,"shape",v===-1?null:v);el.querySelectorAll(".shg button").forEach(function(b){b.classList.toggle("on",b.dataset.sh===String(v))});el.querySelectorAll(".row [data-sh]").forEach(function(b){b.classList.toggle("on",b.dataset.sh==="none"&&v==="none")});return}
     var r=t.closest("[data-r]");if(r){ckSet(k,r.dataset.r,null);ckEditor(sec);return}
     if(t.closest("[data-oreset]")){ckSet("_ORDER",ckPackId(),null);ckEditor(sec);return}
     var w=t.closest("[data-w]");if(w){var n=+w.dataset.w;ckSet(k,"wave",n||null);el.querySelectorAll("[data-w]").forEach(function(b){b.classList.toggle("on",+b.dataset.w===n)})}})}
