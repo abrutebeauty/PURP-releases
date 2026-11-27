@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Privacy · COREKULT</title>
+<meta name="description" content="Dark Serum preset packs and drum kits. Crystal Core, Dreamcore, LOOK MOM I CAN FLY, 2HOLLCORE.">
+<meta property="og:title" content="COREKULT">
+<meta property="og:description" content="Dark Serum preset packs and drum kits.">
+<meta property="og:image" content="https://corekult.com/img/og.jpg">
+<meta name="theme-color" content="#0b0a0e">
+<link rel="icon" href="/favicon.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/b-c4d1e4b9ef.css">
+
+
+<!-- DAY_MODE (Eman 21 Nov): day colours, auto-made -->
+<!-- DAY_MODE: day palette + switch, keep last -->
+<script src="/theme.js?v=1"></script><!-- DAY_MODE: day/night switch, remove this + day css lines = night only -->
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="/" aria-label="COREKULT home"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="110" height="34"></a>
+  <a class="nl" href="/#packs">Shop</a>
+  <div class="curw" id="curW"></div><div class="cartw"><button class="nl cartb" id="cartBtn" aria-label="Cart"><svg viewBox="0 0 16 16"><path d="M1 2h2.2l1.6 8.2h8.1L14.6 5H4.3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="13.3" r="1.2"/><circle cx="12" cy="13.3" r="1.2"/></svg><span id="cartN" hidden>0</span></button><div class="cdd" id="cartDd" hidden></div></div>
+</div></nav>
+<main class="wrap priv">
+<a class="nl" href="/">‹ Shop</a>
+<h1>Privacy</h1>
+<p>COREKULT is a small sound pack shop run from Sweden. We keep what we collect to a minimum, we never sell it, and we never use it for ads.</p>
+<h2>Who to contact</h2>
+<p>Email <a href="mailto:hello@corekult.com">hello@corekult.com</a> to see, fix or delete anything we have about you, or with any question.</p>
+<h2>Always on (necessary)</h2>
+<p>Your cart, picked currency, cookie choice and the email you typed are kept in your own browser so the shop works. They never leave your device unless you send them.</p>
+<h2>When you give us your email</h2>
+<p>For free samples, a deal card or an order we keep your email, which packs it got, the country it came from and the date. We use it to deliver your packs, run your loyalty meter and deal card. We only send news if you tick a separate box. Kept until you ask us to delete it.</p>
+<h2>Stats (only after Allow)</h2>
+<p>A random visitor number, return visits, pages and packs opened, sample plays, add to cart and checkout, country and phone or computer. No names, no emails, no IP addresses. Stored by us on Cloudflare in the EU and deleted after 12 months. Tracking links (corekult.com/r/...) only tell us which link you came from.</p>
+<h2>Heatmaps and recordings (only after Allow)</h2>
+<p>Microsoft Clarity records clicks, scrolls and screen recordings so we can make the shop easier to use. Everything you type is blurred. Recordings are kept 30 days and heatmaps 13 months. Microsoft is the processor, see <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">its privacy statement</a>.</p>
+<h2>Payments</h2>
+<p>Payments run through Payhip, Stripe and PayPal. They handle your card or PayPal details, we never see them.</p>
+<h2>Your rights</h2>
+<p>You can change or take back your cookie choice any time with the button below or the Cookies link at the bottom of every page. You can ask to see, fix, move or delete your data, and you can complain to the Swedish privacy authority (IMY, imy.se). Under 13? Ask a parent before giving us your email.</p>
+<p><button class="btn acid" data-cookies>Cookie settings</button></p>
+<p class="upd">Updated 18 Nov 2026</p>
+</main>
+<footer><div class="wrap">
+  <span class="logo"><img src="/img/logo-white-s.webp?v=1" alt="COREKULT" width="84" height="26"></span>
+  <span>Packs marked “inspired by” are not affiliated with or endorsed by any artist.</span>
+  <span>© <span id="yr"></span> COREKULT</span>
+</div></footer>
+<div id="scrim" hidden></div>
+<script src="/shop.js?v=114"></script>
+<script>$("#yr").textContent = new Date().getFullYear(); loadShop().then(() => paintCart()); document.addEventListener("click", (e) => shopClick(e));</script>
+</body></html>

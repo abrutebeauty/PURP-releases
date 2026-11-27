@@ -151,7 +151,7 @@ function ckLookObj(){var adm=false;try{adm=ckAdm()}catch(e){}
   try{if(typeof LOOK!=="undefined"&&LOOK)return LOOK}catch(e){}
   try{return (window.__CKD&&window.__CKD.look)||{}}catch(e){}return {}}
 /* customers: fetch the saved category settings ourselves, do not depend on the shop script handing them over */
-(function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{fetch("/api/products?ck="+Date.now(),{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}).then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;try{if(window.ADM&&l&&ckHas(l)){var AL=window.ADM.look=window.ADM.look||{};if(!ckHas(AL)){if(l.ck)AL.ck=JSON.parse(JSON.stringify(l.ck));if(l.ckShapes)AL.ckShapes=l.ckShapes.slice()}}}catch(e){}fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
+(function(){var fin=function(){CK_DONE=true;try{ckSig="";ckScan()}catch(e){}};try{(window.__ckP||fetch("/api/products?lite=1&ck="+Date.now(),{credentials:"same-origin",cache:"no-store"}).then(function(r){return r&&r.ok?r.json():null}))/* speed 27 Nov: reuse the page's own (small) product list; it has the same look settings. Was a 2nd full 1 MB download */.then(function(d){var l=d&&(d.look||(d.D&&d.D.look)||(d.data&&d.data.look));if(l)CK_SRV=l;try{if(window.ADM&&l&&ckHas(l)){var AL=window.ADM.look=window.ADM.look||{};if(!ckHas(AL)){if(l.ck)AL.ck=JSON.parse(JSON.stringify(l.ck));if(l.ckShapes)AL.ckShapes=l.ckShapes.slice()}}}catch(e){}fin()}).catch(fin);setTimeout(function(){if(!CK_DONE)fin()},2500)}catch(e){CK_DONE=true}})();
 function ckGKey(k){return String(k||"").toUpperCase().trim().replace(/([^S])S$/,"$1")}
 var CK_ALIAS={SYNTH:"LEAD"};
 function ckCfg(k){var L=ckLookObj(),g=ckGKey(k);return (L.ck&&(L.ck[g]||(CK_ALIAS[g]&&L.ck[CK_ALIAS[g]])))||{}}
@@ -169,7 +169,12 @@ var CK_AUDIO=null;try{var op0=HTMLMediaElement.prototype.play;HTMLMediaElement.p
 var ckFmt=function(s){s=Math.max(0,s|0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
 var CK_DUR={};
 function ckDur(src,cb){if(CK_DUR[src]!==undefined){cb(CK_DUR[src]);return}
-  try{var a=new Audio();a.preload="metadata";a.addEventListener("loadedmetadata",function(){CK_DUR[src]=a.duration||0;cb(CK_DUR[src])});a.addEventListener("error",function(){CK_DUR[src]=0});a.src=src}catch(e){}}
+  var sm=String(src||"").match(/#t=([\d.]+),([\d.]+)$/);if(sm){CK_DUR[src]=Math.max(0,sm[2]-sm[1]);cb(CK_DUR[src]);return}   /* speed 27 Nov: a sprite slice knows its own length; no 11-17 MB pack file opened just to read a duration */
+  ckDurQ.push([src,cb]);ckDurRun()}
+/* speed 27 Nov: card lengths are read 2 at a time after the page has loaded (was ~60 audio files opened at once while the page was still loading) */
+var ckDurQ=[],ckDurN=0,ckDurGo=document.readyState==="complete";if(!ckDurGo)addEventListener("load",function(){ckDurGo=true;ckDurRun();ckDurRun()});
+function ckDurRun(){if(!ckDurGo||ckDurN>=2||!ckDurQ.length)return;var j=ckDurQ.shift(),src=j[0],cb=j[1];if(CK_DUR[src]!==undefined){cb(CK_DUR[src]);return ckDurRun()}ckDurN++;var done=function(){ckDurN--;ckDurRun()};
+  try{var a=new Audio();a.preload="metadata";a.addEventListener("loadedmetadata",function(){CK_DUR[src]=a.duration||0;cb(CK_DUR[src]);a.removeAttribute("src");a.load();done()});a.addEventListener("error",function(){CK_DUR[src]=0;done()});a.src=src}catch(e){done()}}
 
 /* ---- build ---- */
 var CK_N=0;

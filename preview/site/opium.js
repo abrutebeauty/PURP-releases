@@ -32,7 +32,7 @@
   const H = document.documentElement;
   if (ON) {
     H.classList.add("opium", "opv-" + OPV); if (O2) H.classList.add("opium2");
-    const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/opium.css?v=7"; document.head.appendChild(l);
+    /* speed 27 Nov: written into the page while it is still loading, so the OPIUM styles apply before the first paint (a late stylesheet made the hero jump) */ if (document.readyState === "loading") document.write('<link rel="stylesheet" href="/opium.css?v=7">'); else { const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "/opium.css?v=7"; document.head.appendChild(l); }
   }
 
   /* ---------- admin switch (in the outlined top line of admin mode) ---------- */

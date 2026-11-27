@@ -1,0 +1,15 @@
+COREKULT preview speed pass (speed thread, 27 Nov). Merge onto SITE-DEPLOY/site exactly as below.
+
+1) COPY these 17 files from preview/site/ (each Mac "before" size must match first, else stop):
+_worker.js 44652, shop.js 118571, home.js 23804, opium.js 63829, speed.css 952, cs/pv.js 34768, cs/cards.js 48625, cs/top.js 17762,
+index.html 7922, pack.html 23639, bundle.html 24227, get.html 14665, checkout.html 11273, creator.html 5253, privacy.html 5080, box-page.html 23783, crystal-test.html 23742
+
+2) COPY the new folder preview/site/audio/sp/<pack>/ (12 folders, 1212 small mp3 clips, ~106 MB). Add only, nothing replaced.
+
+3) MOVE (not delete) these unused files into SITE-DEPLOY/_old/speed-27nov/ (nothing references them):
+b-62b0d87e7b.css b-887527b323.css b-8df84970a2.css cdfx.js img/cdtest/ img/2hollcore-1.svg
+img/2hollcore-1.jpg img/2hollcore-2.jpg img/bladecore-1.jpg img/bladecore-drums-1.jpg img/crystal-core-2.jpg img/crystal-core-drums-v2.jpg
+img/dreamcore-1.jpg img/dreamcore-2.jpg img/esskid-core-1.jpg img/esskid-core-drums-1.jpg img/fakeminkcore-1.jpg img/fakeminkcore-drums-1.jpg
+img/leancore-1.jpg img/leancore-drums-1.jpg img/silentcore-1.jpg img/silentcore-drums-1.jpg img/travis-core-1.jpg img/witchcore-1.jpg
+
+Flags to undo any part: SPEED_CACHE (_worker.js), SPRITE_CLIPS + AUDIO_WARM (shop.js), SPRITE_CLIPS in cs/pv.js.
