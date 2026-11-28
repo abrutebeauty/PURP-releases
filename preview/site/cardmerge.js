@@ -15,11 +15,41 @@
     d.products.forEach(function (p) {
       var m = /^card-(.+)$/.exec(p.id);
       if (m && isPreset(byId[m[1]])) return;   // folded into its pack
+      var t = /^card-(.+)-[a-z]$/.exec(p.id); if (CM_FIX && t && byId["card-" + t[1]]) return;   // CM_FIX (Eman 28 Nov): test variants (card-bladecore-ii-b/-c/-d) were showing as extra "bladecore ii" cards
       if (!isPreset(p)) { out.push(p); return; }
       var c = byId["card-" + p.id], art = c && c.cover ? c.cover : HAS.indexOf(p.id) >= 0 ? "/img/cd/card-" + p.id + ".webp" : null;
       out.push(art && !/\/card-/.test(String(p.cover || "")) ? Object.assign({}, p, { cover: art, look: "card", cdCover: p.cover }) : art ? Object.assign({}, p, { look: "card" }) : p);
     });
     return Object.assign({}, d, { products: out });
+  }
+  var CM_FIX = true;   // Eman 28 Nov: no duplicate test cards, cards smaller with room above + below, eye button saves before anything reloads. false = first version
+  if (CM_FIX) {
+    var st = document.createElement("style");   // every trading card sits inside the same box as the CDs, with space above and below it
+    st.textContent = '.card .cv .pq:has(img[src*="/card-"]){scale:.8}';
+    document.head.appendChild(st);
+    // eye button on home cards: live.js saved and then reloaded 0.7 s later, which cut the save off on a slow connection, so nothing changed.
+    // Here the save finishes first, then the card updates in place (no reload).
+    var ON = '<svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 8s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2.2" fill="currentColor"/></svg>';
+    var OFF = '<svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 8s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5z"/><path d="M2 14L14 2"/></svg>';
+    var busy = false;
+    window.addEventListener("click", function (e) {
+      var b = e.target.closest && e.target.closest("[data-cardeye]"); if (!b || !window.ADM) return;
+      e.preventDefault(); e.stopPropagation(); if (busy) return;
+      var id = b.dataset.cardeye, D = window.ADM, p = (D.products || []).find(function (x) { return x.id === id; }); if (!p) return;
+      var was = p.status || "live"; p.status = was === "hidden" ? "live" : "hidden";
+      var folded = (D.products || []).find(function (x) { return x.id === "card-" + id; }); if (folded) folded.status = p.status;   // keep the folded card product in step
+      busy = true; b.style.opacity = ".4";
+      fetch("/api/admin/packs", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(D) }).then(function (r) {
+        if (!r.ok) throw 0;
+        try { localStorage.removeItem("ck-prod"); } catch (er) {}
+        var off = p.status === "hidden", c = b.closest(".card");
+        if (c) c.classList.toggle("adm-off-card", off);
+        b.innerHTML = off ? OFF : ON; b.dataset.st = String(off); b.classList.toggle("off", off);
+        tip((p.name || id) + (off ? " hidden" : " is live"));
+      }).catch(function () { p.status = was; if (folded) folded.status = was; tip("Not saved"); })
+        .then(function () { busy = false; b.style.opacity = ""; });
+    }, true);
+    var tip = function (t) { var x = document.createElement("div"); x.className = "adm-toast"; x.textContent = t; document.body.appendChild(x); setTimeout(function () { x.remove(); }, 1400); };
   }
   var orig = window.applyShop;
   window.applyShop = function (d) { return orig(merge(d)); };
