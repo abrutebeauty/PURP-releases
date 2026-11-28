@@ -32,8 +32,8 @@
       var cd = [].find.call(document.querySelectorAll(".card .cv .pq img"), function (i) { return /\/img\/cd\/[a-z0-9-]*drums[a-z0-9-]*\.webp/.test(i.getAttribute("src") || "") && i.offsetHeight; });
       var cc = [].find.call(document.querySelectorAll(".card .cv .pq img"), function (i) { return /\/card-/.test(i.getAttribute("src") || "") && i.offsetHeight; });
       if (!cd || !cc) return;
-      var k = (cd.offsetHeight * 451 / 600) / (cc.offsetHeight * 586 / 600);
-      if (k > 0.4 && k < 2) document.documentElement.style.setProperty("--ckcs", k.toFixed(3));
+      var cur = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--ckcs")) || 0.8, k = (cd.getBoundingClientRect().height * 451 / 600) / (cc.getBoundingClientRect().height / cur * 586 / 600);   // rendered sizes (CD cases can carry their own scale)
+      if (k > 0.4 && k < 2 && Math.abs(k - cur) > 0.004) document.documentElement.style.setProperty("--ckcs", k.toFixed(3));
     };
     var fitSoon = function () { requestAnimationFrame(function () { fitCards(); setTimeout(fitCards, 400); }); };
     addEventListener("resize", fitSoon); try { new MutationObserver(fitSoon).observe(document.documentElement, { attributes: true, attributeFilter: ["class", "data-theme"] }); } catch (e) {} addEventListener("load", fitSoon); document.addEventListener("ck-cur", fitSoon);
