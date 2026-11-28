@@ -16,7 +16,7 @@
 "name": "CC LEAD Chapel Crown",
 "bpm": 126,
 "key": "Gm",
-"n": 15,
+"n": 31,
 "midi": true,
 "score": 200,
 "names": [
@@ -55,7 +55,7 @@
 "name": "CC ARP Ether Crown",
 "bpm": 86,
 "key": "Em",
-"n": 119,
+"n": 80,
 "midi": true,
 "score": 200,
 "names": [
@@ -692,7 +692,7 @@
 "name": "CC STAB Tomb Sleep",
 "bpm": 126,
 "key": "Gm",
-"n": 8,
+"n": 55,
 "midi": true,
 "score": 200,
 "names": [
@@ -705,7 +705,7 @@
 "name": "CC TEXTURE Black Vein",
 "bpm": 120,
 "key": "F#m",
-"n": 12,
+"n": 116,
 "midi": true,
 "score": 200,
 "names": [
