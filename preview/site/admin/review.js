@@ -55,6 +55,12 @@
   .rvorg .oh{display:flex;align-items:center;gap:6px;font:800 10px/1 var(--body,Inter,sans-serif);letter-spacing:.14em;color:#8b6cf6;text-transform:uppercase}
   .rvorg .oh .on_{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#a29db0;letter-spacing:.04em;text-transform:none;font-weight:600}
   .rvorg .ob{display:flex;flex-wrap:wrap;gap:3px}
+  .rvorg .ol{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;margin-top:6px}
+  .rvorg .ol a{color:#d7ff3a;text-decoration:underline;font-weight:700;word-break:break-all}
+  .rvorg .ov{font:800 9px/1 var(--body,Inter,sans-serif);letter-spacing:.12em;padding:3px 5px;font-style:normal}
+  .rvorg .ov.ok{background:#1f3a1a;color:#9dff7a}.rvorg .ov.no{background:#4a1418;color:#ff7a84}
+  .rvorg .onl{color:#a29db0}.rvorg .ow{color:#ffb35c;font-size:11px;margin-top:4px}
+  .rvorg input[data-o=su]{background:#0d0b11;border:1px solid #3a3446;color:#e9e6f2;padding:5px;font:inherit}
   .rvorg .rvb{height:26px;padding:0 8px}
   .rvorg .rvb.sel{background:#8b6cf6;color:#fff}
   .rvorg textarea,.rvorg input{width:100%;box-sizing:border-box;background:#0b0a0e;border:1px solid #3a3446;color:#e9e6f2;padding:6px 8px;font:500 12px/1.4 var(--body,Inter,sans-serif);outline:0;border-radius:0;resize:vertical}
@@ -268,8 +274,9 @@
 
   /* ---- ORIGINS (Eman 25 Nov): where the sound came from + where the MIDI came from. Base labels live in /admin/origins.json (written from the old pack threads,
      "?" = not recorded); anything Eman edits is saved in D.review[pack][sound].src / .midi and wins over the base. ---- */
-  let ORG = {}; fetch("/admin/origins.json?v=1", { cache: "no-cache" }).then((r) => r.ok ? r.json() : {}).then((j) => { ORG = j || {}; syncAll(); }).catch(() => {});
-  const SRC_CODES = [["YT", "YouTube tutorial / video"], ["FREE", "Free preset found online"], ["OWN", "Made from scratch"], ["PS", "PresetShare"], ["SPL", "Splice"], ["TECH", "Technique recipe / interview"], ["AI", "Generated sound (ElevenLabs)"], ["?", "Not recorded yet"]];
+  let ORG = {}; fetch("/admin/origins.json?v=2", { cache: "no-cache" }).then((r) => r.ok ? r.json() : {}).then((j) => { ORG = j || {}; syncAll(); }).catch(() => {});
+  const ORG_LINKS = true;   // Eman 28 Nov: every origin shows a clickable link to its source + VERIFIED / UNVERIFIED (from the build records). false = old box without links
+  const SRC_CODES = [["YT", "YouTube tutorial / video"], ["FREE", "Free preset found online"], ["OWN", "Made from scratch"], ["PS", "PresetShare"], ["SPL", "Splice"], ["LIB", "Bought / collected preset pack (Eman's library)"], ["TECH", "Technique recipe / interview"], ["AI", "Generated sound (ElevenLabs)"], ["?", "Not recorded yet"]];
   const SRC_OLD = { "FREE WWW": "FREE", "FREE P": "FREE", "S": "SPL" };
   const SCI = ["PLAYBOI", "CRYSTAL", "DREAMCORE", "TRAVIS", "OPIUM", "FULL"];
   const oBase = (b) => ORG[(ctx(b) || { k: "" }).k] || {};
@@ -291,6 +298,16 @@
     if (m.sci && m.sci.length) p.push("our " + m.sci.join(" + ") + " MIDI science");
     if (!p.length && m.own) return "Our own MIDI, written from scratch"; return p.join(" + ");
   }
+  function oLinks(b) {
+    if (!ORG_LINKS) return ""; const o = rec(b), bs = oBase(b).src || {}, L = [];
+    if (o && o.src && o.src.u) L.push(["your link", o.src.u]);
+    if (bs.u) L.push([bs.ul || "source", bs.u]); (bs.l || []).forEach((x) => L.push(x));
+    const okU = (u) => /^https:\/\//.test(u || "");
+    const badge = bs.v ? `<em class="ov ok">VERIFIED</em>` : `<em class="ov no">UNVERIFIED</em>`;
+    return `<div class="ol">${badge}${L.filter((x) => okU(x[1])).map((x) => `<a href="${esc(x[1])}" target="_blank" rel="noopener noreferrer">${esc(x[0])} \u2197</a>`).join("")}${L.length ? "" : `<span class="onl">no link on record</span>`}</div>` +
+      (bs.was ? `<div class="ow">old tag said ${esc(bs.was)}, the record says ${esc(bs.c)}</div>` : "");
+  }
+  const osHTML = (b) => { const v = oSrc(b), info = SRC_CODES.find((x) => x[0] === v.c); return `<b>${esc(v.c)}</b> \u00b7 ${esc(info ? info[1] : v.c)}${v.s ? "<br>" + esc(v.s) : ""}` + oLinks(b); };
   let org = null;
   const closeOrg = () => { if (org) { org.el.remove(); org = null; } };
   function orgRefresh(b) { const vr = b.querySelector(".rvvr"); if (vr) vr.dataset.sig = ""; sync(b); }
@@ -308,9 +325,9 @@
     if (kind === "s") {
       const v = oSrc(b), info = SRC_CODES.find((x) => x[0] === v.c);
       el.innerHTML = `<div class="oh">SOUND ORIGIN<span class="on_">${esc(nm)}</span></div>
-        <div class="os"><b>${esc(v.c)}</b> · ${esc(info ? info[1] : v.c)}${v.s ? "<br>" + esc(v.s) : ""}</div>
+        <div class="os">${osHTML(b)}</div>
         <div class="ob">${SRC_CODES.map(([k]) => `<em class="rvb${k === v.c ? " sel" : ""}" data-o="sc" data-c="${esc(k)}">${esc(k)}</em>`).join("")}</div>
-        <textarea data-o="st" placeholder="where exactly (e.g. playboi carti type bass, youtube)">${esc(v.s)}</textarea>`;
+        <textarea data-o="st" placeholder="where exactly (e.g. playboi carti type bass, youtube)">${esc(v.s)}</textarea>${ORG_LINKS ? `<input data-o="su" placeholder="paste a link to the source (https://...)" value="${esc((rec(b) || {}).src && rec(b).src.u || "")}">` : ""}`;
     } else {
       const m = oMidi(b);
       el.innerHTML = `<div class="oh">MIDI ORIGIN<span class="on_">${esc(nm)}</span></div>
@@ -334,9 +351,9 @@
   }
   function orgInput(e) {
     if (!org) return; const t = e.target, k = t.dataset && t.dataset.o; if (!k) return; const { b, kind } = org, m = orgGet(b, kind);
-    if (k === "st" || k === "mt") m.s = t.value; else if (k === "ms_") { m.song = t.value; if (m.song) { m.own = false; m.none = false; if (!m.pct) m.pct = 100; } }
+    if (k === "su") m.u = t.value.trim(); else if (k === "st" || k === "mt") m.s = t.value; else if (k === "ms_") { m.song = t.value; if (m.song) { m.own = false; m.none = false; if (!m.pct) m.pct = 100; } }
     save(); orgRefresh(b);
-    const os = org.el.querySelector(".os"); if (os) { if (kind === "s") { const v = oSrc(b), info = SRC_CODES.find((x) => x[0] === v.c); os.innerHTML = `<b>${esc(v.c)}</b> · ${esc(info ? info[1] : v.c)}${v.s ? "<br>" + esc(v.s) : ""}`; } else os.innerHTML = esc(midiText(m) || "Not recorded yet (?)") + (m.s ? "<br>" + esc(m.s) : ""); }
+    const os = org.el.querySelector(".os"); if (os) { if (kind === "s") os.innerHTML = osHTML(b); else os.innerHTML = esc(midiText(m) || "Not recorded yet (?)") + (m.s ? "<br>" + esc(m.s) : ""); }
   }
   window.addEventListener("pointerdown", (e) => { if (org && !e.target.closest(".rvorg,.rvos,.rvom")) closeOrg(); }, true);
 
