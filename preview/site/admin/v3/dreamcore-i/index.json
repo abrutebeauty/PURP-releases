@@ -405,7 +405,8 @@
 "names": [
 "FX Nothings Boyhood",
 "FX Lucid Signal"
-]
+],
+"trim": 0
 },
 "dc1-fx-saltwater-sunroom-mp3": {
 "name": "DC FX Saltwater Sunroom",
@@ -429,7 +430,8 @@
 "names": [
 "FX Passengers Nostalgia",
 "FX Underwater Afternoon"
-]
+],
+"trim": 0
 },
 "dc1-keys-backyard-attic-mp3": {
 "name": "DC KEYS Backyard Attic",

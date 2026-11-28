@@ -289,12 +289,13 @@
 "name": "Lo-Fi Distorted Sine",
 "bpm": 105,
 "key": "C#m",
-"n": 22,
+"n": 11,
 "midi": true,
 "score": 200,
 "names": [
 "PLUCK Lo-Fi Distorted Sine"
-]
+],
+"trim": 15.0
 },
 "pluck-trip-synth-mp3": {
 "name": "Trip Synth Pluck",
@@ -333,12 +334,13 @@
 "name": "Cold Piano Keys",
 "bpm": 140,
 "key": "F#m",
-"n": 120,
+"n": 60,
 "midi": true,
 "score": 200,
 "names": [
 "KEYS Cold Piano"
-]
+],
+"trim": 0.0
 },
 "keys-drain-layer-mp3": {
 "name": "Drain Layer",
@@ -366,12 +368,13 @@
 "name": "Sine Keys",
 "bpm": 130,
 "key": "Am",
-"n": 35,
+"n": 18,
 "midi": true,
 "score": 200,
 "names": [
 "KEYS Sine"
-]
+],
+"trim": 16.0
 },
 "keys-dune-pluck-az-mp3": {
 "name": "Dune Pluck AZ",
