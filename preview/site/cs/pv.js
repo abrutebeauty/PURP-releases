@@ -5,7 +5,7 @@
   var PUR="#E4FF3A",PURL="#fbffe6";
   var CARD=!window.CS_NOCARDS&&!/[?&]cards=0\b/.test(location.search);
   var fmtT=function(s){s=Math.max(0,s|0);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
-  var ctx=null,tracks=[],sec=null,btnEl=null,state={playing:false,solo:-1,t0:0},raf=0,ready=false,srcs=[];
+  var PP=null,ctx=null,tracks=[],sec=null,btnEl=null,state={playing:false,solo:-1,t0:0},raf=0,ready=false,srcs=[];
   function pid(){return window.CS_PACK||decodeURIComponent(location.pathname.split("/")[2]||new URLSearchParams(location.search).get("id")||"")}
   function kindOf(s){return String(s.name).split(/\s+/)[0].toUpperCase()}
   function nameOf(s){var w=String(s.name).split(/\s+/);return w.length>1?w.slice(1).join(" "):s.name}
@@ -188,7 +188,7 @@
       t.row.classList.toggle("cs-dim",state.playing&&state.solo>=0&&!solo);
     });
     if(btnEl)btnEl.firstChild.nodeValue=(state.playing?"❚❚ ":"▶ ")+"Preview";
-    if(CARD){sec.classList.toggle("cs-pcon",state.playing);var st=sec.querySelector(".pc-st");if(st)st.textContent="STATUS: > "+(state.playing?(state.solo>=0?"PLAYING 1 OF 3":"PLAYING ALL 3"):"IDLE")}
+    if(CARD){sec.classList.toggle("cs-pcon",state.playing);var st=sec.querySelector(".pc-st");if(st)st.textContent="STATUS: > "+(state.playing?(state.solo>=0?"PLAYING 1 OF "+tracks.length:"PLAYING ALL "+tracks.length):"IDLE")}
   }
   function panelClick(){
     if(state.playing&&state.solo<0)pause();
@@ -249,7 +249,7 @@ function drawText(str,cap,o){
     var rows=tracks.map(function(t,i){return '<div class="cs-pvr cs-p'+i+'" data-i="'+i+'"><span class="pc-n">0'+(i+1)+'</span><button class="cs-pvtag" type="button" aria-label="Play only '+esc(t.name)+'"><b class="pc-k">'+esc(t.kind.toLowerCase())+'</b><span class="pc-nm">'+esc(t.name.toLowerCase())+'</span></button><div class="cs-pvw" role="button" aria-label="Play all three together"><canvas></canvas><i class="cs-pvl"></i></div><span class="pc-tm">0:00 / 0:00</span></div>'}).join("");
     return '<div class="cs-pvstack">'+
       '<div class="pc-top"><button class="pc-play" type="button" aria-label="Play all three together"><svg class="pl" viewBox="0 0 14 14"><path d="M2 0v14l11-7z"/></svg><svg class="pa" viewBox="0 0 14 14"><rect x="1" y="0" width="4" height="14"/><rect x="9" y="0" width="4" height="14"/></svg></button>'+
-      '<div class="pc-hd"><div class="pc-title">preview pack</div><div class="pc-sub">&gt; '+tracks.map(function(t){return esc(t.kind)}).join(" + ")+(bpm?" &nbsp;/&nbsp; "+bpm+" BPM"+(ky?" / "+esc(ky):""):"")+'</div></div>'+
+      '<div class="pc-hd"><div class="pc-title">preview pack</div><div class="pc-sub">&gt; '+(PP?esc(PP.sub)+" &nbsp;/&nbsp; "+PP.bpm+" BPM / "+esc(PP.key):tracks.map(function(t){return esc(t.kind)}).join(" + ")+(bpm?" &nbsp;/&nbsp; "+bpm+" BPM"+(ky?" / "+esc(ky):""):""))+'</div></div>'+
       '<svg class="pc-ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round" stroke-linecap="round"><path d="M16 2C17 11 21 15 30 16C21 17 17 21 16 30C15 21 11 17 2 16C11 15 15 11 16 2Z"/><path d="M26 4C26.3 6.2 27.3 7.2 29.5 7.5C27.3 7.8 26.3 8.8 26 11C25.7 8.8 24.7 7.8 22.5 7.5C24.7 7.2 25.7 6.2 26 4Z"/></svg></div>'+'<div class="pc"><svg class="pc-fr" aria-hidden="true"><path/></svg>'+
       '<div class="pc-rows">'+rows+'</div></div></div>'}
   function esc(x){return String(x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -288,7 +288,16 @@ function drawText(str,cap,o){
   /* another sound starts elsewhere on the page: ours stops */
   document.addEventListener("play",function(){if(state.playing)pause()},true);
   document.addEventListener("click",function(e){if(state.playing&&e.target.closest&&e.target.closest(".pv button"))pause()},true);
+  function ppInit(){
+    return fetch("/audio/pp/index.json").then(function(r){return r.ok?r.json():null}).then(function(m){
+      var e=m&&m[pid()];if(!e||!e.rows||!e.rows.length)return false;PP=e;
+      tracks=e.rows.map(function(r){return{src:r.f,sp:null,name:r.n,kind:r.k,meta:e.bpm+" \u00b7 "+e.key,pk:null,dur:0}});
+      ready=true;mount();new MutationObserver(mount).observe(document.getElementById("pk"),{childList:true});return true}).catch(function(){return false});
+  }
   function init(){
+    if(CARD)ppInit().then(function(ok){if(!ok)init2()});else init2();
+  }
+  function init2(){
     /* speed 27 Nov: the small product list the page already loads (window.__ckP) + this pack's waveforms only (/api/wd), instead of the full 1 MB list with every pack's waveforms */
     var lp=window.__ckP||fetch("/api/products?lite=1").then(function(r){return r.json()});
     lp.then(function(d){var P=(d&&d.products)||d||[],p=P.filter(function(x){return x.id===pid()})[0];if(!p||!p.sounds||!p.sounds.length||typeof p.sounds==="number")return d;
