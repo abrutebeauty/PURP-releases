@@ -38,9 +38,11 @@
   html.rvw .pv button[data-pid] .rvr{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:0;outline:0;min-width:0;max-width:100%;flex:none}
   html.rvw .pv button[data-pid] .rvr em{font-style:normal}
   .rvb[hidden]{display:none!important}
-  html.rvw:not(.adm-pv) .pv button[data-v3off]{outline:3px solid #ff2a2a!important;outline-offset:-3px}
+  html.rvw .pv button[data-v3off]{position:relative}
+  html.rvw .pv button[data-pid] .rvofff{position:absolute!important;inset:0;border:5px solid #ff2a2a;pointer-events:none;z-index:6;display:block}
   html.rvw.adm-pv .rvoffl{display:none!important}
-  html.rvw .pv button[data-pid] .rvoffl{order:0;align-self:flex-start;background:#ff2a2a;color:#fff;font:700 13px/1 ui-monospace,monospace;letter-spacing:.08em;padding:5px 8px;text-transform:uppercase}
+  html.rvw .pv button[data-pid] .rvoffl{position:absolute!important;top:0;left:0;z-index:7;display:block;background:#ff2a2a;color:#fff;font:800 15px/1 ui-monospace,monospace;letter-spacing:.06em;padding:7px 10px;text-transform:uppercase;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+  html.rvw.adm-pv .rvofff{display:none!important}
   .rvb{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:28px;min-width:26px;padding:0 8px;box-sizing:border-box;background:#1f1d27;color:#a29db0;font:800 10px/1 var(--body,Inter,sans-serif);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap;flex:none}
   .rvb:active{filter:brightness(1.5)}
   .rvb svg{width:12px;height:12px;fill:currentColor;flex:none}
@@ -386,9 +388,10 @@
     if (!OFF_MARKS || !offList) return; const c = ctx(b); if (!c) return;
     const why = (offList[c.p.id] || {})[String(kOf(c.s.file)).split("/").pop().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")];
     let lb = b.querySelector(".rvoffl");
-    if (!why) { if (b.hasAttribute("data-v3off")) b.removeAttribute("data-v3off"); if (lb) lb.remove(); return; }
+    if (!why) { if (b.hasAttribute("data-v3off")) b.removeAttribute("data-v3off"); if (lb) lb.remove(); const fr = b.querySelector(".rvofff"); if (fr) fr.remove(); return; }
     if (b.getAttribute("data-v3off") !== why) b.setAttribute("data-v3off", why);
-    if (!lb) { lb = document.createElement("span"); lb.className = "rvoffl"; b.insertBefore(lb, b.firstChild); }
+    if (!b.querySelector(".rvofff")) { const fr = document.createElement("span"); fr.className = "rvofff"; b.appendChild(fr); }
+    if (!lb) { lb = document.createElement("span"); lb.className = "rvoffl"; b.appendChild(lb); }
     const t = "OFF \u00b7 " + why; if (lb.textContent !== t) lb.textContent = t;
   }
   const syncAll = () => document.querySelectorAll(".pv button[data-pid]").forEach((b) => { inject(b); sync(b); paintOff(b); });
@@ -630,12 +633,14 @@
       const fileUrl = await upload(wavOf(chs, dec.sampleRate), base + "-v" + n + ".wav");
       const presetUrl = state.preset ? await upload(await gzBlob(state.preset), base + "-v" + n + "-v3.json.gz") : null;
       const o = rec(b, true), id = "v" + n + "-" + uid();
-      o.vers.push({ id, name: "V" + n, file: fileUrl, at: Date.now(), v3: { preset: presetUrl, notes: state.notes, bpm: state.bpm, key: (L.v3.init && L.v3.init.key) || "", from: selV(b) } });
+      o.vers.push({ id, name: "V" + n, file: fileUrl, at: Date.now(), v3: { preset: presetUrl, notes: state.notes, bpm: state.bpm, key: (L.v3.init && L.v3.init.key) || "", from: selV(b), drum: !!state.drum } });
       save(); L.v3.dirty = false; L.v3.saving = false;
-      applyVer(b, id); sync(b); toast("Saved as V" + n + " · TOY MACHINE V3");
+      applyVer(b, id); sync(b); toast("Saved as V" + n + (state.drum ? " · KILLDRUM" : " · TOY MACHINE V3"));
       lbOpen(b);   // reopen on the new version: its waveform, ready to play and comment
     } catch (e) { L.v3.saving = false; if (sv) sv.classList.remove("busy"); say("NOT SAVED · " + (e && e.message || e), true); }
   }
+  // drum packs (Eman 28 Nov): the editor opens KILLDRUM with the sound's own sample sliced onto the pads, not MIDI + a synth. Turn off: DRUM_KD = false
+  const DRUM_KD = true, isDrum = (c) => DRUM_KD && !!(c && c.p && /drums/.test(c.p.id));
   async function lbOpen(b) {
     lbClose(true); try { if (typeof audio !== "undefined") audio.pause(); } catch (e) {}
     const c = ctx(b); if (!c) return;
@@ -643,7 +648,7 @@
     const chip = (b.querySelector(".ck-chip") || {}).textContent || "";
     const el = document.createElement("div"); el.className = "rvlb";
     el.innerHTML = `<div class="lbx"><div class="lbh"><b class="lbc">${esc(chip)}</b><span class="lbn">${esc(c.s.name || "")}</span><span class="lbv">${esc(v.name)}</span><span class="rvsp"></span><em class="rvb rvsq" data-lb="x">&times;</em></div>
-      <div class="lbtabs"><em class="rvb lbtab on" data-lb="tab" data-tab="wave">WAVEFORM + COMMENTS</em><em class="rvb lbtab" data-lb="tab" data-tab="midi">${V3_EDIT ? "MIDI + TOY MACHINE V3" : "MIDI · TOY MACHINE V1"}</em></div>
+      <div class="lbtabs"><em class="rvb lbtab on" data-lb="tab" data-tab="wave">WAVEFORM + COMMENTS</em><em class="rvb lbtab" data-lb="tab" data-tab="midi">${isDrum(c) ? "KILLDRUM" : V3_EDIT ? "MIDI + TOY MACHINE V3" : "MIDI · TOY MACHINE V1"}</em></div>
       <div class="lbpane" data-pane="wave"><div class="lbw"><canvas></canvas><div class="lbov"></div><i class="lbph"></i></div>
       <div class="lbt"><em class="rvb lbpl" data-lb="play">PLAY</em><span class="lbtm">0:00.0 / 0:00.0</span><span class="rvsp"></span><em class="rvb lbad" data-lb="add">+ COMMENT AT PLAYHEAD</em></div>
       <div class="lbl"></div></div>
@@ -695,16 +700,16 @@
       const legacy = (o && (Array.isArray(o.midi) ? o.midi : o.notes)) || [];
       if (!V3_EDIT) host.insertAdjacentHTML("beforeend", '<p class="lbmn">Plays through TOY MACHINE V1 on a neutral Init patch (pick any sound in the VST tab). Your notes are saved with this sound.</p>');
       else host.insertAdjacentHTML("beforeend", '<div class="lbsv"><em class="rvb lbsave busy" data-lb="v3save">SAVE AS NEW VERSION</em><span class="lbst">LOADING…</span><span class="lbpn"></span></div>');
-      const src = V3_EDIT ? v3Source(b, v) : Promise.resolve(null);
+      const src = isDrum(c) ? Promise.resolve({ bpm: m[1] || 120, key: "", notes: [], drum: { url, a: sp.a || 0, b: sp.b == null ? null : sp.b, name: c.s.name || "", loop: /^loop/i.test(c.s.name || "") || !!m[1] } }) : V3_EDIT ? v3Source(b, v) : Promise.resolve(null);
       L.v3 = { f, init: null, dirty: false };
       L.mw = (e) => { const d = e.data; if (!d || e.source !== f.contentWindow) return;
         if (d.kt === "hello" && !L.v3.sent) { L.v3.sent = true; src.then((S) => {
-          const init = S ? { kt: "init", bpm: S.bpm || m[1] || 120, key: S.key || m[2] || "", notes: S.notes || [], preset: S.preset || null }
+          const init = S ? { kt: "init", bpm: S.bpm || m[1] || 120, key: S.key || m[2] || "", notes: S.notes || [], preset: S.preset || null, drum: S.drum || null }
                          : { kt: "init", bpm: m[1] || 120, key: m[2] || "", notes: legacy };
           L.v3.init = init; L.v3.src = S; f.contentWindow.postMessage(init, "*");
-          const pn = host.querySelector(".lbpn"); if (pn) pn.textContent = S && S.preset ? "THE PRESET · " + (S.preset.name || "") + (S.from ? " · " + S.from : "") : "NO V3 PRESET YET · INIT";
+          const pn = host.querySelector(".lbpn"); if (pn) pn.textContent = S && S.drum ? "KILLDRUM · THIS SAMPLE ON THE PADS" + (v && v.name !== "V1" ? " · " + v.name : "") : S && S.preset ? "THE PRESET · " + (S.preset.name || "") + (S.from ? " · " + S.from : "") : "NO V3 PRESET YET · INIT";
         }); }
-        if (d.kt === "ready") { const sv = host.querySelector(".lbsave"), st = host.querySelector(".lbst"); if (sv) sv.classList.remove("busy"); if (st) st.textContent = "READY"; L.v3.base = JSON.stringify(d.notes || (L.v3.init && L.v3.init.notes) || []); }
+        if (d.kt === "ready") { const sv = host.querySelector(".lbsave"), st = host.querySelector(".lbst"); if (sv) sv.classList.remove("busy"); if (st) st.textContent = "READY"; if (d.notes && L.v3.init && L.v3.init.drum) L.v3.init.notes = d.notes; L.v3.base = JSON.stringify(d.notes || (L.v3.init && L.v3.init.notes) || []); }
         if (d.kt === "error") { const st = host.querySelector(".lbst"); if (st) { st.textContent = "DID NOT LOAD · " + (d.msg || ""); st.classList.add("dirty"); } }
         if (d.kt === "notes") { if (!V3_EDIT) { const rr = rec(b, true); rr.notes = d.notes; save(); return; }
           L.v3.dirty = JSON.stringify(d.notes) !== JSON.stringify((L.v3.init && L.v3.init.notes) || []) || L.v3.dirty; const st = host.querySelector(".lbst"); if (st && L.v3.dirty) st.textContent = "EDITED · NOT SAVED"; } };

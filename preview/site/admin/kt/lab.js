@@ -26,6 +26,7 @@
       log('if (bpm >= 40');
       if (bpm >= 40 && bpm <= 250) await run("setBpm", { bpm });
       if (key) await run("setKey", { tonic: key.tonic, minor: key.minor });
+      if (init.drum && !window.KT_LAB_DRUM_OFF) return await startDrum(init);   // drum packs (Eman 28 Nov): the sample itself, sliced onto KILLDRUM pads
       log('const pl = await loadPlugins()');
       // V3 (27 Nov): a sound that has a TOY MACHINE V3 preset opens on a V3 lane with that preset; otherwise the old V1 lane
       const v3 = !!(init.preset && init.preset.engine === "tm3" && window.TM3Web);
@@ -62,6 +63,39 @@
       window.__ktNotes = () => { const c = clip(); return c && c.notes ? JSON.parse(JSON.stringify(c.notes)) : null; };
       say({ kt: "ready" });
     } catch (e) { say({ kt: "error", msg: String(e && e.message || e) }); console.warn("[lab]", e); }
+  }
+  /* KILLDRUM mode: the drum sound (a loop or a one-shot, cut from its sprite) goes on an audio lane, is sliced onto
+     KILLDRUM pads (one hit per pad, playing in order = the exact sample), and the audio lane is removed again.
+     Turn off: window.KT_LAB_DRUM_OFF = true (falls back to the synth lane). */
+  async function startDrum(init) {
+    const d = init.drum, ac = new (window.AudioContext || window.webkitAudioContext)();
+    const full = await ac.decodeAudioData(await (await fetch(d.url)).arrayBuffer());
+    const sr = full.sampleRate, a0 = Math.max(0, Math.floor((d.a || 0) * sr)), a1 = d.b != null ? Math.min(full.length, Math.floor(d.b * sr)) : full.length, n = Math.max(1, a1 - a0);
+    const chs = []; for (let c = 0; c < full.numberOfChannels; c++) chs.push(full.getChannelData(c).subarray(a0, a0 + n));
+    const view = new DataView(new ArrayBuffer(44 + n * 4)), str = (o, t) => { for (let i = 0; i < t.length; i++) view.setUint8(o + i, t.charCodeAt(i)); };
+    str(0, "RIFF"); view.setUint32(4, 36 + n * 4, true); str(8, "WAVEfmt "); view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 2, true);
+    view.setUint32(24, sr, true); view.setUint32(28, sr * 4, true); view.setUint16(32, 4, true); view.setUint16(34, 16, true); str(36, "data"); view.setUint32(40, n * 4, true);
+    const L = chs[0], R = chs[1] || chs[0]; for (let i = 0, o = 44; i < n; i++, o += 4) { view.setInt16(o, Math.max(-1, Math.min(1, L[i])) * 32767, true); view.setInt16(o + 2, Math.max(-1, Math.min(1, R[i])) * 32767, true); }
+    try { ac.close(); } catch (e) { /* fine */ }
+    const url = URL.createObjectURL(new Blob([view], { type: "audio/wav" }));
+    const s = await run("addSample", { url, name: d.name || "Drum", start: 0, oneShot: !d.loop, laneName: "Drum sample" });
+    if (!s || !s.clipId) throw new Error((s && s.error) || "the sample did not load");
+    const cv = await run("convertToMidi", { clipId: s.clipId, mode: "slice" });
+    if (!cv || !cv.trackId) throw new Error((cv && cv.error) || "slicing failed");
+    try { await run("deleteTrack", { trackId: s.trackId }); } catch (e) { /* the audio lane stays, muted */ try { await run("toggleMute", { trackId: s.trackId }); } catch (e2) { /* fine */ } }
+    const f = await booth("getState", {}); if (f && f.tracks) ui.state = f;
+    const lane = () => ui.state.tracks.find((t) => t.id === cv.trackId), clip = () => { const t = lane(); return t && t.clips[0]; };
+    try { await openLaneSynth(cv.trackId); } catch (e) { log("no KILLDRUM window", e); }
+    let last = JSON.stringify((clip() && clip().notes) || []);
+    setInterval(async () => { try { const g = await booth("getState", {}); if (g && g.tracks) ui.state = g; const c = clip(); const nn = JSON.stringify((c && c.notes) || []); if (nn !== last) { last = nn; say({ kt: "notes", notes: JSON.parse(nn) }); } } catch (e) { /* fine */ } }, 1000);
+    window.__ktState = async () => { const c = clip(); return { notes: c && c.notes ? JSON.parse(JSON.stringify(c.notes)) : [], preset: null, bpm: ui.state.bpm, v3: false, drum: true }; };
+    window.__ktRender = async (tail = 2) => { const c = clip(); if (!c) throw new Error("no clip");
+      const spb = 60 / ui.state.bpm, beats = Math.round(c.length / spb), extra = Math.ceil(tail / spb);
+      await run("setClipLength", { clipId: c.id, beats: beats + extra });
+      try { const r = await run("aceRender", { clipId: c.id }); if (!r || !r.wav) throw new Error((r && r.error) || "render failed"); return r; }
+      finally { await run("setClipLength", { clipId: c.id, beats }); } };
+    window.__ktNotes = () => { const c = clip(); return c && c.notes ? JSON.parse(JSON.stringify(c.notes)) : null; };
+    say({ kt: "ready", notes: (clip() && clip().notes) || [] });
   }
   async function pickPreset(entry) {
     const r = await run("toyMachineLoadPreset", { id: entry.id, file: entry.file });
