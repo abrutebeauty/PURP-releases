@@ -1,0 +1,110 @@
+{
+"2hollcore-i": {
+"hc1-808-chrome-halo-mp3": "V3 sound differs from demo",
+"hc1-808-glass-ritual-mp3": "V3 sound differs from demo",
+"hc1-808-infinite-ribbon-mp3": "MIDI not same as demo",
+"hc1-bell-cherry-static-mp3": "V3 sound differs from demo",
+"hc1-bell-glass-sky-mp3": "V3 sound differs from demo",
+"hc1-bell-gloss-pixel-mp3": "MIDI not same as demo",
+"hc1-bell-prism-bruise-mp3": "V3 sound differs from demo",
+"hc1-chord-fever-drip-mp3": "V3 sound differs from demo",
+"hc1-chord-lace-rewind-mp3": "V3 sound differs from demo",
+"hc1-lead-candy-mirror-mp3": "MIDI not same as demo",
+"hc1-lead-cherry-stitch-mp3": "MIDI not same as demo",
+"hc1-lead-ivory-star-mp3": "V3 sound differs from demo",
+"hc1-pluck-faded-drip-mp3": "V3 sound differs from demo",
+"hc1-saw-heartbreak-blade-mp3": "V3 sound differs from demo",
+"hc1-vox-mercury-rocket-mp3": "MIDI not same as demo",
+"hc1-vox-midnight-ribbon-mp3": "MIDI not same as demo",
+"hc1-vox-satellite-heart-mp3": "MIDI not same as demo",
+"hc1-vox-silver-lover-mp3": "V3 sound differs from demo"
+},
+"2hollcore-ii": {
+"2hollcore-ii-mp3-t-416-918": "V3 sound differs from demo",
+"2hollcore-ii-mp3-t-623-767": "V3 sound differs from demo",
+"2hollcore-ii-mp3-t-657-242": "MIDI not same as demo",
+"2hollcore-ii-mp3-t-663-618": "MIDI not same as demo"
+},
+"crystal-core-i": {
+"cc1-arp-ash-fawn-mp3": "MIDI not same as demo",
+"cc1-arp-ether-crown-mp3": "V3 sound differs from demo",
+"cc1-lead-chapel-crown-mp3": "MIDI not same as demo",
+"cc1-lead-sugar-fracture-mp3": "V3 sound differs from demo",
+"cc1-pluck-neon-swarm-mp3": "MIDI not same as demo",
+"cc1-stab-night-fever-mp3": "MIDI not same as demo",
+"cc1-stab-tomb-sleep-mp3": "MIDI not same as demo",
+"cc1-texture-black-vein-mp3": "MIDI not same as demo",
+"cc1-texture-bleach-dust-mp3": "MIDI not same as demo"
+},
+"crystal-core-ii": {
+"cc2-arp-bone-bloom-mp3": "MIDI not same as demo",
+"cc2-arp-chapel-hymn-mp3": "MIDI not same as demo",
+"cc2-arp-prism-bloom-mp3": "MIDI not same as demo",
+"cc2-lead-bone-heart-mp3": "MIDI not same as demo",
+"cc2-lead-chapel-pulse-mp3": "MIDI not same as demo",
+"cc2-lead-cold-fever-mp3": "MIDI not same as demo",
+"cc2-lead-doll-grain-mp3": "MIDI not same as demo",
+"cc2-lead-glass-fracture-mp3": "V3 sound differs from demo",
+"cc2-lead-hollow-kiss-mp3": "MIDI not same as demo",
+"cc2-lead-smoke-hymn-mp3": "V3 sound differs from demo",
+"cc2-lead-velvet-fracture-mp3": "MIDI not same as demo",
+"cc2-pad-cinder-glow-mp3": "V3 sound differs from demo",
+"cc2-pad-wolf-machine-mp3": "V3 sound differs from demo"
+},
+"dreamcore-i": {
+"dc1-arp-morning-ribbon-mp3": "MIDI not same as demo",
+"dc1-arp-plastic-night-light-mp3": "V3 sound differs from demo",
+"dc1-fx-feather-mall-mp3": "MIDI not same as demo",
+"dc1-fx-golden-swing-mp3": "MIDI not same as demo",
+"dc1-fx-underwater-afternoon-mp3": "MIDI not same as demo",
+"dc1-keys-cassette-arcade-mp3": "V3 sound differs from demo",
+"dc1-keys-plastic-shoreline-mp3": "V3 sound differs from demo",
+"dc1-lead-satellite-comet-mp3": "V3 sound differs from demo",
+"dc1-pad-ocean-aquarium-mp3": "V3 sound differs from demo",
+"dc1-pad-rain-ribbon-mp3": "V3 sound differs from demo",
+"dc1-texture-cloud-comet-mp3": "V3 sound differs from demo",
+"dc1-texture-glass-orchard-mp3": "V3 sound differs from demo"
+},
+"esskid-core-i": {
+"es-song-es001-mp3": "no preset yet",
+"es-song-es002-mp3": "no preset yet",
+"es-song-es003-mp3": "no preset yet",
+"es-song-es004-mp3": "no preset yet",
+"es-song-es005-mp3": "no preset yet",
+"es-song-es006-mp3": "no preset yet",
+"es-song-es007-mp3": "no preset yet",
+"es-song-es008-mp3": "no preset yet",
+"es-song-es009-mp3": "no preset yet",
+"es-song-es010-mp3": "no preset yet",
+"es-song-es011-mp3": "no preset yet",
+"es-song-es012-mp3": "no preset yet",
+"es-song-es013-mp3": "no preset yet",
+"es-song-es014-mp3": "no preset yet",
+"es-song-es015-mp3": "no preset yet",
+"es-song-es016-mp3": "no preset yet",
+"es-song-es017-mp3": "no preset yet",
+"es-song-es018-mp3": "no preset yet",
+"es-song-es019-mp3": "no preset yet",
+"es-song-es020-mp3": "no preset yet",
+"es-song-es021-mp3": "no preset yet",
+"es-song-es022-mp3": "no preset yet",
+"es-song-es023-mp3": "no preset yet",
+"es-song-es024-mp3": "no preset yet",
+"esskid-core-i-mp3-t-703-083": "MIDI not same as demo"
+},
+"fakeminkcore-i": {
+"fakeminkcore-i-mp3-t-556-611": "MIDI not same as demo"
+},
+"leancore-ii": {
+"bell-crystal-crash-mp3": "V3 sound differs from demo"
+},
+"silentcore-i": {
+"silentcore-i-mp3-t-918-037": "MIDI not same as demo"
+},
+"travis-core-i": {
+"tc1-fx-velvet-mass-mp3": "MIDI not same as demo"
+},
+"witchcore-i": {
+"witchcore-i-mp3-t-232-482": "V3 sound differs from demo"
+}
+}
