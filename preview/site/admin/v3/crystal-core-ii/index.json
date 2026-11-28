@@ -335,7 +335,8 @@
 "LEAD Chapel Pulse",
 "LEAD Kerosene Reckless"
 ],
-"src": "LEAD_Chapel_Pulse.mid"
+"src": "LEAD_Chapel_Pulse.mid",
+"trim": 8.0
 },
 "cc2-lead-cold-fever-mp3": {
 "name": "CC2 LEAD Cold Fever",
@@ -348,7 +349,8 @@
 "LEAD Cold Fever",
 "LEAD Kerosene Charade"
 ],
-"src": "LEAD_Cold_Fever.mid"
+"src": "LEAD_Cold_Fever.mid",
+"trim": 8.0
 },
 "cc2-lead-crush-choir-mp3": {
 "name": "CC2 LEAD Crush Choir",
