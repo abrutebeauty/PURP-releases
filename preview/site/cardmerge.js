@@ -25,8 +25,18 @@
   var CM_FIX = true;   // Eman 28 Nov: no duplicate test cards, cards smaller with room above + below, eye button saves before anything reloads. false = first version
   if (CM_FIX) {
     var st = document.createElement("style");   // every trading card sits inside the same box as the CDs, with space above and below it
-    st.textContent = '.card .cv .pq:has(img[src*="/card-"]){scale:.8}';
+    st.textContent = '.card .cv .pq:has(img[src*="/card-"]){scale:var(--ckcs,.8)}html.opium2 #worlds .card .cv:hover::before{opacity:.5}';   // GLOW_HALF (Eman 28 Nov 02:35): purple glow behind each product at 50%
     document.head.appendChild(st);
+    // CARD_H (Eman 28 Nov 02:34): a card is exactly as tall as the CD cases in the grid. Case art fills 451/600 of its image height, card art 586/600.
+    var fitCards = function () {
+      var cd = [].find.call(document.querySelectorAll(".card .cv .pq img"), function (i) { return /\/img\/cd\/[a-z0-9-]*drums[a-z0-9-]*\.webp/.test(i.getAttribute("src") || "") && i.offsetHeight; });
+      var cc = [].find.call(document.querySelectorAll(".card .cv .pq img"), function (i) { return /\/card-/.test(i.getAttribute("src") || "") && i.offsetHeight; });
+      if (!cd || !cc) return;
+      var k = (cd.offsetHeight * 451 / 600) / (cc.offsetHeight * 586 / 600);
+      if (k > 0.4 && k < 2) document.documentElement.style.setProperty("--ckcs", k.toFixed(3));
+    };
+    var fitSoon = function () { requestAnimationFrame(function () { fitCards(); setTimeout(fitCards, 400); }); };
+    addEventListener("resize", fitSoon); try { new MutationObserver(fitSoon).observe(document.documentElement, { attributes: true, attributeFilter: ["class", "data-theme"] }); } catch (e) {} addEventListener("load", fitSoon); document.addEventListener("ck-cur", fitSoon);
     // eye button on home cards: live.js saved and then reloaded 0.7 s later, which cut the save off on a slow connection, so nothing changed.
     // Here the save finishes first, then the card updates in place (no reload).
     var ON = '<svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 8s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2.2" fill="currentColor"/></svg>';
@@ -52,7 +62,7 @@
     var tip = function (t) { var x = document.createElement("div"); x.className = "adm-toast"; x.textContent = t; document.body.appendChild(x); setTimeout(function () { x.remove(); }, 1400); };
   }
   var orig = window.applyShop;
-  window.applyShop = function (d) { return orig(merge(d)); };
+  window.applyShop = function (d) { var r = orig(merge(d)); if (CM_FIX) setTimeout(fitSoon, 50); return r; };
   window.ckCardMerge = merge;
   if (window.__CKD) { try { window.applyShop(window.__CKD); document.dispatchEvent(new Event("ck-cur")); } catch (e) {} }   // shop.js already drew once
 })();
