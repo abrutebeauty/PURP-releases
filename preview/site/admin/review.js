@@ -38,6 +38,9 @@
   html.rvw .pv button[data-pid] .rvr{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:0;outline:0;min-width:0;max-width:100%;flex:none}
   html.rvw .pv button[data-pid] .rvr em{font-style:normal}
   .rvb[hidden]{display:none!important}
+  html.rvw:not(.adm-pv) .pv button[data-v3off]{outline:3px solid #ff2a2a!important;outline-offset:-3px}
+  html.rvw.adm-pv .rvoffl{display:none!important}
+  html.rvw .pv button[data-pid] .rvoffl{order:0;align-self:flex-start;background:#ff2a2a;color:#fff;font:700 13px/1 ui-monospace,monospace;letter-spacing:.08em;padding:5px 8px;text-transform:uppercase}
   .rvb{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:28px;min-width:26px;padding:0 8px;box-sizing:border-box;background:#1f1d27;color:#a29db0;font:800 10px/1 var(--body,Inter,sans-serif);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;user-select:none;white-space:nowrap;flex:none}
   .rvb:active{filter:brightness(1.5)}
   .rvb svg{width:12px;height:12px;fill:currentColor;flex:none}
@@ -375,7 +378,20 @@
     b.querySelectorAll(".rvov").forEach((o) => { o.style.cssText = `left:${L}px;top:${T}px;width:${W}px;height:${Hh}px`; });
     ov.innerHTML = cm.filter((x) => x.x != null && x.txt && (x.v || "v1") === sel).map((x) => `<span class="rvm${x.x > 0.8 ? " fl" : ""}" data-rv="mark" data-id="${esc(x.id)}" style="left:${(x.x * 100).toFixed(2)}%"><b>${fmt(x.t)}</b><i>${esc(x.txt)}</i></span>`).join("");
   }
-  const syncAll = () => document.querySelectorAll(".pv button[data-pid]").forEach((b) => { inject(b); sync(b); });
+  /* OFF marks (Eman 28 Nov): sounds whose TOY MACHINE V3 preset or MIDI is not yet the same as the demo get a red outline + OFF label.
+     The list is admin/v3/off.json { packId: { slug: reason } }, rebuilt by the render check; a fixed sound simply leaves the list. Turn off: OFF_MARKS = false. */
+  const OFF_MARKS = true; let offList = null;
+  if (OFF_MARKS) fetch("/admin/v3/off.json?t=" + Date.now()).then((r) => r.ok ? r.json() : {}).then((j) => { offList = j || {}; later(); }).catch(() => { offList = {}; });
+  function paintOff(b) {
+    if (!OFF_MARKS || !offList) return; const c = ctx(b); if (!c) return;
+    const why = (offList[c.p.id] || {})[String(kOf(c.s.file)).split("/").pop().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")];
+    let lb = b.querySelector(".rvoffl");
+    if (!why) { if (b.hasAttribute("data-v3off")) b.removeAttribute("data-v3off"); if (lb) lb.remove(); return; }
+    if (b.getAttribute("data-v3off") !== why) b.setAttribute("data-v3off", why);
+    if (!lb) { lb = document.createElement("span"); lb.className = "rvoffl"; b.insertBefore(lb, b.firstChild); }
+    const t = "OFF \u00b7 " + why; if (lb.textContent !== t) lb.textContent = t;
+  }
+  const syncAll = () => document.querySelectorAll(".pv button[data-pid]").forEach((b) => { inject(b); sync(b); paintOff(b); });
   let raf = 0; const later = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; syncAll(); }); };
   new MutationObserver((ml) => { if (ml.every((m) => (m.target.closest && m.target.closest(".rvr,.rvc,.rvov,.rvpop,.rvorg")) || [...m.addedNodes, ...m.removedNodes].every((n) => n.classList && n.classList.contains("rvorg")))) return; later(); }).observe(document.body, { childList: true, subtree: true });
   new ResizeObserver(later).observe(document.body);

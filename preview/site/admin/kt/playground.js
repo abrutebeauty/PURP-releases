@@ -782,7 +782,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     stopVoices();
     undoStack.length = 0; redoStack.length = 0;
     S.jobs = [];
-    S.tempo = []; S.tempoOpen = false; S.tempoMin = false; S.tempoMode = "curve";   // TEMPO lane: each song has its own (applySaved brings it back)
+    S.comments = []; S.tempo = []; S.tempoOpen = false; S.tempoMin = false; S.tempoMode = "curve";   // TEMPO lane: each song has its own (applySaved brings it back)
     song.build();
     curSong = song; curVer = ver;
     S.rhythmKeep = {};
@@ -1685,6 +1685,13 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     if (mode !== "step" && mode !== "curve") return { error: "Pick STEP or CURVE." };
     S.tempoMode = mode; changed(); tempoWarm(); softRestart();
     return { ok: true, mode };
+  };
+  // COMMENT bubbles (Eman, 27 Nov): S.comments = [{ id, clipId, at (seconds into the clip), dy (px below it), mode "time"|"general", text }]
+  handlers.setComments = ({ comments } = {}) => {
+    if (!Array.isArray(comments)) return { error: "No comments given." };
+    S.comments = comments.slice(0, 500).map((q) => ({ id: String(q.id || "").slice(0, 40), clipId: String(q.clipId || ""), at: Math.round(Math.max(0, +q.at || 0) * 1000) / 1000, dy: Math.round(Math.max(6, Math.min(2000, +q.dy || 10))), mode: q.mode === "general" ? "general" : "time", text: String(q.text || "").slice(0, 2000) })).filter((q) => q.id && q.clipId);
+    changed();
+    return { ok: true, count: S.comments.length };
   };
   handlers.setTempoOpen = ({ open } = {}) => { S.tempoOpen = !!open; changed(); return { ok: true, open: S.tempoOpen }; };
   // TEMPO lane folded to its name row (Eman, 16 Nov): saved with the song
@@ -5681,7 +5688,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     const held = new Map();
     for (const t of S.tracks) for (const q of tmPlugins(t)) if (q.toy && (q.toy.drops || q.toy.sample)) { held.set(q.id, { drops: q.toy.drops, sample: q.toy.sample }); q.toy.drops = undefined; q.toy.sample = undefined; }
     let snap;
-    try { snap = structuredClone({ tracks: S.tracks, sections: S.sections, cues: S.cues || {}, bpm: S.bpm, key: S.key, master: S.master, returns: S.returns, tempo: S.tempo || [], tempoMode: S.tempoMode || "curve" }); }
+    try { snap = structuredClone({ tracks: S.tracks, sections: S.sections, cues: S.cues || {}, bpm: S.bpm, key: S.key, master: S.master, returns: S.returns, comments: S.comments || [], tempo: S.tempo || [], tempoMode: S.tempoMode || "curve" }); }
     finally {
       const put = (tracks) => { for (const t of tracks) for (const q of tmPlugins(t)) { const h = held.get(q.id); if (h) { if (h.drops) q.toy.drops = h.drops; else delete q.toy.drops; if (h.sample) q.toy.sample = h.sample; else delete q.toy.sample; } } };
       put(S.tracks);
@@ -5689,13 +5696,13 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     }
     return snap;
   };
-  const UNDO_NOOP = new Set(["addAutomation", "setNoInstrument", "setLayerLinked", "setBusFold", "setBalance", "setSendPre", "moveClips", "moveClip", "setTrackVolume", "setClipGain", "setReturnVolume", "movePlugin", "moveTrack", "setClipRow", "setClipActive", "moveSection", "setClipColor", "renameClip", "setLanePan", "setLaneOct", "setLaneGap", "setCue", "setTempoMode", "setTempoMap", "setClipBounds", "setTrackBus", "setBusMember", "setSend", "setBusMode", "renameBus"]);
+  const UNDO_NOOP = new Set(["addAutomation", "setNoInstrument", "setLayerLinked", "setBusFold", "setBalance", "setSendPre", "moveClips", "moveClip", "setTrackVolume", "setClipGain", "setReturnVolume", "movePlugin", "moveTrack", "setClipRow", "setClipActive", "moveSection", "setClipColor", "renameClip", "setLanePan", "setLaneOct", "setLaneGap", "setCue", "setTempoMode", "setComments", "setTempoMap", "setClipBounds", "setTrackBus", "setBusMember", "setSend", "setBusMode", "renameBus"]);
   let noopPopped = null;
   const undoSig = (snap) => JSON.stringify(snap, (k, v) => (k === "drops" || k === "sample" ? undefined : v));
   for (const name of ["applyChain", "addPlugin", "removePlugin", "movePlugin", "clearEffects", "splitClip", "deleteClip", "moveClip",
                       "deleteTrack", "setClipTake", "setClipComp", "flattenComp", "moveClips", "duplicateClips", "setClipBounds",
                       "setClipFades", "renameClip", "setClipGain", "setTrackVolume", "setMasterAuto", "setSend", "newBus", "setBusMode", "setBusMember", "setBusFold", "setSendPre", "setMacros", "renameBus", "deleteBus", "setBalance", "setTrackBus", "setMixKnob", "setMixReference", "setReturnVolume", "toggleReturnMute", "addAutomation", "setAutomation", "removeAutomation", "recordAutomation",
-                      "setClipActive", "reverseClip", "consolidateClips", "insertTime", "deleteTime", "editAudio",
+                      "setClipActive", "reverseClip", "consolidateClips", "insertTime", "deleteTime", "setComments", "editAudio",
                       "makeCompound", "joinCompound", "makeUnique", "breakCompound", "renameCompound", "setLanePan", "layerTakes", "compAB", "moveTrack", "moveSection", "slideSection", "dropSection", "insertSection", "makeUniqueLane", "makeUniqueSounds", "setSoundVersion", "moveClipToNewLane", "setClipColor", "setClipRow", "setCue", "addSynthLayer", "setNoInstrument", "setLaneOct", "setLayerLinked", "setStackNotes", "setLaneGap", "setSideInput", "setSideGhost", "setTempoMap", "setTempoMode"]) {
     const orig = handlers[name];
     if (!orig) continue;   // (the compound and record commands only exist on the KILLTOY 2 page)
@@ -5741,7 +5748,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     if (!from.length) return { ok: false };
     to.push(snapshot());
     const snap = from.pop();
-    S.tracks = snap.tracks; S.sections = snap.sections; S.cues = snap.cues || {}; S.bpm = snap.bpm; S.tempo = snap.tempo || []; if (snap.tempoMode) S.tempoMode = snap.tempoMode; if (snap.key) S.key = snap.key; S.master = snap.master || freshMaster(); S.returns = snap.returns || returnsOf(S.bpm);
+    S.tracks = snap.tracks; S.sections = snap.sections; S.cues = snap.cues || {}; S.bpm = snap.bpm; S.comments = snap.comments || []; S.tempo = snap.tempo || []; if (snap.tempoMode) S.tempoMode = snap.tempoMode; if (snap.key) S.key = snap.key; S.master = snap.master || freshMaster(); S.returns = snap.returns || returnsOf(S.bpm);
     S.tracks.forEach((t) => tmAutoRefresh(t.id)); // TOY MACHINE automation may have come or gone
     // TOY MACHINE: the playing synths take the restored sound (drop zone sounds come back from
     // their saved copies); the open window reloads it (app.js, on toyRestored).
@@ -8360,7 +8367,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
   // What gets saved: a copy of the session, with no listening going on.
   function capture() {
     const rec = structuredClone({ v: 1, song: curSong ? curSong.name : SONG.name, project: projectOf_(curSong), version: curVer ? curVer.label : null,
-      tracks: S.tracks, master: S.master, returns: S.returns, sections: S.sections, cues: S.cues || {}, bpm: S.bpm, tempo: S.tempo || [], tempoOpen: !!S.tempoOpen, tempoMin: !!S.tempoMin, tempoMode: S.tempoMode || "curve", key: S.key, loopStart: S.loopStart, loopEnd: S.loopEnd, looping: !!S.transport.looping, ...(loopKeepOn() && S.rhythmKeep ? (pruneKeep(), { rhythmKeep: S.rhythmKeep }) : {}) });
+      tracks: S.tracks, master: S.master, returns: S.returns, sections: S.sections, cues: S.cues || {}, bpm: S.bpm, comments: S.comments || [], tempo: S.tempo || [], tempoOpen: !!S.tempoOpen, tempoMin: !!S.tempoMin, tempoMode: S.tempoMode || "curve", key: S.key, loopStart: S.loopStart, loopEnd: S.loopEnd, looping: !!S.transport.looping, ...(loopKeepOn() && S.rhythmKeep ? (pruneKeep(), { rhythmKeep: S.rhythmKeep }) : {}) });
     // a take being listened to is saved as the take that's picked, with that take's effect cards
     rec.tracks.forEach((t) => t.clips.forEach((c) => { c.audition = null; showTakeFx(c, c.take); }));
     return rec;
@@ -8497,7 +8504,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     S.rhythmKeep = loopKeepOn() && rec.rhythmKeep && typeof rec.rhythmKeep === "object" ? rec.rhythmKeep : {};
     if (rec.master) S.master = rec.master;   // older saves (before the master) keep the song's own
     if (rec.returns) S.returns = rec.returns;   // and before the returns, the song's own
-    S.sections = rec.sections || []; S.cues = rec.cues || {}; S.bpm = rec.bpm || S.bpm; if (rec.key) S.key = rec.key; S.tempo = Array.isArray(rec.tempo) ? rec.tempo : []; S.tempoOpen = !!rec.tempoOpen; S.tempoMin = !!rec.tempoMin;
+    S.sections = rec.sections || []; S.cues = rec.cues || {}; S.bpm = rec.bpm || S.bpm; if (rec.key) S.key = rec.key; S.comments = Array.isArray(rec.comments) ? rec.comments : []; S.tempo = Array.isArray(rec.tempo) ? rec.tempo : []; S.tempoOpen = !!rec.tempoOpen; S.tempoMin = !!rec.tempoMin;
     // TEMPO STEP / CURVE: a song saved before the switch keeps its hard steps, so it sounds the same
     S.tempoMode = rec.tempoMode === "step" || rec.tempoMode === "curve" ? rec.tempoMode : S.tempo.length ? "step" : "curve";
     if (rec.loopEnd > rec.loopStart) { S.loopStart = rec.loopStart; S.loopEnd = rec.loopEnd; }
@@ -8724,6 +8731,7 @@ window.purpPlayground = function ({ S, handlers, emit, changed, make, id, bar, f
     delete out.open;
     // TEMPO lane: tempo changes as [{ beat, bpm }] (beats from the song's start; before the first, bpm above)
     if (Array.isArray(S.tempo) && S.tempo.length) out.tempoMap = S.tempo.map((q) => ({ beat: q.beat, bpm: q.bpm, ...(q.curve ? { curve: q.curve } : {}), ...(q.step ? { step: true } : {}) })), out.tempoMode = S.tempoMode || "curve";
+    if (Array.isArray(S.comments) && S.comments.length) out.comments = S.comments.map((q) => ({ ...q }));
     const beat = S.tracks[0];
     if (beat && beat.clips[0]) { out.reference = pathOf(beat.clips[0].src) || out.reference; out.referenceMuted = !!beat.muted; }
     out.sections = S.sections.map((x) => ({ name: x.name, start: +x.start.toFixed(4), startBar: +(x.start / (spb * 4)).toFixed(4) }));

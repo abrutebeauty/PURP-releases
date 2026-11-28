@@ -1765,6 +1765,7 @@ admin/v3/nettcore-ii/pluck-little-mp3.json.gz
 admin/v3/nettcore-ii/pluck-little-pockets-mp3.json.gz
 admin/v3/nettcore-ii/texture-creeper-glass-break-mp3.json.gz
 admin/v3/nettcore-ii/texture-creeper-mp3.json.gz
+admin/v3/off.json
 admin/v3/silentcore-i/index.json
 admin/v3/silentcore-i/silentcore-i-mp3-t-0-000.json.gz
 admin/v3/silentcore-i/silentcore-i-mp3-t-107-278.json.gz
