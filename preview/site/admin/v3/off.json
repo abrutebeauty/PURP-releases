@@ -1,51 +1,28 @@
 {
  "2hollcore-i": {
-  "hc1-808-infinite-ribbon-mp3": "V3 sound differs from demo",
-  "hc1-bell-cherry-static-mp3": "V3 preset is only white noise",
-  "hc1-bell-glass-sky-mp3": "V3 preset is only white noise",
-  "hc1-bell-prism-bruise-mp3": "V3 sound differs from demo",
-  "hc1-chord-fever-drip-mp3": "V3 sound differs from demo",
+  "hc1-bell-cherry-static-mp3": "V3 sound differs from demo",
   "hc1-chord-lace-rewind-mp3": "V3 sound differs from demo",
   "hc1-lead-candy-mirror-mp3": "V3 sound differs from demo",
-  "hc1-lead-cherry-stitch-mp3": "V3 preset almost silent",
-  "hc1-lead-ivory-star-mp3": "V3 preset is only white noise",
+  "hc1-lead-ivory-star-mp3": "V3 sound differs from demo",
   "hc1-pluck-faded-drip-mp3": "V3 sound differs from demo",
-  "hc1-saw-heartbreak-blade-mp3": "V3 sound differs from demo",
-  "hc1-vox-mercury-rocket-mp3": "V3 preset is only white noise",
+  "hc1-vox-mercury-rocket-mp3": "V3 sound differs from demo",
   "hc1-vox-midnight-ribbon-mp3": "V3 sound differs from demo",
   "hc1-vox-satellite-heart-mp3": "V3 sound differs from demo",
-  "hc1-vox-silver-lover-mp3": "V3 preset almost silent"
+  "hc1-vox-silver-lover-mp3": "V3 sound differs from demo"
  },
  "2hollcore-ii": {
-  "2hollcore-ii-mp3-t-416-918": "V3 sound differs from demo",
-  "2hollcore-ii-mp3-t-623-767": "V3 sound differs from demo",
-  "2hollcore-ii-mp3-t-657-242": "V3 sound differs from demo",
-  "2hollcore-ii-mp3-t-663-618": "V3 sound differs from demo"
+  "2hollcore-ii-mp3-t-657-242": "V3 sound differs from demo"
  },
  "crystal-core-i": {
   "cc1-arp-ash-fawn-mp3": "MIDI not same as demo",
-  "cc1-arp-ether-crown-mp3": "V3 sound differs from demo",
   "cc1-lead-chapel-crown-mp3": "MIDI not same as demo",
-  "cc1-pluck-neon-swarm-mp3": "V3 preset is only white noise",
-  "cc1-stab-night-fever-mp3": "MIDI not same as demo",
-  "cc1-stab-tomb-sleep-mp3": "V3 preset almost silent"
+  "cc1-pluck-neon-swarm-mp3": "V3 sound differs from demo",
+  "cc1-stab-night-fever-mp3": "MIDI not same as demo"
  },
  "crystal-core-ii": {
-  "cc2-arp-bone-bloom-mp3": "V3 sound differs from demo",
-  "cc2-arp-chapel-hymn-mp3": "V3 sound differs from demo",
-  "cc2-arp-prism-bloom-mp3": "V3 sound differs from demo",
-  "cc2-lead-cold-fever-mp3": "V3 sound differs from demo",
-  "cc2-lead-doll-grain-mp3": "V3 sound differs from demo",
-  "cc2-lead-glass-fracture-mp3": "V3 sound differs from demo",
   "cc2-lead-hollow-kiss-mp3": "V3 sound differs from demo",
-  "cc2-lead-smoke-hymn-mp3": "V3 sound differs from demo",
   "cc2-lead-velvet-fracture-mp3": "V3 preset almost silent",
   "cc2-pad-cinder-glow-mp3": "V3 sound differs from demo"
- },
- "dreamcore-i": {
-  "dc1-arp-morning-ribbon-mp3": "V3 sound differs from demo",
-  "dc1-lead-satellite-comet-mp3": "V3 sound differs from demo",
-  "dc1-pad-rain-ribbon-mp3": "V3 sound differs from demo"
  },
  "esskid-core-i": {
   "es-song-es001-mp3": "no preset yet",
